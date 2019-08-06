@@ -1,0 +1,92 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "JSON schema for the Vulkan API Dump layer",
+    "description": "Schema for validating API Dump output in the json format",
+    "definitions": {
+        "value": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                },
+                "members": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/value"
+                    }
+                },
+                "elements": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/value"
+                    }
+                }
+            },
+            "required": [
+                "type",
+                "name"
+            ],
+            "additionalProperties": false
+        },
+        "functionCall": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "thread": {
+                    "type": "string"
+                },
+                "returnType": {
+                    "type": "string"
+                },
+                "returnValue": {
+                    "type": "string"
+                },
+                "time": {
+                    "type": "string"
+                },
+                "args": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/value"
+                    }
+                }
+            },
+            "required": [
+                "name",
+                "thread",
+                "args"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "frameNumber": {
+                "type": "string"
+            },
+            "apiCalls": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/definitions/functionCall"
+                }
+            }
+        },
+        "required": [
+            "frameNumber",
+            "apiCalls"
+        ]
+    }
+}
