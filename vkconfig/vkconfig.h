@@ -28,6 +28,7 @@
 #include <QTimer>
 
 #include "active_layers_widget.h"
+#include "application_settings_widget.h"
 #include "layer_locations_widget.h"
 #include "layer_settings_widget.h"
 #include "override_settings.h"
@@ -60,6 +61,9 @@ private:
 
     QSplitter *outer_split;
     QSplitter *inner_split;
+    QSplitter *inner_right_split;
+
+    ApplicationSettingsWidget *applications;
     LayerLocationsWidget *locations;
     ActiveLayersWidget *active_layers;
     LayerSettingsWidget *layer_settings;

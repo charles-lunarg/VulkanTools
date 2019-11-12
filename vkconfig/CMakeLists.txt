@@ -13,6 +13,7 @@ if(NOT Qt5_FOUND)
 else()
     set(LAYERMGR_SRCS
         active_layers_widget.cpp
+        application_settings_widget.cpp
         layer_locations_widget.cpp
         layer_manifest.cpp
         layer_settings_widget.cpp

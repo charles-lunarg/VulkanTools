@@ -61,22 +61,29 @@ LayerManager::LayerManager() {
     QVBoxLayout *layout = new QVBoxLayout();
     outer_split = new QSplitter(Qt::Horizontal);
     inner_split = new QSplitter(Qt::Vertical);
+    inner_right_split = new QSplitter(Qt::Vertical);
 
     locations = new LayerLocationsWidget();
     inner_split->addWidget(locations);
     active_layers = new ActiveLayersWidget();
     inner_split->addWidget(active_layers);
+    
     outer_split->addWidget(inner_split);
+
 
     QWidget *right_widget = new QWidget();
     QVBoxLayout *right_layout = new QVBoxLayout();
     QLabel *logo_widget = new QLabel();
     logo_widget->setPixmap(QPixmap(":/layermgr/icons/lunarg_logo.png"));
     right_layout->addWidget(logo_widget, 0, Qt::AlignRight);
-    layer_settings = new LayerSettingsWidget();
-    right_layout->addWidget(layer_settings, 1);
+    applications = new ApplicationSettingsWidget();
+    right_layout->addWidget(applications);
     right_widget->setLayout(right_layout);
-    outer_split->addWidget(right_widget);
+    inner_right_split->addWidget(right_widget);
+
+    layer_settings = new LayerSettingsWidget();
+    inner_right_split->addWidget(layer_settings);
+    outer_split->addWidget(inner_right_split);
 
     connect(locations, &LayerLocationsWidget::pathsChanged, active_layers, &ActiveLayersWidget::updateAvailableLayers);
     connect(active_layers, &ActiveLayersWidget::enabledLayersUpdated, layer_settings, &LayerSettingsWidget::updateAvailableLayers);
