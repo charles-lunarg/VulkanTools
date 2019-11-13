@@ -19,23 +19,43 @@
 
 #pragma once
 
+#include <QDir>
 #include <QGroupBox>
 #include <QListWidget>
 #include <QPushButton>
 #include <QSplitter>
+#include <QVector>
+
+struct ApplicationEntry {
+    QString app_name;
+    QDir dir_path;
+};
 
 class ApplicationSettingsWidget : public QGroupBox {
     Q_OBJECT
 public:
     ApplicationSettingsWidget(QWidget *parent = NULL);
 
-protected:
+    const QVector<ApplicationEntry>& applicationEntries() const {
+        return entries;
+    }
+
+signals:
+    void applicationListChanged(const QVector<ApplicationEntry> &path_list);
+
+private slots:
     void addApplicationLayer();
-    void deleteApplicationLayer();
+    void removeApplicationLayer();
+    void clearApplicationLayers();
 
 private:
+    QIcon layer_icon;
+
     QListWidget *application_list;
 
+    QVector<ApplicationEntry> entries;
+
     QPushButton *add_button;
-    QPushButton *delete_button;
+    QPushButton *remove_button;
+    QPushButton *clear_button;
 };

@@ -20,6 +20,9 @@
 #include "application_settings_widget.h"
 
 #include <QBoxLayout>
+#include <QFileDialog>
+#include <QMessageBox>
+
 #include <QDialogButtonBox>
 
 ApplicationSettingsWidget::ApplicationSettingsWidget(QWidget *parent)
@@ -34,13 +37,59 @@ ApplicationSettingsWidget::ApplicationSettingsWidget(QWidget *parent)
 
     QVBoxLayout *button_layout = new QVBoxLayout();
     
-    add_button = new QPushButton("new");
-    delete_button = new QPushButton("delete");
+    add_button = new QPushButton("New");
+    connect(add_button, &QPushButton::clicked, this, &ApplicationSettingsWidget::addApplicationLayer);
+    remove_button = new QPushButton("Remove");
+    connect(remove_button, &QPushButton::clicked, this, &ApplicationSettingsWidget::removeApplicationLayer);
+    clear_button = new QPushButton("Clear");
+    connect(clear_button, &QPushButton::clicked, this, &ApplicationSettingsWidget::clearApplicationLayers);
+
 
     button_layout->addWidget(add_button);
-    button_layout->addWidget(delete_button);
+    button_layout->addWidget(remove_button);
+    button_layout->addWidget(clear_button);
+    button_layout->addStretch();
 
     layout->addLayout(button_layout);
 
     setLayout(layout);
+
+    QDir dir("n/a");
+    ApplicationEntry app_entry = {"global" , dir};
+    entries.append(app_entry);
+    QListWidgetItem *item = new QListWidgetItem();
+    item->setText(app_entry.app_name + ": \"" + app_entry.dir_path.path() + "\"");
+    application_list->addItem(item);
+
+}
+
+void ApplicationSettingsWidget::addApplicationLayer(){
+    QString path = QFileDialog::getOpenFileName(this, tr("Application Directory"), QDir::homePath());
+    if (path == "") {
+        return;
+    }
+    QDir new_path(path);
+    for (const auto& location : entries) {
+        if (QDir(location.dir_path) == new_path) {
+            return;
+        }
+    }
+    ApplicationEntry app_entry = {new_path.dirName() ,new_path};
+    entries.append(app_entry);
+    QListWidgetItem *item = new QListWidgetItem();
+    item->setText(app_entry.app_name + ": \"" + app_entry.dir_path.path() + "\"");
+    application_list->addItem(item);
+
+    emit applicationListChanged(applicationEntries());
+}
+void ApplicationSettingsWidget::removeApplicationLayer(){
+
+    auto items_to_remove = application_list->selectedItems();
+    
+    emit applicationListChanged(applicationEntries());
+}
+void ApplicationSettingsWidget::clearApplicationLayers(){
+
+
+    emit applicationListChanged(applicationEntries());
 }
