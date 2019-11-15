@@ -21,6 +21,7 @@
 
 #include <QBoxLayout>
 #include <QFileDialog>
+#include <QTableWidgetItem>
 #include <QMessageBox>
 
 #include <QDialogButtonBox>
@@ -30,22 +31,26 @@ ApplicationSettingsWidget::ApplicationSettingsWidget(QWidget *parent) : QGroupBo
 
     QHBoxLayout *layout = new QHBoxLayout();
 
-    application_list = new QListWidget();
-    layout->addWidget(application_list);
+    application_table = new QTableWidget(0, 2);
+    application_table->setSelectionBehavior(QAbstractItemView::SelectionBehavior::SelectRows);
+    application_table->setSelectionMode(QAbstractItemView::SelectionMode::SingleSelection);
+    application_table->setColumnWidth(0, 150);
+    application_table->setColumnWidth(1, 200);
+
+    application_table->setHorizontalHeaderLabels({"Name", "Directory"});
+    layout->addWidget(application_table);
+
+    connect(application_table, &QTableWidget::itemChanged, this, &ApplicationSettingsWidget::changedItem);
 
     QVBoxLayout *button_layout = new QVBoxLayout();
-
     add_button = new QPushButton("New");
     connect(add_button, &QPushButton::clicked, this, &ApplicationSettingsWidget::addApplicationLayer);
-    edit_button = new QPushButton("Edit");
-    connect(edit_button, &QPushButton::clicked, this, &ApplicationSettingsWidget::editSelectedApplication);
     remove_button = new QPushButton("Remove");
     connect(remove_button, &QPushButton::clicked, this, &ApplicationSettingsWidget::removeApplicationLayer);
     clear_button = new QPushButton("Clear");
     connect(clear_button, &QPushButton::clicked, this, &ApplicationSettingsWidget::clearApplicationLayers);
 
     button_layout->addWidget(add_button);
-    button_layout->addWidget(edit_button);
     button_layout->addWidget(remove_button);
     button_layout->addWidget(clear_button);
     button_layout->addStretch();
@@ -54,7 +59,7 @@ ApplicationSettingsWidget::ApplicationSettingsWidget(QWidget *parent) : QGroupBo
 
     setLayout(layout);
 
-    addNewLayer(global_layer_name, QDir());
+    addGlobalLayer();
 }
 
 void ApplicationSettingsWidget::addApplicationLayer() {
@@ -68,27 +73,23 @@ void ApplicationSettingsWidget::addApplicationLayer() {
             return;
         }
     }
-    addNewLayer(new_path.dirName(), new_path);
+    QString appName = new_path.dirName();
+    new_path.cdUp();
+    addNewLayer(appName, new_path.path());
 
     emit applicationListChanged(applicationEntries());
 }
-void ApplicationSettingsWidget::editSelectedApplication() {
-    QDialog edit_box;
-    edit_box.setObjectName("TODO: make names editable");
-
-    emit applicationListChanged(applicationEntries());
-}
+void ApplicationSettingsWidget::changedItem() { emit applicationListChanged(applicationEntries()); }
 
 void ApplicationSettingsWidget::removeApplicationLayer() {
-    for (auto &item : application_list->selectedItems()) {
-        if (item->text() == global_layer_name) continue;
+    int row = -1;
 
-        for (int i = 0; i < entries.size(); i++) {
-            if (entries[i].app_name == item->text()) {
-                entries.removeAt(i);
-            }
-        }
-        delete application_list->takeItem(application_list->row(item));
+    for (auto &item : application_table->selectedItems()) {
+        row = item->row();
+    }
+    // no row selected or if the global layer is selected
+    if (row > 0) {
+        application_table->removeRow(row);
     }
 
     emit applicationListChanged(applicationEntries());
@@ -96,17 +97,27 @@ void ApplicationSettingsWidget::removeApplicationLayer() {
 
 void ApplicationSettingsWidget::clearApplicationLayers() {
     entries.clear();
-    application_list->clear();
-    addNewLayer(global_layer_name, QDir());
+    application_table->setRowCount(1);
+
     emit applicationListChanged(applicationEntries());
 }
 
-void ApplicationSettingsWidget::addNewLayer(QString name, QDir path) {
-    ApplicationEntry app_entry = {name, path};
-    entries.append(app_entry);
-    QListWidgetItem *item = new QListWidgetItem();
-    item->setText(app_entry.app_name);
-    application_list->addItem(item);
+int ApplicationSettingsWidget::addNewLayer(QString name, QString path) {
+    int new_row = application_table->rowCount();
+    application_table->insertRow(new_row);
+    application_table->setItem(new_row, 0, new QTableWidgetItem());
+    application_table->setItem(new_row, 1, new QTableWidgetItem());
+    auto item_name = application_table->item(new_row, 0);
+    auto item_dir = application_table->item(new_row, 1);
+    item_name->setText(name);
+    item_dir->setText(path);
+    return new_row;
+}
+
+void ApplicationSettingsWidget::addGlobalLayer() {
+    int row = addNewLayer(global_layer_name, "");
+    application_table->item(row, 0)->setFlags(application_table->item(row, 0)->flags() ^ Qt::ItemIsEditable);
+    application_table->item(row, 1)->setFlags(application_table->item(row, 1)->flags() ^ Qt::ItemIsEditable);
 }
 
 const QStringList ApplicationSettingsWidget::application_names() const {
