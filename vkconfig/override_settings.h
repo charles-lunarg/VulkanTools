@@ -25,25 +25,46 @@
 
 #include "layer_manifest.h"
 
-// Add a Paths() method?
-class OverrideSettings
-{
-public:
-    OverrideSettings();
-    void ClearLayers();
-    void ClearSettings();
-    QList<QString> DisabledLayers() const;
-    QList<QString> EnabledLayers() const;
-    QHash<QString, QHash<QString, QString>> LayerSettings() const;
-    bool SaveLayers(const QList<QPair<QString, LayerType>> &paths, const QList<LayerManifest> &enabled_layers,
-                    const QList<LayerManifest> &disabled_layers, int expiration);
-    bool SaveSettings(const QHash<QString, QHash<QString, LayerValue>> &settings);
-
-private:
-    QString LayerFile(bool create_path) const;
-    QString LayerSettingsFile(bool create_path) const;
-
+struct ApplicationLayer {
     QList<QString> enabled_layers;
     QList<QString> disabled_layers;
     QHash<QString, QHash<QString, QString>> layer_settings;
+};
+
+struct OverrideLayer {
+    QList<QPair<QString, LayerType>> paths;
+    QList<LayerManifest> enabled_layers;
+    QList<LayerManifest> disabled_layers;
+    int expiration;
+};
+
+// Add a Paths() method?
+class OverrideSettings {
+   public:
+    OverrideSettings();
+    void ClearLayers();
+    void ClearSettings();
+
+    void AddApplication(QString application);
+    void RemoveApplication(QString application);
+
+    QList<QString> DisabledLayers(QString application) const;
+    QList<QString> EnabledLayers(QString application) const;
+    QHash<QString, QHash<QString, QString>> LayerSettings(QString application) const;
+
+    void SetDisabledLayers(QString application, const QList<QString> &disabled_layers);
+    void SetEnabledLayers(QString application, const QList<QString> &enabled_layers);
+    void SetLayerSettings(QString application, const QHash<QString, QHash<QString, QString>> &settings);
+
+    bool SaveLayers(QList<OverrideLayer> layers);
+    bool SaveSettings(QString app, const QHash<QString, QHash<QString, LayerValue>> &settings);
+
+   private:
+    void addLayer(const QJsonValue &layer);
+    QJsonObject toJsonLayer(const OverrideLayer &override_layer);
+
+    QString LayerFile(bool create_path) const;
+    QString LayerSettingsFile(bool create_path) const;
+
+    QHash<QString, ApplicationLayer> application_layers;
 };

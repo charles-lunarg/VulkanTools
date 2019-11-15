@@ -30,6 +30,8 @@
 #include <cfgmgr32.h>
 #endif
 
+static const char *global_layer_name = "GLOBAL_SETTINGS";
+
 // Don't change the number values; doing so will break compatibility with saved settings
 enum class LayerType {
     Explicit = 0,
@@ -63,7 +65,7 @@ class LayerManifest {
     static void LoadLayerObject(const QJsonObject &layer_object, LayerType type, const QFileInfo &file,
                                 QList<LayerManifest> *manifest_list);
 #if defined(_WIN32)
-    static QList<LayerManifest> LoadDeviceRegistry(DEVINST id, const QString& entry, LayerType type);
+    static QList<LayerManifest> LoadDeviceRegistry(DEVINST id, const QString &entry, LayerType type);
 #endif
 };
 

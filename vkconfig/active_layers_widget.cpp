@@ -265,6 +265,17 @@ void ActiveLayersWidget::setEnabledLayers(const QList<QString> &layers) {
     emit enabledLayersUpdated(enabled_layers, unset_layers);
 }
 
+QList<QString> ActiveLayersWidget::getDisabledLayers() {
+    QList<QString> layers;
+    for (auto &manifest : disabled_layers) layers.push_back(manifest.name);
+    return layers;
+}
+QList<QString> ActiveLayersWidget::getEnabledLayers() {
+    QList<QString> layers;
+    for (auto &manifest : enabled_layers) layers.push_back(manifest.name);
+    return layers;
+}
+
 void ActiveLayersWidget::setExpiration(int seconds, DurationUnit unit) {
     switch (unit) {
         case DurationUnit::Minute:

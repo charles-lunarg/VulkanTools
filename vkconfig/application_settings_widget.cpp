@@ -25,27 +25,27 @@
 
 #include <QDialogButtonBox>
 
-ApplicationSettingsWidget::ApplicationSettingsWidget(QWidget *parent)
-: QGroupBox(tr("Application Override"), parent)
-{
+ApplicationSettingsWidget::ApplicationSettingsWidget(QWidget *parent) : QGroupBox(tr("Application Override"), parent) {
     setTitle("Application Override Settings");
 
-    QHBoxLayout * layout = new QHBoxLayout();
+    QHBoxLayout *layout = new QHBoxLayout();
 
     application_list = new QListWidget();
     layout->addWidget(application_list);
 
     QVBoxLayout *button_layout = new QVBoxLayout();
-    
+
     add_button = new QPushButton("New");
     connect(add_button, &QPushButton::clicked, this, &ApplicationSettingsWidget::addApplicationLayer);
+    edit_button = new QPushButton("Edit");
+    connect(edit_button, &QPushButton::clicked, this, &ApplicationSettingsWidget::editSelectedApplication);
     remove_button = new QPushButton("Remove");
     connect(remove_button, &QPushButton::clicked, this, &ApplicationSettingsWidget::removeApplicationLayer);
     clear_button = new QPushButton("Clear");
     connect(clear_button, &QPushButton::clicked, this, &ApplicationSettingsWidget::clearApplicationLayers);
 
-
     button_layout->addWidget(add_button);
+    button_layout->addWidget(edit_button);
     button_layout->addWidget(remove_button);
     button_layout->addWidget(clear_button);
     button_layout->addStretch();
@@ -54,42 +54,65 @@ ApplicationSettingsWidget::ApplicationSettingsWidget(QWidget *parent)
 
     setLayout(layout);
 
-    QDir dir("n/a");
-    ApplicationEntry app_entry = {"global" , dir};
-    entries.append(app_entry);
-    QListWidgetItem *item = new QListWidgetItem();
-    item->setText(app_entry.app_name + ": \"" + app_entry.dir_path.path() + "\"");
-    application_list->addItem(item);
-
+    addNewLayer(global_layer_name, QDir());
 }
 
-void ApplicationSettingsWidget::addApplicationLayer(){
+void ApplicationSettingsWidget::addApplicationLayer() {
     QString path = QFileDialog::getOpenFileName(this, tr("Application Directory"), QDir::homePath());
     if (path == "") {
         return;
     }
     QDir new_path(path);
-    for (const auto& location : entries) {
+    for (const auto &location : entries) {
         if (QDir(location.dir_path) == new_path) {
             return;
         }
     }
-    ApplicationEntry app_entry = {new_path.dirName() ,new_path};
+    addNewLayer(new_path.dirName(), new_path);
+
+    emit applicationListChanged(applicationEntries());
+}
+void ApplicationSettingsWidget::editSelectedApplication() {
+    QDialog edit_box;
+    edit_box.setObjectName("TODO: make names editable");
+
+    emit applicationListChanged(applicationEntries());
+}
+
+void ApplicationSettingsWidget::removeApplicationLayer() {
+    for (auto &item : application_list->selectedItems()) {
+        if (item->text() == global_layer_name) continue;
+
+        for (int i = 0; i < entries.size(); i++) {
+            if (entries[i].app_name == item->text()) {
+                entries.removeAt(i);
+            }
+        }
+        delete application_list->takeItem(application_list->row(item));
+    }
+
+    emit applicationListChanged(applicationEntries());
+}
+
+void ApplicationSettingsWidget::clearApplicationLayers() {
+    entries.clear();
+    application_list->clear();
+    addNewLayer(global_layer_name, QDir());
+    emit applicationListChanged(applicationEntries());
+}
+
+void ApplicationSettingsWidget::addNewLayer(QString name, QDir path) {
+    ApplicationEntry app_entry = {name, path};
     entries.append(app_entry);
     QListWidgetItem *item = new QListWidgetItem();
-    item->setText(app_entry.app_name + ": \"" + app_entry.dir_path.path() + "\"");
+    item->setText(app_entry.app_name);
     application_list->addItem(item);
-
-    emit applicationListChanged(applicationEntries());
 }
-void ApplicationSettingsWidget::removeApplicationLayer(){
 
-    auto items_to_remove = application_list->selectedItems();
-    
-    emit applicationListChanged(applicationEntries());
-}
-void ApplicationSettingsWidget::clearApplicationLayers(){
-
-
-    emit applicationListChanged(applicationEntries());
+const QStringList ApplicationSettingsWidget::application_names() const {
+    QStringList names;
+    for (auto &app : entries) {
+        names.push_back(app.app_name);
+    }
+    return names;
 }

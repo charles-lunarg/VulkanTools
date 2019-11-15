@@ -67,17 +67,17 @@ LayerManager::LayerManager() {
     inner_split->addWidget(locations);
     active_layers = new ActiveLayersWidget();
     inner_split->addWidget(active_layers);
-    
-    outer_split->addWidget(inner_split);
 
+    outer_split->addWidget(inner_split);
 
     QWidget *right_widget = new QWidget();
     QVBoxLayout *right_layout = new QVBoxLayout();
     QLabel *logo_widget = new QLabel();
     logo_widget->setPixmap(QPixmap(":/layermgr/icons/lunarg_logo.png"));
-    right_layout->addWidget(logo_widget, 0, Qt::AlignRight);
+    right_layout->addWidget(logo_widget, 0, Qt::AlignRight | Qt::AlignTop);
     applications = new ApplicationSettingsWidget();
     right_layout->addWidget(applications);
+
     right_widget->setLayout(right_layout);
     inner_right_split->addWidget(right_widget);
 
@@ -115,10 +115,22 @@ LayerManager::LayerManager() {
     clear_button->setToolTip(tr("Clear saved layers and settings"));
     button_layout->addWidget(clear_button, 0);
 
+    active_combo_label = new QLabel();
+    active_combo_label->setText("Active Override Layer:");
+    button_layout->addWidget(active_combo_label);
+
+    active_combo_box = new QComboBox();
+    active_combo_box->addItems(applications->application_names());
+    button_layout->addWidget(active_combo_box);
+    active_combo_label->setBuddy(active_combo_box);
+    active_combo_box->setModel(applications->get_string_list_model());
+
 #if !defined(NO_HTML)
     save_button->setEnabled(false);
     restore_button->setEnabled(false);
     clear_button->setEnabled(false);
+    active_combo_label->setEnabled(false);
+    active_combo_box->setEnabled(false);
 #endif
 
     button_layout->addSpacing(24);
@@ -135,6 +147,8 @@ LayerManager::LayerManager() {
     connect(restore_button, &QPushButton::clicked, this, &LayerManager::restore);
     connect(clear_button, &QPushButton::clicked, this, &LayerManager::clear);
     connect(exit_button, &QPushButton::clicked, this, &LayerManager::close);
+    connect(active_combo_box, QOverload<const QString &>::of(&QComboBox::currentIndexChanged), this,
+            &LayerManager::currentApplicationChanged);
     center_layout->addLayout(button_layout, 0);
 
     center_widget->setLayout(center_layout);
@@ -157,10 +171,10 @@ LayerManager::LayerManager() {
         active_layers->setExpiration(settings.value("ExpirationValue").toInt(),
                                      (DurationUnit)settings.value("ExpirationUnit").toInt());
     }
-    active_layers->setEnabledLayers(override_settings.EnabledLayers());
-    active_layers->setDisabledLayers(override_settings.DisabledLayers());
+    active_layers->setEnabledLayers(override_settings.EnabledLayers(active_application));
+    active_layers->setDisabledLayers(override_settings.DisabledLayers(active_application));
 
-    layer_settings->setSettingsValues(override_settings.LayerSettings());
+    layer_settings->setSettingsValues(override_settings.LayerSettings(active_application));
     // TODO: Restore the active layer
 
     inner_split->restoreState(settings.value("InnerSplitState").toByteArray());
@@ -211,9 +225,9 @@ void LayerManager::notify(const QString &message) {
 }
 
 void LayerManager::restore() {
-    active_layers->setEnabledLayers(override_settings.EnabledLayers());
-    active_layers->setDisabledLayers(override_settings.DisabledLayers());
-    layer_settings->setSettingsValues(override_settings.LayerSettings());
+    active_layers->setEnabledLayers(override_settings.EnabledLayers(active_application));
+    active_layers->setDisabledLayers(override_settings.DisabledLayers(active_application));
+    layer_settings->setSettingsValues(override_settings.LayerSettings(active_application));
 
     notify("Restored layers and settings to last saved state");
 }
@@ -226,10 +240,10 @@ void LayerManager::saveAll() {
     }
     const QList<LayerManifest> &enabled_layers = active_layers->enabledLayers();
     const QList<LayerManifest> &disabled_layers = active_layers->disabledLayers();
-    override_settings.SaveLayers(paths, enabled_layers, disabled_layers, active_layers->expiration());
+    override_settings.SaveLayers({{paths, enabled_layers, disabled_layers, active_layers->expiration()}});
 
     const QHash<QString, QHash<QString, LayerValue>> &settings = layer_settings->settings();
-    override_settings.SaveSettings(settings);
+    override_settings.SaveSettings(active_application, settings);
 
     notify("Saved all layers and settings");
 }
@@ -243,6 +257,8 @@ void LayerManager::tabChanged(int index) {
     save_button->setEnabled(enabled);
     restore_button->setEnabled(enabled);
     clear_button->setEnabled(enabled);
+    active_combo_label->setEnabled(enabled);
+    active_combo_box->setEnabled(enabled);
 }
 
 void LayerManager::timerUpdate() {
@@ -255,6 +271,17 @@ void LayerManager::timerUpdate() {
     color.setRed(color.red() + qBound(-4, notification_base_color.red() - color.red(), 4));
     palette.setColor(QPalette::WindowText, color);
     notification_label->setPalette(palette);
+}
+
+void LayerManager::currentApplicationChanged(const QString &text) {
+    override_settings.SetEnabledLayers(active_application, active_layers->getEnabledLayers());
+    override_settings.SetDisabledLayers(active_application, active_layers->getDisabledLayers());
+    override_settings.SetLayerSettings(active_application, layer_settings->getSettingsValues());
+
+    this->active_application = text;
+    active_layers->setEnabledLayers(override_settings.EnabledLayers(active_application));
+    active_layers->setDisabledLayers(override_settings.DisabledLayers(active_application));
+    layer_settings->setSettingsValues(override_settings.LayerSettings(active_application));
 }
 
 #if !defined(NO_HTML)
