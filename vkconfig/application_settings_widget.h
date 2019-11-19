@@ -24,11 +24,8 @@
 #include <QListWidget>
 #include <QPushButton>
 #include <QSplitter>
-#include <QAction>
 #include <QTableWidget>
-#include <QVector>
 #include <QStringList>
-#include <QStringListModel>
 
 #include "layer_manifest.h"
 
@@ -42,7 +39,9 @@ class ApplicationSettingsWidget : public QGroupBox {
    public:
     ApplicationSettingsWidget(QWidget *parent = NULL);
 
-    QVector<ApplicationEntry> applicationEntries() const;
+    void AddApplication(QString app_name, QDir dir_path);
+
+    QList<ApplicationEntry> applicationEntries() const;
     const QStringList application_names() const;
 
     QAbstractItemModel *get_string_list_model() const { return application_table->model(); }
@@ -50,7 +49,7 @@ class ApplicationSettingsWidget : public QGroupBox {
     QDir get_application_dir(QString app_name) const;
 
    signals:
-    void applicationListChanged(const QVector<ApplicationEntry> &path_list);
+    void applicationListChanged(const QList<ApplicationEntry> &path_list);
 
    private slots:
     void addApplicationLayer();
@@ -59,7 +58,7 @@ class ApplicationSettingsWidget : public QGroupBox {
     void changedItem();
 
    private:
-    int addNewLayer(QString name, QString path);
+    int addNewLayer(QString name, QDir path);
     void addGlobalLayer();
 
     QTableWidget *application_table;

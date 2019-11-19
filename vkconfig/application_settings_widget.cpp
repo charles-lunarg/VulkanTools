@@ -60,6 +60,7 @@ ApplicationSettingsWidget::ApplicationSettingsWidget(QWidget *parent) : QGroupBo
 
     setLayout(layout);
 }
+void ApplicationSettingsWidget::AddApplication(QString app_name, QDir dir_path) { addNewLayer(app_name, dir_path); }
 
 void ApplicationSettingsWidget::addApplicationLayer() {
     QString path = QFileDialog::getOpenFileName(this, tr("Application Directory"), QDir::homePath());
@@ -77,10 +78,9 @@ void ApplicationSettingsWidget::addApplicationLayer() {
     new_path.cdUp();
     addNewLayer(appName, new_path.path());
 
-    // emit applicationListChanged(applicationEntries());
+    emit applicationListChanged(applicationEntries());
 }
-void ApplicationSettingsWidget::changedItem() {  // emit applicationListChanged(applicationEntries());
-}
+void ApplicationSettingsWidget::changedItem() { emit applicationListChanged(applicationEntries()); }
 
 void ApplicationSettingsWidget::removeApplicationLayer() {
     int row = -1;
@@ -93,7 +93,7 @@ void ApplicationSettingsWidget::removeApplicationLayer() {
         application_table->removeRow(row);
     }
 
-    // emit applicationListChanged(applicationEntries());
+    emit applicationListChanged(applicationEntries());
 }
 
 void ApplicationSettingsWidget::clearApplicationLayers() {
@@ -104,10 +104,10 @@ void ApplicationSettingsWidget::clearApplicationLayers() {
         application_table->setRowCount(1);
     }
 
-    // emit applicationListChanged(applicationEntries());
+    emit applicationListChanged(applicationEntries());
 }
 
-int ApplicationSettingsWidget::addNewLayer(QString name, QString path) {
+int ApplicationSettingsWidget::addNewLayer(QString name, QDir path) {
     int new_row = application_table->rowCount();
     application_table->insertRow(new_row);
     application_table->setItem(new_row, 0, new QTableWidgetItem());
@@ -115,12 +115,12 @@ int ApplicationSettingsWidget::addNewLayer(QString name, QString path) {
     auto item_name = application_table->item(new_row, 0);
     auto item_dir = application_table->item(new_row, 1);
     item_name->setText(name);
-    item_dir->setText(path);
+    item_dir->setText(path.path());
     return new_row;
 }
 
 void ApplicationSettingsWidget::addGlobalLayer() {
-    int row = addNewLayer(global_layer_name, "");
+    int row = addNewLayer(global_layer_name, QDir());
     application_table->item(row, 0)->setFlags(application_table->item(row, 0)->flags() ^ Qt::ItemIsEditable);
     application_table->item(row, 1)->setFlags(application_table->item(row, 1)->flags() ^ Qt::ItemIsEditable);
 }
@@ -133,10 +133,11 @@ const QStringList ApplicationSettingsWidget::application_names() const {
     return names;
 }
 
-QVector<ApplicationEntry> ApplicationSettingsWidget::applicationEntries() const {
-    QVector<ApplicationEntry> v_entries;
+QList<ApplicationEntry> ApplicationSettingsWidget::applicationEntries() const {
+    QList<ApplicationEntry> v_entries;
     for (int row = 0; row < application_table->rowCount(); row++) {
-        v_entries.push_back({application_table->item(row, 0)->text(), application_table->item(row, 1)->text()});
+        if (application_table->item(row, 0) != nullptr && application_table->item(row, 1) != nullptr)
+            v_entries.push_back({application_table->item(row, 0)->text(), application_table->item(row, 1)->text()});
     }
     return v_entries;
 }

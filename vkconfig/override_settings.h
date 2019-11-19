@@ -26,6 +26,8 @@
 #include "layer_manifest.h"
 
 struct ApplicationLayer {
+    bool use_custom_paths;
+    QList<QPair<QString, LayerType>> custom_paths;
     QList<QString> enabled_layers;
     QList<QString> disabled_layers;
     QHash<QString, QHash<QString, QString>> layer_settings;
@@ -50,13 +52,16 @@ class OverrideSettings {
     void ClearAllLayers();
     void ClearAllSettings();
 
-    void AddApplication(QString application);
-    void RemoveApplication(QString application);
+    void AddOverride(QString application);
+    void RemoveOverride(QString application);
 
+    bool UseCustomPath(QString application);
+    QList<QPair<QString, LayerType>> CustomPaths(QString application) const;
     QList<QString> DisabledLayers(QString application) const;
     QList<QString> EnabledLayers(QString application) const;
     QHash<QString, QHash<QString, QString>> LayerSettings(QString application) const;
 
+    void SetCustomPaths(QString application, bool use_custom_path, const QList<QPair<QString, LayerType>> &custom_paths);
     void SetDisabledLayers(QString application, const QList<QString> &disabled_layers);
     void SetEnabledLayers(QString application, const QList<QString> &enabled_layers);
     void SetLayerSettings(QString application, const QHash<QString, QHash<QString, QString>> &settings);

@@ -33,6 +33,12 @@
 #include "layer_settings_widget.h"
 #include "override_settings.h"
 
+struct ApplicationOverride {
+    QString app_name;
+    QDir dir_path;
+    bool use_custom_paths;
+    QList<QPair<QString, LayerType>> custom_paths;
+};
 class LayerManager : public QMainWindow {
     Q_OBJECT
 
