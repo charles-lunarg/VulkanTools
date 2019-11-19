@@ -57,15 +57,15 @@ class LayerManager : public QMainWindow {
     void saveAll();
     void tabChanged(int index);
     void timerUpdate();
-    void currentApplicationChanged(const QString &text);
+    void currentApplicationChanged(int index);
 
    private:
 #if !defined(NO_HTML)
     QWidget *showHtml(QProcess *process, const QString &name, const QString &html_file);
 #endif
 
-    QSettings settings;
     OverrideSettings override_settings;
+    QSettings settings;
 
     QSplitter *outer_split;
     QSplitter *inner_split;

@@ -169,57 +169,20 @@ void OverrideSettings::ClearAllSettings() {
     }
 }
 
+ApplicationLayer OverrideSettings::GetOverrideLayer(QString application) const { return application_layers.value(application); }
+void OverrideSettings::SetOverrideLayer(QString application, ApplicationLayer layer) { application_layers[application] = layer; }
+
 void OverrideSettings::AddOverride(QString application) { application_layers.insert(application, {}); }
 void OverrideSettings::RemoveOverride(QString application) { application_layers.remove(application); }
 
-bool OverrideSettings::UseCustomPath(QString application) {
-    if (application == nullptr) return false;
-    return application_layers[application].use_custom_paths;
-}
-QList<QPair<QString, LayerType>> OverrideSettings::CustomPaths(QString application) const {
-    if (application == nullptr) return {};
-    return application_layers[application].custom_paths;
-}
+const QHash<QString, ApplicationLayer> &OverrideSettings::GetApplicationLayers() { return application_layers; }
 
-QList<QString> OverrideSettings::DisabledLayers(QString application) const {
-    if (application == nullptr) return {};
-    return application_layers[application].disabled_layers;
-}
-
-QList<QString> OverrideSettings::EnabledLayers(QString application) const {
-    if (application == nullptr) return {};
-    return application_layers[application].enabled_layers;
-}
-
-QHash<QString, QHash<QString, QString>> OverrideSettings::LayerSettings(QString application) const {
-    if (application == nullptr) return {};
-    return application_layers[application].layer_settings;
-}
-
-void OverrideSettings::SetCustomPaths(QString application, bool use_custom_path,
-                                      const QList<QPair<QString, LayerType>> &custom_paths) {
-    if (application != nullptr) {
-        application_layers[application].use_custom_paths = use_custom_path;
-        if (use_custom_path) application_layers[application].custom_paths = custom_paths;
-    }
-}
-
-void OverrideSettings::SetDisabledLayers(QString application, const QList<QString> &disabled_layers) {
-    if (application != nullptr) application_layers[application].disabled_layers = disabled_layers;
-}
-void OverrideSettings::SetEnabledLayers(QString application, const QList<QString> &enabled_layers) {
-    if (application != nullptr) application_layers[application].enabled_layers = enabled_layers;
-}
-void OverrideSettings::SetLayerSettings(QString application, const QHash<QString, QHash<QString, QString>> &settings) {
-    if (application != nullptr) application_layers[application].layer_settings = settings;
-}
-
-QJsonObject OverrideSettings::toJsonLayer(const OverrideLayer &override_layer) {
+QJsonObject OverrideSettings::toJsonLayer(const ApplicationLayer &override_layer) {
     QDateTime now = QDateTime::currentDateTime();
     now = now.addSecs(override_layer.expiration);
 
     QJsonArray json_paths;
-    for (const QPair<QString, LayerType> &pair : override_layer.paths) {
+    for (const QPair<QString, LayerType> &pair : override_layer.custom_paths) {
         json_paths.append(pair.first);
     }
     QJsonArray json_layers;
@@ -247,13 +210,13 @@ QJsonObject OverrideSettings::toJsonLayer(const OverrideLayer &override_layer) {
     layer.insert("blacklisted_layers", json_blacklist);
     layer.insert("disable_environment", disable);
 
-    if (override_layer.override_path != QDir()) {
-        layer.insert("app_key", override_layer.override_path.path());
+    if (override_layer.directory != QDir()) {
+        layer.insert("app_key", override_layer.directory.path());
     }
     return layer;
 }
 
-bool OverrideSettings::SaveLayers(QList<OverrideLayer> layers) {
+bool OverrideSettings::SaveLayers() {
     /*
     TODO
     this->enabled_layers.clear();
@@ -261,6 +224,8 @@ bool OverrideSettings::SaveLayers(QList<OverrideLayer> layers) {
         this->enabled_layers.append(manifest.name);
     }
 */
+    QList<ApplicationLayer> layers = application_layers.values();
+
     QJsonObject root;
     root.insert("file_format_version", QJsonValue(QString("1.1.2")));
     if (layers.size() == 1)
@@ -284,7 +249,12 @@ bool OverrideSettings::SaveLayers(QList<OverrideLayer> layers) {
     return false;
 }
 
-bool OverrideSettings::SaveSettings(QString app, const QHash<QString, QHash<QString, LayerValue>> &settings, QDir save_location) {
+bool OverrideSettings::SaveAllSettings() {
+    // TODO
+    return false;
+}
+
+bool OverrideSettings::SaveSetting(QString app, const QHash<QString, QHash<QString, LayerValue>> &settings, QDir save_location) {
     application_layers[app].layer_settings.clear();
     for (const QString &layer : settings.keys()) {
         QHash<QString, QString> options;

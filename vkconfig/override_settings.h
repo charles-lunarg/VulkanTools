@@ -26,19 +26,13 @@
 #include "layer_manifest.h"
 
 struct ApplicationLayer {
+    QString name;
+    QDir directory;
     bool use_custom_paths;
     QList<QPair<QString, LayerType>> custom_paths;
     QList<QString> enabled_layers;
     QList<QString> disabled_layers;
     QHash<QString, QHash<QString, QString>> layer_settings;
-};
-
-struct OverrideLayer {
-    QString override_name;
-    QDir override_path;
-    QList<QPair<QString, LayerType>> paths;
-    QList<QString> enabled_layers;
-    QList<QString> disabled_layers;
     int expiration;
 };
 
@@ -55,23 +49,18 @@ class OverrideSettings {
     void AddOverride(QString application);
     void RemoveOverride(QString application);
 
-    bool UseCustomPath(QString application);
-    QList<QPair<QString, LayerType>> CustomPaths(QString application) const;
-    QList<QString> DisabledLayers(QString application) const;
-    QList<QString> EnabledLayers(QString application) const;
-    QHash<QString, QHash<QString, QString>> LayerSettings(QString application) const;
+    ApplicationLayer GetOverrideLayer(QString application) const;
+    void SetOverrideLayer(QString application, ApplicationLayer layer);
 
-    void SetCustomPaths(QString application, bool use_custom_path, const QList<QPair<QString, LayerType>> &custom_paths);
-    void SetDisabledLayers(QString application, const QList<QString> &disabled_layers);
-    void SetEnabledLayers(QString application, const QList<QString> &enabled_layers);
-    void SetLayerSettings(QString application, const QHash<QString, QHash<QString, QString>> &settings);
+    const QHash<QString, ApplicationLayer> &GetApplicationLayers();
 
-    bool SaveLayers(QList<OverrideLayer> layers);
-    bool SaveSettings(QString app, const QHash<QString, QHash<QString, LayerValue>> &settings, QDir save_location);
+    bool SaveLayers();
+    bool SaveSetting(QString application, const QHash<QString, QHash<QString, LayerValue>> &, QDir dir);
+    bool SaveAllSettings();
 
    private:
     void addLayer(const QJsonValue &layer);
-    QJsonObject toJsonLayer(const OverrideLayer &override_layer);
+    QJsonObject toJsonLayer(const ApplicationLayer &override_layer);
 
     QString LayerFile(bool create_path) const;
     QString LayerSettingsFile(bool create_path, bool use_custom_path, QDir custom_path) const;
