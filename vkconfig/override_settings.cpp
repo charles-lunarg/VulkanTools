@@ -57,7 +57,7 @@ OverrideSettings::OverrideSettings() {
     }
 
     // Load the settings file (if found)
-    QFile settings_file(LayerSettingsFile(false));
+    QFile settings_file(LayerSettingsFile(false, global_layer_name, QDir()));
     if (settings_file.exists() && settings_file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QString data = settings_file.readAll();
         settings_file.close();
@@ -113,7 +113,7 @@ void OverrideSettings::addLayer(const QJsonValue &layer) {
     }
 }
 
-void OverrideSettings::ClearLayers() {
+void OverrideSettings::ClearLayers(QString application) {
     QString layer_path = LayerFile(false);
 #if defined(_WIN32)
     HKEY key;
@@ -131,14 +131,12 @@ void OverrideSettings::ClearLayers() {
     if (file.exists()) {
         file.remove();
     }
-    for (auto &layer : application_layers) {
-        layer.enabled_layers.clear();
-        layer.disabled_layers.clear();
-    }
+    application_layers[application].enabled_layers.clear();
+    application_layers[application].disabled_layers.clear();
 }
 
-void OverrideSettings::ClearSettings() {
-    QString settings_path = LayerSettingsFile(false);
+void OverrideSettings::ClearSettings(QString application, QDir app_path) {
+    QString settings_path = LayerSettingsFile(false, application == global_layer_name, app_path);
 #if defined(_WIN32)
     HKEY key;
     LSTATUS err = RegOpenKeyEx(HKEY_CURRENT_USER, "SOFTWARE\\Khronos\\Vulkan\\Settings", REG_OPTION_NON_VOLATILE, KEY_WRITE, &key);
@@ -156,6 +154,18 @@ void OverrideSettings::ClearSettings() {
     }
     for (auto &layer : application_layers) {
         layer.layer_settings.clear();
+    }
+}
+
+void OverrideSettings::ClearAllLayers() {
+    for (auto &app : application_layers.keys()) {
+        ClearLayers(app);
+    }
+}
+void OverrideSettings::ClearAllSettings() {
+    for (auto &app : application_layers.keys()) {
+        // TODO: impl clearing all settings. must get dir paths
+        // ClearSettings(app);
     }
 }
 
@@ -188,12 +198,12 @@ QJsonObject OverrideSettings::toJsonLayer(const OverrideLayer &override_layer) {
         json_paths.append(pair.first);
     }
     QJsonArray json_layers;
-    for (const LayerManifest &manifest : override_layer.enabled_layers) {
-        json_layers.append(manifest.name);
+    for (const auto &name : override_layer.enabled_layers) {
+        json_layers.append(name);
     }
     QJsonArray json_blacklist;
-    for (const LayerManifest &manifest : override_layer.disabled_layers) {
-        json_blacklist.append(manifest.name);
+    for (const auto &name : override_layer.disabled_layers) {
+        json_blacklist.append(name);
     }
     QJsonObject disable;
     disable.insert("DISABLE_VK_LAYER_LUNARG_override", QString("1"));
@@ -211,6 +221,10 @@ QJsonObject OverrideSettings::toJsonLayer(const OverrideLayer &override_layer) {
     layer.insert("component_layers", json_layers);
     layer.insert("blacklisted_layers", json_blacklist);
     layer.insert("disable_environment", disable);
+
+    if (override_layer.override_path != QDir()) {
+        layer.insert("app_key", override_layer.override_path.path());
+    }
     return layer;
 }
 
@@ -228,7 +242,9 @@ bool OverrideSettings::SaveLayers(QList<OverrideLayer> layers) {
         root.insert("layer", toJsonLayer(layers.at(0)));
     else {
         QJsonArray json_layers;
-        for (auto &layer : layers) json_layers.append(toJsonLayer(layer));
+        for (auto &layer : layers) {
+            json_layers.append(toJsonLayer(layer));
+        }
         root.insert("layers", json_layers);
     }
     QJsonDocument doc(root);
@@ -243,7 +259,7 @@ bool OverrideSettings::SaveLayers(QList<OverrideLayer> layers) {
     return false;
 }
 
-bool OverrideSettings::SaveSettings(QString app, const QHash<QString, QHash<QString, LayerValue>> &settings) {
+bool OverrideSettings::SaveSettings(QString app, const QHash<QString, QHash<QString, LayerValue>> &settings, QDir save_location) {
     application_layers[app].layer_settings.clear();
     for (const QString &layer : settings.keys()) {
         QHash<QString, QString> options;
@@ -254,7 +270,7 @@ bool OverrideSettings::SaveSettings(QString app, const QHash<QString, QHash<QStr
         application_layers[app].layer_settings.insert(layer, options);
     }
 
-    QFile settings_file(LayerSettingsFile(true));
+    QFile settings_file(LayerSettingsFile(true, app == global_layer_name, save_location));
     if (!settings_file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         return true;
     }
@@ -327,7 +343,11 @@ QString OverrideSettings::LayerFile(bool create_path) const {
 #endif
 }
 
-QString OverrideSettings::LayerSettingsFile(bool create_path) const {
+QString OverrideSettings::LayerSettingsFile(bool create_path, bool use_custom_path, QDir custom_path) const {
+    if (use_custom_path) {
+        return custom_path.path();
+    }
+
 #if defined(_WIN32)
     HKEY key;
     REGSAM access = KEY_READ | (create_path ? KEY_WRITE : 0);

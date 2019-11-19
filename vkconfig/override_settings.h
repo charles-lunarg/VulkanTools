@@ -32,9 +32,11 @@ struct ApplicationLayer {
 };
 
 struct OverrideLayer {
+    QString override_name;
+    QDir override_path;
     QList<QPair<QString, LayerType>> paths;
-    QList<LayerManifest> enabled_layers;
-    QList<LayerManifest> disabled_layers;
+    QList<QString> enabled_layers;
+    QList<QString> disabled_layers;
     int expiration;
 };
 
@@ -42,8 +44,11 @@ struct OverrideLayer {
 class OverrideSettings {
    public:
     OverrideSettings();
-    void ClearLayers();
-    void ClearSettings();
+
+    void ClearLayers(QString application);
+    void ClearSettings(QString application, QDir app_path);
+    void ClearAllLayers();
+    void ClearAllSettings();
 
     void AddApplication(QString application);
     void RemoveApplication(QString application);
@@ -57,14 +62,14 @@ class OverrideSettings {
     void SetLayerSettings(QString application, const QHash<QString, QHash<QString, QString>> &settings);
 
     bool SaveLayers(QList<OverrideLayer> layers);
-    bool SaveSettings(QString app, const QHash<QString, QHash<QString, LayerValue>> &settings);
+    bool SaveSettings(QString app, const QHash<QString, QHash<QString, LayerValue>> &settings, QDir save_location);
 
    private:
     void addLayer(const QJsonValue &layer);
     QJsonObject toJsonLayer(const OverrideLayer &override_layer);
 
     QString LayerFile(bool create_path) const;
-    QString LayerSettingsFile(bool create_path) const;
+    QString LayerSettingsFile(bool create_path, bool use_custom_path, QDir custom_path) const;
 
     QHash<QString, ApplicationLayer> application_layers;
 };

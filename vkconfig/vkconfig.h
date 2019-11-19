@@ -44,8 +44,10 @@ class LayerManager : public QMainWindow {
 
    private slots:
     void clear();
+    void clearAll();
     void notify(const QString &message);
     void restore();
+    void save();
     void saveAll();
     void tabChanged(int index);
     void timerUpdate();
@@ -73,8 +75,10 @@ class LayerManager : public QMainWindow {
     QColor notification_base_color;
 
     QPushButton *save_button;
+    QPushButton *save_all_button;
     QPushButton *restore_button;
     QPushButton *clear_button;
+    QPushButton *clear_all_button;
 
     QLabel *active_combo_label;
     QComboBox *active_combo_box;

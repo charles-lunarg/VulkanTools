@@ -36,9 +36,10 @@ ApplicationSettingsWidget::ApplicationSettingsWidget(QWidget *parent) : QGroupBo
     application_table->setSelectionMode(QAbstractItemView::SelectionMode::SingleSelection);
     application_table->setColumnWidth(0, 150);
     application_table->setColumnWidth(1, 200);
-
-    application_table->setHorizontalHeaderLabels({"Name", "Directory"});
+    application_table->setHorizontalHeaderLabels({"Name", "Directory to override"});
     layout->addWidget(application_table);
+
+    addGlobalLayer();
 
     connect(application_table, &QTableWidget::itemChanged, this, &ApplicationSettingsWidget::changedItem);
 
@@ -58,8 +59,6 @@ ApplicationSettingsWidget::ApplicationSettingsWidget(QWidget *parent) : QGroupBo
     layout->addLayout(button_layout);
 
     setLayout(layout);
-
-    addGlobalLayer();
 }
 
 void ApplicationSettingsWidget::addApplicationLayer() {
@@ -68,18 +67,20 @@ void ApplicationSettingsWidget::addApplicationLayer() {
         return;
     }
     QDir new_path(path);
-    for (const auto &location : entries) {
-        if (QDir(location.dir_path) == new_path) {
+    for (int row = 0; row < application_table->rowCount(); row++) {
+        if (application_table->item(row, 1)->text() == new_path.path()) {
             return;
         }
     }
+
     QString appName = new_path.dirName();
     new_path.cdUp();
     addNewLayer(appName, new_path.path());
 
-    emit applicationListChanged(applicationEntries());
+    // emit applicationListChanged(applicationEntries());
 }
-void ApplicationSettingsWidget::changedItem() { emit applicationListChanged(applicationEntries()); }
+void ApplicationSettingsWidget::changedItem() {  // emit applicationListChanged(applicationEntries());
+}
 
 void ApplicationSettingsWidget::removeApplicationLayer() {
     int row = -1;
@@ -92,14 +93,18 @@ void ApplicationSettingsWidget::removeApplicationLayer() {
         application_table->removeRow(row);
     }
 
-    emit applicationListChanged(applicationEntries());
+    // emit applicationListChanged(applicationEntries());
 }
 
 void ApplicationSettingsWidget::clearApplicationLayers() {
-    entries.clear();
-    application_table->setRowCount(1);
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Confirm clear", "Are you sure you want to clear all application overrides?",
+                                  QMessageBox::Yes | QMessageBox::No);
+    if (reply == QMessageBox::Yes) {
+        application_table->setRowCount(1);
+    }
 
-    emit applicationListChanged(applicationEntries());
+    // emit applicationListChanged(applicationEntries());
 }
 
 int ApplicationSettingsWidget::addNewLayer(QString name, QString path) {
@@ -122,8 +127,25 @@ void ApplicationSettingsWidget::addGlobalLayer() {
 
 const QStringList ApplicationSettingsWidget::application_names() const {
     QStringList names;
-    for (auto &app : entries) {
-        names.push_back(app.app_name);
+    for (int row = 0; row < application_table->rowCount(); row++) {
+        names.push_back(application_table->item(row, 0)->text());
     }
     return names;
+}
+
+QVector<ApplicationEntry> ApplicationSettingsWidget::applicationEntries() const {
+    QVector<ApplicationEntry> v_entries;
+    for (int row = 0; row < application_table->rowCount(); row++) {
+        v_entries.push_back({application_table->item(row, 0)->text(), application_table->item(row, 1)->text()});
+    }
+    return v_entries;
+}
+
+QDir ApplicationSettingsWidget::get_application_dir(QString app_name) const {
+    for (int row = 0; row < application_table->rowCount(); row++) {
+        if (application_table->item(row, 0)->text() == app_name) {
+            return application_table->item(row, 1)->text();
+        }
+    }
+    return QDir();
 }

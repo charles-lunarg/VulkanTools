@@ -42,11 +42,12 @@ class ApplicationSettingsWidget : public QGroupBox {
    public:
     ApplicationSettingsWidget(QWidget *parent = NULL);
 
-    const QVector<ApplicationEntry> &applicationEntries() const { return entries; }
-
+    QVector<ApplicationEntry> applicationEntries() const;
     const QStringList application_names() const;
 
     QAbstractItemModel *get_string_list_model() const { return application_table->model(); }
+
+    QDir get_application_dir(QString app_name) const;
 
    signals:
     void applicationListChanged(const QVector<ApplicationEntry> &path_list);
@@ -61,11 +62,7 @@ class ApplicationSettingsWidget : public QGroupBox {
     int addNewLayer(QString name, QString path);
     void addGlobalLayer();
 
-    QIcon layer_icon;
-
-    // QListWidget *application_list;
     QTableWidget *application_table;
-    QVector<ApplicationEntry> entries;
 
     QPushButton *add_button;
     QPushButton *remove_button;

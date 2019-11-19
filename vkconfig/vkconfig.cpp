@@ -106,14 +106,20 @@ LayerManager::LayerManager() {
 
     QHBoxLayout *button_layout = new QHBoxLayout();
     save_button = new QPushButton(tr("Save"));
-    save_button->setToolTip(tr("Save layers and settings"));
+    save_button->setToolTip(tr("Save current layers and settings"));
     button_layout->addWidget(save_button, 0);
+    save_all_button = new QPushButton(tr("Save All"));
+    save_all_button->setToolTip(tr("Save all layers and settings"));
+    button_layout->addWidget(save_all_button, 0);
     restore_button = new QPushButton(tr("Restore"));
     restore_button->setToolTip(tr("Restore to last saved state"));
     button_layout->addWidget(restore_button, 0);
     clear_button = new QPushButton(tr("Clear"));
-    clear_button->setToolTip(tr("Clear saved layers and settings"));
+    clear_button->setToolTip(tr("Clear current saved layers and settings"));
     button_layout->addWidget(clear_button, 0);
+    clear_all_button = new QPushButton(tr("Clear All"));
+    clear_all_button->setToolTip(tr("Clear all saved layers and settings"));
+    button_layout->addWidget(clear_all_button, 0);
 
     active_combo_label = new QLabel();
     active_combo_label->setText("Active Override Layer:");
@@ -131,6 +137,8 @@ LayerManager::LayerManager() {
     clear_button->setEnabled(false);
     active_combo_label->setEnabled(false);
     active_combo_box->setEnabled(false);
+    save_all_button->setEnabled(false);
+    clear_all_button->setEnabled(false);
 #endif
 
     button_layout->addSpacing(24);
@@ -143,9 +151,11 @@ LayerManager::LayerManager() {
     QPushButton *exit_button = new QPushButton(tr("Exit"));
     button_layout->addWidget(exit_button, 0);
 
-    connect(save_button, &QPushButton::clicked, this, &LayerManager::saveAll);
+    connect(save_button, &QPushButton::clicked, this, &LayerManager::save);
+    connect(save_all_button, &QPushButton::clicked, this, &LayerManager::saveAll);
     connect(restore_button, &QPushButton::clicked, this, &LayerManager::restore);
     connect(clear_button, &QPushButton::clicked, this, &LayerManager::clear);
+    connect(clear_all_button, &QPushButton::clicked, this, &LayerManager::clearAll);
     connect(exit_button, &QPushButton::clicked, this, &LayerManager::close);
     connect(active_combo_box, QOverload<const QString &>::of(&QComboBox::currentIndexChanged), this,
             &LayerManager::currentApplicationChanged);
@@ -209,8 +219,16 @@ void LayerManager::closeEvent(QCloseEvent *event) {
 }
 
 void LayerManager::clear() {
-    override_settings.ClearLayers();
-    override_settings.ClearSettings();
+    override_settings.ClearLayers(active_application);
+    override_settings.ClearSettings(active_application, applications->get_application_dir(active_application));
+    active_layers->clearEnabledLayers();
+    active_layers->clearDisabledLayers();
+    notify("Cleared current layers and settings");
+}
+
+void LayerManager::clearAll() {
+    override_settings.ClearAllLayers();
+    override_settings.ClearAllSettings();
     active_layers->clearEnabledLayers();
     active_layers->clearDisabledLayers();
     notify("Cleared all layers and settings");
@@ -231,19 +249,54 @@ void LayerManager::restore() {
 
     notify("Restored layers and settings to last saved state");
 }
+void LayerManager::save() {
+    QList<QPair<QString, LayerType>> paths;
+    if (locations->useCustomLayerPaths()) {
+        paths = locations->customLayerPaths();
+    }
 
+    QList<OverrideLayer> override_layers;
+    for (auto &layer : applications->applicationEntries()) {
+        override_layers.push_back({layer.app_name, applications->get_application_dir(layer.app_name), paths,
+                                   override_settings.EnabledLayers(layer.app_name),
+                                   override_settings.DisabledLayers(layer.app_name), active_layers->expiration()});
+    }
+    override_settings.SaveLayers(override_layers);
+    // const QList<LayerManifest> &enabled_layers = active_layers->enabledLayers();
+    // const QList<LayerManifest> &disabled_layers = active_layers->disabledLayers();
+    // override_settings.SaveLayers({{active_application, applications->get_application_dir(active_application), paths,
+    // enabled_layers,
+    //                                disabled_layers, active_layers->expiration()}});
+
+    const QHash<QString, QHash<QString, LayerValue>> &settings = layer_settings->settings();
+    override_settings.SaveSettings(active_application, settings, applications->get_application_dir(active_application));
+
+    notify("Saved current layers and settings");
+}
 void LayerManager::saveAll() {
     // The override settings are saved here, but the regular settings are only saved when we close
     QList<QPair<QString, LayerType>> paths;
     if (locations->useCustomLayerPaths()) {
         paths = locations->customLayerPaths();
     }
-    const QList<LayerManifest> &enabled_layers = active_layers->enabledLayers();
-    const QList<LayerManifest> &disabled_layers = active_layers->disabledLayers();
-    override_settings.SaveLayers({{paths, enabled_layers, disabled_layers, active_layers->expiration()}});
+
+    QList<OverrideLayer> override_layers;
+    for (auto &layer : applications->applicationEntries()) {
+        const QList<QString> &enabled_layers = override_settings.EnabledLayers(layer.app_name);
+        const QList<QString> &disabled_layers = override_settings.DisabledLayers(layer.app_name);
+        override_layers.push_back({layer.app_name, applications->get_application_dir(layer.app_name), paths, enabled_layers,
+                                   disabled_layers, active_layers->expiration()});
+    }
+    override_settings.SaveLayers(override_layers);
+
+    // const QList<LayerManifest> &enabled_layers = active_layers->enabledLayers();
+    // const QList<LayerManifest> &disabled_layers = active_layers->disabledLayers();
+    // override_settings.SaveLayers({{active_application, applications->get_application_dir(active_application), paths,
+    // enabled_layers,
+    //                                disabled_layers, active_layers->expiration()}});
 
     const QHash<QString, QHash<QString, LayerValue>> &settings = layer_settings->settings();
-    override_settings.SaveSettings(active_application, settings);
+    override_settings.SaveSettings(active_application, settings, applications->get_application_dir(active_application));
 
     notify("Saved all layers and settings");
 }
@@ -255,8 +308,10 @@ void LayerManager::tabChanged(int index) {
     bool enabled = true;
 #endif
     save_button->setEnabled(enabled);
+    save_all_button->setEnabled(enabled);
     restore_button->setEnabled(enabled);
     clear_button->setEnabled(enabled);
+    clear_all_button->setEnabled(enabled);
     active_combo_label->setEnabled(enabled);
     active_combo_box->setEnabled(enabled);
 }
@@ -274,6 +329,7 @@ void LayerManager::timerUpdate() {
 }
 
 void LayerManager::currentApplicationChanged(const QString &text) {
+    bool custom_paths = false;
     override_settings.SetEnabledLayers(active_application, active_layers->getEnabledLayers());
     override_settings.SetDisabledLayers(active_application, active_layers->getDisabledLayers());
     override_settings.SetLayerSettings(active_application, layer_settings->getSettingsValues());
@@ -282,6 +338,7 @@ void LayerManager::currentApplicationChanged(const QString &text) {
     active_layers->setEnabledLayers(override_settings.EnabledLayers(active_application));
     active_layers->setDisabledLayers(override_settings.DisabledLayers(active_application));
     layer_settings->setSettingsValues(override_settings.LayerSettings(active_application));
+    locations->setUseCustomLayerPaths(custom_paths);
 }
 
 #if !defined(NO_HTML)

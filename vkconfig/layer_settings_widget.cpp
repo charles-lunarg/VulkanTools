@@ -59,10 +59,14 @@ void LayerSettingsWidget::setSettingsValues(const QHash<QString, QHash<QString, 
 
 QHash<QString, QHash<QString, QString>> LayerSettingsWidget::getSettingsValues() {
     QHash<QString, QHash<QString, QString>> values;
-    for (const QString &layer : values.keys()) {
-        for (const QString &setting : values[layer].keys()) {
-            values[layer][setting] = settings_widgets[layer][setting]->getValue();
+
+    for (const QString &layer : layer_settings.keys()) {
+        QHash<QString, QString> options;
+        for (const QString &option : layer_settings[layer].keys()) {
+            QStringList values = layer_settings[layer][option].values.values();
+            options.insert(option, values.join(","));
         }
+        values.insert(layer, options);
     }
     return values;
 }
