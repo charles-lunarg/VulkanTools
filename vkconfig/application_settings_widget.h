@@ -42,11 +42,11 @@ class ApplicationSettingsWidget : public QGroupBox {
     void AddApplication(QString app_name, QDir dir_path);
 
     QList<ApplicationEntry> applicationEntries() const;
-    const QStringList application_names() const;
+    const QStringList applicationNames() const;
 
-    QAbstractItemModel *get_string_list_model() const { return application_table->model(); }
+    QAbstractItemModel *getListModel() const { return application_table->model(); }
 
-    QDir get_application_dir(QString app_name) const;
+    QDir getApplicationDirectory(QString app_name) const;
 
    signals:
     void applicationListChanged(const QList<ApplicationEntry> &path_list);

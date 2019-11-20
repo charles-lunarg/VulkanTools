@@ -36,6 +36,15 @@ struct ApplicationLayer {
     int expiration;
 };
 
+struct OverrideLayer {
+    QString override_name;
+    QDir override_path;
+    QList<QPair<QString, LayerType>> paths;
+    QList<QString> enabled_layers;
+    QList<QString> disabled_layers;
+    int expiration;
+};
+
 // Add a Paths() method?
 class OverrideSettings {
    public:
@@ -46,17 +55,18 @@ class OverrideSettings {
     void ClearAllLayers();
     void ClearAllSettings();
 
-    void AddOverride(QString application);
+    void AddOverride(QString application, ApplicationLayer layer);
     void RemoveOverride(QString application);
 
     ApplicationLayer GetOverrideLayer(QString application) const;
     void SetOverrideLayer(QString application, ApplicationLayer layer);
 
-    const QHash<QString, ApplicationLayer> &GetApplicationLayers();
-
     bool SaveLayers();
     bool SaveSetting(QString application, const QHash<QString, QHash<QString, LayerValue>> &, QDir dir);
+
     bool SaveAllSettings();
+
+    const QHash<QString, ApplicationLayer> &GetApplicationLayers();
 
    private:
     void addLayer(const QJsonValue &layer);

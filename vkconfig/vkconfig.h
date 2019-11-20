@@ -58,11 +58,14 @@ class LayerManager : public QMainWindow {
     void tabChanged(int index);
     void timerUpdate();
     void currentApplicationChanged(int index);
+    void applicationListChanged();
 
    private:
 #if !defined(NO_HTML)
     QWidget *showHtml(QProcess *process, const QString &name, const QString &html_file);
 #endif
+    void StoreActiveApplication(QString application);
+    void RetrieveActiveApplication(QString application);
 
     OverrideSettings override_settings;
     QSettings settings;

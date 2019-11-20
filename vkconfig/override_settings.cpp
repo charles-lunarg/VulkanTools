@@ -131,6 +131,8 @@ void OverrideSettings::ClearLayers(QString application) {
     if (file.exists()) {
         file.remove();
     }
+    auto layer = application_layers.find(application);
+    if (layer == application_layers.end()) return;
     application_layers[application].enabled_layers.clear();
     application_layers[application].disabled_layers.clear();
 }
@@ -169,11 +171,14 @@ void OverrideSettings::ClearAllSettings() {
     }
 }
 
-ApplicationLayer OverrideSettings::GetOverrideLayer(QString application) const { return application_layers.value(application); }
-void OverrideSettings::SetOverrideLayer(QString application, ApplicationLayer layer) { application_layers[application] = layer; }
-
-void OverrideSettings::AddOverride(QString application) { application_layers.insert(application, {}); }
+void OverrideSettings::AddOverride(QString application, ApplicationLayer layer) { application_layers.insert(application, layer); }
 void OverrideSettings::RemoveOverride(QString application) { application_layers.remove(application); }
+
+ApplicationLayer OverrideSettings::GetOverrideLayer(QString application) const { return application_layers.value(application); }
+void OverrideSettings::SetOverrideLayer(QString application, ApplicationLayer layer) {
+    auto override_layer = application_layers.find(application);
+    if (override_layer != application_layers.end()) application_layers.insert(application, layer);
+}
 
 const QHash<QString, ApplicationLayer> &OverrideSettings::GetApplicationLayers() { return application_layers; }
 
@@ -255,6 +260,9 @@ bool OverrideSettings::SaveAllSettings() {
 }
 
 bool OverrideSettings::SaveSetting(QString app, const QHash<QString, QHash<QString, LayerValue>> &settings, QDir save_location) {
+    auto layer = application_layers.find(app);
+    if (layer == application_layers.end()) return true;
+
     application_layers[app].layer_settings.clear();
     for (const QString &layer : settings.keys()) {
         QHash<QString, QString> options;

@@ -125,7 +125,7 @@ void ApplicationSettingsWidget::addGlobalLayer() {
     application_table->item(row, 1)->setFlags(application_table->item(row, 1)->flags() ^ Qt::ItemIsEditable);
 }
 
-const QStringList ApplicationSettingsWidget::application_names() const {
+const QStringList ApplicationSettingsWidget::applicationNames() const {
     QStringList names;
     for (int row = 0; row < application_table->rowCount(); row++) {
         names.push_back(application_table->item(row, 0)->text());
@@ -142,7 +142,7 @@ QList<ApplicationEntry> ApplicationSettingsWidget::applicationEntries() const {
     return v_entries;
 }
 
-QDir ApplicationSettingsWidget::get_application_dir(QString app_name) const {
+QDir ApplicationSettingsWidget::getApplicationDirectory(QString app_name) const {
     for (int row = 0; row < application_table->rowCount(); row++) {
         if (application_table->item(row, 0)->text() == app_name) {
             return application_table->item(row, 1)->text();
