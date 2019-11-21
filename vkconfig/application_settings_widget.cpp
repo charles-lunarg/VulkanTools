@@ -76,11 +76,26 @@ void ApplicationSettingsWidget::addApplicationLayer() {
 
     QString appName = new_path.dirName();
     new_path.cdUp();
-    addNewLayer(appName, new_path.path());
+    addNewLayer(appName, new_path);
 
-    emit applicationListChanged(applicationEntries());
+    emit applicationListChanged(GetApplicationEntries());
+    emit applicationAdded({appName, new_path});
 }
-void ApplicationSettingsWidget::changedItem() { emit applicationListChanged(applicationEntries()); }
+void ApplicationSettingsWidget::changedItem(QTableWidgetItem *item) {
+    int row = item->row();
+    int col = item->column();
+    // check if row is complete, otherwise skip
+    if (application_table->item(row, 0) == nullptr || application_table->item(row, 1) == nullptr) return;
+
+    ApplicationEntry entry = {application_table->item(row, 0)->text(), application_table->item(row, 1)->text()};
+
+    emit applicationListChanged(GetApplicationEntries());
+
+    if (col == 0)
+        emit entryNameChanged(item->text());
+    else if (col == 1)
+        emit entryDirChanged(entry.app_name, item->text());
+}
 
 void ApplicationSettingsWidget::removeApplicationLayer() {
     int row = -1;
@@ -90,10 +105,12 @@ void ApplicationSettingsWidget::removeApplicationLayer() {
     }
     // no row selected or if the global layer is selected
     if (row > 0) {
+        ApplicationEntry entry = GetRow(row);
         application_table->removeRow(row);
-    }
 
-    emit applicationListChanged(applicationEntries());
+        emit applicationListChanged(GetApplicationEntries());
+        emit applicationRemoved(entry);
+    }
 }
 
 void ApplicationSettingsWidget::clearApplicationLayers() {
@@ -104,7 +121,8 @@ void ApplicationSettingsWidget::clearApplicationLayers() {
         application_table->setRowCount(1);
     }
 
-    emit applicationListChanged(applicationEntries());
+    emit applicationListChanged(GetApplicationEntries());
+    emit applicationsCleared();
 }
 
 int ApplicationSettingsWidget::addNewLayer(QString name, QDir path) {
@@ -125,15 +143,7 @@ void ApplicationSettingsWidget::addGlobalLayer() {
     application_table->item(row, 1)->setFlags(application_table->item(row, 1)->flags() ^ Qt::ItemIsEditable);
 }
 
-const QStringList ApplicationSettingsWidget::applicationNames() const {
-    QStringList names;
-    for (int row = 0; row < application_table->rowCount(); row++) {
-        names.push_back(application_table->item(row, 0)->text());
-    }
-    return names;
-}
-
-QList<ApplicationEntry> ApplicationSettingsWidget::applicationEntries() const {
+QList<ApplicationEntry> ApplicationSettingsWidget::GetApplicationEntries() const {
     QList<ApplicationEntry> v_entries;
     for (int row = 0; row < application_table->rowCount(); row++) {
         if (application_table->item(row, 0) != nullptr && application_table->item(row, 1) != nullptr)
@@ -149,4 +159,7 @@ QDir ApplicationSettingsWidget::getApplicationDirectory(QString app_name) const 
         }
     }
     return QDir();
+}
+ApplicationEntry ApplicationSettingsWidget::GetRow(int row) {
+    return {application_table->item(row, 0)->text(), application_table->item(row, 1)->text()};
 }

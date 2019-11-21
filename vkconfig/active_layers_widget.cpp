@@ -342,7 +342,7 @@ void ActiveLayersWidget::clearDisabledLayers() {
         disabled_layers.removeFirst();
     }
 
-    // emit
+    emit enabledLayersUpdated(enabled_layers, unset_layers);
 }
 
 void ActiveLayersWidget::clearEnabledLayers() {
@@ -414,7 +414,7 @@ void ActiveLayersWidget::disableSelectedExplicitLayer() {
         unset_layers.removeAt(row);
     }
 
-    // emit
+    emit enabledLayersUpdated(enabled_layers, unset_layers);
 }
 
 void ActiveLayersWidget::disableSelectedImplicitLayer() {
@@ -432,7 +432,7 @@ void ActiveLayersWidget::disableSelectedImplicitLayer() {
         unset_layers.removeAt(row + unset_offset);
     }
 
-    // emit
+    emit enabledLayersUpdated(enabled_layers, unset_layers);
 }
 
 void ActiveLayersWidget::enableSelectedExplicitLayer() {
@@ -518,6 +518,8 @@ void ActiveLayersWidget::refreshAvailableLayers() {
     qSort(explicit_layers);
     qSort(implicit_layers);
 
+    // SOMETHING FISHY GOING ON HERE
+
     enabled_layer_list->clear();
     enabled_layers.clear();
     unset_layers = explicit_layers + implicit_layers;
@@ -572,7 +574,7 @@ void ActiveLayersWidget::removeDisabledLayer() {
         disabled_layers.removeAt(row);
     }
 
-    // emit
+    emit enabledLayersUpdated(enabled_layers, unset_layers);
 }
 
 void ActiveLayersWidget::removeEnabledLayer() {

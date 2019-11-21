@@ -41,8 +41,7 @@ class ApplicationSettingsWidget : public QGroupBox {
 
     void AddApplication(QString app_name, QDir dir_path);
 
-    QList<ApplicationEntry> applicationEntries() const;
-    const QStringList applicationNames() const;
+    QList<ApplicationEntry> GetApplicationEntries() const;
 
     QAbstractItemModel *getListModel() const { return application_table->model(); }
 
@@ -51,15 +50,23 @@ class ApplicationSettingsWidget : public QGroupBox {
    signals:
     void applicationListChanged(const QList<ApplicationEntry> &path_list);
 
+    void applicationAdded(ApplicationEntry entry);
+    void applicationRemoved(ApplicationEntry entry);
+    void applicationsCleared();
+    void entryNameChanged(QString new_name);
+    void entryDirChanged(QString name, QDir new_dir);
+
    private slots:
     void addApplicationLayer();
     void removeApplicationLayer();
     void clearApplicationLayers();
-    void changedItem();
+    void changedItem(QTableWidgetItem *item);
 
    private:
     int addNewLayer(QString name, QDir path);
     void addGlobalLayer();
+
+    ApplicationEntry GetRow(int row);
 
     QTableWidget *application_table;
 

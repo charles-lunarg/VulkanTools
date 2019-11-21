@@ -113,7 +113,7 @@ void OverrideSettings::addLayer(const QJsonValue &layer) {
     }
 }
 
-void OverrideSettings::ClearLayers(QString application) {
+void OverrideSettings::ClearLayer(QString application) {
     QString layer_path = LayerFile(false);
 #if defined(_WIN32)
     HKEY key;
@@ -161,7 +161,7 @@ void OverrideSettings::ClearSettings(QString application, QDir app_path) {
 
 void OverrideSettings::ClearAllLayers() {
     for (auto &app : application_layers.keys()) {
-        ClearLayers(app);
+        ClearLayer(app);
     }
 }
 void OverrideSettings::ClearAllSettings() {
@@ -172,7 +172,9 @@ void OverrideSettings::ClearAllSettings() {
 }
 
 void OverrideSettings::AddOverride(QString application, ApplicationLayer layer) { application_layers.insert(application, layer); }
-void OverrideSettings::RemoveOverride(QString application) { application_layers.remove(application); }
+void OverrideSettings::RemoveOverride(QString application) {
+    if (application != global_layer_name) application_layers.remove(application);
+}
 
 ApplicationLayer OverrideSettings::GetOverrideLayer(QString application) const { return application_layers.value(application); }
 void OverrideSettings::SetOverrideLayer(QString application, ApplicationLayer layer) {
@@ -181,6 +183,7 @@ void OverrideSettings::SetOverrideLayer(QString application, ApplicationLayer la
 }
 
 const QHash<QString, ApplicationLayer> &OverrideSettings::GetApplicationLayers() { return application_layers; }
+const QList<QString> OverrideSettings::GetApplicationNames() { return application_layers.keys(); }
 
 QJsonObject OverrideSettings::toJsonLayer(const ApplicationLayer &override_layer) {
     QDateTime now = QDateTime::currentDateTime();
