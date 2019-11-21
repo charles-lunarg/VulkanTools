@@ -518,8 +518,6 @@ void ActiveLayersWidget::refreshAvailableLayers() {
     qSort(explicit_layers);
     qSort(implicit_layers);
 
-    // SOMETHING FISHY GOING ON HERE
-
     enabled_layer_list->clear();
     enabled_layers.clear();
     unset_layers = explicit_layers + implicit_layers;

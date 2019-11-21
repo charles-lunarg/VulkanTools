@@ -25,6 +25,8 @@
 #include <QRegularExpression>
 #include <QTextStream>
 
+#include <QDebug>
+
 // This is only needed to keep the manifest version up to date. Other than that, it shouldn't be needed
 #include <vulkan/vulkan.h>
 
@@ -171,15 +173,32 @@ void OverrideSettings::ClearAllSettings() {
     }
 }
 
-void OverrideSettings::AddOverride(QString application, ApplicationLayer layer) { application_layers.insert(application, layer); }
+void OverrideSettings::AddOverride(QString application, ApplicationLayer layer) {
+    if (application_layers.contains(application)) {
+        qDebug() << "adding already existing override layer " << application;
+        qDebug() << "";
+    }
+
+    application_layers.insert(application, layer);
+}
 void OverrideSettings::RemoveOverride(QString application) {
     if (application != global_layer_name) application_layers.remove(application);
 }
 
-ApplicationLayer OverrideSettings::GetOverrideLayer(QString application) const { return application_layers.value(application); }
+ApplicationLayer OverrideSettings::GetOverrideLayer(QString application) const {
+    if (!application_layers.contains(application)) {
+        qDebug() << "geting non existant override layer " << application;
+        qDebug() << "";
+    }
+    return application_layers.value(application);
+}
 void OverrideSettings::SetOverrideLayer(QString application, ApplicationLayer layer) {
-    auto override_layer = application_layers.find(application);
-    if (override_layer != application_layers.end()) application_layers.insert(application, layer);
+    if (application_layers.contains(application))
+        application_layers.insert(application, layer);
+    else {
+        qDebug() << "trying to set override layer for " << application << " which doesn't exist";
+        qDebug() << "";
+    }
 }
 
 const QHash<QString, ApplicationLayer> &OverrideSettings::GetApplicationLayers() { return application_layers; }

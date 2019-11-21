@@ -26,6 +26,8 @@
 
 #include <QDialogButtonBox>
 
+#include <QDebug>
+
 ApplicationSettingsWidget::ApplicationSettingsWidget(QWidget *parent) : QGroupBox(tr("Application Override"), parent) {
     setTitle("Application Override Settings");
 
@@ -60,7 +62,10 @@ ApplicationSettingsWidget::ApplicationSettingsWidget(QWidget *parent) : QGroupBo
 
     setLayout(layout);
 }
-void ApplicationSettingsWidget::AddApplication(QString app_name, QDir dir_path) { addNewLayer(app_name, dir_path); }
+void ApplicationSettingsWidget::AddApplication(QString app_name, QDir dir_path) {
+    emit applicationAdded({app_name, dir_path});
+    addNewLayer(app_name, dir_path);
+}
 
 void ApplicationSettingsWidget::addApplicationLayer() {
     QString path = QFileDialog::getOpenFileName(this, tr("Application Directory"), QDir::homePath());
@@ -76,10 +81,10 @@ void ApplicationSettingsWidget::addApplicationLayer() {
 
     QString appName = new_path.dirName();
     new_path.cdUp();
-    addNewLayer(appName, new_path);
 
     emit applicationListChanged(GetApplicationEntries());
     emit applicationAdded({appName, new_path});
+    addNewLayer(appName, new_path);
 }
 void ApplicationSettingsWidget::changedItem(QTableWidgetItem *item) {
     int row = item->row();
@@ -128,12 +133,10 @@ void ApplicationSettingsWidget::clearApplicationLayers() {
 int ApplicationSettingsWidget::addNewLayer(QString name, QDir path) {
     int new_row = application_table->rowCount();
     application_table->insertRow(new_row);
-    application_table->setItem(new_row, 0, new QTableWidgetItem());
-    application_table->setItem(new_row, 1, new QTableWidgetItem());
-    auto item_name = application_table->item(new_row, 0);
-    auto item_dir = application_table->item(new_row, 1);
-    item_name->setText(name);
-    item_dir->setText(path.path());
+    application_table->setItem(new_row, 0, new QTableWidgetItem(name));
+    // application_table->item(new_row, 0)->setText(name);
+    application_table->setItem(new_row, 1, new QTableWidgetItem(path.path()));
+    // application_table->item(new_row, 1)->setText(path.path());
     return new_row;
 }
 

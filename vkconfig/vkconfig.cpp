@@ -198,12 +198,12 @@ LayerManager::LayerManager() {
     }
 
     for (auto &app : application_overrides) {
+        ApplicationLayer layer{app.app_name, app.dir_path, app.use_custom_paths, app.custom_paths};
+        override_settings.AddOverride(app.app_name, layer);
         if (app.app_name == global_layer_name) {
         } else {
             applications->AddApplication(app.app_name, app.dir_path);
         }
-        ApplicationLayer layer{app.app_name, app.dir_path, app.use_custom_paths, app.custom_paths};
-        override_settings.AddOverride(app.app_name, layer);
 
         if (app.app_name == stored_active_application) {
             active_application = stored_active_application;
@@ -367,15 +367,16 @@ void LayerManager::SetCurrentValues(QString application) {
 
 void LayerManager::currentApplicationChanged(int index) {
     if (index < 0) return;
-    QString text = active_combo_box->currentText();
-    StoreCurrentValues(text);
-    this->active_application = text;
+    qDebug() << "changed from " << active_application << " to " << active_combo_box->currentText();
+    StoreCurrentValues(active_application);
+    this->active_application = active_combo_box->currentText();
     if (active_application != "") {
         SetCurrentValues(active_application);
     }
 }
 
 void LayerManager::applicationAdded(ApplicationEntry entry) {
+    qDebug() << "adding application " << entry.app_name;
     override_settings.AddOverride(entry.app_name, {entry.app_name, entry.dir_path});
 }
 
