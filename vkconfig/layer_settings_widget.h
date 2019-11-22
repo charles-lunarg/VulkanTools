@@ -144,10 +144,10 @@ class LayerSettingsWidget : public QGroupBox {
 
    public:
     LayerSettingsWidget(QWidget *parent = NULL);
-    void setSettingsValues(const QHash<QString, QHash<QString, QString>> &values);
-    QHash<QString, QHash<QString, QString>> getSettingsValues();
+    void setSettingsValues(const QHash<QString, QHash<QString, LayerValue>> &values);
+    static QHash<QString, QHash<QString, QString>> getSettingsValues(const QHash<QString, QHash<QString, LayerValue>> &in_values);
 
-    inline QHash<QString, QHash<QString, LayerValue>> settings() { return layer_settings; }
+    QHash<QString, QHash<QString, LayerValue>> settings() { return layer_settings; }
 
    signals:
     void settingsChanged(const QHash<QString, QHash<QString, LayerValue>> &settings);

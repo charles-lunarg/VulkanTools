@@ -209,6 +209,13 @@ LayerManager::LayerManager() {
             active_application = stored_active_application;
         }
     }
+    int current_active_application_index = -1;
+    for (int i = 0; i < active_combo_box->count(); i++) {
+        if (active_combo_box->itemText(i) == active_application) {
+            current_active_application_index = i;
+        }
+    }
+    if (current_active_application_index >= 0) active_combo_box->setCurrentIndex(current_active_application_index);
     auto layer = override_settings.GetOverrideLayer(active_application);
 
     locations->setUseCustomLayerPaths(layer.use_custom_paths);
@@ -223,8 +230,6 @@ LayerManager::LayerManager() {
     restoreGeometry(settings.value("WindowGeometry").toByteArray());
 
     currentApplicationChanged(active_combo_box->currentIndex());
-
-    SetCurrentValues(active_application);
 }
 
 void LayerManager::closeEvent(QCloseEvent *event) {
@@ -291,6 +296,8 @@ void LayerManager::notify(const QString &message) {
 void LayerManager::restore() {
     auto layer = override_settings.GetOverrideLayer(active_application);
 
+    locations->setUseCustomLayerPaths(layer.use_custom_paths);
+    locations->setCustomLayerPaths(layer.custom_paths);
     active_layers->setEnabledLayers(layer.enabled_layers);
     active_layers->setDisabledLayers(layer.disabled_layers);
     layer_settings->setSettingsValues(layer.layer_settings);
@@ -350,7 +357,7 @@ void LayerManager::StoreCurrentValues(QString app_name_to_store) {
                            locations->customLayerPaths(),
                            active_layers->getEnabledLayers(),
                            active_layers->getDisabledLayers(),
-                           layer_settings->getSettingsValues()};
+                           layer_settings->settings()};
 
     override_settings.SetOverrideLayer(app_name_to_store, layer);
 }
@@ -367,7 +374,7 @@ void LayerManager::SetCurrentValues(QString application) {
 
 void LayerManager::currentApplicationChanged(int index) {
     if (index < 0) return;
-    qDebug() << "changed from " << active_application << " to " << active_combo_box->currentText();
+    // qDebug() << "changed from " << active_application << " to " << active_combo_box->currentText();
     StoreCurrentValues(active_application);
     this->active_application = active_combo_box->currentText();
     if (active_application != "") {

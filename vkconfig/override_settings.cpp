@@ -59,6 +59,7 @@ OverrideSettings::OverrideSettings() {
     }
 
     // Load the settings file (if found)
+    QHash<QString, QHash<QString, QSet<QString>>> layer_settings;
     QFile settings_file(LayerSettingsFile(false, global_layer_name, QDir()));
     if (settings_file.exists() && settings_file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QString data = settings_file.readAll();
@@ -87,7 +88,18 @@ OverrideSettings::OverrideSettings() {
             layer_sections.prepend("VK");
             QString layer_name = layer_sections.join("_");
 
-            application_layers[global_layer_name].layer_settings[layer_name][setting_name] = setting_value;
+            QSet<QString> set_settings_values;
+            auto list = setting_value.split(",");
+            for (auto &string : list) set_settings_values.insert(string);
+
+            layer_settings[layer_name][setting_name] = set_settings_values;
+        }
+    }
+    // set it as the global layer settings
+    for (const QString &layer : layer_settings.keys()) {
+        for (const QString &setting : layer_settings[layer].keys()) {
+            QSet<QString> values = layer_settings[layer][setting];
+            application_layers[global_layer_name].layer_settings[layer][setting].values = values;
         }
     }
 }
@@ -281,19 +293,35 @@ bool OverrideSettings::SaveAllSettings() {
     return false;
 }
 
+QHash<QString, QHash<QString, QString>> getSettingsValues(const QHash<QString, QHash<QString, LayerValue>> &in_values) {
+    QHash<QString, QHash<QString, QString>> values;
+
+    for (const auto &layer : in_values.keys()) {
+        QHash<QString, QString> options;
+        for (const auto &option : in_values[layer].keys()) {
+            QStringList values = in_values[layer][option].values.values();
+            options.insert(option, values.join(","));
+        }
+        values.insert(layer, options);
+    }
+    return values;
+}
+
 bool OverrideSettings::SaveSetting(QString app, const QHash<QString, QHash<QString, LayerValue>> &settings, QDir save_location) {
     auto layer = application_layers.find(app);
     if (layer == application_layers.end()) return true;
 
-    application_layers[app].layer_settings.clear();
-    for (const QString &layer : settings.keys()) {
-        QHash<QString, QString> options;
-        for (const QString &option : settings[layer].keys()) {
-            QStringList values = settings[layer][option].values.values();
-            options.insert(option, values.join(","));
-        }
-        application_layers[app].layer_settings.insert(layer, options);
-    }
+    // application_layers[app].layer_settings.clear();
+    // for (const QString &layer : settings.keys()) {
+    //     QHash<QString, QString> options;
+    //     for (const QString &option : settings[layer].keys()) {
+    //         QStringList values = settings[layer][option].values.values();
+    //         options.insert(option, values.join(","));
+    //     }
+    //     application_layers[app].layer_settings.insert(layer, options);
+    // }
+
+    auto layer_settings_strings = getSettingsValues(settings);
 
     QFile settings_file(LayerSettingsFile(true, app == global_layer_name, save_location));
     if (!settings_file.open(QIODevice::WriteOnly | QIODevice::Text)) {

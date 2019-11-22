@@ -32,7 +32,7 @@ struct ApplicationLayer {
     QList<QPair<QString, LayerType>> custom_paths;
     QList<QString> enabled_layers;
     QList<QString> disabled_layers;
-    QHash<QString, QHash<QString, QString>> layer_settings;
+    QHash<QString, QHash<QString, LayerValue>> layer_settings;
     int expiration;
 };
 

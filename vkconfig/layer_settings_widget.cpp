@@ -45,30 +45,19 @@ LayerSettingsWidget::LayerSettingsWidget(QWidget *parent) : QGroupBox(tr("Layer 
     setMinimumHeight(400);
 }
 
-void LayerSettingsWidget::setSettingsValues(const QHash<QString, QHash<QString, QString>> &values) {
-    for (const QString &layer : values.keys()) {
-        for (const QString &setting : values[layer].keys()) {
-            QString value = values[layer][setting];
-            if (settings_widgets.contains(layer) && settings_widgets[layer].contains(setting)) {
-                settings_widgets[layer][setting]->setValue(value);
-            }
-        }
-    }
+void LayerSettingsWidget::setSettingsValues(const QHash<QString, QHash<QString, LayerValue>> &values) {
+    layer_settings = values;
+    updateLayers();
     emit settingsChanged(layer_settings);
-}
-
-QHash<QString, QHash<QString, QString>> LayerSettingsWidget::getSettingsValues() {
-    QHash<QString, QHash<QString, QString>> values;
-
-    for (const auto &layer : layer_settings.keys()) {
-        QHash<QString, QString> options;
-        for (const auto &option : layer_settings[layer].keys()) {
-            QStringList values = layer_settings[layer][option].values.values();
-            options.insert(option, values.join(","));
-        }
-        values.insert(layer, options);
-    }
-    return values;
+    return;
+    // for (const QString &layer : values.keys()) {
+    //     for (const QString &setting : values[layer].keys()) {
+    //         QString value = values[layer][setting];
+    //         if (settings_widgets.contains(layer) && settings_widgets[layer].contains(setting)) {
+    //             settings_widgets[layer][setting]->setValue(value);
+    //         }
+    //     }
+    // }
 }
 
 void LayerSettingsWidget::updateAvailableLayers(const QList<LayerManifest> &enabled, const QList<LayerManifest> &disabled) {
@@ -112,15 +101,19 @@ void LayerSettingsWidget::updateLayers() {
 
     // Add any new layers
     for (const LayerManifest &manifest : layers) {
-        // Skip if the layer is already present
+        // Update the value and skip if the layer is already present
         bool layer_found = false;
+        QString layer_name;
         for (const QString &layer : layer_settings.keys()) {
             if (manifest.name == layer) {
                 layer_found = true;
+                layer_name = layer;
                 break;
             }
         }
         if (layer_found) {
+            layer_settings[layer_name].values();
+
             continue;
         }
 
