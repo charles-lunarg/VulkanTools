@@ -206,3 +206,7 @@ foreach(layer ${TOOL_LAYERS})
 
     install(TARGETS ${layer} DESTINATION ${LAYER_INSTALL_DIR})
 endforeach()
+
+add_executable(output_manager_test api_dump_output_manager.cpp)
+target_compile_options(output_manager_test PUBLIC -fsanitize=address)
+target_link_options(output_manager_test PUBLIC -fsanitize=address)
