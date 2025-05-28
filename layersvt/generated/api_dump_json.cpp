@@ -42292,7 +42292,7 @@ void dump_json_vkCreateRenderPass2(ApiDumpInstance& dump_inst, VkResult result, 
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdBeginRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo*      pRenderPassBegin, const VkSubpassBeginInfo*      pSubpassBeginInfo)
+void dump_json_vkCmdBeginRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo* pRenderPassBegin, const VkSubpassBeginInfo* pSubpassBeginInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -42310,7 +42310,7 @@ void dump_json_vkCmdBeginRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdNextSubpass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo*      pSubpassBeginInfo, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_json_vkCmdNextSubpass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo* pSubpassBeginInfo, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -42328,7 +42328,7 @@ void dump_json_vkCmdNextSubpass2(ApiDumpInstance& dump_inst, VkCommandBuffer com
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdEndRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_json_vkCmdEndRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -42609,7 +42609,7 @@ void dump_json_vkGetPrivateData(ApiDumpInstance& dump_inst, VkDevice device, VkO
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdSetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, const VkDependencyInfo*                             pDependencyInfo)
+void dump_json_vkCmdSetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -42627,7 +42627,7 @@ void dump_json_vkCmdSetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer       
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdResetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, VkPipelineStageFlags2               stageMask)
+void dump_json_vkCmdResetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, VkPipelineStageFlags2 stageMask)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -42645,7 +42645,7 @@ void dump_json_vkCmdResetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer     
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdWaitEvents2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, uint32_t                                            eventCount, const VkEvent*                     pEvents, const VkDependencyInfo*            pDependencyInfos)
+void dump_json_vkCmdWaitEvents2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t eventCount, const VkEvent* pEvents, const VkDependencyInfo* pDependencyInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -42665,7 +42665,7 @@ void dump_json_vkCmdWaitEvents2(ApiDumpInstance& dump_inst, VkCommandBuffer     
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdPipelineBarrier2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkDependencyInfo*                             pDependencyInfo)
+void dump_json_vkCmdPipelineBarrier2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -42681,7 +42681,7 @@ void dump_json_vkCmdPipelineBarrier2(ApiDumpInstance& dump_inst, VkCommandBuffer
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdWriteTimestamp2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkPipelineStageFlags2               stage, VkQueryPool                                         queryPool, uint32_t                                            query)
+void dump_json_vkCmdWriteTimestamp2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineStageFlags2 stage, VkQueryPool queryPool, uint32_t query)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -42701,7 +42701,7 @@ void dump_json_vkCmdWriteTimestamp2(ApiDumpInstance& dump_inst, VkCommandBuffer 
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkQueueSubmit2(ApiDumpInstance& dump_inst, VkResult result, VkQueue                           queue, uint32_t                            submitCount, const VkSubmitInfo2*              pSubmits, VkFence           fence)
+void dump_json_vkQueueSubmit2(ApiDumpInstance& dump_inst, VkResult result, VkQueue queue, uint32_t submitCount, const VkSubmitInfo2* pSubmits, VkFence fence)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -42822,7 +42822,7 @@ void dump_json_vkCmdResolveImage2(ApiDumpInstance& dump_inst, VkCommandBuffer co
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdBeginRendering(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkRenderingInfo*                              pRenderingInfo)
+void dump_json_vkCmdBeginRendering(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderingInfo* pRenderingInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -42838,7 +42838,7 @@ void dump_json_vkCmdBeginRendering(ApiDumpInstance& dump_inst, VkCommandBuffer  
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdEndRendering(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer)
+void dump_json_vkCmdEndRendering(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -43388,7 +43388,7 @@ void dump_json_vkCmdSetRenderingInputAttachmentIndices(ApiDumpInstance& dump_ins
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdBindDescriptorSets2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo*   pBindDescriptorSetsInfo)
+void dump_json_vkCmdBindDescriptorSets2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo* pBindDescriptorSetsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -43404,7 +43404,7 @@ void dump_json_vkCmdBindDescriptorSets2(ApiDumpInstance& dump_inst, VkCommandBuf
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdPushConstants2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo*        pPushConstantsInfo)
+void dump_json_vkCmdPushConstants2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo* pPushConstantsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -43420,7 +43420,7 @@ void dump_json_vkCmdPushConstants2(ApiDumpInstance& dump_inst, VkCommandBuffer c
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdPushDescriptorSet2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo*    pPushDescriptorSetInfo)
+void dump_json_vkCmdPushDescriptorSet2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo* pPushDescriptorSetInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -43452,7 +43452,7 @@ void dump_json_vkCmdPushDescriptorSetWithTemplate2(ApiDumpInstance& dump_inst, V
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCopyMemoryToImage(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyMemoryToImageInfo*    pCopyMemoryToImageInfo)
+void dump_json_vkCopyMemoryToImage(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyMemoryToImageInfo* pCopyMemoryToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -43473,7 +43473,7 @@ void dump_json_vkCopyMemoryToImage(ApiDumpInstance& dump_inst, VkResult result, 
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCopyImageToMemory(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToMemoryInfo*    pCopyImageToMemoryInfo)
+void dump_json_vkCopyImageToMemory(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToMemoryInfo* pCopyImageToMemoryInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -43494,7 +43494,7 @@ void dump_json_vkCopyImageToMemory(ApiDumpInstance& dump_inst, VkResult result, 
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCopyImageToImage(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToImageInfo*    pCopyImageToImageInfo)
+void dump_json_vkCopyImageToImage(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToImageInfo* pCopyImageToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -43515,7 +43515,7 @@ void dump_json_vkCopyImageToImage(ApiDumpInstance& dump_inst, VkResult result, V
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkTransitionImageLayout(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo*    pTransitions)
+void dump_json_vkTransitionImageLayout(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo* pTransitions)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -45115,7 +45115,7 @@ void dump_json_vkGetShaderInfoAMD(ApiDumpInstance& dump_inst, VkResult result, V
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdBeginRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkRenderingInfo*                              pRenderingInfo)
+void dump_json_vkCmdBeginRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderingInfo* pRenderingInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -45131,7 +45131,7 @@ void dump_json_vkCmdBeginRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffe
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdEndRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer)
+void dump_json_vkCmdEndRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -46219,7 +46219,7 @@ void dump_json_vkCreateRenderPass2KHR(ApiDumpInstance& dump_inst, VkResult resul
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdBeginRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo*      pRenderPassBegin, const VkSubpassBeginInfo*      pSubpassBeginInfo)
+void dump_json_vkCmdBeginRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo* pRenderPassBegin, const VkSubpassBeginInfo* pSubpassBeginInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -46237,7 +46237,7 @@ void dump_json_vkCmdBeginRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuf
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdNextSubpass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo*      pSubpassBeginInfo, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_json_vkCmdNextSubpass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo* pSubpassBeginInfo, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -46255,7 +46255,7 @@ void dump_json_vkCmdNextSubpass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer 
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdEndRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_json_vkCmdEndRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -46926,7 +46926,7 @@ void dump_json_vkGetMemoryAndroidHardwareBufferANDROID(ApiDumpInstance& dump_ins
 }
 #endif // VK_USE_PLATFORM_ANDROID_KHR
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_vkCreateExecutionGraphPipelinesAMDX(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                        device, VkPipelineCache                 pipelineCache, uint32_t                                        createInfoCount, const VkExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, const VkAllocationCallbacks*    pAllocator, VkPipeline*               pPipelines)
+void dump_json_vkCreateExecutionGraphPipelinesAMDX(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, VkPipelineCache pipelineCache, uint32_t createInfoCount, const VkExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, const VkAllocationCallbacks* pAllocator, VkPipeline* pPipelines)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -46957,7 +46957,7 @@ void dump_json_vkCreateExecutionGraphPipelinesAMDX(ApiDumpInstance& dump_inst, V
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_vkGetExecutionGraphPipelineScratchSizeAMDX(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                        device, VkPipeline                                      executionGraph, VkExecutionGraphPipelineScratchSizeAMDX*        pSizeInfo)
+void dump_json_vkGetExecutionGraphPipelineScratchSizeAMDX(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, VkPipeline executionGraph, VkExecutionGraphPipelineScratchSizeAMDX* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -46982,7 +46982,7 @@ void dump_json_vkGetExecutionGraphPipelineScratchSizeAMDX(ApiDumpInstance& dump_
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_vkGetExecutionGraphPipelineNodeIndexAMDX(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                        device, VkPipeline                                      executionGraph, const VkPipelineShaderStageNodeCreateInfoAMDX*  pNodeInfo, uint32_t*                                       pNodeIndex)
+void dump_json_vkGetExecutionGraphPipelineNodeIndexAMDX(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, VkPipeline executionGraph, const VkPipelineShaderStageNodeCreateInfoAMDX* pNodeInfo, uint32_t* pNodeIndex)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -47009,7 +47009,7 @@ void dump_json_vkGetExecutionGraphPipelineNodeIndexAMDX(ApiDumpInstance& dump_in
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_vkCmdInitializeGraphScratchMemoryAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkPipeline                                      executionGraph, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize)
+void dump_json_vkCmdInitializeGraphScratchMemoryAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipeline executionGraph, VkDeviceAddress scratch, VkDeviceSize scratchSize)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -47031,7 +47031,7 @@ void dump_json_vkCmdInitializeGraphScratchMemoryAMDX(ApiDumpInstance& dump_inst,
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_vkCmdDispatchGraphAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize, const VkDispatchGraphCountInfoAMDX*             pCountInfo)
+void dump_json_vkCmdDispatchGraphAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkDeviceAddress scratch, VkDeviceSize scratchSize, const VkDispatchGraphCountInfoAMDX* pCountInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -47053,7 +47053,7 @@ void dump_json_vkCmdDispatchGraphAMDX(ApiDumpInstance& dump_inst, VkCommandBuffe
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_vkCmdDispatchGraphIndirectAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize, const VkDispatchGraphCountInfoAMDX*             pCountInfo)
+void dump_json_vkCmdDispatchGraphIndirectAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkDeviceAddress scratch, VkDeviceSize scratchSize, const VkDispatchGraphCountInfoAMDX* pCountInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -47075,7 +47075,7 @@ void dump_json_vkCmdDispatchGraphIndirectAMDX(ApiDumpInstance& dump_inst, VkComm
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_vkCmdDispatchGraphIndirectCountAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize, VkDeviceAddress                                 countInfo)
+void dump_json_vkCmdDispatchGraphIndirectCountAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkDeviceAddress scratch, VkDeviceSize scratchSize, VkDeviceAddress countInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -47186,7 +47186,7 @@ void dump_json_vkGetImageSparseMemoryRequirements2KHR(ApiDumpInstance& dump_inst
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCreateAccelerationStructureKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                           device, const VkAccelerationStructureCreateInfoKHR*        pCreateInfo, const VkAllocationCallbacks*       pAllocator, VkAccelerationStructureKHR*                        pAccelerationStructure)
+void dump_json_vkCreateAccelerationStructureKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkAccelerationStructureCreateInfoKHR* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkAccelerationStructureKHR* pAccelerationStructure)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -47229,7 +47229,7 @@ void dump_json_vkDestroyAccelerationStructureKHR(ApiDumpInstance& dump_inst, VkD
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                                    commandBuffer, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
+void dump_json_vkCmdBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -47248,7 +47248,7 @@ void dump_json_vkCmdBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, V
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdBuildAccelerationStructuresIndirectKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                  commandBuffer, uint32_t                                           infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkDeviceAddress*             pIndirectDeviceAddresses, const uint32_t*                    pIndirectStrides, const uint32_t* const*             ppMaxPrimitiveCounts)
+void dump_json_vkCmdBuildAccelerationStructuresIndirectKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkDeviceAddress* pIndirectDeviceAddresses, const uint32_t* pIndirectStrides, const uint32_t* const* ppMaxPrimitiveCounts)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -47271,7 +47271,7 @@ void dump_json_vkCmdBuildAccelerationStructuresIndirectKHR(ApiDumpInstance& dump
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                           device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
+void dump_json_vkBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -47366,7 +47366,7 @@ void dump_json_vkCopyMemoryToAccelerationStructureKHR(ApiDumpInstance& dump_inst
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkWriteAccelerationStructuresPropertiesKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t accelerationStructureCount, const VkAccelerationStructureKHR* pAccelerationStructures, VkQueryType  queryType, size_t       dataSize, void* pData, size_t stride)
+void dump_json_vkWriteAccelerationStructuresPropertiesKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t accelerationStructureCount, const VkAccelerationStructureKHR* pAccelerationStructures, VkQueryType queryType, size_t dataSize, void* pData, size_t stride)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -47508,7 +47508,7 @@ void dump_json_vkGetDeviceAccelerationStructureCompatibilityKHR(ApiDumpInstance&
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkGetAccelerationStructureBuildSizesKHR(ApiDumpInstance& dump_inst, VkDevice                                            device, VkAccelerationStructureBuildTypeKHR                 buildType, const VkAccelerationStructureBuildGeometryInfoKHR*  pBuildInfo, const uint32_t*  pMaxPrimitiveCounts, VkAccelerationStructureBuildSizesInfoKHR*           pSizeInfo)
+void dump_json_vkGetAccelerationStructureBuildSizesKHR(ApiDumpInstance& dump_inst, VkDevice device, VkAccelerationStructureBuildTypeKHR buildType, const VkAccelerationStructureBuildGeometryInfoKHR* pBuildInfo, const uint32_t* pMaxPrimitiveCounts, VkAccelerationStructureBuildSizesInfoKHR* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -48245,7 +48245,7 @@ void dump_json_vkCmdWriteBufferMarkerAMD(ApiDumpInstance& dump_inst, VkCommandBu
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdWriteBufferMarker2AMD(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkPipelineStageFlags2               stage, VkBuffer                                            dstBuffer, VkDeviceSize                                        dstOffset, uint32_t                                            marker)
+void dump_json_vkCmdWriteBufferMarker2AMD(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineStageFlags2 stage, VkBuffer dstBuffer, VkDeviceSize dstOffset, uint32_t marker)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -48873,7 +48873,7 @@ void dump_json_vkGetPhysicalDeviceFragmentShadingRatesKHR(ApiDumpInstance& dump_
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdSetFragmentShadingRateKHR(ApiDumpInstance& dump_inst, VkCommandBuffer           commandBuffer, const VkExtent2D*                           pFragmentSize, const VkFragmentShadingRateCombinerOpKHR    combinerOps[2])
+void dump_json_vkCmdSetFragmentShadingRateKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkExtent2D* pFragmentSize, const VkFragmentShadingRateCombinerOpKHR combinerOps[2])
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -49580,7 +49580,7 @@ void dump_json_vkDeferredOperationJoinKHR(ApiDumpInstance& dump_inst, VkResult r
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkGetPipelineExecutablePropertiesKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice                        device, const VkPipelineInfoKHR*        pPipelineInfo, uint32_t* pExecutableCount, VkPipelineExecutablePropertiesKHR* pProperties)
+void dump_json_vkGetPipelineExecutablePropertiesKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkPipelineInfoKHR* pPipelineInfo, uint32_t* pExecutableCount, VkPipelineExecutablePropertiesKHR* pProperties)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -49605,7 +49605,7 @@ void dump_json_vkGetPipelineExecutablePropertiesKHR(ApiDumpInstance& dump_inst, 
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkGetPipelineExecutableStatisticsKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice                        device, const VkPipelineExecutableInfoKHR*  pExecutableInfo, uint32_t* pStatisticCount, VkPipelineExecutableStatisticKHR* pStatistics)
+void dump_json_vkGetPipelineExecutableStatisticsKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkPipelineExecutableInfoKHR* pExecutableInfo, uint32_t* pStatisticCount, VkPipelineExecutableStatisticKHR* pStatistics)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -49630,7 +49630,7 @@ void dump_json_vkGetPipelineExecutableStatisticsKHR(ApiDumpInstance& dump_inst, 
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkGetPipelineExecutableInternalRepresentationsKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice                        device, const VkPipelineExecutableInfoKHR*  pExecutableInfo, uint32_t* pInternalRepresentationCount, VkPipelineExecutableInternalRepresentationKHR* pInternalRepresentations)
+void dump_json_vkGetPipelineExecutableInternalRepresentationsKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkPipelineExecutableInfoKHR* pExecutableInfo, uint32_t* pInternalRepresentationCount, VkPipelineExecutableInternalRepresentationKHR* pInternalRepresentations)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -49655,7 +49655,7 @@ void dump_json_vkGetPipelineExecutableInternalRepresentationsKHR(ApiDumpInstance
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCopyMemoryToImageEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyMemoryToImageInfo*    pCopyMemoryToImageInfo)
+void dump_json_vkCopyMemoryToImageEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyMemoryToImageInfo* pCopyMemoryToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -49676,7 +49676,7 @@ void dump_json_vkCopyMemoryToImageEXT(ApiDumpInstance& dump_inst, VkResult resul
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCopyImageToMemoryEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToMemoryInfo*    pCopyImageToMemoryInfo)
+void dump_json_vkCopyImageToMemoryEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToMemoryInfo* pCopyImageToMemoryInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -49697,7 +49697,7 @@ void dump_json_vkCopyImageToMemoryEXT(ApiDumpInstance& dump_inst, VkResult resul
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCopyImageToImageEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToImageInfo*    pCopyImageToImageInfo)
+void dump_json_vkCopyImageToImageEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToImageInfo* pCopyImageToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -49718,7 +49718,7 @@ void dump_json_vkCopyImageToImageEXT(ApiDumpInstance& dump_inst, VkResult result
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkTransitionImageLayoutEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo*    pTransitions)
+void dump_json_vkTransitionImageLayoutEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo* pTransitions)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -49941,7 +49941,7 @@ void dump_json_vkDestroyIndirectCommandsLayoutNV(ApiDumpInstance& dump_inst, VkD
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdSetDepthBias2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDepthBiasInfoEXT*         pDepthBiasInfo)
+void dump_json_vkCmdSetDepthBias2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDepthBiasInfoEXT* pDepthBiasInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -50366,7 +50366,7 @@ void dump_json_vkExportMetalObjectsEXT(ApiDumpInstance& dump_inst, VkDevice devi
     if (settings.shouldFlush()) settings.stream().flush();
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
-void dump_json_vkCmdSetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, const VkDependencyInfo*                             pDependencyInfo)
+void dump_json_vkCmdSetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -50384,7 +50384,7 @@ void dump_json_vkCmdSetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer    
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdResetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, VkPipelineStageFlags2               stageMask)
+void dump_json_vkCmdResetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, VkPipelineStageFlags2 stageMask)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -50402,7 +50402,7 @@ void dump_json_vkCmdResetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer  
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdWaitEvents2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, uint32_t                                            eventCount, const VkEvent*                     pEvents, const VkDependencyInfo*            pDependencyInfos)
+void dump_json_vkCmdWaitEvents2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t eventCount, const VkEvent* pEvents, const VkDependencyInfo* pDependencyInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -50422,7 +50422,7 @@ void dump_json_vkCmdWaitEvents2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer  
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdPipelineBarrier2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkDependencyInfo*                             pDependencyInfo)
+void dump_json_vkCmdPipelineBarrier2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -50438,7 +50438,7 @@ void dump_json_vkCmdPipelineBarrier2KHR(ApiDumpInstance& dump_inst, VkCommandBuf
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdWriteTimestamp2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkPipelineStageFlags2               stage, VkQueryPool                                         queryPool, uint32_t                                            query)
+void dump_json_vkCmdWriteTimestamp2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineStageFlags2 stage, VkQueryPool queryPool, uint32_t query)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -50458,7 +50458,7 @@ void dump_json_vkCmdWriteTimestamp2KHR(ApiDumpInstance& dump_inst, VkCommandBuff
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkQueueSubmit2KHR(ApiDumpInstance& dump_inst, VkResult result, VkQueue                           queue, uint32_t                            submitCount, const VkSubmitInfo2*              pSubmits, VkFence           fence)
+void dump_json_vkQueueSubmit2KHR(ApiDumpInstance& dump_inst, VkResult result, VkQueue queue, uint32_t submitCount, const VkSubmitInfo2* pSubmits, VkFence fence)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -50720,7 +50720,7 @@ void dump_json_vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT(ApiDumpI
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdSetFragmentShadingRateEnumNV(ApiDumpInstance& dump_inst, VkCommandBuffer           commandBuffer, VkFragmentShadingRateNV                     shadingRate, const VkFragmentShadingRateCombinerOpKHR    combinerOps[2])
+void dump_json_vkCmdSetFragmentShadingRateEnumNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkFragmentShadingRateNV shadingRate, const VkFragmentShadingRateCombinerOpKHR combinerOps[2])
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -51655,7 +51655,7 @@ void dump_json_vkGetPhysicalDeviceScreenPresentationSupportQNX(ApiDumpInstance& 
     if (settings.shouldFlush()) settings.stream().flush();
 }
 #endif // VK_USE_PLATFORM_SCREEN_QNX
-void dump_json_vkCmdSetColorWriteEnableEXT(ApiDumpInstance& dump_inst, VkCommandBuffer       commandBuffer, uint32_t                                attachmentCount, const VkBool32*   pColorWriteEnables)
+void dump_json_vkCmdSetColorWriteEnableEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t attachmentCount, const VkBool32* pColorWriteEnables)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -51739,7 +51739,7 @@ void dump_json_vkCmdDrawMultiIndexedEXT(ApiDumpInstance& dump_inst, VkCommandBuf
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCreateMicromapEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                           device, const VkMicromapCreateInfoEXT*        pCreateInfo, const VkAllocationCallbacks*       pAllocator, VkMicromapEXT*                        pMicromap)
+void dump_json_vkCreateMicromapEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkMicromapCreateInfoEXT* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkMicromapEXT* pMicromap)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -51782,7 +51782,7 @@ void dump_json_vkDestroyMicromapEXT(ApiDumpInstance& dump_inst, VkDevice device,
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkCommandBuffer                                    commandBuffer, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
+void dump_json_vkCmdBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -51800,7 +51800,7 @@ void dump_json_vkCmdBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkCommandBuffe
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                           device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
+void dump_json_vkBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -51894,7 +51894,7 @@ void dump_json_vkCopyMemoryToMicromapEXT(ApiDumpInstance& dump_inst, VkResult re
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkWriteMicromapsPropertiesEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t micromapCount, const VkMicromapEXT* pMicromaps, VkQueryType  queryType, size_t       dataSize, void* pData, size_t stride)
+void dump_json_vkWriteMicromapsPropertiesEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t micromapCount, const VkMicromapEXT* pMicromaps, VkQueryType queryType, size_t dataSize, void* pData, size_t stride)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -52015,7 +52015,7 @@ void dump_json_vkGetDeviceMicromapCompatibilityEXT(ApiDumpInstance& dump_inst, V
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkGetMicromapBuildSizesEXT(ApiDumpInstance& dump_inst, VkDevice                                            device, VkAccelerationStructureBuildTypeKHR                 buildType, const VkMicromapBuildInfoEXT*  pBuildInfo, VkMicromapBuildSizesInfoEXT*           pSizeInfo)
+void dump_json_vkGetMicromapBuildSizesEXT(ApiDumpInstance& dump_inst, VkDevice device, VkAccelerationStructureBuildTypeKHR buildType, const VkMicromapBuildInfoEXT* pBuildInfo, VkMicromapBuildSizesInfoEXT* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -52073,7 +52073,7 @@ void dump_json_vkCmdDrawClusterIndirectHUAWEI(ApiDumpInstance& dump_inst, VkComm
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkSetDeviceMemoryPriorityEXT(ApiDumpInstance& dump_inst, VkDevice       device, VkDeviceMemory memory, float          priority)
+void dump_json_vkSetDeviceMemoryPriorityEXT(ApiDumpInstance& dump_inst, VkDevice device, VkDeviceMemory memory, float priority)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -52285,7 +52285,7 @@ void dump_json_vkGetPipelineIndirectMemoryRequirementsNV(ApiDumpInstance& dump_i
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdUpdatePipelineIndirectBufferNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineBindPoint           pipelineBindPoint, VkPipeline                    pipeline)
+void dump_json_vkCmdUpdatePipelineIndirectBufferNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineBindPoint pipelineBindPoint, VkPipeline pipeline)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -52356,7 +52356,7 @@ void dump_json_vkCmdSetPolygonModeEXT(ApiDumpInstance& dump_inst, VkCommandBuffe
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdSetRasterizationSamplesEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits  rasterizationSamples)
+void dump_json_vkCmdSetRasterizationSamplesEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits rasterizationSamples)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -52372,7 +52372,7 @@ void dump_json_vkCmdSetRasterizationSamplesEXT(ApiDumpInstance& dump_inst, VkCom
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdSetSampleMaskEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits  samples, const VkSampleMask*    pSampleMask)
+void dump_json_vkCmdSetSampleMaskEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits samples, const VkSampleMask* pSampleMask)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -53601,7 +53601,7 @@ void dump_json_vkCmdSetLineStippleKHR(ApiDumpInstance& dump_inst, VkCommandBuffe
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdBindDescriptorSets2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo*   pBindDescriptorSetsInfo)
+void dump_json_vkCmdBindDescriptorSets2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo* pBindDescriptorSetsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -53617,7 +53617,7 @@ void dump_json_vkCmdBindDescriptorSets2KHR(ApiDumpInstance& dump_inst, VkCommand
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdPushConstants2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo*        pPushConstantsInfo)
+void dump_json_vkCmdPushConstants2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo* pPushConstantsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -53633,7 +53633,7 @@ void dump_json_vkCmdPushConstants2KHR(ApiDumpInstance& dump_inst, VkCommandBuffe
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdPushDescriptorSet2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo*    pPushDescriptorSetInfo)
+void dump_json_vkCmdPushDescriptorSet2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo* pPushDescriptorSetInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -53792,7 +53792,7 @@ void dump_json_vkGetClusterAccelerationStructureBuildSizesNV(ApiDumpInstance& du
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdBuildClusterAccelerationStructureIndirectNV(ApiDumpInstance& dump_inst, VkCommandBuffer                     commandBuffer, const VkClusterAccelerationStructureCommandsInfoNV*  pCommandInfos)
+void dump_json_vkCmdBuildClusterAccelerationStructureIndirectNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkClusterAccelerationStructureCommandsInfoNV* pCommandInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -53808,7 +53808,7 @@ void dump_json_vkCmdBuildClusterAccelerationStructureIndirectNV(ApiDumpInstance&
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkGetPartitionedAccelerationStructuresBuildSizesNV(ApiDumpInstance& dump_inst, VkDevice device, const VkPartitionedAccelerationStructureInstancesInputNV* pInfo, VkAccelerationStructureBuildSizesInfoKHR*                  pSizeInfo)
+void dump_json_vkGetPartitionedAccelerationStructuresBuildSizesNV(ApiDumpInstance& dump_inst, VkDevice device, const VkPartitionedAccelerationStructureInstancesInputNV* pInfo, VkAccelerationStructureBuildSizesInfoKHR* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -53826,7 +53826,7 @@ void dump_json_vkGetPartitionedAccelerationStructuresBuildSizesNV(ApiDumpInstanc
     settings.stream() << settings.indentation(2) << "}";
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_vkCmdBuildPartitionedAccelerationStructuresNV(ApiDumpInstance& dump_inst, VkCommandBuffer                     commandBuffer, const VkBuildPartitionedAccelerationStructureInfoNV*  pBuildInfo)
+void dump_json_vkCmdBuildPartitionedAccelerationStructuresNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBuildPartitionedAccelerationStructureInfoNV* pBuildInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
@@ -54097,7 +54097,7 @@ void dump_json_vkGetMemoryMetalHandlePropertiesEXT(ApiDumpInstance& dump_inst, V
     if (settings.shouldFlush()) settings.stream().flush();
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
-void dump_json_vkCmdEndRendering2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkRenderingEndInfoEXT*        pRenderingEndInfo)
+void dump_json_vkCmdEndRendering2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderingEndInfoEXT* pRenderingEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     // Display parameter values
