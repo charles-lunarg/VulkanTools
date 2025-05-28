@@ -43112,7 +43112,7 @@ void dump_json_params_vkCreateRenderPass2(ApiDumpInstance& dump_inst, VkDevice d
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdBeginRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo*      pRenderPassBegin, const VkSubpassBeginInfo*      pSubpassBeginInfo)
+void dump_json_params_vkCmdBeginRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo* pRenderPassBegin, const VkSubpassBeginInfo* pSubpassBeginInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -43129,7 +43129,7 @@ void dump_json_params_vkCmdBeginRenderPass2(ApiDumpInstance& dump_inst, VkComman
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdNextSubpass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo*      pSubpassBeginInfo, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_json_params_vkCmdNextSubpass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo* pSubpassBeginInfo, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -43146,7 +43146,7 @@ void dump_json_params_vkCmdNextSubpass2(ApiDumpInstance& dump_inst, VkCommandBuf
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdEndRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_json_params_vkCmdEndRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -43369,7 +43369,7 @@ void dump_json_params_vkGetPrivateData(ApiDumpInstance& dump_inst, VkDevice devi
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdSetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, const VkDependencyInfo*                             pDependencyInfo)
+void dump_json_params_vkCmdSetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -43386,7 +43386,7 @@ void dump_json_params_vkCmdSetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdResetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, VkPipelineStageFlags2               stageMask)
+void dump_json_params_vkCmdResetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, VkPipelineStageFlags2 stageMask)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -43403,7 +43403,7 @@ void dump_json_params_vkCmdResetEvent2(ApiDumpInstance& dump_inst, VkCommandBuff
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdWaitEvents2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, uint32_t                                            eventCount, const VkEvent*                     pEvents, const VkDependencyInfo*            pDependencyInfos)
+void dump_json_params_vkCmdWaitEvents2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t eventCount, const VkEvent* pEvents, const VkDependencyInfo* pDependencyInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -43422,7 +43422,7 @@ void dump_json_params_vkCmdWaitEvents2(ApiDumpInstance& dump_inst, VkCommandBuff
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdPipelineBarrier2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkDependencyInfo*                             pDependencyInfo)
+void dump_json_params_vkCmdPipelineBarrier2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -43437,7 +43437,7 @@ void dump_json_params_vkCmdPipelineBarrier2(ApiDumpInstance& dump_inst, VkComman
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdWriteTimestamp2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkPipelineStageFlags2               stage, VkQueryPool                                         queryPool, uint32_t                                            query)
+void dump_json_params_vkCmdWriteTimestamp2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineStageFlags2 stage, VkQueryPool queryPool, uint32_t query)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -43456,7 +43456,7 @@ void dump_json_params_vkCmdWriteTimestamp2(ApiDumpInstance& dump_inst, VkCommand
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkQueueSubmit2(ApiDumpInstance& dump_inst, VkQueue                           queue, uint32_t                            submitCount, const VkSubmitInfo2*              pSubmits, VkFence           fence)
+void dump_json_params_vkQueueSubmit2(ApiDumpInstance& dump_inst, VkQueue queue, uint32_t submitCount, const VkSubmitInfo2* pSubmits, VkFence fence)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -43565,7 +43565,7 @@ void dump_json_params_vkCmdResolveImage2(ApiDumpInstance& dump_inst, VkCommandBu
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdBeginRendering(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkRenderingInfo*                              pRenderingInfo)
+void dump_json_params_vkCmdBeginRendering(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderingInfo* pRenderingInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -43580,7 +43580,7 @@ void dump_json_params_vkCmdBeginRendering(ApiDumpInstance& dump_inst, VkCommandB
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdEndRendering(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer)
+void dump_json_params_vkCmdEndRendering(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44090,7 +44090,7 @@ void dump_json_params_vkCmdSetRenderingInputAttachmentIndices(ApiDumpInstance& d
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdBindDescriptorSets2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo*   pBindDescriptorSetsInfo)
+void dump_json_params_vkCmdBindDescriptorSets2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo* pBindDescriptorSetsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44105,7 +44105,7 @@ void dump_json_params_vkCmdBindDescriptorSets2(ApiDumpInstance& dump_inst, VkCom
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdPushConstants2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo*        pPushConstantsInfo)
+void dump_json_params_vkCmdPushConstants2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo* pPushConstantsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44120,7 +44120,7 @@ void dump_json_params_vkCmdPushConstants2(ApiDumpInstance& dump_inst, VkCommandB
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdPushDescriptorSet2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo*    pPushDescriptorSetInfo)
+void dump_json_params_vkCmdPushDescriptorSet2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo* pPushDescriptorSetInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44150,7 +44150,7 @@ void dump_json_params_vkCmdPushDescriptorSetWithTemplate2(ApiDumpInstance& dump_
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCopyMemoryToImage(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyMemoryToImageInfo*    pCopyMemoryToImageInfo)
+void dump_json_params_vkCopyMemoryToImage(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyMemoryToImageInfo* pCopyMemoryToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44165,7 +44165,7 @@ void dump_json_params_vkCopyMemoryToImage(ApiDumpInstance& dump_inst, VkDevice d
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCopyImageToMemory(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyImageToMemoryInfo*    pCopyImageToMemoryInfo)
+void dump_json_params_vkCopyImageToMemory(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyImageToMemoryInfo* pCopyImageToMemoryInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44180,7 +44180,7 @@ void dump_json_params_vkCopyImageToMemory(ApiDumpInstance& dump_inst, VkDevice d
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCopyImageToImage(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyImageToImageInfo*    pCopyImageToImageInfo)
+void dump_json_params_vkCopyImageToImage(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyImageToImageInfo* pCopyImageToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44195,7 +44195,7 @@ void dump_json_params_vkCopyImageToImage(ApiDumpInstance& dump_inst, VkDevice de
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkTransitionImageLayout(ApiDumpInstance& dump_inst, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo*    pTransitions)
+void dump_json_params_vkTransitionImageLayout(ApiDumpInstance& dump_inst, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo* pTransitions)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -45495,7 +45495,7 @@ void dump_json_params_vkGetShaderInfoAMD(ApiDumpInstance& dump_inst, VkDevice de
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdBeginRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkRenderingInfo*                              pRenderingInfo)
+void dump_json_params_vkCmdBeginRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderingInfo* pRenderingInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -45510,7 +45510,7 @@ void dump_json_params_vkCmdBeginRenderingKHR(ApiDumpInstance& dump_inst, VkComma
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdEndRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer)
+void dump_json_params_vkCmdEndRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -46418,7 +46418,7 @@ void dump_json_params_vkCreateRenderPass2KHR(ApiDumpInstance& dump_inst, VkDevic
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdBeginRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo*      pRenderPassBegin, const VkSubpassBeginInfo*      pSubpassBeginInfo)
+void dump_json_params_vkCmdBeginRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo* pRenderPassBegin, const VkSubpassBeginInfo* pSubpassBeginInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -46435,7 +46435,7 @@ void dump_json_params_vkCmdBeginRenderPass2KHR(ApiDumpInstance& dump_inst, VkCom
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdNextSubpass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo*      pSubpassBeginInfo, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_json_params_vkCmdNextSubpass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo* pSubpassBeginInfo, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -46452,7 +46452,7 @@ void dump_json_params_vkCmdNextSubpass2KHR(ApiDumpInstance& dump_inst, VkCommand
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdEndRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_json_params_vkCmdEndRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -46991,7 +46991,7 @@ void dump_json_params_vkGetMemoryAndroidHardwareBufferANDROID(ApiDumpInstance& d
 }
 #endif // VK_USE_PLATFORM_ANDROID_KHR
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_params_vkCreateExecutionGraphPipelinesAMDX(ApiDumpInstance& dump_inst, VkDevice                                        device, VkPipelineCache                 pipelineCache, uint32_t                                        createInfoCount, const VkExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, const VkAllocationCallbacks*    pAllocator, VkPipeline*               pPipelines)
+void dump_json_params_vkCreateExecutionGraphPipelinesAMDX(ApiDumpInstance& dump_inst, VkDevice device, VkPipelineCache pipelineCache, uint32_t createInfoCount, const VkExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, const VkAllocationCallbacks* pAllocator, VkPipeline* pPipelines)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47016,7 +47016,7 @@ void dump_json_params_vkCreateExecutionGraphPipelinesAMDX(ApiDumpInstance& dump_
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_params_vkGetExecutionGraphPipelineScratchSizeAMDX(ApiDumpInstance& dump_inst, VkDevice                                        device, VkPipeline                                      executionGraph, VkExecutionGraphPipelineScratchSizeAMDX*        pSizeInfo)
+void dump_json_params_vkGetExecutionGraphPipelineScratchSizeAMDX(ApiDumpInstance& dump_inst, VkDevice device, VkPipeline executionGraph, VkExecutionGraphPipelineScratchSizeAMDX* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47035,7 +47035,7 @@ void dump_json_params_vkGetExecutionGraphPipelineScratchSizeAMDX(ApiDumpInstance
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_params_vkGetExecutionGraphPipelineNodeIndexAMDX(ApiDumpInstance& dump_inst, VkDevice                                        device, VkPipeline                                      executionGraph, const VkPipelineShaderStageNodeCreateInfoAMDX*  pNodeInfo, uint32_t*                                       pNodeIndex)
+void dump_json_params_vkGetExecutionGraphPipelineNodeIndexAMDX(ApiDumpInstance& dump_inst, VkDevice device, VkPipeline executionGraph, const VkPipelineShaderStageNodeCreateInfoAMDX* pNodeInfo, uint32_t* pNodeIndex)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47056,7 +47056,7 @@ void dump_json_params_vkGetExecutionGraphPipelineNodeIndexAMDX(ApiDumpInstance& 
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_params_vkCmdInitializeGraphScratchMemoryAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkPipeline                                      executionGraph, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize)
+void dump_json_params_vkCmdInitializeGraphScratchMemoryAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipeline executionGraph, VkDeviceAddress scratch, VkDeviceSize scratchSize)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47077,7 +47077,7 @@ void dump_json_params_vkCmdInitializeGraphScratchMemoryAMDX(ApiDumpInstance& dum
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_params_vkCmdDispatchGraphAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize, const VkDispatchGraphCountInfoAMDX*             pCountInfo)
+void dump_json_params_vkCmdDispatchGraphAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkDeviceAddress scratch, VkDeviceSize scratchSize, const VkDispatchGraphCountInfoAMDX* pCountInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47098,7 +47098,7 @@ void dump_json_params_vkCmdDispatchGraphAMDX(ApiDumpInstance& dump_inst, VkComma
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_params_vkCmdDispatchGraphIndirectAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize, const VkDispatchGraphCountInfoAMDX*             pCountInfo)
+void dump_json_params_vkCmdDispatchGraphIndirectAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkDeviceAddress scratch, VkDeviceSize scratchSize, const VkDispatchGraphCountInfoAMDX* pCountInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47119,7 +47119,7 @@ void dump_json_params_vkCmdDispatchGraphIndirectAMDX(ApiDumpInstance& dump_inst,
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_params_vkCmdDispatchGraphIndirectCountAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize, VkDeviceAddress                                 countInfo)
+void dump_json_params_vkCmdDispatchGraphIndirectCountAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkDeviceAddress scratch, VkDeviceSize scratchSize, VkDeviceAddress countInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47224,7 +47224,7 @@ void dump_json_params_vkGetImageSparseMemoryRequirements2KHR(ApiDumpInstance& du
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCreateAccelerationStructureKHR(ApiDumpInstance& dump_inst, VkDevice                                           device, const VkAccelerationStructureCreateInfoKHR*        pCreateInfo, const VkAllocationCallbacks*       pAllocator, VkAccelerationStructureKHR*                        pAccelerationStructure)
+void dump_json_params_vkCreateAccelerationStructureKHR(ApiDumpInstance& dump_inst, VkDevice device, const VkAccelerationStructureCreateInfoKHR* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkAccelerationStructureKHR* pAccelerationStructure)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47260,7 +47260,7 @@ void dump_json_params_vkDestroyAccelerationStructureKHR(ApiDumpInstance& dump_in
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                                    commandBuffer, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
+void dump_json_params_vkCmdBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47278,7 +47278,7 @@ void dump_json_params_vkCmdBuildAccelerationStructuresKHR(ApiDumpInstance& dump_
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdBuildAccelerationStructuresIndirectKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                  commandBuffer, uint32_t                                           infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkDeviceAddress*             pIndirectDeviceAddresses, const uint32_t*                    pIndirectStrides, const uint32_t* const*             ppMaxPrimitiveCounts)
+void dump_json_params_vkCmdBuildAccelerationStructuresIndirectKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkDeviceAddress* pIndirectDeviceAddresses, const uint32_t* pIndirectStrides, const uint32_t* const* ppMaxPrimitiveCounts)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47300,7 +47300,7 @@ void dump_json_params_vkCmdBuildAccelerationStructuresIndirectKHR(ApiDumpInstanc
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkDevice                                           device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
+void dump_json_params_vkBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkDevice device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47371,7 +47371,7 @@ void dump_json_params_vkCopyMemoryToAccelerationStructureKHR(ApiDumpInstance& du
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkWriteAccelerationStructuresPropertiesKHR(ApiDumpInstance& dump_inst, VkDevice device, uint32_t accelerationStructureCount, const VkAccelerationStructureKHR* pAccelerationStructures, VkQueryType  queryType, size_t       dataSize, void* pData, size_t stride)
+void dump_json_params_vkWriteAccelerationStructuresPropertiesKHR(ApiDumpInstance& dump_inst, VkDevice device, uint32_t accelerationStructureCount, const VkAccelerationStructureKHR* pAccelerationStructures, VkQueryType queryType, size_t dataSize, void* pData, size_t stride)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47496,7 +47496,7 @@ void dump_json_params_vkGetDeviceAccelerationStructureCompatibilityKHR(ApiDumpIn
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkGetAccelerationStructureBuildSizesKHR(ApiDumpInstance& dump_inst, VkDevice                                            device, VkAccelerationStructureBuildTypeKHR                 buildType, const VkAccelerationStructureBuildGeometryInfoKHR*  pBuildInfo, const uint32_t*  pMaxPrimitiveCounts, VkAccelerationStructureBuildSizesInfoKHR*           pSizeInfo)
+void dump_json_params_vkGetAccelerationStructureBuildSizesKHR(ApiDumpInstance& dump_inst, VkDevice device, VkAccelerationStructureBuildTypeKHR buildType, const VkAccelerationStructureBuildGeometryInfoKHR* pBuildInfo, const uint32_t* pMaxPrimitiveCounts, VkAccelerationStructureBuildSizesInfoKHR* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -48127,7 +48127,7 @@ void dump_json_params_vkCmdWriteBufferMarkerAMD(ApiDumpInstance& dump_inst, VkCo
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdWriteBufferMarker2AMD(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkPipelineStageFlags2               stage, VkBuffer                                            dstBuffer, VkDeviceSize                                        dstOffset, uint32_t                                            marker)
+void dump_json_params_vkCmdWriteBufferMarker2AMD(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineStageFlags2 stage, VkBuffer dstBuffer, VkDeviceSize dstOffset, uint32_t marker)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -48636,7 +48636,7 @@ void dump_json_params_vkGetPhysicalDeviceFragmentShadingRatesKHR(ApiDumpInstance
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdSetFragmentShadingRateKHR(ApiDumpInstance& dump_inst, VkCommandBuffer           commandBuffer, const VkExtent2D*                           pFragmentSize, const VkFragmentShadingRateCombinerOpKHR    combinerOps[2])
+void dump_json_params_vkCmdSetFragmentShadingRateKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkExtent2D* pFragmentSize, const VkFragmentShadingRateCombinerOpKHR combinerOps[2])
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -49223,7 +49223,7 @@ void dump_json_params_vkDeferredOperationJoinKHR(ApiDumpInstance& dump_inst, VkD
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkGetPipelineExecutablePropertiesKHR(ApiDumpInstance& dump_inst, VkDevice                        device, const VkPipelineInfoKHR*        pPipelineInfo, uint32_t* pExecutableCount, VkPipelineExecutablePropertiesKHR* pProperties)
+void dump_json_params_vkGetPipelineExecutablePropertiesKHR(ApiDumpInstance& dump_inst, VkDevice device, const VkPipelineInfoKHR* pPipelineInfo, uint32_t* pExecutableCount, VkPipelineExecutablePropertiesKHR* pProperties)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -49242,7 +49242,7 @@ void dump_json_params_vkGetPipelineExecutablePropertiesKHR(ApiDumpInstance& dump
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkGetPipelineExecutableStatisticsKHR(ApiDumpInstance& dump_inst, VkDevice                        device, const VkPipelineExecutableInfoKHR*  pExecutableInfo, uint32_t* pStatisticCount, VkPipelineExecutableStatisticKHR* pStatistics)
+void dump_json_params_vkGetPipelineExecutableStatisticsKHR(ApiDumpInstance& dump_inst, VkDevice device, const VkPipelineExecutableInfoKHR* pExecutableInfo, uint32_t* pStatisticCount, VkPipelineExecutableStatisticKHR* pStatistics)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -49261,7 +49261,7 @@ void dump_json_params_vkGetPipelineExecutableStatisticsKHR(ApiDumpInstance& dump
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkGetPipelineExecutableInternalRepresentationsKHR(ApiDumpInstance& dump_inst, VkDevice                        device, const VkPipelineExecutableInfoKHR*  pExecutableInfo, uint32_t* pInternalRepresentationCount, VkPipelineExecutableInternalRepresentationKHR* pInternalRepresentations)
+void dump_json_params_vkGetPipelineExecutableInternalRepresentationsKHR(ApiDumpInstance& dump_inst, VkDevice device, const VkPipelineExecutableInfoKHR* pExecutableInfo, uint32_t* pInternalRepresentationCount, VkPipelineExecutableInternalRepresentationKHR* pInternalRepresentations)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -49280,7 +49280,7 @@ void dump_json_params_vkGetPipelineExecutableInternalRepresentationsKHR(ApiDumpI
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCopyMemoryToImageEXT(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyMemoryToImageInfo*    pCopyMemoryToImageInfo)
+void dump_json_params_vkCopyMemoryToImageEXT(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyMemoryToImageInfo* pCopyMemoryToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -49295,7 +49295,7 @@ void dump_json_params_vkCopyMemoryToImageEXT(ApiDumpInstance& dump_inst, VkDevic
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCopyImageToMemoryEXT(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyImageToMemoryInfo*    pCopyImageToMemoryInfo)
+void dump_json_params_vkCopyImageToMemoryEXT(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyImageToMemoryInfo* pCopyImageToMemoryInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -49310,7 +49310,7 @@ void dump_json_params_vkCopyImageToMemoryEXT(ApiDumpInstance& dump_inst, VkDevic
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCopyImageToImageEXT(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyImageToImageInfo*    pCopyImageToImageInfo)
+void dump_json_params_vkCopyImageToImageEXT(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyImageToImageInfo* pCopyImageToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -49325,7 +49325,7 @@ void dump_json_params_vkCopyImageToImageEXT(ApiDumpInstance& dump_inst, VkDevice
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkTransitionImageLayoutEXT(ApiDumpInstance& dump_inst, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo*    pTransitions)
+void dump_json_params_vkTransitionImageLayoutEXT(ApiDumpInstance& dump_inst, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo* pTransitions)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -49512,7 +49512,7 @@ void dump_json_params_vkDestroyIndirectCommandsLayoutNV(ApiDumpInstance& dump_in
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdSetDepthBias2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDepthBiasInfoEXT*         pDepthBiasInfo)
+void dump_json_params_vkCmdSetDepthBias2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDepthBiasInfoEXT* pDepthBiasInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -49874,7 +49874,7 @@ void dump_json_params_vkExportMetalObjectsEXT(ApiDumpInstance& dump_inst, VkDevi
     if (settings.shouldFlush()) settings.stream().flush();
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
-void dump_json_params_vkCmdSetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, const VkDependencyInfo*                             pDependencyInfo)
+void dump_json_params_vkCmdSetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -49891,7 +49891,7 @@ void dump_json_params_vkCmdSetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuf
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdResetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, VkPipelineStageFlags2               stageMask)
+void dump_json_params_vkCmdResetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, VkPipelineStageFlags2 stageMask)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -49908,7 +49908,7 @@ void dump_json_params_vkCmdResetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandB
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdWaitEvents2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, uint32_t                                            eventCount, const VkEvent*                     pEvents, const VkDependencyInfo*            pDependencyInfos)
+void dump_json_params_vkCmdWaitEvents2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t eventCount, const VkEvent* pEvents, const VkDependencyInfo* pDependencyInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -49927,7 +49927,7 @@ void dump_json_params_vkCmdWaitEvents2KHR(ApiDumpInstance& dump_inst, VkCommandB
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdPipelineBarrier2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkDependencyInfo*                             pDependencyInfo)
+void dump_json_params_vkCmdPipelineBarrier2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -49942,7 +49942,7 @@ void dump_json_params_vkCmdPipelineBarrier2KHR(ApiDumpInstance& dump_inst, VkCom
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdWriteTimestamp2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkPipelineStageFlags2               stage, VkQueryPool                                         queryPool, uint32_t                                            query)
+void dump_json_params_vkCmdWriteTimestamp2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineStageFlags2 stage, VkQueryPool queryPool, uint32_t query)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -49961,7 +49961,7 @@ void dump_json_params_vkCmdWriteTimestamp2KHR(ApiDumpInstance& dump_inst, VkComm
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkQueueSubmit2KHR(ApiDumpInstance& dump_inst, VkQueue                           queue, uint32_t                            submitCount, const VkSubmitInfo2*              pSubmits, VkFence           fence)
+void dump_json_params_vkQueueSubmit2KHR(ApiDumpInstance& dump_inst, VkQueue queue, uint32_t submitCount, const VkSubmitInfo2* pSubmits, VkFence fence)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -50181,7 +50181,7 @@ void dump_json_params_vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT(A
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdSetFragmentShadingRateEnumNV(ApiDumpInstance& dump_inst, VkCommandBuffer           commandBuffer, VkFragmentShadingRateNV                     shadingRate, const VkFragmentShadingRateCombinerOpKHR    combinerOps[2])
+void dump_json_params_vkCmdSetFragmentShadingRateEnumNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkFragmentShadingRateNV shadingRate, const VkFragmentShadingRateCombinerOpKHR combinerOps[2])
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -50968,7 +50968,7 @@ void dump_json_params_vkGetPhysicalDeviceScreenPresentationSupportQNX(ApiDumpIns
     if (settings.shouldFlush()) settings.stream().flush();
 }
 #endif // VK_USE_PLATFORM_SCREEN_QNX
-void dump_json_params_vkCmdSetColorWriteEnableEXT(ApiDumpInstance& dump_inst, VkCommandBuffer       commandBuffer, uint32_t                                attachmentCount, const VkBool32*   pColorWriteEnables)
+void dump_json_params_vkCmdSetColorWriteEnableEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t attachmentCount, const VkBool32* pColorWriteEnables)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -51048,7 +51048,7 @@ void dump_json_params_vkCmdDrawMultiIndexedEXT(ApiDumpInstance& dump_inst, VkCom
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCreateMicromapEXT(ApiDumpInstance& dump_inst, VkDevice                                           device, const VkMicromapCreateInfoEXT*        pCreateInfo, const VkAllocationCallbacks*       pAllocator, VkMicromapEXT*                        pMicromap)
+void dump_json_params_vkCreateMicromapEXT(ApiDumpInstance& dump_inst, VkDevice device, const VkMicromapCreateInfoEXT* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkMicromapEXT* pMicromap)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -51084,7 +51084,7 @@ void dump_json_params_vkDestroyMicromapEXT(ApiDumpInstance& dump_inst, VkDevice 
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkCommandBuffer                                    commandBuffer, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
+void dump_json_params_vkCmdBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -51101,7 +51101,7 @@ void dump_json_params_vkCmdBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkComma
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkDevice                                           device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
+void dump_json_params_vkBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkDevice device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -51171,7 +51171,7 @@ void dump_json_params_vkCopyMemoryToMicromapEXT(ApiDumpInstance& dump_inst, VkDe
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkWriteMicromapsPropertiesEXT(ApiDumpInstance& dump_inst, VkDevice device, uint32_t micromapCount, const VkMicromapEXT* pMicromaps, VkQueryType  queryType, size_t       dataSize, void* pData, size_t stride)
+void dump_json_params_vkWriteMicromapsPropertiesEXT(ApiDumpInstance& dump_inst, VkDevice device, uint32_t micromapCount, const VkMicromapEXT* pMicromaps, VkQueryType queryType, size_t dataSize, void* pData, size_t stride)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -51281,7 +51281,7 @@ void dump_json_params_vkGetDeviceMicromapCompatibilityEXT(ApiDumpInstance& dump_
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkGetMicromapBuildSizesEXT(ApiDumpInstance& dump_inst, VkDevice                                            device, VkAccelerationStructureBuildTypeKHR                 buildType, const VkMicromapBuildInfoEXT*  pBuildInfo, VkMicromapBuildSizesInfoEXT*           pSizeInfo)
+void dump_json_params_vkGetMicromapBuildSizesEXT(ApiDumpInstance& dump_inst, VkDevice device, VkAccelerationStructureBuildTypeKHR buildType, const VkMicromapBuildInfoEXT* pBuildInfo, VkMicromapBuildSizesInfoEXT* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -51336,7 +51336,7 @@ void dump_json_params_vkCmdDrawClusterIndirectHUAWEI(ApiDumpInstance& dump_inst,
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkSetDeviceMemoryPriorityEXT(ApiDumpInstance& dump_inst, VkDevice       device, VkDeviceMemory memory, float          priority)
+void dump_json_params_vkSetDeviceMemoryPriorityEXT(ApiDumpInstance& dump_inst, VkDevice device, VkDeviceMemory memory, float priority)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -51537,7 +51537,7 @@ void dump_json_params_vkGetPipelineIndirectMemoryRequirementsNV(ApiDumpInstance&
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdUpdatePipelineIndirectBufferNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineBindPoint           pipelineBindPoint, VkPipeline                    pipeline)
+void dump_json_params_vkCmdUpdatePipelineIndirectBufferNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineBindPoint pipelineBindPoint, VkPipeline pipeline)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -51599,7 +51599,7 @@ void dump_json_params_vkCmdSetPolygonModeEXT(ApiDumpInstance& dump_inst, VkComma
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdSetRasterizationSamplesEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits  rasterizationSamples)
+void dump_json_params_vkCmdSetRasterizationSamplesEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits rasterizationSamples)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -51614,7 +51614,7 @@ void dump_json_params_vkCmdSetRasterizationSamplesEXT(ApiDumpInstance& dump_inst
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdSetSampleMaskEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits  samples, const VkSampleMask*    pSampleMask)
+void dump_json_params_vkCmdSetSampleMaskEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits samples, const VkSampleMask* pSampleMask)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -52181,7 +52181,7 @@ void dump_json_params_vkGetDeviceTensorMemoryRequirementsARM(ApiDumpInstance& du
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdCopyTensorARM(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer,  const VkCopyTensorInfoARM* pCopyTensorInfo)
+void dump_json_params_vkCmdCopyTensorARM(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkCopyTensorInfoARM* pCopyTensorInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -52196,7 +52196,7 @@ void dump_json_params_vkCmdCopyTensorARM(ApiDumpInstance& dump_inst, VkCommandBu
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkGetPhysicalDeviceExternalTensorPropertiesARM(ApiDumpInstance& dump_inst, VkPhysicalDevice                             physicalDevice, const VkPhysicalDeviceExternalTensorInfoARM* pExternalTensorInfo, VkExternalTensorPropertiesARM*               pExternalTensorProperties)
+void dump_json_params_vkGetPhysicalDeviceExternalTensorPropertiesARM(ApiDumpInstance& dump_inst, VkPhysicalDevice physicalDevice, const VkPhysicalDeviceExternalTensorInfoARM* pExternalTensorInfo, VkExternalTensorPropertiesARM* pExternalTensorProperties)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -52213,7 +52213,7 @@ void dump_json_params_vkGetPhysicalDeviceExternalTensorPropertiesARM(ApiDumpInst
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkGetTensorOpaqueCaptureDescriptorDataARM(ApiDumpInstance& dump_inst, VkDevice                                    device, const VkTensorCaptureDescriptorDataInfoARM* pInfo, void*                                       pData)
+void dump_json_params_vkGetTensorOpaqueCaptureDescriptorDataARM(ApiDumpInstance& dump_inst, VkDevice device, const VkTensorCaptureDescriptorDataInfoARM* pInfo, void* pData)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -52230,7 +52230,7 @@ void dump_json_params_vkGetTensorOpaqueCaptureDescriptorDataARM(ApiDumpInstance&
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkGetTensorViewOpaqueCaptureDescriptorDataARM(ApiDumpInstance& dump_inst, VkDevice                                        device, const VkTensorViewCaptureDescriptorDataInfoARM* pInfo, void*                                           pData)
+void dump_json_params_vkGetTensorViewOpaqueCaptureDescriptorDataARM(ApiDumpInstance& dump_inst, VkDevice device, const VkTensorViewCaptureDescriptorDataInfoARM* pInfo, void* pData)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -52900,7 +52900,7 @@ void dump_json_params_vkCmdSetLineStippleKHR(ApiDumpInstance& dump_inst, VkComma
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdBindDescriptorSets2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo*   pBindDescriptorSetsInfo)
+void dump_json_params_vkCmdBindDescriptorSets2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo* pBindDescriptorSetsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -52915,7 +52915,7 @@ void dump_json_params_vkCmdBindDescriptorSets2KHR(ApiDumpInstance& dump_inst, Vk
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdPushConstants2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo*        pPushConstantsInfo)
+void dump_json_params_vkCmdPushConstants2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo* pPushConstantsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -52930,7 +52930,7 @@ void dump_json_params_vkCmdPushConstants2KHR(ApiDumpInstance& dump_inst, VkComma
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdPushDescriptorSet2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo*    pPushDescriptorSetInfo)
+void dump_json_params_vkCmdPushDescriptorSet2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo* pPushDescriptorSetInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -53075,7 +53075,7 @@ void dump_json_params_vkGetClusterAccelerationStructureBuildSizesNV(ApiDumpInsta
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdBuildClusterAccelerationStructureIndirectNV(ApiDumpInstance& dump_inst, VkCommandBuffer                     commandBuffer, const VkClusterAccelerationStructureCommandsInfoNV*  pCommandInfos)
+void dump_json_params_vkCmdBuildClusterAccelerationStructureIndirectNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkClusterAccelerationStructureCommandsInfoNV* pCommandInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -53090,7 +53090,7 @@ void dump_json_params_vkCmdBuildClusterAccelerationStructureIndirectNV(ApiDumpIn
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkGetPartitionedAccelerationStructuresBuildSizesNV(ApiDumpInstance& dump_inst, VkDevice device, const VkPartitionedAccelerationStructureInstancesInputNV* pInfo, VkAccelerationStructureBuildSizesInfoKHR*                  pSizeInfo)
+void dump_json_params_vkGetPartitionedAccelerationStructuresBuildSizesNV(ApiDumpInstance& dump_inst, VkDevice device, const VkPartitionedAccelerationStructureInstancesInputNV* pInfo, VkAccelerationStructureBuildSizesInfoKHR* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -53107,7 +53107,7 @@ void dump_json_params_vkGetPartitionedAccelerationStructuresBuildSizesNV(ApiDump
     }
     if (settings.shouldFlush()) settings.stream().flush();
 }
-void dump_json_params_vkCmdBuildPartitionedAccelerationStructuresNV(ApiDumpInstance& dump_inst, VkCommandBuffer                     commandBuffer, const VkBuildPartitionedAccelerationStructureInfoNV*  pBuildInfo)
+void dump_json_params_vkCmdBuildPartitionedAccelerationStructuresNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBuildPartitionedAccelerationStructureInfoNV* pBuildInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -53361,7 +53361,7 @@ void dump_json_params_vkGetMemoryMetalHandlePropertiesEXT(ApiDumpInstance& dump_
     if (settings.shouldFlush()) settings.stream().flush();
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
-void dump_json_params_vkCmdEndRendering2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkRenderingEndInfoEXT*        pRenderingEndInfo)
+void dump_json_params_vkCmdEndRendering2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderingEndInfoEXT* pRenderingEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -54674,19 +54674,19 @@ void dump_json_vkCreateRenderPass2(ApiDumpInstance& dump_inst, VkResult result, 
     dump_json_params_vkCreateRenderPass2(dump_inst, device, pCreateInfo, pAllocator, pRenderPass);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdBeginRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo*      pRenderPassBegin, const VkSubpassBeginInfo*      pSubpassBeginInfo)
+void dump_json_vkCmdBeginRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo* pRenderPassBegin, const VkSubpassBeginInfo* pSubpassBeginInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdBeginRenderPass2(dump_inst, commandBuffer, pRenderPassBegin, pSubpassBeginInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdNextSubpass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo*      pSubpassBeginInfo, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_json_vkCmdNextSubpass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo* pSubpassBeginInfo, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdNextSubpass2(dump_inst, commandBuffer, pSubpassBeginInfo, pSubpassEndInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdEndRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_json_vkCmdEndRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdEndRenderPass2(dump_inst, commandBuffer, pSubpassEndInfo);
@@ -54809,37 +54809,37 @@ void dump_json_vkGetPrivateData(ApiDumpInstance& dump_inst, VkDevice device, VkO
     dump_json_params_vkGetPrivateData(dump_inst, device, objectType, objectHandle, privateDataSlot, pData);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdSetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, const VkDependencyInfo*                             pDependencyInfo)
+void dump_json_vkCmdSetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdSetEvent2(dump_inst, commandBuffer, event, pDependencyInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdResetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, VkPipelineStageFlags2               stageMask)
+void dump_json_vkCmdResetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, VkPipelineStageFlags2 stageMask)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdResetEvent2(dump_inst, commandBuffer, event, stageMask);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdWaitEvents2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, uint32_t                                            eventCount, const VkEvent*                     pEvents, const VkDependencyInfo*            pDependencyInfos)
+void dump_json_vkCmdWaitEvents2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t eventCount, const VkEvent* pEvents, const VkDependencyInfo* pDependencyInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdWaitEvents2(dump_inst, commandBuffer, eventCount, pEvents, pDependencyInfos);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdPipelineBarrier2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkDependencyInfo*                             pDependencyInfo)
+void dump_json_vkCmdPipelineBarrier2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdPipelineBarrier2(dump_inst, commandBuffer, pDependencyInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdWriteTimestamp2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkPipelineStageFlags2               stage, VkQueryPool                                         queryPool, uint32_t                                            query)
+void dump_json_vkCmdWriteTimestamp2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineStageFlags2 stage, VkQueryPool queryPool, uint32_t query)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdWriteTimestamp2(dump_inst, commandBuffer, stage, queryPool, query);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkQueueSubmit2(ApiDumpInstance& dump_inst, VkResult result, VkQueue                           queue, uint32_t                            submitCount, const VkSubmitInfo2*              pSubmits, VkFence           fence)
+void dump_json_vkQueueSubmit2(ApiDumpInstance& dump_inst, VkResult result, VkQueue queue, uint32_t submitCount, const VkSubmitInfo2* pSubmits, VkFence fence)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -54886,13 +54886,13 @@ void dump_json_vkCmdResolveImage2(ApiDumpInstance& dump_inst, VkCommandBuffer co
     dump_json_params_vkCmdResolveImage2(dump_inst, commandBuffer, pResolveImageInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdBeginRendering(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkRenderingInfo*                              pRenderingInfo)
+void dump_json_vkCmdBeginRendering(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderingInfo* pRenderingInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdBeginRendering(dump_inst, commandBuffer, pRenderingInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdEndRendering(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer)
+void dump_json_vkCmdEndRendering(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdEndRendering(dump_inst, commandBuffer);
@@ -55082,19 +55082,19 @@ void dump_json_vkCmdSetRenderingInputAttachmentIndices(ApiDumpInstance& dump_ins
     dump_json_params_vkCmdSetRenderingInputAttachmentIndices(dump_inst, commandBuffer, pInputAttachmentIndexInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdBindDescriptorSets2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo*   pBindDescriptorSetsInfo)
+void dump_json_vkCmdBindDescriptorSets2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo* pBindDescriptorSetsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdBindDescriptorSets2(dump_inst, commandBuffer, pBindDescriptorSetsInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdPushConstants2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo*        pPushConstantsInfo)
+void dump_json_vkCmdPushConstants2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo* pPushConstantsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdPushConstants2(dump_inst, commandBuffer, pPushConstantsInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdPushDescriptorSet2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo*    pPushDescriptorSetInfo)
+void dump_json_vkCmdPushDescriptorSet2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo* pPushDescriptorSetInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdPushDescriptorSet2(dump_inst, commandBuffer, pPushDescriptorSetInfo);
@@ -55106,7 +55106,7 @@ void dump_json_vkCmdPushDescriptorSetWithTemplate2(ApiDumpInstance& dump_inst, V
     dump_json_params_vkCmdPushDescriptorSetWithTemplate2(dump_inst, commandBuffer, pPushDescriptorSetWithTemplateInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCopyMemoryToImage(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyMemoryToImageInfo*    pCopyMemoryToImageInfo)
+void dump_json_vkCopyMemoryToImage(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyMemoryToImageInfo* pCopyMemoryToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -55117,7 +55117,7 @@ void dump_json_vkCopyMemoryToImage(ApiDumpInstance& dump_inst, VkResult result, 
     dump_json_params_vkCopyMemoryToImage(dump_inst, device, pCopyMemoryToImageInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCopyImageToMemory(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToMemoryInfo*    pCopyImageToMemoryInfo)
+void dump_json_vkCopyImageToMemory(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToMemoryInfo* pCopyImageToMemoryInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -55128,7 +55128,7 @@ void dump_json_vkCopyImageToMemory(ApiDumpInstance& dump_inst, VkResult result, 
     dump_json_params_vkCopyImageToMemory(dump_inst, device, pCopyImageToMemoryInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCopyImageToImage(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToImageInfo*    pCopyImageToImageInfo)
+void dump_json_vkCopyImageToImage(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToImageInfo* pCopyImageToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -55139,7 +55139,7 @@ void dump_json_vkCopyImageToImage(ApiDumpInstance& dump_inst, VkResult result, V
     dump_json_params_vkCopyImageToImage(dump_inst, device, pCopyImageToImageInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkTransitionImageLayout(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo*    pTransitions)
+void dump_json_vkTransitionImageLayout(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo* pTransitions)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -55807,13 +55807,13 @@ void dump_json_vkGetShaderInfoAMD(ApiDumpInstance& dump_inst, VkResult result, V
     dump_json_params_vkGetShaderInfoAMD(dump_inst, device, pipeline, shaderStage, infoType, pInfoSize, pInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdBeginRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkRenderingInfo*                              pRenderingInfo)
+void dump_json_vkCmdBeginRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderingInfo* pRenderingInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdBeginRenderingKHR(dump_inst, commandBuffer, pRenderingInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdEndRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer)
+void dump_json_vkCmdEndRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdEndRenderingKHR(dump_inst, commandBuffer);
@@ -56261,19 +56261,19 @@ void dump_json_vkCreateRenderPass2KHR(ApiDumpInstance& dump_inst, VkResult resul
     dump_json_params_vkCreateRenderPass2KHR(dump_inst, device, pCreateInfo, pAllocator, pRenderPass);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdBeginRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo*      pRenderPassBegin, const VkSubpassBeginInfo*      pSubpassBeginInfo)
+void dump_json_vkCmdBeginRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo* pRenderPassBegin, const VkSubpassBeginInfo* pSubpassBeginInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdBeginRenderPass2KHR(dump_inst, commandBuffer, pRenderPassBegin, pSubpassBeginInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdNextSubpass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo*      pSubpassBeginInfo, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_json_vkCmdNextSubpass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo* pSubpassBeginInfo, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdNextSubpass2KHR(dump_inst, commandBuffer, pSubpassBeginInfo, pSubpassEndInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdEndRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_json_vkCmdEndRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdEndRenderPass2KHR(dump_inst, commandBuffer, pSubpassEndInfo);
@@ -56578,7 +56578,7 @@ void dump_json_vkGetMemoryAndroidHardwareBufferANDROID(ApiDumpInstance& dump_ins
 }
 #endif // VK_USE_PLATFORM_ANDROID_KHR
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_vkCreateExecutionGraphPipelinesAMDX(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                        device, VkPipelineCache                 pipelineCache, uint32_t                                        createInfoCount, const VkExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, const VkAllocationCallbacks*    pAllocator, VkPipeline*               pPipelines)
+void dump_json_vkCreateExecutionGraphPipelinesAMDX(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, VkPipelineCache pipelineCache, uint32_t createInfoCount, const VkExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, const VkAllocationCallbacks* pAllocator, VkPipeline* pPipelines)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -56591,7 +56591,7 @@ void dump_json_vkCreateExecutionGraphPipelinesAMDX(ApiDumpInstance& dump_inst, V
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_vkGetExecutionGraphPipelineScratchSizeAMDX(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                        device, VkPipeline                                      executionGraph, VkExecutionGraphPipelineScratchSizeAMDX*        pSizeInfo)
+void dump_json_vkGetExecutionGraphPipelineScratchSizeAMDX(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, VkPipeline executionGraph, VkExecutionGraphPipelineScratchSizeAMDX* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -56604,7 +56604,7 @@ void dump_json_vkGetExecutionGraphPipelineScratchSizeAMDX(ApiDumpInstance& dump_
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_vkGetExecutionGraphPipelineNodeIndexAMDX(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                        device, VkPipeline                                      executionGraph, const VkPipelineShaderStageNodeCreateInfoAMDX*  pNodeInfo, uint32_t*                                       pNodeIndex)
+void dump_json_vkGetExecutionGraphPipelineNodeIndexAMDX(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, VkPipeline executionGraph, const VkPipelineShaderStageNodeCreateInfoAMDX* pNodeInfo, uint32_t* pNodeIndex)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -56617,7 +56617,7 @@ void dump_json_vkGetExecutionGraphPipelineNodeIndexAMDX(ApiDumpInstance& dump_in
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_vkCmdInitializeGraphScratchMemoryAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkPipeline                                      executionGraph, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize)
+void dump_json_vkCmdInitializeGraphScratchMemoryAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipeline executionGraph, VkDeviceAddress scratch, VkDeviceSize scratchSize)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdInitializeGraphScratchMemoryAMDX(dump_inst, commandBuffer, executionGraph, scratch, scratchSize);
@@ -56625,7 +56625,7 @@ void dump_json_vkCmdInitializeGraphScratchMemoryAMDX(ApiDumpInstance& dump_inst,
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_vkCmdDispatchGraphAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize, const VkDispatchGraphCountInfoAMDX*             pCountInfo)
+void dump_json_vkCmdDispatchGraphAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkDeviceAddress scratch, VkDeviceSize scratchSize, const VkDispatchGraphCountInfoAMDX* pCountInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdDispatchGraphAMDX(dump_inst, commandBuffer, scratch, scratchSize, pCountInfo);
@@ -56633,7 +56633,7 @@ void dump_json_vkCmdDispatchGraphAMDX(ApiDumpInstance& dump_inst, VkCommandBuffe
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_vkCmdDispatchGraphIndirectAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize, const VkDispatchGraphCountInfoAMDX*             pCountInfo)
+void dump_json_vkCmdDispatchGraphIndirectAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkDeviceAddress scratch, VkDeviceSize scratchSize, const VkDispatchGraphCountInfoAMDX* pCountInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdDispatchGraphIndirectAMDX(dump_inst, commandBuffer, scratch, scratchSize, pCountInfo);
@@ -56641,7 +56641,7 @@ void dump_json_vkCmdDispatchGraphIndirectAMDX(ApiDumpInstance& dump_inst, VkComm
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_json_vkCmdDispatchGraphIndirectCountAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize, VkDeviceAddress                                 countInfo)
+void dump_json_vkCmdDispatchGraphIndirectCountAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkDeviceAddress scratch, VkDeviceSize scratchSize, VkDeviceAddress countInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdDispatchGraphIndirectCountAMDX(dump_inst, commandBuffer, scratch, scratchSize, countInfo);
@@ -56678,7 +56678,7 @@ void dump_json_vkGetImageSparseMemoryRequirements2KHR(ApiDumpInstance& dump_inst
     dump_json_params_vkGetImageSparseMemoryRequirements2KHR(dump_inst, device, pInfo, pSparseMemoryRequirementCount, pSparseMemoryRequirements);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCreateAccelerationStructureKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                           device, const VkAccelerationStructureCreateInfoKHR*        pCreateInfo, const VkAllocationCallbacks*       pAllocator, VkAccelerationStructureKHR*                        pAccelerationStructure)
+void dump_json_vkCreateAccelerationStructureKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkAccelerationStructureCreateInfoKHR* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkAccelerationStructureKHR* pAccelerationStructure)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -56695,19 +56695,19 @@ void dump_json_vkDestroyAccelerationStructureKHR(ApiDumpInstance& dump_inst, VkD
     dump_json_params_vkDestroyAccelerationStructureKHR(dump_inst, device, accelerationStructure, pAllocator);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                                    commandBuffer, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
+void dump_json_vkCmdBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdBuildAccelerationStructuresKHR(dump_inst, commandBuffer, infoCount, pInfos, ppBuildRangeInfos);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdBuildAccelerationStructuresIndirectKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                  commandBuffer, uint32_t                                           infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkDeviceAddress*             pIndirectDeviceAddresses, const uint32_t*                    pIndirectStrides, const uint32_t* const*             ppMaxPrimitiveCounts)
+void dump_json_vkCmdBuildAccelerationStructuresIndirectKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkDeviceAddress* pIndirectDeviceAddresses, const uint32_t* pIndirectStrides, const uint32_t* const* ppMaxPrimitiveCounts)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdBuildAccelerationStructuresIndirectKHR(dump_inst, commandBuffer, infoCount, pInfos, pIndirectDeviceAddresses, pIndirectStrides, ppMaxPrimitiveCounts);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                           device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
+void dump_json_vkBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -56751,7 +56751,7 @@ void dump_json_vkCopyMemoryToAccelerationStructureKHR(ApiDumpInstance& dump_inst
     dump_json_params_vkCopyMemoryToAccelerationStructureKHR(dump_inst, device, deferredOperation, pInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkWriteAccelerationStructuresPropertiesKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t accelerationStructureCount, const VkAccelerationStructureKHR* pAccelerationStructures, VkQueryType  queryType, size_t       dataSize, void* pData, size_t stride)
+void dump_json_vkWriteAccelerationStructuresPropertiesKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t accelerationStructureCount, const VkAccelerationStructureKHR* pAccelerationStructures, VkQueryType queryType, size_t dataSize, void* pData, size_t stride)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -56803,7 +56803,7 @@ void dump_json_vkGetDeviceAccelerationStructureCompatibilityKHR(ApiDumpInstance&
     dump_json_params_vkGetDeviceAccelerationStructureCompatibilityKHR(dump_inst, device, pVersionInfo, pCompatibility);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkGetAccelerationStructureBuildSizesKHR(ApiDumpInstance& dump_inst, VkDevice                                            device, VkAccelerationStructureBuildTypeKHR                 buildType, const VkAccelerationStructureBuildGeometryInfoKHR*  pBuildInfo, const uint32_t*  pMaxPrimitiveCounts, VkAccelerationStructureBuildSizesInfoKHR*           pSizeInfo)
+void dump_json_vkGetAccelerationStructureBuildSizesKHR(ApiDumpInstance& dump_inst, VkDevice device, VkAccelerationStructureBuildTypeKHR buildType, const VkAccelerationStructureBuildGeometryInfoKHR* pBuildInfo, const uint32_t* pMaxPrimitiveCounts, VkAccelerationStructureBuildSizesInfoKHR* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkGetAccelerationStructureBuildSizesKHR(dump_inst, device, buildType, pBuildInfo, pMaxPrimitiveCounts, pSizeInfo);
@@ -57064,7 +57064,7 @@ void dump_json_vkCmdWriteBufferMarkerAMD(ApiDumpInstance& dump_inst, VkCommandBu
     dump_json_params_vkCmdWriteBufferMarkerAMD(dump_inst, commandBuffer, pipelineStage, dstBuffer, dstOffset, marker);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdWriteBufferMarker2AMD(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkPipelineStageFlags2               stage, VkBuffer                                            dstBuffer, VkDeviceSize                                        dstOffset, uint32_t                                            marker)
+void dump_json_vkCmdWriteBufferMarker2AMD(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineStageFlags2 stage, VkBuffer dstBuffer, VkDeviceSize dstOffset, uint32_t marker)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdWriteBufferMarker2AMD(dump_inst, commandBuffer, stage, dstBuffer, dstOffset, marker);
@@ -57332,7 +57332,7 @@ void dump_json_vkGetPhysicalDeviceFragmentShadingRatesKHR(ApiDumpInstance& dump_
     dump_json_params_vkGetPhysicalDeviceFragmentShadingRatesKHR(dump_inst, physicalDevice, pFragmentShadingRateCount, pFragmentShadingRates);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdSetFragmentShadingRateKHR(ApiDumpInstance& dump_inst, VkCommandBuffer           commandBuffer, const VkExtent2D*                           pFragmentSize, const VkFragmentShadingRateCombinerOpKHR    combinerOps[2])
+void dump_json_vkCmdSetFragmentShadingRateKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkExtent2D* pFragmentSize, const VkFragmentShadingRateCombinerOpKHR combinerOps[2])
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdSetFragmentShadingRateKHR(dump_inst, commandBuffer, pFragmentSize, combinerOps);
@@ -57635,7 +57635,7 @@ void dump_json_vkDeferredOperationJoinKHR(ApiDumpInstance& dump_inst, VkResult r
     dump_json_params_vkDeferredOperationJoinKHR(dump_inst, device, operation);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkGetPipelineExecutablePropertiesKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice                        device, const VkPipelineInfoKHR*        pPipelineInfo, uint32_t* pExecutableCount, VkPipelineExecutablePropertiesKHR* pProperties)
+void dump_json_vkGetPipelineExecutablePropertiesKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkPipelineInfoKHR* pPipelineInfo, uint32_t* pExecutableCount, VkPipelineExecutablePropertiesKHR* pProperties)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -57646,7 +57646,7 @@ void dump_json_vkGetPipelineExecutablePropertiesKHR(ApiDumpInstance& dump_inst, 
     dump_json_params_vkGetPipelineExecutablePropertiesKHR(dump_inst, device, pPipelineInfo, pExecutableCount, pProperties);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkGetPipelineExecutableStatisticsKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice                        device, const VkPipelineExecutableInfoKHR*  pExecutableInfo, uint32_t* pStatisticCount, VkPipelineExecutableStatisticKHR* pStatistics)
+void dump_json_vkGetPipelineExecutableStatisticsKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkPipelineExecutableInfoKHR* pExecutableInfo, uint32_t* pStatisticCount, VkPipelineExecutableStatisticKHR* pStatistics)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -57657,7 +57657,7 @@ void dump_json_vkGetPipelineExecutableStatisticsKHR(ApiDumpInstance& dump_inst, 
     dump_json_params_vkGetPipelineExecutableStatisticsKHR(dump_inst, device, pExecutableInfo, pStatisticCount, pStatistics);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkGetPipelineExecutableInternalRepresentationsKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice                        device, const VkPipelineExecutableInfoKHR*  pExecutableInfo, uint32_t* pInternalRepresentationCount, VkPipelineExecutableInternalRepresentationKHR* pInternalRepresentations)
+void dump_json_vkGetPipelineExecutableInternalRepresentationsKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkPipelineExecutableInfoKHR* pExecutableInfo, uint32_t* pInternalRepresentationCount, VkPipelineExecutableInternalRepresentationKHR* pInternalRepresentations)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -57668,7 +57668,7 @@ void dump_json_vkGetPipelineExecutableInternalRepresentationsKHR(ApiDumpInstance
     dump_json_params_vkGetPipelineExecutableInternalRepresentationsKHR(dump_inst, device, pExecutableInfo, pInternalRepresentationCount, pInternalRepresentations);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCopyMemoryToImageEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyMemoryToImageInfo*    pCopyMemoryToImageInfo)
+void dump_json_vkCopyMemoryToImageEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyMemoryToImageInfo* pCopyMemoryToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -57679,7 +57679,7 @@ void dump_json_vkCopyMemoryToImageEXT(ApiDumpInstance& dump_inst, VkResult resul
     dump_json_params_vkCopyMemoryToImageEXT(dump_inst, device, pCopyMemoryToImageInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCopyImageToMemoryEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToMemoryInfo*    pCopyImageToMemoryInfo)
+void dump_json_vkCopyImageToMemoryEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToMemoryInfo* pCopyImageToMemoryInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -57690,7 +57690,7 @@ void dump_json_vkCopyImageToMemoryEXT(ApiDumpInstance& dump_inst, VkResult resul
     dump_json_params_vkCopyImageToMemoryEXT(dump_inst, device, pCopyImageToMemoryInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCopyImageToImageEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToImageInfo*    pCopyImageToImageInfo)
+void dump_json_vkCopyImageToImageEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToImageInfo* pCopyImageToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -57701,7 +57701,7 @@ void dump_json_vkCopyImageToImageEXT(ApiDumpInstance& dump_inst, VkResult result
     dump_json_params_vkCopyImageToImageEXT(dump_inst, device, pCopyImageToImageInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkTransitionImageLayoutEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo*    pTransitions)
+void dump_json_vkTransitionImageLayoutEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo* pTransitions)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -57792,7 +57792,7 @@ void dump_json_vkDestroyIndirectCommandsLayoutNV(ApiDumpInstance& dump_inst, VkD
     dump_json_params_vkDestroyIndirectCommandsLayoutNV(dump_inst, device, indirectCommandsLayout, pAllocator);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdSetDepthBias2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDepthBiasInfoEXT*         pDepthBiasInfo)
+void dump_json_vkCmdSetDepthBias2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDepthBiasInfoEXT* pDepthBiasInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdSetDepthBias2EXT(dump_inst, commandBuffer, pDepthBiasInfo);
@@ -57971,37 +57971,37 @@ void dump_json_vkExportMetalObjectsEXT(ApiDumpInstance& dump_inst, VkDevice devi
     settings.stream() << settings.indentation(2) << "}";
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
-void dump_json_vkCmdSetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, const VkDependencyInfo*                             pDependencyInfo)
+void dump_json_vkCmdSetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdSetEvent2KHR(dump_inst, commandBuffer, event, pDependencyInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdResetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, VkPipelineStageFlags2               stageMask)
+void dump_json_vkCmdResetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, VkPipelineStageFlags2 stageMask)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdResetEvent2KHR(dump_inst, commandBuffer, event, stageMask);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdWaitEvents2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, uint32_t                                            eventCount, const VkEvent*                     pEvents, const VkDependencyInfo*            pDependencyInfos)
+void dump_json_vkCmdWaitEvents2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t eventCount, const VkEvent* pEvents, const VkDependencyInfo* pDependencyInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdWaitEvents2KHR(dump_inst, commandBuffer, eventCount, pEvents, pDependencyInfos);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdPipelineBarrier2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkDependencyInfo*                             pDependencyInfo)
+void dump_json_vkCmdPipelineBarrier2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdPipelineBarrier2KHR(dump_inst, commandBuffer, pDependencyInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdWriteTimestamp2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkPipelineStageFlags2               stage, VkQueryPool                                         queryPool, uint32_t                                            query)
+void dump_json_vkCmdWriteTimestamp2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineStageFlags2 stage, VkQueryPool queryPool, uint32_t query)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdWriteTimestamp2KHR(dump_inst, commandBuffer, stage, queryPool, query);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkQueueSubmit2KHR(ApiDumpInstance& dump_inst, VkResult result, VkQueue                           queue, uint32_t                            submitCount, const VkSubmitInfo2*              pSubmits, VkFence           fence)
+void dump_json_vkQueueSubmit2KHR(ApiDumpInstance& dump_inst, VkResult result, VkQueue queue, uint32_t submitCount, const VkSubmitInfo2* pSubmits, VkFence fence)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -58103,7 +58103,7 @@ void dump_json_vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT(ApiDumpI
     dump_json_params_vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT(dump_inst, device, pInfo, pData);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdSetFragmentShadingRateEnumNV(ApiDumpInstance& dump_inst, VkCommandBuffer           commandBuffer, VkFragmentShadingRateNV                     shadingRate, const VkFragmentShadingRateCombinerOpKHR    combinerOps[2])
+void dump_json_vkCmdSetFragmentShadingRateEnumNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkFragmentShadingRateNV shadingRate, const VkFragmentShadingRateCombinerOpKHR combinerOps[2])
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdSetFragmentShadingRateEnumNV(dump_inst, commandBuffer, shadingRate, combinerOps);
@@ -58496,7 +58496,7 @@ void dump_json_vkGetPhysicalDeviceScreenPresentationSupportQNX(ApiDumpInstance& 
     settings.stream() << settings.indentation(2) << "}";
 }
 #endif // VK_USE_PLATFORM_SCREEN_QNX
-void dump_json_vkCmdSetColorWriteEnableEXT(ApiDumpInstance& dump_inst, VkCommandBuffer       commandBuffer, uint32_t                                attachmentCount, const VkBool32*   pColorWriteEnables)
+void dump_json_vkCmdSetColorWriteEnableEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t attachmentCount, const VkBool32* pColorWriteEnables)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdSetColorWriteEnableEXT(dump_inst, commandBuffer, attachmentCount, pColorWriteEnables);
@@ -58520,7 +58520,7 @@ void dump_json_vkCmdDrawMultiIndexedEXT(ApiDumpInstance& dump_inst, VkCommandBuf
     dump_json_params_vkCmdDrawMultiIndexedEXT(dump_inst, commandBuffer, drawCount, pIndexInfo, instanceCount, firstInstance, stride, pVertexOffset);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCreateMicromapEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                           device, const VkMicromapCreateInfoEXT*        pCreateInfo, const VkAllocationCallbacks*       pAllocator, VkMicromapEXT*                        pMicromap)
+void dump_json_vkCreateMicromapEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkMicromapCreateInfoEXT* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkMicromapEXT* pMicromap)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -58537,13 +58537,13 @@ void dump_json_vkDestroyMicromapEXT(ApiDumpInstance& dump_inst, VkDevice device,
     dump_json_params_vkDestroyMicromapEXT(dump_inst, device, micromap, pAllocator);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkCommandBuffer                                    commandBuffer, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
+void dump_json_vkCmdBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdBuildMicromapsEXT(dump_inst, commandBuffer, infoCount, pInfos);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                           device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
+void dump_json_vkBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -58587,7 +58587,7 @@ void dump_json_vkCopyMemoryToMicromapEXT(ApiDumpInstance& dump_inst, VkResult re
     dump_json_params_vkCopyMemoryToMicromapEXT(dump_inst, device, deferredOperation, pInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkWriteMicromapsPropertiesEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t micromapCount, const VkMicromapEXT* pMicromaps, VkQueryType  queryType, size_t       dataSize, void* pData, size_t stride)
+void dump_json_vkWriteMicromapsPropertiesEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t micromapCount, const VkMicromapEXT* pMicromaps, VkQueryType queryType, size_t dataSize, void* pData, size_t stride)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -58628,7 +58628,7 @@ void dump_json_vkGetDeviceMicromapCompatibilityEXT(ApiDumpInstance& dump_inst, V
     dump_json_params_vkGetDeviceMicromapCompatibilityEXT(dump_inst, device, pVersionInfo, pCompatibility);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkGetMicromapBuildSizesEXT(ApiDumpInstance& dump_inst, VkDevice                                            device, VkAccelerationStructureBuildTypeKHR                 buildType, const VkMicromapBuildInfoEXT*  pBuildInfo, VkMicromapBuildSizesInfoEXT*           pSizeInfo)
+void dump_json_vkGetMicromapBuildSizesEXT(ApiDumpInstance& dump_inst, VkDevice device, VkAccelerationStructureBuildTypeKHR buildType, const VkMicromapBuildInfoEXT* pBuildInfo, VkMicromapBuildSizesInfoEXT* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkGetMicromapBuildSizesEXT(dump_inst, device, buildType, pBuildInfo, pSizeInfo);
@@ -58646,7 +58646,7 @@ void dump_json_vkCmdDrawClusterIndirectHUAWEI(ApiDumpInstance& dump_inst, VkComm
     dump_json_params_vkCmdDrawClusterIndirectHUAWEI(dump_inst, commandBuffer, buffer, offset);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkSetDeviceMemoryPriorityEXT(ApiDumpInstance& dump_inst, VkDevice       device, VkDeviceMemory memory, float          priority)
+void dump_json_vkSetDeviceMemoryPriorityEXT(ApiDumpInstance& dump_inst, VkDevice device, VkDeviceMemory memory, float priority)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkSetDeviceMemoryPriorityEXT(dump_inst, device, memory, priority);
@@ -58712,7 +58712,7 @@ void dump_json_vkGetPipelineIndirectMemoryRequirementsNV(ApiDumpInstance& dump_i
     dump_json_params_vkGetPipelineIndirectMemoryRequirementsNV(dump_inst, device, pCreateInfo, pMemoryRequirements);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdUpdatePipelineIndirectBufferNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineBindPoint           pipelineBindPoint, VkPipeline                    pipeline)
+void dump_json_vkCmdUpdatePipelineIndirectBufferNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineBindPoint pipelineBindPoint, VkPipeline pipeline)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdUpdatePipelineIndirectBufferNV(dump_inst, commandBuffer, pipelineBindPoint, pipeline);
@@ -58741,13 +58741,13 @@ void dump_json_vkCmdSetPolygonModeEXT(ApiDumpInstance& dump_inst, VkCommandBuffe
     dump_json_params_vkCmdSetPolygonModeEXT(dump_inst, commandBuffer, polygonMode);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdSetRasterizationSamplesEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits  rasterizationSamples)
+void dump_json_vkCmdSetRasterizationSamplesEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits rasterizationSamples)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdSetRasterizationSamplesEXT(dump_inst, commandBuffer, rasterizationSamples);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdSetSampleMaskEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits  samples, const VkSampleMask*    pSampleMask)
+void dump_json_vkCmdSetSampleMaskEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits samples, const VkSampleMask* pSampleMask)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdSetSampleMaskEXT(dump_inst, commandBuffer, samples, pSampleMask);
@@ -58972,19 +58972,19 @@ void dump_json_vkGetDeviceTensorMemoryRequirementsARM(ApiDumpInstance& dump_inst
     dump_json_params_vkGetDeviceTensorMemoryRequirementsARM(dump_inst, device, pInfo, pMemoryRequirements);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdCopyTensorARM(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer,  const VkCopyTensorInfoARM* pCopyTensorInfo)
+void dump_json_vkCmdCopyTensorARM(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkCopyTensorInfoARM* pCopyTensorInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdCopyTensorARM(dump_inst, commandBuffer, pCopyTensorInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkGetPhysicalDeviceExternalTensorPropertiesARM(ApiDumpInstance& dump_inst, VkPhysicalDevice                             physicalDevice, const VkPhysicalDeviceExternalTensorInfoARM* pExternalTensorInfo, VkExternalTensorPropertiesARM*               pExternalTensorProperties)
+void dump_json_vkGetPhysicalDeviceExternalTensorPropertiesARM(ApiDumpInstance& dump_inst, VkPhysicalDevice physicalDevice, const VkPhysicalDeviceExternalTensorInfoARM* pExternalTensorInfo, VkExternalTensorPropertiesARM* pExternalTensorProperties)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkGetPhysicalDeviceExternalTensorPropertiesARM(dump_inst, physicalDevice, pExternalTensorInfo, pExternalTensorProperties);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkGetTensorOpaqueCaptureDescriptorDataARM(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                    device, const VkTensorCaptureDescriptorDataInfoARM* pInfo, void*                                       pData)
+void dump_json_vkGetTensorOpaqueCaptureDescriptorDataARM(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkTensorCaptureDescriptorDataInfoARM* pInfo, void* pData)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -58995,7 +58995,7 @@ void dump_json_vkGetTensorOpaqueCaptureDescriptorDataARM(ApiDumpInstance& dump_i
     dump_json_params_vkGetTensorOpaqueCaptureDescriptorDataARM(dump_inst, device, pInfo, pData);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkGetTensorViewOpaqueCaptureDescriptorDataARM(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                        device, const VkTensorViewCaptureDescriptorDataInfoARM* pInfo, void*                                           pData)
+void dump_json_vkGetTensorViewOpaqueCaptureDescriptorDataARM(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkTensorViewCaptureDescriptorDataInfoARM* pInfo, void* pData)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     settings.stream() << settings.indentation(3) << "\"returnValue\" : ";
@@ -59320,19 +59320,19 @@ void dump_json_vkCmdSetLineStippleKHR(ApiDumpInstance& dump_inst, VkCommandBuffe
     dump_json_params_vkCmdSetLineStippleKHR(dump_inst, commandBuffer, lineStippleFactor, lineStipplePattern);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdBindDescriptorSets2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo*   pBindDescriptorSetsInfo)
+void dump_json_vkCmdBindDescriptorSets2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo* pBindDescriptorSetsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdBindDescriptorSets2KHR(dump_inst, commandBuffer, pBindDescriptorSetsInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdPushConstants2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo*        pPushConstantsInfo)
+void dump_json_vkCmdPushConstants2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo* pPushConstantsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdPushConstants2KHR(dump_inst, commandBuffer, pPushConstantsInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdPushDescriptorSet2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo*    pPushDescriptorSetInfo)
+void dump_json_vkCmdPushDescriptorSet2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo* pPushDescriptorSetInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdPushDescriptorSet2KHR(dump_inst, commandBuffer, pPushDescriptorSetInfo);
@@ -59391,19 +59391,19 @@ void dump_json_vkGetClusterAccelerationStructureBuildSizesNV(ApiDumpInstance& du
     dump_json_params_vkGetClusterAccelerationStructureBuildSizesNV(dump_inst, device, pInfo, pSizeInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdBuildClusterAccelerationStructureIndirectNV(ApiDumpInstance& dump_inst, VkCommandBuffer                     commandBuffer, const VkClusterAccelerationStructureCommandsInfoNV*  pCommandInfos)
+void dump_json_vkCmdBuildClusterAccelerationStructureIndirectNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkClusterAccelerationStructureCommandsInfoNV* pCommandInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdBuildClusterAccelerationStructureIndirectNV(dump_inst, commandBuffer, pCommandInfos);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkGetPartitionedAccelerationStructuresBuildSizesNV(ApiDumpInstance& dump_inst, VkDevice device, const VkPartitionedAccelerationStructureInstancesInputNV* pInfo, VkAccelerationStructureBuildSizesInfoKHR*                  pSizeInfo)
+void dump_json_vkGetPartitionedAccelerationStructuresBuildSizesNV(ApiDumpInstance& dump_inst, VkDevice device, const VkPartitionedAccelerationStructureInstancesInputNV* pInfo, VkAccelerationStructureBuildSizesInfoKHR* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkGetPartitionedAccelerationStructuresBuildSizesNV(dump_inst, device, pInfo, pSizeInfo);
     settings.stream() << settings.indentation(2) << "}";
 }
-void dump_json_vkCmdBuildPartitionedAccelerationStructuresNV(ApiDumpInstance& dump_inst, VkCommandBuffer                     commandBuffer, const VkBuildPartitionedAccelerationStructureInfoNV*  pBuildInfo)
+void dump_json_vkCmdBuildPartitionedAccelerationStructuresNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBuildPartitionedAccelerationStructureInfoNV* pBuildInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdBuildPartitionedAccelerationStructuresNV(dump_inst, commandBuffer, pBuildInfo);
@@ -59523,7 +59523,7 @@ void dump_json_vkGetMemoryMetalHandlePropertiesEXT(ApiDumpInstance& dump_inst, V
     settings.stream() << settings.indentation(2) << "}";
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
-void dump_json_vkCmdEndRendering2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkRenderingEndInfoEXT*        pRenderingEndInfo)
+void dump_json_vkCmdEndRendering2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderingEndInfoEXT* pRenderingEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_json_params_vkCmdEndRendering2EXT(dump_inst, commandBuffer, pRenderingEndInfo);
