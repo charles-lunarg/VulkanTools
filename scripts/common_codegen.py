@@ -18,10 +18,8 @@
 #
 # Author: Mark Lobodzinski <mark@lunarg.com>
 
-import os,re,sys,string
-import xml.etree.ElementTree as etree
-from generator import *
-from collections import namedtuple
+import sys
+import os
 
 # Copyright text prefixing all headers (list of strings).
 prefixStrings = [
@@ -75,3 +73,31 @@ def GetFeatureProtect(interface):
     if platform is not None:
         protect = platform_dict[platform]
     return protect
+
+# helper to define paths relative to the repo root
+def repo_relative(path):
+    return os.path.abspath(os.path.join(os.path.dirname(__file__), '..', path))
+
+# Points to the directory containing the top level CMakeLists.txt
+PROJECT_SRC_DIR = os.path.abspath(os.path.join(os.path.split(os.path.abspath(__file__))[0], '..'))
+if not os.path.isfile(f'{PROJECT_SRC_DIR}/CMakeLists.txt'):
+    print(f'PROJECT_SRC_DIR invalid! {PROJECT_SRC_DIR}')
+    sys.exit(1)
+
+# Runs a command in a directory and returns its return code.
+# Directory is project root by default, or a relative path from project root
+def RunShellCmd(command, start_dir = PROJECT_SRC_DIR, env=None, verbose=False):
+    # Flush stdout here. Helps when debugging on CI.
+    sys.stdout.flush()
+
+    if start_dir != PROJECT_SRC_DIR:
+        start_dir = repo_relative(start_dir)
+    cmd_list = command.split(" ")
+
+    # Helps a lot when debugging CI issues
+    if IsGHA():
+        verbose = True
+
+    if verbose:
+        print(f'CICMD({cmd_list}, env={env})')
+    subprocess.check_call(cmd_list, cwd=start_dir, env=env)
