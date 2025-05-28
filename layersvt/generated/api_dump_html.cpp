@@ -41595,7 +41595,7 @@ void dump_html_params_vkCreateRenderPass2(ApiDumpInstance& dump_inst, VkDevice d
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdBeginRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo*      pRenderPassBegin, const VkSubpassBeginInfo*      pSubpassBeginInfo)
+void dump_html_params_vkCmdBeginRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo* pRenderPassBegin, const VkSubpassBeginInfo* pSubpassBeginInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -41607,7 +41607,7 @@ void dump_html_params_vkCmdBeginRenderPass2(ApiDumpInstance& dump_inst, VkComman
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdNextSubpass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo*      pSubpassBeginInfo, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_html_params_vkCmdNextSubpass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo* pSubpassBeginInfo, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -41619,7 +41619,7 @@ void dump_html_params_vkCmdNextSubpass2(ApiDumpInstance& dump_inst, VkCommandBuf
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdEndRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_html_params_vkCmdEndRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -41776,7 +41776,7 @@ void dump_html_params_vkGetPrivateData(ApiDumpInstance& dump_inst, VkDevice devi
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdSetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, const VkDependencyInfo*                             pDependencyInfo)
+void dump_html_params_vkCmdSetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -41788,7 +41788,7 @@ void dump_html_params_vkCmdSetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdResetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, VkPipelineStageFlags2               stageMask)
+void dump_html_params_vkCmdResetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, VkPipelineStageFlags2 stageMask)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -41800,7 +41800,7 @@ void dump_html_params_vkCmdResetEvent2(ApiDumpInstance& dump_inst, VkCommandBuff
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdWaitEvents2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, uint32_t                                            eventCount, const VkEvent*                     pEvents, const VkDependencyInfo*            pDependencyInfos)
+void dump_html_params_vkCmdWaitEvents2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t eventCount, const VkEvent* pEvents, const VkDependencyInfo* pDependencyInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -41813,7 +41813,7 @@ void dump_html_params_vkCmdWaitEvents2(ApiDumpInstance& dump_inst, VkCommandBuff
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdPipelineBarrier2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkDependencyInfo*                             pDependencyInfo)
+void dump_html_params_vkCmdPipelineBarrier2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -41824,7 +41824,7 @@ void dump_html_params_vkCmdPipelineBarrier2(ApiDumpInstance& dump_inst, VkComman
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdWriteTimestamp2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkPipelineStageFlags2               stage, VkQueryPool                                         queryPool, uint32_t                                            query)
+void dump_html_params_vkCmdWriteTimestamp2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineStageFlags2 stage, VkQueryPool queryPool, uint32_t query)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -41837,7 +41837,7 @@ void dump_html_params_vkCmdWriteTimestamp2(ApiDumpInstance& dump_inst, VkCommand
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkQueueSubmit2(ApiDumpInstance& dump_inst, VkQueue                           queue, uint32_t                            submitCount, const VkSubmitInfo2*              pSubmits, VkFence           fence)
+void dump_html_params_vkQueueSubmit2(ApiDumpInstance& dump_inst, VkQueue queue, uint32_t submitCount, const VkSubmitInfo2* pSubmits, VkFence fence)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -41916,7 +41916,7 @@ void dump_html_params_vkCmdResolveImage2(ApiDumpInstance& dump_inst, VkCommandBu
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdBeginRendering(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkRenderingInfo*                              pRenderingInfo)
+void dump_html_params_vkCmdBeginRendering(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderingInfo* pRenderingInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -41927,7 +41927,7 @@ void dump_html_params_vkCmdBeginRendering(ApiDumpInstance& dump_inst, VkCommandB
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdEndRendering(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer)
+void dump_html_params_vkCmdEndRendering(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -42287,7 +42287,7 @@ void dump_html_params_vkCmdSetRenderingInputAttachmentIndices(ApiDumpInstance& d
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdBindDescriptorSets2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo*   pBindDescriptorSetsInfo)
+void dump_html_params_vkCmdBindDescriptorSets2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo* pBindDescriptorSetsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -42298,7 +42298,7 @@ void dump_html_params_vkCmdBindDescriptorSets2(ApiDumpInstance& dump_inst, VkCom
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdPushConstants2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo*        pPushConstantsInfo)
+void dump_html_params_vkCmdPushConstants2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo* pPushConstantsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -42309,7 +42309,7 @@ void dump_html_params_vkCmdPushConstants2(ApiDumpInstance& dump_inst, VkCommandB
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdPushDescriptorSet2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo*    pPushDescriptorSetInfo)
+void dump_html_params_vkCmdPushDescriptorSet2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo* pPushDescriptorSetInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -42331,7 +42331,7 @@ void dump_html_params_vkCmdPushDescriptorSetWithTemplate2(ApiDumpInstance& dump_
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCopyMemoryToImage(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyMemoryToImageInfo*    pCopyMemoryToImageInfo)
+void dump_html_params_vkCopyMemoryToImage(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyMemoryToImageInfo* pCopyMemoryToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -42342,7 +42342,7 @@ void dump_html_params_vkCopyMemoryToImage(ApiDumpInstance& dump_inst, VkDevice d
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCopyImageToMemory(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyImageToMemoryInfo*    pCopyImageToMemoryInfo)
+void dump_html_params_vkCopyImageToMemory(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyImageToMemoryInfo* pCopyImageToMemoryInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -42353,7 +42353,7 @@ void dump_html_params_vkCopyImageToMemory(ApiDumpInstance& dump_inst, VkDevice d
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCopyImageToImage(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyImageToImageInfo*    pCopyImageToImageInfo)
+void dump_html_params_vkCopyImageToImage(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyImageToImageInfo* pCopyImageToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -42364,7 +42364,7 @@ void dump_html_params_vkCopyImageToImage(ApiDumpInstance& dump_inst, VkDevice de
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkTransitionImageLayout(ApiDumpInstance& dump_inst, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo*    pTransitions)
+void dump_html_params_vkTransitionImageLayout(ApiDumpInstance& dump_inst, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo* pTransitions)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -43268,7 +43268,7 @@ void dump_html_params_vkGetShaderInfoAMD(ApiDumpInstance& dump_inst, VkDevice de
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdBeginRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkRenderingInfo*                              pRenderingInfo)
+void dump_html_params_vkCmdBeginRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderingInfo* pRenderingInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -43279,7 +43279,7 @@ void dump_html_params_vkCmdBeginRenderingKHR(ApiDumpInstance& dump_inst, VkComma
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdEndRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer)
+void dump_html_params_vkCmdEndRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -43917,7 +43917,7 @@ void dump_html_params_vkCreateRenderPass2KHR(ApiDumpInstance& dump_inst, VkDevic
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdBeginRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo*      pRenderPassBegin, const VkSubpassBeginInfo*      pSubpassBeginInfo)
+void dump_html_params_vkCmdBeginRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo* pRenderPassBegin, const VkSubpassBeginInfo* pSubpassBeginInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -43929,7 +43929,7 @@ void dump_html_params_vkCmdBeginRenderPass2KHR(ApiDumpInstance& dump_inst, VkCom
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdNextSubpass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo*      pSubpassBeginInfo, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_html_params_vkCmdNextSubpass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo* pSubpassBeginInfo, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -43941,7 +43941,7 @@ void dump_html_params_vkCmdNextSubpass2KHR(ApiDumpInstance& dump_inst, VkCommand
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdEndRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_html_params_vkCmdEndRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44329,7 +44329,7 @@ void dump_html_params_vkGetMemoryAndroidHardwareBufferANDROID(ApiDumpInstance& d
 }
 #endif // VK_USE_PLATFORM_ANDROID_KHR
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_html_params_vkCreateExecutionGraphPipelinesAMDX(ApiDumpInstance& dump_inst, VkDevice                                        device, VkPipelineCache                 pipelineCache, uint32_t                                        createInfoCount, const VkExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, const VkAllocationCallbacks*    pAllocator, VkPipeline*               pPipelines)
+void dump_html_params_vkCreateExecutionGraphPipelinesAMDX(ApiDumpInstance& dump_inst, VkDevice device, VkPipelineCache pipelineCache, uint32_t createInfoCount, const VkExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, const VkAllocationCallbacks* pAllocator, VkPipeline* pPipelines)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44346,7 +44346,7 @@ void dump_html_params_vkCreateExecutionGraphPipelinesAMDX(ApiDumpInstance& dump_
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_html_params_vkGetExecutionGraphPipelineScratchSizeAMDX(ApiDumpInstance& dump_inst, VkDevice                                        device, VkPipeline                                      executionGraph, VkExecutionGraphPipelineScratchSizeAMDX*        pSizeInfo)
+void dump_html_params_vkGetExecutionGraphPipelineScratchSizeAMDX(ApiDumpInstance& dump_inst, VkDevice device, VkPipeline executionGraph, VkExecutionGraphPipelineScratchSizeAMDX* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44360,7 +44360,7 @@ void dump_html_params_vkGetExecutionGraphPipelineScratchSizeAMDX(ApiDumpInstance
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_html_params_vkGetExecutionGraphPipelineNodeIndexAMDX(ApiDumpInstance& dump_inst, VkDevice                                        device, VkPipeline                                      executionGraph, const VkPipelineShaderStageNodeCreateInfoAMDX*  pNodeInfo, uint32_t*                                       pNodeIndex)
+void dump_html_params_vkGetExecutionGraphPipelineNodeIndexAMDX(ApiDumpInstance& dump_inst, VkDevice device, VkPipeline executionGraph, const VkPipelineShaderStageNodeCreateInfoAMDX* pNodeInfo, uint32_t* pNodeIndex)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44375,7 +44375,7 @@ void dump_html_params_vkGetExecutionGraphPipelineNodeIndexAMDX(ApiDumpInstance& 
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_html_params_vkCmdInitializeGraphScratchMemoryAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkPipeline                                      executionGraph, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize)
+void dump_html_params_vkCmdInitializeGraphScratchMemoryAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipeline executionGraph, VkDeviceAddress scratch, VkDeviceSize scratchSize)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44390,7 +44390,7 @@ void dump_html_params_vkCmdInitializeGraphScratchMemoryAMDX(ApiDumpInstance& dum
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_html_params_vkCmdDispatchGraphAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize, const VkDispatchGraphCountInfoAMDX*             pCountInfo)
+void dump_html_params_vkCmdDispatchGraphAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkDeviceAddress scratch, VkDeviceSize scratchSize, const VkDispatchGraphCountInfoAMDX* pCountInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44405,7 +44405,7 @@ void dump_html_params_vkCmdDispatchGraphAMDX(ApiDumpInstance& dump_inst, VkComma
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_html_params_vkCmdDispatchGraphIndirectAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize, const VkDispatchGraphCountInfoAMDX*             pCountInfo)
+void dump_html_params_vkCmdDispatchGraphIndirectAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkDeviceAddress scratch, VkDeviceSize scratchSize, const VkDispatchGraphCountInfoAMDX* pCountInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44420,7 +44420,7 @@ void dump_html_params_vkCmdDispatchGraphIndirectAMDX(ApiDumpInstance& dump_inst,
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_html_params_vkCmdDispatchGraphIndirectCountAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize, VkDeviceAddress                                 countInfo)
+void dump_html_params_vkCmdDispatchGraphIndirectCountAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkDeviceAddress scratch, VkDeviceSize scratchSize, VkDeviceAddress countInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44494,7 +44494,7 @@ void dump_html_params_vkGetImageSparseMemoryRequirements2KHR(ApiDumpInstance& du
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCreateAccelerationStructureKHR(ApiDumpInstance& dump_inst, VkDevice                                           device, const VkAccelerationStructureCreateInfoKHR*        pCreateInfo, const VkAllocationCallbacks*       pAllocator, VkAccelerationStructureKHR*                        pAccelerationStructure)
+void dump_html_params_vkCreateAccelerationStructureKHR(ApiDumpInstance& dump_inst, VkDevice device, const VkAccelerationStructureCreateInfoKHR* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkAccelerationStructureKHR* pAccelerationStructure)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44519,7 +44519,7 @@ void dump_html_params_vkDestroyAccelerationStructureKHR(ApiDumpInstance& dump_in
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                                    commandBuffer, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
+void dump_html_params_vkCmdBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44531,7 +44531,7 @@ void dump_html_params_vkCmdBuildAccelerationStructuresKHR(ApiDumpInstance& dump_
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdBuildAccelerationStructuresIndirectKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                  commandBuffer, uint32_t                                           infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkDeviceAddress*             pIndirectDeviceAddresses, const uint32_t*                    pIndirectStrides, const uint32_t* const*             ppMaxPrimitiveCounts)
+void dump_html_params_vkCmdBuildAccelerationStructuresIndirectKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkDeviceAddress* pIndirectDeviceAddresses, const uint32_t* pIndirectStrides, const uint32_t* const* ppMaxPrimitiveCounts)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44545,7 +44545,7 @@ void dump_html_params_vkCmdBuildAccelerationStructuresIndirectKHR(ApiDumpInstanc
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkDevice                                           device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
+void dump_html_params_vkBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkDevice device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44594,7 +44594,7 @@ void dump_html_params_vkCopyMemoryToAccelerationStructureKHR(ApiDumpInstance& du
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkWriteAccelerationStructuresPropertiesKHR(ApiDumpInstance& dump_inst, VkDevice device, uint32_t accelerationStructureCount, const VkAccelerationStructureKHR* pAccelerationStructures, VkQueryType  queryType, size_t       dataSize, void* pData, size_t stride)
+void dump_html_params_vkWriteAccelerationStructuresPropertiesKHR(ApiDumpInstance& dump_inst, VkDevice device, uint32_t accelerationStructureCount, const VkAccelerationStructureKHR* pAccelerationStructures, VkQueryType queryType, size_t dataSize, void* pData, size_t stride)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -44681,7 +44681,7 @@ void dump_html_params_vkGetDeviceAccelerationStructureCompatibilityKHR(ApiDumpIn
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkGetAccelerationStructureBuildSizesKHR(ApiDumpInstance& dump_inst, VkDevice                                            device, VkAccelerationStructureBuildTypeKHR                 buildType, const VkAccelerationStructureBuildGeometryInfoKHR*  pBuildInfo, const uint32_t*  pMaxPrimitiveCounts, VkAccelerationStructureBuildSizesInfoKHR*           pSizeInfo)
+void dump_html_params_vkGetAccelerationStructureBuildSizesKHR(ApiDumpInstance& dump_inst, VkDevice device, VkAccelerationStructureBuildTypeKHR buildType, const VkAccelerationStructureBuildGeometryInfoKHR* pBuildInfo, const uint32_t* pMaxPrimitiveCounts, VkAccelerationStructureBuildSizesInfoKHR* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -45105,7 +45105,7 @@ void dump_html_params_vkCmdWriteBufferMarkerAMD(ApiDumpInstance& dump_inst, VkCo
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdWriteBufferMarker2AMD(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkPipelineStageFlags2               stage, VkBuffer                                            dstBuffer, VkDeviceSize                                        dstOffset, uint32_t                                            marker)
+void dump_html_params_vkCmdWriteBufferMarker2AMD(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineStageFlags2 stage, VkBuffer dstBuffer, VkDeviceSize dstOffset, uint32_t marker)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -45463,7 +45463,7 @@ void dump_html_params_vkGetPhysicalDeviceFragmentShadingRatesKHR(ApiDumpInstance
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdSetFragmentShadingRateKHR(ApiDumpInstance& dump_inst, VkCommandBuffer           commandBuffer, const VkExtent2D*                           pFragmentSize, const VkFragmentShadingRateCombinerOpKHR    combinerOps[2])
+void dump_html_params_vkCmdSetFragmentShadingRateKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkExtent2D* pFragmentSize, const VkFragmentShadingRateCombinerOpKHR combinerOps[2])
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -45883,7 +45883,7 @@ void dump_html_params_vkDeferredOperationJoinKHR(ApiDumpInstance& dump_inst, VkD
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkGetPipelineExecutablePropertiesKHR(ApiDumpInstance& dump_inst, VkDevice                        device, const VkPipelineInfoKHR*        pPipelineInfo, uint32_t* pExecutableCount, VkPipelineExecutablePropertiesKHR* pProperties)
+void dump_html_params_vkGetPipelineExecutablePropertiesKHR(ApiDumpInstance& dump_inst, VkDevice device, const VkPipelineInfoKHR* pPipelineInfo, uint32_t* pExecutableCount, VkPipelineExecutablePropertiesKHR* pProperties)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -45896,7 +45896,7 @@ void dump_html_params_vkGetPipelineExecutablePropertiesKHR(ApiDumpInstance& dump
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkGetPipelineExecutableStatisticsKHR(ApiDumpInstance& dump_inst, VkDevice                        device, const VkPipelineExecutableInfoKHR*  pExecutableInfo, uint32_t* pStatisticCount, VkPipelineExecutableStatisticKHR* pStatistics)
+void dump_html_params_vkGetPipelineExecutableStatisticsKHR(ApiDumpInstance& dump_inst, VkDevice device, const VkPipelineExecutableInfoKHR* pExecutableInfo, uint32_t* pStatisticCount, VkPipelineExecutableStatisticKHR* pStatistics)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -45909,7 +45909,7 @@ void dump_html_params_vkGetPipelineExecutableStatisticsKHR(ApiDumpInstance& dump
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkGetPipelineExecutableInternalRepresentationsKHR(ApiDumpInstance& dump_inst, VkDevice                        device, const VkPipelineExecutableInfoKHR*  pExecutableInfo, uint32_t* pInternalRepresentationCount, VkPipelineExecutableInternalRepresentationKHR* pInternalRepresentations)
+void dump_html_params_vkGetPipelineExecutableInternalRepresentationsKHR(ApiDumpInstance& dump_inst, VkDevice device, const VkPipelineExecutableInfoKHR* pExecutableInfo, uint32_t* pInternalRepresentationCount, VkPipelineExecutableInternalRepresentationKHR* pInternalRepresentations)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -45922,7 +45922,7 @@ void dump_html_params_vkGetPipelineExecutableInternalRepresentationsKHR(ApiDumpI
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCopyMemoryToImageEXT(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyMemoryToImageInfo*    pCopyMemoryToImageInfo)
+void dump_html_params_vkCopyMemoryToImageEXT(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyMemoryToImageInfo* pCopyMemoryToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -45933,7 +45933,7 @@ void dump_html_params_vkCopyMemoryToImageEXT(ApiDumpInstance& dump_inst, VkDevic
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCopyImageToMemoryEXT(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyImageToMemoryInfo*    pCopyImageToMemoryInfo)
+void dump_html_params_vkCopyImageToMemoryEXT(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyImageToMemoryInfo* pCopyImageToMemoryInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -45944,7 +45944,7 @@ void dump_html_params_vkCopyImageToMemoryEXT(ApiDumpInstance& dump_inst, VkDevic
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCopyImageToImageEXT(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyImageToImageInfo*    pCopyImageToImageInfo)
+void dump_html_params_vkCopyImageToImageEXT(ApiDumpInstance& dump_inst, VkDevice device, const VkCopyImageToImageInfo* pCopyImageToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -45955,7 +45955,7 @@ void dump_html_params_vkCopyImageToImageEXT(ApiDumpInstance& dump_inst, VkDevice
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkTransitionImageLayoutEXT(ApiDumpInstance& dump_inst, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo*    pTransitions)
+void dump_html_params_vkTransitionImageLayoutEXT(ApiDumpInstance& dump_inst, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo* pTransitions)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -46087,7 +46087,7 @@ void dump_html_params_vkDestroyIndirectCommandsLayoutNV(ApiDumpInstance& dump_in
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdSetDepthBias2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDepthBiasInfoEXT*         pDepthBiasInfo)
+void dump_html_params_vkCmdSetDepthBias2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDepthBiasInfoEXT* pDepthBiasInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -46345,7 +46345,7 @@ void dump_html_params_vkExportMetalObjectsEXT(ApiDumpInstance& dump_inst, VkDevi
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
-void dump_html_params_vkCmdSetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, const VkDependencyInfo*                             pDependencyInfo)
+void dump_html_params_vkCmdSetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -46357,7 +46357,7 @@ void dump_html_params_vkCmdSetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuf
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdResetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, VkPipelineStageFlags2               stageMask)
+void dump_html_params_vkCmdResetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, VkPipelineStageFlags2 stageMask)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -46369,7 +46369,7 @@ void dump_html_params_vkCmdResetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandB
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdWaitEvents2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, uint32_t                                            eventCount, const VkEvent*                     pEvents, const VkDependencyInfo*            pDependencyInfos)
+void dump_html_params_vkCmdWaitEvents2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t eventCount, const VkEvent* pEvents, const VkDependencyInfo* pDependencyInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -46382,7 +46382,7 @@ void dump_html_params_vkCmdWaitEvents2KHR(ApiDumpInstance& dump_inst, VkCommandB
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdPipelineBarrier2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkDependencyInfo*                             pDependencyInfo)
+void dump_html_params_vkCmdPipelineBarrier2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -46393,7 +46393,7 @@ void dump_html_params_vkCmdPipelineBarrier2KHR(ApiDumpInstance& dump_inst, VkCom
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdWriteTimestamp2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkPipelineStageFlags2               stage, VkQueryPool                                         queryPool, uint32_t                                            query)
+void dump_html_params_vkCmdWriteTimestamp2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineStageFlags2 stage, VkQueryPool queryPool, uint32_t query)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -46406,7 +46406,7 @@ void dump_html_params_vkCmdWriteTimestamp2KHR(ApiDumpInstance& dump_inst, VkComm
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkQueueSubmit2KHR(ApiDumpInstance& dump_inst, VkQueue                           queue, uint32_t                            submitCount, const VkSubmitInfo2*              pSubmits, VkFence           fence)
+void dump_html_params_vkQueueSubmit2KHR(ApiDumpInstance& dump_inst, VkQueue queue, uint32_t submitCount, const VkSubmitInfo2* pSubmits, VkFence fence)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -46558,7 +46558,7 @@ void dump_html_params_vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT(A
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdSetFragmentShadingRateEnumNV(ApiDumpInstance& dump_inst, VkCommandBuffer           commandBuffer, VkFragmentShadingRateNV                     shadingRate, const VkFragmentShadingRateCombinerOpKHR    combinerOps[2])
+void dump_html_params_vkCmdSetFragmentShadingRateEnumNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkFragmentShadingRateNV shadingRate, const VkFragmentShadingRateCombinerOpKHR combinerOps[2])
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47117,7 +47117,7 @@ void dump_html_params_vkGetPhysicalDeviceScreenPresentationSupportQNX(ApiDumpIns
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
 #endif // VK_USE_PLATFORM_SCREEN_QNX
-void dump_html_params_vkCmdSetColorWriteEnableEXT(ApiDumpInstance& dump_inst, VkCommandBuffer       commandBuffer, uint32_t                                attachmentCount, const VkBool32*   pColorWriteEnables)
+void dump_html_params_vkCmdSetColorWriteEnableEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t attachmentCount, const VkBool32* pColorWriteEnables)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47171,7 +47171,7 @@ void dump_html_params_vkCmdDrawMultiIndexedEXT(ApiDumpInstance& dump_inst, VkCom
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCreateMicromapEXT(ApiDumpInstance& dump_inst, VkDevice                                           device, const VkMicromapCreateInfoEXT*        pCreateInfo, const VkAllocationCallbacks*       pAllocator, VkMicromapEXT*                        pMicromap)
+void dump_html_params_vkCreateMicromapEXT(ApiDumpInstance& dump_inst, VkDevice device, const VkMicromapCreateInfoEXT* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkMicromapEXT* pMicromap)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47196,7 +47196,7 @@ void dump_html_params_vkDestroyMicromapEXT(ApiDumpInstance& dump_inst, VkDevice 
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkCommandBuffer                                    commandBuffer, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
+void dump_html_params_vkCmdBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47208,7 +47208,7 @@ void dump_html_params_vkCmdBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkComma
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkDevice                                           device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
+void dump_html_params_vkBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkDevice device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47257,7 +47257,7 @@ void dump_html_params_vkCopyMemoryToMicromapEXT(ApiDumpInstance& dump_inst, VkDe
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkWriteMicromapsPropertiesEXT(ApiDumpInstance& dump_inst, VkDevice device, uint32_t micromapCount, const VkMicromapEXT* pMicromaps, VkQueryType  queryType, size_t       dataSize, void* pData, size_t stride)
+void dump_html_params_vkWriteMicromapsPropertiesEXT(ApiDumpInstance& dump_inst, VkDevice device, uint32_t micromapCount, const VkMicromapEXT* pMicromaps, VkQueryType queryType, size_t dataSize, void* pData, size_t stride)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47333,7 +47333,7 @@ void dump_html_params_vkGetDeviceMicromapCompatibilityEXT(ApiDumpInstance& dump_
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkGetMicromapBuildSizesEXT(ApiDumpInstance& dump_inst, VkDevice                                            device, VkAccelerationStructureBuildTypeKHR                 buildType, const VkMicromapBuildInfoEXT*  pBuildInfo, VkMicromapBuildSizesInfoEXT*           pSizeInfo)
+void dump_html_params_vkGetMicromapBuildSizesEXT(ApiDumpInstance& dump_inst, VkDevice device, VkAccelerationStructureBuildTypeKHR buildType, const VkMicromapBuildInfoEXT* pBuildInfo, VkMicromapBuildSizesInfoEXT* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47371,7 +47371,7 @@ void dump_html_params_vkCmdDrawClusterIndirectHUAWEI(ApiDumpInstance& dump_inst,
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkSetDeviceMemoryPriorityEXT(ApiDumpInstance& dump_inst, VkDevice       device, VkDeviceMemory memory, float          priority)
+void dump_html_params_vkSetDeviceMemoryPriorityEXT(ApiDumpInstance& dump_inst, VkDevice device, VkDeviceMemory memory, float priority)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47510,7 +47510,7 @@ void dump_html_params_vkGetPipelineIndirectMemoryRequirementsNV(ApiDumpInstance&
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdUpdatePipelineIndirectBufferNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineBindPoint           pipelineBindPoint, VkPipeline                    pipeline)
+void dump_html_params_vkCmdUpdatePipelineIndirectBufferNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineBindPoint pipelineBindPoint, VkPipeline pipeline)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47555,7 +47555,7 @@ void dump_html_params_vkCmdSetPolygonModeEXT(ApiDumpInstance& dump_inst, VkComma
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdSetRasterizationSamplesEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits  rasterizationSamples)
+void dump_html_params_vkCmdSetRasterizationSamplesEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits rasterizationSamples)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -47566,7 +47566,7 @@ void dump_html_params_vkCmdSetRasterizationSamplesEXT(ApiDumpInstance& dump_inst
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdSetSampleMaskEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits  samples, const VkSampleMask*    pSampleMask)
+void dump_html_params_vkCmdSetSampleMaskEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits samples, const VkSampleMask* pSampleMask)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -48331,7 +48331,7 @@ void dump_html_params_vkCmdSetLineStippleKHR(ApiDumpInstance& dump_inst, VkComma
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdBindDescriptorSets2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo*   pBindDescriptorSetsInfo)
+void dump_html_params_vkCmdBindDescriptorSets2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo* pBindDescriptorSetsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -48342,7 +48342,7 @@ void dump_html_params_vkCmdBindDescriptorSets2KHR(ApiDumpInstance& dump_inst, Vk
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdPushConstants2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo*        pPushConstantsInfo)
+void dump_html_params_vkCmdPushConstants2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo* pPushConstantsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -48353,7 +48353,7 @@ void dump_html_params_vkCmdPushConstants2KHR(ApiDumpInstance& dump_inst, VkComma
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdPushDescriptorSet2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo*    pPushDescriptorSetInfo)
+void dump_html_params_vkCmdPushDescriptorSet2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo* pPushDescriptorSetInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -48457,7 +48457,7 @@ void dump_html_params_vkGetClusterAccelerationStructureBuildSizesNV(ApiDumpInsta
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdBuildClusterAccelerationStructureIndirectNV(ApiDumpInstance& dump_inst, VkCommandBuffer                     commandBuffer, const VkClusterAccelerationStructureCommandsInfoNV*  pCommandInfos)
+void dump_html_params_vkCmdBuildClusterAccelerationStructureIndirectNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkClusterAccelerationStructureCommandsInfoNV* pCommandInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -48468,7 +48468,7 @@ void dump_html_params_vkCmdBuildClusterAccelerationStructureIndirectNV(ApiDumpIn
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkGetPartitionedAccelerationStructuresBuildSizesNV(ApiDumpInstance& dump_inst, VkDevice device, const VkPartitionedAccelerationStructureInstancesInputNV* pInfo, VkAccelerationStructureBuildSizesInfoKHR*                  pSizeInfo)
+void dump_html_params_vkGetPartitionedAccelerationStructuresBuildSizesNV(ApiDumpInstance& dump_inst, VkDevice device, const VkPartitionedAccelerationStructureInstancesInputNV* pInfo, VkAccelerationStructureBuildSizesInfoKHR* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -48480,7 +48480,7 @@ void dump_html_params_vkGetPartitionedAccelerationStructuresBuildSizesNV(ApiDump
     }
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
-void dump_html_params_vkCmdBuildPartitionedAccelerationStructuresNV(ApiDumpInstance& dump_inst, VkCommandBuffer                     commandBuffer, const VkBuildPartitionedAccelerationStructureInfoNV*  pBuildInfo)
+void dump_html_params_vkCmdBuildPartitionedAccelerationStructuresNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBuildPartitionedAccelerationStructureInfoNV* pBuildInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -48644,7 +48644,7 @@ void dump_html_params_vkGetMemoryMetalHandlePropertiesEXT(ApiDumpInstance& dump_
     settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\n";
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
-void dump_html_params_vkCmdEndRendering2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkRenderingEndInfoEXT*        pRenderingEndInfo)
+void dump_html_params_vkCmdEndRendering2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderingEndInfoEXT* pRenderingEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
 
@@ -49874,21 +49874,21 @@ void dump_html_vkCreateRenderPass2(ApiDumpInstance& dump_inst, VkResult result, 
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdBeginRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo*      pRenderPassBegin, const VkSubpassBeginInfo*      pSubpassBeginInfo)
+void dump_html_vkCmdBeginRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo* pRenderPassBegin, const VkSubpassBeginInfo* pSubpassBeginInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdBeginRenderPass2(dump_inst, commandBuffer, pRenderPassBegin, pSubpassBeginInfo);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdNextSubpass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo*      pSubpassBeginInfo, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_html_vkCmdNextSubpass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo* pSubpassBeginInfo, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdNextSubpass2(dump_inst, commandBuffer, pSubpassBeginInfo, pSubpassEndInfo);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdEndRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_html_vkCmdEndRenderPass2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdEndRenderPass2(dump_inst, commandBuffer, pSubpassEndInfo);
@@ -49988,42 +49988,42 @@ void dump_html_vkGetPrivateData(ApiDumpInstance& dump_inst, VkDevice device, VkO
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdSetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, const VkDependencyInfo*                             pDependencyInfo)
+void dump_html_vkCmdSetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdSetEvent2(dump_inst, commandBuffer, event, pDependencyInfo);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdResetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, VkPipelineStageFlags2               stageMask)
+void dump_html_vkCmdResetEvent2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, VkPipelineStageFlags2 stageMask)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdResetEvent2(dump_inst, commandBuffer, event, stageMask);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdWaitEvents2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, uint32_t                                            eventCount, const VkEvent*                     pEvents, const VkDependencyInfo*            pDependencyInfos)
+void dump_html_vkCmdWaitEvents2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t eventCount, const VkEvent* pEvents, const VkDependencyInfo* pDependencyInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdWaitEvents2(dump_inst, commandBuffer, eventCount, pEvents, pDependencyInfos);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdPipelineBarrier2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkDependencyInfo*                             pDependencyInfo)
+void dump_html_vkCmdPipelineBarrier2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdPipelineBarrier2(dump_inst, commandBuffer, pDependencyInfo);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdWriteTimestamp2(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkPipelineStageFlags2               stage, VkQueryPool                                         queryPool, uint32_t                                            query)
+void dump_html_vkCmdWriteTimestamp2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineStageFlags2 stage, VkQueryPool queryPool, uint32_t query)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdWriteTimestamp2(dump_inst, commandBuffer, stage, queryPool, query);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkQueueSubmit2(ApiDumpInstance& dump_inst, VkResult result, VkQueue                           queue, uint32_t                            submitCount, const VkSubmitInfo2*              pSubmits, VkFence           fence)
+void dump_html_vkQueueSubmit2(ApiDumpInstance& dump_inst, VkResult result, VkQueue queue, uint32_t submitCount, const VkSubmitInfo2* pSubmits, VkFence fence)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -50073,14 +50073,14 @@ void dump_html_vkCmdResolveImage2(ApiDumpInstance& dump_inst, VkCommandBuffer co
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdBeginRendering(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkRenderingInfo*                              pRenderingInfo)
+void dump_html_vkCmdBeginRendering(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderingInfo* pRenderingInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdBeginRendering(dump_inst, commandBuffer, pRenderingInfo);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdEndRendering(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer)
+void dump_html_vkCmdEndRendering(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdEndRendering(dump_inst, commandBuffer);
@@ -50292,21 +50292,21 @@ void dump_html_vkCmdSetRenderingInputAttachmentIndices(ApiDumpInstance& dump_ins
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdBindDescriptorSets2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo*   pBindDescriptorSetsInfo)
+void dump_html_vkCmdBindDescriptorSets2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo* pBindDescriptorSetsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdBindDescriptorSets2(dump_inst, commandBuffer, pBindDescriptorSetsInfo);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdPushConstants2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo*        pPushConstantsInfo)
+void dump_html_vkCmdPushConstants2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo* pPushConstantsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdPushConstants2(dump_inst, commandBuffer, pPushConstantsInfo);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdPushDescriptorSet2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo*    pPushDescriptorSetInfo)
+void dump_html_vkCmdPushDescriptorSet2(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo* pPushDescriptorSetInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdPushDescriptorSet2(dump_inst, commandBuffer, pPushDescriptorSetInfo);
@@ -50320,7 +50320,7 @@ void dump_html_vkCmdPushDescriptorSetWithTemplate2(ApiDumpInstance& dump_inst, V
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCopyMemoryToImage(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyMemoryToImageInfo*    pCopyMemoryToImageInfo)
+void dump_html_vkCopyMemoryToImage(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyMemoryToImageInfo* pCopyMemoryToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -50328,7 +50328,7 @@ void dump_html_vkCopyMemoryToImage(ApiDumpInstance& dump_inst, VkResult result, 
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCopyImageToMemory(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToMemoryInfo*    pCopyImageToMemoryInfo)
+void dump_html_vkCopyImageToMemory(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToMemoryInfo* pCopyImageToMemoryInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -50336,7 +50336,7 @@ void dump_html_vkCopyImageToMemory(ApiDumpInstance& dump_inst, VkResult result, 
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCopyImageToImage(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToImageInfo*    pCopyImageToImageInfo)
+void dump_html_vkCopyImageToImage(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToImageInfo* pCopyImageToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -50344,7 +50344,7 @@ void dump_html_vkCopyImageToImage(ApiDumpInstance& dump_inst, VkResult result, V
 
     settings.stream() << "</details>";
 }
-void dump_html_vkTransitionImageLayout(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo*    pTransitions)
+void dump_html_vkTransitionImageLayout(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo* pTransitions)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -50898,14 +50898,14 @@ void dump_html_vkGetShaderInfoAMD(ApiDumpInstance& dump_inst, VkResult result, V
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdBeginRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkRenderingInfo*                              pRenderingInfo)
+void dump_html_vkCmdBeginRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderingInfo* pRenderingInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdBeginRenderingKHR(dump_inst, commandBuffer, pRenderingInfo);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdEndRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer)
+void dump_html_vkCmdEndRenderingKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdEndRenderingKHR(dump_inst, commandBuffer);
@@ -51299,21 +51299,21 @@ void dump_html_vkCreateRenderPass2KHR(ApiDumpInstance& dump_inst, VkResult resul
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdBeginRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo*      pRenderPassBegin, const VkSubpassBeginInfo*      pSubpassBeginInfo)
+void dump_html_vkCmdBeginRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo* pRenderPassBegin, const VkSubpassBeginInfo* pSubpassBeginInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdBeginRenderPass2KHR(dump_inst, commandBuffer, pRenderPassBegin, pSubpassBeginInfo);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdNextSubpass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo*      pSubpassBeginInfo, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_html_vkCmdNextSubpass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassBeginInfo* pSubpassBeginInfo, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdNextSubpass2KHR(dump_inst, commandBuffer, pSubpassBeginInfo, pSubpassEndInfo);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdEndRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo*        pSubpassEndInfo)
+void dump_html_vkCmdEndRenderPass2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkSubpassEndInfo* pSubpassEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdEndRenderPass2KHR(dump_inst, commandBuffer, pSubpassEndInfo);
@@ -51570,7 +51570,7 @@ void dump_html_vkGetMemoryAndroidHardwareBufferANDROID(ApiDumpInstance& dump_ins
 }
 #endif // VK_USE_PLATFORM_ANDROID_KHR
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_html_vkCreateExecutionGraphPipelinesAMDX(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                        device, VkPipelineCache                 pipelineCache, uint32_t                                        createInfoCount, const VkExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, const VkAllocationCallbacks*    pAllocator, VkPipeline*               pPipelines)
+void dump_html_vkCreateExecutionGraphPipelinesAMDX(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, VkPipelineCache pipelineCache, uint32_t createInfoCount, const VkExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, const VkAllocationCallbacks* pAllocator, VkPipeline* pPipelines)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -51580,7 +51580,7 @@ void dump_html_vkCreateExecutionGraphPipelinesAMDX(ApiDumpInstance& dump_inst, V
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_html_vkGetExecutionGraphPipelineScratchSizeAMDX(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                        device, VkPipeline                                      executionGraph, VkExecutionGraphPipelineScratchSizeAMDX*        pSizeInfo)
+void dump_html_vkGetExecutionGraphPipelineScratchSizeAMDX(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, VkPipeline executionGraph, VkExecutionGraphPipelineScratchSizeAMDX* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -51590,7 +51590,7 @@ void dump_html_vkGetExecutionGraphPipelineScratchSizeAMDX(ApiDumpInstance& dump_
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_html_vkGetExecutionGraphPipelineNodeIndexAMDX(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                        device, VkPipeline                                      executionGraph, const VkPipelineShaderStageNodeCreateInfoAMDX*  pNodeInfo, uint32_t*                                       pNodeIndex)
+void dump_html_vkGetExecutionGraphPipelineNodeIndexAMDX(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, VkPipeline executionGraph, const VkPipelineShaderStageNodeCreateInfoAMDX* pNodeInfo, uint32_t* pNodeIndex)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -51600,7 +51600,7 @@ void dump_html_vkGetExecutionGraphPipelineNodeIndexAMDX(ApiDumpInstance& dump_in
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_html_vkCmdInitializeGraphScratchMemoryAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkPipeline                                      executionGraph, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize)
+void dump_html_vkCmdInitializeGraphScratchMemoryAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipeline executionGraph, VkDeviceAddress scratch, VkDeviceSize scratchSize)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdInitializeGraphScratchMemoryAMDX(dump_inst, commandBuffer, executionGraph, scratch, scratchSize);
@@ -51609,7 +51609,7 @@ void dump_html_vkCmdInitializeGraphScratchMemoryAMDX(ApiDumpInstance& dump_inst,
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_html_vkCmdDispatchGraphAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize, const VkDispatchGraphCountInfoAMDX*             pCountInfo)
+void dump_html_vkCmdDispatchGraphAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkDeviceAddress scratch, VkDeviceSize scratchSize, const VkDispatchGraphCountInfoAMDX* pCountInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdDispatchGraphAMDX(dump_inst, commandBuffer, scratch, scratchSize, pCountInfo);
@@ -51618,7 +51618,7 @@ void dump_html_vkCmdDispatchGraphAMDX(ApiDumpInstance& dump_inst, VkCommandBuffe
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_html_vkCmdDispatchGraphIndirectAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize, const VkDispatchGraphCountInfoAMDX*             pCountInfo)
+void dump_html_vkCmdDispatchGraphIndirectAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkDeviceAddress scratch, VkDeviceSize scratchSize, const VkDispatchGraphCountInfoAMDX* pCountInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdDispatchGraphIndirectAMDX(dump_inst, commandBuffer, scratch, scratchSize, pCountInfo);
@@ -51627,7 +51627,7 @@ void dump_html_vkCmdDispatchGraphIndirectAMDX(ApiDumpInstance& dump_inst, VkComm
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_html_vkCmdDispatchGraphIndirectCountAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer                                 commandBuffer, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize, VkDeviceAddress                                 countInfo)
+void dump_html_vkCmdDispatchGraphIndirectCountAMDX(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkDeviceAddress scratch, VkDeviceSize scratchSize, VkDeviceAddress countInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdDispatchGraphIndirectCountAMDX(dump_inst, commandBuffer, scratch, scratchSize, countInfo);
@@ -51670,7 +51670,7 @@ void dump_html_vkGetImageSparseMemoryRequirements2KHR(ApiDumpInstance& dump_inst
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCreateAccelerationStructureKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                           device, const VkAccelerationStructureCreateInfoKHR*        pCreateInfo, const VkAllocationCallbacks*       pAllocator, VkAccelerationStructureKHR*                        pAccelerationStructure)
+void dump_html_vkCreateAccelerationStructureKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkAccelerationStructureCreateInfoKHR* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkAccelerationStructureKHR* pAccelerationStructure)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -51685,21 +51685,21 @@ void dump_html_vkDestroyAccelerationStructureKHR(ApiDumpInstance& dump_inst, VkD
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                                    commandBuffer, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
+void dump_html_vkCmdBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdBuildAccelerationStructuresKHR(dump_inst, commandBuffer, infoCount, pInfos, ppBuildRangeInfos);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdBuildAccelerationStructuresIndirectKHR(ApiDumpInstance& dump_inst, VkCommandBuffer                  commandBuffer, uint32_t                                           infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkDeviceAddress*             pIndirectDeviceAddresses, const uint32_t*                    pIndirectStrides, const uint32_t* const*             ppMaxPrimitiveCounts)
+void dump_html_vkCmdBuildAccelerationStructuresIndirectKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkDeviceAddress* pIndirectDeviceAddresses, const uint32_t* pIndirectStrides, const uint32_t* const* ppMaxPrimitiveCounts)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdBuildAccelerationStructuresIndirectKHR(dump_inst, commandBuffer, infoCount, pInfos, pIndirectDeviceAddresses, pIndirectStrides, ppMaxPrimitiveCounts);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                           device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
+void dump_html_vkBuildAccelerationStructuresKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -51731,7 +51731,7 @@ void dump_html_vkCopyMemoryToAccelerationStructureKHR(ApiDumpInstance& dump_inst
 
     settings.stream() << "</details>";
 }
-void dump_html_vkWriteAccelerationStructuresPropertiesKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t accelerationStructureCount, const VkAccelerationStructureKHR* pAccelerationStructures, VkQueryType  queryType, size_t       dataSize, void* pData, size_t stride)
+void dump_html_vkWriteAccelerationStructuresPropertiesKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t accelerationStructureCount, const VkAccelerationStructureKHR* pAccelerationStructures, VkQueryType queryType, size_t dataSize, void* pData, size_t stride)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -51782,7 +51782,7 @@ void dump_html_vkGetDeviceAccelerationStructureCompatibilityKHR(ApiDumpInstance&
 
     settings.stream() << "</details>";
 }
-void dump_html_vkGetAccelerationStructureBuildSizesKHR(ApiDumpInstance& dump_inst, VkDevice                                            device, VkAccelerationStructureBuildTypeKHR                 buildType, const VkAccelerationStructureBuildGeometryInfoKHR*  pBuildInfo, const uint32_t*  pMaxPrimitiveCounts, VkAccelerationStructureBuildSizesInfoKHR*           pSizeInfo)
+void dump_html_vkGetAccelerationStructureBuildSizesKHR(ApiDumpInstance& dump_inst, VkDevice device, VkAccelerationStructureBuildTypeKHR buildType, const VkAccelerationStructureBuildGeometryInfoKHR* pBuildInfo, const uint32_t* pMaxPrimitiveCounts, VkAccelerationStructureBuildSizesInfoKHR* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkGetAccelerationStructureBuildSizesKHR(dump_inst, device, buildType, pBuildInfo, pMaxPrimitiveCounts, pSizeInfo);
@@ -52014,7 +52014,7 @@ void dump_html_vkCmdWriteBufferMarkerAMD(ApiDumpInstance& dump_inst, VkCommandBu
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdWriteBufferMarker2AMD(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkPipelineStageFlags2               stage, VkBuffer                                            dstBuffer, VkDeviceSize                                        dstOffset, uint32_t                                            marker)
+void dump_html_vkCmdWriteBufferMarker2AMD(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineStageFlags2 stage, VkBuffer dstBuffer, VkDeviceSize dstOffset, uint32_t marker)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdWriteBufferMarker2AMD(dump_inst, commandBuffer, stage, dstBuffer, dstOffset, marker);
@@ -52239,7 +52239,7 @@ void dump_html_vkGetPhysicalDeviceFragmentShadingRatesKHR(ApiDumpInstance& dump_
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdSetFragmentShadingRateKHR(ApiDumpInstance& dump_inst, VkCommandBuffer           commandBuffer, const VkExtent2D*                           pFragmentSize, const VkFragmentShadingRateCombinerOpKHR    combinerOps[2])
+void dump_html_vkCmdSetFragmentShadingRateKHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkExtent2D* pFragmentSize, const VkFragmentShadingRateCombinerOpKHR combinerOps[2])
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdSetFragmentShadingRateKHR(dump_inst, commandBuffer, pFragmentSize, combinerOps);
@@ -52509,7 +52509,7 @@ void dump_html_vkDeferredOperationJoinKHR(ApiDumpInstance& dump_inst, VkResult r
 
     settings.stream() << "</details>";
 }
-void dump_html_vkGetPipelineExecutablePropertiesKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice                        device, const VkPipelineInfoKHR*        pPipelineInfo, uint32_t* pExecutableCount, VkPipelineExecutablePropertiesKHR* pProperties)
+void dump_html_vkGetPipelineExecutablePropertiesKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkPipelineInfoKHR* pPipelineInfo, uint32_t* pExecutableCount, VkPipelineExecutablePropertiesKHR* pProperties)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -52517,7 +52517,7 @@ void dump_html_vkGetPipelineExecutablePropertiesKHR(ApiDumpInstance& dump_inst, 
 
     settings.stream() << "</details>";
 }
-void dump_html_vkGetPipelineExecutableStatisticsKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice                        device, const VkPipelineExecutableInfoKHR*  pExecutableInfo, uint32_t* pStatisticCount, VkPipelineExecutableStatisticKHR* pStatistics)
+void dump_html_vkGetPipelineExecutableStatisticsKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkPipelineExecutableInfoKHR* pExecutableInfo, uint32_t* pStatisticCount, VkPipelineExecutableStatisticKHR* pStatistics)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -52525,7 +52525,7 @@ void dump_html_vkGetPipelineExecutableStatisticsKHR(ApiDumpInstance& dump_inst, 
 
     settings.stream() << "</details>";
 }
-void dump_html_vkGetPipelineExecutableInternalRepresentationsKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice                        device, const VkPipelineExecutableInfoKHR*  pExecutableInfo, uint32_t* pInternalRepresentationCount, VkPipelineExecutableInternalRepresentationKHR* pInternalRepresentations)
+void dump_html_vkGetPipelineExecutableInternalRepresentationsKHR(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkPipelineExecutableInfoKHR* pExecutableInfo, uint32_t* pInternalRepresentationCount, VkPipelineExecutableInternalRepresentationKHR* pInternalRepresentations)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -52533,7 +52533,7 @@ void dump_html_vkGetPipelineExecutableInternalRepresentationsKHR(ApiDumpInstance
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCopyMemoryToImageEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyMemoryToImageInfo*    pCopyMemoryToImageInfo)
+void dump_html_vkCopyMemoryToImageEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyMemoryToImageInfo* pCopyMemoryToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -52541,7 +52541,7 @@ void dump_html_vkCopyMemoryToImageEXT(ApiDumpInstance& dump_inst, VkResult resul
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCopyImageToMemoryEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToMemoryInfo*    pCopyImageToMemoryInfo)
+void dump_html_vkCopyImageToMemoryEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToMemoryInfo* pCopyImageToMemoryInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -52549,7 +52549,7 @@ void dump_html_vkCopyImageToMemoryEXT(ApiDumpInstance& dump_inst, VkResult resul
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCopyImageToImageEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToImageInfo*    pCopyImageToImageInfo)
+void dump_html_vkCopyImageToImageEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkCopyImageToImageInfo* pCopyImageToImageInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -52557,7 +52557,7 @@ void dump_html_vkCopyImageToImageEXT(ApiDumpInstance& dump_inst, VkResult result
 
     settings.stream() << "</details>";
 }
-void dump_html_vkTransitionImageLayoutEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo*    pTransitions)
+void dump_html_vkTransitionImageLayoutEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo* pTransitions)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -52639,7 +52639,7 @@ void dump_html_vkDestroyIndirectCommandsLayoutNV(ApiDumpInstance& dump_inst, VkD
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdSetDepthBias2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDepthBiasInfoEXT*         pDepthBiasInfo)
+void dump_html_vkCmdSetDepthBias2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDepthBiasInfoEXT* pDepthBiasInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdSetDepthBias2EXT(dump_inst, commandBuffer, pDepthBiasInfo);
@@ -52802,42 +52802,42 @@ void dump_html_vkExportMetalObjectsEXT(ApiDumpInstance& dump_inst, VkDevice devi
     settings.stream() << "</details>";
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
-void dump_html_vkCmdSetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, const VkDependencyInfo*                             pDependencyInfo)
+void dump_html_vkCmdSetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdSetEvent2KHR(dump_inst, commandBuffer, event, pDependencyInfo);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdResetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkEvent                                             event, VkPipelineStageFlags2               stageMask)
+void dump_html_vkCmdResetEvent2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkEvent event, VkPipelineStageFlags2 stageMask)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdResetEvent2KHR(dump_inst, commandBuffer, event, stageMask);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdWaitEvents2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, uint32_t                                            eventCount, const VkEvent*                     pEvents, const VkDependencyInfo*            pDependencyInfos)
+void dump_html_vkCmdWaitEvents2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t eventCount, const VkEvent* pEvents, const VkDependencyInfo* pDependencyInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdWaitEvents2KHR(dump_inst, commandBuffer, eventCount, pEvents, pDependencyInfos);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdPipelineBarrier2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkDependencyInfo*                             pDependencyInfo)
+void dump_html_vkCmdPipelineBarrier2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkDependencyInfo* pDependencyInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdPipelineBarrier2KHR(dump_inst, commandBuffer, pDependencyInfo);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdWriteTimestamp2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, VkPipelineStageFlags2               stage, VkQueryPool                                         queryPool, uint32_t                                            query)
+void dump_html_vkCmdWriteTimestamp2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineStageFlags2 stage, VkQueryPool queryPool, uint32_t query)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdWriteTimestamp2KHR(dump_inst, commandBuffer, stage, queryPool, query);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkQueueSubmit2KHR(ApiDumpInstance& dump_inst, VkResult result, VkQueue                           queue, uint32_t                            submitCount, const VkSubmitInfo2*              pSubmits, VkFence           fence)
+void dump_html_vkQueueSubmit2KHR(ApiDumpInstance& dump_inst, VkResult result, VkQueue queue, uint32_t submitCount, const VkSubmitInfo2* pSubmits, VkFence fence)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -52927,7 +52927,7 @@ void dump_html_vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT(ApiDumpI
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdSetFragmentShadingRateEnumNV(ApiDumpInstance& dump_inst, VkCommandBuffer           commandBuffer, VkFragmentShadingRateNV                     shadingRate, const VkFragmentShadingRateCombinerOpKHR    combinerOps[2])
+void dump_html_vkCmdSetFragmentShadingRateEnumNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkFragmentShadingRateNV shadingRate, const VkFragmentShadingRateCombinerOpKHR combinerOps[2])
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdSetFragmentShadingRateEnumNV(dump_inst, commandBuffer, shadingRate, combinerOps);
@@ -53279,7 +53279,7 @@ void dump_html_vkGetPhysicalDeviceScreenPresentationSupportQNX(ApiDumpInstance& 
     settings.stream() << "</details>";
 }
 #endif // VK_USE_PLATFORM_SCREEN_QNX
-void dump_html_vkCmdSetColorWriteEnableEXT(ApiDumpInstance& dump_inst, VkCommandBuffer       commandBuffer, uint32_t                                attachmentCount, const VkBool32*   pColorWriteEnables)
+void dump_html_vkCmdSetColorWriteEnableEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t attachmentCount, const VkBool32* pColorWriteEnables)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdSetColorWriteEnableEXT(dump_inst, commandBuffer, attachmentCount, pColorWriteEnables);
@@ -53307,7 +53307,7 @@ void dump_html_vkCmdDrawMultiIndexedEXT(ApiDumpInstance& dump_inst, VkCommandBuf
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCreateMicromapEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                           device, const VkMicromapCreateInfoEXT*        pCreateInfo, const VkAllocationCallbacks*       pAllocator, VkMicromapEXT*                        pMicromap)
+void dump_html_vkCreateMicromapEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, const VkMicromapCreateInfoEXT* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkMicromapEXT* pMicromap)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -53322,14 +53322,14 @@ void dump_html_vkDestroyMicromapEXT(ApiDumpInstance& dump_inst, VkDevice device,
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkCommandBuffer                                    commandBuffer, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
+void dump_html_vkCmdBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdBuildMicromapsEXT(dump_inst, commandBuffer, infoCount, pInfos);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice                                           device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
+void dump_html_vkBuildMicromapsEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -53361,7 +53361,7 @@ void dump_html_vkCopyMemoryToMicromapEXT(ApiDumpInstance& dump_inst, VkResult re
 
     settings.stream() << "</details>";
 }
-void dump_html_vkWriteMicromapsPropertiesEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t micromapCount, const VkMicromapEXT* pMicromaps, VkQueryType  queryType, size_t       dataSize, void* pData, size_t stride)
+void dump_html_vkWriteMicromapsPropertiesEXT(ApiDumpInstance& dump_inst, VkResult result, VkDevice device, uint32_t micromapCount, const VkMicromapEXT* pMicromaps, VkQueryType queryType, size_t dataSize, void* pData, size_t stride)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_VkResult(result, settings, 0);
@@ -53404,7 +53404,7 @@ void dump_html_vkGetDeviceMicromapCompatibilityEXT(ApiDumpInstance& dump_inst, V
 
     settings.stream() << "</details>";
 }
-void dump_html_vkGetMicromapBuildSizesEXT(ApiDumpInstance& dump_inst, VkDevice                                            device, VkAccelerationStructureBuildTypeKHR                 buildType, const VkMicromapBuildInfoEXT*  pBuildInfo, VkMicromapBuildSizesInfoEXT*           pSizeInfo)
+void dump_html_vkGetMicromapBuildSizesEXT(ApiDumpInstance& dump_inst, VkDevice device, VkAccelerationStructureBuildTypeKHR buildType, const VkMicromapBuildInfoEXT* pBuildInfo, VkMicromapBuildSizesInfoEXT* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkGetMicromapBuildSizesEXT(dump_inst, device, buildType, pBuildInfo, pSizeInfo);
@@ -53425,7 +53425,7 @@ void dump_html_vkCmdDrawClusterIndirectHUAWEI(ApiDumpInstance& dump_inst, VkComm
 
     settings.stream() << "</details>";
 }
-void dump_html_vkSetDeviceMemoryPriorityEXT(ApiDumpInstance& dump_inst, VkDevice       device, VkDeviceMemory memory, float          priority)
+void dump_html_vkSetDeviceMemoryPriorityEXT(ApiDumpInstance& dump_inst, VkDevice device, VkDeviceMemory memory, float priority)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkSetDeviceMemoryPriorityEXT(dump_inst, device, memory, priority);
@@ -53502,7 +53502,7 @@ void dump_html_vkGetPipelineIndirectMemoryRequirementsNV(ApiDumpInstance& dump_i
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdUpdatePipelineIndirectBufferNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineBindPoint           pipelineBindPoint, VkPipeline                    pipeline)
+void dump_html_vkCmdUpdatePipelineIndirectBufferNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkPipelineBindPoint pipelineBindPoint, VkPipeline pipeline)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdUpdatePipelineIndirectBufferNV(dump_inst, commandBuffer, pipelineBindPoint, pipeline);
@@ -53531,14 +53531,14 @@ void dump_html_vkCmdSetPolygonModeEXT(ApiDumpInstance& dump_inst, VkCommandBuffe
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdSetRasterizationSamplesEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits  rasterizationSamples)
+void dump_html_vkCmdSetRasterizationSamplesEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits rasterizationSamples)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdSetRasterizationSamplesEXT(dump_inst, commandBuffer, rasterizationSamples);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdSetSampleMaskEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits  samples, const VkSampleMask*    pSampleMask)
+void dump_html_vkCmdSetSampleMaskEXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, VkSampleCountFlagBits samples, const VkSampleMask* pSampleMask)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdSetSampleMaskEXT(dump_inst, commandBuffer, samples, pSampleMask);
@@ -54005,21 +54005,21 @@ void dump_html_vkCmdSetLineStippleKHR(ApiDumpInstance& dump_inst, VkCommandBuffe
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdBindDescriptorSets2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo*   pBindDescriptorSetsInfo)
+void dump_html_vkCmdBindDescriptorSets2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo* pBindDescriptorSetsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdBindDescriptorSets2KHR(dump_inst, commandBuffer, pBindDescriptorSetsInfo);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdPushConstants2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo*        pPushConstantsInfo)
+void dump_html_vkCmdPushConstants2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushConstantsInfo* pPushConstantsInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdPushConstants2KHR(dump_inst, commandBuffer, pPushConstantsInfo);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdPushDescriptorSet2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo*    pPushDescriptorSetInfo)
+void dump_html_vkCmdPushDescriptorSet2KHR(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo* pPushDescriptorSetInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdPushDescriptorSet2KHR(dump_inst, commandBuffer, pPushDescriptorSetInfo);
@@ -54083,21 +54083,21 @@ void dump_html_vkGetClusterAccelerationStructureBuildSizesNV(ApiDumpInstance& du
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdBuildClusterAccelerationStructureIndirectNV(ApiDumpInstance& dump_inst, VkCommandBuffer                     commandBuffer, const VkClusterAccelerationStructureCommandsInfoNV*  pCommandInfos)
+void dump_html_vkCmdBuildClusterAccelerationStructureIndirectNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkClusterAccelerationStructureCommandsInfoNV* pCommandInfos)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdBuildClusterAccelerationStructureIndirectNV(dump_inst, commandBuffer, pCommandInfos);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkGetPartitionedAccelerationStructuresBuildSizesNV(ApiDumpInstance& dump_inst, VkDevice device, const VkPartitionedAccelerationStructureInstancesInputNV* pInfo, VkAccelerationStructureBuildSizesInfoKHR*                  pSizeInfo)
+void dump_html_vkGetPartitionedAccelerationStructuresBuildSizesNV(ApiDumpInstance& dump_inst, VkDevice device, const VkPartitionedAccelerationStructureInstancesInputNV* pInfo, VkAccelerationStructureBuildSizesInfoKHR* pSizeInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkGetPartitionedAccelerationStructuresBuildSizesNV(dump_inst, device, pInfo, pSizeInfo);
 
     settings.stream() << "</details>";
 }
-void dump_html_vkCmdBuildPartitionedAccelerationStructuresNV(ApiDumpInstance& dump_inst, VkCommandBuffer                     commandBuffer, const VkBuildPartitionedAccelerationStructureInfoNV*  pBuildInfo)
+void dump_html_vkCmdBuildPartitionedAccelerationStructuresNV(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkBuildPartitionedAccelerationStructureInfoNV* pBuildInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdBuildPartitionedAccelerationStructuresNV(dump_inst, commandBuffer, pBuildInfo);
@@ -54197,7 +54197,7 @@ void dump_html_vkGetMemoryMetalHandlePropertiesEXT(ApiDumpInstance& dump_inst, V
     settings.stream() << "</details>";
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
-void dump_html_vkCmdEndRendering2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer                   commandBuffer, const VkRenderingEndInfoEXT*        pRenderingEndInfo)
+void dump_html_vkCmdEndRendering2EXT(ApiDumpInstance& dump_inst, VkCommandBuffer commandBuffer, const VkRenderingEndInfoEXT* pRenderingEndInfo)
 {
     const ApiDumpSettings& settings(dump_inst.settings());
     dump_html_params_vkCmdEndRendering2EXT(dump_inst, commandBuffer, pRenderingEndInfo);
