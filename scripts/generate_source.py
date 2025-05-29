@@ -21,6 +21,7 @@ import argparse
 import filecmp
 import os
 import shutil
+import re
 import sys
 import tempfile
 import difflib
@@ -53,6 +54,8 @@ def RunGenerators(api: str, registry: str,  directory: str, styleFile: str, targ
         print(f'{registry_headers_path} is not pointing to the Vulkan-Headers registry directory.')
         print("Inside Vulkan-Headers there is a registry/reg.py file that is used.")
         sys.exit(1) # Return without call stack so easy to spot error
+
+    re.findall(' ', ' ', 'adasdf')
 
     from base_generator import BaseGeneratorOptions
     from generators.api_dump_generator import ApiDumpGenerator

@@ -161,9 +161,8 @@ DUPLICATE_TYPES_IN_VIDEO_HEADER = ['uint32_t', 'uint16_t', 'uint8_t', 'int32_t',
 # Short list of all of the functions that are 'global', meaning they can be queried from vkGetInstanceProcAddr(NULL, "<func_name>")
 GLOBAL_FUNCTION_NAMES = ['vkEnumerateInstanceLayerProperties', 'vkEnumerateInstanceExtensionProperties', 'vkEnumerateInstanceVersion', 'vkCreateInstance']
 
-
-
-
+# Types that are from stdint.h but we need to generate printers for
+EXTERNAL_TYPES = ['uint64_t', 'size_t', 'char', 'float', 'int64_t', 'double' ]
 
 BLOCKING_API_CALLS = [
     'vkWaitForFences', 'vkWaitSemaphores', 'vkQueuePresentKHR', 'vkDeviceWaitIdle',
@@ -177,7 +176,7 @@ class ApiDumpGenerator(BaseGenerator):
     def generate(self):
         self.generate_copyright()
         if self.filename == 'api_dump.cpp':
-            self.generate_common_codegen()
+            self.generate_dispatch_codegen()
         elif self.filename == 'api_dump_text.h':
             self.generate_text_header()
         elif self.filename == 'api_dump_text.cpp':
@@ -215,9 +214,6 @@ class ApiDumpGenerator(BaseGenerator):
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Author: Lenny Komow <lenny@lunarg.com>
- * Author: Shannon McPherson <shannon@lunarg.com>
- * Author: Charles Giessen <charles@lunarg.com>
  */
 
 /*
@@ -225,7 +221,7 @@ class ApiDumpGenerator(BaseGenerator):
  */
 ''')
 
-    def generate_common_codegen(self):
+    def generate_dispatch_codegen(self):
 
         self.write('''#include "api_dump_text.h"
 #include "api_dump_html.h"
@@ -362,13 +358,13 @@ EXPORT_FUNCTION VKAPI_ATTR VkResult VKAPI_CALL vkEnumerateDeviceLayerProperties(
 ''')
 
 
-        for command in [x for x in self.vk.commands.values() if x.instance or x.params[0].type in ['VkInstance', 'VkPhysicalDevice']]:
+        for command in  [x for x in self.vk.commands.values() if x.instance]:
             if command.name in ['vkCreateInstance', 'vkCreateDevice', 'vkGetInstanceProcAddr', 'vkEnumerateDeviceExtensionProperties', 'vkEnumerateDeviceLayerProperties', 'vkEnumerateInstanceExtensionProperties', 'vkEnumerateInstanceLayerProperties', 'vkEnumerateInstanceVersion']:
                 continue
             if command.protect:
                 self.write(f'#if defined({command.protect})')
-            param_cDecl = ', '.join(str.strip(p.cDeclaration) for p in command.params)
-            self.write(f'VKAPI_ATTR {command.returnType} VKAPI_CALL {command.name}({param_cDecl})')
+
+            self.write(f'VKAPI_ATTR {command.returnType} VKAPI_CALL {command.name}({", ".join(str.strip(p.cDeclaration) for p in command.params)})')
             self.write('{')
             if command.name not in BLOCKING_API_CALLS:
                 self.write('    std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());')
@@ -442,15 +438,14 @@ EXPORT_FUNCTION VKAPI_ATTR VkResult VKAPI_CALL vkEnumerateDeviceLayerProperties(
 
         self.write('\n// Autogen device functions\n')
 
-        for command in [x for x in self.vk.commands.values() if x.device or x.params[0].type in ['VkDevice', 'VkCommandBuffer', 'VkQueue'] ]:
+        for command in [x for x in self.vk.commands.values() if (x.device or 'VK_EXT_debug_utils' in x.extensions)]:
             if command.name in ['vkGetDeviceProcAddr']:
                 continue
 
             if command.protect:
                 self.write(f'#if defined({command.protect})')
 
-            param_cDecl = ', '.join(str.strip(p.cDeclaration) for p in command.params)
-            self.write(f'VKAPI_ATTR {command.returnType} VKAPI_CALL {command.name}({param_cDecl})')
+            self.write(f'VKAPI_ATTR {command.returnType} VKAPI_CALL {command.name}({", ".join(str.strip(p.cDeclaration) for p in command.params)})')
             self.write('{')
 
             if command.name not in BLOCKING_API_CALLS:
@@ -498,14 +493,14 @@ EXPORT_FUNCTION VKAPI_ATTR VkResult VKAPI_CALL vkEnumerateDeviceLayerProperties(
         self.write('\nVKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL api_dump_known_instance_functions(VkInstance instance, const char* pName)')
         self.write('{\n')
         for command in self.vk.commands.values():
-            if command.device or command.name in ['vkEnumerateDeviceExtensionProperties', 'vkEnumerateInstanceVersion']:
+            if command.name in ['vkEnumerateDeviceExtensionProperties', 'vkEnumerateInstanceVersion'] or (command.device and self.vk.extensions['VK_EXT_debug_utils'] not in command.extensions):
                 continue
             if command.protect:
                 self.write(f'#if defined({command.protect})')
-            if command.instance:
-                self.write(f'    if(strcmp(pName, "{command.name}") == 0)')
-            else:
+            if command.params[0].type in ['VkInstance', 'VkPhysicalDevice']:
                 self.write(f'    if(strcmp(pName, "{command.name}") == 0 && (!instance || instance_dispatch_table(instance)->{command.name[2:]}))')
+            else:
+                self.write(f'    if(strcmp(pName, "{command.name}") == 0)')
             self.write(f'        return reinterpret_cast<PFN_vkVoidFunction>({command.name});')
             if command.protect:
                 self.write(f'#endif // {command.protect}')
@@ -552,243 +547,165 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
     return device_dispatch_table(device)->GetDeviceProcAddr(device, pName);
 }''')
 
-    def generate_text_header(self):
-        return  """
-/* Copyright (c) 2015-2023 Valve Corporation
- * Copyright (c) 2015-2023 LunarG, Inc.
- * Copyright (c) 2015-2016, 2019 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * Author: Lenny Komow <lenny@lunarg.com>
- * Author: Shannon McPherson <shannon@lunarg.com>
- * Author: Charles Giessen <charles@lunarg.com>
- */
-
-/*
- * This file is generated from the Khronos Vulkan XML API Registry.
- */
-
+    def generate_text_header(self, video=False):
+        self.write('''
 #pragma once
 
 #include "api_dump.h"
+''')
+        if not video:
+            self.write(f'void dump_text_pNext_struct_name(const void* object, const ApiDumpSettings& settings, int indents, const char* pnext_type);')
+            self.write(f'void dump_text_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);')
+        for union in [ x for x in self.vk.structs.values() if x.union ]:
+            self.write(f'void dump_text_{union.name}(const {union.name}& object, const ApiDumpSettings& settings, int indents);')
 
-@if(not {isVideoGeneration})
-void dump_text_pNext_struct_name(const void* object, const ApiDumpSettings& settings, int indents, const char* pnext_type);
-void dump_text_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);
-@end if
-@foreach union
-void dump_text_{unName}(const {unName}& object, const ApiDumpSettings& settings, int indents);
-@end union
+        self.write('\n//=========================== Type Implementations ==========================//')
 
-//=========================== Type Implementations ==========================//
+        for t in EXTERNAL_TYPES:
+            self.write(f'void dump_text_{t}({t} object, const ApiDumpSettings& settings, int indents);')
 
-@foreach type where('{etyName}' != 'void')
-void dump_text_{etyName}({etyName} object, const ApiDumpSettings& settings, int indents);
-@end type
+        self.write('\n//========================= Basetype Implementations ========================//')
 
-//========================= Basetype Implementations ========================//
+        for basetype in [x for x in self.vk.basetypes.values() if x not in ['ANativeWindow', 'AHardwareBuffer', 'CAMetalLayer']]:
+            self.write(f'void dump_text_{basetype.name}({basetype.name} object, const ApiDumpSettings& settings, int indents);')
+        for basetype in [x for x in self.vk.basetypes.values() if x in ['ANativeWindow', 'AHardwareBuffer']]:
+            self.write('#if defined(VK_USE_PLATFORM_ANDROID_KHR)')
+            self.write(f'void dump_text_{basetype.name}(const {basetype.name}* object, const ApiDumpSettings& settings, int indents);')
+            self.write('#endif')
+        for basetype in [x for x in self.vk.basetypes.values() if x in ['CAMetalLayer']]:
+            self.write('#if defined(VK_USE_PLATFORM_METAL_EXT)')
+            self.write(f'void dump_text_{basetype.name}({basetype.name} object, const ApiDumpSettings& settings, int indents);')
+            self.write('#endif')
 
-@foreach basetype where(not '{baseName}' in ['ANativeWindow', 'AHardwareBuffer', 'CAMetalLayer'])
-void dump_text_{baseName}({baseName} object, const ApiDumpSettings& settings, int indents);
-@end basetype
-@foreach basetype where('{baseName}' in ['ANativeWindow', 'AHardwareBuffer'])
-#if defined(VK_USE_PLATFORM_ANDROID_KHR)
-void dump_text_{baseName}(const {baseName}* object, const ApiDumpSettings& settings, int indents);
-#endif
-@end basetype
-@foreach basetype where('{baseName}' in ['CAMetalLayer'])
-#if defined(VK_USE_PLATFORM_METAL_EXT)
-void dump_text_{baseName}({baseName} object, const ApiDumpSettings& settings, int indents);
-#endif
-@end basetype
+        self.write('\n//======================= System Type Implementations =======================//')
 
-//======================= System Type Implementations =======================//
+        for sys in self.vk.systemTypes.values():
+            self.write(f'void dump_text_{sys.name}(const {sys.type} object, const ApiDumpSettings& settings, int indents);')
 
-@foreach systype
-void dump_text_{sysName}(const {sysType} object, const ApiDumpSettings& settings, int indents);
-@end systype
 
-//========================== Handle Implementations =========================//
+        self.write('\n//========================== Handle Implementations =========================//')
 
-@foreach handle
-void dump_text_{hdlName}(const {hdlName} object, const ApiDumpSettings& settings, int indents);
-@end handle
+        for handle in self.vk.handles.values():
+            self.write(f'void dump_text_{handle.name}(const {handle.name} object, const ApiDumpSettings& settings, int indents);')
 
-//=========================== Enum Implementations ==========================//
 
-@foreach enum
-void dump_text_{enumName}({enumName} object, const ApiDumpSettings& settings, int indents);
-@end enum
+        self.write('\n//=========================== Enum Implementations ==========================//')
 
-//========================= Bitmask Implementations =========================//
+        for enum in self.vk.enums.values():
+            self.write(f'void dump_text_{enum.name}({enum.name} object, const ApiDumpSettings& settings, int indents);')
 
-@foreach bitmask
-@if('{bitWidth}' == '64')
-// 64 bit bitmasks don't have an enum of bit values.
-typedef VkFlags64 {bitName};
-@end if
-void dump_text_{bitName}({bitName} object, const ApiDumpSettings& settings, int indents);
-@end bitmask
+        self.write('\n//========================= Bitmask Implementations =========================//')
 
-//=========================== Flag Implementations ==========================//
+        for bitmask in self.vk.bitmasks.values():
+            self.write(f'void dump_text_{bitmask.name}({bitmask.name} object, const ApiDumpSettings& settings, int indents);')
+
+        self.write('\n//=========================== Flag Implementations ==========================//')
 
 @foreach flag where('{flagEnum}' != 'None')
-void dump_text_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents);
-@end flag
-@foreach flag where('{flagEnum}' == 'None')
-void dump_text_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents);
+        self.write(f'void dump_text_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents);')
 @end flag
 
-//======================= Func Pointer Implementations ======================//
+        self.write('\n//======================= f ======================//')
 
 @foreach funcpointer
-void dump_text_{pfnName}({pfnName} object, const ApiDumpSettings& settings, int indents);
+        self.write(f'void dump_text_{pfnName}({pfnName} object, const ApiDumpSettings& settings, int indents);')
 @end funcpointer
 
-//========================== Struct Implementations =========================//
+        self.write('\n//========================== Struct Implementations =========================//')
 
-@foreach struct
-void dump_text_{sctName}(const {sctName}& object, const ApiDumpSettings& settings, int indents);
-@end struct
+        for struct in self.vk.structs.values():
+            self.write(f'void dump_text_{struct.name}(const {struct.name}& object, const ApiDumpSettings& settings, int indents);')
 
-//========================== Union Implementations ==========================//
+        self.write('\n//========================== Union Implementations ==========================//')
 
-@foreach union
-void dump_text_{unName}(const {unName}& object, const ApiDumpSettings& settings, int indents);
-@end union
+        for union in [ x for x in self.vk.structs.values() if x.union ]:
+            self.write(f'void dump_text_{union.name}(const {union.name}& object, const ApiDumpSettings& settings, int indents);')
 
-//======================== pNext Chain Implementation =======================//
-@if(not {isVideoGeneration})
-void dump_text_pNext_struct_name(const void* object, const ApiDumpSettings& settings, int indents, const char* pnext_type);
+        self.write('\n//======================== pNext Chain Implementation =======================//')
+        if not video:
+            self.write(f'void dump_text_pNext_struct_name(const void* object, const ApiDumpSettings& settings, int indents, const char* pnext_type);')
 
-void dump_text_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);
-@end if
-//========================= Function Implementations ========================//
+            self.write(f'void dump_text_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);')
+
+        self.write('\n//========================= Function Implementations ========================//')
 
 @foreach function where('{funcName}' not in ['vkGetDeviceProcAddr', 'vkGetInstanceProcAddr'])
 @if('{funcReturn}' != 'void')
-void dump_text_{funcName}(ApiDumpInstance& dump_inst, {funcReturn} result, {funcTypedParams});
+        self.write(f'void dump_text_{funcName}(ApiDumpInstance& dump_inst, {funcReturn} result, {funcTypedParams});')
 @end if
 @if('{funcReturn}' == 'void')
-void dump_text_{funcName}(ApiDumpInstance& dump_inst, {funcTypedParams});
+        self.write(f'void dump_text_{funcName}(ApiDumpInstance& dump_inst, {funcTypedParams});')
 @end if
 @end function
 
-"""
 
     def generate_text_implementation(self, video=False):
-        return  """
-/* Copyright (c) 2015-2023 Valve Corporation
- * Copyright (c) 2015-2023 LunarG, Inc.
- * Copyright (c) 2015-2016, 2019 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * Author: Lenny Komow <lenny@lunarg.com>
- * Author: Shannon McPherson <shannon@lunarg.com>
- * Author: Charles Giessen <charles@lunarg.com>
- */
-
-/*
- * This file is generated from the Khronos Vulkan XML API Registry.
- */
-
 @if({isVideoGeneration})
-#pragma once
+        self.write(f'#pragma once')
 @end if
 
-#include "api_dump_text.h"
+        self.write(f'#include "api_dump_text.h"')
 @if(not {isVideoGeneration})
-#include "api_dump_video_text.h"
+        self.write(f'#include "api_dump_video_text.h"')
 @end if
-//=========================== Type Implementations ==========================//
+        self.write(f'//=========================== Type Implementations ==========================//')
 
-@foreach type where('{etyName}' != 'void')
-void dump_text_{etyName}({etyName} object, const ApiDumpSettings& settings, int indents)
-{{
-    @if('{etyName}' != 'uint8_t' and '{etyName}' != 'int8_t')
-    settings.stream() << object;
+        for t in EXTERNAL_TYPES:
+            self.write(f'void dump_text_{t}({t} object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+    @if('{t}' != 'uint8_t' and '{t}' != 'int8_t')
+                self.write(f'    settings.stream() << object;')
     @end if
-    @if('{etyName}' == 'uint8_t')
-    settings.stream() << (uint32_t) object;
+    @if('{t}' == 'uint8_t')
+                self.write(f'    settings.stream() << (uint32_t) object;')
     @end if
-    @if('{etyName}' == 'int8_t')
-    settings.stream() << (int32_t) object;
+    @if('{t}' == 'int8_t')
+                self.write(f'    settings.stream() << (int32_t) object;')
     @end if
-}}
-@end type
+            self.write('}')
 
-//========================= Basetype Implementations ========================//
+        self.write(f'//========================= Basetype Implementations ========================//')
 
-@foreach basetype where(not '{baseName}' in ['ANativeWindow', 'AHardwareBuffer', 'CAMetalLayer'])
-void dump_text_{baseName}({baseName} object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << object;
-}}
-@end basetype
-@foreach basetype where('{baseName}' in ['ANativeWindow', 'AHardwareBuffer'])
-#if defined(VK_USE_PLATFORM_ANDROID_KHR)
-void dump_text_{baseName}(const {baseName}* object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << object;
-}}
-#endif
-@end basetype
-@foreach basetype where('{baseName}' in ['CAMetalLayer'])
-#if defined(VK_USE_PLATFORM_METAL_EXT)
-void dump_text_{baseName}({baseName} object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << object;
-}}
-#endif
-@end basetype
+        for basetype in [x for x in self.vk.basetypes.values() if x not in ['ANativeWindow', 'AHardwareBuffer', 'CAMetalLayer']]:
+            self.write(f'void dump_text_{basetype.name}({basetype.name} object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            self.write(f'    settings.stream() << object;')
+            self.write('}')
+        for basetype in [x for x in self.vk.basetypes.values() if x in ['ANativeWindow', 'AHardwareBuffer']]:
+            self.write('#if defined(VK_USE_PLATFORM_ANDROID_KHR)')
+            self.write(f'void dump_text_{basetype.name}(const {basetype.name}* object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            self.write('    settings.stream() << object;')
+            self.write('}')
+            self.write('#endif')
+        for basetype in [x for x in self.vk.basetypes.values() if x in ['CAMetalLayer']]:
+            self.write('#if defined(VK_USE_PLATFORM_METAL_EXT)')
+            self.write(f'void dump_text_{basetype.name}({basetype.name} object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            self.write('    settings.stream() << object;')
+            self.write('}')
+            self.write('#endif')
 
-//======================= System Type Implementations =======================//
-
-@foreach systype
-void dump_text_{sysName}(const {sysType} object, const ApiDumpSettings& settings, int indents)
-{{
-    @if({sysNeedsPointer} == True)
-    if (object == NULL) {{
+        self.write('\n//======================= System Type Implementations =======================//\n')
+        for sys in self.vk.systemTypes.values():
+            self.write(f'void dump_text_{sys.name}(const {sys.type} object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            if sys.needsPointer:
+                self.write('''    if (object == NULL) {
         settings.stream() << "NULL";
         return;
-    }}
-    OutputAddress(settings, object);
-    @end if
-    @if({sysNeedsPointer} == False)
-    if (settings.showAddress())
+    }
+    OutputAddress(settings, object);''')
+            else:
+                self.write('''    if (settings.showAddress())
         settings.stream() << object;
     else
-        settings.stream() << "address";
-    @end if
-}}
-@end systype
+        settings.stream() << "address";''')
+            self.write('}')
 
-//========================== Handle Implementations =========================//
-
-@foreach handle
-void dump_text_{hdlName}(const {hdlName} object, const ApiDumpSettings& settings, int indents)
+        self.write('\n//========================== Handle Implementations =========================//\n')
+        for handle in self.vk.handles.values():
+            self.write(f'''void dump_text_{handle.name}(const {handle.name} object, const ApiDumpSettings& settings, int indents)
 {{
     if(settings.showAddress()) {{
         settings.stream() << object;
@@ -800,1281 +717,1049 @@ void dump_text_{hdlName}(const {hdlName} object, const ApiDumpSettings& settings
     }} else {{
         settings.stream() << "address";
     }}
-}}
-@end handle
+}}''')
 
-//=========================== Enum Implementations ==========================//
+        self.write('\n//=========================== Enum Implementations ==========================//\n')
+        for enum in self.vk.enums.values():
+            self.write(f'void dump_text_{enum.name}({enum.name} object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            self.write('    switch((int64_t) object)')
+            self.write('    {')
+            for field in enum.fields:
+                self.write(f'    case {field.valueStr}:')
+                self.write(f'        settings.stream() << "{field.name} (";')
+                self.write('        break;')
+        @end option
+            self.write('    default:')
+            self.write('        settings.stream() << "UNKNOWN (";')
+            self.write('    }')
+            self.write('    settings.stream() << object << ")";')
+            self.write('}')
 
-@foreach enum
-void dump_text_{enumName}({enumName} object, const ApiDumpSettings& settings, int indents)
-{{
-    switch((int64_t) object)
-    {{
-    @foreach option
-    case {optValue}:
-        settings.stream() << "{optName} (";
-        break;
-    @end option
-    default:
-        settings.stream() << "UNKNOWN (";
-    }}
-    settings.stream() << object << ")";
-}}
-@end enum
+        self.write('\n//========================= Bitmask Implementations =========================//\n')
+        for bitmask in self.vk.bitmasks.values():
+            self.write(f'void dump_text_{bitmask.name}({bitmask.name} object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            self.write('    bool is_first = true;')
+            self.write('    settings.stream() << object;')
+            for field in bitmask.flags:
+                self.write(f'    if(object {"==" if field.multiBit else "&"} {bitmask.valueStr}) {{')
+                self.write(f'        settings.stream() << (is_first ? \" (\" : \" | \") << "{field.name}"; is_first = false;')
+                self.write('    }')
+            self.write('    if(!is_first)')
+            self.write('        settings.stream() << ")";')
+            self.write('}')
 
-//========================= Bitmask Implementations =========================//
-
-@foreach bitmask
-@if('{bitWidth}' == '64')
-// 64 bit bitmasks don't have an enum of bit values.
-typedef VkFlags64 {bitName};
-@end if
-void dump_text_{bitName}({bitName} object, const ApiDumpSettings& settings, int indents)
-{{
-    bool is_first = true;
-    settings.stream() << object;
-    @foreach option
-        @if('{optMultiValue}' != 'None')
-    if(object == {optValue}) {{
-        @end if
-        @if('{optMultiValue}' == 'None')
-    if(object & {optValue}) {{
-        @end if
-        settings.stream() << (is_first ? \" (\" : \" | \") << "{optName}"; is_first = false;
-    }}
-    @end option
-    if(!is_first)
-        settings.stream() << ")";
-}}
-@end bitmask
-
-//=========================== Flag Implementations ==========================//
-
+        self.write('\n//=========================== Flag Implementations ==========================//\n')
 @foreach flag where('{flagEnum}' != 'None')
-void dump_text_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents)
-{{
-    dump_text_{flagEnum}(({flagEnum}) object, settings, indents);
-}}
+        self.write(f'void dump_text_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents)')
+        self.write('{')
+        self.write(f'    dump_text_{flagEnum}(({flagEnum}) object, settings, indents);')
+        self.write('}')
 @end flag
 @foreach flag where('{flagEnum}' == 'None')
-void dump_text_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << object;
-}}
+        self.write(f'void dump_text_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents)')
+        self.write('{')
+        self.write('    settings.stream() << object;')
+        self.write('}')
 @end flag
-
-//======================= Func Pointer Implementations ======================//
-
+        self.write('\n//======================= Func Pointer Implementations ======================//\n')
 @foreach funcpointer
-void dump_text_{pfnName}({pfnName} object, const ApiDumpSettings& settings, int indents)
-{{
-    if(settings.showAddress())
-        settings.stream() << object;
-    else
-        settings.stream() << "address";
-}}
+        self.write(f'void dump_text_{pfnName}({pfnName} object, const ApiDumpSettings& settings, int indents)')
+        self.write('{')
+        self.write('    if(settings.showAddress())')
+        self.write('        settings.stream() << object;')
+        self.write('    else')
+        self.write('        settings.stream() << "address";')
+        self.write('}')
 @end funcpointer
-
-//========================== Struct Implementations =========================//
-
+        self.write('\n//========================== Struct Implementations =========================//\n')
 @foreach struct
-void dump_text_{sctName}(const {sctName}& object, const ApiDumpSettings& settings, int indents)
-{{
-    if(settings.showAddress())
-        settings.stream() << &object << ":\\n";
-    else
-        settings.stream() << "address:\\n";
-
+        self.write(f'void dump_text_{sctName}(const {sctName}& object, const ApiDumpSettings& settings, int indents)')
+        self.write('{')
+        self.write(f'    if(settings.showAddress())
+        self.write(f'        settings.stream() << &object << ":\\n";')
+        self.write('    else')
+        self.write(f'        settings.stream() << "address:\\n";')
+        self.write(f'
     @foreach member
         @if('{memParameterStorage}' != '' and '{memCondition}' != 'None')
-    if({memCondition})
-        {memParameterStorage}
+        self.write(f'    if({memCondition})
+        self.write(f'        {memParameterStorage}
         @end if
         @if('{memParameterStorage}' != '' and '{memCondition}' == 'None')
-    {memParameterStorage}
+        self.write(f'    {memParameterStorage}
         @end if
     @end member
-
+        self.write(f'
     @foreach member
         @if('{memCondition}' != 'None')
-    if({memCondition})
+        self.write(f'    if({memCondition})
         @end if
         @if({memPtrLevel} == 0)
             @if('{memName}' != 'pNext')
                 @if('{memName}' == 'apiVersion')
-    dump_text_value<const {memBaseType}>(object.{memName}, settings, "{memType}", "{memName}", indents + 1, OutputApiVersionTEXT);  // AET
+        self.write(f'    dump_text_value<const {memBaseType}>(object.{memName}, settings, "{memType}", "{memName}", indents + 1, OutputApiVersionTEXT);  // AET
                 @end if
                 @if('{memName}' != 'apiVersion')
-    dump_text_value<const {memBaseType}>(object.{memName}, settings, "{memType}", "{memName}", indents + 1, dump_text_{memTypeID});  // AET
+        self.write(f'    dump_text_value<const {memBaseType}>(object.{memName}, settings, "{memType}", "{memName}", indents + 1, dump_text_{memTypeID});  // AET
                 @end if
             @end if
             @if('{memName}' == 'pNext')
-    dump_text_pNext_struct_name(object.{memName}, settings, indents + 1, "{memType}");
+        self.write(f'    dump_text_pNext_struct_name(object.{memName}, settings, indents + 1, "{memType}");')
             @end if
         @end if
         @if({memPtrLevel} == 1 and '{memLength}' == 'None')
-    dump_text_pointer<const {memBaseType}>(object.{memName}, settings, "{memType}", "{memName}", indents + 1, dump_text_{memTypeID});
+        self.write(f'    dump_text_pointer<const {memBaseType}>(object.{memName}, settings, "{memType}", "{memName}", indents + 1, dump_text_{memTypeID});')
         @end if
         @if({memPtrLevel} == 1 and '{memLength}' != 'None' and not {memLengthIsMember})
-    dump_text_array<const {memBaseType}>(object.{memName}, {memLength}, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_text_{memTypeID}); // AQA
+        self.write(f'    dump_text_array<const {memBaseType}>(object.{memName}, {memLength}, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_text_{memTypeID}); // AQA
         @end if
         @if({memPtrLevel} == 1 and '{memLength}' != 'None' and {memLengthIsMember} and '{memName}' != 'pCode')
             @if('{memLength}'[0].isdigit() or '{memLength}'[0].isupper())
-    dump_text_array<const {memBaseType}>(object.{memName}, {memLength}, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_text_{memTypeID}); // BQA
+        self.write(f'    dump_text_array<const {memBaseType}>(object.{memName}, {memLength}, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_text_{memTypeID}); // BQA
             @end if
             @if(not ('{memLength}'[0].isdigit() or '{memLength}'[0].isupper()))
                 @if('{memLength}' == 'rasterizationSamples')
-    dump_text_array<const {memBaseType}>(object.{memName}, (object.{memLength} + 31) / 32, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_text_{memTypeID}); // BQB
+        self.write(f'    dump_text_array<const {memBaseType}>(object.{memName}, (object.{memLength} + 31) / 32, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_text_{memTypeID}); // BQB
                 @end if
                 @if('{memLength}' != 'rasterizationSamples')
-    dump_text_array<const {memBaseType}>(object.{memName}, object.{memLength}, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_text_{memTypeID}); // BQB
+        self.write(f'    dump_text_array<const {memBaseType}>(object.{memName}, object.{memLength}, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_text_{memTypeID}); // BQB
                 @end if
             @end if
         @end if
-
+        self.write(f'
         @if('{sctName}' == 'VkShaderModuleCreateInfo')
             @if('{memName}' == 'pCode')
-    if(settings.showShader())
-        dump_text_array<const {memBaseType}>(object.{memName}, object.{memLength}, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_text_{memTypeID}); // CQA
-    else
-        dump_text_special("SHADER DATA", settings, "{memType}", "{memName}", indents + 1);
+        self.write(f'    if(settings.showShader())
+        self.write(f'        dump_text_array<const {memBaseType}>(object.{memName}, object.{memLength}, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_text_{memTypeID}); // CQA
+        self.write('    else')
+        self.write(f'        dump_text_special("SHADER DATA", settings, "{memType}", "{memName}", indents + 1);')
             @end if
         @end if
-
+        self.write(f'
         @if('{memCondition}' != 'None')
-    else
-        dump_text_special("UNUSED", settings, "{memType}", "{memName}", indents + 1);
+        self.write('    else')
+        self.write(f'        dump_text_special("UNUSED", settings, "{memType}", "{memName}", indents + 1);')
         @end if
     @end member
-
+        self.write(f'
     @foreach member
     @if({memPtrLevel} == 0)
         @if('{memName}' == 'pNext')
-    if(object.pNext != nullptr){{
-        dump_text_pNext_trampoline(object.{memName}, settings, indents < 2 ? indents + 1 : indents);
-    }}
+        self.write(f'    if(object.pNext != nullptr){{')
+        self.write(f'        dump_text_pNext_trampoline(object.{memName}, settings, indents < 2 ? indents + 1 : indents);')
+        self.write('    }')
         @end if
     @end if
     @end member
-}}
+        self.write('}')
 @end struct
 
-//========================== Union Implementations ==========================//
+        self.write('\n//========================== Union Implementations ==========================//\n')
 
-@foreach union
-void dump_text_{unName}(const {unName}& object, const ApiDumpSettings& settings, int indents)
-{{
+        for union in [ x for x in self.vk.structs.values() if x.union ]:
+            self.write(f'void dump_text_{union.name}(const {union.name}& object, const ApiDumpSettings& settings, int indents)')
+            self.write('''{
     if(settings.showAddress())
         settings.stream() << &object << " (Union):\\n";
     else
         settings.stream() << "address (Union):\\n";
-
-    @foreach choice
-    @if('{chcCondition}' != 'None')
-    if({chcCondition})
-    @end if
-    @if({chcPtrLevel} == 0)
-    dump_text_value<const {chcBaseType}>(object.{chcName}, settings, "{chcType}", "{chcName}", indents + 1, dump_text_{chcTypeID}); // LET
-    @end if
-    @if({chcPtrLevel} == 1 and '{chcLength}' == 'None')
-    dump_text_pointer<const {chcBaseType}>(object.{chcName}, settings, "{chcType}", "{chcName}", indents + 1, dump_text_{chcTypeID});
-    @end if
-    @if({chcPtrLevel} == 1 and '{chcLength}' != 'None')
-    dump_text_array<const {chcBaseType}>(object.{chcName}, {chcLength}, settings, "{chcType}", "{chcChildType}", "{chcName}", indents + 1, dump_text_{chcTypeID}); // GQA
-    @end if
-    @end choice
-}}
+}''')
+            for member in union.members:
+                if union.name in VALIDITY_CHECKS and member.name in VALIDITY_CHECKS[union.name]:
+                    self.write(f'    if({chcCondition})
+                @if({chcPtrLevel} == 0)
+                    self.write(f'    dump_text_value<const {chcBaseType}>(object.{chcName}, settings, "{chcType}", "{chcName}", indents + 1, dump_text_{chcTypeID}); // LET
+                @end if
+                @if({chcPtrLevel} == 1 and '{chcLength}' == 'None')
+                    self.write(f'    dump_text_pointer<const {chcBaseType}>(object.{chcName}, settings, "{chcType}", "{chcName}", indents + 1, dump_text_{chcTypeID});')
+                @end if
+                @if({chcPtrLevel} == 1 and '{chcLength}' != 'None')
+                    self.write(f'    dump_text_array<const {chcBaseType}>(object.{chcName}, {chcLength}, settings, "{chcType}", "{chcChildType}", "{chcName}", indents + 1, dump_text_{chcTypeID}); // GQA
+                @end if
+            self.write('}')
 @end union
-
-//======================== pNext Chain Implementation =======================//
+        self.write('\n//======================== pNext Chain Implementation =======================//\n')
 @if(not {isVideoGeneration})
-void dump_text_pNext_struct_name(const void* object, const ApiDumpSettings& settings, int indents, const char* pnext_type)
-{{
-    if (object == nullptr) {{
-        dump_text_value<const void*>(object, settings, pnext_type, "pNext", indents, dump_text_void);
-        return;
-    }}
-
-    settings.formatNameType(indents, "pNext", pnext_type);
-    switch(reinterpret_cast<const VkBaseInStructure*>(object)->sType) {{
+        self.write(f'void dump_text_pNext_struct_name(const void* object, const ApiDumpSettings& settings, int indents, const char* pnext_type)')
+        self.write('{')
+        self.write(f'    if (object == nullptr) {{')
+        self.write(f'        dump_text_value<const void*>(object, settings, pnext_type, "pNext", indents, dump_text_void);')
+        self.write(f'        return;')
+        self.write('    }')
+        self.write(f'
+        self.write(f'    settings.formatNameType(indents, "pNext", pnext_type);')
+        self.write(f'    switch(reinterpret_cast<const VkBaseInStructure*>(object)->sType) {{')
     @foreach struct
         @if({sctStructureTypeIndex} != -1)
-        case {sctStructureTypeIndex}:
-            settings.stream() << "{sctName}\\n";
-            break;
+        self.write(f'        case {sctStructureTypeIndex}:')
+        self.write(f'            settings.stream() << "{sctName}\\n";')
+        self.write(f'            break;')
         @end if
     @end struct
-        case VK_STRUCTURE_TYPE_LOADER_INSTANCE_CREATE_INFO: // 47
-        case VK_STRUCTURE_TYPE_LOADER_DEVICE_CREATE_INFO: // 48
-        default:
-            settings.stream() << "NULL\\n";
-            break;
-    }}
-}}
-
-void dump_text_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents)
-{{
-    const auto* base_struct = reinterpret_cast<const VkBaseInStructure*>(object);
-    switch(base_struct->sType) {{
+        self.write(f'        case VK_STRUCTURE_TYPE_LOADER_INSTANCE_CREATE_INFO: // 47')
+        self.write(f'        case VK_STRUCTURE_TYPE_LOADER_DEVICE_CREATE_INFO: // 48')
+        self.write(f'        default:')
+        self.write(f'            settings.stream() << "NULL\\n";')
+        self.write(f'            break;')
+        self.write('    }')
+        self.write('}')
+        self.write(f'
+        self.write(f'void dump_text_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents)')
+        self.write('{')
+        self.write(f'    const auto* base_struct = reinterpret_cast<const VkBaseInStructure*>(object);')
+        self.write(f'    switch(base_struct->sType) {{')
     @foreach struct
         @if({sctStructureTypeIndex} != -1)
-    case {sctStructureTypeIndex}:
-        dump_text_pNext<const {sctName}>(reinterpret_cast<const {sctName}*>(object), settings, "{sctName}", indents, dump_text_{sctName});
-        break;
+        self.write(f'    case {sctStructureTypeIndex}:')
+        self.write(f'        dump_text_pNext<const {sctName}>(reinterpret_cast<const {sctName}*>(object), settings, "{sctName}", indents, dump_text_{sctName});')
+        self.write(f'        break;')
         @end if
     @end struct
-
-    case VK_STRUCTURE_TYPE_LOADER_INSTANCE_CREATE_INFO: // 47
-    case VK_STRUCTURE_TYPE_LOADER_DEVICE_CREATE_INFO: // 48
-        if(base_struct->pNext != nullptr){{
-            dump_text_pNext_trampoline(reinterpret_cast<const void*>(base_struct->pNext), settings, indents);
-        }} else {{
-            settings.formatNameType(indents, "pNext", "const void*");
-            settings.stream() << "NULL\\n";
-        }}
-        break;
-    default:
-        settings.formatNameType(indents, "pNext", "const void*");
-        settings.stream() << "UNKNOWN (" << (int64_t) (base_struct->sType) << ")\\n";
-    }}
-}}
+        self.write(f'
+        self.write(f'    case VK_STRUCTURE_TYPE_LOADER_INSTANCE_CREATE_INFO: // 47
+        self.write(f'    case VK_STRUCTURE_TYPE_LOADER_DEVICE_CREATE_INFO: // 48
+        self.write(f'        if(base_struct->pNext != nullptr){{')
+        self.write(f'            dump_text_pNext_trampoline(reinterpret_cast<const void*>(base_struct->pNext), settings, indents);')
+        self.write('        } else {')
+        self.write(f'            settings.formatNameType(indents, "pNext", "const void*");')
+        self.write(f'            settings.stream() << "NULL\\n";')
+        self.write(        '}')
+        self.write(f'        break;')
+        self.write(f'    default:')
+        self.write(f'        settings.formatNameType(indents, "pNext", "const void*");')
+        self.write(f'        settings.stream() << "UNKNOWN (" << (int64_t) (base_struct->sType) << ")\\n";')
+        self.write('    }')
+        self.write('}')
 @end if
-//========================= Function Implementations ========================//
-
+        self.write('\n//========================= Function Implementations ========================//\n')
 @foreach function where('{funcName}' not in ['vkGetDeviceProcAddr', 'vkGetInstanceProcAddr'])
 @if('{funcReturn}' != 'void')
-void dump_text_{funcName}(ApiDumpInstance& dump_inst, {funcReturn} result, {funcTypedParams})
+        self.write(f'void dump_text_{funcName}(ApiDumpInstance& dump_inst, {funcReturn} result, {funcTypedParams})
 @end if
 @if('{funcReturn}' == 'void')
-void dump_text_{funcName}(ApiDumpInstance& dump_inst, {funcTypedParams})
+        self.write(f'void dump_text_{funcName}(ApiDumpInstance& dump_inst, {funcTypedParams})
 @end if
-{{
-    const ApiDumpSettings& settings(dump_inst.settings());
-
+        self.write('{')
+        self.write(f'    const ApiDumpSettings& settings(dump_inst.settings());')
+        self.write(f'
     @if('{funcReturn}' != 'void')
-    settings.stream() << " ";
-    dump_text_{funcReturn}(result, settings, 0);
+        self.write(f'    settings.stream() << " ";')
+        self.write(f'    dump_text_{funcReturn}(result, settings, 0);')
     @end if
-    settings.stream() << ":\\n";
-    if(settings.showParams())
-    {{
+        self.write(f'    settings.stream() << ":\\n";')
+        self.write(f'    if(settings.showParams())
+        self.write('    {'
         @foreach parameter
         @if('{prmParameterStorage}' != '')
-        {prmParameterStorage}
+        self.write(f'        {prmParameterStorage}
         @end if
         @if({prmPtrLevel} == 0)
-        dump_text_value<const {prmBaseType}>({prmName}, settings, "{prmType}", "{prmName}", 1, dump_text_{prmTypeID}); // MET
+        self.write(f'        dump_text_value<const {prmBaseType}>({prmName}, settings, "{prmType}", "{prmName}", 1, dump_text_{prmTypeID}); // MET
         @end if
         @if({prmPtrLevel} == 1 and '{prmLength}' == 'None')
-        dump_text_pointer<const {prmBaseType}>({prmName}, settings, "{prmType}", "{prmName}", 1, dump_text_{prmTypeID});
+        self.write(f'        dump_text_pointer<const {prmBaseType}>({prmName}, settings, "{prmType}", "{prmName}", 1, dump_text_{prmTypeID});')
         @end if
         @if({prmPtrLevel} == 1 and '{prmLength}' != 'None')
-        dump_text_array<const {prmBaseType}>({prmName}, {prmLength}, settings, "{prmType}", "{prmChildType}", "{prmName}", 1, dump_text_{prmTypeID}); // HQA
+        self.write(f'        dump_text_array<const {prmBaseType}>({prmName}, {prmLength}, settings, "{prmType}", "{prmChildType}", "{prmName}", 1, dump_text_{prmTypeID}); // HQA
         @end if
         @end parameter
-    }}
-    settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\\n";
-}}
+        self.write('    }')
+        self.write(f'    settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\\n";')
+        self.write('}')
 @end function
 
-"""
 
-    def generate_html_header(self):
-        return  """
-/* Copyright (c) 2015-2023 Valve Corporation
- * Copyright (c) 2015-2023 LunarG, Inc.
- * Copyright (c) 2015-2017, 2019 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * Author: Lenny Komow <lenny@lunarg.com>
- * Author: Joey Bzdek <joey@lunarg.com>
- * Author: Shannon McPherson <shannon@lunarg.com>
- * Author: Charles Giessen <charles@lunarg.com>
- */
 
-/*
- * This file is generated from the Khronos Vulkan XML API Registry.
- */
-
+    def generate_html_header(self, video=False):
+        self.write('''
 #pragma once
 
 #include "api_dump.h"
-
+''')
 @if(not {isVideoGeneration})
-void dump_html_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);
+        self.write(f'void dump_html_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);')
 @end if
-@foreach union
-void dump_html_{unName}(const {unName}& object, const ApiDumpSettings& settings, int indents);
-@end union
+        for union in [ x for x in self.vk.structs.values() if x.union ]:
+            self.write(f'void dump_html_{union.name}(const {union.name}& object, const ApiDumpSettings& settings, int indents);')
 
-//=========================== Type Implementations ==========================//
+        self.write('\n//=========================== Type Implementations ==========================//\n')
 
-@foreach type where('{etyName}' != 'void')
-void dump_html_{etyName}({etyName} object, const ApiDumpSettings& settings, int indents);
-@end type
+        for t in EXTERNAL_TYPES:
+            self.write(f'void dump_html_{t}({t} object, const ApiDumpSettings& settings, int indents);')
 
-//========================= Basetype Implementations ========================//
+        self.write('\n//========================= Basetype Implementations ========================//\n')
 
-@foreach basetype where(not '{baseName}' in ['ANativeWindow', 'AHardwareBuffer', 'CAMetalLayer'])
-void dump_html_{baseName}({baseName} object, const ApiDumpSettings& settings, int indents);
-@end basetype
-@foreach basetype where('{baseName}' in ['ANativeWindow', 'AHardwareBuffer'])
-#if defined(VK_USE_PLATFORM_ANDROID_KHR)
-void dump_html_{baseName}(const {baseName}* object, const ApiDumpSettings& settings, int indents);
-#endif
-@end basetype
-@foreach basetype where('{baseName}' in ['CAMetalLayer'])
-#if defined(VK_USE_PLATFORM_METAL_EXT)
-void dump_html_{baseName}({baseName} object, const ApiDumpSettings& settings, int indents);
-#endif
+        for basetype in [x for x in self.vk.basetypes.values() if x not in ['ANativeWindow', 'AHardwareBuffer', 'CAMetalLayer']]:
+            self.write(f'void dump_html_{basetype.name}({basetype.name} object, const ApiDumpSettings& settings, int indents);')
+        for basetype in [x for x in self.vk.basetypes.values() if x in ['ANativeWindow', 'AHardwareBuffer']]:
+            self.write('#if defined(VK_USE_PLATFORM_ANDROID_KHR)')
+            self.write(f'void dump_html_{basetype.name}(const {basetype.name}* object, const ApiDumpSettings& settings, int indents);')
+            self.write('#endif')
+        for basetype in [x for x in self.vk.basetypes.values() if x in ['CAMetalLayer']]:
+            self.write('#if defined(VK_USE_PLATFORM_METAL_EXT)')
+            self.write(f'void dump_html_{basetype.name}({basetype.name} object, const ApiDumpSettings& settings, int indents);')
+            self.write('#endif')
 @end basetype
 
-//======================= System Type Implementations =======================//
+        self.write('\n//======================= System Type Implementations =======================//\n')
 
-@foreach systype
-void dump_html_{sysName}(const {sysType} object, const ApiDumpSettings& settings, int indents);
-@end systype
+        for sys in self.vk.systemTypes.values():
+            self.write(f'void dump_html_{sys.name}(const {sys.type} object, const ApiDumpSettings& settings, int indents);')
 
-//========================== Handle Implementations =========================//
 
-@foreach handle
-void dump_html_{hdlName}(const {hdlName} object, const ApiDumpSettings& settings, int indents);
-@end handle
+        self.write('\n//========================== Handle Implementations =========================//\n')
 
-//=========================== Enum Implementations ==========================//
+        for handle in self.vk.handles.values():
+            self.write(f'void dump_html_{handle.name}(const {handle.name} object, const ApiDumpSettings& settings, int indents);')
 
-@foreach enum
-void dump_html_{enumName}({enumName} object, const ApiDumpSettings& settings, int indents);
-@end enum
 
-//========================= Bitmask Implementations =========================//
+        self.write('\n//=========================== Enum Implementations ==========================//\n')
 
-@foreach bitmask
-void dump_html_{bitName}({bitName} object, const ApiDumpSettings& settings, int indents);
-@end bitmask
+        for enum in self.vk.enums.values():
+            self.write(f'void dump_html_{enum.name}({enum.name} object, const ApiDumpSettings& settings, int indents);')
 
-//=========================== Flag Implementations ==========================//
+        self.write('\n//========================= Bitmask Implementations =========================//\n')
+
+        for bitmask in self.vk.bitmasks.values():
+            self.write(f'void dump_html_{bitmask.name}({bitmask.name} object, const ApiDumpSettings& settings, int indents);')
+
+        self.write('\n//=========================== Flag Implementations ==========================//\n')
 
 @foreach flag where('{flagEnum}' != 'None')
-void dump_html_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents);
-@end flag
-@foreach flag where('{flagEnum}' == 'None')
-void dump_html_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents);
+        self.write(f'void dump_html_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents);')
 @end flag
 
-//======================= Func Pointer Implementations ======================//
+        self.write('//======================= Func Pointer Implementations ======================//\n')
 
 @foreach funcpointer
-void dump_html_{pfnName}({pfnName} object, const ApiDumpSettings& settings, int indents);
+        self.write(f'void dump_html_{pfnName}({pfnName} object, const ApiDumpSettings& settings, int indents);')
 @end funcpointer
 
-//========================== Struct Implementations =========================//
+        self.write('\n//========================== Struct Implementations =========================//\n')
 
-@foreach struct
-void dump_html_{sctName}(const {sctName}& object, const ApiDumpSettings& settings, int indents);
-@end struct
+        for struct in self.vk.structs.values():
+            self.write(f'void dump_html_{struct.name}(const {struct.name}& object, const ApiDumpSettings& settings, int indents);')
 
-//========================== Union Implementations ==========================//
+        self.write('\n//========================== Union Implementations ==========================//\n')
 
-@foreach union
-void dump_html_{unName}(const {unName}& object, const ApiDumpSettings& settings, int indents);
-@end union
+        for union in [ x for x in self.vk.structs.values() if x.union ]:
+            self.write(f'void dump_html_{union.name}(const {union.name}& object, const ApiDumpSettings& settings, int indents);')
 
-//======================== pNext Chain Implementation =======================//
-@if(not {isVideoGeneration})
-void dump_html_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);
-@end if
-//========================= Function Implementations ========================//
+        self.write('\n//========================= pNext Chain Implementation =======================//\n')
+        if not video:
+            self.write(f'void dump_html_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);')
+        self.write('\n//========================= Function Implementations ========================//\n')
 
 @foreach function where('{funcName}' not in ['vkGetDeviceProcAddr', 'vkGetInstanceProcAddr'])
 @if('{funcReturn}' != 'void')
-void dump_html_{funcName}(ApiDumpInstance& dump_inst, {funcReturn} result, {funcTypedParams});
+        self.write(f'void dump_html_{funcName}(ApiDumpInstance& dump_inst, {funcReturn} result, {funcTypedParams});')
 @end if
 @if('{funcReturn}' == 'void')
-void dump_html_{funcName}(ApiDumpInstance& dump_inst, {funcTypedParams});
+        self.write(f'void dump_html_{funcName}(ApiDumpInstance& dump_inst, {funcTypedParams});')
 @end if
 @end function
-"""
+
 
     def generate_html_implementation(self, video=False):
-        return  """
-/* Copyright (c) 2015-2023 Valve Corporation
- * Copyright (c) 2015-2023 LunarG, Inc.
- * Copyright (c) 2015-2017, 2019 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * Author: Lenny Komow <lenny@lunarg.com>
- * Author: Joey Bzdek <joey@lunarg.com>
- * Author: Shannon McPherson <shannon@lunarg.com>
- * Author: Charles Giessen <charles@lunarg.com>
- */
-
-/*
- * This file is generated from the Khronos Vulkan XML API Registry.
- */
 
 @if({isVideoGeneration})
-#pragma once
+        self.write(f'#pragma once
 @end if
-
-#include "api_dump_html.h"
+        self.write(f'
+        self.write(f'#include "api_dump_html.h"
 @if(not {isVideoGeneration})
-#include "api_dump_video_html.h"
+        self.write(f'#include "api_dump_video_html.h"
 @end if
-//=========================== Type Implementations ==========================//
+        self.write('\n//=========================== Type Implementations ==========================//\n')
+        for t in EXTERNAL_TYPES:
+            self.write(f'void dump_html_{t}({t} object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            self.write(f'    settings.stream() << "<div class='val'>";')
+        @if('{t}' != 'uint8_t' and '{t}' != 'int8_t')
+                self.write(f'    settings.stream() << object;')
+        @end if
+        @if('{t}' == 'uint8_t')
+                self.write(f'    settings.stream() << (uint32_t) object;')
+        @end if
+        @if('{t}' == 'int8_t')
+                self.write(f'    settings.stream() << (int32_t) object;')
+        @end if
+            self.write(f'    settings.stream() << "</div></summary>";')
+            self.write('}')
 
-@foreach type where('{etyName}' != 'void')
-void dump_html_{etyName}({etyName} object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << "<div class='val'>";
-    @if('{etyName}' != 'uint8_t' and '{etyName}' != 'int8_t')
-    settings.stream() << object;
-    @end if
-    @if('{etyName}' == 'uint8_t')
-    settings.stream() << (uint32_t) object;
-    @end if
-    @if('{etyName}' == 'int8_t')
-    settings.stream() << (int32_t) object;
-    @end if
-    settings.stream() << "</div></summary>";
-}}
-@end type
+        self.write('\n//========================= Basetype Implementations ========================//\n')
+        for basetype in [x for x in self.vk.basetypes.values() if x not in ['ANativeWindow', 'AHardwareBuffer', 'CAMetalLayer']]:
+            self.write(f'void dump_html_{basetype.name}({basetype.name} object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            self.write('    settings.stream() << "<div class=\'val\'>" << object << "</div></summary>";')
+            self.write('}')
+        for basetype in [x for x in self.vk.basetypes.values() if x in ['ANativeWindow', 'AHardwareBuffer']]:
+            self.write('#if defined(VK_USE_PLATFORM_ANDROID_KHR)')
+            self.write(f'void dump_html_{basetype.name}(const {basetype.name}* object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            self.write('    settings.stream() << "<div class=\'val\'>" << object << "</div></summary>";')
+            self.write('}')
+            self.write('#endif')
+        for basetype in [x for x in self.vk.basetypes.values() if x in ['CAMetalLayer']]:
+            self.write('#if defined(VK_USE_PLATFORM_METAL_EXT)')
+            self.write(f'void dump_html_{basetype.name}({basetype.name} object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            self.write('    settings.stream() << "<div class=\'val\'>" << object << "</div></summary>";')
+            self.write('}')
+            self.write('#endif')
 
-//========================= Basetype Implementations ========================//
-
-@foreach basetype where(not '{baseName}' in ['ANativeWindow', 'AHardwareBuffer', 'CAMetalLayer'])
-void dump_html_{baseName}({baseName} object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << "<div class='val'>" << object << "</div></summary>";
-}}
-@end basetype
-@foreach basetype where('{baseName}' in ['ANativeWindow', 'AHardwareBuffer'])
-#if defined(VK_USE_PLATFORM_ANDROID_KHR)
-void dump_html_{baseName}(const {baseName}* object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << "<div class='val'>" << object << "</div></summary>";
-}}
-#endif
-@end basetype
-@foreach basetype where('{baseName}' in ['CAMetalLayer'])
-#if defined(VK_USE_PLATFORM_METAL_EXT)
-void dump_html_{baseName}({baseName} object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << "<div class='val'>" << object << "</div></summary>";
-}}
-#endif
-@end basetype
-
-//======================= System Type Implementations =======================//
-
-@foreach systype
-void dump_html_{sysName}(const {sysType} object, const ApiDumpSettings& settings, int indents)
-{{
-    @if({sysNeedsPointer} == True)
-    settings.stream() << "<div class='val'>";
+        self.write('\n//======================= System Type Implementations =======================//\n')
+        for sys in self.vk.systemTypes.values():
+            self.write(f'void dump_html_{sys.name}(const {sys.type} object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            if sys.needsPointer:
+                self.write('''    settings.stream() << "<div class=\'val\'>";
     OutputAddress(settings, object);
-    settings.stream() << "</div>";
-    @end if
-    @if({sysNeedsPointer} == False)
-    if (settings.showAddress())
+    settings.stream() << "</div>";''')
+            else:
+                self.write('''    if (settings.showAddress())
         settings.stream() << "<div class='val'>" << object << "</div></summary>";
     else
-        settings.stream() << "<div class='val'>address</div></summary>";
-    @end if
-}}
-@end systype
+        settings.stream() << "<div class='val'>address</div></summary>";''')
+            self.write('}')
 
-//========================== Handle Implementations =========================//
-
-@foreach handle
-void dump_html_{hdlName}(const {hdlName} object, const ApiDumpSettings& settings, int indents)
+        self.write('\n//========================== Handle Implementations =========================//\n')
+        for handle in self.vk.handles.values():
+            self.write(f'''void dump_html_{handle.name}(const {handle.name} object, const ApiDumpSettings& settings, int indents)
 {{
-    settings.stream() << "<div class='val'>";
+    settings.stream() << "<div class=\'val\'>";
     if(settings.showAddress()) {{
         settings.stream() << object;
 
         std::unordered_map<uint64_t, std::string>::const_iterator it = ApiDumpInstance::current().object_name_map.find((uint64_t) object);
         if (it != ApiDumpInstance::current().object_name_map.end()) {{
-            settings.stream() << "</div><div class='val'>[" << it->second << "]";
-        }}
+            settings.stream() << "</div><div class=\'val\'>[" << it->second << "]";
+       }}
     }} else {{
         settings.stream() << "address";
     }}
     settings.stream() << "</div></summary>";
-}}
-@end handle
+}}''')
 
-//=========================== Enum Implementations ==========================//
+        self.write('\n//=========================== Enum Implementations ==========================//\n')
+        for enum in self.vk.enums.values():
+            self.write(f'void dump_html_{enum.name}({enum.name} object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            self.write('    settings.stream() << "<div class=\'val\'>";')
+            self.write('    switch((int64_t) object)')
+            self.write('    {')
+            for field in enum.fields:
+                self.write(f'    case {field.valueStr}:')
+                self.write(f'        settings.stream() << "{field.name} (";')
+                self.write('        break;')
+        @end option
+            self.write('    default:')
+            self.write('        settings.stream() << "UNKNOWN (";')
+            self.write('    }')
+            self.write('    settings.stream() << object << ")</div></summary>";')
+            self.write('}')
 
-@foreach enum
-void dump_html_{enumName}({enumName} object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << "<div class='val'>";
-    switch((int64_t) object)
-    {{
-    @foreach option
-    case {optValue}:
-        settings.stream() << "{optName} (";
-        break;
-    @end option
-    default:
-        settings.stream() << "UNKNOWN (";
-    }}
-    settings.stream() << object << ")</div></summary>";
-}}
-@end enum
+        self.write('\n//========================= Bitmask Implementations =========================//\n')
+        for bitmask in self.vk.bitmasks.values():
+            self.write(f'void dump_html_{bitmask.name}({bitmask.name} object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            self.write('    settings.stream() << "<div class=\'val\'>";')
+            self.write('    bool is_first = true;')
+            self.write('    settings.stream() << object;')
+            for field in bitmask.flags:
+                self.write(f'    if(object {"==" if field.multiBit else "&"} {bitmask.valueStr}) {{')
+                self.write(f'        settings.stream() << (is_first ? \" (\" : \" | \") << "{field.name}"; is_first = false;')
+                self.write('    }')
+            self.write('    if(!is_first)')
+            self.write('        settings.stream() << ")";')
+            self.write('    settings.stream() << "</div></summary>";')
+            self.write('}')
 
-//========================= Bitmask Implementations =========================//
-
-@foreach bitmask
-void dump_html_{bitName}({bitName} object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << "<div class=\'val\'>";
-    bool is_first = true;
-    settings.stream() << object;
-    @foreach option
-        @if('{optMultiValue}' != 'None')
-    if(object == {optValue}) {{
-        @end if
-        @if('{optMultiValue}' == 'None')
-    if(object & {optValue}) {{
-        @end if
-        settings.stream() << (is_first ? \" (\" : \" | \") << "{optName}"; is_first = false;
-    }}
-    @end option
-    if(!is_first)
-        settings.stream() << ")";
-    settings.stream() << "</div></summary>";
-}}
-@end bitmask
-
-//=========================== Flag Implementations ==========================//
-
+        self.write('\n//=========================== Flag Implementations ==========================//\n')
 @foreach flag where('{flagEnum}' != 'None')
-void dump_html_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents)
-{{
-    dump_html_{flagEnum}(({flagEnum}) object, settings, indents);
-}}
+        self.write(f'void dump_html_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents)')
+        self.write('{')
+        self.write(f'    dump_html_{flagEnum}(({flagEnum}) object, settings, indents);')
+        self.write('}')
 @end flag
 @foreach flag where('{flagEnum}' == 'None')
-void dump_html_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << "<div class=\'val\'>"
-                             << object << "</div></summary>";
-}}
+        self.write(f'void dump_html_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents)')
+        self.write('{')
+        self.write(f'    settings.stream() << "<div class=\'val\'>"
+        self.write(f'                             << object << "</div></summary>";')
+        self.write('}')
 @end flag
-
-//======================= Func Pointer Implementations ======================//
-
+        self.write('\n//======================= Func Pointer Implementations ======================//\n')
 @foreach funcpointer
-void dump_html_{pfnName}({pfnName} object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << "<div class=\'val\'>";
-    if(settings.showAddress())
-        settings.stream() << object;
-    else
-        settings.stream() << "address";
-    settings.stream() << "</div></summary>";
-}}
+        self.write(f'void dump_html_{pfnName}({pfnName} object, const ApiDumpSettings& settings, int indents)')
+        self.write('{')
+        self.write(f'    settings.stream() << "<div class=\'val\'>";')
+        self.write(f'    if(settings.showAddress())
+        self.write(f'        settings.stream() << object;')
+        self.write('    else')
+        self.write(f'        settings.stream() << "address";')
+        self.write(f'    settings.stream() << "</div></summary>";')
+        self.write('}')
 @end funcpointer
-
-//========================== Struct Implementations =========================//
-
+        self.write('\n//========================== Struct Implementations =========================//\n')
 @foreach struct
-void dump_html_{sctName}(const {sctName}& object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << "<div class=\'val\'>";
-    if(settings.showAddress())
-        settings.stream() << &object << "\\n";
-    else
-        settings.stream() << "address\\n";
-    settings.stream() << "</div></summary>";
-
+        self.write(f'void dump_html_{sctName}(const {sctName}& object, const ApiDumpSettings& settings, int indents)')
+        self.write('{')
+        self.write(f'    settings.stream() << "<div class=\'val\'>";')
+        self.write(f'    if(settings.showAddress())
+        self.write(f'        settings.stream() << &object << "\\n";')
+        self.write('    else')
+        self.write(f'        settings.stream() << "address\\n";')
+        self.write(f'    settings.stream() << "</div></summary>";')
+        self.write(f'
     @foreach member
         @if('{memParameterStorage}' != '' and '{memCondition}' != 'None')
-    if({memCondition})
-        {memParameterStorage}
+        self.write(f'    if({memCondition})
+        self.write(f'        {memParameterStorage}
         @end if
         @if('{memParameterStorage}' != '' and '{memCondition}' == 'None')
-    {memParameterStorage}
+        self.write(f'    {memParameterStorage}
         @end if
     @end member
-
+        self.write(f'
     @foreach member
         @if('{memCondition}' != 'None')
-    if({memCondition})
+        self.write(f'    if({memCondition})
         @end if
         @if({memPtrLevel} == 0)
             @if('{memName}' != 'pNext')
                 @if('{memName}' == 'apiVersion')
-    dump_html_value<const {memBaseType}>(object.{memName}, settings, "{memType}", "{memName}", indents + 1, OutputApiVersionHTML);
+        self.write(f'    dump_html_value<const {memBaseType}>(object.{memName}, settings, "{memType}", "{memName}", indents + 1, OutputApiVersionHTML);')
                 @end if
                 @if('{memName}' != 'apiVersion')
-    dump_html_value<const {memBaseType}>(object.{memName}, settings, "{memType}", "{memName}", indents + 1, dump_html_{memTypeID});
+        self.write(f'    dump_html_value<const {memBaseType}>(object.{memName}, settings, "{memType}", "{memName}", indents + 1, dump_html_{memTypeID});')
                 @end if
             @end if
             @if('{memName}' == 'pNext')
-    if(object.pNext != nullptr){{
-        dump_html_pNext_trampoline(object.{memName}, settings, indents + 1);
-    }} else {{
-        dump_html_value<const {memBaseType}>(object.{memName}, settings, "{memType}", "{memName}", indents + 1, dump_html_{memTypeID});
-    }}
+        self.write(f'    if(object.pNext != nullptr){{')
+        self.write(f'        dump_html_pNext_trampoline(object.{memName}, settings, indents + 1);')
+        self.write('    } else {')
+        self.write(f'        dump_html_value<const {memBaseType}>(object.{memName}, settings, "{memType}", "{memName}", indents + 1, dump_html_{memTypeID});')
+        self.write('    }')
             @end if
         @end if
         @if({memPtrLevel} == 1 and '{memLength}' == 'None')
-    dump_html_pointer<const {memBaseType}>(object.{memName}, settings, "{memType}", "{memName}", indents + 1, dump_html_{memTypeID});
+        self.write(f'    dump_html_pointer<const {memBaseType}>(object.{memName}, settings, "{memType}", "{memName}", indents + 1, dump_html_{memTypeID});')
         @end if
         @if({memPtrLevel} == 1 and '{memLength}' != 'None' and not {memLengthIsMember})
-    dump_html_array<const {memBaseType}>(object.{memName}, {memLength}, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_html_{memTypeID}); // ZRR
+        self.write(f'    dump_html_array<const {memBaseType}>(object.{memName}, {memLength}, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_html_{memTypeID}); // ZRR
         @end if
         @if({memPtrLevel} == 1 and '{memLength}' != 'None' and {memLengthIsMember} and '{memName}' != 'pCode')
             @if('{memLength}'[0].isdigit() or '{memLength}'[0].isupper())
-    dump_html_array<const {memBaseType}>(object.{memName}, {memLength}, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_html_{memTypeID}); // ZRS
+        self.write(f'    dump_html_array<const {memBaseType}>(object.{memName}, {memLength}, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_html_{memTypeID}); // ZRS
             @end if
             @if(not ('{memLength}'[0].isdigit() or '{memLength}'[0].isupper()))
                 @if('{memLength}' == 'rasterizationSamples')
-    dump_html_array<const {memBaseType}>(object.{memName}, (object.{memLength} + 31) / 32, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_html_{memTypeID}); // ZRT
+        self.write(f'    dump_html_array<const {memBaseType}>(object.{memName}, (object.{memLength} + 31) / 32, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_html_{memTypeID}); // ZRT
                 @end if
                 @if('{memLength}' != 'rasterizationSamples')
-    dump_html_array<const {memBaseType}>(object.{memName}, object.{memLength}, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_html_{memTypeID}); // ZRT
+        self.write(f'    dump_html_array<const {memBaseType}>(object.{memName}, object.{memLength}, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_html_{memTypeID}); // ZRT
                 @end if
             @end if
         @end if
         @if('{sctName}' == 'VkShaderModuleCreateInfo')
             @if('{memName}' == 'pCode')
-    if(settings.showShader())
-        dump_html_array<const {memBaseType}>(object.{memName}, object.{memLength}, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_html_{memTypeID}); // ZRU
-    else
-        dump_html_special("SHADER DATA", settings, "{memType}", "{memName}", indents + 1);
+        self.write(f'    if(settings.showShader())
+        self.write(f'        dump_html_array<const {memBaseType}>(object.{memName}, object.{memLength}, settings, "{memType}", "{memChildType}", "{memName}", indents + 1, dump_html_{memTypeID}); // ZRU
+        self.write('    else')
+        self.write(f'        dump_html_special("SHADER DATA", settings, "{memType}", "{memName}", indents + 1);')
             @end if
         @end if
-
+        self.write(f'
         @if('{memCondition}' != 'None')
-    else
-        dump_html_special("UNUSED", settings, "{memType}", "{memName}", indents + 1);
+        self.write('    else')
+        self.write(f'        dump_html_special("UNUSED", settings, "{memType}", "{memName}", indents + 1);')
         @end if
     @end member
-}}
+        self.write('}')
 @end struct
-
-//========================== Union Implementations ==========================//
-
-@foreach union
-void dump_html_{unName}(const {unName}& object, const ApiDumpSettings& settings, int indents)
-{{
+        self.write('\n//========================== Union Implementations ==========================//\n')
+        for union in [ x for x in self.vk.structs.values() if x.union ]:
+            self.write(f'void dump_html_{unName}(const {unName}& object, const ApiDumpSettings& settings, int indents)')
+            self.write('''{
     settings.stream() << "<div class='val'>";
     if(settings.showAddress())
         settings.stream() << &object << " (Union):\\n";
     else
         settings.stream() << "address (Union):\\n";
     settings.stream() << "</div></summary>";
+''')
+            for member in union.members:
+                if union.name in VALIDITY_CHECKS and member.name in VALIDITY_CHECKS[union.name]:
+                    self.write(f'    if({chcCondition})
+                @if({chcPtrLevel} == 0)
+                    self.write(f'    dump_html_value<const {chcBaseType}>(object.{chcName}, settings, "{chcType}", "{chcName}", indents + 1, dump_html_{chcTypeID});')
+                @end if
+                @if({chcPtrLevel} == 1 and '{chcLength}' == 'None')
+                    self.write(f'    dump_html_pointer<const {chcBaseType}>(object.{chcName}, settings, "{chcType}", "{chcName}", indents + 1, dump_html_{chcTypeID});')
+                @end if
+                @if({chcPtrLevel} == 1 and '{chcLength}' != 'None')
+                    self.write(f'    dump_html_array<const {chcBaseType}>(object.{chcName}, {chcLength}, settings, "{chcType}", "{chcChildType}", "{chcName}", indents + 1, dump_html_{chcTypeID}); // ZRY
+                @end if
+            @end choice
+            self.write('}')
 
-    @foreach choice
-    @if('{chcCondition}' != 'None')
-    if({chcCondition})
-    @end if
-    @if({chcPtrLevel} == 0)
-    dump_html_value<const {chcBaseType}>(object.{chcName}, settings, "{chcType}", "{chcName}", indents + 1, dump_html_{chcTypeID});
-    @end if
-    @if({chcPtrLevel} == 1 and '{chcLength}' == 'None')
-    dump_html_pointer<const {chcBaseType}>(object.{chcName}, settings, "{chcType}", "{chcName}", indents + 1, dump_html_{chcTypeID});
-    @end if
-    @if({chcPtrLevel} == 1 and '{chcLength}' != 'None')
-    dump_html_array<const {chcBaseType}>(object.{chcName}, {chcLength}, settings, "{chcType}", "{chcChildType}", "{chcName}", indents + 1, dump_html_{chcTypeID}); // ZRY
-    @end if
-    @end choice
-}}
-@end union
-
-//======================== pNext Chain Implementation =======================//
+        self.write('\n//======================== pNext Chain Implementation =======================//')
 @if(not {isVideoGeneration})
-void dump_html_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents)
-{{
-    switch((int64_t) (static_cast<const VkBaseInStructure*>(object)->sType)) {{
+        self.write(f'void dump_html_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents)')
+        self.write('{')
+        self.write(f'    switch((int64_t) (static_cast<const VkBaseInStructure*>(object)->sType)) {{')
     @foreach struct
         @if({sctStructureTypeIndex} != -1)
-    case {sctStructureTypeIndex}:
-        dump_html_pNext<const {sctName}>(static_cast<const {sctName}*>(object), settings, "{sctName}", indents, dump_html_{sctName});
-        break;
+        self.write(f'    case {sctStructureTypeIndex}:')
+        self.write(f'        dump_html_pNext<const {sctName}>(static_cast<const {sctName}*>(object), settings, "{sctName}", indents, dump_html_{sctName});')
+        self.write(f'        break;')
         @end if
     @end struct
-
-    case VK_STRUCTURE_TYPE_LOADER_INSTANCE_CREATE_INFO: // 47
-    case VK_STRUCTURE_TYPE_LOADER_DEVICE_CREATE_INFO: // 48
-        if(static_cast<const VkBaseInStructure*>(object)->pNext != nullptr){{
-            dump_html_pNext_trampoline(static_cast<const void*>(static_cast<const VkBaseInStructure*>(object)->pNext), settings, indents);
-        }} else {{
-            settings.stream() << "<details class='data'><summary>";
-            dump_html_nametype(settings.stream(), settings.showType(), "pNext", "const void*");
-            settings.stream() << "<div class='val'> NULL</div></summary></details>";
-        }}
-        break;
-    default:
-        settings.stream() << "<details class='data'><summary>";
-        dump_html_nametype(settings.stream(), settings.showType(), "pNext", "const void*");
-        settings.stream() << "<div class='val'>UNKNOWN (" << (int64_t) (static_cast<const VkBaseInStructure*>(object)->sType) <<")</div></summary></details>";
-    }}
-}}
+        self.write(f'
+        self.write(f'    case VK_STRUCTURE_TYPE_LOADER_INSTANCE_CREATE_INFO: // 47
+        self.write(f'    case VK_STRUCTURE_TYPE_LOADER_DEVICE_CREATE_INFO: // 48
+        self.write(f'        if(static_cast<const VkBaseInStructure*>(object)->pNext != nullptr){{')
+        self.write(f'            dump_html_pNext_trampoline(static_cast<const void*>(static_cast<const VkBaseInStructure*>(object)->pNext), settings, indents);')
+        self.write('        } else {')
+        self.write(f'            settings.stream() << "<details class='data'><summary>";')
+        self.write(f'            dump_html_nametype(settings.stream(), settings.showType(), "pNext", "const void*");')
+        self.write(f'            settings.stream() << "<div class='val'> NULL</div></summary></details>";')
+        self.write(        '}')
+        self.write(f'        break;')
+        self.write(f'    default:')
+        self.write(f'        settings.stream() << "<details class='data'><summary>";')
+        self.write(f'        dump_html_nametype(settings.stream(), settings.showType(), "pNext", "const void*");')
+        self.write(f'        settings.stream() << "<div class='val'>UNKNOWN (" << (int64_t) (static_cast<const VkBaseInStructure*>(object)->sType) <<")</div></summary></details>";')
+        self.write('    }')
+        self.write('}')
 @end if
-//========================= Function Implementations ========================//
-
+        self.write('\n//========================= Function Implementations ========================//\n')
 @foreach function where('{funcName}' not in ['vkGetDeviceProcAddr', 'vkGetInstanceProcAddr'])
 @if('{funcReturn}' != 'void')
-void dump_html_{funcName}(ApiDumpInstance& dump_inst, {funcReturn} result, {funcTypedParams})
+        self.write(f'void dump_html_{funcName}(ApiDumpInstance& dump_inst, {funcReturn} result, {funcTypedParams})
 @end if
 @if('{funcReturn}' == 'void')
-void dump_html_{funcName}(ApiDumpInstance& dump_inst, {funcTypedParams})
+        self.write(f'void dump_html_{funcName}(ApiDumpInstance& dump_inst, {funcTypedParams})
 @end if
-{{
-    const ApiDumpSettings& settings(dump_inst.settings());
-
+        self.write('{')
+        self.write(f'    const ApiDumpSettings& settings(dump_inst.settings());')
+        self.write(f'
     @if('{funcReturn}' != 'void')
-    dump_html_{funcReturn}(result, settings, 0);
+        self.write(f'    dump_html_{funcReturn}(result, settings, 0);')
     @end if
-    settings.stream() << "</summary>";
-
-    if(settings.showParams())
-    {{
+        self.write(f'    settings.stream() << "</summary>";')
+        self.write(f'
+        self.write(f'    if(settings.showParams())
+        self.write('    {'
         @foreach parameter
         @if('{prmParameterStorage}' != '')
-        {prmParameterStorage}
+        self.write(f'        {prmParameterStorage}
         @end if
         @if({prmPtrLevel} == 0)
-        dump_html_value<const {prmBaseType}>({prmName}, settings, "{prmType}", "{prmName}", 1, dump_html_{prmTypeID});
+        self.write(f'        dump_html_value<const {prmBaseType}>({prmName}, settings, "{prmType}", "{prmName}", 1, dump_html_{prmTypeID});')
         @end if
         @if({prmPtrLevel} == 1 and '{prmLength}' == 'None')
-        dump_html_pointer<const {prmBaseType}>({prmName}, settings, "{prmType}", "{prmName}", 1, dump_html_{prmTypeID});
+        self.write(f'        dump_html_pointer<const {prmBaseType}>({prmName}, settings, "{prmType}", "{prmName}", 1, dump_html_{prmTypeID});')
         @end if
         @if({prmPtrLevel} == 1 and '{prmLength}' != 'None')
-        dump_html_array<const {prmBaseType}>({prmName}, {prmLength}, settings, "{prmType}", "{prmChildType}", "{prmName}", 1, dump_html_{prmTypeID}); // ZRZ
+        self.write(f'        dump_html_array<const {prmBaseType}>({prmName}, {prmLength}, settings, "{prmType}", "{prmChildType}", "{prmName}", 1, dump_html_{prmTypeID}); // ZRZ
         @end if
         @end parameter
-    }}
-    settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\\n";
-
-    settings.stream() << "</details>";
-}}
+        self.write('    }')
+        self.write(f'    settings.shouldFlush() ? settings.stream() << std::endl : settings.stream() << "\\n";')
+        self.write(f'
+        self.write(f'    settings.stream() << "</details>";')
+        self.write('}')
 @end function
-"""
 
-    def generate_json_header(self):
-        return  """
-/* Copyright (c) 2015-2023 Valve Corporation
- * Copyright (c) 2015-2023 LunarG, Inc.
- * Copyright (c) 2015-2017, 2019 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * Author: Lenny Komow <lenny@lunarg.com>
- * Author: Joey Bzdek <joey@lunarg.com>
- * Author: Shannon McPherson <shannon@lunarg.com>
- * Author: David Pinedo <david@lunarg.com>
- * Author: Charles Giessen <charles@lunarg.com>
- */
 
-/*
- * This file is generated from the Khronos Vulkan XML API Registry.
- */
+    def generate_json_header(self, video=False):
 
-#pragma once
-
-#include "api_dump.h"
-
+        self.write(f'#pragma once
+        self.write(f'
+        self.write(f'#include "api_dump.h"
+        self.write(f'
 @if(not {isVideoGeneration})
-void dump_json_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);
+        self.write(f'void dump_json_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);')
 @end if
-@foreach union
-void dump_json_{unName}(const {unName}& object, const ApiDumpSettings& settings, int indents);
-@end union
+        for union in [ x for x in self.vk.structs.values() if x.union ]:
+            self.write(f'void dump_json_{unName}(const {unName}& object, const ApiDumpSettings& settings, int indents);')
 
-//=========================== Type Implementations ==========================//
+        self.write('\n//=========================== Type Implementations ==========================//\n')
+        for t in EXTERNAL_TYPES:
+            self.write(f'void dump_json_{t}({t} object, const ApiDumpSettings& settings, int indents);')
 
-@foreach type where('{etyName}' != 'void')
-void dump_json_{etyName}({etyName} object, const ApiDumpSettings& settings, int indents);
-@end type
-
-//========================= Basetype Implementations ========================//
-
-@foreach basetype where(not '{baseName}' in ['ANativeWindow', 'AHardwareBuffer', 'CAMetalLayer'])
-void dump_json_{baseName}({baseName} object, const ApiDumpSettings& settings, int indents);
+        self.write('\n//========================= Basetype Implementations ========================//\n')
+        for basetype in [x for x in self.vk.basetypes.values() if x not in ['ANativeWindow', 'AHardwareBuffer', 'CAMetalLayer']]:
+            self.write(f'void dump_json_{basetype.name}({basetype.name} object, const ApiDumpSettings& settings, int indents);')
+        for basetype in [x for x in self.vk.basetypes.values() if x in ['ANativeWindow', 'AHardwareBuffer']]:
+            self.write('#if defined(VK_USE_PLATFORM_ANDROID_KHR)')
+            self.write(f'void dump_json_{basetype.name}(const {basetype.name}* object, const ApiDumpSettings& settings, int indents);')
+            self.write('#endif')
+        for basetype in [x for x in self.vk.basetypes.values() if x in ['CAMetalLayer']]:
+            self.write('#if defined(VK_USE_PLATFORM_METAL_EXT)')
+            self.write(f'void dump_json_{basetype.name}({basetype.name} object, const ApiDumpSettings& settings, int indents);')
+            self.write('#endif')
 @end basetype
-@foreach basetype where('{baseName}' in ['ANativeWindow', 'AHardwareBuffer'])
-#if defined(VK_USE_PLATFORM_ANDROID_KHR)
-void dump_json_{baseName}(const {baseName}* object, const ApiDumpSettings& settings, int indents);
-#endif
-@end basetype
-@foreach basetype where('{baseName}' in ['CAMetalLayer'])
-#if defined(VK_USE_PLATFORM_METAL_EXT)
-void dump_json_{baseName}({baseName} object, const ApiDumpSettings& settings, int indents);
-#endif
-@end basetype
+        self.write('\n//======================= System Type Implementations =======================//\n')
 
-//======================= System Type Implementations =======================//
+        for sys in self.vk.systemTypes.values():
+            self.write(f'void dump_json_{sys.name}(const {sys.type} object, const ApiDumpSettings& settings, int indents);')
 
-@foreach systype
-void dump_json_{sysName}(const {sysType} object, const ApiDumpSettings& settings, int indents);
-@end systype
+        self.write('\n//========================== Handle Implementations =========================//\n')
 
-//========================== Handle Implementations =========================//
+        for handle in self.vk.handles.values():
+            self.write(f'void dump_json_{handle.name}(const {handle.name} object, const ApiDumpSettings& settings, int indents);')
 
-@foreach handle
-void dump_json_{hdlName}(const {hdlName} object, const ApiDumpSettings& settings, int indents);
-@end handle
+        self.write('\n//=========================== Enum Implementations ==========================//\n')
 
-//=========================== Enum Implementations ==========================//
+        for enum in self.vk.enums.values():
+            self.write(f'void dump_json_{enum.name}({enum.name} object, const ApiDumpSettings& settings, int indents);')
 
-@foreach enum
-void dump_json_{enumName}({enumName} object, const ApiDumpSettings& settings, int indents);
-@end enum
+        self.write('\n//========================= Bitmask Implementations =========================//\n')
 
-//========================= Bitmask Implementations =========================//
+        for bitmask in self.vk.bitmasks.values():
+            self.write(f'void dump_json_{bitmask.name}({bitmask.name} object, const ApiDumpSettings& settings, int indents);')
 
-@foreach bitmask
-void dump_json_{bitName}({bitName} object, const ApiDumpSettings& settings, int indents);
-@end bitmask
-
-//=========================== Flag Implementations ==========================//
-
+        self.write('\n//=========================== Flag Implementations ==========================//\n')
 @foreach flag where('{flagEnum}' != 'None')
-void dump_json_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents);
-@end flag
-@foreach flag where('{flagEnum}' == 'None')
-void dump_json_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents);
+        self.write(f'void dump_json_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents);')
 @end flag
 
-//======================= Func Pointer Implementations ======================//
-
+        self.write('\n//======================= Func Pointer Implementations ======================//\n')
 @foreach funcpointer
-void dump_json_{pfnName}({pfnName} object, const ApiDumpSettings& settings, int indents);
+        self.write(f'void dump_json_{pfnName}({pfnName} object, const ApiDumpSettings& settings, int indents);')
 @end funcpointer
+        self.write('\n//========================== Struct Implementations =========================//\n')
+        for struct in self.vk.structs.values():
+            self.write(f'void dump_json_{struct.name}(const {struct.name}& object, const ApiDumpSettings& settings, int indents);')
 
-//========================== Struct Implementations =========================//
+        self.write('\n//========================== Union Implementations ==========================//')
+        for union in [ x for x in self.vk.structs.values() if x.union ]:
+            self.write(f'void dump_json_{unName}(const {unName}& object, const ApiDumpSettings& settings, int indents);')
 
-@foreach struct
-void dump_json_{sctName}(const {sctName}& object, const ApiDumpSettings& settings, int indents);
-@end struct
-
-//========================== Union Implementations ==========================//
-@foreach union
-void dump_json_{unName}(const {unName}& object, const ApiDumpSettings& settings, int indents);
-@end union
-
-//======================== pNext Chain Implementation =======================//
+        self.write('\n//======================== pNext Chain Implementation =======================//')
 @if(not {isVideoGeneration})
-void dump_json_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);
+        self.write(f'void dump_json_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);')
 @end if
-//========================= Function Implementations ========================//
-
+        self.write('\n//========================= Function Implementations ========================//\n')
 @foreach function where(not '{funcName}' in ['vkGetDeviceProcAddr', 'vkGetInstanceProcAddr'])
 @if('{funcReturn}' != 'void')
-void dump_json_{funcName}(ApiDumpInstance& dump_inst, {funcReturn} result, {funcTypedParams});
+        self.write(f'void dump_json_{funcName}(ApiDumpInstance& dump_inst, {funcReturn} result, {funcTypedParams});')
 @end if
 @if('{funcReturn}' == 'void')
-void dump_json_{funcName}(ApiDumpInstance& dump_inst, {funcTypedParams});
+        self.write(f'void dump_json_{funcName}(ApiDumpInstance& dump_inst, {funcTypedParams});')
 @end if
 @end function
-"""
 
     def generate_json_implementation(self, video=False):
-        return  """
-/* Copyright (c) 2015-2023 Valve Corporation
- * Copyright (c) 2015-2023 LunarG, Inc.
- * Copyright (c) 2015-2017, 2019 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * Author: Lenny Komow <lenny@lunarg.com>
- * Author: Joey Bzdek <joey@lunarg.com>
- * Author: Shannon McPherson <shannon@lunarg.com>
- * Author: David Pinedo <david@lunarg.com>
- * Author: Charles Giessen <charles@lunarg.com>
- */
-
-/*
- * This file is generated from the Khronos Vulkan XML API Registry.
- */
-
 @if({isVideoGeneration})
-#pragma once
+        self.write(f'#pragma once
 @end if
-
-#include "api_dump_json.h"
+        self.write(f'
+        self.write(f'#include "api_dump_json.h"
 @if(not {isVideoGeneration})
-#include "api_dump_video_json.h"
+        self.write(f'#include "api_dump_video_json.h"
 @end if
-//=========================== Type Implementations ==========================//
+        self.write('\n//=========================== Type Implementations ==========================//\n')
+        for t in EXTERNAL_TYPES:
+            self.write(f'void dump_json_{t}({t} object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            self.write(f'
+        @if('{t}' != 'uint8_t' and '{t}' != 'int8_t')
+                self.write(f'    settings.stream() << "\\"" << object << "\\"";')
+        @end if
+        @if('{t}' == 'uint8_t')
+                self.write(f'    settings.stream() << "\\"" << (uint32_t) object << "\\"";')
+        @end if
+        @if('{t}' == 'int8_t')
+                self.write(f'    settings.stream() << "\\"" << (int32_t) object << "\\"";')
+        @end if
+            self.write('}')
 
-@foreach type where('{etyName}' != 'void')
-void dump_json_{etyName}({etyName} object, const ApiDumpSettings& settings, int indents)
-{{
+        self.write('\n//========================= Basetype Implementations ========================//\n')
+        for basetype in [x for x in self.vk.basetypes.values() if x not in ['ANativeWindow', 'AHardwareBuffer', 'CAMetalLayer']]:
+            self.write(f'void dump_json_{basetype.name}({basetype.name} object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            self.write('    settings.stream() << "\\"" << object << "\\"";')
+            self.write('}')
+        for basetype in [x for x in self.vk.basetypes.values() if x in ['ANativeWindow', 'AHardwareBuffer']]:
+            self.write('#if defined(VK_USE_PLATFORM_ANDROID_KHR)')
+            self.write(f'void dump_json_{basetype.name}(const {basetype.name}* object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            self.write('    settings.stream() << "\\"" << object << "\\"";')
+            self.write('}')
+            self.write('#endif')
+        for basetype in [x for x in self.vk.basetypes.values() if x in ['CAMetalLayer']]:
+            self.write('#if defined(VK_USE_PLATFORM_METAL_EXT)')
+            self.write(f'void dump_json_{basetype.name}({basetype.name} object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            self.write('    settings.stream() << "\\"" << object << "\\"";')
+            self.write('}')
+            self.write('#endif')
 
-    @if('{etyName}' != 'uint8_t' and '{etyName}' != 'int8_t')
-    settings.stream() << "\\"" << object << "\\"";
-    @end if
-    @if('{etyName}' == 'uint8_t')
-    settings.stream() << "\\"" << (uint32_t) object << "\\"";
-    @end if
-    @if('{etyName}' == 'int8_t')
-    settings.stream() << "\\"" << (int32_t) object << "\\"";
-    @end if
-}}
-@end type
-
-//========================= Basetype Implementations ========================//
-
-@foreach basetype where(not '{baseName}' in ['ANativeWindow', 'AHardwareBuffer', 'CAMetalLayer'])
-void dump_json_{baseName}({baseName} object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << "\\"" << object << "\\"";
-}}
-@end basetype
-@foreach basetype where('{baseName}' in ['ANativeWindow', 'AHardwareBuffer'])
-#if defined(VK_USE_PLATFORM_ANDROID_KHR)
-void dump_json_{baseName}(const {baseName}* object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << "\\"" << object << "\\"";
-}}
-#endif
-@end basetype
-@foreach basetype where('{baseName}' in ['CAMetalLayer'])
-#if defined(VK_USE_PLATFORM_METAL_EXT)
-void dump_json_{baseName}({baseName} object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << "\\"" << object << "\\"";
-}}
-#endif
-@end basetype
-
-//======================= System Type Implementations =======================//
-
-@foreach systype
-void dump_json_{sysName}(const {sysType} object, const ApiDumpSettings& settings, int indents)
-{{
-    @if({sysNeedsPointer} == True)
-    OutputAddressJSON(settings, object);
-    settings.stream() << "\\n";
-    @end if
-    @if({sysNeedsPointer} == False)
-    if (settings.showAddress())
+        self.write('\n//======================= System Type Implementations =======================//\n')
+        for sys in self.vk.systemTypes.values():
+            self.write(f'void dump_json_{sys.name}(const {sys.tpe} object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            if sys.needsPointer:
+                self.write('    OutputAddressJSON(settings, object);')
+                self.write('    settings.stream() << "\\n";')
+            else:
+                self.write('''    if (settings.showAddress())
         settings.stream() << "\\"" << object << "\\"";
     else
-        settings.stream() << "\\"address\\"";
-    @end if
-}}
-@end systype
+        settings.stream() << "\\"address\\"";''')
+            self.write('}')
 
-//========================== Handle Implementations =========================//
-
-@foreach handle
-void dump_json_{hdlName}(const {hdlName} object, const ApiDumpSettings& settings, int indents)
+        self.write('\n//========================== Handle Implementations =========================//\n')
+        for handle in self.vk.handles.values():
+            self.write(f'''void dump_json_{handle.name}(const {handle.name} object, const ApiDumpSettings& settings, int indents)
 {{
     if(settings.showAddress()) {{
         settings.stream() << "\\"" << object << "\\"";
     }} else {{
         settings.stream() << "\\"address\\"";
     }}
-}}
-@end handle
+}}''')
 
-//=========================== Enum Implementations ==========================//
+        self.write('\n//=========================== Enum Implementations ==========================//\n')
+        for enum in self.vk.enums.values():
+            self.write(f'void dump_json_{enum.name}({enum.name} object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            self.write('    switch((int64_t) object)')
+            self.write('    {')
+            for field in enum.fields:
+                self.write(f'    case {field.valueStr}:')
+                self.write(f'        settings.stream() << "\\"{field.name}\\"";')
+                self.write('        break;')
+        @end option
+            self.write('    default:')
+            self.write('        settings.stream() << "\\"UNKNOWN (" << object << ")\\"";')
+            self.write('    }')
+            self.write('}')
 
-@foreach enum
-void dump_json_{enumName}({enumName} object, const ApiDumpSettings& settings, int indents)
-{{
-    switch((int64_t) object)
-    {{
-    @foreach option
-    case {optValue}:
-        settings.stream() << "\\"{optName}\\"";
-        break;
-    @end option
-    default:
-        settings.stream() << "\\"UNKNOWN (" << object << ")\\"";
-    }}
-}}
-@end enum
+        self.write('\n//========================= Bitmask Implementations =========================//\n')
+        for bitmask in self.vk.bitmasks.values():
+            self.write(f'void dump_json_{bitmask.name}({bitmask.name} object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            self.write('    bool is_first = true;')
+            self.write('    settings.stream() << '"' << object;')
+            for field in bitmask.flags:
+                self.write(f'    if(object {"==" if field.multiBit else "&"} {bitmask.valueStr}) {{')
+                self.write(f'        settings.stream() << (is_first ? \" (\" : \" | \") << "{field.name}"; is_first = false;')
+                self.write('    }')
+            self.write('    if(!is_first)
+            self.write('        settings.stream() << ')';')
+            self.write('    settings.stream() << "\\"";')
+            self.write('}')
 
-//========================= Bitmask Implementations =========================//
-
-@foreach bitmask
-void dump_json_{bitName}({bitName} object, const ApiDumpSettings& settings, int indents)
-{{
-    bool is_first = true;
-    settings.stream() << '"' << object;
-    @foreach option
-        @if('{optMultiValue}' != 'None')
-    if(object == {optValue}) {{
-        @end if
-        @if('{optMultiValue}' == 'None')
-    if(object & {optValue}) {{
-        @end if
-        settings.stream() << (is_first ? \" (\" : \" | \") << "{optName}"; is_first = false;
-    }}
-    @end option
-    if(!is_first)
-        settings.stream() << ')';
-    settings.stream() << "\\"";
-}}
-@end bitmask
-
-//=========================== Flag Implementations ==========================//
-
+        self.write('\n//=========================== Flag Implementations ==========================//\n')
 @foreach flag where('{flagEnum}' != 'None')
-void dump_json_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents)
-{{
-    dump_json_{flagEnum}(({flagEnum}) object, settings, indents);
-}}
+        self.write(f'void dump_json_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents)')
+        self.write('{')
+        self.write(f'    dump_json_{flagEnum}(({flagEnum}) object, settings, indents);')
+        self.write('}')
 @end flag
 @foreach flag where('{flagEnum}' == 'None')
-void dump_json_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << '"' << object << "\\"";
-}}
+        self.write(f'void dump_json_{flagName}({flagName} object, const ApiDumpSettings& settings, int indents)')
+        self.write('{')
+        self.write(f'    settings.stream() << '"' << object << "\\"";')
+        self.write('}')
 @end flag
-
-//======================= Func Pointer Implementations ======================//
-
+        self.write('\n//======================= Func Pointer Implementations ======================//\n')
 @foreach funcpointer
-void dump_json_{pfnName}({pfnName} object, const ApiDumpSettings& settings, int indents)
-{{
-    if(settings.showAddress())
-       settings.stream() << "\\"" << object << "\\"";
-    else
-        settings.stream() << "\\"address\\"";
-}}
+        self.write(f'void dump_json_{pfnName}({pfnName} object, const ApiDumpSettings& settings, int indents)')
+        self.write('{')
+        self.write(f'    if(settings.showAddress())
+        self.write(f'       settings.stream() << "\\"" << object << "\\"";')
+        self.write('    else')
+        self.write(f'        settings.stream() << "\\"address\\"";')
+        self.write('}')
 @end funcpointer
-
-//========================== Struct Implementations =========================//
-
+        self.write('\n//========================== Struct Implementations =========================//\n')
 @foreach struct
-void dump_json_{sctName}(const {sctName}& object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << settings.indentation(indents) << "[\\n";
-
+        self.write(f'void dump_json_{sctName}(const {sctName}& object, const ApiDumpSettings& settings, int indents)')
+        self.write('{')
+        self.write(f'    settings.stream() << settings.indentation(indents) << "[\\n";')
+        self.write(f'
     @foreach member
         @if('{memParameterStorage}' != '' and '{memCondition}' != 'None')
-    if({memCondition})
-        {memParameterStorage}
+        self.write(f'    if({memCondition})
+        self.write(f'        {memParameterStorage}
         @end if
         @if('{memParameterStorage}' != '' and '{memCondition}' == 'None')
-    {memParameterStorage}
+        self.write(f'    {memParameterStorage}
         @end if
     @end member
-
+        self.write(f'
     @foreach member
         @if({memIndex} != 0)
-    settings.stream() << ",\\n";
+        self.write(f'    settings.stream() << ",\\n";')
         @end if
         @if('{memCondition}' != 'None')
-    if({memCondition})
+        self.write(f'    if({memCondition})
         @end if
         @if({memPtrLevel} == 0)
             @if('{memName}' != 'pNext')
                 @if('{memName}' == 'apiVersion')
-    dump_json_value<const {memBaseType}>(object.{memName}, NULL, settings, "{memType}", "{memName}", {memIsStruct}, {memIsUnion}, indents + 1, OutputApiVersionJSON);
+        self.write(f'    dump_json_value<const {memBaseType}>(object.{memName}, NULL, settings, "{memType}", "{memName}", {memIsStruct}, {memIsUnion}, indents + 1, OutputApiVersionJSON);')
                 @end if
                 @if('{memName}' != 'apiVersion')
-    dump_json_value<const {memBaseType}>(object.{memName}, NULL, settings, "{memType}", "{memName}", {memIsStruct}, {memIsUnion}, indents + 1, dump_json_{memTypeID});
+        self.write(f'    dump_json_value<const {memBaseType}>(object.{memName}, NULL, settings, "{memType}", "{memName}", {memIsStruct}, {memIsUnion}, indents + 1, dump_json_{memTypeID});')
                 @end if
             @end if
             @if('{memName}' == 'pNext')
-    if(object.pNext != nullptr){{
-        dump_json_pNext_trampoline(object.{memName}, settings, indents + 1);
-    }} else {{
-        dump_json_value<const {memBaseType}>(object.{memName}, object.{memName}, settings, "{memType}", "{memName}", {memIsStruct}, {memIsUnion}, indents + 1, dump_json_{memTypeID});
-    }}
+        self.write(f'    if(object.pNext != nullptr){{')
+        self.write(f'        dump_json_pNext_trampoline(object.{memName}, settings, indents + 1);')
+        self.write('    } else {')
+        self.write(f'        dump_json_value<const {memBaseType}>(object.{memName}, object.{memName}, settings, "{memType}", "{memName}", {memIsStruct}, {memIsUnion}, indents + 1, dump_json_{memTypeID});')
+        self.write('    }')
             @end if
         @end if
         @if({memPtrLevel} == 1 and '{memLength}' == 'None')
-    dump_json_pointer<const {memBaseType}>(object.{memName}, settings, "{memType}", "{memName}", {memIsStruct}, {memIsUnion}, indents + 1, dump_json_{memTypeID});
+        self.write(f'    dump_json_pointer<const {memBaseType}>(object.{memName}, settings, "{memType}", "{memName}", {memIsStruct}, {memIsUnion}, indents + 1, dump_json_{memTypeID});')
         @end if
         @if({memPtrLevel} == 1 and '{memLength}' != 'None' and not {memLengthIsMember})
-    dump_json_array<const {memBaseType}>(object.{memName}, {memLength}, settings, "{memType}", "{memChildType}", "{memName}", {memIsStruct}, {memIsUnion}, indents + 1, dump_json_{memTypeID}); // IQA
+        self.write(f'    dump_json_array<const {memBaseType}>(object.{memName}, {memLength}, settings, "{memType}", "{memChildType}", "{memName}", {memIsStruct}, {memIsUnion}, indents + 1, dump_json_{memTypeID}); // IQA')
         @end if
         @if({memPtrLevel} == 1 and '{memLength}' != 'None' and {memLengthIsMember} and '{memName}' != 'pCode')
             @if('{memLength}'[0].isdigit() or '{memLength}'[0].isupper())
-    dump_json_array<const {memBaseType}>(object.{memName}, {memLength}, settings, "{memType}", "{memChildType}", "{memName}", {memIsStruct}, {memIsUnion}, indents + 1, dump_json_{memTypeID}); // JQA
+        self.write(f'    dump_json_array<const {memBaseType}>(object.{memName}, {memLength}, settings, "{memType}", "{memChildType}", "{memName}", {memIsStruct}, {memIsUnion}, indents + 1, dump_json_{memTypeID}); // JQA')
             @end if
             @if(not ('{memLength}'[0].isdigit() or '{memLength}'[0].isupper()))
                 @if('{memLength}' == 'rasterizationSamples')
-    dump_json_array<const {memBaseType}>(object.{memName}, (object.{memLength} + 31) / 32, settings, "{memType}", "{memChildType}", "{memName}", {memIsStruct}, {memIsUnion}, indents + 1, dump_json_{memTypeID}); // JQA
+        self.write(f'    dump_json_array<const {memBaseType}>(object.{memName}, (object.{memLength} + 31) / 32, settings, "{memType}", "{memChildType}", "{memName}", {memIsStruct}, {memIsUnion}, indents + 1, dump_json_{memTypeID}); // JQA')
                 @end if
                 @if('{memLength}' != 'rasterizationSamples')
-    dump_json_array<const {memBaseType}>(object.{memName}, object.{memLength}, settings, "{memType}", "{memChildType}", "{memName}", {memIsStruct}, {memIsUnion}, indents + 1, dump_json_{memTypeID}); // JQA
+        self.write(f'    dump_json_array<const {memBaseType}>(object.{memName}, object.{memLength}, settings, "{memType}", "{memChildType}", "{memName}", {memIsStruct}, {memIsUnion}, indents + 1, dump_json_{memTypeID}); // JQA')
                 @end if
             @end if
         @end if
         @if('{sctName}' == 'VkShaderModuleCreateInfo')
             @if('{memName}' == 'pCode')
-    if(settings.showShader())
-        dump_json_array<const {memBaseType}>(object.{memName}, object.{memLength}, settings, "{memType}", "{memChildType}", "{memName}", {memIsStruct}, {memIsUnion}, indents + 1, dump_json_{memTypeID}); // KQA
-    else
-        dump_json_special("SHADER DATA", settings, "{memType}", "{memName}", indents + 1);
+        self.write(f'    if(settings.showShader())
+        self.write(f'        dump_json_array<const {memBaseType}>(object.{memName}, object.{memLength}, settings, "{memType}", "{memChildType}", "{memName}", {memIsStruct}, {memIsUnion}, indents + 1, dump_json_{memTypeID}); // KQA')
+        self.write('    else')
+        self.write(f'        dump_json_special("SHADER DATA", settings, "{memType}", "{memName}", indents + 1);')
             @end if
         @end if
-
+        self.write(f'
         @if('{memCondition}' != 'None')
-    else
-        dump_json_UNUSED(settings, "{memType}", "{memName}", indents + 1);
+        self.write('    else')
+        self.write(f'        dump_json_UNUSED(settings, "{memType}", "{memName}", indents + 1);')
         @end if
     @end member
-    settings.stream() << "\\n" << settings.indentation(indents) << "]";
-}}
+        self.write(f'    settings.stream() << "\\n" << settings.indentation(indents) << "]";')
+        self.write('}')
 @end struct
+        self.write('\n//========================== Union Implementations ==========================//')
+        for union in [ x for x in self.vk.structs.values() if x.union ]:
+            self.write(f'void dump_json_{unName}(const {unName}& object, const ApiDumpSettings& settings, int indents)')
+            self.write('{')
+            self.write('    settings.stream() << settings.indentation(indents) << "[\\n";\n')
+            for member in union.members:
+                if union.name in VALIDITY_CHECKS and member.name in VALIDITY_CHECKS[union.name]:
+                    self.write(f'    if({chcCondition})
+                @if({chcIndex} != 0 and '{chcCondition}' == 'None')
+                    self.write(f'    settings.stream() << ",\\n"; // Only need commas when more than one field is printed')
+                @end if
+                @if({chcPtrLevel} == 0)
+                    self.write(f'    dump_json_value<const {chcBaseType}>(object.{chcName}, NULL, settings, "{chcType}", "{chcName}", {chcIsStruct}, {chcIsUnion}, indents + 2, dump_json_{chcTypeID});')
+                @end if
+                @if({chcPtrLevel} == 1 and '{chcLength}' == 'None')
+                    self.write(f'    dump_json_pointer<const {chcBaseType}>(object.{chcName}, settings, "{chcType}", "{chcName}", {chcIsStruct}, {chcIsUnion}, indents + 2, dump_json_{chcTypeID});')
+                @end if
+                @if({chcPtrLevel} == 1 and '{chcLength}' != 'None')
+                    self.write(f'    dump_json_array<const {chcBaseType}>(object.{chcName}, {chcLength}, settings, "{chcType}", "{chcChildType}", "{chcName}", {chcIsStruct}, {chcIsUnion}, indents + 2, dump_json_{chcTypeID}); // OQA')
+                @end if
+            self.write('\n    settings.stream() << "\\n" << settings.indentation(indents) << "]";')
+            self.write('}')
 
-//========================== Union Implementations ==========================//
-@foreach union
-void dump_json_{unName}(const {unName}& object, const ApiDumpSettings& settings, int indents)
-{{
-    settings.stream() << settings.indentation(indents) << "[\\n";
-
-    @foreach choice
-    @if('{chcCondition}' != 'None')
-    if({chcCondition})
-    @end if
-    @if({chcIndex} != 0 and '{chcCondition}' == 'None')
-    settings.stream() << ",\\n"; // Only need commas when more than one field is printed
-    @end if
-    @if({chcPtrLevel} == 0)
-    dump_json_value<const {chcBaseType}>(object.{chcName}, NULL, settings, "{chcType}", "{chcName}", {chcIsStruct}, {chcIsUnion}, indents + 2, dump_json_{chcTypeID});
-    @end if
-    @if({chcPtrLevel} == 1 and '{chcLength}' == 'None')
-    dump_json_pointer<const {chcBaseType}>(object.{chcName}, settings, "{chcType}", "{chcName}", {chcIsStruct}, {chcIsUnion}, indents + 2, dump_json_{chcTypeID});
-    @end if
-    @if({chcPtrLevel} == 1 and '{chcLength}' != 'None')
-    dump_json_array<const {chcBaseType}>(object.{chcName}, {chcLength}, settings, "{chcType}", "{chcChildType}", "{chcName}", {chcIsStruct}, {chcIsUnion}, indents + 2, dump_json_{chcTypeID}); // OQA
-    @end if
-    @end choice
-
-    settings.stream() << "\\n" << settings.indentation(indents) << "]";
-}}
-@end union
-
-//======================== pNext Chain Implementation =======================//
+        self.write('\n//======================== pNext Chain Implementation =======================//')
 @if(not {isVideoGeneration})
-void dump_json_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents)
-{{
-    switch((int64_t) (static_cast<const VkBaseInStructure*>(object)->sType)) {{
+        self.write(f'void dump_json_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents)')
+        self.write('{')
+        self.write(f'    switch((int64_t) (static_cast<const VkBaseInStructure*>(object)->sType)) {{')
     @foreach struct
         @if({sctStructureTypeIndex} != -1)
-    case {sctStructureTypeIndex}:
-        dump_json_pNext<const {sctName}>(static_cast<const {sctName}*>(object), settings, "{sctName}", indents, dump_json_{sctName});
-        break;
+        self.write(f'    case {sctStructureTypeIndex}:')
+        self.write(f'        dump_json_pNext<const {sctName}>(static_cast<const {sctName}*>(object), settings, "{sctName}", indents, dump_json_{sctName});')
+        self.write(f'        break;')
         @end if
     @end struct
-
-    case VK_STRUCTURE_TYPE_LOADER_INSTANCE_CREATE_INFO: // 47
-    case VK_STRUCTURE_TYPE_LOADER_DEVICE_CREATE_INFO: // 48
-        if(static_cast<const VkBaseInStructure*>(object)->pNext != nullptr){{
-            dump_json_pNext_trampoline(static_cast<const void*>(static_cast<const VkBaseInStructure*>(object)->pNext), settings, indents);
-        }} else {{
-            settings.stream() << settings.indentation(indents) << "{{\\n";
-            settings.stream() << settings.indentation(indents + 1) << "\\"type\\" : \\"const void*\\",\\n";
-            settings.stream() << settings.indentation(indents + 1) << "\\"name\\" : \\"pNext\\",\\n";
-            settings.stream() << settings.indentation(indents + 1) << "\\"value\\" : \\"NULL\\"\\n";
-            settings.stream() << settings.indentation(indents) << "}}";
-        }}
-        break;
-    default:
-        settings.stream() << settings.indentation(indents) << "{{\\n";
-        settings.stream() << settings.indentation(indents + 1) << "\\"type\\" : \\"const void*\\",\\n";
-        settings.stream() << settings.indentation(indents + 1) << "\\"name\\" : \\"pNext\\",\\n";
-        settings.stream() << settings.indentation(indents + 1) << "\\"value\\" : \\"UNKNOWN (" << (int64_t) (static_cast<const VkBaseInStructure*>(object)->sType) << ")\\"\\n";
-        settings.stream() << settings.indentation(indents) << "}}";
-    }}
-}}
+        self.write(f'
+        self.write(f'    case VK_STRUCTURE_TYPE_LOADER_INSTANCE_CREATE_INFO: // 47')
+        self.write(f'    case VK_STRUCTURE_TYPE_LOADER_DEVICE_CREATE_INFO: // 48')
+        self.write(f'        if(static_cast<const VkBaseInStructure*>(object)->pNext != nullptr){{')
+        self.write(f'            dump_json_pNext_trampoline(static_cast<const void*>(static_cast<const VkBaseInStructure*>(object)->pNext), settings, indents);')
+        self.write('        } else {')
+        self.write(f'            settings.stream() << settings.indentation(indents) << "{{\\n";')
+        self.write(f'            settings.stream() << settings.indentation(indents + 1) << "\\"type\\" : \\"const void*\\",\\n";')
+        self.write(f'            settings.stream() << settings.indentation(indents + 1) << "\\"name\\" : \\"pNext\\",\\n";')
+        self.write(f'            settings.stream() << settings.indentation(indents + 1) << "\\"value\\" : \\"NULL\\"\\n";')
+        self.write(f'            settings.stream() << settings.indentation(indents) << "}}";')
+        self.write(        '}')
+        self.write(f'        break;')
+        self.write(f'    default:')
+        self.write(f'        settings.stream() << settings.indentation(indents) << "{{\\n";')
+        self.write(f'        settings.stream() << settings.indentation(indents + 1) << "\\"type\\" : \\"const void*\\",\\n";')
+        self.write(f'        settings.stream() << settings.indentation(indents + 1) << "\\"name\\" : \\"pNext\\",\\n";')
+        self.write(f'        settings.stream() << settings.indentation(indents + 1) << "\\"value\\" : \\"UNKNOWN (" << (int64_t) (static_cast<const VkBaseInStructure*>(object)->sType) << ")\\"\\n";')
+        self.write(f'        settings.stream() << settings.indentation(indents) << "}}";')
+        self.write('    }')
+        self.write('}')
 @end if
-//========================= Function Implementations ========================//
-
+self.write('\n//========================= Function Implementations ========================//\n')
 @foreach function where(not '{funcName}' in ['vkGetDeviceProcAddr', 'vkGetInstanceProcAddr'])
 @if('{funcReturn}' != 'void')
-void dump_json_{funcName}(ApiDumpInstance& dump_inst, {funcReturn} result, {funcTypedParams})
+        self.write(f'void dump_json_{funcName}(ApiDumpInstance& dump_inst, {funcReturn} result, {funcTypedParams})
 @end if
 @if('{funcReturn}' == 'void')
-void dump_json_{funcName}(ApiDumpInstance& dump_inst, {funcTypedParams})
+        self.write(f'void dump_json_{funcName}(ApiDumpInstance& dump_inst, {funcTypedParams})
 @end if
-{{
-    const ApiDumpSettings& settings(dump_inst.settings());
-
+        self.write('{')
+        self.write(f'    const ApiDumpSettings& settings(dump_inst.settings());')
+        self.write(f'
     @if('{funcReturn}' != 'void')
-    settings.stream() << settings.indentation(3) << "\\\"returnValue\\\" : ";
-    dump_json_{funcReturn}(result, settings, 0);
-    if(settings.showParams())
-        settings.stream() << ",";
-    settings.stream() << "\\n";
+        self.write(f'    settings.stream() << settings.indentation(3) << "\\\"returnValue\\\" : ";')
+        self.write(f'    dump_json_{funcReturn}(result, settings, 0);')
+        self.write(f'    if(settings.showParams())
+        self.write(f'        settings.stream() << ",";')
+        self.write(f'    settings.stream() << "\\n";')
     @end if
-
-    // Display parameter values
-    if(settings.showParams())
-    {{
-        settings.stream() << settings.indentation(3) << "\\\"args\\\" :\\n";
-        settings.stream() << settings.indentation(3) << "[\\n";
-
+        self.write(f'
+        self.write(f'    // Display parameter values
+        self.write(f'    if(settings.showParams())
+        self.write('    {'
+        self.write(f'        settings.stream() << settings.indentation(3) << "\\\"args\\\" :\\n";')
+        self.write(f'        settings.stream() << settings.indentation(3) << "[\\n";')
+        self.write(f'
         @foreach parameter
         @if({prmIndex} != 0)
-        settings.stream() << ",\\n";
+        self.write(f'        settings.stream() << ",\\n";')
         @end if
         @if('{prmParameterStorage}' != '')
-        {prmParameterStorage}
+        self.write(f'        {prmParameterStorage}
         @end if
         @if({prmPtrLevel} == 0)
-        dump_json_value<const {prmBaseType}>({prmName}, NULL, settings, "{prmType}", "{prmName}", {prmIsStruct}, {prmIsUnion}, 4, dump_json_{prmTypeID});
+        self.write(f'        dump_json_value<const {prmBaseType}>({prmName}, NULL, settings, "{prmType}", "{prmName}", {prmIsStruct}, {prmIsUnion}, 4, dump_json_{prmTypeID});')
         @end if
         @if({prmPtrLevel} == 1 and '{prmLength}' == 'None')
-        dump_json_pointer<const {prmBaseType}>({prmName}, settings, "{prmType}", "{prmName}", {prmIsStruct}, {prmIsUnion}, 4, dump_json_{prmTypeID});
+        self.write(f'        dump_json_pointer<const {prmBaseType}>({prmName}, settings, "{prmType}", "{prmName}", {prmIsStruct}, {prmIsUnion}, 4, dump_json_{prmTypeID});')
         @end if
         @if({prmPtrLevel} == 1 and '{prmLength}' != 'None')
-        dump_json_array<const {prmBaseType}>({prmName}, {prmLength}, settings, "{prmType}", "{prmChildType}", "{prmName}", {prmIsStruct}, {prmIsUnion}, 4, dump_json_{prmTypeID}); // PQA
+        self.write(f'        dump_json_array<const {prmBaseType}>({prmName}, {prmLength}, settings, "{prmType}", "{prmChildType}", "{prmName}", {prmIsStruct}, {prmIsUnion}, 4, dump_json_{prmTypeID}); // PQA
         @end if
         @end parameter
-
-        settings.stream() << "\\n" << settings.indentation(3) << "]\\n";
-    }}
-    settings.stream() << settings.indentation(2) << "}}";
-    if (settings.shouldFlush()) settings.stream().flush();
-}}
+        self.write(f'
+        self.write(f'        settings.stream() << "\\n" << settings.indentation(3) << "]\\n";')
+        self.write('    }')
+        self.write(f'    settings.stream() << settings.indentation(2) << "}}";')
+        self.write(f'    if (settings.shouldFlush()) settings.stream().flush();')
+        self.write('}')
 @end function
-"""
 

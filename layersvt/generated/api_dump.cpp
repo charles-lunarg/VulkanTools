@@ -16734,6 +16734,22 @@ VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL api_dump_known_device_functions(VkDevic
         return reinterpret_cast<PFN_vkVoidFunction>(vkAcquireProfilingLockKHR);
     if(strcmp(pName, "vkReleaseProfilingLockKHR") == 0 && (!device || device_dispatch_table(device)->ReleaseProfilingLockKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkReleaseProfilingLockKHR);
+    if(strcmp(pName, "vkSetDebugUtilsObjectNameEXT") == 0 && (!device || device_dispatch_table(device)->SetDebugUtilsObjectNameEXT))
+        return reinterpret_cast<PFN_vkVoidFunction>(vkSetDebugUtilsObjectNameEXT);
+    if(strcmp(pName, "vkSetDebugUtilsObjectTagEXT") == 0 && (!device || device_dispatch_table(device)->SetDebugUtilsObjectTagEXT))
+        return reinterpret_cast<PFN_vkVoidFunction>(vkSetDebugUtilsObjectTagEXT);
+    if(strcmp(pName, "vkQueueBeginDebugUtilsLabelEXT") == 0 && (!device || device_dispatch_table(device)->QueueBeginDebugUtilsLabelEXT))
+        return reinterpret_cast<PFN_vkVoidFunction>(vkQueueBeginDebugUtilsLabelEXT);
+    if(strcmp(pName, "vkQueueEndDebugUtilsLabelEXT") == 0 && (!device || device_dispatch_table(device)->QueueEndDebugUtilsLabelEXT))
+        return reinterpret_cast<PFN_vkVoidFunction>(vkQueueEndDebugUtilsLabelEXT);
+    if(strcmp(pName, "vkQueueInsertDebugUtilsLabelEXT") == 0 && (!device || device_dispatch_table(device)->QueueInsertDebugUtilsLabelEXT))
+        return reinterpret_cast<PFN_vkVoidFunction>(vkQueueInsertDebugUtilsLabelEXT);
+    if(strcmp(pName, "vkCmdBeginDebugUtilsLabelEXT") == 0 && (!device || device_dispatch_table(device)->CmdBeginDebugUtilsLabelEXT))
+        return reinterpret_cast<PFN_vkVoidFunction>(vkCmdBeginDebugUtilsLabelEXT);
+    if(strcmp(pName, "vkCmdEndDebugUtilsLabelEXT") == 0 && (!device || device_dispatch_table(device)->CmdEndDebugUtilsLabelEXT))
+        return reinterpret_cast<PFN_vkVoidFunction>(vkCmdEndDebugUtilsLabelEXT);
+    if(strcmp(pName, "vkCmdInsertDebugUtilsLabelEXT") == 0 && (!device || device_dispatch_table(device)->CmdInsertDebugUtilsLabelEXT))
+        return reinterpret_cast<PFN_vkVoidFunction>(vkCmdInsertDebugUtilsLabelEXT);
 #if defined(VK_USE_PLATFORM_ANDROID_KHR)
     if(strcmp(pName, "vkGetAndroidHardwareBufferPropertiesANDROID") == 0 && (!device || device_dispatch_table(device)->GetAndroidHardwareBufferPropertiesANDROID))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetAndroidHardwareBufferPropertiesANDROID);
