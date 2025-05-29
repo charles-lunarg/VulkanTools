@@ -22320,196 +22320,196 @@ VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL api_dump_known_instance_functions(VkIns
 
     if(strcmp(pName, "vkCreateInstance") == 0)
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateInstance);
-    if(strcmp(pName, "vkDestroyInstance") == 0)
+    if(strcmp(pName, "vkDestroyInstance") == 0 && (!instance || instance_dispatch_table(instance)->DestroyInstance))
         return reinterpret_cast<PFN_vkVoidFunction>(vkDestroyInstance);
-    if(strcmp(pName, "vkEnumeratePhysicalDevices") == 0)
+    if(strcmp(pName, "vkEnumeratePhysicalDevices") == 0 && (!instance || instance_dispatch_table(instance)->EnumeratePhysicalDevices))
         return reinterpret_cast<PFN_vkVoidFunction>(vkEnumeratePhysicalDevices);
-    if(strcmp(pName, "vkGetPhysicalDeviceFeatures") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceFeatures") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceFeatures))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceFeatures);
-    if(strcmp(pName, "vkGetPhysicalDeviceFormatProperties") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceFormatProperties") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceFormatProperties))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceFormatProperties);
-    if(strcmp(pName, "vkGetPhysicalDeviceImageFormatProperties") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceImageFormatProperties") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceImageFormatProperties))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceImageFormatProperties);
-    if(strcmp(pName, "vkGetPhysicalDeviceProperties") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceProperties") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceProperties))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceProperties);
-    if(strcmp(pName, "vkGetPhysicalDeviceQueueFamilyProperties") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceQueueFamilyProperties") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceQueueFamilyProperties))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceQueueFamilyProperties);
-    if(strcmp(pName, "vkGetPhysicalDeviceMemoryProperties") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceMemoryProperties") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceMemoryProperties))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceMemoryProperties);
-    if(strcmp(pName, "vkGetInstanceProcAddr") == 0)
+    if(strcmp(pName, "vkGetInstanceProcAddr") == 0 && (!instance || instance_dispatch_table(instance)->GetInstanceProcAddr))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetInstanceProcAddr);
-    if(strcmp(pName, "vkCreateDevice") == 0)
+    if(strcmp(pName, "vkCreateDevice") == 0 && (!instance || instance_dispatch_table(instance)->CreateDevice))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateDevice);
     if(strcmp(pName, "vkEnumerateInstanceExtensionProperties") == 0)
         return reinterpret_cast<PFN_vkVoidFunction>(vkEnumerateInstanceExtensionProperties);
     if(strcmp(pName, "vkEnumerateInstanceLayerProperties") == 0)
         return reinterpret_cast<PFN_vkVoidFunction>(vkEnumerateInstanceLayerProperties);
-    if(strcmp(pName, "vkEnumerateDeviceLayerProperties") == 0)
+    if(strcmp(pName, "vkEnumerateDeviceLayerProperties") == 0 && (!instance || instance_dispatch_table(instance)->EnumerateDeviceLayerProperties))
         return reinterpret_cast<PFN_vkVoidFunction>(vkEnumerateDeviceLayerProperties);
-    if(strcmp(pName, "vkGetPhysicalDeviceSparseImageFormatProperties") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceSparseImageFormatProperties") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceSparseImageFormatProperties))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceSparseImageFormatProperties);
-    if(strcmp(pName, "vkEnumeratePhysicalDeviceGroups") == 0)
+    if(strcmp(pName, "vkEnumeratePhysicalDeviceGroups") == 0 && (!instance || instance_dispatch_table(instance)->EnumeratePhysicalDeviceGroups))
         return reinterpret_cast<PFN_vkVoidFunction>(vkEnumeratePhysicalDeviceGroups);
-    if(strcmp(pName, "vkGetPhysicalDeviceFeatures2") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceFeatures2") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceFeatures2))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceFeatures2);
-    if(strcmp(pName, "vkGetPhysicalDeviceProperties2") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceProperties2") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceProperties2))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceProperties2);
-    if(strcmp(pName, "vkGetPhysicalDeviceFormatProperties2") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceFormatProperties2") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceFormatProperties2))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceFormatProperties2);
-    if(strcmp(pName, "vkGetPhysicalDeviceImageFormatProperties2") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceImageFormatProperties2") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceImageFormatProperties2))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceImageFormatProperties2);
-    if(strcmp(pName, "vkGetPhysicalDeviceQueueFamilyProperties2") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceQueueFamilyProperties2") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceQueueFamilyProperties2))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceQueueFamilyProperties2);
-    if(strcmp(pName, "vkGetPhysicalDeviceMemoryProperties2") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceMemoryProperties2") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceMemoryProperties2))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceMemoryProperties2);
-    if(strcmp(pName, "vkGetPhysicalDeviceSparseImageFormatProperties2") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceSparseImageFormatProperties2") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceSparseImageFormatProperties2))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceSparseImageFormatProperties2);
-    if(strcmp(pName, "vkGetPhysicalDeviceExternalBufferProperties") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceExternalBufferProperties") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceExternalBufferProperties))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceExternalBufferProperties);
-    if(strcmp(pName, "vkGetPhysicalDeviceExternalFenceProperties") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceExternalFenceProperties") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceExternalFenceProperties))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceExternalFenceProperties);
-    if(strcmp(pName, "vkGetPhysicalDeviceExternalSemaphoreProperties") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceExternalSemaphoreProperties") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceExternalSemaphoreProperties))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceExternalSemaphoreProperties);
-    if(strcmp(pName, "vkGetPhysicalDeviceToolProperties") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceToolProperties") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceToolProperties))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceToolProperties);
-    if(strcmp(pName, "vkDestroySurfaceKHR") == 0)
+    if(strcmp(pName, "vkDestroySurfaceKHR") == 0 && (!instance || instance_dispatch_table(instance)->DestroySurfaceKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkDestroySurfaceKHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceSurfaceSupportKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceSurfaceSupportKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceSurfaceSupportKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceSurfaceSupportKHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceSurfaceCapabilitiesKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceSurfaceCapabilitiesKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceSurfaceCapabilitiesKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceSurfaceCapabilitiesKHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceSurfaceFormatsKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceSurfaceFormatsKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceSurfaceFormatsKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceSurfaceFormatsKHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceSurfacePresentModesKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceSurfacePresentModesKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceSurfacePresentModesKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceSurfacePresentModesKHR);
-    if(strcmp(pName, "vkGetPhysicalDevicePresentRectanglesKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDevicePresentRectanglesKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDevicePresentRectanglesKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDevicePresentRectanglesKHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceDisplayPropertiesKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceDisplayPropertiesKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceDisplayPropertiesKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceDisplayPropertiesKHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceDisplayPlanePropertiesKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceDisplayPlanePropertiesKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceDisplayPlanePropertiesKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceDisplayPlanePropertiesKHR);
-    if(strcmp(pName, "vkGetDisplayPlaneSupportedDisplaysKHR") == 0)
+    if(strcmp(pName, "vkGetDisplayPlaneSupportedDisplaysKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetDisplayPlaneSupportedDisplaysKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetDisplayPlaneSupportedDisplaysKHR);
-    if(strcmp(pName, "vkGetDisplayModePropertiesKHR") == 0)
+    if(strcmp(pName, "vkGetDisplayModePropertiesKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetDisplayModePropertiesKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetDisplayModePropertiesKHR);
-    if(strcmp(pName, "vkCreateDisplayModeKHR") == 0)
+    if(strcmp(pName, "vkCreateDisplayModeKHR") == 0 && (!instance || instance_dispatch_table(instance)->CreateDisplayModeKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateDisplayModeKHR);
-    if(strcmp(pName, "vkGetDisplayPlaneCapabilitiesKHR") == 0)
+    if(strcmp(pName, "vkGetDisplayPlaneCapabilitiesKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetDisplayPlaneCapabilitiesKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetDisplayPlaneCapabilitiesKHR);
-    if(strcmp(pName, "vkCreateDisplayPlaneSurfaceKHR") == 0)
+    if(strcmp(pName, "vkCreateDisplayPlaneSurfaceKHR") == 0 && (!instance || instance_dispatch_table(instance)->CreateDisplayPlaneSurfaceKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateDisplayPlaneSurfaceKHR);
 #if defined(VK_USE_PLATFORM_XLIB_KHR)
-    if(strcmp(pName, "vkCreateXlibSurfaceKHR") == 0)
+    if(strcmp(pName, "vkCreateXlibSurfaceKHR") == 0 && (!instance || instance_dispatch_table(instance)->CreateXlibSurfaceKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateXlibSurfaceKHR);
 #endif // VK_USE_PLATFORM_XLIB_KHR
 #if defined(VK_USE_PLATFORM_XLIB_KHR)
-    if(strcmp(pName, "vkGetPhysicalDeviceXlibPresentationSupportKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceXlibPresentationSupportKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceXlibPresentationSupportKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceXlibPresentationSupportKHR);
 #endif // VK_USE_PLATFORM_XLIB_KHR
 #if defined(VK_USE_PLATFORM_XCB_KHR)
-    if(strcmp(pName, "vkCreateXcbSurfaceKHR") == 0)
+    if(strcmp(pName, "vkCreateXcbSurfaceKHR") == 0 && (!instance || instance_dispatch_table(instance)->CreateXcbSurfaceKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateXcbSurfaceKHR);
 #endif // VK_USE_PLATFORM_XCB_KHR
 #if defined(VK_USE_PLATFORM_XCB_KHR)
-    if(strcmp(pName, "vkGetPhysicalDeviceXcbPresentationSupportKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceXcbPresentationSupportKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceXcbPresentationSupportKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceXcbPresentationSupportKHR);
 #endif // VK_USE_PLATFORM_XCB_KHR
 #if defined(VK_USE_PLATFORM_WAYLAND_KHR)
-    if(strcmp(pName, "vkCreateWaylandSurfaceKHR") == 0)
+    if(strcmp(pName, "vkCreateWaylandSurfaceKHR") == 0 && (!instance || instance_dispatch_table(instance)->CreateWaylandSurfaceKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateWaylandSurfaceKHR);
 #endif // VK_USE_PLATFORM_WAYLAND_KHR
 #if defined(VK_USE_PLATFORM_WAYLAND_KHR)
-    if(strcmp(pName, "vkGetPhysicalDeviceWaylandPresentationSupportKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceWaylandPresentationSupportKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceWaylandPresentationSupportKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceWaylandPresentationSupportKHR);
 #endif // VK_USE_PLATFORM_WAYLAND_KHR
 #if defined(VK_USE_PLATFORM_ANDROID_KHR)
-    if(strcmp(pName, "vkCreateAndroidSurfaceKHR") == 0)
+    if(strcmp(pName, "vkCreateAndroidSurfaceKHR") == 0 && (!instance || instance_dispatch_table(instance)->CreateAndroidSurfaceKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateAndroidSurfaceKHR);
 #endif // VK_USE_PLATFORM_ANDROID_KHR
 #if defined(VK_USE_PLATFORM_WIN32_KHR)
-    if(strcmp(pName, "vkCreateWin32SurfaceKHR") == 0)
+    if(strcmp(pName, "vkCreateWin32SurfaceKHR") == 0 && (!instance || instance_dispatch_table(instance)->CreateWin32SurfaceKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateWin32SurfaceKHR);
 #endif // VK_USE_PLATFORM_WIN32_KHR
 #if defined(VK_USE_PLATFORM_WIN32_KHR)
-    if(strcmp(pName, "vkGetPhysicalDeviceWin32PresentationSupportKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceWin32PresentationSupportKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceWin32PresentationSupportKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceWin32PresentationSupportKHR);
 #endif // VK_USE_PLATFORM_WIN32_KHR
-    if(strcmp(pName, "vkCreateDebugReportCallbackEXT") == 0)
+    if(strcmp(pName, "vkCreateDebugReportCallbackEXT") == 0 && (!instance || instance_dispatch_table(instance)->CreateDebugReportCallbackEXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateDebugReportCallbackEXT);
-    if(strcmp(pName, "vkDestroyDebugReportCallbackEXT") == 0)
+    if(strcmp(pName, "vkDestroyDebugReportCallbackEXT") == 0 && (!instance || instance_dispatch_table(instance)->DestroyDebugReportCallbackEXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkDestroyDebugReportCallbackEXT);
-    if(strcmp(pName, "vkDebugReportMessageEXT") == 0)
+    if(strcmp(pName, "vkDebugReportMessageEXT") == 0 && (!instance || instance_dispatch_table(instance)->DebugReportMessageEXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkDebugReportMessageEXT);
-    if(strcmp(pName, "vkGetPhysicalDeviceVideoCapabilitiesKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceVideoCapabilitiesKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceVideoCapabilitiesKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceVideoCapabilitiesKHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceVideoFormatPropertiesKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceVideoFormatPropertiesKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceVideoFormatPropertiesKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceVideoFormatPropertiesKHR);
 #if defined(VK_USE_PLATFORM_GGP)
-    if(strcmp(pName, "vkCreateStreamDescriptorSurfaceGGP") == 0)
+    if(strcmp(pName, "vkCreateStreamDescriptorSurfaceGGP") == 0 && (!instance || instance_dispatch_table(instance)->CreateStreamDescriptorSurfaceGGP))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateStreamDescriptorSurfaceGGP);
 #endif // VK_USE_PLATFORM_GGP
-    if(strcmp(pName, "vkGetPhysicalDeviceExternalImageFormatPropertiesNV") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceExternalImageFormatPropertiesNV") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceExternalImageFormatPropertiesNV))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceExternalImageFormatPropertiesNV);
-    if(strcmp(pName, "vkGetPhysicalDeviceFeatures2KHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceFeatures2KHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceFeatures2KHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceFeatures2KHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceProperties2KHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceProperties2KHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceProperties2KHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceProperties2KHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceFormatProperties2KHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceFormatProperties2KHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceFormatProperties2KHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceFormatProperties2KHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceImageFormatProperties2KHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceImageFormatProperties2KHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceImageFormatProperties2KHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceImageFormatProperties2KHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceQueueFamilyProperties2KHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceQueueFamilyProperties2KHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceQueueFamilyProperties2KHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceQueueFamilyProperties2KHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceMemoryProperties2KHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceMemoryProperties2KHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceMemoryProperties2KHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceMemoryProperties2KHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceSparseImageFormatProperties2KHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceSparseImageFormatProperties2KHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceSparseImageFormatProperties2KHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceSparseImageFormatProperties2KHR);
 #if defined(VK_USE_PLATFORM_VI_NN)
-    if(strcmp(pName, "vkCreateViSurfaceNN") == 0)
+    if(strcmp(pName, "vkCreateViSurfaceNN") == 0 && (!instance || instance_dispatch_table(instance)->CreateViSurfaceNN))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateViSurfaceNN);
 #endif // VK_USE_PLATFORM_VI_NN
-    if(strcmp(pName, "vkEnumeratePhysicalDeviceGroupsKHR") == 0)
+    if(strcmp(pName, "vkEnumeratePhysicalDeviceGroupsKHR") == 0 && (!instance || instance_dispatch_table(instance)->EnumeratePhysicalDeviceGroupsKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkEnumeratePhysicalDeviceGroupsKHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceExternalBufferPropertiesKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceExternalBufferPropertiesKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceExternalBufferPropertiesKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceExternalBufferPropertiesKHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceExternalSemaphorePropertiesKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceExternalSemaphorePropertiesKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceExternalSemaphorePropertiesKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceExternalSemaphorePropertiesKHR);
-    if(strcmp(pName, "vkReleaseDisplayEXT") == 0)
+    if(strcmp(pName, "vkReleaseDisplayEXT") == 0 && (!instance || instance_dispatch_table(instance)->ReleaseDisplayEXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkReleaseDisplayEXT);
 #if defined(VK_USE_PLATFORM_XLIB_XRANDR_EXT)
-    if(strcmp(pName, "vkAcquireXlibDisplayEXT") == 0)
+    if(strcmp(pName, "vkAcquireXlibDisplayEXT") == 0 && (!instance || instance_dispatch_table(instance)->AcquireXlibDisplayEXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkAcquireXlibDisplayEXT);
 #endif // VK_USE_PLATFORM_XLIB_XRANDR_EXT
 #if defined(VK_USE_PLATFORM_XLIB_XRANDR_EXT)
-    if(strcmp(pName, "vkGetRandROutputDisplayEXT") == 0)
+    if(strcmp(pName, "vkGetRandROutputDisplayEXT") == 0 && (!instance || instance_dispatch_table(instance)->GetRandROutputDisplayEXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetRandROutputDisplayEXT);
 #endif // VK_USE_PLATFORM_XLIB_XRANDR_EXT
-    if(strcmp(pName, "vkGetPhysicalDeviceSurfaceCapabilities2EXT") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceSurfaceCapabilities2EXT") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceSurfaceCapabilities2EXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceSurfaceCapabilities2EXT);
-    if(strcmp(pName, "vkGetPhysicalDeviceExternalFencePropertiesKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceExternalFencePropertiesKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceExternalFencePropertiesKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceExternalFencePropertiesKHR);
-    if(strcmp(pName, "vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR") == 0)
+    if(strcmp(pName, "vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR") == 0 && (!instance || instance_dispatch_table(instance)->EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceSurfaceCapabilities2KHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceSurfaceCapabilities2KHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceSurfaceCapabilities2KHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceSurfaceCapabilities2KHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceSurfaceFormats2KHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceSurfaceFormats2KHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceSurfaceFormats2KHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceSurfaceFormats2KHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceDisplayProperties2KHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceDisplayProperties2KHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceDisplayProperties2KHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceDisplayProperties2KHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceDisplayPlaneProperties2KHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceDisplayPlaneProperties2KHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceDisplayPlaneProperties2KHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceDisplayPlaneProperties2KHR);
-    if(strcmp(pName, "vkGetDisplayModeProperties2KHR") == 0)
+    if(strcmp(pName, "vkGetDisplayModeProperties2KHR") == 0 && (!instance || instance_dispatch_table(instance)->GetDisplayModeProperties2KHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetDisplayModeProperties2KHR);
-    if(strcmp(pName, "vkGetDisplayPlaneCapabilities2KHR") == 0)
+    if(strcmp(pName, "vkGetDisplayPlaneCapabilities2KHR") == 0 && (!instance || instance_dispatch_table(instance)->GetDisplayPlaneCapabilities2KHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetDisplayPlaneCapabilities2KHR);
 #if defined(VK_USE_PLATFORM_IOS_MVK)
-    if(strcmp(pName, "vkCreateIOSSurfaceMVK") == 0)
+    if(strcmp(pName, "vkCreateIOSSurfaceMVK") == 0 && (!instance || instance_dispatch_table(instance)->CreateIOSSurfaceMVK))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateIOSSurfaceMVK);
 #endif // VK_USE_PLATFORM_IOS_MVK
 #if defined(VK_USE_PLATFORM_MACOS_MVK)
-    if(strcmp(pName, "vkCreateMacOSSurfaceMVK") == 0)
+    if(strcmp(pName, "vkCreateMacOSSurfaceMVK") == 0 && (!instance || instance_dispatch_table(instance)->CreateMacOSSurfaceMVK))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateMacOSSurfaceMVK);
 #endif // VK_USE_PLATFORM_MACOS_MVK
     if(strcmp(pName, "vkSetDebugUtilsObjectNameEXT") == 0)
@@ -22528,77 +22528,77 @@ VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL api_dump_known_instance_functions(VkIns
         return reinterpret_cast<PFN_vkVoidFunction>(vkCmdEndDebugUtilsLabelEXT);
     if(strcmp(pName, "vkCmdInsertDebugUtilsLabelEXT") == 0)
         return reinterpret_cast<PFN_vkVoidFunction>(vkCmdInsertDebugUtilsLabelEXT);
-    if(strcmp(pName, "vkCreateDebugUtilsMessengerEXT") == 0)
+    if(strcmp(pName, "vkCreateDebugUtilsMessengerEXT") == 0 && (!instance || instance_dispatch_table(instance)->CreateDebugUtilsMessengerEXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateDebugUtilsMessengerEXT);
-    if(strcmp(pName, "vkDestroyDebugUtilsMessengerEXT") == 0)
+    if(strcmp(pName, "vkDestroyDebugUtilsMessengerEXT") == 0 && (!instance || instance_dispatch_table(instance)->DestroyDebugUtilsMessengerEXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkDestroyDebugUtilsMessengerEXT);
-    if(strcmp(pName, "vkSubmitDebugUtilsMessageEXT") == 0)
+    if(strcmp(pName, "vkSubmitDebugUtilsMessageEXT") == 0 && (!instance || instance_dispatch_table(instance)->SubmitDebugUtilsMessageEXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkSubmitDebugUtilsMessageEXT);
-    if(strcmp(pName, "vkGetPhysicalDeviceMultisamplePropertiesEXT") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceMultisamplePropertiesEXT") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceMultisamplePropertiesEXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceMultisamplePropertiesEXT);
-    if(strcmp(pName, "vkGetPhysicalDeviceCalibrateableTimeDomainsKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceCalibrateableTimeDomainsKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceCalibrateableTimeDomainsKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceCalibrateableTimeDomainsKHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceCalibrateableTimeDomainsEXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceCalibrateableTimeDomainsEXT);
 #if defined(VK_USE_PLATFORM_FUCHSIA)
-    if(strcmp(pName, "vkCreateImagePipeSurfaceFUCHSIA") == 0)
+    if(strcmp(pName, "vkCreateImagePipeSurfaceFUCHSIA") == 0 && (!instance || instance_dispatch_table(instance)->CreateImagePipeSurfaceFUCHSIA))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateImagePipeSurfaceFUCHSIA);
 #endif // VK_USE_PLATFORM_FUCHSIA
 #if defined(VK_USE_PLATFORM_METAL_EXT)
-    if(strcmp(pName, "vkCreateMetalSurfaceEXT") == 0)
+    if(strcmp(pName, "vkCreateMetalSurfaceEXT") == 0 && (!instance || instance_dispatch_table(instance)->CreateMetalSurfaceEXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateMetalSurfaceEXT);
 #endif // VK_USE_PLATFORM_METAL_EXT
-    if(strcmp(pName, "vkGetPhysicalDeviceFragmentShadingRatesKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceFragmentShadingRatesKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceFragmentShadingRatesKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceFragmentShadingRatesKHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceToolPropertiesEXT") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceToolPropertiesEXT") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceToolPropertiesEXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceToolPropertiesEXT);
-    if(strcmp(pName, "vkGetPhysicalDeviceCooperativeMatrixPropertiesNV") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceCooperativeMatrixPropertiesNV") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceCooperativeMatrixPropertiesNV))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceCooperativeMatrixPropertiesNV);
-    if(strcmp(pName, "vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV);
 #if defined(VK_USE_PLATFORM_WIN32_KHR)
-    if(strcmp(pName, "vkGetPhysicalDeviceSurfacePresentModes2EXT") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceSurfacePresentModes2EXT") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceSurfacePresentModes2EXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceSurfacePresentModes2EXT);
 #endif // VK_USE_PLATFORM_WIN32_KHR
-    if(strcmp(pName, "vkCreateHeadlessSurfaceEXT") == 0)
+    if(strcmp(pName, "vkCreateHeadlessSurfaceEXT") == 0 && (!instance || instance_dispatch_table(instance)->CreateHeadlessSurfaceEXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateHeadlessSurfaceEXT);
-    if(strcmp(pName, "vkAcquireDrmDisplayEXT") == 0)
+    if(strcmp(pName, "vkAcquireDrmDisplayEXT") == 0 && (!instance || instance_dispatch_table(instance)->AcquireDrmDisplayEXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkAcquireDrmDisplayEXT);
-    if(strcmp(pName, "vkGetDrmDisplayEXT") == 0)
+    if(strcmp(pName, "vkGetDrmDisplayEXT") == 0 && (!instance || instance_dispatch_table(instance)->GetDrmDisplayEXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetDrmDisplayEXT);
-    if(strcmp(pName, "vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR);
 #if defined(VK_USE_PLATFORM_WIN32_KHR)
-    if(strcmp(pName, "vkAcquireWinrtDisplayNV") == 0)
+    if(strcmp(pName, "vkAcquireWinrtDisplayNV") == 0 && (!instance || instance_dispatch_table(instance)->AcquireWinrtDisplayNV))
         return reinterpret_cast<PFN_vkVoidFunction>(vkAcquireWinrtDisplayNV);
 #endif // VK_USE_PLATFORM_WIN32_KHR
 #if defined(VK_USE_PLATFORM_WIN32_KHR)
-    if(strcmp(pName, "vkGetWinrtDisplayNV") == 0)
+    if(strcmp(pName, "vkGetWinrtDisplayNV") == 0 && (!instance || instance_dispatch_table(instance)->GetWinrtDisplayNV))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetWinrtDisplayNV);
 #endif // VK_USE_PLATFORM_WIN32_KHR
 #if defined(VK_USE_PLATFORM_DIRECTFB_EXT)
-    if(strcmp(pName, "vkCreateDirectFBSurfaceEXT") == 0)
+    if(strcmp(pName, "vkCreateDirectFBSurfaceEXT") == 0 && (!instance || instance_dispatch_table(instance)->CreateDirectFBSurfaceEXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateDirectFBSurfaceEXT);
 #endif // VK_USE_PLATFORM_DIRECTFB_EXT
 #if defined(VK_USE_PLATFORM_DIRECTFB_EXT)
-    if(strcmp(pName, "vkGetPhysicalDeviceDirectFBPresentationSupportEXT") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceDirectFBPresentationSupportEXT") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceDirectFBPresentationSupportEXT))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceDirectFBPresentationSupportEXT);
 #endif // VK_USE_PLATFORM_DIRECTFB_EXT
 #if defined(VK_USE_PLATFORM_SCREEN_QNX)
-    if(strcmp(pName, "vkCreateScreenSurfaceQNX") == 0)
+    if(strcmp(pName, "vkCreateScreenSurfaceQNX") == 0 && (!instance || instance_dispatch_table(instance)->CreateScreenSurfaceQNX))
         return reinterpret_cast<PFN_vkVoidFunction>(vkCreateScreenSurfaceQNX);
 #endif // VK_USE_PLATFORM_SCREEN_QNX
 #if defined(VK_USE_PLATFORM_SCREEN_QNX)
-    if(strcmp(pName, "vkGetPhysicalDeviceScreenPresentationSupportQNX") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceScreenPresentationSupportQNX") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceScreenPresentationSupportQNX))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceScreenPresentationSupportQNX);
 #endif // VK_USE_PLATFORM_SCREEN_QNX
-    if(strcmp(pName, "vkGetPhysicalDeviceOpticalFlowImageFormatsNV") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceOpticalFlowImageFormatsNV") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceOpticalFlowImageFormatsNV))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceOpticalFlowImageFormatsNV);
-    if(strcmp(pName, "vkGetPhysicalDeviceCooperativeVectorPropertiesNV") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceCooperativeVectorPropertiesNV") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceCooperativeVectorPropertiesNV))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceCooperativeVectorPropertiesNV);
-    if(strcmp(pName, "vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceCooperativeMatrixPropertiesKHR))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR);
-    if(strcmp(pName, "vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV") == 0)
+    if(strcmp(pName, "vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV") == 0 && (!instance || instance_dispatch_table(instance)->GetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV))
         return reinterpret_cast<PFN_vkVoidFunction>(vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV);
 
     return nullptr;
