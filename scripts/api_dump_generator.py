@@ -370,10 +370,10 @@ VKAPI_ATTR {funcReturn} VKAPI_CALL {funcName}({funcTypedParams})
 VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL api_dump_known_instance_functions(VkInstance instance, const char* pName)
 {{
     @foreach function where('{funcType}' in ['global', 'instance'] and '{funcName}' not in [ 'vkEnumerateDeviceExtensionProperties' ])
-    @if('${funcDispatchType}' == 'instance')
+    @if('{funcDispatchType}' == 'instance')
     if(strcmp(pName, "{funcName}") == 0 && (!instance || instance_dispatch_table(instance)->{funcShortName}))
     @end if
-    @if('${funcDispatchType}' != 'instance')
+    @if('{funcDispatchType}' != 'instance')
     if(strcmp(pName, "{funcName}") == 0)
     @end if
         return reinterpret_cast<PFN_vkVoidFunction>({funcName});
