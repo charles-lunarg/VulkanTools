@@ -88,21 +88,15 @@ void dump_html_VkRemoteAddressNV(VkRemoteAddressNV object, const ApiDumpSettings
 
 
 #if defined(VK_USE_PLATFORM_ANDROID_KHR)
-#if defined(VK_USE_PLATFORM_ANDROID_KHR)
 void dump_html_ANativeWindow(const ANativeWindow* object, const ApiDumpSettings& settings, int indents);
-#endif
 #endif // VK_USE_PLATFORM_ANDROID_KHR
-#if defined(VK_USE_PLATFORM_ANDROID_KHR)
 #if defined(VK_USE_PLATFORM_ANDROID_KHR)
 void dump_html_AHardwareBuffer(const AHardwareBuffer* object, const ApiDumpSettings& settings, int indents);
-#endif
 #endif // VK_USE_PLATFORM_ANDROID_KHR
 
 
 #if defined(VK_USE_PLATFORM_METAL_EXT)
-#if defined(VK_USE_PLATFORM_METAL_EXT)
 void dump_html_CAMetalLayer(CAMetalLayer object, const ApiDumpSettings& settings, int indents);
-#endif
 #endif // VK_USE_PLATFORM_METAL_EXT
 
 //======================= System Type Implementations =======================//
