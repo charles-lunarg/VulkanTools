@@ -71,7 +71,7 @@ if (VT_CODEGEN)
             "${VULKAN_HEADERS_INSTALL_DIR}/${CMAKE_INSTALL_DATADIR}/vulkan/registry"
             --incremental --generated-version ${VulkanHeaders_VERSION}
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/layersvt/generated
-        MAIN_DEPENDENCY ${CMAKE_SOURCE_DIR}/scripts/api_dump_generator.py
+        MAIN_DEPENDENCY ${CMAKE_SOURCE_DIR}/scripts/generators/api_dump_generator.py
     )
     add_custom_target(vt_codegen DEPENDS ${VT_GENERATED_FILES})
 endif()
