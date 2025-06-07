@@ -1,7 +1,7 @@
 
-/* Copyright (c) 2015-2023 Valve Corporation
- * Copyright (c) 2015-2023 LunarG, Inc.
- * Copyright (c) 2015-2016, 2019 Google Inc.
+/* Copyright (c) 2015-2025 Valve Corporation
+ * Copyright (c) 2015-2025 LunarG, Inc.
+ * Copyright (c) 2015-2017, 2019, 2021 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Author: Lenny Komow <lenny@lunarg.com>
- * Author: Shannon McPherson <shannon@lunarg.com>
- * Author: Charles Giessen <charles@lunarg.com>
  */
 
 /*
@@ -134,6 +131,9 @@ void dump_text_IDirectFBSurface(const IDirectFBSurface object, const ApiDumpSett
 #if defined(VK_USE_PLATFORM_WIN32_KHR)
 void dump_text_LPCWSTR(const LPCWSTR object, const ApiDumpSettings& settings, int indents);
 #endif // VK_USE_PLATFORM_WIN32_KHR
+#if defined(VK_USE_PLATFORM_XLIB_XRANDR_EXT)
+void dump_text_RROutput(const RROutput object, const ApiDumpSettings& settings, int indents);
+#endif // VK_USE_PLATFORM_XLIB_XRANDR_EXT
 #if defined(VK_USE_PLATFORM_WIN32_KHR)
 void dump_text_SECURITY_ATTRIBUTES(const SECURITY_ATTRIBUTES* object, const ApiDumpSettings& settings, int indents);
 #endif // VK_USE_PLATFORM_WIN32_KHR
@@ -581,11 +581,11 @@ void dump_text_VkPipelineCacheCreateFlags(VkPipelineCacheCreateFlags object, con
 void dump_text_VkColorComponentFlags(VkColorComponentFlags object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkPipelineCreateFlags(VkPipelineCreateFlags object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkPipelineShaderStageCreateFlags(VkPipelineShaderStageCreateFlags object, const ApiDumpSettings& settings, int indents);
+void dump_text_VkShaderStageFlags(VkShaderStageFlags object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkCullModeFlags(VkCullModeFlags object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkPipelineDepthStencilStateCreateFlags(VkPipelineDepthStencilStateCreateFlags object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkPipelineColorBlendStateCreateFlags(VkPipelineColorBlendStateCreateFlags object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkPipelineLayoutCreateFlags(VkPipelineLayoutCreateFlags object, const ApiDumpSettings& settings, int indents);
-void dump_text_VkShaderStageFlags(VkShaderStageFlags object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkSamplerCreateFlags(VkSamplerCreateFlags object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkDescriptorPoolCreateFlags(VkDescriptorPoolCreateFlags object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkDescriptorSetLayoutCreateFlags(VkDescriptorSetLayoutCreateFlags object, const ApiDumpSettings& settings, int indents);
@@ -625,8 +625,8 @@ void dump_text_VkMemoryUnmapFlags(VkMemoryUnmapFlags object, const ApiDumpSettin
 void dump_text_VkPipelineCreateFlags2(VkPipelineCreateFlags2 object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkBufferUsageFlags2(VkBufferUsageFlags2 object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkHostImageCopyFlags(VkHostImageCopyFlags object, const ApiDumpSettings& settings, int indents);
-void dump_text_VkCompositeAlphaFlagsKHR(VkCompositeAlphaFlagsKHR object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkSurfaceTransformFlagsKHR(VkSurfaceTransformFlagsKHR object, const ApiDumpSettings& settings, int indents);
+void dump_text_VkCompositeAlphaFlagsKHR(VkCompositeAlphaFlagsKHR object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkSwapchainCreateFlagsKHR(VkSwapchainCreateFlagsKHR object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkDeviceGroupPresentModeFlagsKHR(VkDeviceGroupPresentModeFlagsKHR object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkDisplayPlaneAlphaFlagsKHR(VkDisplayPlaneAlphaFlagsKHR object, const ApiDumpSettings& settings, int indents);
@@ -655,8 +655,8 @@ void dump_text_VkConditionalRenderingFlagsEXT(VkConditionalRenderingFlagsEXT obj
 void dump_text_VkSurfaceCounterFlagsEXT(VkSurfaceCounterFlagsEXT object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkPerformanceCounterDescriptionFlagsKHR(VkPerformanceCounterDescriptionFlagsKHR object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkAcquireProfilingLockFlagsKHR(VkAcquireProfilingLockFlagsKHR object, const ApiDumpSettings& settings, int indents);
-void dump_text_VkDebugUtilsMessageTypeFlagsEXT(VkDebugUtilsMessageTypeFlagsEXT object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkDebugUtilsMessageSeverityFlagsEXT(VkDebugUtilsMessageSeverityFlagsEXT object, const ApiDumpSettings& settings, int indents);
+void dump_text_VkDebugUtilsMessageTypeFlagsEXT(VkDebugUtilsMessageTypeFlagsEXT object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkBuildAccelerationStructureFlagsKHR(VkBuildAccelerationStructureFlagsKHR object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkGeometryFlagsKHR(VkGeometryFlagsKHR object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkGeometryInstanceFlagsKHR(VkGeometryInstanceFlagsKHR object, const ApiDumpSettings& settings, int indents);
@@ -1399,7 +1399,9 @@ void dump_text_VkPhysicalDeviceShaderEnqueuePropertiesAMDX(const VkPhysicalDevic
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
 void dump_text_VkExecutionGraphPipelineScratchSizeAMDX(const VkExecutionGraphPipelineScratchSizeAMDX& object, const ApiDumpSettings& settings, int indents);
 #endif // VK_ENABLE_BETA_EXTENSIONS
+#if defined(VK_ENABLE_BETA_EXTENSIONS)
 void dump_text_VkPipelineLibraryCreateInfoKHR(const VkPipelineLibraryCreateInfoKHR& object, const ApiDumpSettings& settings, int indents);
+#endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
 void dump_text_VkExecutionGraphPipelineCreateInfoAMDX(const VkExecutionGraphPipelineCreateInfoAMDX& object, const ApiDumpSettings& settings, int indents);
 #endif // VK_ENABLE_BETA_EXTENSIONS

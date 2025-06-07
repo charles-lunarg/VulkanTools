@@ -1,7 +1,7 @@
 
-/* Copyright (c) 2015-2023 Valve Corporation
- * Copyright (c) 2015-2023 LunarG, Inc.
- * Copyright (c) 2015-2017, 2019 Google Inc.
+/* Copyright (c) 2015-2025 Valve Corporation
+ * Copyright (c) 2015-2025 LunarG, Inc.
+ * Copyright (c) 2015-2017, 2019, 2021 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Author: Lenny Komow <lenny@lunarg.com>
- * Author: Joey Bzdek <joey@lunarg.com>
- * Author: Shannon McPherson <shannon@lunarg.com>
- * Author: Charles Giessen <charles@lunarg.com>
  */
 
 /*
@@ -258,6 +254,15 @@ void dump_html_LPCWSTR(const LPCWSTR object, const ApiDumpSettings& settings, in
         settings.stream() << "<div class='val'>address</div></summary>";
 }
 #endif // VK_USE_PLATFORM_WIN32_KHR
+#if defined(VK_USE_PLATFORM_XLIB_XRANDR_EXT)
+void dump_html_RROutput(const RROutput object, const ApiDumpSettings& settings, int indents)
+{
+    if (settings.showAddress())
+        settings.stream() << "<div class='val'>" << object << "</div></summary>";
+    else
+        settings.stream() << "<div class='val'>address</div></summary>";
+}
+#endif // VK_USE_PLATFORM_XLIB_XRANDR_EXT
 #if defined(VK_USE_PLATFORM_WIN32_KHR)
 void dump_html_SECURITY_ATTRIBUTES(const SECURITY_ATTRIBUTES* object, const ApiDumpSettings& settings, int indents)
 {
@@ -11123,12 +11128,6 @@ void dump_html_VkExternalFenceHandleTypeFlagBits(VkExternalFenceHandleTypeFlagBi
     if(object & 32) {
         settings.stream() << (is_first ? " (" : " | ") << "VK_EXTERNAL_FENCE_HANDLE_TYPE_SCI_SYNC_FENCE_BIT_NV"; is_first = false;
     }
-    if(object & 16) {
-        settings.stream() << (is_first ? " (" : " | ") << "VK_EXTERNAL_FENCE_HANDLE_TYPE_SCI_SYNC_OBJ_BIT_NV"; is_first = false;
-    }
-    if(object & 32) {
-        settings.stream() << (is_first ? " (" : " | ") << "VK_EXTERNAL_FENCE_HANDLE_TYPE_SCI_SYNC_FENCE_BIT_NV"; is_first = false;
-    }
     if(!is_first)
         settings.stream() << ")";
     settings.stream() << "</div></summary>";
@@ -11320,12 +11319,6 @@ void dump_html_VkToolPurposeFlagBits(VkToolPurposeFlagBits object, const ApiDump
     }
     if(object & 16) {
         settings.stream() << (is_first ? " (" : " | ") << "VK_TOOL_PURPOSE_MODIFYING_FEATURES_BIT"; is_first = false;
-    }
-    if(object & 32) {
-        settings.stream() << (is_first ? " (" : " | ") << "VK_TOOL_PURPOSE_DEBUG_REPORTING_BIT_EXT"; is_first = false;
-    }
-    if(object & 64) {
-        settings.stream() << (is_first ? " (" : " | ") << "VK_TOOL_PURPOSE_DEBUG_MARKERS_BIT_EXT"; is_first = false;
     }
     if(object & 32) {
         settings.stream() << (is_first ? " (" : " | ") << "VK_TOOL_PURPOSE_DEBUG_REPORTING_BIT_EXT"; is_first = false;
@@ -12008,9 +12001,6 @@ void dump_html_VkPipelineCreateFlagBits2(VkPipelineCreateFlagBits2 object, const
     if(object & 34359738368) {
         settings.stream() << (is_first ? " (" : " | ") << "VK_PIPELINE_CREATE_2_RESERVED_35_BIT_KHR"; is_first = false;
     }
-    if(object & 137438953472) {
-        settings.stream() << (is_first ? " (" : " | ") << "VK_PIPELINE_CREATE_2_DISALLOW_OPACITY_MICROMAP_BIT_ARM"; is_first = false;
-    }
     if(object & 1099511627776) {
         settings.stream() << (is_first ? " (" : " | ") << "VK_PIPELINE_CREATE_2_RESERVED_40_BIT_VALVE"; is_first = false;
     }
@@ -12205,9 +12195,6 @@ void dump_html_VkSwapchainCreateFlagBitsKHR(VkSwapchainCreateFlagBitsKHR object,
     }
     if(object & 2) {
         settings.stream() << (is_first ? " (" : " | ") << "VK_SWAPCHAIN_CREATE_PROTECTED_BIT_KHR"; is_first = false;
-    }
-    if(object & 1) {
-        settings.stream() << (is_first ? " (" : " | ") << "VK_SWAPCHAIN_CREATE_SPLIT_INSTANCE_BIND_REGIONS_BIT_KHR"; is_first = false;
     }
     if(object & 4) {
         settings.stream() << (is_first ? " (" : " | ") << "VK_SWAPCHAIN_CREATE_MUTABLE_FORMAT_BIT_KHR"; is_first = false;
@@ -14016,6 +14003,10 @@ void dump_html_VkPipelineShaderStageCreateFlags(VkPipelineShaderStageCreateFlags
 {
     dump_html_VkPipelineShaderStageCreateFlagBits((VkPipelineShaderStageCreateFlagBits) object, settings, indents);
 }
+void dump_html_VkShaderStageFlags(VkShaderStageFlags object, const ApiDumpSettings& settings, int indents)
+{
+    dump_html_VkShaderStageFlagBits((VkShaderStageFlagBits) object, settings, indents);
+}
 void dump_html_VkCullModeFlags(VkCullModeFlags object, const ApiDumpSettings& settings, int indents)
 {
     dump_html_VkCullModeFlagBits((VkCullModeFlagBits) object, settings, indents);
@@ -14031,10 +14022,6 @@ void dump_html_VkPipelineColorBlendStateCreateFlags(VkPipelineColorBlendStateCre
 void dump_html_VkPipelineLayoutCreateFlags(VkPipelineLayoutCreateFlags object, const ApiDumpSettings& settings, int indents)
 {
     dump_html_VkPipelineLayoutCreateFlagBits((VkPipelineLayoutCreateFlagBits) object, settings, indents);
-}
-void dump_html_VkShaderStageFlags(VkShaderStageFlags object, const ApiDumpSettings& settings, int indents)
-{
-    dump_html_VkShaderStageFlagBits((VkShaderStageFlagBits) object, settings, indents);
 }
 void dump_html_VkSamplerCreateFlags(VkSamplerCreateFlags object, const ApiDumpSettings& settings, int indents)
 {
@@ -14192,13 +14179,13 @@ void dump_html_VkHostImageCopyFlags(VkHostImageCopyFlags object, const ApiDumpSe
 {
     dump_html_VkHostImageCopyFlagBits((VkHostImageCopyFlagBits) object, settings, indents);
 }
-void dump_html_VkCompositeAlphaFlagsKHR(VkCompositeAlphaFlagsKHR object, const ApiDumpSettings& settings, int indents)
-{
-    dump_html_VkCompositeAlphaFlagBitsKHR((VkCompositeAlphaFlagBitsKHR) object, settings, indents);
-}
 void dump_html_VkSurfaceTransformFlagsKHR(VkSurfaceTransformFlagsKHR object, const ApiDumpSettings& settings, int indents)
 {
     dump_html_VkSurfaceTransformFlagBitsKHR((VkSurfaceTransformFlagBitsKHR) object, settings, indents);
+}
+void dump_html_VkCompositeAlphaFlagsKHR(VkCompositeAlphaFlagsKHR object, const ApiDumpSettings& settings, int indents)
+{
+    dump_html_VkCompositeAlphaFlagBitsKHR((VkCompositeAlphaFlagBitsKHR) object, settings, indents);
 }
 void dump_html_VkSwapchainCreateFlagsKHR(VkSwapchainCreateFlagsKHR object, const ApiDumpSettings& settings, int indents)
 {
@@ -14312,13 +14299,13 @@ void dump_html_VkAcquireProfilingLockFlagsKHR(VkAcquireProfilingLockFlagsKHR obj
 {
     dump_html_VkAcquireProfilingLockFlagBitsKHR((VkAcquireProfilingLockFlagBitsKHR) object, settings, indents);
 }
-void dump_html_VkDebugUtilsMessageTypeFlagsEXT(VkDebugUtilsMessageTypeFlagsEXT object, const ApiDumpSettings& settings, int indents)
-{
-    dump_html_VkDebugUtilsMessageTypeFlagBitsEXT((VkDebugUtilsMessageTypeFlagBitsEXT) object, settings, indents);
-}
 void dump_html_VkDebugUtilsMessageSeverityFlagsEXT(VkDebugUtilsMessageSeverityFlagsEXT object, const ApiDumpSettings& settings, int indents)
 {
     dump_html_VkDebugUtilsMessageSeverityFlagBitsEXT((VkDebugUtilsMessageSeverityFlagBitsEXT) object, settings, indents);
+}
+void dump_html_VkDebugUtilsMessageTypeFlagsEXT(VkDebugUtilsMessageTypeFlagsEXT object, const ApiDumpSettings& settings, int indents)
+{
+    dump_html_VkDebugUtilsMessageTypeFlagBitsEXT((VkDebugUtilsMessageTypeFlagBitsEXT) object, settings, indents);
 }
 void dump_html_VkBuildAccelerationStructureFlagsKHR(VkBuildAccelerationStructureFlagsKHR object, const ApiDumpSettings& settings, int indents)
 {
@@ -24574,6 +24561,7 @@ void dump_html_VkExecutionGraphPipelineScratchSizeAMDX(const VkExecutionGraphPip
     dump_html_value<const VkDeviceSize>(object.sizeGranularity, settings, "VkDeviceSize", "sizeGranularity", indents + 1, dump_html_VkDeviceSize);
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
+#if defined(VK_ENABLE_BETA_EXTENSIONS)
 void dump_html_VkPipelineLibraryCreateInfoKHR(const VkPipelineLibraryCreateInfoKHR& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << "<div class='val'>";
@@ -24591,6 +24579,7 @@ void dump_html_VkPipelineLibraryCreateInfoKHR(const VkPipelineLibraryCreateInfoK
     dump_html_value<const uint32_t>(object.libraryCount, settings, "uint32_t", "libraryCount", indents + 1, dump_html_uint32_t);
     dump_html_array<const VkPipeline>(object.pLibraries, object.libraryCount, settings, "const VkPipeline*", "const VkPipeline", "pLibraries", indents + 1, dump_html_VkPipeline); // ZRT
 }
+#endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
 void dump_html_VkExecutionGraphPipelineCreateInfoAMDX(const VkExecutionGraphPipelineCreateInfoAMDX& object, const ApiDumpSettings& settings, int indents)
 {
@@ -25734,8 +25723,8 @@ void dump_html_VkAccelerationStructureInfoNV(const VkAccelerationStructureInfoNV
     } else {
         dump_html_value<const void*>(object.pNext, settings, "const void*", "pNext", indents + 1, dump_html_void);
     }
-    dump_html_value<const VkAccelerationStructureTypeNV>(object.type, settings, "VkAccelerationStructureTypeNV", "type", indents + 1, dump_html_VkAccelerationStructureTypeKHR);
-    dump_html_value<const VkBuildAccelerationStructureFlagsNV>(object.flags, settings, "VkBuildAccelerationStructureFlagsNV", "flags", indents + 1, dump_html_VkBuildAccelerationStructureFlagsKHR);
+    dump_html_value<const VkAccelerationStructureTypeKHR>(object.type, settings, "VkAccelerationStructureTypeNV", "type", indents + 1, dump_html_VkAccelerationStructureTypeKHR);
+    dump_html_value<const VkBuildAccelerationStructureFlagsKHR>(object.flags, settings, "VkBuildAccelerationStructureFlagsNV", "flags", indents + 1, dump_html_VkBuildAccelerationStructureFlagsKHR);
     dump_html_value<const uint32_t>(object.instanceCount, settings, "uint32_t", "instanceCount", indents + 1, dump_html_uint32_t);
     dump_html_value<const uint32_t>(object.geometryCount, settings, "uint32_t", "geometryCount", indents + 1, dump_html_uint32_t);
     dump_html_array<const VkGeometryNV>(object.pGeometries, object.geometryCount, settings, "const VkGeometryNV*", "const VkGeometryNV", "pGeometries", indents + 1, dump_html_VkGeometryNV); // ZRT
@@ -27021,11 +27010,11 @@ void dump_html_VkCooperativeMatrixPropertiesNV(const VkCooperativeMatrixProperti
     dump_html_value<const uint32_t>(object.MSize, settings, "uint32_t", "MSize", indents + 1, dump_html_uint32_t);
     dump_html_value<const uint32_t>(object.NSize, settings, "uint32_t", "NSize", indents + 1, dump_html_uint32_t);
     dump_html_value<const uint32_t>(object.KSize, settings, "uint32_t", "KSize", indents + 1, dump_html_uint32_t);
-    dump_html_value<const VkComponentTypeNV>(object.AType, settings, "VkComponentTypeNV", "AType", indents + 1, dump_html_VkComponentTypeKHR);
-    dump_html_value<const VkComponentTypeNV>(object.BType, settings, "VkComponentTypeNV", "BType", indents + 1, dump_html_VkComponentTypeKHR);
-    dump_html_value<const VkComponentTypeNV>(object.CType, settings, "VkComponentTypeNV", "CType", indents + 1, dump_html_VkComponentTypeKHR);
-    dump_html_value<const VkComponentTypeNV>(object.DType, settings, "VkComponentTypeNV", "DType", indents + 1, dump_html_VkComponentTypeKHR);
-    dump_html_value<const VkScopeNV>(object.scope, settings, "VkScopeNV", "scope", indents + 1, dump_html_VkScopeKHR);
+    dump_html_value<const VkComponentTypeKHR>(object.AType, settings, "VkComponentTypeNV", "AType", indents + 1, dump_html_VkComponentTypeKHR);
+    dump_html_value<const VkComponentTypeKHR>(object.BType, settings, "VkComponentTypeNV", "BType", indents + 1, dump_html_VkComponentTypeKHR);
+    dump_html_value<const VkComponentTypeKHR>(object.CType, settings, "VkComponentTypeNV", "CType", indents + 1, dump_html_VkComponentTypeKHR);
+    dump_html_value<const VkComponentTypeKHR>(object.DType, settings, "VkComponentTypeNV", "DType", indents + 1, dump_html_VkComponentTypeKHR);
+    dump_html_value<const VkScopeKHR>(object.scope, settings, "VkScopeNV", "scope", indents + 1, dump_html_VkScopeKHR);
 }
 void dump_html_VkPhysicalDeviceCooperativeMatrixFeaturesNV(const VkPhysicalDeviceCooperativeMatrixFeaturesNV& object, const ApiDumpSettings& settings, int indents)
 {
@@ -37592,9 +37581,11 @@ void dump_html_pNext_trampoline(const void* object, const ApiDumpSettings& setti
         dump_html_pNext<const VkExecutionGraphPipelineScratchSizeAMDX>(static_cast<const VkExecutionGraphPipelineScratchSizeAMDX*>(object), settings, "VkExecutionGraphPipelineScratchSizeAMDX", indents, dump_html_VkExecutionGraphPipelineScratchSizeAMDX);
         break;
 #endif // VK_ENABLE_BETA_EXTENSIONS
+#if defined(VK_ENABLE_BETA_EXTENSIONS)
     case 1000290000:
         dump_html_pNext<const VkPipelineLibraryCreateInfoKHR>(static_cast<const VkPipelineLibraryCreateInfoKHR*>(object), settings, "VkPipelineLibraryCreateInfoKHR", indents, dump_html_VkPipelineLibraryCreateInfoKHR);
         break;
+#endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
     case 1000134003:
         dump_html_pNext<const VkExecutionGraphPipelineCreateInfoAMDX>(static_cast<const VkExecutionGraphPipelineCreateInfoAMDX*>(object), settings, "VkExecutionGraphPipelineCreateInfoAMDX", indents, dump_html_VkExecutionGraphPipelineCreateInfoAMDX);

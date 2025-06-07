@@ -1,7 +1,7 @@
 
-/* Copyright (c) 2015-2023 Valve Corporation
- * Copyright (c) 2015-2023 LunarG, Inc.
- * Copyright (c) 2015-2016, 2019 Google Inc.
+/* Copyright (c) 2015-2025 Valve Corporation
+ * Copyright (c) 2015-2025 LunarG, Inc.
+ * Copyright (c) 2015-2017, 2019, 2021 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Author: Lenny Komow <lenny@lunarg.com>
- * Author: Shannon McPherson <shannon@lunarg.com>
- * Author: Charles Giessen <charles@lunarg.com>
  */
 
 /*
@@ -247,6 +244,15 @@ void dump_text_LPCWSTR(const LPCWSTR object, const ApiDumpSettings& settings, in
         settings.stream() << "address";
 }
 #endif // VK_USE_PLATFORM_WIN32_KHR
+#if defined(VK_USE_PLATFORM_XLIB_XRANDR_EXT)
+void dump_text_RROutput(const RROutput object, const ApiDumpSettings& settings, int indents)
+{
+    if (settings.showAddress())
+        settings.stream() << object;
+    else
+        settings.stream() << "address";
+}
+#endif // VK_USE_PLATFORM_XLIB_XRANDR_EXT
 #if defined(VK_USE_PLATFORM_WIN32_KHR)
 void dump_text_SECURITY_ATTRIBUTES(const SECURITY_ATTRIBUTES* object, const ApiDumpSettings& settings, int indents)
 {
@@ -10776,12 +10782,6 @@ void dump_text_VkExternalFenceHandleTypeFlagBits(VkExternalFenceHandleTypeFlagBi
     if(object & 32) {
         settings.stream() << (is_first ? " (" : " | ") << "VK_EXTERNAL_FENCE_HANDLE_TYPE_SCI_SYNC_FENCE_BIT_NV"; is_first = false;
     }
-    if(object & 16) {
-        settings.stream() << (is_first ? " (" : " | ") << "VK_EXTERNAL_FENCE_HANDLE_TYPE_SCI_SYNC_OBJ_BIT_NV"; is_first = false;
-    }
-    if(object & 32) {
-        settings.stream() << (is_first ? " (" : " | ") << "VK_EXTERNAL_FENCE_HANDLE_TYPE_SCI_SYNC_FENCE_BIT_NV"; is_first = false;
-    }
     if(!is_first)
         settings.stream() << ")";
 }
@@ -10953,12 +10953,6 @@ void dump_text_VkToolPurposeFlagBits(VkToolPurposeFlagBits object, const ApiDump
     }
     if(object & 16) {
         settings.stream() << (is_first ? " (" : " | ") << "VK_TOOL_PURPOSE_MODIFYING_FEATURES_BIT"; is_first = false;
-    }
-    if(object & 32) {
-        settings.stream() << (is_first ? " (" : " | ") << "VK_TOOL_PURPOSE_DEBUG_REPORTING_BIT_EXT"; is_first = false;
-    }
-    if(object & 64) {
-        settings.stream() << (is_first ? " (" : " | ") << "VK_TOOL_PURPOSE_DEBUG_MARKERS_BIT_EXT"; is_first = false;
     }
     if(object & 32) {
         settings.stream() << (is_first ? " (" : " | ") << "VK_TOOL_PURPOSE_DEBUG_REPORTING_BIT_EXT"; is_first = false;
@@ -11635,9 +11629,6 @@ void dump_text_VkPipelineCreateFlagBits2(VkPipelineCreateFlagBits2 object, const
     if(object & 34359738368) {
         settings.stream() << (is_first ? " (" : " | ") << "VK_PIPELINE_CREATE_2_RESERVED_35_BIT_KHR"; is_first = false;
     }
-    if(object & 137438953472) {
-        settings.stream() << (is_first ? " (" : " | ") << "VK_PIPELINE_CREATE_2_DISALLOW_OPACITY_MICROMAP_BIT_ARM"; is_first = false;
-    }
     if(object & 1099511627776) {
         settings.stream() << (is_first ? " (" : " | ") << "VK_PIPELINE_CREATE_2_RESERVED_40_BIT_VALVE"; is_first = false;
     }
@@ -11824,9 +11815,6 @@ void dump_text_VkSwapchainCreateFlagBitsKHR(VkSwapchainCreateFlagBitsKHR object,
     }
     if(object & 2) {
         settings.stream() << (is_first ? " (" : " | ") << "VK_SWAPCHAIN_CREATE_PROTECTED_BIT_KHR"; is_first = false;
-    }
-    if(object & 1) {
-        settings.stream() << (is_first ? " (" : " | ") << "VK_SWAPCHAIN_CREATE_SPLIT_INSTANCE_BIND_REGIONS_BIT_KHR"; is_first = false;
     }
     if(object & 4) {
         settings.stream() << (is_first ? " (" : " | ") << "VK_SWAPCHAIN_CREATE_MUTABLE_FORMAT_BIT_KHR"; is_first = false;
@@ -13490,6 +13478,10 @@ void dump_text_VkPipelineShaderStageCreateFlags(VkPipelineShaderStageCreateFlags
 {
     dump_text_VkPipelineShaderStageCreateFlagBits((VkPipelineShaderStageCreateFlagBits) object, settings, indents);
 }
+void dump_text_VkShaderStageFlags(VkShaderStageFlags object, const ApiDumpSettings& settings, int indents)
+{
+    dump_text_VkShaderStageFlagBits((VkShaderStageFlagBits) object, settings, indents);
+}
 void dump_text_VkCullModeFlags(VkCullModeFlags object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkCullModeFlagBits((VkCullModeFlagBits) object, settings, indents);
@@ -13505,10 +13497,6 @@ void dump_text_VkPipelineColorBlendStateCreateFlags(VkPipelineColorBlendStateCre
 void dump_text_VkPipelineLayoutCreateFlags(VkPipelineLayoutCreateFlags object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkPipelineLayoutCreateFlagBits((VkPipelineLayoutCreateFlagBits) object, settings, indents);
-}
-void dump_text_VkShaderStageFlags(VkShaderStageFlags object, const ApiDumpSettings& settings, int indents)
-{
-    dump_text_VkShaderStageFlagBits((VkShaderStageFlagBits) object, settings, indents);
 }
 void dump_text_VkSamplerCreateFlags(VkSamplerCreateFlags object, const ApiDumpSettings& settings, int indents)
 {
@@ -13666,13 +13654,13 @@ void dump_text_VkHostImageCopyFlags(VkHostImageCopyFlags object, const ApiDumpSe
 {
     dump_text_VkHostImageCopyFlagBits((VkHostImageCopyFlagBits) object, settings, indents);
 }
-void dump_text_VkCompositeAlphaFlagsKHR(VkCompositeAlphaFlagsKHR object, const ApiDumpSettings& settings, int indents)
-{
-    dump_text_VkCompositeAlphaFlagBitsKHR((VkCompositeAlphaFlagBitsKHR) object, settings, indents);
-}
 void dump_text_VkSurfaceTransformFlagsKHR(VkSurfaceTransformFlagsKHR object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkSurfaceTransformFlagBitsKHR((VkSurfaceTransformFlagBitsKHR) object, settings, indents);
+}
+void dump_text_VkCompositeAlphaFlagsKHR(VkCompositeAlphaFlagsKHR object, const ApiDumpSettings& settings, int indents)
+{
+    dump_text_VkCompositeAlphaFlagBitsKHR((VkCompositeAlphaFlagBitsKHR) object, settings, indents);
 }
 void dump_text_VkSwapchainCreateFlagsKHR(VkSwapchainCreateFlagsKHR object, const ApiDumpSettings& settings, int indents)
 {
@@ -13786,13 +13774,13 @@ void dump_text_VkAcquireProfilingLockFlagsKHR(VkAcquireProfilingLockFlagsKHR obj
 {
     dump_text_VkAcquireProfilingLockFlagBitsKHR((VkAcquireProfilingLockFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkDebugUtilsMessageTypeFlagsEXT(VkDebugUtilsMessageTypeFlagsEXT object, const ApiDumpSettings& settings, int indents)
-{
-    dump_text_VkDebugUtilsMessageTypeFlagBitsEXT((VkDebugUtilsMessageTypeFlagBitsEXT) object, settings, indents);
-}
 void dump_text_VkDebugUtilsMessageSeverityFlagsEXT(VkDebugUtilsMessageSeverityFlagsEXT object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkDebugUtilsMessageSeverityFlagBitsEXT((VkDebugUtilsMessageSeverityFlagBitsEXT) object, settings, indents);
+}
+void dump_text_VkDebugUtilsMessageTypeFlagsEXT(VkDebugUtilsMessageTypeFlagsEXT object, const ApiDumpSettings& settings, int indents)
+{
+    dump_text_VkDebugUtilsMessageTypeFlagBitsEXT((VkDebugUtilsMessageTypeFlagBitsEXT) object, settings, indents);
 }
 void dump_text_VkBuildAccelerationStructureFlagsKHR(VkBuildAccelerationStructureFlagsKHR object, const ApiDumpSettings& settings, int indents)
 {
@@ -22487,6 +22475,7 @@ void dump_text_VkExecutionGraphPipelineScratchSizeAMDX(const VkExecutionGraphPip
     }
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
+#if defined(VK_ENABLE_BETA_EXTENSIONS)
 void dump_text_VkPipelineLibraryCreateInfoKHR(const VkPipelineLibraryCreateInfoKHR& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress())
@@ -22501,6 +22490,7 @@ void dump_text_VkPipelineLibraryCreateInfoKHR(const VkPipelineLibraryCreateInfoK
         dump_text_pNext_trampoline(object.pNext, settings, indents < 2 ? indents + 1 : indents);
     }
 }
+#endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
 void dump_text_VkExecutionGraphPipelineCreateInfoAMDX(const VkExecutionGraphPipelineCreateInfoAMDX& object, const ApiDumpSettings& settings, int indents)
 {
@@ -23458,8 +23448,8 @@ void dump_text_VkAccelerationStructureInfoNV(const VkAccelerationStructureInfoNV
         settings.stream() << "address:\n";
     dump_text_value<const VkStructureType>(object.sType, settings, "VkStructureType", "sType", indents + 1, dump_text_VkStructureType);  // AET
     dump_text_pNext_struct_name(object.pNext, settings, indents + 1, "const void*");
-    dump_text_value<const VkAccelerationStructureTypeNV>(object.type, settings, "VkAccelerationStructureTypeNV", "type", indents + 1, dump_text_VkAccelerationStructureTypeKHR);  // AET
-    dump_text_value<const VkBuildAccelerationStructureFlagsNV>(object.flags, settings, "VkBuildAccelerationStructureFlagsNV", "flags", indents + 1, dump_text_VkBuildAccelerationStructureFlagsKHR);  // AET
+    dump_text_value<const VkAccelerationStructureTypeKHR>(object.type, settings, "VkAccelerationStructureTypeNV", "type", indents + 1, dump_text_VkAccelerationStructureTypeKHR);  // AET
+    dump_text_value<const VkBuildAccelerationStructureFlagsKHR>(object.flags, settings, "VkBuildAccelerationStructureFlagsNV", "flags", indents + 1, dump_text_VkBuildAccelerationStructureFlagsKHR);  // AET
     dump_text_value<const uint32_t>(object.instanceCount, settings, "uint32_t", "instanceCount", indents + 1, dump_text_uint32_t);  // AET
     dump_text_value<const uint32_t>(object.geometryCount, settings, "uint32_t", "geometryCount", indents + 1, dump_text_uint32_t);  // AET
     dump_text_array<const VkGeometryNV>(object.pGeometries, object.geometryCount, settings, "const VkGeometryNV*", "const VkGeometryNV", "pGeometries", indents + 1, dump_text_VkGeometryNV); // BQB
@@ -24525,11 +24515,11 @@ void dump_text_VkCooperativeMatrixPropertiesNV(const VkCooperativeMatrixProperti
     dump_text_value<const uint32_t>(object.MSize, settings, "uint32_t", "MSize", indents + 1, dump_text_uint32_t);  // AET
     dump_text_value<const uint32_t>(object.NSize, settings, "uint32_t", "NSize", indents + 1, dump_text_uint32_t);  // AET
     dump_text_value<const uint32_t>(object.KSize, settings, "uint32_t", "KSize", indents + 1, dump_text_uint32_t);  // AET
-    dump_text_value<const VkComponentTypeNV>(object.AType, settings, "VkComponentTypeNV", "AType", indents + 1, dump_text_VkComponentTypeKHR);  // AET
-    dump_text_value<const VkComponentTypeNV>(object.BType, settings, "VkComponentTypeNV", "BType", indents + 1, dump_text_VkComponentTypeKHR);  // AET
-    dump_text_value<const VkComponentTypeNV>(object.CType, settings, "VkComponentTypeNV", "CType", indents + 1, dump_text_VkComponentTypeKHR);  // AET
-    dump_text_value<const VkComponentTypeNV>(object.DType, settings, "VkComponentTypeNV", "DType", indents + 1, dump_text_VkComponentTypeKHR);  // AET
-    dump_text_value<const VkScopeNV>(object.scope, settings, "VkScopeNV", "scope", indents + 1, dump_text_VkScopeKHR);  // AET
+    dump_text_value<const VkComponentTypeKHR>(object.AType, settings, "VkComponentTypeNV", "AType", indents + 1, dump_text_VkComponentTypeKHR);  // AET
+    dump_text_value<const VkComponentTypeKHR>(object.BType, settings, "VkComponentTypeNV", "BType", indents + 1, dump_text_VkComponentTypeKHR);  // AET
+    dump_text_value<const VkComponentTypeKHR>(object.CType, settings, "VkComponentTypeNV", "CType", indents + 1, dump_text_VkComponentTypeKHR);  // AET
+    dump_text_value<const VkComponentTypeKHR>(object.DType, settings, "VkComponentTypeNV", "DType", indents + 1, dump_text_VkComponentTypeKHR);  // AET
+    dump_text_value<const VkScopeKHR>(object.scope, settings, "VkScopeNV", "scope", indents + 1, dump_text_VkScopeKHR);  // AET
     if(object.pNext != nullptr){
         dump_text_pNext_trampoline(object.pNext, settings, indents < 2 ? indents + 1 : indents);
     }
@@ -33594,9 +33584,11 @@ void dump_text_pNext_struct_name(const void* object, const ApiDumpSettings& sett
             settings.stream() << "VkExecutionGraphPipelineScratchSizeAMDX\n";
             break;
 #endif // VK_ENABLE_BETA_EXTENSIONS
+#if defined(VK_ENABLE_BETA_EXTENSIONS)
         case 1000290000:
             settings.stream() << "VkPipelineLibraryCreateInfoKHR\n";
             break;
+#endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
         case 1000134003:
             settings.stream() << "VkExecutionGraphPipelineCreateInfoAMDX\n";
@@ -36858,9 +36850,11 @@ void dump_text_pNext_trampoline(const void* object, const ApiDumpSettings& setti
         dump_text_pNext<const VkExecutionGraphPipelineScratchSizeAMDX>(reinterpret_cast<const VkExecutionGraphPipelineScratchSizeAMDX*>(object), settings, "VkExecutionGraphPipelineScratchSizeAMDX", indents, dump_text_VkExecutionGraphPipelineScratchSizeAMDX);
         break;
 #endif // VK_ENABLE_BETA_EXTENSIONS
+#if defined(VK_ENABLE_BETA_EXTENSIONS)
     case 1000290000:
         dump_text_pNext<const VkPipelineLibraryCreateInfoKHR>(reinterpret_cast<const VkPipelineLibraryCreateInfoKHR*>(object), settings, "VkPipelineLibraryCreateInfoKHR", indents, dump_text_VkPipelineLibraryCreateInfoKHR);
         break;
+#endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
     case 1000134003:
         dump_text_pNext<const VkExecutionGraphPipelineCreateInfoAMDX>(reinterpret_cast<const VkExecutionGraphPipelineCreateInfoAMDX*>(object), settings, "VkExecutionGraphPipelineCreateInfoAMDX", indents, dump_text_VkExecutionGraphPipelineCreateInfoAMDX);
