@@ -154,8 +154,8 @@ def RunGenerators(api: str, registry: str, video_registry: str, directory: str, 
             SetMergedApiNames(None)
 
         baseOptions = BaseGeneratorOptions(customFileName = target)
-        baseOptions.sortProcedure = None
-        baseOptions.alignFuncParam = 0
+        # baseOptions.sortProcedure = None
+        # baseOptions.alignFuncParam = 0
 
         # Create the registry object with the specified generator and generator
         # options. The options are set before XML loading as they may affect it.
