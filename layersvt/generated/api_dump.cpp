@@ -3415,7 +3415,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetPhysicalDeviceCooperativeMatrixFlexibleDimen
 VKAPI_ATTR void VKAPI_CALL vkDestroyDevice(VkDevice device, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyDevice", "device, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyDevice(ApiDumpInstance::current(), device, pAllocator);
@@ -3446,7 +3446,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyDevice(VkDevice device, const VkAllocationCa
 VKAPI_ATTR void VKAPI_CALL vkGetDeviceQueue(VkDevice device, uint32_t queueFamilyIndex, uint32_t queueIndex, VkQueue* pQueue)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceQueue", "device, queueFamilyIndex, queueIndex, pQueue");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceQueue(ApiDumpInstance::current(), device, queueFamilyIndex, queueIndex, pQueue);
@@ -3476,7 +3476,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDeviceQueue(VkDevice device, uint32_t queueFamil
 VKAPI_ATTR VkResult VKAPI_CALL vkQueueSubmit(VkQueue queue, uint32_t submitCount, const VkSubmitInfo* pSubmits, VkFence fence)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkQueueSubmit", "queue, submitCount, pSubmits, fence");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkQueueSubmit(ApiDumpInstance::current(), queue, submitCount, pSubmits, fence);
@@ -3551,7 +3551,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkDeviceWaitIdle(VkDevice device)
 VKAPI_ATTR VkResult VKAPI_CALL vkAllocateMemory(VkDevice device, const VkMemoryAllocateInfo* pAllocateInfo, const VkAllocationCallbacks* pAllocator, VkDeviceMemory* pMemory)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkAllocateMemory", "device, pAllocateInfo, pAllocator, pMemory");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkAllocateMemory(ApiDumpInstance::current(), device, pAllocateInfo, pAllocator, pMemory);
@@ -3582,7 +3582,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkAllocateMemory(VkDevice device, const VkMemoryA
 VKAPI_ATTR void VKAPI_CALL vkFreeMemory(VkDevice device, VkDeviceMemory memory, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkFreeMemory", "device, memory, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkFreeMemory(ApiDumpInstance::current(), device, memory, pAllocator);
@@ -3612,7 +3612,7 @@ VKAPI_ATTR void VKAPI_CALL vkFreeMemory(VkDevice device, VkDeviceMemory memory, 
 VKAPI_ATTR VkResult VKAPI_CALL vkMapMemory(VkDevice device, VkDeviceMemory memory, VkDeviceSize offset, VkDeviceSize size, VkMemoryMapFlags flags, void** ppData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkMapMemory", "device, memory, offset, size, flags, ppData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkMapMemory(ApiDumpInstance::current(), device, memory, offset, size, flags, ppData);
@@ -3643,7 +3643,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkMapMemory(VkDevice device, VkDeviceMemory memor
 VKAPI_ATTR void VKAPI_CALL vkUnmapMemory(VkDevice device, VkDeviceMemory memory)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkUnmapMemory", "device, memory");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkUnmapMemory(ApiDumpInstance::current(), device, memory);
@@ -3673,7 +3673,7 @@ VKAPI_ATTR void VKAPI_CALL vkUnmapMemory(VkDevice device, VkDeviceMemory memory)
 VKAPI_ATTR VkResult VKAPI_CALL vkFlushMappedMemoryRanges(VkDevice device, uint32_t memoryRangeCount, const VkMappedMemoryRange* pMemoryRanges)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkFlushMappedMemoryRanges", "device, memoryRangeCount, pMemoryRanges");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkFlushMappedMemoryRanges(ApiDumpInstance::current(), device, memoryRangeCount, pMemoryRanges);
@@ -3704,7 +3704,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkFlushMappedMemoryRanges(VkDevice device, uint32
 VKAPI_ATTR VkResult VKAPI_CALL vkInvalidateMappedMemoryRanges(VkDevice device, uint32_t memoryRangeCount, const VkMappedMemoryRange* pMemoryRanges)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkInvalidateMappedMemoryRanges", "device, memoryRangeCount, pMemoryRanges");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkInvalidateMappedMemoryRanges(ApiDumpInstance::current(), device, memoryRangeCount, pMemoryRanges);
@@ -3735,7 +3735,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkInvalidateMappedMemoryRanges(VkDevice device, u
 VKAPI_ATTR void VKAPI_CALL vkGetDeviceMemoryCommitment(VkDevice device, VkDeviceMemory memory, VkDeviceSize* pCommittedMemoryInBytes)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceMemoryCommitment", "device, memory, pCommittedMemoryInBytes");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceMemoryCommitment(ApiDumpInstance::current(), device, memory, pCommittedMemoryInBytes);
@@ -3765,7 +3765,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDeviceMemoryCommitment(VkDevice device, VkDevice
 VKAPI_ATTR VkResult VKAPI_CALL vkBindBufferMemory(VkDevice device, VkBuffer buffer, VkDeviceMemory memory, VkDeviceSize memoryOffset)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkBindBufferMemory", "device, buffer, memory, memoryOffset");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkBindBufferMemory(ApiDumpInstance::current(), device, buffer, memory, memoryOffset);
@@ -3796,7 +3796,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkBindBufferMemory(VkDevice device, VkBuffer buff
 VKAPI_ATTR VkResult VKAPI_CALL vkBindImageMemory(VkDevice device, VkImage image, VkDeviceMemory memory, VkDeviceSize memoryOffset)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkBindImageMemory", "device, image, memory, memoryOffset");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkBindImageMemory(ApiDumpInstance::current(), device, image, memory, memoryOffset);
@@ -3827,7 +3827,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkBindImageMemory(VkDevice device, VkImage image,
 VKAPI_ATTR void VKAPI_CALL vkGetBufferMemoryRequirements(VkDevice device, VkBuffer buffer, VkMemoryRequirements* pMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetBufferMemoryRequirements", "device, buffer, pMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetBufferMemoryRequirements(ApiDumpInstance::current(), device, buffer, pMemoryRequirements);
@@ -3857,7 +3857,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetBufferMemoryRequirements(VkDevice device, VkBuff
 VKAPI_ATTR void VKAPI_CALL vkGetImageMemoryRequirements(VkDevice device, VkImage image, VkMemoryRequirements* pMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetImageMemoryRequirements", "device, image, pMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetImageMemoryRequirements(ApiDumpInstance::current(), device, image, pMemoryRequirements);
@@ -3887,7 +3887,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetImageMemoryRequirements(VkDevice device, VkImage
 VKAPI_ATTR void VKAPI_CALL vkGetImageSparseMemoryRequirements(VkDevice device, VkImage image, uint32_t* pSparseMemoryRequirementCount, VkSparseImageMemoryRequirements* pSparseMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetImageSparseMemoryRequirements", "device, image, pSparseMemoryRequirementCount, pSparseMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetImageSparseMemoryRequirements(ApiDumpInstance::current(), device, image, pSparseMemoryRequirementCount, pSparseMemoryRequirements);
@@ -3917,7 +3917,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetImageSparseMemoryRequirements(VkDevice device, V
 VKAPI_ATTR VkResult VKAPI_CALL vkQueueBindSparse(VkQueue queue, uint32_t bindInfoCount, const VkBindSparseInfo* pBindInfo, VkFence fence)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkQueueBindSparse", "queue, bindInfoCount, pBindInfo, fence");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkQueueBindSparse(ApiDumpInstance::current(), queue, bindInfoCount, pBindInfo, fence);
@@ -3948,7 +3948,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkQueueBindSparse(VkQueue queue, uint32_t bindInf
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateFence(VkDevice device, const VkFenceCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkFence* pFence)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateFence", "device, pCreateInfo, pAllocator, pFence");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateFence(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pFence);
@@ -3979,7 +3979,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateFence(VkDevice device, const VkFenceCreat
 VKAPI_ATTR void VKAPI_CALL vkDestroyFence(VkDevice device, VkFence fence, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyFence", "device, fence, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyFence(ApiDumpInstance::current(), device, fence, pAllocator);
@@ -4009,7 +4009,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyFence(VkDevice device, VkFence fence, const 
 VKAPI_ATTR VkResult VKAPI_CALL vkResetFences(VkDevice device, uint32_t fenceCount, const VkFence* pFences)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkResetFences", "device, fenceCount, pFences");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkResetFences(ApiDumpInstance::current(), device, fenceCount, pFences);
@@ -4040,7 +4040,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkResetFences(VkDevice device, uint32_t fenceCoun
 VKAPI_ATTR VkResult VKAPI_CALL vkGetFenceStatus(VkDevice device, VkFence fence)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetFenceStatus", "device, fence");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetFenceStatus(ApiDumpInstance::current(), device, fence);
@@ -4093,7 +4093,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkWaitForFences(VkDevice device, uint32_t fenceCo
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateSemaphore(VkDevice device, const VkSemaphoreCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkSemaphore* pSemaphore)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateSemaphore", "device, pCreateInfo, pAllocator, pSemaphore");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateSemaphore(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pSemaphore);
@@ -4124,7 +4124,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateSemaphore(VkDevice device, const VkSemaph
 VKAPI_ATTR void VKAPI_CALL vkDestroySemaphore(VkDevice device, VkSemaphore semaphore, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroySemaphore", "device, semaphore, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroySemaphore(ApiDumpInstance::current(), device, semaphore, pAllocator);
@@ -4154,7 +4154,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroySemaphore(VkDevice device, VkSemaphore semap
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateEvent(VkDevice device, const VkEventCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkEvent* pEvent)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateEvent", "device, pCreateInfo, pAllocator, pEvent");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateEvent(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pEvent);
@@ -4185,7 +4185,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateEvent(VkDevice device, const VkEventCreat
 VKAPI_ATTR void VKAPI_CALL vkDestroyEvent(VkDevice device, VkEvent event, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyEvent", "device, event, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyEvent(ApiDumpInstance::current(), device, event, pAllocator);
@@ -4215,7 +4215,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyEvent(VkDevice device, VkEvent event, const 
 VKAPI_ATTR VkResult VKAPI_CALL vkGetEventStatus(VkDevice device, VkEvent event)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetEventStatus", "device, event");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetEventStatus(ApiDumpInstance::current(), device, event);
@@ -4246,7 +4246,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetEventStatus(VkDevice device, VkEvent event)
 VKAPI_ATTR VkResult VKAPI_CALL vkSetEvent(VkDevice device, VkEvent event)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkSetEvent", "device, event");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkSetEvent(ApiDumpInstance::current(), device, event);
@@ -4277,7 +4277,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkSetEvent(VkDevice device, VkEvent event)
 VKAPI_ATTR VkResult VKAPI_CALL vkResetEvent(VkDevice device, VkEvent event)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkResetEvent", "device, event");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkResetEvent(ApiDumpInstance::current(), device, event);
@@ -4308,7 +4308,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkResetEvent(VkDevice device, VkEvent event)
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateQueryPool(VkDevice device, const VkQueryPoolCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkQueryPool* pQueryPool)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateQueryPool", "device, pCreateInfo, pAllocator, pQueryPool");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateQueryPool(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pQueryPool);
@@ -4339,7 +4339,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateQueryPool(VkDevice device, const VkQueryP
 VKAPI_ATTR void VKAPI_CALL vkDestroyQueryPool(VkDevice device, VkQueryPool queryPool, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyQueryPool", "device, queryPool, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyQueryPool(ApiDumpInstance::current(), device, queryPool, pAllocator);
@@ -4391,7 +4391,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetQueryPoolResults(VkDevice device, VkQueryPoo
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateBuffer(VkDevice device, const VkBufferCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkBuffer* pBuffer)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateBuffer", "device, pCreateInfo, pAllocator, pBuffer");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateBuffer(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pBuffer);
@@ -4422,7 +4422,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateBuffer(VkDevice device, const VkBufferCre
 VKAPI_ATTR void VKAPI_CALL vkDestroyBuffer(VkDevice device, VkBuffer buffer, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyBuffer", "device, buffer, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyBuffer(ApiDumpInstance::current(), device, buffer, pAllocator);
@@ -4452,7 +4452,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyBuffer(VkDevice device, VkBuffer buffer, con
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateBufferView(VkDevice device, const VkBufferViewCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkBufferView* pView)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateBufferView", "device, pCreateInfo, pAllocator, pView");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateBufferView(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pView);
@@ -4483,7 +4483,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateBufferView(VkDevice device, const VkBuffe
 VKAPI_ATTR void VKAPI_CALL vkDestroyBufferView(VkDevice device, VkBufferView bufferView, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyBufferView", "device, bufferView, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyBufferView(ApiDumpInstance::current(), device, bufferView, pAllocator);
@@ -4513,7 +4513,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyBufferView(VkDevice device, VkBufferView buf
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateImage(VkDevice device, const VkImageCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkImage* pImage)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateImage", "device, pCreateInfo, pAllocator, pImage");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateImage(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pImage);
@@ -4544,7 +4544,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateImage(VkDevice device, const VkImageCreat
 VKAPI_ATTR void VKAPI_CALL vkDestroyImage(VkDevice device, VkImage image, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyImage", "device, image, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyImage(ApiDumpInstance::current(), device, image, pAllocator);
@@ -4574,7 +4574,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyImage(VkDevice device, VkImage image, const 
 VKAPI_ATTR void VKAPI_CALL vkGetImageSubresourceLayout(VkDevice device, VkImage image, const VkImageSubresource* pSubresource, VkSubresourceLayout* pLayout)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetImageSubresourceLayout", "device, image, pSubresource, pLayout");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetImageSubresourceLayout(ApiDumpInstance::current(), device, image, pSubresource, pLayout);
@@ -4604,7 +4604,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetImageSubresourceLayout(VkDevice device, VkImage 
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateImageView(VkDevice device, const VkImageViewCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkImageView* pView)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateImageView", "device, pCreateInfo, pAllocator, pView");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateImageView(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pView);
@@ -4635,7 +4635,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateImageView(VkDevice device, const VkImageV
 VKAPI_ATTR void VKAPI_CALL vkDestroyImageView(VkDevice device, VkImageView imageView, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyImageView", "device, imageView, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyImageView(ApiDumpInstance::current(), device, imageView, pAllocator);
@@ -4665,7 +4665,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyImageView(VkDevice device, VkImageView image
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateShaderModule(VkDevice device, const VkShaderModuleCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkShaderModule* pShaderModule)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateShaderModule", "device, pCreateInfo, pAllocator, pShaderModule");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateShaderModule(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pShaderModule);
@@ -4696,7 +4696,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateShaderModule(VkDevice device, const VkSha
 VKAPI_ATTR void VKAPI_CALL vkDestroyShaderModule(VkDevice device, VkShaderModule shaderModule, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyShaderModule", "device, shaderModule, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyShaderModule(ApiDumpInstance::current(), device, shaderModule, pAllocator);
@@ -4726,7 +4726,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyShaderModule(VkDevice device, VkShaderModule
 VKAPI_ATTR VkResult VKAPI_CALL vkCreatePipelineCache(VkDevice device, const VkPipelineCacheCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkPipelineCache* pPipelineCache)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreatePipelineCache", "device, pCreateInfo, pAllocator, pPipelineCache");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreatePipelineCache(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pPipelineCache);
@@ -4757,7 +4757,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreatePipelineCache(VkDevice device, const VkPi
 VKAPI_ATTR void VKAPI_CALL vkDestroyPipelineCache(VkDevice device, VkPipelineCache pipelineCache, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyPipelineCache", "device, pipelineCache, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyPipelineCache(ApiDumpInstance::current(), device, pipelineCache, pAllocator);
@@ -4787,7 +4787,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyPipelineCache(VkDevice device, VkPipelineCac
 VKAPI_ATTR VkResult VKAPI_CALL vkGetPipelineCacheData(VkDevice device, VkPipelineCache pipelineCache, size_t* pDataSize, void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetPipelineCacheData", "device, pipelineCache, pDataSize, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetPipelineCacheData(ApiDumpInstance::current(), device, pipelineCache, pDataSize, pData);
@@ -4818,7 +4818,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetPipelineCacheData(VkDevice device, VkPipelin
 VKAPI_ATTR VkResult VKAPI_CALL vkMergePipelineCaches(VkDevice device, VkPipelineCache dstCache, uint32_t srcCacheCount, const VkPipelineCache* pSrcCaches)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkMergePipelineCaches", "device, dstCache, srcCacheCount, pSrcCaches");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkMergePipelineCaches(ApiDumpInstance::current(), device, dstCache, srcCacheCount, pSrcCaches);
@@ -4849,7 +4849,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkMergePipelineCaches(VkDevice device, VkPipeline
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateGraphicsPipelines(VkDevice device, VkPipelineCache pipelineCache, uint32_t createInfoCount, const VkGraphicsPipelineCreateInfo* pCreateInfos, const VkAllocationCallbacks* pAllocator, VkPipeline* pPipelines)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateGraphicsPipelines", "device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateGraphicsPipelines(ApiDumpInstance::current(), device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines);
@@ -4880,7 +4880,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateGraphicsPipelines(VkDevice device, VkPipe
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateComputePipelines(VkDevice device, VkPipelineCache pipelineCache, uint32_t createInfoCount, const VkComputePipelineCreateInfo* pCreateInfos, const VkAllocationCallbacks* pAllocator, VkPipeline* pPipelines)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateComputePipelines", "device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateComputePipelines(ApiDumpInstance::current(), device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines);
@@ -4911,7 +4911,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateComputePipelines(VkDevice device, VkPipel
 VKAPI_ATTR void VKAPI_CALL vkDestroyPipeline(VkDevice device, VkPipeline pipeline, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyPipeline", "device, pipeline, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyPipeline(ApiDumpInstance::current(), device, pipeline, pAllocator);
@@ -4941,7 +4941,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyPipeline(VkDevice device, VkPipeline pipelin
 VKAPI_ATTR VkResult VKAPI_CALL vkCreatePipelineLayout(VkDevice device, const VkPipelineLayoutCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkPipelineLayout* pPipelineLayout)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreatePipelineLayout", "device, pCreateInfo, pAllocator, pPipelineLayout");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreatePipelineLayout(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pPipelineLayout);
@@ -4972,7 +4972,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreatePipelineLayout(VkDevice device, const VkP
 VKAPI_ATTR void VKAPI_CALL vkDestroyPipelineLayout(VkDevice device, VkPipelineLayout pipelineLayout, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyPipelineLayout", "device, pipelineLayout, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyPipelineLayout(ApiDumpInstance::current(), device, pipelineLayout, pAllocator);
@@ -5002,7 +5002,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyPipelineLayout(VkDevice device, VkPipelineLa
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateSampler(VkDevice device, const VkSamplerCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkSampler* pSampler)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateSampler", "device, pCreateInfo, pAllocator, pSampler");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateSampler(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pSampler);
@@ -5033,7 +5033,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateSampler(VkDevice device, const VkSamplerC
 VKAPI_ATTR void VKAPI_CALL vkDestroySampler(VkDevice device, VkSampler sampler, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroySampler", "device, sampler, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroySampler(ApiDumpInstance::current(), device, sampler, pAllocator);
@@ -5063,7 +5063,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroySampler(VkDevice device, VkSampler sampler, 
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateDescriptorSetLayout(VkDevice device, const VkDescriptorSetLayoutCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkDescriptorSetLayout* pSetLayout)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateDescriptorSetLayout", "device, pCreateInfo, pAllocator, pSetLayout");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateDescriptorSetLayout(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pSetLayout);
@@ -5094,7 +5094,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateDescriptorSetLayout(VkDevice device, cons
 VKAPI_ATTR void VKAPI_CALL vkDestroyDescriptorSetLayout(VkDevice device, VkDescriptorSetLayout descriptorSetLayout, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyDescriptorSetLayout", "device, descriptorSetLayout, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyDescriptorSetLayout(ApiDumpInstance::current(), device, descriptorSetLayout, pAllocator);
@@ -5124,7 +5124,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyDescriptorSetLayout(VkDevice device, VkDescr
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateDescriptorPool(VkDevice device, const VkDescriptorPoolCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkDescriptorPool* pDescriptorPool)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateDescriptorPool", "device, pCreateInfo, pAllocator, pDescriptorPool");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateDescriptorPool(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pDescriptorPool);
@@ -5155,7 +5155,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateDescriptorPool(VkDevice device, const VkD
 VKAPI_ATTR void VKAPI_CALL vkDestroyDescriptorPool(VkDevice device, VkDescriptorPool descriptorPool, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyDescriptorPool", "device, descriptorPool, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyDescriptorPool(ApiDumpInstance::current(), device, descriptorPool, pAllocator);
@@ -5185,7 +5185,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyDescriptorPool(VkDevice device, VkDescriptor
 VKAPI_ATTR VkResult VKAPI_CALL vkResetDescriptorPool(VkDevice device, VkDescriptorPool descriptorPool, VkDescriptorPoolResetFlags flags)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkResetDescriptorPool", "device, descriptorPool, flags");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkResetDescriptorPool(ApiDumpInstance::current(), device, descriptorPool, flags);
@@ -5216,7 +5216,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkResetDescriptorPool(VkDevice device, VkDescript
 VKAPI_ATTR VkResult VKAPI_CALL vkAllocateDescriptorSets(VkDevice device, const VkDescriptorSetAllocateInfo* pAllocateInfo, VkDescriptorSet* pDescriptorSets)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkAllocateDescriptorSets", "device, pAllocateInfo, pDescriptorSets");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkAllocateDescriptorSets(ApiDumpInstance::current(), device, pAllocateInfo, pDescriptorSets);
@@ -5247,7 +5247,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkAllocateDescriptorSets(VkDevice device, const V
 VKAPI_ATTR VkResult VKAPI_CALL vkFreeDescriptorSets(VkDevice device, VkDescriptorPool descriptorPool, uint32_t descriptorSetCount, const VkDescriptorSet* pDescriptorSets)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkFreeDescriptorSets", "device, descriptorPool, descriptorSetCount, pDescriptorSets");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkFreeDescriptorSets(ApiDumpInstance::current(), device, descriptorPool, descriptorSetCount, pDescriptorSets);
@@ -5278,7 +5278,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkFreeDescriptorSets(VkDevice device, VkDescripto
 VKAPI_ATTR void VKAPI_CALL vkUpdateDescriptorSets(VkDevice device, uint32_t descriptorWriteCount, const VkWriteDescriptorSet* pDescriptorWrites, uint32_t descriptorCopyCount, const VkCopyDescriptorSet* pDescriptorCopies)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkUpdateDescriptorSets", "device, descriptorWriteCount, pDescriptorWrites, descriptorCopyCount, pDescriptorCopies");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkUpdateDescriptorSets(ApiDumpInstance::current(), device, descriptorWriteCount, pDescriptorWrites, descriptorCopyCount, pDescriptorCopies);
@@ -5308,7 +5308,7 @@ VKAPI_ATTR void VKAPI_CALL vkUpdateDescriptorSets(VkDevice device, uint32_t desc
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateFramebuffer(VkDevice device, const VkFramebufferCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkFramebuffer* pFramebuffer)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateFramebuffer", "device, pCreateInfo, pAllocator, pFramebuffer");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateFramebuffer(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pFramebuffer);
@@ -5339,7 +5339,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateFramebuffer(VkDevice device, const VkFram
 VKAPI_ATTR void VKAPI_CALL vkDestroyFramebuffer(VkDevice device, VkFramebuffer framebuffer, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyFramebuffer", "device, framebuffer, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyFramebuffer(ApiDumpInstance::current(), device, framebuffer, pAllocator);
@@ -5369,7 +5369,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyFramebuffer(VkDevice device, VkFramebuffer f
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateRenderPass(VkDevice device, const VkRenderPassCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkRenderPass* pRenderPass)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateRenderPass", "device, pCreateInfo, pAllocator, pRenderPass");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateRenderPass(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pRenderPass);
@@ -5400,7 +5400,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateRenderPass(VkDevice device, const VkRende
 VKAPI_ATTR void VKAPI_CALL vkDestroyRenderPass(VkDevice device, VkRenderPass renderPass, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyRenderPass", "device, renderPass, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyRenderPass(ApiDumpInstance::current(), device, renderPass, pAllocator);
@@ -5430,7 +5430,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyRenderPass(VkDevice device, VkRenderPass ren
 VKAPI_ATTR void VKAPI_CALL vkGetRenderAreaGranularity(VkDevice device, VkRenderPass renderPass, VkExtent2D* pGranularity)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetRenderAreaGranularity", "device, renderPass, pGranularity");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetRenderAreaGranularity(ApiDumpInstance::current(), device, renderPass, pGranularity);
@@ -5460,7 +5460,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetRenderAreaGranularity(VkDevice device, VkRenderP
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateCommandPool(VkDevice device, const VkCommandPoolCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkCommandPool* pCommandPool)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateCommandPool", "device, pCreateInfo, pAllocator, pCommandPool");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateCommandPool(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pCommandPool);
@@ -5491,7 +5491,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateCommandPool(VkDevice device, const VkComm
 VKAPI_ATTR void VKAPI_CALL vkDestroyCommandPool(VkDevice device, VkCommandPool commandPool, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyCommandPool", "device, commandPool, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyCommandPool(ApiDumpInstance::current(), device, commandPool, pAllocator);
@@ -5521,7 +5521,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyCommandPool(VkDevice device, VkCommandPool c
 VKAPI_ATTR VkResult VKAPI_CALL vkResetCommandPool(VkDevice device, VkCommandPool commandPool, VkCommandPoolResetFlags flags)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkResetCommandPool", "device, commandPool, flags");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkResetCommandPool(ApiDumpInstance::current(), device, commandPool, flags);
@@ -5552,7 +5552,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkResetCommandPool(VkDevice device, VkCommandPool
 VKAPI_ATTR VkResult VKAPI_CALL vkAllocateCommandBuffers(VkDevice device, const VkCommandBufferAllocateInfo* pAllocateInfo, VkCommandBuffer* pCommandBuffers)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkAllocateCommandBuffers", "device, pAllocateInfo, pCommandBuffers");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkAllocateCommandBuffers(ApiDumpInstance::current(), device, pAllocateInfo, pCommandBuffers);
@@ -5589,7 +5589,7 @@ pAllocateInfo->level
 VKAPI_ATTR void VKAPI_CALL vkFreeCommandBuffers(VkDevice device, VkCommandPool commandPool, uint32_t commandBufferCount, const VkCommandBuffer* pCommandBuffers)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkFreeCommandBuffers", "device, commandPool, commandBufferCount, pCommandBuffers");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkFreeCommandBuffers(ApiDumpInstance::current(), device, commandPool, commandBufferCount, pCommandBuffers);
@@ -5619,7 +5619,7 @@ VKAPI_ATTR void VKAPI_CALL vkFreeCommandBuffers(VkDevice device, VkCommandPool c
 VKAPI_ATTR VkResult VKAPI_CALL vkBeginCommandBuffer(VkCommandBuffer commandBuffer, const VkCommandBufferBeginInfo* pBeginInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkBeginCommandBuffer", "commandBuffer, pBeginInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkBeginCommandBuffer(ApiDumpInstance::current(), commandBuffer, pBeginInfo);
@@ -5650,7 +5650,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkBeginCommandBuffer(VkCommandBuffer commandBuffe
 VKAPI_ATTR VkResult VKAPI_CALL vkEndCommandBuffer(VkCommandBuffer commandBuffer)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkEndCommandBuffer", "commandBuffer");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkEndCommandBuffer(ApiDumpInstance::current(), commandBuffer);
@@ -5681,7 +5681,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkEndCommandBuffer(VkCommandBuffer commandBuffer)
 VKAPI_ATTR VkResult VKAPI_CALL vkResetCommandBuffer(VkCommandBuffer commandBuffer, VkCommandBufferResetFlags flags)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkResetCommandBuffer", "commandBuffer, flags");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkResetCommandBuffer(ApiDumpInstance::current(), commandBuffer, flags);
@@ -5712,7 +5712,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkResetCommandBuffer(VkCommandBuffer commandBuffe
 VKAPI_ATTR void VKAPI_CALL vkCmdBindPipeline(VkCommandBuffer commandBuffer, VkPipelineBindPoint pipelineBindPoint, VkPipeline pipeline)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindPipeline", "commandBuffer, pipelineBindPoint, pipeline");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindPipeline(ApiDumpInstance::current(), commandBuffer, pipelineBindPoint, pipeline);
@@ -5742,7 +5742,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindPipeline(VkCommandBuffer commandBuffer, VkPi
 VKAPI_ATTR void VKAPI_CALL vkCmdSetViewport(VkCommandBuffer commandBuffer, uint32_t firstViewport, uint32_t viewportCount, const VkViewport* pViewports)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetViewport", "commandBuffer, firstViewport, viewportCount, pViewports");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetViewport(ApiDumpInstance::current(), commandBuffer, firstViewport, viewportCount, pViewports);
@@ -5772,7 +5772,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetViewport(VkCommandBuffer commandBuffer, uint3
 VKAPI_ATTR void VKAPI_CALL vkCmdSetScissor(VkCommandBuffer commandBuffer, uint32_t firstScissor, uint32_t scissorCount, const VkRect2D* pScissors)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetScissor", "commandBuffer, firstScissor, scissorCount, pScissors");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetScissor(ApiDumpInstance::current(), commandBuffer, firstScissor, scissorCount, pScissors);
@@ -5802,7 +5802,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetScissor(VkCommandBuffer commandBuffer, uint32
 VKAPI_ATTR void VKAPI_CALL vkCmdSetLineWidth(VkCommandBuffer commandBuffer, float lineWidth)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetLineWidth", "commandBuffer, lineWidth");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetLineWidth(ApiDumpInstance::current(), commandBuffer, lineWidth);
@@ -5832,7 +5832,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetLineWidth(VkCommandBuffer commandBuffer, floa
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthBias(VkCommandBuffer commandBuffer, float depthBiasConstantFactor, float depthBiasClamp, float depthBiasSlopeFactor)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDepthBias", "commandBuffer, depthBiasConstantFactor, depthBiasClamp, depthBiasSlopeFactor");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDepthBias(ApiDumpInstance::current(), commandBuffer, depthBiasConstantFactor, depthBiasClamp, depthBiasSlopeFactor);
@@ -5862,7 +5862,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthBias(VkCommandBuffer commandBuffer, floa
 VKAPI_ATTR void VKAPI_CALL vkCmdSetBlendConstants(VkCommandBuffer commandBuffer, const float blendConstants[4])
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetBlendConstants", "commandBuffer, blendConstants");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetBlendConstants(ApiDumpInstance::current(), commandBuffer, blendConstants);
@@ -5892,7 +5892,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetBlendConstants(VkCommandBuffer commandBuffer,
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthBounds(VkCommandBuffer commandBuffer, float minDepthBounds, float maxDepthBounds)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDepthBounds", "commandBuffer, minDepthBounds, maxDepthBounds");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDepthBounds(ApiDumpInstance::current(), commandBuffer, minDepthBounds, maxDepthBounds);
@@ -5922,7 +5922,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthBounds(VkCommandBuffer commandBuffer, fl
 VKAPI_ATTR void VKAPI_CALL vkCmdSetStencilCompareMask(VkCommandBuffer commandBuffer, VkStencilFaceFlags faceMask, uint32_t compareMask)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetStencilCompareMask", "commandBuffer, faceMask, compareMask");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetStencilCompareMask(ApiDumpInstance::current(), commandBuffer, faceMask, compareMask);
@@ -5952,7 +5952,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetStencilCompareMask(VkCommandBuffer commandBuf
 VKAPI_ATTR void VKAPI_CALL vkCmdSetStencilWriteMask(VkCommandBuffer commandBuffer, VkStencilFaceFlags faceMask, uint32_t writeMask)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetStencilWriteMask", "commandBuffer, faceMask, writeMask");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetStencilWriteMask(ApiDumpInstance::current(), commandBuffer, faceMask, writeMask);
@@ -5982,7 +5982,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetStencilWriteMask(VkCommandBuffer commandBuffe
 VKAPI_ATTR void VKAPI_CALL vkCmdSetStencilReference(VkCommandBuffer commandBuffer, VkStencilFaceFlags faceMask, uint32_t reference)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetStencilReference", "commandBuffer, faceMask, reference");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetStencilReference(ApiDumpInstance::current(), commandBuffer, faceMask, reference);
@@ -6012,7 +6012,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetStencilReference(VkCommandBuffer commandBuffe
 VKAPI_ATTR void VKAPI_CALL vkCmdBindDescriptorSets(VkCommandBuffer commandBuffer, VkPipelineBindPoint pipelineBindPoint, VkPipelineLayout layout, uint32_t firstSet, uint32_t descriptorSetCount, const VkDescriptorSet* pDescriptorSets, uint32_t dynamicOffsetCount, const uint32_t* pDynamicOffsets)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindDescriptorSets", "commandBuffer, pipelineBindPoint, layout, firstSet, descriptorSetCount, pDescriptorSets, dynamicOffsetCount, pDynamicOffsets");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindDescriptorSets(ApiDumpInstance::current(), commandBuffer, pipelineBindPoint, layout, firstSet, descriptorSetCount, pDescriptorSets, dynamicOffsetCount, pDynamicOffsets);
@@ -6042,7 +6042,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindDescriptorSets(VkCommandBuffer commandBuffer
 VKAPI_ATTR void VKAPI_CALL vkCmdBindIndexBuffer(VkCommandBuffer commandBuffer, VkBuffer buffer, VkDeviceSize offset, VkIndexType indexType)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindIndexBuffer", "commandBuffer, buffer, offset, indexType");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindIndexBuffer(ApiDumpInstance::current(), commandBuffer, buffer, offset, indexType);
@@ -6072,7 +6072,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindIndexBuffer(VkCommandBuffer commandBuffer, V
 VKAPI_ATTR void VKAPI_CALL vkCmdBindVertexBuffers(VkCommandBuffer commandBuffer, uint32_t firstBinding, uint32_t bindingCount, const VkBuffer* pBuffers, const VkDeviceSize* pOffsets)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindVertexBuffers", "commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindVertexBuffers(ApiDumpInstance::current(), commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets);
@@ -6102,7 +6102,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindVertexBuffers(VkCommandBuffer commandBuffer,
 VKAPI_ATTR void VKAPI_CALL vkCmdDraw(VkCommandBuffer commandBuffer, uint32_t vertexCount, uint32_t instanceCount, uint32_t firstVertex, uint32_t firstInstance)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDraw", "commandBuffer, vertexCount, instanceCount, firstVertex, firstInstance");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDraw(ApiDumpInstance::current(), commandBuffer, vertexCount, instanceCount, firstVertex, firstInstance);
@@ -6132,7 +6132,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDraw(VkCommandBuffer commandBuffer, uint32_t ver
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndexed(VkCommandBuffer commandBuffer, uint32_t indexCount, uint32_t instanceCount, uint32_t firstIndex, int32_t vertexOffset, uint32_t firstInstance)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawIndexed", "commandBuffer, indexCount, instanceCount, firstIndex, vertexOffset, firstInstance");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawIndexed(ApiDumpInstance::current(), commandBuffer, indexCount, instanceCount, firstIndex, vertexOffset, firstInstance);
@@ -6162,7 +6162,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndexed(VkCommandBuffer commandBuffer, uint3
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndirect(VkCommandBuffer commandBuffer, VkBuffer buffer, VkDeviceSize offset, uint32_t drawCount, uint32_t stride)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawIndirect", "commandBuffer, buffer, offset, drawCount, stride");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawIndirect(ApiDumpInstance::current(), commandBuffer, buffer, offset, drawCount, stride);
@@ -6192,7 +6192,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndirect(VkCommandBuffer commandBuffer, VkBu
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndexedIndirect(VkCommandBuffer commandBuffer, VkBuffer buffer, VkDeviceSize offset, uint32_t drawCount, uint32_t stride)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawIndexedIndirect", "commandBuffer, buffer, offset, drawCount, stride");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawIndexedIndirect(ApiDumpInstance::current(), commandBuffer, buffer, offset, drawCount, stride);
@@ -6222,7 +6222,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndexedIndirect(VkCommandBuffer commandBuffe
 VKAPI_ATTR void VKAPI_CALL vkCmdDispatch(VkCommandBuffer commandBuffer, uint32_t groupCountX, uint32_t groupCountY, uint32_t groupCountZ)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDispatch", "commandBuffer, groupCountX, groupCountY, groupCountZ");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDispatch(ApiDumpInstance::current(), commandBuffer, groupCountX, groupCountY, groupCountZ);
@@ -6252,7 +6252,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDispatch(VkCommandBuffer commandBuffer, uint32_t
 VKAPI_ATTR void VKAPI_CALL vkCmdDispatchIndirect(VkCommandBuffer commandBuffer, VkBuffer buffer, VkDeviceSize offset)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDispatchIndirect", "commandBuffer, buffer, offset");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDispatchIndirect(ApiDumpInstance::current(), commandBuffer, buffer, offset);
@@ -6282,7 +6282,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDispatchIndirect(VkCommandBuffer commandBuffer, 
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyBuffer(VkCommandBuffer commandBuffer, VkBuffer srcBuffer, VkBuffer dstBuffer, uint32_t regionCount, const VkBufferCopy* pRegions)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyBuffer", "commandBuffer, srcBuffer, dstBuffer, regionCount, pRegions");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyBuffer(ApiDumpInstance::current(), commandBuffer, srcBuffer, dstBuffer, regionCount, pRegions);
@@ -6312,7 +6312,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyBuffer(VkCommandBuffer commandBuffer, VkBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyImage(VkCommandBuffer commandBuffer, VkImage srcImage, VkImageLayout srcImageLayout, VkImage dstImage, VkImageLayout dstImageLayout, uint32_t regionCount, const VkImageCopy* pRegions)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyImage", "commandBuffer, srcImage, srcImageLayout, dstImage, dstImageLayout, regionCount, pRegions");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyImage(ApiDumpInstance::current(), commandBuffer, srcImage, srcImageLayout, dstImage, dstImageLayout, regionCount, pRegions);
@@ -6342,7 +6342,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyImage(VkCommandBuffer commandBuffer, VkImage
 VKAPI_ATTR void VKAPI_CALL vkCmdBlitImage(VkCommandBuffer commandBuffer, VkImage srcImage, VkImageLayout srcImageLayout, VkImage dstImage, VkImageLayout dstImageLayout, uint32_t regionCount, const VkImageBlit* pRegions, VkFilter filter)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBlitImage", "commandBuffer, srcImage, srcImageLayout, dstImage, dstImageLayout, regionCount, pRegions, filter");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBlitImage(ApiDumpInstance::current(), commandBuffer, srcImage, srcImageLayout, dstImage, dstImageLayout, regionCount, pRegions, filter);
@@ -6372,7 +6372,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBlitImage(VkCommandBuffer commandBuffer, VkImage
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyBufferToImage(VkCommandBuffer commandBuffer, VkBuffer srcBuffer, VkImage dstImage, VkImageLayout dstImageLayout, uint32_t regionCount, const VkBufferImageCopy* pRegions)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyBufferToImage", "commandBuffer, srcBuffer, dstImage, dstImageLayout, regionCount, pRegions");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyBufferToImage(ApiDumpInstance::current(), commandBuffer, srcBuffer, dstImage, dstImageLayout, regionCount, pRegions);
@@ -6402,7 +6402,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyBufferToImage(VkCommandBuffer commandBuffer,
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyImageToBuffer(VkCommandBuffer commandBuffer, VkImage srcImage, VkImageLayout srcImageLayout, VkBuffer dstBuffer, uint32_t regionCount, const VkBufferImageCopy* pRegions)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyImageToBuffer", "commandBuffer, srcImage, srcImageLayout, dstBuffer, regionCount, pRegions");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyImageToBuffer(ApiDumpInstance::current(), commandBuffer, srcImage, srcImageLayout, dstBuffer, regionCount, pRegions);
@@ -6432,7 +6432,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyImageToBuffer(VkCommandBuffer commandBuffer,
 VKAPI_ATTR void VKAPI_CALL vkCmdUpdateBuffer(VkCommandBuffer commandBuffer, VkBuffer dstBuffer, VkDeviceSize dstOffset, VkDeviceSize dataSize, const void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdUpdateBuffer", "commandBuffer, dstBuffer, dstOffset, dataSize, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdUpdateBuffer(ApiDumpInstance::current(), commandBuffer, dstBuffer, dstOffset, dataSize, pData);
@@ -6462,7 +6462,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdUpdateBuffer(VkCommandBuffer commandBuffer, VkBu
 VKAPI_ATTR void VKAPI_CALL vkCmdFillBuffer(VkCommandBuffer commandBuffer, VkBuffer dstBuffer, VkDeviceSize dstOffset, VkDeviceSize size, uint32_t data)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdFillBuffer", "commandBuffer, dstBuffer, dstOffset, size, data");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdFillBuffer(ApiDumpInstance::current(), commandBuffer, dstBuffer, dstOffset, size, data);
@@ -6492,7 +6492,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdFillBuffer(VkCommandBuffer commandBuffer, VkBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdClearColorImage(VkCommandBuffer commandBuffer, VkImage image, VkImageLayout imageLayout, const VkClearColorValue* pColor, uint32_t rangeCount, const VkImageSubresourceRange* pRanges)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdClearColorImage", "commandBuffer, image, imageLayout, pColor, rangeCount, pRanges");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdClearColorImage(ApiDumpInstance::current(), commandBuffer, image, imageLayout, pColor, rangeCount, pRanges);
@@ -6522,7 +6522,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdClearColorImage(VkCommandBuffer commandBuffer, V
 VKAPI_ATTR void VKAPI_CALL vkCmdClearDepthStencilImage(VkCommandBuffer commandBuffer, VkImage image, VkImageLayout imageLayout, const VkClearDepthStencilValue* pDepthStencil, uint32_t rangeCount, const VkImageSubresourceRange* pRanges)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdClearDepthStencilImage", "commandBuffer, image, imageLayout, pDepthStencil, rangeCount, pRanges");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdClearDepthStencilImage(ApiDumpInstance::current(), commandBuffer, image, imageLayout, pDepthStencil, rangeCount, pRanges);
@@ -6552,7 +6552,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdClearDepthStencilImage(VkCommandBuffer commandBu
 VKAPI_ATTR void VKAPI_CALL vkCmdClearAttachments(VkCommandBuffer commandBuffer, uint32_t attachmentCount, const VkClearAttachment* pAttachments, uint32_t rectCount, const VkClearRect* pRects)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdClearAttachments", "commandBuffer, attachmentCount, pAttachments, rectCount, pRects");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdClearAttachments(ApiDumpInstance::current(), commandBuffer, attachmentCount, pAttachments, rectCount, pRects);
@@ -6582,7 +6582,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdClearAttachments(VkCommandBuffer commandBuffer, 
 VKAPI_ATTR void VKAPI_CALL vkCmdResolveImage(VkCommandBuffer commandBuffer, VkImage srcImage, VkImageLayout srcImageLayout, VkImage dstImage, VkImageLayout dstImageLayout, uint32_t regionCount, const VkImageResolve* pRegions)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdResolveImage", "commandBuffer, srcImage, srcImageLayout, dstImage, dstImageLayout, regionCount, pRegions");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdResolveImage(ApiDumpInstance::current(), commandBuffer, srcImage, srcImageLayout, dstImage, dstImageLayout, regionCount, pRegions);
@@ -6612,7 +6612,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdResolveImage(VkCommandBuffer commandBuffer, VkIm
 VKAPI_ATTR void VKAPI_CALL vkCmdSetEvent(VkCommandBuffer commandBuffer, VkEvent event, VkPipelineStageFlags stageMask)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetEvent", "commandBuffer, event, stageMask");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetEvent(ApiDumpInstance::current(), commandBuffer, event, stageMask);
@@ -6642,7 +6642,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetEvent(VkCommandBuffer commandBuffer, VkEvent 
 VKAPI_ATTR void VKAPI_CALL vkCmdResetEvent(VkCommandBuffer commandBuffer, VkEvent event, VkPipelineStageFlags stageMask)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdResetEvent", "commandBuffer, event, stageMask");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdResetEvent(ApiDumpInstance::current(), commandBuffer, event, stageMask);
@@ -6672,7 +6672,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdResetEvent(VkCommandBuffer commandBuffer, VkEven
 VKAPI_ATTR void VKAPI_CALL vkCmdWaitEvents(VkCommandBuffer commandBuffer, uint32_t eventCount, const VkEvent* pEvents, VkPipelineStageFlags srcStageMask, VkPipelineStageFlags dstStageMask, uint32_t memoryBarrierCount, const VkMemoryBarrier* pMemoryBarriers, uint32_t bufferMemoryBarrierCount, const VkBufferMemoryBarrier* pBufferMemoryBarriers, uint32_t imageMemoryBarrierCount, const VkImageMemoryBarrier* pImageMemoryBarriers)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdWaitEvents", "commandBuffer, eventCount, pEvents, srcStageMask, dstStageMask, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, pImageMemoryBarriers");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdWaitEvents(ApiDumpInstance::current(), commandBuffer, eventCount, pEvents, srcStageMask, dstStageMask, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, pImageMemoryBarriers);
@@ -6702,7 +6702,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdWaitEvents(VkCommandBuffer commandBuffer, uint32
 VKAPI_ATTR void VKAPI_CALL vkCmdPipelineBarrier(VkCommandBuffer commandBuffer, VkPipelineStageFlags srcStageMask, VkPipelineStageFlags dstStageMask, VkDependencyFlags dependencyFlags, uint32_t memoryBarrierCount, const VkMemoryBarrier* pMemoryBarriers, uint32_t bufferMemoryBarrierCount, const VkBufferMemoryBarrier* pBufferMemoryBarriers, uint32_t imageMemoryBarrierCount, const VkImageMemoryBarrier* pImageMemoryBarriers)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdPipelineBarrier", "commandBuffer, srcStageMask, dstStageMask, dependencyFlags, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, pImageMemoryBarriers");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdPipelineBarrier(ApiDumpInstance::current(), commandBuffer, srcStageMask, dstStageMask, dependencyFlags, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, pImageMemoryBarriers);
@@ -6732,7 +6732,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdPipelineBarrier(VkCommandBuffer commandBuffer, V
 VKAPI_ATTR void VKAPI_CALL vkCmdBeginQuery(VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t query, VkQueryControlFlags flags)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBeginQuery", "commandBuffer, queryPool, query, flags");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBeginQuery(ApiDumpInstance::current(), commandBuffer, queryPool, query, flags);
@@ -6762,7 +6762,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBeginQuery(VkCommandBuffer commandBuffer, VkQuer
 VKAPI_ATTR void VKAPI_CALL vkCmdEndQuery(VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t query)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdEndQuery", "commandBuffer, queryPool, query");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdEndQuery(ApiDumpInstance::current(), commandBuffer, queryPool, query);
@@ -6792,7 +6792,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdEndQuery(VkCommandBuffer commandBuffer, VkQueryP
 VKAPI_ATTR void VKAPI_CALL vkCmdResetQueryPool(VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t firstQuery, uint32_t queryCount)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdResetQueryPool", "commandBuffer, queryPool, firstQuery, queryCount");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdResetQueryPool(ApiDumpInstance::current(), commandBuffer, queryPool, firstQuery, queryCount);
@@ -6822,7 +6822,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdResetQueryPool(VkCommandBuffer commandBuffer, Vk
 VKAPI_ATTR void VKAPI_CALL vkCmdWriteTimestamp(VkCommandBuffer commandBuffer, VkPipelineStageFlagBits pipelineStage, VkQueryPool queryPool, uint32_t query)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdWriteTimestamp", "commandBuffer, pipelineStage, queryPool, query");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdWriteTimestamp(ApiDumpInstance::current(), commandBuffer, pipelineStage, queryPool, query);
@@ -6852,7 +6852,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdWriteTimestamp(VkCommandBuffer commandBuffer, Vk
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyQueryPoolResults(VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t firstQuery, uint32_t queryCount, VkBuffer dstBuffer, VkDeviceSize dstOffset, VkDeviceSize stride, VkQueryResultFlags flags)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyQueryPoolResults", "commandBuffer, queryPool, firstQuery, queryCount, dstBuffer, dstOffset, stride, flags");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyQueryPoolResults(ApiDumpInstance::current(), commandBuffer, queryPool, firstQuery, queryCount, dstBuffer, dstOffset, stride, flags);
@@ -6882,7 +6882,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyQueryPoolResults(VkCommandBuffer commandBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdPushConstants(VkCommandBuffer commandBuffer, VkPipelineLayout layout, VkShaderStageFlags stageFlags, uint32_t offset, uint32_t size, const void* pValues)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdPushConstants", "commandBuffer, layout, stageFlags, offset, size, pValues");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdPushConstants(ApiDumpInstance::current(), commandBuffer, layout, stageFlags, offset, size, pValues);
@@ -6912,7 +6912,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdPushConstants(VkCommandBuffer commandBuffer, VkP
 VKAPI_ATTR void VKAPI_CALL vkCmdBeginRenderPass(VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo* pRenderPassBegin, VkSubpassContents contents)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBeginRenderPass", "commandBuffer, pRenderPassBegin, contents");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBeginRenderPass(ApiDumpInstance::current(), commandBuffer, pRenderPassBegin, contents);
@@ -6942,7 +6942,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBeginRenderPass(VkCommandBuffer commandBuffer, c
 VKAPI_ATTR void VKAPI_CALL vkCmdNextSubpass(VkCommandBuffer commandBuffer, VkSubpassContents contents)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdNextSubpass", "commandBuffer, contents");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdNextSubpass(ApiDumpInstance::current(), commandBuffer, contents);
@@ -6972,7 +6972,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdNextSubpass(VkCommandBuffer commandBuffer, VkSub
 VKAPI_ATTR void VKAPI_CALL vkCmdEndRenderPass(VkCommandBuffer commandBuffer)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdEndRenderPass", "commandBuffer");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdEndRenderPass(ApiDumpInstance::current(), commandBuffer);
@@ -7002,7 +7002,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdEndRenderPass(VkCommandBuffer commandBuffer)
 VKAPI_ATTR void VKAPI_CALL vkCmdExecuteCommands(VkCommandBuffer commandBuffer, uint32_t commandBufferCount, const VkCommandBuffer* pCommandBuffers)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdExecuteCommands", "commandBuffer, commandBufferCount, pCommandBuffers");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdExecuteCommands(ApiDumpInstance::current(), commandBuffer, commandBufferCount, pCommandBuffers);
@@ -7032,7 +7032,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdExecuteCommands(VkCommandBuffer commandBuffer, u
 VKAPI_ATTR VkResult VKAPI_CALL vkBindBufferMemory2(VkDevice device, uint32_t bindInfoCount, const VkBindBufferMemoryInfo* pBindInfos)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkBindBufferMemory2", "device, bindInfoCount, pBindInfos");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkBindBufferMemory2(ApiDumpInstance::current(), device, bindInfoCount, pBindInfos);
@@ -7063,7 +7063,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkBindBufferMemory2(VkDevice device, uint32_t bin
 VKAPI_ATTR VkResult VKAPI_CALL vkBindImageMemory2(VkDevice device, uint32_t bindInfoCount, const VkBindImageMemoryInfo* pBindInfos)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkBindImageMemory2", "device, bindInfoCount, pBindInfos");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkBindImageMemory2(ApiDumpInstance::current(), device, bindInfoCount, pBindInfos);
@@ -7094,7 +7094,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkBindImageMemory2(VkDevice device, uint32_t bind
 VKAPI_ATTR void VKAPI_CALL vkGetDeviceGroupPeerMemoryFeatures(VkDevice device, uint32_t heapIndex, uint32_t localDeviceIndex, uint32_t remoteDeviceIndex, VkPeerMemoryFeatureFlags* pPeerMemoryFeatures)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceGroupPeerMemoryFeatures", "device, heapIndex, localDeviceIndex, remoteDeviceIndex, pPeerMemoryFeatures");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceGroupPeerMemoryFeatures(ApiDumpInstance::current(), device, heapIndex, localDeviceIndex, remoteDeviceIndex, pPeerMemoryFeatures);
@@ -7124,7 +7124,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDeviceGroupPeerMemoryFeatures(VkDevice device, u
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDeviceMask(VkCommandBuffer commandBuffer, uint32_t deviceMask)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDeviceMask", "commandBuffer, deviceMask");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDeviceMask(ApiDumpInstance::current(), commandBuffer, deviceMask);
@@ -7154,7 +7154,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDeviceMask(VkCommandBuffer commandBuffer, uin
 VKAPI_ATTR void VKAPI_CALL vkCmdDispatchBase(VkCommandBuffer commandBuffer, uint32_t baseGroupX, uint32_t baseGroupY, uint32_t baseGroupZ, uint32_t groupCountX, uint32_t groupCountY, uint32_t groupCountZ)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDispatchBase", "commandBuffer, baseGroupX, baseGroupY, baseGroupZ, groupCountX, groupCountY, groupCountZ");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDispatchBase(ApiDumpInstance::current(), commandBuffer, baseGroupX, baseGroupY, baseGroupZ, groupCountX, groupCountY, groupCountZ);
@@ -7184,7 +7184,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDispatchBase(VkCommandBuffer commandBuffer, uint
 VKAPI_ATTR void VKAPI_CALL vkGetImageMemoryRequirements2(VkDevice device, const VkImageMemoryRequirementsInfo2* pInfo, VkMemoryRequirements2* pMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetImageMemoryRequirements2", "device, pInfo, pMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetImageMemoryRequirements2(ApiDumpInstance::current(), device, pInfo, pMemoryRequirements);
@@ -7214,7 +7214,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetImageMemoryRequirements2(VkDevice device, const 
 VKAPI_ATTR void VKAPI_CALL vkGetBufferMemoryRequirements2(VkDevice device, const VkBufferMemoryRequirementsInfo2* pInfo, VkMemoryRequirements2* pMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetBufferMemoryRequirements2", "device, pInfo, pMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetBufferMemoryRequirements2(ApiDumpInstance::current(), device, pInfo, pMemoryRequirements);
@@ -7244,7 +7244,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetBufferMemoryRequirements2(VkDevice device, const
 VKAPI_ATTR void VKAPI_CALL vkGetImageSparseMemoryRequirements2(VkDevice device, const VkImageSparseMemoryRequirementsInfo2* pInfo, uint32_t* pSparseMemoryRequirementCount, VkSparseImageMemoryRequirements2* pSparseMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetImageSparseMemoryRequirements2", "device, pInfo, pSparseMemoryRequirementCount, pSparseMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetImageSparseMemoryRequirements2(ApiDumpInstance::current(), device, pInfo, pSparseMemoryRequirementCount, pSparseMemoryRequirements);
@@ -7274,7 +7274,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetImageSparseMemoryRequirements2(VkDevice device, 
 VKAPI_ATTR void VKAPI_CALL vkTrimCommandPool(VkDevice device, VkCommandPool commandPool, VkCommandPoolTrimFlags flags)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkTrimCommandPool", "device, commandPool, flags");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkTrimCommandPool(ApiDumpInstance::current(), device, commandPool, flags);
@@ -7304,7 +7304,7 @@ VKAPI_ATTR void VKAPI_CALL vkTrimCommandPool(VkDevice device, VkCommandPool comm
 VKAPI_ATTR void VKAPI_CALL vkGetDeviceQueue2(VkDevice device, const VkDeviceQueueInfo2* pQueueInfo, VkQueue* pQueue)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceQueue2", "device, pQueueInfo, pQueue");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceQueue2(ApiDumpInstance::current(), device, pQueueInfo, pQueue);
@@ -7334,7 +7334,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDeviceQueue2(VkDevice device, const VkDeviceQueu
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateSamplerYcbcrConversion(VkDevice device, const VkSamplerYcbcrConversionCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkSamplerYcbcrConversion* pYcbcrConversion)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateSamplerYcbcrConversion", "device, pCreateInfo, pAllocator, pYcbcrConversion");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateSamplerYcbcrConversion(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pYcbcrConversion);
@@ -7365,7 +7365,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateSamplerYcbcrConversion(VkDevice device, c
 VKAPI_ATTR void VKAPI_CALL vkDestroySamplerYcbcrConversion(VkDevice device, VkSamplerYcbcrConversion ycbcrConversion, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroySamplerYcbcrConversion", "device, ycbcrConversion, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroySamplerYcbcrConversion(ApiDumpInstance::current(), device, ycbcrConversion, pAllocator);
@@ -7395,7 +7395,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroySamplerYcbcrConversion(VkDevice device, VkSa
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateDescriptorUpdateTemplate(VkDevice device, const VkDescriptorUpdateTemplateCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkDescriptorUpdateTemplate* pDescriptorUpdateTemplate)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateDescriptorUpdateTemplate", "device, pCreateInfo, pAllocator, pDescriptorUpdateTemplate");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateDescriptorUpdateTemplate(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pDescriptorUpdateTemplate);
@@ -7426,7 +7426,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateDescriptorUpdateTemplate(VkDevice device,
 VKAPI_ATTR void VKAPI_CALL vkDestroyDescriptorUpdateTemplate(VkDevice device, VkDescriptorUpdateTemplate descriptorUpdateTemplate, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyDescriptorUpdateTemplate", "device, descriptorUpdateTemplate, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyDescriptorUpdateTemplate(ApiDumpInstance::current(), device, descriptorUpdateTemplate, pAllocator);
@@ -7456,7 +7456,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyDescriptorUpdateTemplate(VkDevice device, Vk
 VKAPI_ATTR void VKAPI_CALL vkUpdateDescriptorSetWithTemplate(VkDevice device, VkDescriptorSet descriptorSet, VkDescriptorUpdateTemplate descriptorUpdateTemplate, const void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkUpdateDescriptorSetWithTemplate", "device, descriptorSet, descriptorUpdateTemplate, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkUpdateDescriptorSetWithTemplate(ApiDumpInstance::current(), device, descriptorSet, descriptorUpdateTemplate, pData);
@@ -7486,7 +7486,7 @@ VKAPI_ATTR void VKAPI_CALL vkUpdateDescriptorSetWithTemplate(VkDevice device, Vk
 VKAPI_ATTR void VKAPI_CALL vkGetDescriptorSetLayoutSupport(VkDevice device, const VkDescriptorSetLayoutCreateInfo* pCreateInfo, VkDescriptorSetLayoutSupport* pSupport)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDescriptorSetLayoutSupport", "device, pCreateInfo, pSupport");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDescriptorSetLayoutSupport(ApiDumpInstance::current(), device, pCreateInfo, pSupport);
@@ -7516,7 +7516,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDescriptorSetLayoutSupport(VkDevice device, cons
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndirectCount(VkCommandBuffer commandBuffer, VkBuffer buffer, VkDeviceSize offset, VkBuffer countBuffer, VkDeviceSize countBufferOffset, uint32_t maxDrawCount, uint32_t stride)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawIndirectCount", "commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawIndirectCount(ApiDumpInstance::current(), commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
@@ -7546,7 +7546,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndirectCount(VkCommandBuffer commandBuffer,
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndexedIndirectCount(VkCommandBuffer commandBuffer, VkBuffer buffer, VkDeviceSize offset, VkBuffer countBuffer, VkDeviceSize countBufferOffset, uint32_t maxDrawCount, uint32_t stride)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawIndexedIndirectCount", "commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawIndexedIndirectCount(ApiDumpInstance::current(), commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
@@ -7576,7 +7576,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndexedIndirectCount(VkCommandBuffer command
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateRenderPass2(VkDevice device, const VkRenderPassCreateInfo2* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkRenderPass* pRenderPass)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateRenderPass2", "device, pCreateInfo, pAllocator, pRenderPass");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateRenderPass2(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pRenderPass);
@@ -7607,7 +7607,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateRenderPass2(VkDevice device, const VkRend
 VKAPI_ATTR void VKAPI_CALL vkCmdBeginRenderPass2(VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo*      pRenderPassBegin, const VkSubpassBeginInfo*      pSubpassBeginInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBeginRenderPass2", "commandBuffer, pRenderPassBegin, pSubpassBeginInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBeginRenderPass2(ApiDumpInstance::current(), commandBuffer, pRenderPassBegin, pSubpassBeginInfo);
@@ -7637,7 +7637,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBeginRenderPass2(VkCommandBuffer commandBuffer, 
 VKAPI_ATTR void VKAPI_CALL vkCmdNextSubpass2(VkCommandBuffer commandBuffer, const VkSubpassBeginInfo*      pSubpassBeginInfo, const VkSubpassEndInfo*        pSubpassEndInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdNextSubpass2", "commandBuffer, pSubpassBeginInfo, pSubpassEndInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdNextSubpass2(ApiDumpInstance::current(), commandBuffer, pSubpassBeginInfo, pSubpassEndInfo);
@@ -7667,7 +7667,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdNextSubpass2(VkCommandBuffer commandBuffer, cons
 VKAPI_ATTR void VKAPI_CALL vkCmdEndRenderPass2(VkCommandBuffer commandBuffer, const VkSubpassEndInfo*        pSubpassEndInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdEndRenderPass2", "commandBuffer, pSubpassEndInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdEndRenderPass2(ApiDumpInstance::current(), commandBuffer, pSubpassEndInfo);
@@ -7697,7 +7697,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdEndRenderPass2(VkCommandBuffer commandBuffer, co
 VKAPI_ATTR void VKAPI_CALL vkResetQueryPool(VkDevice device, VkQueryPool queryPool, uint32_t firstQuery, uint32_t queryCount)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkResetQueryPool", "device, queryPool, firstQuery, queryCount");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkResetQueryPool(ApiDumpInstance::current(), device, queryPool, firstQuery, queryCount);
@@ -7727,7 +7727,7 @@ VKAPI_ATTR void VKAPI_CALL vkResetQueryPool(VkDevice device, VkQueryPool queryPo
 VKAPI_ATTR VkResult VKAPI_CALL vkGetSemaphoreCounterValue(VkDevice device, VkSemaphore semaphore, uint64_t* pValue)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetSemaphoreCounterValue", "device, semaphore, pValue");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetSemaphoreCounterValue(ApiDumpInstance::current(), device, semaphore, pValue);
@@ -7780,7 +7780,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkWaitSemaphores(VkDevice device, const VkSemapho
 VKAPI_ATTR VkResult VKAPI_CALL vkSignalSemaphore(VkDevice device, const VkSemaphoreSignalInfo* pSignalInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkSignalSemaphore", "device, pSignalInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkSignalSemaphore(ApiDumpInstance::current(), device, pSignalInfo);
@@ -7811,7 +7811,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkSignalSemaphore(VkDevice device, const VkSemaph
 VKAPI_ATTR VkDeviceAddress VKAPI_CALL vkGetBufferDeviceAddress(VkDevice device, const VkBufferDeviceAddressInfo* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetBufferDeviceAddress", "device, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetBufferDeviceAddress(ApiDumpInstance::current(), device, pInfo);
@@ -7842,7 +7842,7 @@ VKAPI_ATTR VkDeviceAddress VKAPI_CALL vkGetBufferDeviceAddress(VkDevice device, 
 VKAPI_ATTR uint64_t VKAPI_CALL vkGetBufferOpaqueCaptureAddress(VkDevice device, const VkBufferDeviceAddressInfo* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetBufferOpaqueCaptureAddress", "device, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetBufferOpaqueCaptureAddress(ApiDumpInstance::current(), device, pInfo);
@@ -7873,7 +7873,7 @@ VKAPI_ATTR uint64_t VKAPI_CALL vkGetBufferOpaqueCaptureAddress(VkDevice device, 
 VKAPI_ATTR uint64_t VKAPI_CALL vkGetDeviceMemoryOpaqueCaptureAddress(VkDevice device, const VkDeviceMemoryOpaqueCaptureAddressInfo* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceMemoryOpaqueCaptureAddress", "device, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceMemoryOpaqueCaptureAddress(ApiDumpInstance::current(), device, pInfo);
@@ -7904,7 +7904,7 @@ VKAPI_ATTR uint64_t VKAPI_CALL vkGetDeviceMemoryOpaqueCaptureAddress(VkDevice de
 VKAPI_ATTR VkResult VKAPI_CALL vkCreatePrivateDataSlot(VkDevice device, const VkPrivateDataSlotCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkPrivateDataSlot* pPrivateDataSlot)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreatePrivateDataSlot", "device, pCreateInfo, pAllocator, pPrivateDataSlot");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreatePrivateDataSlot(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pPrivateDataSlot);
@@ -7935,7 +7935,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreatePrivateDataSlot(VkDevice device, const Vk
 VKAPI_ATTR void VKAPI_CALL vkDestroyPrivateDataSlot(VkDevice device, VkPrivateDataSlot privateDataSlot, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyPrivateDataSlot", "device, privateDataSlot, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyPrivateDataSlot(ApiDumpInstance::current(), device, privateDataSlot, pAllocator);
@@ -7965,7 +7965,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyPrivateDataSlot(VkDevice device, VkPrivateDa
 VKAPI_ATTR VkResult VKAPI_CALL vkSetPrivateData(VkDevice device, VkObjectType objectType, uint64_t objectHandle, VkPrivateDataSlot privateDataSlot, uint64_t data)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkSetPrivateData", "device, objectType, objectHandle, privateDataSlot, data");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkSetPrivateData(ApiDumpInstance::current(), device, objectType, objectHandle, privateDataSlot, data);
@@ -7996,7 +7996,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkSetPrivateData(VkDevice device, VkObjectType ob
 VKAPI_ATTR void VKAPI_CALL vkGetPrivateData(VkDevice device, VkObjectType objectType, uint64_t objectHandle, VkPrivateDataSlot privateDataSlot, uint64_t* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetPrivateData", "device, objectType, objectHandle, privateDataSlot, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetPrivateData(ApiDumpInstance::current(), device, objectType, objectHandle, privateDataSlot, pData);
@@ -8026,7 +8026,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetPrivateData(VkDevice device, VkObjectType object
 VKAPI_ATTR void VKAPI_CALL vkCmdSetEvent2(VkCommandBuffer                   commandBuffer, VkEvent                                             event, const VkDependencyInfo*                             pDependencyInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetEvent2", "commandBuffer, event, pDependencyInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetEvent2(ApiDumpInstance::current(), commandBuffer, event, pDependencyInfo);
@@ -8056,7 +8056,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetEvent2(VkCommandBuffer                   comm
 VKAPI_ATTR void VKAPI_CALL vkCmdResetEvent2(VkCommandBuffer                   commandBuffer, VkEvent                                             event, VkPipelineStageFlags2               stageMask)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdResetEvent2", "commandBuffer, event, stageMask");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdResetEvent2(ApiDumpInstance::current(), commandBuffer, event, stageMask);
@@ -8086,7 +8086,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdResetEvent2(VkCommandBuffer                   co
 VKAPI_ATTR void VKAPI_CALL vkCmdWaitEvents2(VkCommandBuffer                   commandBuffer, uint32_t                                            eventCount, const VkEvent*                     pEvents, const VkDependencyInfo*            pDependencyInfos)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdWaitEvents2", "commandBuffer, eventCount, pEvents, pDependencyInfos");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdWaitEvents2(ApiDumpInstance::current(), commandBuffer, eventCount, pEvents, pDependencyInfos);
@@ -8116,7 +8116,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdWaitEvents2(VkCommandBuffer                   co
 VKAPI_ATTR void VKAPI_CALL vkCmdPipelineBarrier2(VkCommandBuffer                   commandBuffer, const VkDependencyInfo*                             pDependencyInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdPipelineBarrier2", "commandBuffer, pDependencyInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdPipelineBarrier2(ApiDumpInstance::current(), commandBuffer, pDependencyInfo);
@@ -8146,7 +8146,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdPipelineBarrier2(VkCommandBuffer                
 VKAPI_ATTR void VKAPI_CALL vkCmdWriteTimestamp2(VkCommandBuffer                   commandBuffer, VkPipelineStageFlags2               stage, VkQueryPool                                         queryPool, uint32_t                                            query)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdWriteTimestamp2", "commandBuffer, stage, queryPool, query");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdWriteTimestamp2(ApiDumpInstance::current(), commandBuffer, stage, queryPool, query);
@@ -8176,7 +8176,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdWriteTimestamp2(VkCommandBuffer                 
 VKAPI_ATTR VkResult VKAPI_CALL vkQueueSubmit2(VkQueue                           queue, uint32_t                            submitCount, const VkSubmitInfo2*              pSubmits, VkFence           fence)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkQueueSubmit2", "queue, submitCount, pSubmits, fence");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkQueueSubmit2(ApiDumpInstance::current(), queue, submitCount, pSubmits, fence);
@@ -8207,7 +8207,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkQueueSubmit2(VkQueue                           
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyBuffer2(VkCommandBuffer commandBuffer, const VkCopyBufferInfo2* pCopyBufferInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyBuffer2", "commandBuffer, pCopyBufferInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyBuffer2(ApiDumpInstance::current(), commandBuffer, pCopyBufferInfo);
@@ -8237,7 +8237,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyBuffer2(VkCommandBuffer commandBuffer, const
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyImage2(VkCommandBuffer commandBuffer, const VkCopyImageInfo2* pCopyImageInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyImage2", "commandBuffer, pCopyImageInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyImage2(ApiDumpInstance::current(), commandBuffer, pCopyImageInfo);
@@ -8267,7 +8267,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyImage2(VkCommandBuffer commandBuffer, const 
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyBufferToImage2(VkCommandBuffer commandBuffer, const VkCopyBufferToImageInfo2* pCopyBufferToImageInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyBufferToImage2", "commandBuffer, pCopyBufferToImageInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyBufferToImage2(ApiDumpInstance::current(), commandBuffer, pCopyBufferToImageInfo);
@@ -8297,7 +8297,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyBufferToImage2(VkCommandBuffer commandBuffer
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyImageToBuffer2(VkCommandBuffer commandBuffer, const VkCopyImageToBufferInfo2* pCopyImageToBufferInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyImageToBuffer2", "commandBuffer, pCopyImageToBufferInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyImageToBuffer2(ApiDumpInstance::current(), commandBuffer, pCopyImageToBufferInfo);
@@ -8327,7 +8327,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyImageToBuffer2(VkCommandBuffer commandBuffer
 VKAPI_ATTR void VKAPI_CALL vkCmdBlitImage2(VkCommandBuffer commandBuffer, const VkBlitImageInfo2* pBlitImageInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBlitImage2", "commandBuffer, pBlitImageInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBlitImage2(ApiDumpInstance::current(), commandBuffer, pBlitImageInfo);
@@ -8357,7 +8357,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBlitImage2(VkCommandBuffer commandBuffer, const 
 VKAPI_ATTR void VKAPI_CALL vkCmdResolveImage2(VkCommandBuffer commandBuffer, const VkResolveImageInfo2* pResolveImageInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdResolveImage2", "commandBuffer, pResolveImageInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdResolveImage2(ApiDumpInstance::current(), commandBuffer, pResolveImageInfo);
@@ -8387,7 +8387,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdResolveImage2(VkCommandBuffer commandBuffer, con
 VKAPI_ATTR void VKAPI_CALL vkCmdBeginRendering(VkCommandBuffer                   commandBuffer, const VkRenderingInfo*                              pRenderingInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBeginRendering", "commandBuffer, pRenderingInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBeginRendering(ApiDumpInstance::current(), commandBuffer, pRenderingInfo);
@@ -8417,7 +8417,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBeginRendering(VkCommandBuffer                  
 VKAPI_ATTR void VKAPI_CALL vkCmdEndRendering(VkCommandBuffer                   commandBuffer)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdEndRendering", "commandBuffer");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdEndRendering(ApiDumpInstance::current(), commandBuffer);
@@ -8447,7 +8447,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdEndRendering(VkCommandBuffer                   c
 VKAPI_ATTR void VKAPI_CALL vkCmdSetCullMode(VkCommandBuffer commandBuffer, VkCullModeFlags cullMode)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetCullMode", "commandBuffer, cullMode");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetCullMode(ApiDumpInstance::current(), commandBuffer, cullMode);
@@ -8477,7 +8477,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetCullMode(VkCommandBuffer commandBuffer, VkCul
 VKAPI_ATTR void VKAPI_CALL vkCmdSetFrontFace(VkCommandBuffer commandBuffer, VkFrontFace frontFace)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetFrontFace", "commandBuffer, frontFace");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetFrontFace(ApiDumpInstance::current(), commandBuffer, frontFace);
@@ -8507,7 +8507,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetFrontFace(VkCommandBuffer commandBuffer, VkFr
 VKAPI_ATTR void VKAPI_CALL vkCmdSetPrimitiveTopology(VkCommandBuffer commandBuffer, VkPrimitiveTopology primitiveTopology)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetPrimitiveTopology", "commandBuffer, primitiveTopology");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetPrimitiveTopology(ApiDumpInstance::current(), commandBuffer, primitiveTopology);
@@ -8537,7 +8537,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetPrimitiveTopology(VkCommandBuffer commandBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdSetViewportWithCount(VkCommandBuffer commandBuffer, uint32_t viewportCount, const VkViewport* pViewports)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetViewportWithCount", "commandBuffer, viewportCount, pViewports");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetViewportWithCount(ApiDumpInstance::current(), commandBuffer, viewportCount, pViewports);
@@ -8567,7 +8567,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetViewportWithCount(VkCommandBuffer commandBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdSetScissorWithCount(VkCommandBuffer commandBuffer, uint32_t scissorCount, const VkRect2D* pScissors)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetScissorWithCount", "commandBuffer, scissorCount, pScissors");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetScissorWithCount(ApiDumpInstance::current(), commandBuffer, scissorCount, pScissors);
@@ -8597,7 +8597,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetScissorWithCount(VkCommandBuffer commandBuffe
 VKAPI_ATTR void VKAPI_CALL vkCmdBindVertexBuffers2(VkCommandBuffer commandBuffer, uint32_t firstBinding, uint32_t bindingCount, const VkBuffer* pBuffers, const VkDeviceSize* pOffsets, const VkDeviceSize* pSizes, const VkDeviceSize* pStrides)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindVertexBuffers2", "commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindVertexBuffers2(ApiDumpInstance::current(), commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides);
@@ -8627,7 +8627,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindVertexBuffers2(VkCommandBuffer commandBuffer
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthTestEnable(VkCommandBuffer commandBuffer, VkBool32 depthTestEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDepthTestEnable", "commandBuffer, depthTestEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDepthTestEnable(ApiDumpInstance::current(), commandBuffer, depthTestEnable);
@@ -8657,7 +8657,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthTestEnable(VkCommandBuffer commandBuffer
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthWriteEnable(VkCommandBuffer commandBuffer, VkBool32 depthWriteEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDepthWriteEnable", "commandBuffer, depthWriteEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDepthWriteEnable(ApiDumpInstance::current(), commandBuffer, depthWriteEnable);
@@ -8687,7 +8687,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthWriteEnable(VkCommandBuffer commandBuffe
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthCompareOp(VkCommandBuffer commandBuffer, VkCompareOp depthCompareOp)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDepthCompareOp", "commandBuffer, depthCompareOp");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDepthCompareOp(ApiDumpInstance::current(), commandBuffer, depthCompareOp);
@@ -8717,7 +8717,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthCompareOp(VkCommandBuffer commandBuffer,
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthBoundsTestEnable(VkCommandBuffer commandBuffer, VkBool32 depthBoundsTestEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDepthBoundsTestEnable", "commandBuffer, depthBoundsTestEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDepthBoundsTestEnable(ApiDumpInstance::current(), commandBuffer, depthBoundsTestEnable);
@@ -8747,7 +8747,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthBoundsTestEnable(VkCommandBuffer command
 VKAPI_ATTR void VKAPI_CALL vkCmdSetStencilTestEnable(VkCommandBuffer commandBuffer, VkBool32 stencilTestEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetStencilTestEnable", "commandBuffer, stencilTestEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetStencilTestEnable(ApiDumpInstance::current(), commandBuffer, stencilTestEnable);
@@ -8777,7 +8777,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetStencilTestEnable(VkCommandBuffer commandBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdSetStencilOp(VkCommandBuffer commandBuffer, VkStencilFaceFlags faceMask, VkStencilOp failOp, VkStencilOp passOp, VkStencilOp depthFailOp, VkCompareOp compareOp)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetStencilOp", "commandBuffer, faceMask, failOp, passOp, depthFailOp, compareOp");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetStencilOp(ApiDumpInstance::current(), commandBuffer, faceMask, failOp, passOp, depthFailOp, compareOp);
@@ -8807,7 +8807,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetStencilOp(VkCommandBuffer commandBuffer, VkSt
 VKAPI_ATTR void VKAPI_CALL vkCmdSetRasterizerDiscardEnable(VkCommandBuffer commandBuffer, VkBool32 rasterizerDiscardEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetRasterizerDiscardEnable", "commandBuffer, rasterizerDiscardEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetRasterizerDiscardEnable(ApiDumpInstance::current(), commandBuffer, rasterizerDiscardEnable);
@@ -8837,7 +8837,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetRasterizerDiscardEnable(VkCommandBuffer comma
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthBiasEnable(VkCommandBuffer commandBuffer, VkBool32 depthBiasEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDepthBiasEnable", "commandBuffer, depthBiasEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDepthBiasEnable(ApiDumpInstance::current(), commandBuffer, depthBiasEnable);
@@ -8867,7 +8867,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthBiasEnable(VkCommandBuffer commandBuffer
 VKAPI_ATTR void VKAPI_CALL vkCmdSetPrimitiveRestartEnable(VkCommandBuffer commandBuffer, VkBool32 primitiveRestartEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetPrimitiveRestartEnable", "commandBuffer, primitiveRestartEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetPrimitiveRestartEnable(ApiDumpInstance::current(), commandBuffer, primitiveRestartEnable);
@@ -8897,7 +8897,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetPrimitiveRestartEnable(VkCommandBuffer comman
 VKAPI_ATTR void VKAPI_CALL vkGetDeviceBufferMemoryRequirements(VkDevice device, const VkDeviceBufferMemoryRequirements* pInfo, VkMemoryRequirements2* pMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceBufferMemoryRequirements", "device, pInfo, pMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceBufferMemoryRequirements(ApiDumpInstance::current(), device, pInfo, pMemoryRequirements);
@@ -8927,7 +8927,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDeviceBufferMemoryRequirements(VkDevice device, 
 VKAPI_ATTR void VKAPI_CALL vkGetDeviceImageMemoryRequirements(VkDevice device, const VkDeviceImageMemoryRequirements* pInfo, VkMemoryRequirements2* pMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceImageMemoryRequirements", "device, pInfo, pMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceImageMemoryRequirements(ApiDumpInstance::current(), device, pInfo, pMemoryRequirements);
@@ -8957,7 +8957,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDeviceImageMemoryRequirements(VkDevice device, c
 VKAPI_ATTR void VKAPI_CALL vkGetDeviceImageSparseMemoryRequirements(VkDevice device, const VkDeviceImageMemoryRequirements* pInfo, uint32_t* pSparseMemoryRequirementCount, VkSparseImageMemoryRequirements2* pSparseMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceImageSparseMemoryRequirements", "device, pInfo, pSparseMemoryRequirementCount, pSparseMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceImageSparseMemoryRequirements(ApiDumpInstance::current(), device, pInfo, pSparseMemoryRequirementCount, pSparseMemoryRequirements);
@@ -8987,7 +8987,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDeviceImageSparseMemoryRequirements(VkDevice dev
 VKAPI_ATTR void VKAPI_CALL vkCmdSetLineStipple(VkCommandBuffer commandBuffer, uint32_t lineStippleFactor, uint16_t lineStipplePattern)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetLineStipple", "commandBuffer, lineStippleFactor, lineStipplePattern");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetLineStipple(ApiDumpInstance::current(), commandBuffer, lineStippleFactor, lineStipplePattern);
@@ -9017,7 +9017,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetLineStipple(VkCommandBuffer commandBuffer, ui
 VKAPI_ATTR VkResult VKAPI_CALL vkMapMemory2(VkDevice device, const VkMemoryMapInfo* pMemoryMapInfo, void** ppData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkMapMemory2", "device, pMemoryMapInfo, ppData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkMapMemory2(ApiDumpInstance::current(), device, pMemoryMapInfo, ppData);
@@ -9048,7 +9048,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkMapMemory2(VkDevice device, const VkMemoryMapIn
 VKAPI_ATTR VkResult VKAPI_CALL vkUnmapMemory2(VkDevice device, const VkMemoryUnmapInfo* pMemoryUnmapInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkUnmapMemory2", "device, pMemoryUnmapInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkUnmapMemory2(ApiDumpInstance::current(), device, pMemoryUnmapInfo);
@@ -9079,7 +9079,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkUnmapMemory2(VkDevice device, const VkMemoryUnm
 VKAPI_ATTR void VKAPI_CALL vkCmdBindIndexBuffer2(VkCommandBuffer commandBuffer, VkBuffer buffer, VkDeviceSize offset, VkDeviceSize size, VkIndexType indexType)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindIndexBuffer2", "commandBuffer, buffer, offset, size, indexType");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindIndexBuffer2(ApiDumpInstance::current(), commandBuffer, buffer, offset, size, indexType);
@@ -9109,7 +9109,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindIndexBuffer2(VkCommandBuffer commandBuffer, 
 VKAPI_ATTR void VKAPI_CALL vkGetRenderingAreaGranularity(VkDevice device, const VkRenderingAreaInfo* pRenderingAreaInfo, VkExtent2D* pGranularity)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetRenderingAreaGranularity", "device, pRenderingAreaInfo, pGranularity");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetRenderingAreaGranularity(ApiDumpInstance::current(), device, pRenderingAreaInfo, pGranularity);
@@ -9139,7 +9139,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetRenderingAreaGranularity(VkDevice device, const 
 VKAPI_ATTR void VKAPI_CALL vkGetDeviceImageSubresourceLayout(VkDevice device, const VkDeviceImageSubresourceInfo* pInfo, VkSubresourceLayout2* pLayout)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceImageSubresourceLayout", "device, pInfo, pLayout");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceImageSubresourceLayout(ApiDumpInstance::current(), device, pInfo, pLayout);
@@ -9169,7 +9169,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDeviceImageSubresourceLayout(VkDevice device, co
 VKAPI_ATTR void VKAPI_CALL vkGetImageSubresourceLayout2(VkDevice device, VkImage image, const VkImageSubresource2* pSubresource, VkSubresourceLayout2* pLayout)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetImageSubresourceLayout2", "device, image, pSubresource, pLayout");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetImageSubresourceLayout2(ApiDumpInstance::current(), device, image, pSubresource, pLayout);
@@ -9199,7 +9199,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetImageSubresourceLayout2(VkDevice device, VkImage
 VKAPI_ATTR void VKAPI_CALL vkCmdPushDescriptorSet(VkCommandBuffer commandBuffer, VkPipelineBindPoint pipelineBindPoint, VkPipelineLayout layout, uint32_t set, uint32_t descriptorWriteCount, const VkWriteDescriptorSet* pDescriptorWrites)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdPushDescriptorSet", "commandBuffer, pipelineBindPoint, layout, set, descriptorWriteCount, pDescriptorWrites");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdPushDescriptorSet(ApiDumpInstance::current(), commandBuffer, pipelineBindPoint, layout, set, descriptorWriteCount, pDescriptorWrites);
@@ -9229,7 +9229,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdPushDescriptorSet(VkCommandBuffer commandBuffer,
 VKAPI_ATTR void VKAPI_CALL vkCmdPushDescriptorSetWithTemplate(VkCommandBuffer commandBuffer, VkDescriptorUpdateTemplate descriptorUpdateTemplate, VkPipelineLayout layout, uint32_t set, const void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdPushDescriptorSetWithTemplate", "commandBuffer, descriptorUpdateTemplate, layout, set, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdPushDescriptorSetWithTemplate(ApiDumpInstance::current(), commandBuffer, descriptorUpdateTemplate, layout, set, pData);
@@ -9259,7 +9259,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdPushDescriptorSetWithTemplate(VkCommandBuffer co
 VKAPI_ATTR void VKAPI_CALL vkCmdSetRenderingAttachmentLocations(VkCommandBuffer commandBuffer, const VkRenderingAttachmentLocationInfo* pLocationInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetRenderingAttachmentLocations", "commandBuffer, pLocationInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetRenderingAttachmentLocations(ApiDumpInstance::current(), commandBuffer, pLocationInfo);
@@ -9289,7 +9289,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetRenderingAttachmentLocations(VkCommandBuffer 
 VKAPI_ATTR void VKAPI_CALL vkCmdSetRenderingInputAttachmentIndices(VkCommandBuffer commandBuffer, const VkRenderingInputAttachmentIndexInfo* pInputAttachmentIndexInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetRenderingInputAttachmentIndices", "commandBuffer, pInputAttachmentIndexInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetRenderingInputAttachmentIndices(ApiDumpInstance::current(), commandBuffer, pInputAttachmentIndexInfo);
@@ -9319,7 +9319,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetRenderingInputAttachmentIndices(VkCommandBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdBindDescriptorSets2(VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo*   pBindDescriptorSetsInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindDescriptorSets2", "commandBuffer, pBindDescriptorSetsInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindDescriptorSets2(ApiDumpInstance::current(), commandBuffer, pBindDescriptorSetsInfo);
@@ -9349,7 +9349,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindDescriptorSets2(VkCommandBuffer commandBuffe
 VKAPI_ATTR void VKAPI_CALL vkCmdPushConstants2(VkCommandBuffer commandBuffer, const VkPushConstantsInfo*        pPushConstantsInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdPushConstants2", "commandBuffer, pPushConstantsInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdPushConstants2(ApiDumpInstance::current(), commandBuffer, pPushConstantsInfo);
@@ -9379,7 +9379,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdPushConstants2(VkCommandBuffer commandBuffer, co
 VKAPI_ATTR void VKAPI_CALL vkCmdPushDescriptorSet2(VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo*    pPushDescriptorSetInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdPushDescriptorSet2", "commandBuffer, pPushDescriptorSetInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdPushDescriptorSet2(ApiDumpInstance::current(), commandBuffer, pPushDescriptorSetInfo);
@@ -9409,7 +9409,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdPushDescriptorSet2(VkCommandBuffer commandBuffer
 VKAPI_ATTR void VKAPI_CALL vkCmdPushDescriptorSetWithTemplate2(VkCommandBuffer commandBuffer, const VkPushDescriptorSetWithTemplateInfo* pPushDescriptorSetWithTemplateInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdPushDescriptorSetWithTemplate2", "commandBuffer, pPushDescriptorSetWithTemplateInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdPushDescriptorSetWithTemplate2(ApiDumpInstance::current(), commandBuffer, pPushDescriptorSetWithTemplateInfo);
@@ -9439,7 +9439,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdPushDescriptorSetWithTemplate2(VkCommandBuffer c
 VKAPI_ATTR VkResult VKAPI_CALL vkCopyMemoryToImage(VkDevice device, const VkCopyMemoryToImageInfo*    pCopyMemoryToImageInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCopyMemoryToImage", "device, pCopyMemoryToImageInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCopyMemoryToImage(ApiDumpInstance::current(), device, pCopyMemoryToImageInfo);
@@ -9470,7 +9470,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCopyMemoryToImage(VkDevice device, const VkCopy
 VKAPI_ATTR VkResult VKAPI_CALL vkCopyImageToMemory(VkDevice device, const VkCopyImageToMemoryInfo*    pCopyImageToMemoryInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCopyImageToMemory", "device, pCopyImageToMemoryInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCopyImageToMemory(ApiDumpInstance::current(), device, pCopyImageToMemoryInfo);
@@ -9501,7 +9501,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCopyImageToMemory(VkDevice device, const VkCopy
 VKAPI_ATTR VkResult VKAPI_CALL vkCopyImageToImage(VkDevice device, const VkCopyImageToImageInfo*    pCopyImageToImageInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCopyImageToImage", "device, pCopyImageToImageInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCopyImageToImage(ApiDumpInstance::current(), device, pCopyImageToImageInfo);
@@ -9532,7 +9532,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCopyImageToImage(VkDevice device, const VkCopyI
 VKAPI_ATTR VkResult VKAPI_CALL vkTransitionImageLayout(VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo*    pTransitions)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkTransitionImageLayout", "device, transitionCount, pTransitions");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkTransitionImageLayout(ApiDumpInstance::current(), device, transitionCount, pTransitions);
@@ -9563,7 +9563,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkTransitionImageLayout(VkDevice device, uint32_t
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateSwapchainKHR(VkDevice device, const VkSwapchainCreateInfoKHR* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkSwapchainKHR* pSwapchain)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateSwapchainKHR", "device, pCreateInfo, pAllocator, pSwapchain");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateSwapchainKHR(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pSwapchain);
@@ -9594,7 +9594,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateSwapchainKHR(VkDevice device, const VkSwa
 VKAPI_ATTR void VKAPI_CALL vkDestroySwapchainKHR(VkDevice device, VkSwapchainKHR swapchain, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroySwapchainKHR", "device, swapchain, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroySwapchainKHR(ApiDumpInstance::current(), device, swapchain, pAllocator);
@@ -9624,7 +9624,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroySwapchainKHR(VkDevice device, VkSwapchainKHR
 VKAPI_ATTR VkResult VKAPI_CALL vkGetSwapchainImagesKHR(VkDevice device, VkSwapchainKHR swapchain, uint32_t* pSwapchainImageCount, VkImage* pSwapchainImages)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetSwapchainImagesKHR", "device, swapchain, pSwapchainImageCount, pSwapchainImages");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetSwapchainImagesKHR(ApiDumpInstance::current(), device, swapchain, pSwapchainImageCount, pSwapchainImages);
@@ -9700,7 +9700,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkQueuePresentKHR(VkQueue queue, const VkPresentI
 VKAPI_ATTR VkResult VKAPI_CALL vkGetDeviceGroupPresentCapabilitiesKHR(VkDevice device, VkDeviceGroupPresentCapabilitiesKHR* pDeviceGroupPresentCapabilities)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceGroupPresentCapabilitiesKHR", "device, pDeviceGroupPresentCapabilities");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceGroupPresentCapabilitiesKHR(ApiDumpInstance::current(), device, pDeviceGroupPresentCapabilities);
@@ -9731,7 +9731,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetDeviceGroupPresentCapabilitiesKHR(VkDevice d
 VKAPI_ATTR VkResult VKAPI_CALL vkGetDeviceGroupSurfacePresentModesKHR(VkDevice device, VkSurfaceKHR surface, VkDeviceGroupPresentModeFlagsKHR* pModes)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceGroupSurfacePresentModesKHR", "device, surface, pModes");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceGroupSurfacePresentModesKHR(ApiDumpInstance::current(), device, surface, pModes);
@@ -9762,7 +9762,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetDeviceGroupSurfacePresentModesKHR(VkDevice d
 VKAPI_ATTR VkResult VKAPI_CALL vkAcquireNextImage2KHR(VkDevice device, const VkAcquireNextImageInfoKHR* pAcquireInfo, uint32_t* pImageIndex)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkAcquireNextImage2KHR", "device, pAcquireInfo, pImageIndex");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkAcquireNextImage2KHR(ApiDumpInstance::current(), device, pAcquireInfo, pImageIndex);
@@ -9793,7 +9793,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkAcquireNextImage2KHR(VkDevice device, const VkA
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateSharedSwapchainsKHR(VkDevice device, uint32_t swapchainCount, const VkSwapchainCreateInfoKHR* pCreateInfos, const VkAllocationCallbacks* pAllocator, VkSwapchainKHR* pSwapchains)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateSharedSwapchainsKHR", "device, swapchainCount, pCreateInfos, pAllocator, pSwapchains");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateSharedSwapchainsKHR(ApiDumpInstance::current(), device, swapchainCount, pCreateInfos, pAllocator, pSwapchains);
@@ -9824,7 +9824,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateSharedSwapchainsKHR(VkDevice device, uint
 VKAPI_ATTR VkResult VKAPI_CALL vkDebugMarkerSetObjectTagEXT(VkDevice device, const VkDebugMarkerObjectTagInfoEXT* pTagInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDebugMarkerSetObjectTagEXT", "device, pTagInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDebugMarkerSetObjectTagEXT(ApiDumpInstance::current(), device, pTagInfo);
@@ -9856,7 +9856,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkDebugMarkerSetObjectNameEXT(VkDevice device, co
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
     ApiDumpInstance::current().update_object_name_map(pNameInfo);
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDebugMarkerSetObjectNameEXT", "device, pNameInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDebugMarkerSetObjectNameEXT(ApiDumpInstance::current(), device, pNameInfo);
@@ -9887,7 +9887,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkDebugMarkerSetObjectNameEXT(VkDevice device, co
 VKAPI_ATTR void VKAPI_CALL vkCmdDebugMarkerBeginEXT(VkCommandBuffer commandBuffer, const VkDebugMarkerMarkerInfoEXT* pMarkerInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDebugMarkerBeginEXT", "commandBuffer, pMarkerInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDebugMarkerBeginEXT(ApiDumpInstance::current(), commandBuffer, pMarkerInfo);
@@ -9917,7 +9917,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDebugMarkerBeginEXT(VkCommandBuffer commandBuffe
 VKAPI_ATTR void VKAPI_CALL vkCmdDebugMarkerEndEXT(VkCommandBuffer commandBuffer)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDebugMarkerEndEXT", "commandBuffer");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDebugMarkerEndEXT(ApiDumpInstance::current(), commandBuffer);
@@ -9947,7 +9947,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDebugMarkerEndEXT(VkCommandBuffer commandBuffer)
 VKAPI_ATTR void VKAPI_CALL vkCmdDebugMarkerInsertEXT(VkCommandBuffer commandBuffer, const VkDebugMarkerMarkerInfoEXT* pMarkerInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDebugMarkerInsertEXT", "commandBuffer, pMarkerInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDebugMarkerInsertEXT(ApiDumpInstance::current(), commandBuffer, pMarkerInfo);
@@ -9977,7 +9977,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDebugMarkerInsertEXT(VkCommandBuffer commandBuff
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateVideoSessionKHR(VkDevice device, const VkVideoSessionCreateInfoKHR* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkVideoSessionKHR* pVideoSession)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateVideoSessionKHR", "device, pCreateInfo, pAllocator, pVideoSession");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateVideoSessionKHR(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pVideoSession);
@@ -10008,7 +10008,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateVideoSessionKHR(VkDevice device, const Vk
 VKAPI_ATTR void VKAPI_CALL vkDestroyVideoSessionKHR(VkDevice device, VkVideoSessionKHR videoSession, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyVideoSessionKHR", "device, videoSession, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyVideoSessionKHR(ApiDumpInstance::current(), device, videoSession, pAllocator);
@@ -10038,7 +10038,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyVideoSessionKHR(VkDevice device, VkVideoSess
 VKAPI_ATTR VkResult VKAPI_CALL vkGetVideoSessionMemoryRequirementsKHR(VkDevice device, VkVideoSessionKHR videoSession, uint32_t* pMemoryRequirementsCount, VkVideoSessionMemoryRequirementsKHR* pMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetVideoSessionMemoryRequirementsKHR", "device, videoSession, pMemoryRequirementsCount, pMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetVideoSessionMemoryRequirementsKHR(ApiDumpInstance::current(), device, videoSession, pMemoryRequirementsCount, pMemoryRequirements);
@@ -10069,7 +10069,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetVideoSessionMemoryRequirementsKHR(VkDevice d
 VKAPI_ATTR VkResult VKAPI_CALL vkBindVideoSessionMemoryKHR(VkDevice device, VkVideoSessionKHR videoSession, uint32_t bindSessionMemoryInfoCount, const VkBindVideoSessionMemoryInfoKHR* pBindSessionMemoryInfos)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkBindVideoSessionMemoryKHR", "device, videoSession, bindSessionMemoryInfoCount, pBindSessionMemoryInfos");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkBindVideoSessionMemoryKHR(ApiDumpInstance::current(), device, videoSession, bindSessionMemoryInfoCount, pBindSessionMemoryInfos);
@@ -10100,7 +10100,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkBindVideoSessionMemoryKHR(VkDevice device, VkVi
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateVideoSessionParametersKHR(VkDevice device, const VkVideoSessionParametersCreateInfoKHR* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkVideoSessionParametersKHR* pVideoSessionParameters)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateVideoSessionParametersKHR", "device, pCreateInfo, pAllocator, pVideoSessionParameters");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateVideoSessionParametersKHR(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pVideoSessionParameters);
@@ -10131,7 +10131,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateVideoSessionParametersKHR(VkDevice device
 VKAPI_ATTR VkResult VKAPI_CALL vkUpdateVideoSessionParametersKHR(VkDevice device, VkVideoSessionParametersKHR videoSessionParameters, const VkVideoSessionParametersUpdateInfoKHR* pUpdateInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkUpdateVideoSessionParametersKHR", "device, videoSessionParameters, pUpdateInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkUpdateVideoSessionParametersKHR(ApiDumpInstance::current(), device, videoSessionParameters, pUpdateInfo);
@@ -10162,7 +10162,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkUpdateVideoSessionParametersKHR(VkDevice device
 VKAPI_ATTR void VKAPI_CALL vkDestroyVideoSessionParametersKHR(VkDevice device, VkVideoSessionParametersKHR videoSessionParameters, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyVideoSessionParametersKHR", "device, videoSessionParameters, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyVideoSessionParametersKHR(ApiDumpInstance::current(), device, videoSessionParameters, pAllocator);
@@ -10192,7 +10192,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyVideoSessionParametersKHR(VkDevice device, V
 VKAPI_ATTR void VKAPI_CALL vkCmdBeginVideoCodingKHR(VkCommandBuffer commandBuffer, const VkVideoBeginCodingInfoKHR* pBeginInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBeginVideoCodingKHR", "commandBuffer, pBeginInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBeginVideoCodingKHR(ApiDumpInstance::current(), commandBuffer, pBeginInfo);
@@ -10222,7 +10222,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBeginVideoCodingKHR(VkCommandBuffer commandBuffe
 VKAPI_ATTR void VKAPI_CALL vkCmdEndVideoCodingKHR(VkCommandBuffer commandBuffer, const VkVideoEndCodingInfoKHR* pEndCodingInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdEndVideoCodingKHR", "commandBuffer, pEndCodingInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdEndVideoCodingKHR(ApiDumpInstance::current(), commandBuffer, pEndCodingInfo);
@@ -10252,7 +10252,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdEndVideoCodingKHR(VkCommandBuffer commandBuffer,
 VKAPI_ATTR void VKAPI_CALL vkCmdControlVideoCodingKHR(VkCommandBuffer commandBuffer, const VkVideoCodingControlInfoKHR* pCodingControlInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdControlVideoCodingKHR", "commandBuffer, pCodingControlInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdControlVideoCodingKHR(ApiDumpInstance::current(), commandBuffer, pCodingControlInfo);
@@ -10282,7 +10282,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdControlVideoCodingKHR(VkCommandBuffer commandBuf
 VKAPI_ATTR void VKAPI_CALL vkCmdDecodeVideoKHR(VkCommandBuffer commandBuffer, const VkVideoDecodeInfoKHR* pDecodeInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDecodeVideoKHR", "commandBuffer, pDecodeInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDecodeVideoKHR(ApiDumpInstance::current(), commandBuffer, pDecodeInfo);
@@ -10312,7 +10312,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDecodeVideoKHR(VkCommandBuffer commandBuffer, co
 VKAPI_ATTR void VKAPI_CALL vkCmdBindTransformFeedbackBuffersEXT(VkCommandBuffer commandBuffer, uint32_t firstBinding, uint32_t bindingCount, const VkBuffer* pBuffers, const VkDeviceSize* pOffsets, const VkDeviceSize* pSizes)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindTransformFeedbackBuffersEXT", "commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindTransformFeedbackBuffersEXT(ApiDumpInstance::current(), commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes);
@@ -10342,7 +10342,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindTransformFeedbackBuffersEXT(VkCommandBuffer 
 VKAPI_ATTR void VKAPI_CALL vkCmdBeginTransformFeedbackEXT(VkCommandBuffer commandBuffer, uint32_t firstCounterBuffer, uint32_t counterBufferCount, const VkBuffer* pCounterBuffers, const VkDeviceSize* pCounterBufferOffsets)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBeginTransformFeedbackEXT", "commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBeginTransformFeedbackEXT(ApiDumpInstance::current(), commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
@@ -10372,7 +10372,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBeginTransformFeedbackEXT(VkCommandBuffer comman
 VKAPI_ATTR void VKAPI_CALL vkCmdEndTransformFeedbackEXT(VkCommandBuffer commandBuffer, uint32_t firstCounterBuffer, uint32_t counterBufferCount, const VkBuffer* pCounterBuffers, const VkDeviceSize* pCounterBufferOffsets)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdEndTransformFeedbackEXT", "commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdEndTransformFeedbackEXT(ApiDumpInstance::current(), commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
@@ -10402,7 +10402,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdEndTransformFeedbackEXT(VkCommandBuffer commandB
 VKAPI_ATTR void VKAPI_CALL vkCmdBeginQueryIndexedEXT(VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t query, VkQueryControlFlags flags, uint32_t index)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBeginQueryIndexedEXT", "commandBuffer, queryPool, query, flags, index");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBeginQueryIndexedEXT(ApiDumpInstance::current(), commandBuffer, queryPool, query, flags, index);
@@ -10432,7 +10432,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBeginQueryIndexedEXT(VkCommandBuffer commandBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdEndQueryIndexedEXT(VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t query, uint32_t index)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdEndQueryIndexedEXT", "commandBuffer, queryPool, query, index");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdEndQueryIndexedEXT(ApiDumpInstance::current(), commandBuffer, queryPool, query, index);
@@ -10462,7 +10462,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdEndQueryIndexedEXT(VkCommandBuffer commandBuffer
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndirectByteCountEXT(VkCommandBuffer commandBuffer, uint32_t instanceCount, uint32_t firstInstance, VkBuffer counterBuffer, VkDeviceSize counterBufferOffset, uint32_t counterOffset, uint32_t vertexStride)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawIndirectByteCountEXT", "commandBuffer, instanceCount, firstInstance, counterBuffer, counterBufferOffset, counterOffset, vertexStride");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawIndirectByteCountEXT(ApiDumpInstance::current(), commandBuffer, instanceCount, firstInstance, counterBuffer, counterBufferOffset, counterOffset, vertexStride);
@@ -10492,7 +10492,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndirectByteCountEXT(VkCommandBuffer command
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateCuModuleNVX(VkDevice device, const VkCuModuleCreateInfoNVX* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkCuModuleNVX* pModule)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateCuModuleNVX", "device, pCreateInfo, pAllocator, pModule");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateCuModuleNVX(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pModule);
@@ -10523,7 +10523,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateCuModuleNVX(VkDevice device, const VkCuMo
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateCuFunctionNVX(VkDevice device, const VkCuFunctionCreateInfoNVX* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkCuFunctionNVX* pFunction)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateCuFunctionNVX", "device, pCreateInfo, pAllocator, pFunction");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateCuFunctionNVX(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pFunction);
@@ -10554,7 +10554,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateCuFunctionNVX(VkDevice device, const VkCu
 VKAPI_ATTR void VKAPI_CALL vkDestroyCuModuleNVX(VkDevice device, VkCuModuleNVX module, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyCuModuleNVX", "device, module, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyCuModuleNVX(ApiDumpInstance::current(), device, module, pAllocator);
@@ -10584,7 +10584,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyCuModuleNVX(VkDevice device, VkCuModuleNVX m
 VKAPI_ATTR void VKAPI_CALL vkDestroyCuFunctionNVX(VkDevice device, VkCuFunctionNVX function, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyCuFunctionNVX", "device, function, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyCuFunctionNVX(ApiDumpInstance::current(), device, function, pAllocator);
@@ -10614,7 +10614,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyCuFunctionNVX(VkDevice device, VkCuFunctionN
 VKAPI_ATTR void VKAPI_CALL vkCmdCuLaunchKernelNVX(VkCommandBuffer commandBuffer, const VkCuLaunchInfoNVX* pLaunchInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCuLaunchKernelNVX", "commandBuffer, pLaunchInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCuLaunchKernelNVX(ApiDumpInstance::current(), commandBuffer, pLaunchInfo);
@@ -10644,7 +10644,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCuLaunchKernelNVX(VkCommandBuffer commandBuffer,
 VKAPI_ATTR uint32_t VKAPI_CALL vkGetImageViewHandleNVX(VkDevice device, const VkImageViewHandleInfoNVX* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetImageViewHandleNVX", "device, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetImageViewHandleNVX(ApiDumpInstance::current(), device, pInfo);
@@ -10675,7 +10675,7 @@ VKAPI_ATTR uint32_t VKAPI_CALL vkGetImageViewHandleNVX(VkDevice device, const Vk
 VKAPI_ATTR uint64_t VKAPI_CALL vkGetImageViewHandle64NVX(VkDevice device, const VkImageViewHandleInfoNVX* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetImageViewHandle64NVX", "device, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetImageViewHandle64NVX(ApiDumpInstance::current(), device, pInfo);
@@ -10706,7 +10706,7 @@ VKAPI_ATTR uint64_t VKAPI_CALL vkGetImageViewHandle64NVX(VkDevice device, const 
 VKAPI_ATTR VkResult VKAPI_CALL vkGetImageViewAddressNVX(VkDevice device, VkImageView imageView, VkImageViewAddressPropertiesNVX* pProperties)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetImageViewAddressNVX", "device, imageView, pProperties");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetImageViewAddressNVX(ApiDumpInstance::current(), device, imageView, pProperties);
@@ -10737,7 +10737,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetImageViewAddressNVX(VkDevice device, VkImage
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndirectCountAMD(VkCommandBuffer commandBuffer, VkBuffer buffer, VkDeviceSize offset, VkBuffer countBuffer, VkDeviceSize countBufferOffset, uint32_t maxDrawCount, uint32_t stride)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawIndirectCountAMD", "commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawIndirectCountAMD(ApiDumpInstance::current(), commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
@@ -10767,7 +10767,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndirectCountAMD(VkCommandBuffer commandBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndexedIndirectCountAMD(VkCommandBuffer commandBuffer, VkBuffer buffer, VkDeviceSize offset, VkBuffer countBuffer, VkDeviceSize countBufferOffset, uint32_t maxDrawCount, uint32_t stride)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawIndexedIndirectCountAMD", "commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawIndexedIndirectCountAMD(ApiDumpInstance::current(), commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
@@ -10797,7 +10797,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndexedIndirectCountAMD(VkCommandBuffer comm
 VKAPI_ATTR VkResult VKAPI_CALL vkGetShaderInfoAMD(VkDevice device, VkPipeline pipeline, VkShaderStageFlagBits shaderStage, VkShaderInfoTypeAMD infoType, size_t* pInfoSize, void* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetShaderInfoAMD", "device, pipeline, shaderStage, infoType, pInfoSize, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetShaderInfoAMD(ApiDumpInstance::current(), device, pipeline, shaderStage, infoType, pInfoSize, pInfo);
@@ -10828,7 +10828,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetShaderInfoAMD(VkDevice device, VkPipeline pi
 VKAPI_ATTR void VKAPI_CALL vkCmdBeginRenderingKHR(VkCommandBuffer                   commandBuffer, const VkRenderingInfo*                              pRenderingInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBeginRenderingKHR", "commandBuffer, pRenderingInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBeginRenderingKHR(ApiDumpInstance::current(), commandBuffer, pRenderingInfo);
@@ -10858,7 +10858,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBeginRenderingKHR(VkCommandBuffer               
 VKAPI_ATTR void VKAPI_CALL vkCmdEndRenderingKHR(VkCommandBuffer                   commandBuffer)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdEndRenderingKHR", "commandBuffer");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdEndRenderingKHR(ApiDumpInstance::current(), commandBuffer);
@@ -10889,7 +10889,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdEndRenderingKHR(VkCommandBuffer                 
 VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryWin32HandleNV(VkDevice device, VkDeviceMemory memory, VkExternalMemoryHandleTypeFlagsNV handleType, HANDLE* pHandle)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetMemoryWin32HandleNV", "device, memory, handleType, pHandle");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetMemoryWin32HandleNV(ApiDumpInstance::current(), device, memory, handleType, pHandle);
@@ -10921,7 +10921,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryWin32HandleNV(VkDevice device, VkDevic
 VKAPI_ATTR void VKAPI_CALL vkGetDeviceGroupPeerMemoryFeaturesKHR(VkDevice device, uint32_t heapIndex, uint32_t localDeviceIndex, uint32_t remoteDeviceIndex, VkPeerMemoryFeatureFlags* pPeerMemoryFeatures)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceGroupPeerMemoryFeaturesKHR", "device, heapIndex, localDeviceIndex, remoteDeviceIndex, pPeerMemoryFeatures");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceGroupPeerMemoryFeaturesKHR(ApiDumpInstance::current(), device, heapIndex, localDeviceIndex, remoteDeviceIndex, pPeerMemoryFeatures);
@@ -10951,7 +10951,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDeviceGroupPeerMemoryFeaturesKHR(VkDevice device
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDeviceMaskKHR(VkCommandBuffer commandBuffer, uint32_t deviceMask)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDeviceMaskKHR", "commandBuffer, deviceMask");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDeviceMaskKHR(ApiDumpInstance::current(), commandBuffer, deviceMask);
@@ -10981,7 +10981,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDeviceMaskKHR(VkCommandBuffer commandBuffer, 
 VKAPI_ATTR void VKAPI_CALL vkCmdDispatchBaseKHR(VkCommandBuffer commandBuffer, uint32_t baseGroupX, uint32_t baseGroupY, uint32_t baseGroupZ, uint32_t groupCountX, uint32_t groupCountY, uint32_t groupCountZ)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDispatchBaseKHR", "commandBuffer, baseGroupX, baseGroupY, baseGroupZ, groupCountX, groupCountY, groupCountZ");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDispatchBaseKHR(ApiDumpInstance::current(), commandBuffer, baseGroupX, baseGroupY, baseGroupZ, groupCountX, groupCountY, groupCountZ);
@@ -11011,7 +11011,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDispatchBaseKHR(VkCommandBuffer commandBuffer, u
 VKAPI_ATTR void VKAPI_CALL vkTrimCommandPoolKHR(VkDevice device, VkCommandPool commandPool, VkCommandPoolTrimFlags flags)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkTrimCommandPoolKHR", "device, commandPool, flags");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkTrimCommandPoolKHR(ApiDumpInstance::current(), device, commandPool, flags);
@@ -11042,7 +11042,7 @@ VKAPI_ATTR void VKAPI_CALL vkTrimCommandPoolKHR(VkDevice device, VkCommandPool c
 VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryWin32HandleKHR(VkDevice device, const VkMemoryGetWin32HandleInfoKHR* pGetWin32HandleInfo, HANDLE* pHandle)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetMemoryWin32HandleKHR", "device, pGetWin32HandleInfo, pHandle");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetMemoryWin32HandleKHR(ApiDumpInstance::current(), device, pGetWin32HandleInfo, pHandle);
@@ -11075,7 +11075,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryWin32HandleKHR(VkDevice device, const 
 VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryWin32HandlePropertiesKHR(VkDevice device, VkExternalMemoryHandleTypeFlagBits handleType, HANDLE handle, VkMemoryWin32HandlePropertiesKHR* pMemoryWin32HandleProperties)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetMemoryWin32HandlePropertiesKHR", "device, handleType, handle, pMemoryWin32HandleProperties");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetMemoryWin32HandlePropertiesKHR(ApiDumpInstance::current(), device, handleType, handle, pMemoryWin32HandleProperties);
@@ -11107,7 +11107,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryWin32HandlePropertiesKHR(VkDevice devi
 VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryFdKHR(VkDevice device, const VkMemoryGetFdInfoKHR* pGetFdInfo, int* pFd)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetMemoryFdKHR", "device, pGetFdInfo, pFd");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetMemoryFdKHR(ApiDumpInstance::current(), device, pGetFdInfo, pFd);
@@ -11138,7 +11138,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryFdKHR(VkDevice device, const VkMemoryG
 VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryFdPropertiesKHR(VkDevice device, VkExternalMemoryHandleTypeFlagBits handleType, int fd, VkMemoryFdPropertiesKHR* pMemoryFdProperties)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetMemoryFdPropertiesKHR", "device, handleType, fd, pMemoryFdProperties");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetMemoryFdPropertiesKHR(ApiDumpInstance::current(), device, handleType, fd, pMemoryFdProperties);
@@ -11170,7 +11170,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryFdPropertiesKHR(VkDevice device, VkExt
 VKAPI_ATTR VkResult VKAPI_CALL vkImportSemaphoreWin32HandleKHR(VkDevice device, const VkImportSemaphoreWin32HandleInfoKHR* pImportSemaphoreWin32HandleInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkImportSemaphoreWin32HandleKHR", "device, pImportSemaphoreWin32HandleInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkImportSemaphoreWin32HandleKHR(ApiDumpInstance::current(), device, pImportSemaphoreWin32HandleInfo);
@@ -11203,7 +11203,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkImportSemaphoreWin32HandleKHR(VkDevice device, 
 VKAPI_ATTR VkResult VKAPI_CALL vkGetSemaphoreWin32HandleKHR(VkDevice device, const VkSemaphoreGetWin32HandleInfoKHR* pGetWin32HandleInfo, HANDLE* pHandle)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetSemaphoreWin32HandleKHR", "device, pGetWin32HandleInfo, pHandle");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetSemaphoreWin32HandleKHR(ApiDumpInstance::current(), device, pGetWin32HandleInfo, pHandle);
@@ -11235,7 +11235,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetSemaphoreWin32HandleKHR(VkDevice device, con
 VKAPI_ATTR VkResult VKAPI_CALL vkImportSemaphoreFdKHR(VkDevice device, const VkImportSemaphoreFdInfoKHR* pImportSemaphoreFdInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkImportSemaphoreFdKHR", "device, pImportSemaphoreFdInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkImportSemaphoreFdKHR(ApiDumpInstance::current(), device, pImportSemaphoreFdInfo);
@@ -11266,7 +11266,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkImportSemaphoreFdKHR(VkDevice device, const VkI
 VKAPI_ATTR VkResult VKAPI_CALL vkGetSemaphoreFdKHR(VkDevice device, const VkSemaphoreGetFdInfoKHR* pGetFdInfo, int* pFd)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetSemaphoreFdKHR", "device, pGetFdInfo, pFd");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetSemaphoreFdKHR(ApiDumpInstance::current(), device, pGetFdInfo, pFd);
@@ -11297,7 +11297,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetSemaphoreFdKHR(VkDevice device, const VkSema
 VKAPI_ATTR void VKAPI_CALL vkCmdPushDescriptorSetKHR(VkCommandBuffer commandBuffer, VkPipelineBindPoint pipelineBindPoint, VkPipelineLayout layout, uint32_t set, uint32_t descriptorWriteCount, const VkWriteDescriptorSet* pDescriptorWrites)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdPushDescriptorSetKHR", "commandBuffer, pipelineBindPoint, layout, set, descriptorWriteCount, pDescriptorWrites");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdPushDescriptorSetKHR(ApiDumpInstance::current(), commandBuffer, pipelineBindPoint, layout, set, descriptorWriteCount, pDescriptorWrites);
@@ -11327,7 +11327,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdPushDescriptorSetKHR(VkCommandBuffer commandBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdPushDescriptorSetWithTemplateKHR(VkCommandBuffer commandBuffer, VkDescriptorUpdateTemplate descriptorUpdateTemplate, VkPipelineLayout layout, uint32_t set, const void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdPushDescriptorSetWithTemplateKHR", "commandBuffer, descriptorUpdateTemplate, layout, set, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdPushDescriptorSetWithTemplateKHR(ApiDumpInstance::current(), commandBuffer, descriptorUpdateTemplate, layout, set, pData);
@@ -11357,7 +11357,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdPushDescriptorSetWithTemplateKHR(VkCommandBuffer
 VKAPI_ATTR void VKAPI_CALL vkCmdBeginConditionalRenderingEXT(VkCommandBuffer commandBuffer, const VkConditionalRenderingBeginInfoEXT* pConditionalRenderingBegin)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBeginConditionalRenderingEXT", "commandBuffer, pConditionalRenderingBegin");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBeginConditionalRenderingEXT(ApiDumpInstance::current(), commandBuffer, pConditionalRenderingBegin);
@@ -11387,7 +11387,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBeginConditionalRenderingEXT(VkCommandBuffer com
 VKAPI_ATTR void VKAPI_CALL vkCmdEndConditionalRenderingEXT(VkCommandBuffer commandBuffer)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdEndConditionalRenderingEXT", "commandBuffer");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdEndConditionalRenderingEXT(ApiDumpInstance::current(), commandBuffer);
@@ -11417,7 +11417,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdEndConditionalRenderingEXT(VkCommandBuffer comma
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateDescriptorUpdateTemplateKHR(VkDevice device, const VkDescriptorUpdateTemplateCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkDescriptorUpdateTemplate* pDescriptorUpdateTemplate)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateDescriptorUpdateTemplateKHR", "device, pCreateInfo, pAllocator, pDescriptorUpdateTemplate");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateDescriptorUpdateTemplateKHR(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pDescriptorUpdateTemplate);
@@ -11448,7 +11448,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateDescriptorUpdateTemplateKHR(VkDevice devi
 VKAPI_ATTR void VKAPI_CALL vkDestroyDescriptorUpdateTemplateKHR(VkDevice device, VkDescriptorUpdateTemplate descriptorUpdateTemplate, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyDescriptorUpdateTemplateKHR", "device, descriptorUpdateTemplate, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyDescriptorUpdateTemplateKHR(ApiDumpInstance::current(), device, descriptorUpdateTemplate, pAllocator);
@@ -11478,7 +11478,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyDescriptorUpdateTemplateKHR(VkDevice device,
 VKAPI_ATTR void VKAPI_CALL vkUpdateDescriptorSetWithTemplateKHR(VkDevice device, VkDescriptorSet descriptorSet, VkDescriptorUpdateTemplate descriptorUpdateTemplate, const void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkUpdateDescriptorSetWithTemplateKHR", "device, descriptorSet, descriptorUpdateTemplate, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkUpdateDescriptorSetWithTemplateKHR(ApiDumpInstance::current(), device, descriptorSet, descriptorUpdateTemplate, pData);
@@ -11508,7 +11508,7 @@ VKAPI_ATTR void VKAPI_CALL vkUpdateDescriptorSetWithTemplateKHR(VkDevice device,
 VKAPI_ATTR void VKAPI_CALL vkCmdSetViewportWScalingNV(VkCommandBuffer commandBuffer, uint32_t firstViewport, uint32_t viewportCount, const VkViewportWScalingNV* pViewportWScalings)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetViewportWScalingNV", "commandBuffer, firstViewport, viewportCount, pViewportWScalings");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetViewportWScalingNV(ApiDumpInstance::current(), commandBuffer, firstViewport, viewportCount, pViewportWScalings);
@@ -11538,7 +11538,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetViewportWScalingNV(VkCommandBuffer commandBuf
 VKAPI_ATTR VkResult VKAPI_CALL vkDisplayPowerControlEXT(VkDevice device, VkDisplayKHR display, const VkDisplayPowerInfoEXT* pDisplayPowerInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDisplayPowerControlEXT", "device, display, pDisplayPowerInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDisplayPowerControlEXT(ApiDumpInstance::current(), device, display, pDisplayPowerInfo);
@@ -11569,7 +11569,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkDisplayPowerControlEXT(VkDevice device, VkDispl
 VKAPI_ATTR VkResult VKAPI_CALL vkRegisterDeviceEventEXT(VkDevice device, const VkDeviceEventInfoEXT* pDeviceEventInfo, const VkAllocationCallbacks* pAllocator, VkFence* pFence)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkRegisterDeviceEventEXT", "device, pDeviceEventInfo, pAllocator, pFence");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkRegisterDeviceEventEXT(ApiDumpInstance::current(), device, pDeviceEventInfo, pAllocator, pFence);
@@ -11600,7 +11600,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkRegisterDeviceEventEXT(VkDevice device, const V
 VKAPI_ATTR VkResult VKAPI_CALL vkRegisterDisplayEventEXT(VkDevice device, VkDisplayKHR display, const VkDisplayEventInfoEXT* pDisplayEventInfo, const VkAllocationCallbacks* pAllocator, VkFence* pFence)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkRegisterDisplayEventEXT", "device, display, pDisplayEventInfo, pAllocator, pFence");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkRegisterDisplayEventEXT(ApiDumpInstance::current(), device, display, pDisplayEventInfo, pAllocator, pFence);
@@ -11631,7 +11631,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkRegisterDisplayEventEXT(VkDevice device, VkDisp
 VKAPI_ATTR VkResult VKAPI_CALL vkGetSwapchainCounterEXT(VkDevice device, VkSwapchainKHR swapchain, VkSurfaceCounterFlagBitsEXT counter, uint64_t* pCounterValue)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetSwapchainCounterEXT", "device, swapchain, counter, pCounterValue");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetSwapchainCounterEXT(ApiDumpInstance::current(), device, swapchain, counter, pCounterValue);
@@ -11662,7 +11662,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetSwapchainCounterEXT(VkDevice device, VkSwapc
 VKAPI_ATTR VkResult VKAPI_CALL vkGetRefreshCycleDurationGOOGLE(VkDevice device, VkSwapchainKHR swapchain, VkRefreshCycleDurationGOOGLE* pDisplayTimingProperties)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetRefreshCycleDurationGOOGLE", "device, swapchain, pDisplayTimingProperties");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetRefreshCycleDurationGOOGLE(ApiDumpInstance::current(), device, swapchain, pDisplayTimingProperties);
@@ -11693,7 +11693,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetRefreshCycleDurationGOOGLE(VkDevice device, 
 VKAPI_ATTR VkResult VKAPI_CALL vkGetPastPresentationTimingGOOGLE(VkDevice device, VkSwapchainKHR swapchain, uint32_t* pPresentationTimingCount, VkPastPresentationTimingGOOGLE* pPresentationTimings)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetPastPresentationTimingGOOGLE", "device, swapchain, pPresentationTimingCount, pPresentationTimings");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetPastPresentationTimingGOOGLE(ApiDumpInstance::current(), device, swapchain, pPresentationTimingCount, pPresentationTimings);
@@ -11724,7 +11724,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetPastPresentationTimingGOOGLE(VkDevice device
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDiscardRectangleEXT(VkCommandBuffer commandBuffer, uint32_t firstDiscardRectangle, uint32_t discardRectangleCount, const VkRect2D* pDiscardRectangles)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDiscardRectangleEXT", "commandBuffer, firstDiscardRectangle, discardRectangleCount, pDiscardRectangles");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDiscardRectangleEXT(ApiDumpInstance::current(), commandBuffer, firstDiscardRectangle, discardRectangleCount, pDiscardRectangles);
@@ -11754,7 +11754,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDiscardRectangleEXT(VkCommandBuffer commandBu
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDiscardRectangleEnableEXT(VkCommandBuffer commandBuffer, VkBool32 discardRectangleEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDiscardRectangleEnableEXT", "commandBuffer, discardRectangleEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDiscardRectangleEnableEXT(ApiDumpInstance::current(), commandBuffer, discardRectangleEnable);
@@ -11784,7 +11784,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDiscardRectangleEnableEXT(VkCommandBuffer com
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDiscardRectangleModeEXT(VkCommandBuffer commandBuffer, VkDiscardRectangleModeEXT discardRectangleMode)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDiscardRectangleModeEXT", "commandBuffer, discardRectangleMode");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDiscardRectangleModeEXT(ApiDumpInstance::current(), commandBuffer, discardRectangleMode);
@@ -11814,7 +11814,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDiscardRectangleModeEXT(VkCommandBuffer comma
 VKAPI_ATTR void VKAPI_CALL vkSetHdrMetadataEXT(VkDevice device, uint32_t swapchainCount, const VkSwapchainKHR* pSwapchains, const VkHdrMetadataEXT* pMetadata)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkSetHdrMetadataEXT", "device, swapchainCount, pSwapchains, pMetadata");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkSetHdrMetadataEXT(ApiDumpInstance::current(), device, swapchainCount, pSwapchains, pMetadata);
@@ -11844,7 +11844,7 @@ VKAPI_ATTR void VKAPI_CALL vkSetHdrMetadataEXT(VkDevice device, uint32_t swapcha
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateRenderPass2KHR(VkDevice device, const VkRenderPassCreateInfo2* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkRenderPass* pRenderPass)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateRenderPass2KHR", "device, pCreateInfo, pAllocator, pRenderPass");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateRenderPass2KHR(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pRenderPass);
@@ -11875,7 +11875,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateRenderPass2KHR(VkDevice device, const VkR
 VKAPI_ATTR void VKAPI_CALL vkCmdBeginRenderPass2KHR(VkCommandBuffer commandBuffer, const VkRenderPassBeginInfo*      pRenderPassBegin, const VkSubpassBeginInfo*      pSubpassBeginInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBeginRenderPass2KHR", "commandBuffer, pRenderPassBegin, pSubpassBeginInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBeginRenderPass2KHR(ApiDumpInstance::current(), commandBuffer, pRenderPassBegin, pSubpassBeginInfo);
@@ -11905,7 +11905,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBeginRenderPass2KHR(VkCommandBuffer commandBuffe
 VKAPI_ATTR void VKAPI_CALL vkCmdNextSubpass2KHR(VkCommandBuffer commandBuffer, const VkSubpassBeginInfo*      pSubpassBeginInfo, const VkSubpassEndInfo*        pSubpassEndInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdNextSubpass2KHR", "commandBuffer, pSubpassBeginInfo, pSubpassEndInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdNextSubpass2KHR(ApiDumpInstance::current(), commandBuffer, pSubpassBeginInfo, pSubpassEndInfo);
@@ -11935,7 +11935,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdNextSubpass2KHR(VkCommandBuffer commandBuffer, c
 VKAPI_ATTR void VKAPI_CALL vkCmdEndRenderPass2KHR(VkCommandBuffer commandBuffer, const VkSubpassEndInfo*        pSubpassEndInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdEndRenderPass2KHR", "commandBuffer, pSubpassEndInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdEndRenderPass2KHR(ApiDumpInstance::current(), commandBuffer, pSubpassEndInfo);
@@ -11965,7 +11965,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdEndRenderPass2KHR(VkCommandBuffer commandBuffer,
 VKAPI_ATTR VkResult VKAPI_CALL vkGetSwapchainStatusKHR(VkDevice device, VkSwapchainKHR swapchain)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetSwapchainStatusKHR", "device, swapchain");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetSwapchainStatusKHR(ApiDumpInstance::current(), device, swapchain);
@@ -11997,7 +11997,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetSwapchainStatusKHR(VkDevice device, VkSwapch
 VKAPI_ATTR VkResult VKAPI_CALL vkImportFenceWin32HandleKHR(VkDevice device, const VkImportFenceWin32HandleInfoKHR* pImportFenceWin32HandleInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkImportFenceWin32HandleKHR", "device, pImportFenceWin32HandleInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkImportFenceWin32HandleKHR(ApiDumpInstance::current(), device, pImportFenceWin32HandleInfo);
@@ -12030,7 +12030,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkImportFenceWin32HandleKHR(VkDevice device, cons
 VKAPI_ATTR VkResult VKAPI_CALL vkGetFenceWin32HandleKHR(VkDevice device, const VkFenceGetWin32HandleInfoKHR* pGetWin32HandleInfo, HANDLE* pHandle)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetFenceWin32HandleKHR", "device, pGetWin32HandleInfo, pHandle");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetFenceWin32HandleKHR(ApiDumpInstance::current(), device, pGetWin32HandleInfo, pHandle);
@@ -12062,7 +12062,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetFenceWin32HandleKHR(VkDevice device, const V
 VKAPI_ATTR VkResult VKAPI_CALL vkImportFenceFdKHR(VkDevice device, const VkImportFenceFdInfoKHR* pImportFenceFdInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkImportFenceFdKHR", "device, pImportFenceFdInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkImportFenceFdKHR(ApiDumpInstance::current(), device, pImportFenceFdInfo);
@@ -12093,7 +12093,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkImportFenceFdKHR(VkDevice device, const VkImpor
 VKAPI_ATTR VkResult VKAPI_CALL vkGetFenceFdKHR(VkDevice device, const VkFenceGetFdInfoKHR* pGetFdInfo, int* pFd)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetFenceFdKHR", "device, pGetFdInfo, pFd");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetFenceFdKHR(ApiDumpInstance::current(), device, pGetFdInfo, pFd);
@@ -12124,7 +12124,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetFenceFdKHR(VkDevice device, const VkFenceGet
 VKAPI_ATTR VkResult VKAPI_CALL vkAcquireProfilingLockKHR(VkDevice device, const VkAcquireProfilingLockInfoKHR* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkAcquireProfilingLockKHR", "device, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkAcquireProfilingLockKHR(ApiDumpInstance::current(), device, pInfo);
@@ -12155,7 +12155,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkAcquireProfilingLockKHR(VkDevice device, const 
 VKAPI_ATTR void VKAPI_CALL vkReleaseProfilingLockKHR(VkDevice device)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkReleaseProfilingLockKHR", "device");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkReleaseProfilingLockKHR(ApiDumpInstance::current(), device);
@@ -12186,7 +12186,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkSetDebugUtilsObjectNameEXT(VkDevice device, con
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
     ApiDumpInstance::current().update_object_name_map(pNameInfo);
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkSetDebugUtilsObjectNameEXT", "device, pNameInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkSetDebugUtilsObjectNameEXT(ApiDumpInstance::current(), device, pNameInfo);
@@ -12217,7 +12217,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkSetDebugUtilsObjectNameEXT(VkDevice device, con
 VKAPI_ATTR VkResult VKAPI_CALL vkSetDebugUtilsObjectTagEXT(VkDevice device, const VkDebugUtilsObjectTagInfoEXT* pTagInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkSetDebugUtilsObjectTagEXT", "device, pTagInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkSetDebugUtilsObjectTagEXT(ApiDumpInstance::current(), device, pTagInfo);
@@ -12248,7 +12248,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkSetDebugUtilsObjectTagEXT(VkDevice device, cons
 VKAPI_ATTR void VKAPI_CALL vkQueueBeginDebugUtilsLabelEXT(VkQueue queue, const VkDebugUtilsLabelEXT* pLabelInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkQueueBeginDebugUtilsLabelEXT", "queue, pLabelInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkQueueBeginDebugUtilsLabelEXT(ApiDumpInstance::current(), queue, pLabelInfo);
@@ -12278,7 +12278,7 @@ VKAPI_ATTR void VKAPI_CALL vkQueueBeginDebugUtilsLabelEXT(VkQueue queue, const V
 VKAPI_ATTR void VKAPI_CALL vkQueueEndDebugUtilsLabelEXT(VkQueue queue)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkQueueEndDebugUtilsLabelEXT", "queue");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkQueueEndDebugUtilsLabelEXT(ApiDumpInstance::current(), queue);
@@ -12308,7 +12308,7 @@ VKAPI_ATTR void VKAPI_CALL vkQueueEndDebugUtilsLabelEXT(VkQueue queue)
 VKAPI_ATTR void VKAPI_CALL vkQueueInsertDebugUtilsLabelEXT(VkQueue queue, const VkDebugUtilsLabelEXT* pLabelInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkQueueInsertDebugUtilsLabelEXT", "queue, pLabelInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkQueueInsertDebugUtilsLabelEXT(ApiDumpInstance::current(), queue, pLabelInfo);
@@ -12338,7 +12338,7 @@ VKAPI_ATTR void VKAPI_CALL vkQueueInsertDebugUtilsLabelEXT(VkQueue queue, const 
 VKAPI_ATTR void VKAPI_CALL vkCmdBeginDebugUtilsLabelEXT(VkCommandBuffer commandBuffer, const VkDebugUtilsLabelEXT* pLabelInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBeginDebugUtilsLabelEXT", "commandBuffer, pLabelInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBeginDebugUtilsLabelEXT(ApiDumpInstance::current(), commandBuffer, pLabelInfo);
@@ -12368,7 +12368,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBeginDebugUtilsLabelEXT(VkCommandBuffer commandB
 VKAPI_ATTR void VKAPI_CALL vkCmdEndDebugUtilsLabelEXT(VkCommandBuffer commandBuffer)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdEndDebugUtilsLabelEXT", "commandBuffer");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdEndDebugUtilsLabelEXT(ApiDumpInstance::current(), commandBuffer);
@@ -12398,7 +12398,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdEndDebugUtilsLabelEXT(VkCommandBuffer commandBuf
 VKAPI_ATTR void VKAPI_CALL vkCmdInsertDebugUtilsLabelEXT(VkCommandBuffer commandBuffer, const VkDebugUtilsLabelEXT* pLabelInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdInsertDebugUtilsLabelEXT", "commandBuffer, pLabelInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdInsertDebugUtilsLabelEXT(ApiDumpInstance::current(), commandBuffer, pLabelInfo);
@@ -12429,7 +12429,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdInsertDebugUtilsLabelEXT(VkCommandBuffer command
 VKAPI_ATTR VkResult VKAPI_CALL vkGetAndroidHardwareBufferPropertiesANDROID(VkDevice device, const struct AHardwareBuffer* buffer, VkAndroidHardwareBufferPropertiesANDROID* pProperties)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetAndroidHardwareBufferPropertiesANDROID", "device, buffer, pProperties");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetAndroidHardwareBufferPropertiesANDROID(ApiDumpInstance::current(), device, buffer, pProperties);
@@ -12462,7 +12462,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetAndroidHardwareBufferPropertiesANDROID(VkDev
 VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryAndroidHardwareBufferANDROID(VkDevice device, const VkMemoryGetAndroidHardwareBufferInfoANDROID* pInfo, struct AHardwareBuffer** pBuffer)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetMemoryAndroidHardwareBufferANDROID", "device, pInfo, pBuffer");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetMemoryAndroidHardwareBufferANDROID(ApiDumpInstance::current(), device, pInfo, pBuffer);
@@ -12495,7 +12495,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryAndroidHardwareBufferANDROID(VkDevice 
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateExecutionGraphPipelinesAMDX(VkDevice                                        device, VkPipelineCache                 pipelineCache, uint32_t                                        createInfoCount, const VkExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, const VkAllocationCallbacks*    pAllocator, VkPipeline*               pPipelines)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateExecutionGraphPipelinesAMDX", "device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateExecutionGraphPipelinesAMDX(ApiDumpInstance::current(), device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines);
@@ -12528,7 +12528,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateExecutionGraphPipelinesAMDX(VkDevice     
 VKAPI_ATTR VkResult VKAPI_CALL vkGetExecutionGraphPipelineScratchSizeAMDX(VkDevice                                        device, VkPipeline                                      executionGraph, VkExecutionGraphPipelineScratchSizeAMDX*        pSizeInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetExecutionGraphPipelineScratchSizeAMDX", "device, executionGraph, pSizeInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetExecutionGraphPipelineScratchSizeAMDX(ApiDumpInstance::current(), device, executionGraph, pSizeInfo);
@@ -12561,7 +12561,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetExecutionGraphPipelineScratchSizeAMDX(VkDevi
 VKAPI_ATTR VkResult VKAPI_CALL vkGetExecutionGraphPipelineNodeIndexAMDX(VkDevice                                        device, VkPipeline                                      executionGraph, const VkPipelineShaderStageNodeCreateInfoAMDX*  pNodeInfo, uint32_t*                                       pNodeIndex)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetExecutionGraphPipelineNodeIndexAMDX", "device, executionGraph, pNodeInfo, pNodeIndex");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetExecutionGraphPipelineNodeIndexAMDX(ApiDumpInstance::current(), device, executionGraph, pNodeInfo, pNodeIndex);
@@ -12594,7 +12594,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetExecutionGraphPipelineNodeIndexAMDX(VkDevice
 VKAPI_ATTR void VKAPI_CALL vkCmdInitializeGraphScratchMemoryAMDX(VkCommandBuffer                                 commandBuffer, VkPipeline                                      executionGraph, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdInitializeGraphScratchMemoryAMDX", "commandBuffer, executionGraph, scratch, scratchSize");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdInitializeGraphScratchMemoryAMDX(ApiDumpInstance::current(), commandBuffer, executionGraph, scratch, scratchSize);
@@ -12626,7 +12626,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdInitializeGraphScratchMemoryAMDX(VkCommandBuffer
 VKAPI_ATTR void VKAPI_CALL vkCmdDispatchGraphAMDX(VkCommandBuffer                                 commandBuffer, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize, const VkDispatchGraphCountInfoAMDX*             pCountInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDispatchGraphAMDX", "commandBuffer, scratch, scratchSize, pCountInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDispatchGraphAMDX(ApiDumpInstance::current(), commandBuffer, scratch, scratchSize, pCountInfo);
@@ -12658,7 +12658,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDispatchGraphAMDX(VkCommandBuffer               
 VKAPI_ATTR void VKAPI_CALL vkCmdDispatchGraphIndirectAMDX(VkCommandBuffer                                 commandBuffer, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize, const VkDispatchGraphCountInfoAMDX*             pCountInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDispatchGraphIndirectAMDX", "commandBuffer, scratch, scratchSize, pCountInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDispatchGraphIndirectAMDX(ApiDumpInstance::current(), commandBuffer, scratch, scratchSize, pCountInfo);
@@ -12690,7 +12690,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDispatchGraphIndirectAMDX(VkCommandBuffer       
 VKAPI_ATTR void VKAPI_CALL vkCmdDispatchGraphIndirectCountAMDX(VkCommandBuffer                                 commandBuffer, VkDeviceAddress                                 scratch, VkDeviceSize                                    scratchSize, VkDeviceAddress                                 countInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDispatchGraphIndirectCountAMDX", "commandBuffer, scratch, scratchSize, countInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDispatchGraphIndirectCountAMDX(ApiDumpInstance::current(), commandBuffer, scratch, scratchSize, countInfo);
@@ -12721,7 +12721,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDispatchGraphIndirectCountAMDX(VkCommandBuffer  
 VKAPI_ATTR void VKAPI_CALL vkCmdSetSampleLocationsEXT(VkCommandBuffer commandBuffer, const VkSampleLocationsInfoEXT* pSampleLocationsInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetSampleLocationsEXT", "commandBuffer, pSampleLocationsInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetSampleLocationsEXT(ApiDumpInstance::current(), commandBuffer, pSampleLocationsInfo);
@@ -12751,7 +12751,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetSampleLocationsEXT(VkCommandBuffer commandBuf
 VKAPI_ATTR void VKAPI_CALL vkGetImageMemoryRequirements2KHR(VkDevice device, const VkImageMemoryRequirementsInfo2* pInfo, VkMemoryRequirements2* pMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetImageMemoryRequirements2KHR", "device, pInfo, pMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetImageMemoryRequirements2KHR(ApiDumpInstance::current(), device, pInfo, pMemoryRequirements);
@@ -12781,7 +12781,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetImageMemoryRequirements2KHR(VkDevice device, con
 VKAPI_ATTR void VKAPI_CALL vkGetBufferMemoryRequirements2KHR(VkDevice device, const VkBufferMemoryRequirementsInfo2* pInfo, VkMemoryRequirements2* pMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetBufferMemoryRequirements2KHR", "device, pInfo, pMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetBufferMemoryRequirements2KHR(ApiDumpInstance::current(), device, pInfo, pMemoryRequirements);
@@ -12811,7 +12811,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetBufferMemoryRequirements2KHR(VkDevice device, co
 VKAPI_ATTR void VKAPI_CALL vkGetImageSparseMemoryRequirements2KHR(VkDevice device, const VkImageSparseMemoryRequirementsInfo2* pInfo, uint32_t* pSparseMemoryRequirementCount, VkSparseImageMemoryRequirements2* pSparseMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetImageSparseMemoryRequirements2KHR", "device, pInfo, pSparseMemoryRequirementCount, pSparseMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetImageSparseMemoryRequirements2KHR(ApiDumpInstance::current(), device, pInfo, pSparseMemoryRequirementCount, pSparseMemoryRequirements);
@@ -12841,7 +12841,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetImageSparseMemoryRequirements2KHR(VkDevice devic
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateAccelerationStructureKHR(VkDevice                                           device, const VkAccelerationStructureCreateInfoKHR*        pCreateInfo, const VkAllocationCallbacks*       pAllocator, VkAccelerationStructureKHR*                        pAccelerationStructure)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateAccelerationStructureKHR", "device, pCreateInfo, pAllocator, pAccelerationStructure");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateAccelerationStructureKHR(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pAccelerationStructure);
@@ -12872,7 +12872,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateAccelerationStructureKHR(VkDevice        
 VKAPI_ATTR void VKAPI_CALL vkDestroyAccelerationStructureKHR(VkDevice device, VkAccelerationStructureKHR accelerationStructure, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyAccelerationStructureKHR", "device, accelerationStructure, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyAccelerationStructureKHR(ApiDumpInstance::current(), device, accelerationStructure, pAllocator);
@@ -12902,7 +12902,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyAccelerationStructureKHR(VkDevice device, Vk
 VKAPI_ATTR void VKAPI_CALL vkCmdBuildAccelerationStructuresKHR(VkCommandBuffer                                    commandBuffer, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBuildAccelerationStructuresKHR", "commandBuffer, infoCount, pInfos, ppBuildRangeInfos");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBuildAccelerationStructuresKHR(ApiDumpInstance::current(), commandBuffer, infoCount, pInfos, ppBuildRangeInfos);
@@ -12932,7 +12932,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBuildAccelerationStructuresKHR(VkCommandBuffer  
 VKAPI_ATTR void VKAPI_CALL vkCmdBuildAccelerationStructuresIndirectKHR(VkCommandBuffer                  commandBuffer, uint32_t                                           infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkDeviceAddress*             pIndirectDeviceAddresses, const uint32_t*                    pIndirectStrides, const uint32_t* const*             ppMaxPrimitiveCounts)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBuildAccelerationStructuresIndirectKHR", "commandBuffer, infoCount, pInfos, pIndirectDeviceAddresses, pIndirectStrides, ppMaxPrimitiveCounts");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBuildAccelerationStructuresIndirectKHR(ApiDumpInstance::current(), commandBuffer, infoCount, pInfos, pIndirectDeviceAddresses, pIndirectStrides, ppMaxPrimitiveCounts);
@@ -12962,7 +12962,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBuildAccelerationStructuresIndirectKHR(VkCommand
 VKAPI_ATTR VkResult VKAPI_CALL vkBuildAccelerationStructuresKHR(VkDevice                                           device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR* pInfos, const VkAccelerationStructureBuildRangeInfoKHR* const* ppBuildRangeInfos)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkBuildAccelerationStructuresKHR", "device, deferredOperation, infoCount, pInfos, ppBuildRangeInfos");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkBuildAccelerationStructuresKHR(ApiDumpInstance::current(), device, deferredOperation, infoCount, pInfos, ppBuildRangeInfos);
@@ -12993,7 +12993,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkBuildAccelerationStructuresKHR(VkDevice        
 VKAPI_ATTR VkResult VKAPI_CALL vkCopyAccelerationStructureKHR(VkDevice device, VkDeferredOperationKHR deferredOperation, const VkCopyAccelerationStructureInfoKHR* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCopyAccelerationStructureKHR", "device, deferredOperation, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCopyAccelerationStructureKHR(ApiDumpInstance::current(), device, deferredOperation, pInfo);
@@ -13024,7 +13024,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCopyAccelerationStructureKHR(VkDevice device, V
 VKAPI_ATTR VkResult VKAPI_CALL vkCopyAccelerationStructureToMemoryKHR(VkDevice device, VkDeferredOperationKHR deferredOperation, const VkCopyAccelerationStructureToMemoryInfoKHR* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCopyAccelerationStructureToMemoryKHR", "device, deferredOperation, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCopyAccelerationStructureToMemoryKHR(ApiDumpInstance::current(), device, deferredOperation, pInfo);
@@ -13055,7 +13055,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCopyAccelerationStructureToMemoryKHR(VkDevice d
 VKAPI_ATTR VkResult VKAPI_CALL vkCopyMemoryToAccelerationStructureKHR(VkDevice device, VkDeferredOperationKHR deferredOperation, const VkCopyMemoryToAccelerationStructureInfoKHR* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCopyMemoryToAccelerationStructureKHR", "device, deferredOperation, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCopyMemoryToAccelerationStructureKHR(ApiDumpInstance::current(), device, deferredOperation, pInfo);
@@ -13086,7 +13086,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCopyMemoryToAccelerationStructureKHR(VkDevice d
 VKAPI_ATTR VkResult VKAPI_CALL vkWriteAccelerationStructuresPropertiesKHR(VkDevice device, uint32_t accelerationStructureCount, const VkAccelerationStructureKHR* pAccelerationStructures, VkQueryType  queryType, size_t       dataSize, void* pData, size_t stride)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkWriteAccelerationStructuresPropertiesKHR", "device, accelerationStructureCount, pAccelerationStructures, queryType, dataSize, pData, stride");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkWriteAccelerationStructuresPropertiesKHR(ApiDumpInstance::current(), device, accelerationStructureCount, pAccelerationStructures, queryType, dataSize, pData, stride);
@@ -13117,7 +13117,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkWriteAccelerationStructuresPropertiesKHR(VkDevi
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyAccelerationStructureKHR(VkCommandBuffer commandBuffer, const VkCopyAccelerationStructureInfoKHR* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyAccelerationStructureKHR", "commandBuffer, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyAccelerationStructureKHR(ApiDumpInstance::current(), commandBuffer, pInfo);
@@ -13147,7 +13147,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyAccelerationStructureKHR(VkCommandBuffer com
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyAccelerationStructureToMemoryKHR(VkCommandBuffer commandBuffer, const VkCopyAccelerationStructureToMemoryInfoKHR* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyAccelerationStructureToMemoryKHR", "commandBuffer, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyAccelerationStructureToMemoryKHR(ApiDumpInstance::current(), commandBuffer, pInfo);
@@ -13177,7 +13177,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyAccelerationStructureToMemoryKHR(VkCommandBu
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyMemoryToAccelerationStructureKHR(VkCommandBuffer commandBuffer, const VkCopyMemoryToAccelerationStructureInfoKHR* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyMemoryToAccelerationStructureKHR", "commandBuffer, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyMemoryToAccelerationStructureKHR(ApiDumpInstance::current(), commandBuffer, pInfo);
@@ -13207,7 +13207,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyMemoryToAccelerationStructureKHR(VkCommandBu
 VKAPI_ATTR VkDeviceAddress VKAPI_CALL vkGetAccelerationStructureDeviceAddressKHR(VkDevice device, const VkAccelerationStructureDeviceAddressInfoKHR* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetAccelerationStructureDeviceAddressKHR", "device, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetAccelerationStructureDeviceAddressKHR(ApiDumpInstance::current(), device, pInfo);
@@ -13238,7 +13238,7 @@ VKAPI_ATTR VkDeviceAddress VKAPI_CALL vkGetAccelerationStructureDeviceAddressKHR
 VKAPI_ATTR void VKAPI_CALL vkCmdWriteAccelerationStructuresPropertiesKHR(VkCommandBuffer commandBuffer, uint32_t accelerationStructureCount, const VkAccelerationStructureKHR* pAccelerationStructures, VkQueryType queryType, VkQueryPool queryPool, uint32_t firstQuery)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdWriteAccelerationStructuresPropertiesKHR", "commandBuffer, accelerationStructureCount, pAccelerationStructures, queryType, queryPool, firstQuery");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdWriteAccelerationStructuresPropertiesKHR(ApiDumpInstance::current(), commandBuffer, accelerationStructureCount, pAccelerationStructures, queryType, queryPool, firstQuery);
@@ -13268,7 +13268,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdWriteAccelerationStructuresPropertiesKHR(VkComma
 VKAPI_ATTR void VKAPI_CALL vkGetDeviceAccelerationStructureCompatibilityKHR(VkDevice device, const VkAccelerationStructureVersionInfoKHR* pVersionInfo, VkAccelerationStructureCompatibilityKHR* pCompatibility)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceAccelerationStructureCompatibilityKHR", "device, pVersionInfo, pCompatibility");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceAccelerationStructureCompatibilityKHR(ApiDumpInstance::current(), device, pVersionInfo, pCompatibility);
@@ -13298,7 +13298,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDeviceAccelerationStructureCompatibilityKHR(VkDe
 VKAPI_ATTR void VKAPI_CALL vkGetAccelerationStructureBuildSizesKHR(VkDevice                                            device, VkAccelerationStructureBuildTypeKHR                 buildType, const VkAccelerationStructureBuildGeometryInfoKHR*  pBuildInfo, const uint32_t*  pMaxPrimitiveCounts, VkAccelerationStructureBuildSizesInfoKHR*           pSizeInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetAccelerationStructureBuildSizesKHR", "device, buildType, pBuildInfo, pMaxPrimitiveCounts, pSizeInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetAccelerationStructureBuildSizesKHR(ApiDumpInstance::current(), device, buildType, pBuildInfo, pMaxPrimitiveCounts, pSizeInfo);
@@ -13328,7 +13328,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetAccelerationStructureBuildSizesKHR(VkDevice     
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateSamplerYcbcrConversionKHR(VkDevice device, const VkSamplerYcbcrConversionCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkSamplerYcbcrConversion* pYcbcrConversion)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateSamplerYcbcrConversionKHR", "device, pCreateInfo, pAllocator, pYcbcrConversion");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateSamplerYcbcrConversionKHR(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pYcbcrConversion);
@@ -13359,7 +13359,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateSamplerYcbcrConversionKHR(VkDevice device
 VKAPI_ATTR void VKAPI_CALL vkDestroySamplerYcbcrConversionKHR(VkDevice device, VkSamplerYcbcrConversion ycbcrConversion, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroySamplerYcbcrConversionKHR", "device, ycbcrConversion, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroySamplerYcbcrConversionKHR(ApiDumpInstance::current(), device, ycbcrConversion, pAllocator);
@@ -13389,7 +13389,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroySamplerYcbcrConversionKHR(VkDevice device, V
 VKAPI_ATTR VkResult VKAPI_CALL vkBindBufferMemory2KHR(VkDevice device, uint32_t bindInfoCount, const VkBindBufferMemoryInfo* pBindInfos)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkBindBufferMemory2KHR", "device, bindInfoCount, pBindInfos");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkBindBufferMemory2KHR(ApiDumpInstance::current(), device, bindInfoCount, pBindInfos);
@@ -13420,7 +13420,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkBindBufferMemory2KHR(VkDevice device, uint32_t 
 VKAPI_ATTR VkResult VKAPI_CALL vkBindImageMemory2KHR(VkDevice device, uint32_t bindInfoCount, const VkBindImageMemoryInfo* pBindInfos)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkBindImageMemory2KHR", "device, bindInfoCount, pBindInfos");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkBindImageMemory2KHR(ApiDumpInstance::current(), device, bindInfoCount, pBindInfos);
@@ -13451,7 +13451,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkBindImageMemory2KHR(VkDevice device, uint32_t b
 VKAPI_ATTR VkResult VKAPI_CALL vkGetImageDrmFormatModifierPropertiesEXT(VkDevice device, VkImage image, VkImageDrmFormatModifierPropertiesEXT* pProperties)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetImageDrmFormatModifierPropertiesEXT", "device, image, pProperties");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetImageDrmFormatModifierPropertiesEXT(ApiDumpInstance::current(), device, image, pProperties);
@@ -13482,7 +13482,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetImageDrmFormatModifierPropertiesEXT(VkDevice
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateValidationCacheEXT(VkDevice device, const VkValidationCacheCreateInfoEXT* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkValidationCacheEXT* pValidationCache)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateValidationCacheEXT", "device, pCreateInfo, pAllocator, pValidationCache");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateValidationCacheEXT(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pValidationCache);
@@ -13513,7 +13513,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateValidationCacheEXT(VkDevice device, const
 VKAPI_ATTR void VKAPI_CALL vkDestroyValidationCacheEXT(VkDevice device, VkValidationCacheEXT validationCache, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyValidationCacheEXT", "device, validationCache, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyValidationCacheEXT(ApiDumpInstance::current(), device, validationCache, pAllocator);
@@ -13543,7 +13543,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyValidationCacheEXT(VkDevice device, VkValida
 VKAPI_ATTR VkResult VKAPI_CALL vkMergeValidationCachesEXT(VkDevice device, VkValidationCacheEXT dstCache, uint32_t srcCacheCount, const VkValidationCacheEXT* pSrcCaches)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkMergeValidationCachesEXT", "device, dstCache, srcCacheCount, pSrcCaches");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkMergeValidationCachesEXT(ApiDumpInstance::current(), device, dstCache, srcCacheCount, pSrcCaches);
@@ -13574,7 +13574,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkMergeValidationCachesEXT(VkDevice device, VkVal
 VKAPI_ATTR VkResult VKAPI_CALL vkGetValidationCacheDataEXT(VkDevice device, VkValidationCacheEXT validationCache, size_t* pDataSize, void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetValidationCacheDataEXT", "device, validationCache, pDataSize, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetValidationCacheDataEXT(ApiDumpInstance::current(), device, validationCache, pDataSize, pData);
@@ -13605,7 +13605,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetValidationCacheDataEXT(VkDevice device, VkVa
 VKAPI_ATTR void VKAPI_CALL vkCmdBindShadingRateImageNV(VkCommandBuffer commandBuffer, VkImageView imageView, VkImageLayout imageLayout)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindShadingRateImageNV", "commandBuffer, imageView, imageLayout");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindShadingRateImageNV(ApiDumpInstance::current(), commandBuffer, imageView, imageLayout);
@@ -13635,7 +13635,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindShadingRateImageNV(VkCommandBuffer commandBu
 VKAPI_ATTR void VKAPI_CALL vkCmdSetViewportShadingRatePaletteNV(VkCommandBuffer commandBuffer, uint32_t firstViewport, uint32_t viewportCount, const VkShadingRatePaletteNV* pShadingRatePalettes)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetViewportShadingRatePaletteNV", "commandBuffer, firstViewport, viewportCount, pShadingRatePalettes");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetViewportShadingRatePaletteNV(ApiDumpInstance::current(), commandBuffer, firstViewport, viewportCount, pShadingRatePalettes);
@@ -13665,7 +13665,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetViewportShadingRatePaletteNV(VkCommandBuffer 
 VKAPI_ATTR void VKAPI_CALL vkCmdSetCoarseSampleOrderNV(VkCommandBuffer commandBuffer, VkCoarseSampleOrderTypeNV sampleOrderType, uint32_t customSampleOrderCount, const VkCoarseSampleOrderCustomNV* pCustomSampleOrders)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetCoarseSampleOrderNV", "commandBuffer, sampleOrderType, customSampleOrderCount, pCustomSampleOrders");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetCoarseSampleOrderNV(ApiDumpInstance::current(), commandBuffer, sampleOrderType, customSampleOrderCount, pCustomSampleOrders);
@@ -13695,7 +13695,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetCoarseSampleOrderNV(VkCommandBuffer commandBu
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateAccelerationStructureNV(VkDevice device, const VkAccelerationStructureCreateInfoNV* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkAccelerationStructureNV* pAccelerationStructure)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateAccelerationStructureNV", "device, pCreateInfo, pAllocator, pAccelerationStructure");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateAccelerationStructureNV(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pAccelerationStructure);
@@ -13726,7 +13726,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateAccelerationStructureNV(VkDevice device, 
 VKAPI_ATTR void VKAPI_CALL vkDestroyAccelerationStructureNV(VkDevice device, VkAccelerationStructureNV accelerationStructure, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyAccelerationStructureNV", "device, accelerationStructure, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyAccelerationStructureNV(ApiDumpInstance::current(), device, accelerationStructure, pAllocator);
@@ -13756,7 +13756,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyAccelerationStructureNV(VkDevice device, VkA
 VKAPI_ATTR void VKAPI_CALL vkGetAccelerationStructureMemoryRequirementsNV(VkDevice device, const VkAccelerationStructureMemoryRequirementsInfoNV* pInfo, VkMemoryRequirements2KHR* pMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetAccelerationStructureMemoryRequirementsNV", "device, pInfo, pMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetAccelerationStructureMemoryRequirementsNV(ApiDumpInstance::current(), device, pInfo, pMemoryRequirements);
@@ -13786,7 +13786,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetAccelerationStructureMemoryRequirementsNV(VkDevi
 VKAPI_ATTR VkResult VKAPI_CALL vkBindAccelerationStructureMemoryNV(VkDevice device, uint32_t bindInfoCount, const VkBindAccelerationStructureMemoryInfoNV* pBindInfos)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkBindAccelerationStructureMemoryNV", "device, bindInfoCount, pBindInfos");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkBindAccelerationStructureMemoryNV(ApiDumpInstance::current(), device, bindInfoCount, pBindInfos);
@@ -13817,7 +13817,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkBindAccelerationStructureMemoryNV(VkDevice devi
 VKAPI_ATTR void VKAPI_CALL vkCmdBuildAccelerationStructureNV(VkCommandBuffer commandBuffer, const VkAccelerationStructureInfoNV* pInfo, VkBuffer instanceData, VkDeviceSize instanceOffset, VkBool32 update, VkAccelerationStructureNV dst, VkAccelerationStructureNV src, VkBuffer scratch, VkDeviceSize scratchOffset)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBuildAccelerationStructureNV", "commandBuffer, pInfo, instanceData, instanceOffset, update, dst, src, scratch, scratchOffset");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBuildAccelerationStructureNV(ApiDumpInstance::current(), commandBuffer, pInfo, instanceData, instanceOffset, update, dst, src, scratch, scratchOffset);
@@ -13847,7 +13847,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBuildAccelerationStructureNV(VkCommandBuffer com
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyAccelerationStructureNV(VkCommandBuffer commandBuffer, VkAccelerationStructureNV dst, VkAccelerationStructureNV src, VkCopyAccelerationStructureModeKHR mode)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyAccelerationStructureNV", "commandBuffer, dst, src, mode");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyAccelerationStructureNV(ApiDumpInstance::current(), commandBuffer, dst, src, mode);
@@ -13877,7 +13877,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyAccelerationStructureNV(VkCommandBuffer comm
 VKAPI_ATTR void VKAPI_CALL vkCmdTraceRaysNV(VkCommandBuffer commandBuffer, VkBuffer raygenShaderBindingTableBuffer, VkDeviceSize raygenShaderBindingOffset, VkBuffer missShaderBindingTableBuffer, VkDeviceSize missShaderBindingOffset, VkDeviceSize missShaderBindingStride, VkBuffer hitShaderBindingTableBuffer, VkDeviceSize hitShaderBindingOffset, VkDeviceSize hitShaderBindingStride, VkBuffer callableShaderBindingTableBuffer, VkDeviceSize callableShaderBindingOffset, VkDeviceSize callableShaderBindingStride, uint32_t width, uint32_t height, uint32_t depth)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdTraceRaysNV", "commandBuffer, raygenShaderBindingTableBuffer, raygenShaderBindingOffset, missShaderBindingTableBuffer, missShaderBindingOffset, missShaderBindingStride, hitShaderBindingTableBuffer, hitShaderBindingOffset, hitShaderBindingStride, callableShaderBindingTableBuffer, callableShaderBindingOffset, callableShaderBindingStride, width, height, depth");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdTraceRaysNV(ApiDumpInstance::current(), commandBuffer, raygenShaderBindingTableBuffer, raygenShaderBindingOffset, missShaderBindingTableBuffer, missShaderBindingOffset, missShaderBindingStride, hitShaderBindingTableBuffer, hitShaderBindingOffset, hitShaderBindingStride, callableShaderBindingTableBuffer, callableShaderBindingOffset, callableShaderBindingStride, width, height, depth);
@@ -13907,7 +13907,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdTraceRaysNV(VkCommandBuffer commandBuffer, VkBuf
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateRayTracingPipelinesNV(VkDevice device, VkPipelineCache pipelineCache, uint32_t createInfoCount, const VkRayTracingPipelineCreateInfoNV* pCreateInfos, const VkAllocationCallbacks* pAllocator, VkPipeline* pPipelines)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateRayTracingPipelinesNV", "device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateRayTracingPipelinesNV(ApiDumpInstance::current(), device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines);
@@ -13938,7 +13938,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateRayTracingPipelinesNV(VkDevice device, Vk
 VKAPI_ATTR VkResult VKAPI_CALL vkGetRayTracingShaderGroupHandlesKHR(VkDevice device, VkPipeline pipeline, uint32_t firstGroup, uint32_t groupCount, size_t dataSize, void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetRayTracingShaderGroupHandlesKHR", "device, pipeline, firstGroup, groupCount, dataSize, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetRayTracingShaderGroupHandlesKHR(ApiDumpInstance::current(), device, pipeline, firstGroup, groupCount, dataSize, pData);
@@ -13969,7 +13969,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetRayTracingShaderGroupHandlesKHR(VkDevice dev
 VKAPI_ATTR VkResult VKAPI_CALL vkGetRayTracingShaderGroupHandlesNV(VkDevice device, VkPipeline pipeline, uint32_t firstGroup, uint32_t groupCount, size_t dataSize, void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetRayTracingShaderGroupHandlesNV", "device, pipeline, firstGroup, groupCount, dataSize, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetRayTracingShaderGroupHandlesNV(ApiDumpInstance::current(), device, pipeline, firstGroup, groupCount, dataSize, pData);
@@ -14000,7 +14000,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetRayTracingShaderGroupHandlesNV(VkDevice devi
 VKAPI_ATTR VkResult VKAPI_CALL vkGetAccelerationStructureHandleNV(VkDevice device, VkAccelerationStructureNV accelerationStructure, size_t dataSize, void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetAccelerationStructureHandleNV", "device, accelerationStructure, dataSize, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetAccelerationStructureHandleNV(ApiDumpInstance::current(), device, accelerationStructure, dataSize, pData);
@@ -14031,7 +14031,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetAccelerationStructureHandleNV(VkDevice devic
 VKAPI_ATTR void VKAPI_CALL vkCmdWriteAccelerationStructuresPropertiesNV(VkCommandBuffer commandBuffer, uint32_t accelerationStructureCount, const VkAccelerationStructureNV* pAccelerationStructures, VkQueryType queryType, VkQueryPool queryPool, uint32_t firstQuery)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdWriteAccelerationStructuresPropertiesNV", "commandBuffer, accelerationStructureCount, pAccelerationStructures, queryType, queryPool, firstQuery");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdWriteAccelerationStructuresPropertiesNV(ApiDumpInstance::current(), commandBuffer, accelerationStructureCount, pAccelerationStructures, queryType, queryPool, firstQuery);
@@ -14061,7 +14061,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdWriteAccelerationStructuresPropertiesNV(VkComman
 VKAPI_ATTR VkResult VKAPI_CALL vkCompileDeferredNV(VkDevice device, VkPipeline pipeline, uint32_t shader)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCompileDeferredNV", "device, pipeline, shader");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCompileDeferredNV(ApiDumpInstance::current(), device, pipeline, shader);
@@ -14092,7 +14092,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCompileDeferredNV(VkDevice device, VkPipeline p
 VKAPI_ATTR void VKAPI_CALL vkGetDescriptorSetLayoutSupportKHR(VkDevice device, const VkDescriptorSetLayoutCreateInfo* pCreateInfo, VkDescriptorSetLayoutSupport* pSupport)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDescriptorSetLayoutSupportKHR", "device, pCreateInfo, pSupport");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDescriptorSetLayoutSupportKHR(ApiDumpInstance::current(), device, pCreateInfo, pSupport);
@@ -14122,7 +14122,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDescriptorSetLayoutSupportKHR(VkDevice device, c
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndirectCountKHR(VkCommandBuffer commandBuffer, VkBuffer buffer, VkDeviceSize offset, VkBuffer countBuffer, VkDeviceSize countBufferOffset, uint32_t maxDrawCount, uint32_t stride)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawIndirectCountKHR", "commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawIndirectCountKHR(ApiDumpInstance::current(), commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
@@ -14152,7 +14152,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndirectCountKHR(VkCommandBuffer commandBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndexedIndirectCountKHR(VkCommandBuffer commandBuffer, VkBuffer buffer, VkDeviceSize offset, VkBuffer countBuffer, VkDeviceSize countBufferOffset, uint32_t maxDrawCount, uint32_t stride)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawIndexedIndirectCountKHR", "commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawIndexedIndirectCountKHR(ApiDumpInstance::current(), commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
@@ -14182,7 +14182,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawIndexedIndirectCountKHR(VkCommandBuffer comm
 VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryHostPointerPropertiesEXT(VkDevice device, VkExternalMemoryHandleTypeFlagBits handleType, const void* pHostPointer, VkMemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetMemoryHostPointerPropertiesEXT", "device, handleType, pHostPointer, pMemoryHostPointerProperties");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetMemoryHostPointerPropertiesEXT(ApiDumpInstance::current(), device, handleType, pHostPointer, pMemoryHostPointerProperties);
@@ -14213,7 +14213,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryHostPointerPropertiesEXT(VkDevice devi
 VKAPI_ATTR void VKAPI_CALL vkCmdWriteBufferMarkerAMD(VkCommandBuffer commandBuffer, VkPipelineStageFlagBits pipelineStage, VkBuffer dstBuffer, VkDeviceSize dstOffset, uint32_t marker)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdWriteBufferMarkerAMD", "commandBuffer, pipelineStage, dstBuffer, dstOffset, marker");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdWriteBufferMarkerAMD(ApiDumpInstance::current(), commandBuffer, pipelineStage, dstBuffer, dstOffset, marker);
@@ -14243,7 +14243,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdWriteBufferMarkerAMD(VkCommandBuffer commandBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdWriteBufferMarker2AMD(VkCommandBuffer                   commandBuffer, VkPipelineStageFlags2               stage, VkBuffer                                            dstBuffer, VkDeviceSize                                        dstOffset, uint32_t                                            marker)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdWriteBufferMarker2AMD", "commandBuffer, stage, dstBuffer, dstOffset, marker");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdWriteBufferMarker2AMD(ApiDumpInstance::current(), commandBuffer, stage, dstBuffer, dstOffset, marker);
@@ -14273,7 +14273,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdWriteBufferMarker2AMD(VkCommandBuffer           
 VKAPI_ATTR VkResult VKAPI_CALL vkGetCalibratedTimestampsKHR(VkDevice device, uint32_t timestampCount, const VkCalibratedTimestampInfoKHR* pTimestampInfos, uint64_t* pTimestamps, uint64_t* pMaxDeviation)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetCalibratedTimestampsKHR", "device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetCalibratedTimestampsKHR(ApiDumpInstance::current(), device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
@@ -14304,7 +14304,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetCalibratedTimestampsKHR(VkDevice device, uin
 VKAPI_ATTR VkResult VKAPI_CALL vkGetCalibratedTimestampsEXT(VkDevice device, uint32_t timestampCount, const VkCalibratedTimestampInfoKHR* pTimestampInfos, uint64_t* pTimestamps, uint64_t* pMaxDeviation)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetCalibratedTimestampsEXT", "device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetCalibratedTimestampsEXT(ApiDumpInstance::current(), device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
@@ -14335,7 +14335,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetCalibratedTimestampsEXT(VkDevice device, uin
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawMeshTasksNV(VkCommandBuffer commandBuffer, uint32_t taskCount, uint32_t firstTask)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawMeshTasksNV", "commandBuffer, taskCount, firstTask");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawMeshTasksNV(ApiDumpInstance::current(), commandBuffer, taskCount, firstTask);
@@ -14365,7 +14365,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawMeshTasksNV(VkCommandBuffer commandBuffer, u
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawMeshTasksIndirectNV(VkCommandBuffer commandBuffer, VkBuffer buffer, VkDeviceSize offset, uint32_t drawCount, uint32_t stride)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawMeshTasksIndirectNV", "commandBuffer, buffer, offset, drawCount, stride");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawMeshTasksIndirectNV(ApiDumpInstance::current(), commandBuffer, buffer, offset, drawCount, stride);
@@ -14395,7 +14395,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawMeshTasksIndirectNV(VkCommandBuffer commandB
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawMeshTasksIndirectCountNV(VkCommandBuffer commandBuffer, VkBuffer buffer, VkDeviceSize offset, VkBuffer countBuffer, VkDeviceSize countBufferOffset, uint32_t maxDrawCount, uint32_t stride)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawMeshTasksIndirectCountNV", "commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawMeshTasksIndirectCountNV(ApiDumpInstance::current(), commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
@@ -14425,7 +14425,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawMeshTasksIndirectCountNV(VkCommandBuffer com
 VKAPI_ATTR void VKAPI_CALL vkCmdSetExclusiveScissorEnableNV(VkCommandBuffer commandBuffer, uint32_t firstExclusiveScissor, uint32_t exclusiveScissorCount, const VkBool32* pExclusiveScissorEnables)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetExclusiveScissorEnableNV", "commandBuffer, firstExclusiveScissor, exclusiveScissorCount, pExclusiveScissorEnables");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetExclusiveScissorEnableNV(ApiDumpInstance::current(), commandBuffer, firstExclusiveScissor, exclusiveScissorCount, pExclusiveScissorEnables);
@@ -14455,7 +14455,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetExclusiveScissorEnableNV(VkCommandBuffer comm
 VKAPI_ATTR void VKAPI_CALL vkCmdSetExclusiveScissorNV(VkCommandBuffer commandBuffer, uint32_t firstExclusiveScissor, uint32_t exclusiveScissorCount, const VkRect2D* pExclusiveScissors)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetExclusiveScissorNV", "commandBuffer, firstExclusiveScissor, exclusiveScissorCount, pExclusiveScissors");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetExclusiveScissorNV(ApiDumpInstance::current(), commandBuffer, firstExclusiveScissor, exclusiveScissorCount, pExclusiveScissors);
@@ -14485,7 +14485,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetExclusiveScissorNV(VkCommandBuffer commandBuf
 VKAPI_ATTR void VKAPI_CALL vkCmdSetCheckpointNV(VkCommandBuffer commandBuffer, const void* pCheckpointMarker)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetCheckpointNV", "commandBuffer, pCheckpointMarker");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetCheckpointNV(ApiDumpInstance::current(), commandBuffer, pCheckpointMarker);
@@ -14515,7 +14515,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetCheckpointNV(VkCommandBuffer commandBuffer, c
 VKAPI_ATTR void VKAPI_CALL vkGetQueueCheckpointDataNV(VkQueue queue, uint32_t* pCheckpointDataCount, VkCheckpointDataNV* pCheckpointData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetQueueCheckpointDataNV", "queue, pCheckpointDataCount, pCheckpointData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetQueueCheckpointDataNV(ApiDumpInstance::current(), queue, pCheckpointDataCount, pCheckpointData);
@@ -14545,7 +14545,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetQueueCheckpointDataNV(VkQueue queue, uint32_t* p
 VKAPI_ATTR void VKAPI_CALL vkGetQueueCheckpointData2NV(VkQueue queue, uint32_t* pCheckpointDataCount, VkCheckpointData2NV* pCheckpointData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetQueueCheckpointData2NV", "queue, pCheckpointDataCount, pCheckpointData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetQueueCheckpointData2NV(ApiDumpInstance::current(), queue, pCheckpointDataCount, pCheckpointData);
@@ -14575,7 +14575,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetQueueCheckpointData2NV(VkQueue queue, uint32_t* 
 VKAPI_ATTR VkResult VKAPI_CALL vkGetSemaphoreCounterValueKHR(VkDevice device, VkSemaphore semaphore, uint64_t* pValue)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetSemaphoreCounterValueKHR", "device, semaphore, pValue");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetSemaphoreCounterValueKHR(ApiDumpInstance::current(), device, semaphore, pValue);
@@ -14628,7 +14628,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkWaitSemaphoresKHR(VkDevice device, const VkSema
 VKAPI_ATTR VkResult VKAPI_CALL vkSignalSemaphoreKHR(VkDevice device, const VkSemaphoreSignalInfo* pSignalInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkSignalSemaphoreKHR", "device, pSignalInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkSignalSemaphoreKHR(ApiDumpInstance::current(), device, pSignalInfo);
@@ -14659,7 +14659,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkSignalSemaphoreKHR(VkDevice device, const VkSem
 VKAPI_ATTR VkResult VKAPI_CALL vkInitializePerformanceApiINTEL(VkDevice device, const VkInitializePerformanceApiInfoINTEL* pInitializeInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkInitializePerformanceApiINTEL", "device, pInitializeInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkInitializePerformanceApiINTEL(ApiDumpInstance::current(), device, pInitializeInfo);
@@ -14690,7 +14690,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkInitializePerformanceApiINTEL(VkDevice device, 
 VKAPI_ATTR void VKAPI_CALL vkUninitializePerformanceApiINTEL(VkDevice device)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkUninitializePerformanceApiINTEL", "device");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkUninitializePerformanceApiINTEL(ApiDumpInstance::current(), device);
@@ -14720,7 +14720,7 @@ VKAPI_ATTR void VKAPI_CALL vkUninitializePerformanceApiINTEL(VkDevice device)
 VKAPI_ATTR VkResult VKAPI_CALL vkCmdSetPerformanceMarkerINTEL(VkCommandBuffer commandBuffer, const VkPerformanceMarkerInfoINTEL* pMarkerInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetPerformanceMarkerINTEL", "commandBuffer, pMarkerInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetPerformanceMarkerINTEL(ApiDumpInstance::current(), commandBuffer, pMarkerInfo);
@@ -14751,7 +14751,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCmdSetPerformanceMarkerINTEL(VkCommandBuffer co
 VKAPI_ATTR VkResult VKAPI_CALL vkCmdSetPerformanceStreamMarkerINTEL(VkCommandBuffer commandBuffer, const VkPerformanceStreamMarkerInfoINTEL* pMarkerInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetPerformanceStreamMarkerINTEL", "commandBuffer, pMarkerInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetPerformanceStreamMarkerINTEL(ApiDumpInstance::current(), commandBuffer, pMarkerInfo);
@@ -14782,7 +14782,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCmdSetPerformanceStreamMarkerINTEL(VkCommandBuf
 VKAPI_ATTR VkResult VKAPI_CALL vkCmdSetPerformanceOverrideINTEL(VkCommandBuffer commandBuffer, const VkPerformanceOverrideInfoINTEL* pOverrideInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetPerformanceOverrideINTEL", "commandBuffer, pOverrideInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetPerformanceOverrideINTEL(ApiDumpInstance::current(), commandBuffer, pOverrideInfo);
@@ -14813,7 +14813,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCmdSetPerformanceOverrideINTEL(VkCommandBuffer 
 VKAPI_ATTR VkResult VKAPI_CALL vkAcquirePerformanceConfigurationINTEL(VkDevice device, const VkPerformanceConfigurationAcquireInfoINTEL* pAcquireInfo, VkPerformanceConfigurationINTEL* pConfiguration)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkAcquirePerformanceConfigurationINTEL", "device, pAcquireInfo, pConfiguration");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkAcquirePerformanceConfigurationINTEL(ApiDumpInstance::current(), device, pAcquireInfo, pConfiguration);
@@ -14844,7 +14844,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkAcquirePerformanceConfigurationINTEL(VkDevice d
 VKAPI_ATTR VkResult VKAPI_CALL vkReleasePerformanceConfigurationINTEL(VkDevice device, VkPerformanceConfigurationINTEL configuration)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkReleasePerformanceConfigurationINTEL", "device, configuration");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkReleasePerformanceConfigurationINTEL(ApiDumpInstance::current(), device, configuration);
@@ -14875,7 +14875,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkReleasePerformanceConfigurationINTEL(VkDevice d
 VKAPI_ATTR VkResult VKAPI_CALL vkQueueSetPerformanceConfigurationINTEL(VkQueue queue, VkPerformanceConfigurationINTEL configuration)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkQueueSetPerformanceConfigurationINTEL", "queue, configuration");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkQueueSetPerformanceConfigurationINTEL(ApiDumpInstance::current(), queue, configuration);
@@ -14906,7 +14906,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkQueueSetPerformanceConfigurationINTEL(VkQueue q
 VKAPI_ATTR VkResult VKAPI_CALL vkGetPerformanceParameterINTEL(VkDevice device, VkPerformanceParameterTypeINTEL parameter, VkPerformanceValueINTEL* pValue)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetPerformanceParameterINTEL", "device, parameter, pValue");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetPerformanceParameterINTEL(ApiDumpInstance::current(), device, parameter, pValue);
@@ -14937,7 +14937,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetPerformanceParameterINTEL(VkDevice device, V
 VKAPI_ATTR void VKAPI_CALL vkSetLocalDimmingAMD(VkDevice device, VkSwapchainKHR swapChain, VkBool32 localDimmingEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkSetLocalDimmingAMD", "device, swapChain, localDimmingEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkSetLocalDimmingAMD(ApiDumpInstance::current(), device, swapChain, localDimmingEnable);
@@ -14967,7 +14967,7 @@ VKAPI_ATTR void VKAPI_CALL vkSetLocalDimmingAMD(VkDevice device, VkSwapchainKHR 
 VKAPI_ATTR void VKAPI_CALL vkCmdSetFragmentShadingRateKHR(VkCommandBuffer           commandBuffer, const VkExtent2D*                           pFragmentSize, const VkFragmentShadingRateCombinerOpKHR    combinerOps[2])
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetFragmentShadingRateKHR", "commandBuffer, pFragmentSize, combinerOps");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetFragmentShadingRateKHR(ApiDumpInstance::current(), commandBuffer, pFragmentSize, combinerOps);
@@ -14997,7 +14997,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetFragmentShadingRateKHR(VkCommandBuffer       
 VKAPI_ATTR void VKAPI_CALL vkCmdSetRenderingAttachmentLocationsKHR(VkCommandBuffer commandBuffer, const VkRenderingAttachmentLocationInfo* pLocationInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetRenderingAttachmentLocationsKHR", "commandBuffer, pLocationInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetRenderingAttachmentLocationsKHR(ApiDumpInstance::current(), commandBuffer, pLocationInfo);
@@ -15027,7 +15027,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetRenderingAttachmentLocationsKHR(VkCommandBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdSetRenderingInputAttachmentIndicesKHR(VkCommandBuffer commandBuffer, const VkRenderingInputAttachmentIndexInfo* pInputAttachmentIndexInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetRenderingInputAttachmentIndicesKHR", "commandBuffer, pInputAttachmentIndexInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetRenderingInputAttachmentIndicesKHR(ApiDumpInstance::current(), commandBuffer, pInputAttachmentIndexInfo);
@@ -15057,7 +15057,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetRenderingInputAttachmentIndicesKHR(VkCommandB
 VKAPI_ATTR VkDeviceAddress VKAPI_CALL vkGetBufferDeviceAddressEXT(VkDevice device, const VkBufferDeviceAddressInfo* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetBufferDeviceAddressEXT", "device, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetBufferDeviceAddressEXT(ApiDumpInstance::current(), device, pInfo);
@@ -15088,7 +15088,7 @@ VKAPI_ATTR VkDeviceAddress VKAPI_CALL vkGetBufferDeviceAddressEXT(VkDevice devic
 VKAPI_ATTR VkResult VKAPI_CALL vkWaitForPresentKHR(VkDevice device, VkSwapchainKHR swapchain, uint64_t presentId, uint64_t timeout)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkWaitForPresentKHR", "device, swapchain, presentId, timeout");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkWaitForPresentKHR(ApiDumpInstance::current(), device, swapchain, presentId, timeout);
@@ -15120,7 +15120,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkWaitForPresentKHR(VkDevice device, VkSwapchainK
 VKAPI_ATTR VkResult VKAPI_CALL vkAcquireFullScreenExclusiveModeEXT(VkDevice device, VkSwapchainKHR swapchain)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkAcquireFullScreenExclusiveModeEXT", "device, swapchain");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkAcquireFullScreenExclusiveModeEXT(ApiDumpInstance::current(), device, swapchain);
@@ -15153,7 +15153,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkAcquireFullScreenExclusiveModeEXT(VkDevice devi
 VKAPI_ATTR VkResult VKAPI_CALL vkReleaseFullScreenExclusiveModeEXT(VkDevice device, VkSwapchainKHR swapchain)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkReleaseFullScreenExclusiveModeEXT", "device, swapchain");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkReleaseFullScreenExclusiveModeEXT(ApiDumpInstance::current(), device, swapchain);
@@ -15186,7 +15186,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkReleaseFullScreenExclusiveModeEXT(VkDevice devi
 VKAPI_ATTR VkResult VKAPI_CALL vkGetDeviceGroupSurfacePresentModes2EXT(VkDevice device, const VkPhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, VkDeviceGroupPresentModeFlagsKHR* pModes)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceGroupSurfacePresentModes2EXT", "device, pSurfaceInfo, pModes");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceGroupSurfacePresentModes2EXT(ApiDumpInstance::current(), device, pSurfaceInfo, pModes);
@@ -15218,7 +15218,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetDeviceGroupSurfacePresentModes2EXT(VkDevice 
 VKAPI_ATTR VkDeviceAddress VKAPI_CALL vkGetBufferDeviceAddressKHR(VkDevice device, const VkBufferDeviceAddressInfo* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetBufferDeviceAddressKHR", "device, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetBufferDeviceAddressKHR(ApiDumpInstance::current(), device, pInfo);
@@ -15249,7 +15249,7 @@ VKAPI_ATTR VkDeviceAddress VKAPI_CALL vkGetBufferDeviceAddressKHR(VkDevice devic
 VKAPI_ATTR uint64_t VKAPI_CALL vkGetBufferOpaqueCaptureAddressKHR(VkDevice device, const VkBufferDeviceAddressInfo* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetBufferOpaqueCaptureAddressKHR", "device, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetBufferOpaqueCaptureAddressKHR(ApiDumpInstance::current(), device, pInfo);
@@ -15280,7 +15280,7 @@ VKAPI_ATTR uint64_t VKAPI_CALL vkGetBufferOpaqueCaptureAddressKHR(VkDevice devic
 VKAPI_ATTR uint64_t VKAPI_CALL vkGetDeviceMemoryOpaqueCaptureAddressKHR(VkDevice device, const VkDeviceMemoryOpaqueCaptureAddressInfo* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceMemoryOpaqueCaptureAddressKHR", "device, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceMemoryOpaqueCaptureAddressKHR(ApiDumpInstance::current(), device, pInfo);
@@ -15311,7 +15311,7 @@ VKAPI_ATTR uint64_t VKAPI_CALL vkGetDeviceMemoryOpaqueCaptureAddressKHR(VkDevice
 VKAPI_ATTR void VKAPI_CALL vkCmdSetLineStippleEXT(VkCommandBuffer commandBuffer, uint32_t lineStippleFactor, uint16_t lineStipplePattern)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetLineStippleEXT", "commandBuffer, lineStippleFactor, lineStipplePattern");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetLineStippleEXT(ApiDumpInstance::current(), commandBuffer, lineStippleFactor, lineStipplePattern);
@@ -15341,7 +15341,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetLineStippleEXT(VkCommandBuffer commandBuffer,
 VKAPI_ATTR void VKAPI_CALL vkResetQueryPoolEXT(VkDevice device, VkQueryPool queryPool, uint32_t firstQuery, uint32_t queryCount)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkResetQueryPoolEXT", "device, queryPool, firstQuery, queryCount");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkResetQueryPoolEXT(ApiDumpInstance::current(), device, queryPool, firstQuery, queryCount);
@@ -15371,7 +15371,7 @@ VKAPI_ATTR void VKAPI_CALL vkResetQueryPoolEXT(VkDevice device, VkQueryPool quer
 VKAPI_ATTR void VKAPI_CALL vkCmdSetCullModeEXT(VkCommandBuffer commandBuffer, VkCullModeFlags cullMode)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetCullModeEXT", "commandBuffer, cullMode");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetCullModeEXT(ApiDumpInstance::current(), commandBuffer, cullMode);
@@ -15401,7 +15401,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetCullModeEXT(VkCommandBuffer commandBuffer, Vk
 VKAPI_ATTR void VKAPI_CALL vkCmdSetFrontFaceEXT(VkCommandBuffer commandBuffer, VkFrontFace frontFace)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetFrontFaceEXT", "commandBuffer, frontFace");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetFrontFaceEXT(ApiDumpInstance::current(), commandBuffer, frontFace);
@@ -15431,7 +15431,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetFrontFaceEXT(VkCommandBuffer commandBuffer, V
 VKAPI_ATTR void VKAPI_CALL vkCmdSetPrimitiveTopologyEXT(VkCommandBuffer commandBuffer, VkPrimitiveTopology primitiveTopology)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetPrimitiveTopologyEXT", "commandBuffer, primitiveTopology");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetPrimitiveTopologyEXT(ApiDumpInstance::current(), commandBuffer, primitiveTopology);
@@ -15461,7 +15461,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetPrimitiveTopologyEXT(VkCommandBuffer commandB
 VKAPI_ATTR void VKAPI_CALL vkCmdSetViewportWithCountEXT(VkCommandBuffer commandBuffer, uint32_t viewportCount, const VkViewport* pViewports)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetViewportWithCountEXT", "commandBuffer, viewportCount, pViewports");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetViewportWithCountEXT(ApiDumpInstance::current(), commandBuffer, viewportCount, pViewports);
@@ -15491,7 +15491,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetViewportWithCountEXT(VkCommandBuffer commandB
 VKAPI_ATTR void VKAPI_CALL vkCmdSetScissorWithCountEXT(VkCommandBuffer commandBuffer, uint32_t scissorCount, const VkRect2D* pScissors)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetScissorWithCountEXT", "commandBuffer, scissorCount, pScissors");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetScissorWithCountEXT(ApiDumpInstance::current(), commandBuffer, scissorCount, pScissors);
@@ -15521,7 +15521,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetScissorWithCountEXT(VkCommandBuffer commandBu
 VKAPI_ATTR void VKAPI_CALL vkCmdBindVertexBuffers2EXT(VkCommandBuffer commandBuffer, uint32_t firstBinding, uint32_t bindingCount, const VkBuffer* pBuffers, const VkDeviceSize* pOffsets, const VkDeviceSize* pSizes, const VkDeviceSize* pStrides)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindVertexBuffers2EXT", "commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindVertexBuffers2EXT(ApiDumpInstance::current(), commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides);
@@ -15551,7 +15551,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindVertexBuffers2EXT(VkCommandBuffer commandBuf
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthTestEnableEXT(VkCommandBuffer commandBuffer, VkBool32 depthTestEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDepthTestEnableEXT", "commandBuffer, depthTestEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDepthTestEnableEXT(ApiDumpInstance::current(), commandBuffer, depthTestEnable);
@@ -15581,7 +15581,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthTestEnableEXT(VkCommandBuffer commandBuf
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthWriteEnableEXT(VkCommandBuffer commandBuffer, VkBool32 depthWriteEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDepthWriteEnableEXT", "commandBuffer, depthWriteEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDepthWriteEnableEXT(ApiDumpInstance::current(), commandBuffer, depthWriteEnable);
@@ -15611,7 +15611,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthWriteEnableEXT(VkCommandBuffer commandBu
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthCompareOpEXT(VkCommandBuffer commandBuffer, VkCompareOp depthCompareOp)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDepthCompareOpEXT", "commandBuffer, depthCompareOp");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDepthCompareOpEXT(ApiDumpInstance::current(), commandBuffer, depthCompareOp);
@@ -15641,7 +15641,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthCompareOpEXT(VkCommandBuffer commandBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthBoundsTestEnableEXT(VkCommandBuffer commandBuffer, VkBool32 depthBoundsTestEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDepthBoundsTestEnableEXT", "commandBuffer, depthBoundsTestEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDepthBoundsTestEnableEXT(ApiDumpInstance::current(), commandBuffer, depthBoundsTestEnable);
@@ -15671,7 +15671,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthBoundsTestEnableEXT(VkCommandBuffer comm
 VKAPI_ATTR void VKAPI_CALL vkCmdSetStencilTestEnableEXT(VkCommandBuffer commandBuffer, VkBool32 stencilTestEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetStencilTestEnableEXT", "commandBuffer, stencilTestEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetStencilTestEnableEXT(ApiDumpInstance::current(), commandBuffer, stencilTestEnable);
@@ -15701,7 +15701,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetStencilTestEnableEXT(VkCommandBuffer commandB
 VKAPI_ATTR void VKAPI_CALL vkCmdSetStencilOpEXT(VkCommandBuffer commandBuffer, VkStencilFaceFlags faceMask, VkStencilOp failOp, VkStencilOp passOp, VkStencilOp depthFailOp, VkCompareOp compareOp)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetStencilOpEXT", "commandBuffer, faceMask, failOp, passOp, depthFailOp, compareOp");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetStencilOpEXT(ApiDumpInstance::current(), commandBuffer, faceMask, failOp, passOp, depthFailOp, compareOp);
@@ -15731,7 +15731,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetStencilOpEXT(VkCommandBuffer commandBuffer, V
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateDeferredOperationKHR(VkDevice device, const VkAllocationCallbacks* pAllocator, VkDeferredOperationKHR* pDeferredOperation)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateDeferredOperationKHR", "device, pAllocator, pDeferredOperation");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateDeferredOperationKHR(ApiDumpInstance::current(), device, pAllocator, pDeferredOperation);
@@ -15762,7 +15762,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateDeferredOperationKHR(VkDevice device, con
 VKAPI_ATTR void VKAPI_CALL vkDestroyDeferredOperationKHR(VkDevice device, VkDeferredOperationKHR operation, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyDeferredOperationKHR", "device, operation, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyDeferredOperationKHR(ApiDumpInstance::current(), device, operation, pAllocator);
@@ -15792,7 +15792,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyDeferredOperationKHR(VkDevice device, VkDefe
 VKAPI_ATTR uint32_t VKAPI_CALL vkGetDeferredOperationMaxConcurrencyKHR(VkDevice device, VkDeferredOperationKHR operation)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeferredOperationMaxConcurrencyKHR", "device, operation");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeferredOperationMaxConcurrencyKHR(ApiDumpInstance::current(), device, operation);
@@ -15823,7 +15823,7 @@ VKAPI_ATTR uint32_t VKAPI_CALL vkGetDeferredOperationMaxConcurrencyKHR(VkDevice 
 VKAPI_ATTR VkResult VKAPI_CALL vkGetDeferredOperationResultKHR(VkDevice device, VkDeferredOperationKHR operation)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeferredOperationResultKHR", "device, operation");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeferredOperationResultKHR(ApiDumpInstance::current(), device, operation);
@@ -15854,7 +15854,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetDeferredOperationResultKHR(VkDevice device, 
 VKAPI_ATTR VkResult VKAPI_CALL vkDeferredOperationJoinKHR(VkDevice device, VkDeferredOperationKHR operation)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDeferredOperationJoinKHR", "device, operation");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDeferredOperationJoinKHR(ApiDumpInstance::current(), device, operation);
@@ -15885,7 +15885,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkDeferredOperationJoinKHR(VkDevice device, VkDef
 VKAPI_ATTR VkResult VKAPI_CALL vkGetPipelineExecutablePropertiesKHR(VkDevice                        device, const VkPipelineInfoKHR*        pPipelineInfo, uint32_t* pExecutableCount, VkPipelineExecutablePropertiesKHR* pProperties)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetPipelineExecutablePropertiesKHR", "device, pPipelineInfo, pExecutableCount, pProperties");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetPipelineExecutablePropertiesKHR(ApiDumpInstance::current(), device, pPipelineInfo, pExecutableCount, pProperties);
@@ -15916,7 +15916,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetPipelineExecutablePropertiesKHR(VkDevice    
 VKAPI_ATTR VkResult VKAPI_CALL vkGetPipelineExecutableStatisticsKHR(VkDevice                        device, const VkPipelineExecutableInfoKHR*  pExecutableInfo, uint32_t* pStatisticCount, VkPipelineExecutableStatisticKHR* pStatistics)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetPipelineExecutableStatisticsKHR", "device, pExecutableInfo, pStatisticCount, pStatistics");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetPipelineExecutableStatisticsKHR(ApiDumpInstance::current(), device, pExecutableInfo, pStatisticCount, pStatistics);
@@ -15947,7 +15947,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetPipelineExecutableStatisticsKHR(VkDevice    
 VKAPI_ATTR VkResult VKAPI_CALL vkGetPipelineExecutableInternalRepresentationsKHR(VkDevice                        device, const VkPipelineExecutableInfoKHR*  pExecutableInfo, uint32_t* pInternalRepresentationCount, VkPipelineExecutableInternalRepresentationKHR* pInternalRepresentations)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetPipelineExecutableInternalRepresentationsKHR", "device, pExecutableInfo, pInternalRepresentationCount, pInternalRepresentations");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetPipelineExecutableInternalRepresentationsKHR(ApiDumpInstance::current(), device, pExecutableInfo, pInternalRepresentationCount, pInternalRepresentations);
@@ -15978,7 +15978,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetPipelineExecutableInternalRepresentationsKHR
 VKAPI_ATTR VkResult VKAPI_CALL vkCopyMemoryToImageEXT(VkDevice device, const VkCopyMemoryToImageInfo*    pCopyMemoryToImageInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCopyMemoryToImageEXT", "device, pCopyMemoryToImageInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCopyMemoryToImageEXT(ApiDumpInstance::current(), device, pCopyMemoryToImageInfo);
@@ -16009,7 +16009,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCopyMemoryToImageEXT(VkDevice device, const VkC
 VKAPI_ATTR VkResult VKAPI_CALL vkCopyImageToMemoryEXT(VkDevice device, const VkCopyImageToMemoryInfo*    pCopyImageToMemoryInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCopyImageToMemoryEXT", "device, pCopyImageToMemoryInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCopyImageToMemoryEXT(ApiDumpInstance::current(), device, pCopyImageToMemoryInfo);
@@ -16040,7 +16040,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCopyImageToMemoryEXT(VkDevice device, const VkC
 VKAPI_ATTR VkResult VKAPI_CALL vkCopyImageToImageEXT(VkDevice device, const VkCopyImageToImageInfo*    pCopyImageToImageInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCopyImageToImageEXT", "device, pCopyImageToImageInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCopyImageToImageEXT(ApiDumpInstance::current(), device, pCopyImageToImageInfo);
@@ -16071,7 +16071,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCopyImageToImageEXT(VkDevice device, const VkCo
 VKAPI_ATTR VkResult VKAPI_CALL vkTransitionImageLayoutEXT(VkDevice device, uint32_t transitionCount, const VkHostImageLayoutTransitionInfo*    pTransitions)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkTransitionImageLayoutEXT", "device, transitionCount, pTransitions");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkTransitionImageLayoutEXT(ApiDumpInstance::current(), device, transitionCount, pTransitions);
@@ -16102,7 +16102,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkTransitionImageLayoutEXT(VkDevice device, uint3
 VKAPI_ATTR void VKAPI_CALL vkGetImageSubresourceLayout2EXT(VkDevice device, VkImage image, const VkImageSubresource2* pSubresource, VkSubresourceLayout2* pLayout)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetImageSubresourceLayout2EXT", "device, image, pSubresource, pLayout");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetImageSubresourceLayout2EXT(ApiDumpInstance::current(), device, image, pSubresource, pLayout);
@@ -16132,7 +16132,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetImageSubresourceLayout2EXT(VkDevice device, VkIm
 VKAPI_ATTR VkResult VKAPI_CALL vkMapMemory2KHR(VkDevice device, const VkMemoryMapInfo* pMemoryMapInfo, void** ppData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkMapMemory2KHR", "device, pMemoryMapInfo, ppData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkMapMemory2KHR(ApiDumpInstance::current(), device, pMemoryMapInfo, ppData);
@@ -16163,7 +16163,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkMapMemory2KHR(VkDevice device, const VkMemoryMa
 VKAPI_ATTR VkResult VKAPI_CALL vkUnmapMemory2KHR(VkDevice device, const VkMemoryUnmapInfo* pMemoryUnmapInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkUnmapMemory2KHR", "device, pMemoryUnmapInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkUnmapMemory2KHR(ApiDumpInstance::current(), device, pMemoryUnmapInfo);
@@ -16194,7 +16194,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkUnmapMemory2KHR(VkDevice device, const VkMemory
 VKAPI_ATTR VkResult VKAPI_CALL vkReleaseSwapchainImagesEXT(VkDevice device, const VkReleaseSwapchainImagesInfoEXT* pReleaseInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkReleaseSwapchainImagesEXT", "device, pReleaseInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkReleaseSwapchainImagesEXT(ApiDumpInstance::current(), device, pReleaseInfo);
@@ -16225,7 +16225,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkReleaseSwapchainImagesEXT(VkDevice device, cons
 VKAPI_ATTR void VKAPI_CALL vkGetGeneratedCommandsMemoryRequirementsNV(VkDevice device, const VkGeneratedCommandsMemoryRequirementsInfoNV* pInfo, VkMemoryRequirements2* pMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetGeneratedCommandsMemoryRequirementsNV", "device, pInfo, pMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetGeneratedCommandsMemoryRequirementsNV(ApiDumpInstance::current(), device, pInfo, pMemoryRequirements);
@@ -16255,7 +16255,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetGeneratedCommandsMemoryRequirementsNV(VkDevice d
 VKAPI_ATTR void VKAPI_CALL vkCmdPreprocessGeneratedCommandsNV(VkCommandBuffer commandBuffer, const VkGeneratedCommandsInfoNV* pGeneratedCommandsInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdPreprocessGeneratedCommandsNV", "commandBuffer, pGeneratedCommandsInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdPreprocessGeneratedCommandsNV(ApiDumpInstance::current(), commandBuffer, pGeneratedCommandsInfo);
@@ -16285,7 +16285,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdPreprocessGeneratedCommandsNV(VkCommandBuffer co
 VKAPI_ATTR void VKAPI_CALL vkCmdExecuteGeneratedCommandsNV(VkCommandBuffer commandBuffer, VkBool32 isPreprocessed, const VkGeneratedCommandsInfoNV* pGeneratedCommandsInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdExecuteGeneratedCommandsNV", "commandBuffer, isPreprocessed, pGeneratedCommandsInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdExecuteGeneratedCommandsNV(ApiDumpInstance::current(), commandBuffer, isPreprocessed, pGeneratedCommandsInfo);
@@ -16315,7 +16315,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdExecuteGeneratedCommandsNV(VkCommandBuffer comma
 VKAPI_ATTR void VKAPI_CALL vkCmdBindPipelineShaderGroupNV(VkCommandBuffer commandBuffer, VkPipelineBindPoint pipelineBindPoint, VkPipeline pipeline, uint32_t groupIndex)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindPipelineShaderGroupNV", "commandBuffer, pipelineBindPoint, pipeline, groupIndex");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindPipelineShaderGroupNV(ApiDumpInstance::current(), commandBuffer, pipelineBindPoint, pipeline, groupIndex);
@@ -16345,7 +16345,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindPipelineShaderGroupNV(VkCommandBuffer comman
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateIndirectCommandsLayoutNV(VkDevice device, const VkIndirectCommandsLayoutCreateInfoNV* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkIndirectCommandsLayoutNV* pIndirectCommandsLayout)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateIndirectCommandsLayoutNV", "device, pCreateInfo, pAllocator, pIndirectCommandsLayout");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateIndirectCommandsLayoutNV(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pIndirectCommandsLayout);
@@ -16376,7 +16376,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateIndirectCommandsLayoutNV(VkDevice device,
 VKAPI_ATTR void VKAPI_CALL vkDestroyIndirectCommandsLayoutNV(VkDevice device, VkIndirectCommandsLayoutNV indirectCommandsLayout, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyIndirectCommandsLayoutNV", "device, indirectCommandsLayout, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyIndirectCommandsLayoutNV(ApiDumpInstance::current(), device, indirectCommandsLayout, pAllocator);
@@ -16406,7 +16406,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyIndirectCommandsLayoutNV(VkDevice device, Vk
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthBias2EXT(VkCommandBuffer commandBuffer, const VkDepthBiasInfoEXT*         pDepthBiasInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDepthBias2EXT", "commandBuffer, pDepthBiasInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDepthBias2EXT(ApiDumpInstance::current(), commandBuffer, pDepthBiasInfo);
@@ -16436,7 +16436,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthBias2EXT(VkCommandBuffer commandBuffer, 
 VKAPI_ATTR VkResult VKAPI_CALL vkCreatePrivateDataSlotEXT(VkDevice device, const VkPrivateDataSlotCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkPrivateDataSlot* pPrivateDataSlot)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreatePrivateDataSlotEXT", "device, pCreateInfo, pAllocator, pPrivateDataSlot");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreatePrivateDataSlotEXT(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pPrivateDataSlot);
@@ -16467,7 +16467,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreatePrivateDataSlotEXT(VkDevice device, const
 VKAPI_ATTR void VKAPI_CALL vkDestroyPrivateDataSlotEXT(VkDevice device, VkPrivateDataSlot privateDataSlot, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyPrivateDataSlotEXT", "device, privateDataSlot, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyPrivateDataSlotEXT(ApiDumpInstance::current(), device, privateDataSlot, pAllocator);
@@ -16497,7 +16497,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyPrivateDataSlotEXT(VkDevice device, VkPrivat
 VKAPI_ATTR VkResult VKAPI_CALL vkSetPrivateDataEXT(VkDevice device, VkObjectType objectType, uint64_t objectHandle, VkPrivateDataSlot privateDataSlot, uint64_t data)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkSetPrivateDataEXT", "device, objectType, objectHandle, privateDataSlot, data");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkSetPrivateDataEXT(ApiDumpInstance::current(), device, objectType, objectHandle, privateDataSlot, data);
@@ -16528,7 +16528,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkSetPrivateDataEXT(VkDevice device, VkObjectType
 VKAPI_ATTR void VKAPI_CALL vkGetPrivateDataEXT(VkDevice device, VkObjectType objectType, uint64_t objectHandle, VkPrivateDataSlot privateDataSlot, uint64_t* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetPrivateDataEXT", "device, objectType, objectHandle, privateDataSlot, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetPrivateDataEXT(ApiDumpInstance::current(), device, objectType, objectHandle, privateDataSlot, pData);
@@ -16558,7 +16558,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetPrivateDataEXT(VkDevice device, VkObjectType obj
 VKAPI_ATTR VkResult VKAPI_CALL vkGetEncodedVideoSessionParametersKHR(VkDevice device, const VkVideoEncodeSessionParametersGetInfoKHR* pVideoSessionParametersInfo, VkVideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, size_t* pDataSize, void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetEncodedVideoSessionParametersKHR", "device, pVideoSessionParametersInfo, pFeedbackInfo, pDataSize, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetEncodedVideoSessionParametersKHR(ApiDumpInstance::current(), device, pVideoSessionParametersInfo, pFeedbackInfo, pDataSize, pData);
@@ -16589,7 +16589,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetEncodedVideoSessionParametersKHR(VkDevice de
 VKAPI_ATTR void VKAPI_CALL vkCmdEncodeVideoKHR(VkCommandBuffer commandBuffer, const VkVideoEncodeInfoKHR* pEncodeInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdEncodeVideoKHR", "commandBuffer, pEncodeInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdEncodeVideoKHR(ApiDumpInstance::current(), commandBuffer, pEncodeInfo);
@@ -16620,7 +16620,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdEncodeVideoKHR(VkCommandBuffer commandBuffer, co
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateCudaModuleNV(VkDevice device, const VkCudaModuleCreateInfoNV* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkCudaModuleNV* pModule)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateCudaModuleNV", "device, pCreateInfo, pAllocator, pModule");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateCudaModuleNV(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pModule);
@@ -16653,7 +16653,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateCudaModuleNV(VkDevice device, const VkCud
 VKAPI_ATTR VkResult VKAPI_CALL vkGetCudaModuleCacheNV(VkDevice device, VkCudaModuleNV module, size_t* pCacheSize, void* pCacheData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetCudaModuleCacheNV", "device, module, pCacheSize, pCacheData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetCudaModuleCacheNV(ApiDumpInstance::current(), device, module, pCacheSize, pCacheData);
@@ -16686,7 +16686,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetCudaModuleCacheNV(VkDevice device, VkCudaMod
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateCudaFunctionNV(VkDevice device, const VkCudaFunctionCreateInfoNV* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkCudaFunctionNV* pFunction)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateCudaFunctionNV", "device, pCreateInfo, pAllocator, pFunction");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateCudaFunctionNV(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pFunction);
@@ -16719,7 +16719,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateCudaFunctionNV(VkDevice device, const VkC
 VKAPI_ATTR void VKAPI_CALL vkDestroyCudaModuleNV(VkDevice device, VkCudaModuleNV module, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyCudaModuleNV", "device, module, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyCudaModuleNV(ApiDumpInstance::current(), device, module, pAllocator);
@@ -16751,7 +16751,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyCudaModuleNV(VkDevice device, VkCudaModuleNV
 VKAPI_ATTR void VKAPI_CALL vkDestroyCudaFunctionNV(VkDevice device, VkCudaFunctionNV function, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyCudaFunctionNV", "device, function, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyCudaFunctionNV(ApiDumpInstance::current(), device, function, pAllocator);
@@ -16783,7 +16783,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyCudaFunctionNV(VkDevice device, VkCudaFuncti
 VKAPI_ATTR void VKAPI_CALL vkCmdCudaLaunchKernelNV(VkCommandBuffer commandBuffer, const VkCudaLaunchInfoNV* pLaunchInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCudaLaunchKernelNV", "commandBuffer, pLaunchInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCudaLaunchKernelNV(ApiDumpInstance::current(), commandBuffer, pLaunchInfo);
@@ -16814,7 +16814,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCudaLaunchKernelNV(VkCommandBuffer commandBuffer
 VKAPI_ATTR void VKAPI_CALL vkCmdDispatchTileQCOM(VkCommandBuffer commandBuffer, const VkDispatchTileInfoQCOM* pDispatchTileInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDispatchTileQCOM", "commandBuffer, pDispatchTileInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDispatchTileQCOM(ApiDumpInstance::current(), commandBuffer, pDispatchTileInfo);
@@ -16844,7 +16844,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDispatchTileQCOM(VkCommandBuffer commandBuffer, 
 VKAPI_ATTR void VKAPI_CALL vkCmdBeginPerTileExecutionQCOM(VkCommandBuffer commandBuffer, const VkPerTileBeginInfoQCOM* pPerTileBeginInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBeginPerTileExecutionQCOM", "commandBuffer, pPerTileBeginInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBeginPerTileExecutionQCOM(ApiDumpInstance::current(), commandBuffer, pPerTileBeginInfo);
@@ -16874,7 +16874,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBeginPerTileExecutionQCOM(VkCommandBuffer comman
 VKAPI_ATTR void VKAPI_CALL vkCmdEndPerTileExecutionQCOM(VkCommandBuffer commandBuffer, const VkPerTileEndInfoQCOM* pPerTileEndInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdEndPerTileExecutionQCOM", "commandBuffer, pPerTileEndInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdEndPerTileExecutionQCOM(ApiDumpInstance::current(), commandBuffer, pPerTileEndInfo);
@@ -16905,7 +16905,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdEndPerTileExecutionQCOM(VkCommandBuffer commandB
 VKAPI_ATTR void VKAPI_CALL vkExportMetalObjectsEXT(VkDevice device, VkExportMetalObjectsInfoEXT* pMetalObjectsInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkExportMetalObjectsEXT", "device, pMetalObjectsInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkExportMetalObjectsEXT(ApiDumpInstance::current(), device, pMetalObjectsInfo);
@@ -16936,7 +16936,7 @@ VKAPI_ATTR void VKAPI_CALL vkExportMetalObjectsEXT(VkDevice device, VkExportMeta
 VKAPI_ATTR void VKAPI_CALL vkCmdSetEvent2KHR(VkCommandBuffer                   commandBuffer, VkEvent                                             event, const VkDependencyInfo*                             pDependencyInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetEvent2KHR", "commandBuffer, event, pDependencyInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetEvent2KHR(ApiDumpInstance::current(), commandBuffer, event, pDependencyInfo);
@@ -16966,7 +16966,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetEvent2KHR(VkCommandBuffer                   c
 VKAPI_ATTR void VKAPI_CALL vkCmdResetEvent2KHR(VkCommandBuffer                   commandBuffer, VkEvent                                             event, VkPipelineStageFlags2               stageMask)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdResetEvent2KHR", "commandBuffer, event, stageMask");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdResetEvent2KHR(ApiDumpInstance::current(), commandBuffer, event, stageMask);
@@ -16996,7 +16996,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdResetEvent2KHR(VkCommandBuffer                  
 VKAPI_ATTR void VKAPI_CALL vkCmdWaitEvents2KHR(VkCommandBuffer                   commandBuffer, uint32_t                                            eventCount, const VkEvent*                     pEvents, const VkDependencyInfo*            pDependencyInfos)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdWaitEvents2KHR", "commandBuffer, eventCount, pEvents, pDependencyInfos");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdWaitEvents2KHR(ApiDumpInstance::current(), commandBuffer, eventCount, pEvents, pDependencyInfos);
@@ -17026,7 +17026,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdWaitEvents2KHR(VkCommandBuffer                  
 VKAPI_ATTR void VKAPI_CALL vkCmdPipelineBarrier2KHR(VkCommandBuffer                   commandBuffer, const VkDependencyInfo*                             pDependencyInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdPipelineBarrier2KHR", "commandBuffer, pDependencyInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdPipelineBarrier2KHR(ApiDumpInstance::current(), commandBuffer, pDependencyInfo);
@@ -17056,7 +17056,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdPipelineBarrier2KHR(VkCommandBuffer             
 VKAPI_ATTR void VKAPI_CALL vkCmdWriteTimestamp2KHR(VkCommandBuffer                   commandBuffer, VkPipelineStageFlags2               stage, VkQueryPool                                         queryPool, uint32_t                                            query)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdWriteTimestamp2KHR", "commandBuffer, stage, queryPool, query");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdWriteTimestamp2KHR(ApiDumpInstance::current(), commandBuffer, stage, queryPool, query);
@@ -17086,7 +17086,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdWriteTimestamp2KHR(VkCommandBuffer              
 VKAPI_ATTR VkResult VKAPI_CALL vkQueueSubmit2KHR(VkQueue                           queue, uint32_t                            submitCount, const VkSubmitInfo2*              pSubmits, VkFence           fence)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkQueueSubmit2KHR", "queue, submitCount, pSubmits, fence");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkQueueSubmit2KHR(ApiDumpInstance::current(), queue, submitCount, pSubmits, fence);
@@ -17117,7 +17117,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkQueueSubmit2KHR(VkQueue                        
 VKAPI_ATTR void VKAPI_CALL vkGetDescriptorSetLayoutSizeEXT(VkDevice device, VkDescriptorSetLayout layout, VkDeviceSize* pLayoutSizeInBytes)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDescriptorSetLayoutSizeEXT", "device, layout, pLayoutSizeInBytes");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDescriptorSetLayoutSizeEXT(ApiDumpInstance::current(), device, layout, pLayoutSizeInBytes);
@@ -17147,7 +17147,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDescriptorSetLayoutSizeEXT(VkDevice device, VkDe
 VKAPI_ATTR void VKAPI_CALL vkGetDescriptorSetLayoutBindingOffsetEXT(VkDevice device, VkDescriptorSetLayout layout, uint32_t binding, VkDeviceSize* pOffset)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDescriptorSetLayoutBindingOffsetEXT", "device, layout, binding, pOffset");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDescriptorSetLayoutBindingOffsetEXT(ApiDumpInstance::current(), device, layout, binding, pOffset);
@@ -17177,7 +17177,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDescriptorSetLayoutBindingOffsetEXT(VkDevice dev
 VKAPI_ATTR void VKAPI_CALL vkGetDescriptorEXT(VkDevice device, const VkDescriptorGetInfoEXT* pDescriptorInfo, size_t dataSize, void* pDescriptor)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDescriptorEXT", "device, pDescriptorInfo, dataSize, pDescriptor");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDescriptorEXT(ApiDumpInstance::current(), device, pDescriptorInfo, dataSize, pDescriptor);
@@ -17207,7 +17207,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDescriptorEXT(VkDevice device, const VkDescripto
 VKAPI_ATTR void VKAPI_CALL vkCmdBindDescriptorBuffersEXT(VkCommandBuffer commandBuffer, uint32_t bufferCount, const VkDescriptorBufferBindingInfoEXT* pBindingInfos)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindDescriptorBuffersEXT", "commandBuffer, bufferCount, pBindingInfos");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindDescriptorBuffersEXT(ApiDumpInstance::current(), commandBuffer, bufferCount, pBindingInfos);
@@ -17237,7 +17237,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindDescriptorBuffersEXT(VkCommandBuffer command
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDescriptorBufferOffsetsEXT(VkCommandBuffer commandBuffer, VkPipelineBindPoint pipelineBindPoint, VkPipelineLayout layout, uint32_t firstSet, uint32_t setCount, const uint32_t* pBufferIndices, const VkDeviceSize* pOffsets)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDescriptorBufferOffsetsEXT", "commandBuffer, pipelineBindPoint, layout, firstSet, setCount, pBufferIndices, pOffsets");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDescriptorBufferOffsetsEXT(ApiDumpInstance::current(), commandBuffer, pipelineBindPoint, layout, firstSet, setCount, pBufferIndices, pOffsets);
@@ -17267,7 +17267,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDescriptorBufferOffsetsEXT(VkCommandBuffer co
 VKAPI_ATTR void VKAPI_CALL vkCmdBindDescriptorBufferEmbeddedSamplersEXT(VkCommandBuffer commandBuffer, VkPipelineBindPoint pipelineBindPoint, VkPipelineLayout layout, uint32_t set)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindDescriptorBufferEmbeddedSamplersEXT", "commandBuffer, pipelineBindPoint, layout, set");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindDescriptorBufferEmbeddedSamplersEXT(ApiDumpInstance::current(), commandBuffer, pipelineBindPoint, layout, set);
@@ -17297,7 +17297,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindDescriptorBufferEmbeddedSamplersEXT(VkComman
 VKAPI_ATTR VkResult VKAPI_CALL vkGetBufferOpaqueCaptureDescriptorDataEXT(VkDevice device, const VkBufferCaptureDescriptorDataInfoEXT* pInfo, void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetBufferOpaqueCaptureDescriptorDataEXT", "device, pInfo, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetBufferOpaqueCaptureDescriptorDataEXT(ApiDumpInstance::current(), device, pInfo, pData);
@@ -17328,7 +17328,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetBufferOpaqueCaptureDescriptorDataEXT(VkDevic
 VKAPI_ATTR VkResult VKAPI_CALL vkGetImageOpaqueCaptureDescriptorDataEXT(VkDevice device, const VkImageCaptureDescriptorDataInfoEXT* pInfo, void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetImageOpaqueCaptureDescriptorDataEXT", "device, pInfo, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetImageOpaqueCaptureDescriptorDataEXT(ApiDumpInstance::current(), device, pInfo, pData);
@@ -17359,7 +17359,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetImageOpaqueCaptureDescriptorDataEXT(VkDevice
 VKAPI_ATTR VkResult VKAPI_CALL vkGetImageViewOpaqueCaptureDescriptorDataEXT(VkDevice device, const VkImageViewCaptureDescriptorDataInfoEXT* pInfo, void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetImageViewOpaqueCaptureDescriptorDataEXT", "device, pInfo, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetImageViewOpaqueCaptureDescriptorDataEXT(ApiDumpInstance::current(), device, pInfo, pData);
@@ -17390,7 +17390,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetImageViewOpaqueCaptureDescriptorDataEXT(VkDe
 VKAPI_ATTR VkResult VKAPI_CALL vkGetSamplerOpaqueCaptureDescriptorDataEXT(VkDevice device, const VkSamplerCaptureDescriptorDataInfoEXT* pInfo, void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetSamplerOpaqueCaptureDescriptorDataEXT", "device, pInfo, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetSamplerOpaqueCaptureDescriptorDataEXT(ApiDumpInstance::current(), device, pInfo, pData);
@@ -17421,7 +17421,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetSamplerOpaqueCaptureDescriptorDataEXT(VkDevi
 VKAPI_ATTR VkResult VKAPI_CALL vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT(VkDevice device, const VkAccelerationStructureCaptureDescriptorDataInfoEXT* pInfo, void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT", "device, pInfo, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT(ApiDumpInstance::current(), device, pInfo, pData);
@@ -17452,7 +17452,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetAccelerationStructureOpaqueCaptureDescriptor
 VKAPI_ATTR void VKAPI_CALL vkCmdSetFragmentShadingRateEnumNV(VkCommandBuffer           commandBuffer, VkFragmentShadingRateNV                     shadingRate, const VkFragmentShadingRateCombinerOpKHR    combinerOps[2])
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetFragmentShadingRateEnumNV", "commandBuffer, shadingRate, combinerOps");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetFragmentShadingRateEnumNV(ApiDumpInstance::current(), commandBuffer, shadingRate, combinerOps);
@@ -17482,7 +17482,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetFragmentShadingRateEnumNV(VkCommandBuffer    
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawMeshTasksEXT(VkCommandBuffer commandBuffer, uint32_t groupCountX, uint32_t groupCountY, uint32_t groupCountZ)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawMeshTasksEXT", "commandBuffer, groupCountX, groupCountY, groupCountZ");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawMeshTasksEXT(ApiDumpInstance::current(), commandBuffer, groupCountX, groupCountY, groupCountZ);
@@ -17512,7 +17512,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawMeshTasksEXT(VkCommandBuffer commandBuffer, 
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawMeshTasksIndirectEXT(VkCommandBuffer commandBuffer, VkBuffer buffer, VkDeviceSize offset, uint32_t drawCount, uint32_t stride)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawMeshTasksIndirectEXT", "commandBuffer, buffer, offset, drawCount, stride");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawMeshTasksIndirectEXT(ApiDumpInstance::current(), commandBuffer, buffer, offset, drawCount, stride);
@@ -17542,7 +17542,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawMeshTasksIndirectEXT(VkCommandBuffer command
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawMeshTasksIndirectCountEXT(VkCommandBuffer commandBuffer, VkBuffer buffer, VkDeviceSize offset, VkBuffer countBuffer, VkDeviceSize countBufferOffset, uint32_t maxDrawCount, uint32_t stride)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawMeshTasksIndirectCountEXT", "commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawMeshTasksIndirectCountEXT(ApiDumpInstance::current(), commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
@@ -17572,7 +17572,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawMeshTasksIndirectCountEXT(VkCommandBuffer co
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyBuffer2KHR(VkCommandBuffer commandBuffer, const VkCopyBufferInfo2* pCopyBufferInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyBuffer2KHR", "commandBuffer, pCopyBufferInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyBuffer2KHR(ApiDumpInstance::current(), commandBuffer, pCopyBufferInfo);
@@ -17602,7 +17602,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyBuffer2KHR(VkCommandBuffer commandBuffer, co
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyImage2KHR(VkCommandBuffer commandBuffer, const VkCopyImageInfo2* pCopyImageInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyImage2KHR", "commandBuffer, pCopyImageInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyImage2KHR(ApiDumpInstance::current(), commandBuffer, pCopyImageInfo);
@@ -17632,7 +17632,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyImage2KHR(VkCommandBuffer commandBuffer, con
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyBufferToImage2KHR(VkCommandBuffer commandBuffer, const VkCopyBufferToImageInfo2* pCopyBufferToImageInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyBufferToImage2KHR", "commandBuffer, pCopyBufferToImageInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyBufferToImage2KHR(ApiDumpInstance::current(), commandBuffer, pCopyBufferToImageInfo);
@@ -17662,7 +17662,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyBufferToImage2KHR(VkCommandBuffer commandBuf
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyImageToBuffer2KHR(VkCommandBuffer commandBuffer, const VkCopyImageToBufferInfo2* pCopyImageToBufferInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyImageToBuffer2KHR", "commandBuffer, pCopyImageToBufferInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyImageToBuffer2KHR(ApiDumpInstance::current(), commandBuffer, pCopyImageToBufferInfo);
@@ -17692,7 +17692,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyImageToBuffer2KHR(VkCommandBuffer commandBuf
 VKAPI_ATTR void VKAPI_CALL vkCmdBlitImage2KHR(VkCommandBuffer commandBuffer, const VkBlitImageInfo2* pBlitImageInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBlitImage2KHR", "commandBuffer, pBlitImageInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBlitImage2KHR(ApiDumpInstance::current(), commandBuffer, pBlitImageInfo);
@@ -17722,7 +17722,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBlitImage2KHR(VkCommandBuffer commandBuffer, con
 VKAPI_ATTR void VKAPI_CALL vkCmdResolveImage2KHR(VkCommandBuffer commandBuffer, const VkResolveImageInfo2* pResolveImageInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdResolveImage2KHR", "commandBuffer, pResolveImageInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdResolveImage2KHR(ApiDumpInstance::current(), commandBuffer, pResolveImageInfo);
@@ -17752,7 +17752,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdResolveImage2KHR(VkCommandBuffer commandBuffer, 
 VKAPI_ATTR VkResult VKAPI_CALL vkGetDeviceFaultInfoEXT(VkDevice device, VkDeviceFaultCountsEXT* pFaultCounts, VkDeviceFaultInfoEXT* pFaultInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceFaultInfoEXT", "device, pFaultCounts, pFaultInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceFaultInfoEXT(ApiDumpInstance::current(), device, pFaultCounts, pFaultInfo);
@@ -17783,7 +17783,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetDeviceFaultInfoEXT(VkDevice device, VkDevice
 VKAPI_ATTR void VKAPI_CALL vkCmdTraceRaysKHR(VkCommandBuffer commandBuffer, const VkStridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, const VkStridedDeviceAddressRegionKHR* pMissShaderBindingTable, const VkStridedDeviceAddressRegionKHR* pHitShaderBindingTable, const VkStridedDeviceAddressRegionKHR* pCallableShaderBindingTable, uint32_t width, uint32_t height, uint32_t depth)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdTraceRaysKHR", "commandBuffer, pRaygenShaderBindingTable, pMissShaderBindingTable, pHitShaderBindingTable, pCallableShaderBindingTable, width, height, depth");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdTraceRaysKHR(ApiDumpInstance::current(), commandBuffer, pRaygenShaderBindingTable, pMissShaderBindingTable, pHitShaderBindingTable, pCallableShaderBindingTable, width, height, depth);
@@ -17813,7 +17813,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdTraceRaysKHR(VkCommandBuffer commandBuffer, cons
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateRayTracingPipelinesKHR(VkDevice device, VkDeferredOperationKHR deferredOperation, VkPipelineCache pipelineCache, uint32_t createInfoCount, const VkRayTracingPipelineCreateInfoKHR* pCreateInfos, const VkAllocationCallbacks* pAllocator, VkPipeline* pPipelines)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateRayTracingPipelinesKHR", "device, deferredOperation, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateRayTracingPipelinesKHR(ApiDumpInstance::current(), device, deferredOperation, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines);
@@ -17844,7 +17844,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateRayTracingPipelinesKHR(VkDevice device, V
 VKAPI_ATTR VkResult VKAPI_CALL vkGetRayTracingCaptureReplayShaderGroupHandlesKHR(VkDevice device, VkPipeline pipeline, uint32_t firstGroup, uint32_t groupCount, size_t dataSize, void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetRayTracingCaptureReplayShaderGroupHandlesKHR", "device, pipeline, firstGroup, groupCount, dataSize, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetRayTracingCaptureReplayShaderGroupHandlesKHR(ApiDumpInstance::current(), device, pipeline, firstGroup, groupCount, dataSize, pData);
@@ -17875,7 +17875,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetRayTracingCaptureReplayShaderGroupHandlesKHR
 VKAPI_ATTR void VKAPI_CALL vkCmdTraceRaysIndirectKHR(VkCommandBuffer commandBuffer, const VkStridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, const VkStridedDeviceAddressRegionKHR* pMissShaderBindingTable, const VkStridedDeviceAddressRegionKHR* pHitShaderBindingTable, const VkStridedDeviceAddressRegionKHR* pCallableShaderBindingTable, VkDeviceAddress indirectDeviceAddress)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdTraceRaysIndirectKHR", "commandBuffer, pRaygenShaderBindingTable, pMissShaderBindingTable, pHitShaderBindingTable, pCallableShaderBindingTable, indirectDeviceAddress");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdTraceRaysIndirectKHR(ApiDumpInstance::current(), commandBuffer, pRaygenShaderBindingTable, pMissShaderBindingTable, pHitShaderBindingTable, pCallableShaderBindingTable, indirectDeviceAddress);
@@ -17905,7 +17905,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdTraceRaysIndirectKHR(VkCommandBuffer commandBuff
 VKAPI_ATTR VkDeviceSize VKAPI_CALL vkGetRayTracingShaderGroupStackSizeKHR(VkDevice device, VkPipeline pipeline, uint32_t group, VkShaderGroupShaderKHR groupShader)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetRayTracingShaderGroupStackSizeKHR", "device, pipeline, group, groupShader");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetRayTracingShaderGroupStackSizeKHR(ApiDumpInstance::current(), device, pipeline, group, groupShader);
@@ -17936,7 +17936,7 @@ VKAPI_ATTR VkDeviceSize VKAPI_CALL vkGetRayTracingShaderGroupStackSizeKHR(VkDevi
 VKAPI_ATTR void VKAPI_CALL vkCmdSetRayTracingPipelineStackSizeKHR(VkCommandBuffer commandBuffer, uint32_t pipelineStackSize)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetRayTracingPipelineStackSizeKHR", "commandBuffer, pipelineStackSize");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetRayTracingPipelineStackSizeKHR(ApiDumpInstance::current(), commandBuffer, pipelineStackSize);
@@ -17966,7 +17966,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetRayTracingPipelineStackSizeKHR(VkCommandBuffe
 VKAPI_ATTR void VKAPI_CALL vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint32_t vertexBindingDescriptionCount, const VkVertexInputBindingDescription2EXT* pVertexBindingDescriptions, uint32_t vertexAttributeDescriptionCount, const VkVertexInputAttributeDescription2EXT* pVertexAttributeDescriptions)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetVertexInputEXT", "commandBuffer, vertexBindingDescriptionCount, pVertexBindingDescriptions, vertexAttributeDescriptionCount, pVertexAttributeDescriptions");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetVertexInputEXT(ApiDumpInstance::current(), commandBuffer, vertexBindingDescriptionCount, pVertexBindingDescriptions, vertexAttributeDescriptionCount, pVertexAttributeDescriptions);
@@ -17997,7 +17997,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer,
 VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryZirconHandleFUCHSIA(VkDevice device, const VkMemoryGetZirconHandleInfoFUCHSIA* pGetZirconHandleInfo, zx_handle_t* pZirconHandle)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetMemoryZirconHandleFUCHSIA", "device, pGetZirconHandleInfo, pZirconHandle");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetMemoryZirconHandleFUCHSIA(ApiDumpInstance::current(), device, pGetZirconHandleInfo, pZirconHandle);
@@ -18030,7 +18030,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryZirconHandleFUCHSIA(VkDevice device, c
 VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryZirconHandlePropertiesFUCHSIA(VkDevice device, VkExternalMemoryHandleTypeFlagBits handleType, zx_handle_t zirconHandle, VkMemoryZirconHandlePropertiesFUCHSIA* pMemoryZirconHandleProperties)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetMemoryZirconHandlePropertiesFUCHSIA", "device, handleType, zirconHandle, pMemoryZirconHandleProperties");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetMemoryZirconHandlePropertiesFUCHSIA(ApiDumpInstance::current(), device, handleType, zirconHandle, pMemoryZirconHandleProperties);
@@ -18063,7 +18063,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryZirconHandlePropertiesFUCHSIA(VkDevice
 VKAPI_ATTR VkResult VKAPI_CALL vkImportSemaphoreZirconHandleFUCHSIA(VkDevice device, const VkImportSemaphoreZirconHandleInfoFUCHSIA* pImportSemaphoreZirconHandleInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkImportSemaphoreZirconHandleFUCHSIA", "device, pImportSemaphoreZirconHandleInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkImportSemaphoreZirconHandleFUCHSIA(ApiDumpInstance::current(), device, pImportSemaphoreZirconHandleInfo);
@@ -18096,7 +18096,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkImportSemaphoreZirconHandleFUCHSIA(VkDevice dev
 VKAPI_ATTR VkResult VKAPI_CALL vkGetSemaphoreZirconHandleFUCHSIA(VkDevice device, const VkSemaphoreGetZirconHandleInfoFUCHSIA* pGetZirconHandleInfo, zx_handle_t* pZirconHandle)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetSemaphoreZirconHandleFUCHSIA", "device, pGetZirconHandleInfo, pZirconHandle");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetSemaphoreZirconHandleFUCHSIA(ApiDumpInstance::current(), device, pGetZirconHandleInfo, pZirconHandle);
@@ -18129,7 +18129,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetSemaphoreZirconHandleFUCHSIA(VkDevice device
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateBufferCollectionFUCHSIA(VkDevice device, const VkBufferCollectionCreateInfoFUCHSIA* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkBufferCollectionFUCHSIA* pCollection)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateBufferCollectionFUCHSIA", "device, pCreateInfo, pAllocator, pCollection");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateBufferCollectionFUCHSIA(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pCollection);
@@ -18162,7 +18162,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateBufferCollectionFUCHSIA(VkDevice device, 
 VKAPI_ATTR VkResult VKAPI_CALL vkSetBufferCollectionImageConstraintsFUCHSIA(VkDevice device, VkBufferCollectionFUCHSIA collection, const VkImageConstraintsInfoFUCHSIA* pImageConstraintsInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkSetBufferCollectionImageConstraintsFUCHSIA", "device, collection, pImageConstraintsInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkSetBufferCollectionImageConstraintsFUCHSIA(ApiDumpInstance::current(), device, collection, pImageConstraintsInfo);
@@ -18195,7 +18195,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkSetBufferCollectionImageConstraintsFUCHSIA(VkDe
 VKAPI_ATTR VkResult VKAPI_CALL vkSetBufferCollectionBufferConstraintsFUCHSIA(VkDevice device, VkBufferCollectionFUCHSIA collection, const VkBufferConstraintsInfoFUCHSIA* pBufferConstraintsInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkSetBufferCollectionBufferConstraintsFUCHSIA", "device, collection, pBufferConstraintsInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkSetBufferCollectionBufferConstraintsFUCHSIA(ApiDumpInstance::current(), device, collection, pBufferConstraintsInfo);
@@ -18228,7 +18228,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkSetBufferCollectionBufferConstraintsFUCHSIA(VkD
 VKAPI_ATTR void VKAPI_CALL vkDestroyBufferCollectionFUCHSIA(VkDevice device, VkBufferCollectionFUCHSIA collection, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyBufferCollectionFUCHSIA", "device, collection, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyBufferCollectionFUCHSIA(ApiDumpInstance::current(), device, collection, pAllocator);
@@ -18260,7 +18260,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyBufferCollectionFUCHSIA(VkDevice device, VkB
 VKAPI_ATTR VkResult VKAPI_CALL vkGetBufferCollectionPropertiesFUCHSIA(VkDevice device, VkBufferCollectionFUCHSIA collection, VkBufferCollectionPropertiesFUCHSIA* pProperties)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetBufferCollectionPropertiesFUCHSIA", "device, collection, pProperties");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetBufferCollectionPropertiesFUCHSIA(ApiDumpInstance::current(), device, collection, pProperties);
@@ -18292,7 +18292,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetBufferCollectionPropertiesFUCHSIA(VkDevice d
 VKAPI_ATTR VkResult VKAPI_CALL vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI(VkDevice device, VkRenderPass renderpass, VkExtent2D* pMaxWorkgroupSize)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI", "device, renderpass, pMaxWorkgroupSize");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI(ApiDumpInstance::current(), device, renderpass, pMaxWorkgroupSize);
@@ -18323,7 +18323,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI(V
 VKAPI_ATTR void VKAPI_CALL vkCmdSubpassShadingHUAWEI(VkCommandBuffer commandBuffer)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSubpassShadingHUAWEI", "commandBuffer");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSubpassShadingHUAWEI(ApiDumpInstance::current(), commandBuffer);
@@ -18353,7 +18353,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSubpassShadingHUAWEI(VkCommandBuffer commandBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdBindInvocationMaskHUAWEI(VkCommandBuffer commandBuffer, VkImageView imageView, VkImageLayout imageLayout)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindInvocationMaskHUAWEI", "commandBuffer, imageView, imageLayout");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindInvocationMaskHUAWEI(ApiDumpInstance::current(), commandBuffer, imageView, imageLayout);
@@ -18383,7 +18383,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindInvocationMaskHUAWEI(VkCommandBuffer command
 VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryRemoteAddressNV(VkDevice device, const VkMemoryGetRemoteAddressInfoNV* pMemoryGetRemoteAddressInfo, VkRemoteAddressNV* pAddress)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetMemoryRemoteAddressNV", "device, pMemoryGetRemoteAddressInfo, pAddress");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetMemoryRemoteAddressNV(ApiDumpInstance::current(), device, pMemoryGetRemoteAddressInfo, pAddress);
@@ -18414,7 +18414,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryRemoteAddressNV(VkDevice device, const
 VKAPI_ATTR VkResult VKAPI_CALL vkGetPipelinePropertiesEXT(VkDevice device, const VkPipelineInfoEXT* pPipelineInfo, VkBaseOutStructure* pPipelineProperties)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetPipelinePropertiesEXT", "device, pPipelineInfo, pPipelineProperties");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetPipelinePropertiesEXT(ApiDumpInstance::current(), device, pPipelineInfo, pPipelineProperties);
@@ -18445,7 +18445,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetPipelinePropertiesEXT(VkDevice device, const
 VKAPI_ATTR void VKAPI_CALL vkCmdSetPatchControlPointsEXT(VkCommandBuffer commandBuffer, uint32_t patchControlPoints)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetPatchControlPointsEXT", "commandBuffer, patchControlPoints");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetPatchControlPointsEXT(ApiDumpInstance::current(), commandBuffer, patchControlPoints);
@@ -18475,7 +18475,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetPatchControlPointsEXT(VkCommandBuffer command
 VKAPI_ATTR void VKAPI_CALL vkCmdSetRasterizerDiscardEnableEXT(VkCommandBuffer commandBuffer, VkBool32 rasterizerDiscardEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetRasterizerDiscardEnableEXT", "commandBuffer, rasterizerDiscardEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetRasterizerDiscardEnableEXT(ApiDumpInstance::current(), commandBuffer, rasterizerDiscardEnable);
@@ -18505,7 +18505,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetRasterizerDiscardEnableEXT(VkCommandBuffer co
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthBiasEnableEXT(VkCommandBuffer commandBuffer, VkBool32 depthBiasEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDepthBiasEnableEXT", "commandBuffer, depthBiasEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDepthBiasEnableEXT(ApiDumpInstance::current(), commandBuffer, depthBiasEnable);
@@ -18535,7 +18535,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthBiasEnableEXT(VkCommandBuffer commandBuf
 VKAPI_ATTR void VKAPI_CALL vkCmdSetLogicOpEXT(VkCommandBuffer commandBuffer, VkLogicOp logicOp)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetLogicOpEXT", "commandBuffer, logicOp");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetLogicOpEXT(ApiDumpInstance::current(), commandBuffer, logicOp);
@@ -18565,7 +18565,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetLogicOpEXT(VkCommandBuffer commandBuffer, VkL
 VKAPI_ATTR void VKAPI_CALL vkCmdSetPrimitiveRestartEnableEXT(VkCommandBuffer commandBuffer, VkBool32 primitiveRestartEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetPrimitiveRestartEnableEXT", "commandBuffer, primitiveRestartEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetPrimitiveRestartEnableEXT(ApiDumpInstance::current(), commandBuffer, primitiveRestartEnable);
@@ -18595,7 +18595,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetPrimitiveRestartEnableEXT(VkCommandBuffer com
 VKAPI_ATTR void VKAPI_CALL vkCmdSetColorWriteEnableEXT(VkCommandBuffer       commandBuffer, uint32_t                                attachmentCount, const VkBool32*   pColorWriteEnables)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetColorWriteEnableEXT", "commandBuffer, attachmentCount, pColorWriteEnables");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetColorWriteEnableEXT(ApiDumpInstance::current(), commandBuffer, attachmentCount, pColorWriteEnables);
@@ -18625,7 +18625,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetColorWriteEnableEXT(VkCommandBuffer       com
 VKAPI_ATTR void VKAPI_CALL vkCmdTraceRaysIndirect2KHR(VkCommandBuffer commandBuffer, VkDeviceAddress indirectDeviceAddress)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdTraceRaysIndirect2KHR", "commandBuffer, indirectDeviceAddress");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdTraceRaysIndirect2KHR(ApiDumpInstance::current(), commandBuffer, indirectDeviceAddress);
@@ -18655,7 +18655,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdTraceRaysIndirect2KHR(VkCommandBuffer commandBuf
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawMultiEXT(VkCommandBuffer commandBuffer, uint32_t drawCount, const VkMultiDrawInfoEXT* pVertexInfo, uint32_t instanceCount, uint32_t firstInstance, uint32_t stride)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawMultiEXT", "commandBuffer, drawCount, pVertexInfo, instanceCount, firstInstance, stride");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawMultiEXT(ApiDumpInstance::current(), commandBuffer, drawCount, pVertexInfo, instanceCount, firstInstance, stride);
@@ -18685,7 +18685,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawMultiEXT(VkCommandBuffer commandBuffer, uint
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawMultiIndexedEXT(VkCommandBuffer commandBuffer, uint32_t drawCount, const VkMultiDrawIndexedInfoEXT* pIndexInfo, uint32_t instanceCount, uint32_t firstInstance, uint32_t stride, const int32_t* pVertexOffset)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawMultiIndexedEXT", "commandBuffer, drawCount, pIndexInfo, instanceCount, firstInstance, stride, pVertexOffset");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawMultiIndexedEXT(ApiDumpInstance::current(), commandBuffer, drawCount, pIndexInfo, instanceCount, firstInstance, stride, pVertexOffset);
@@ -18715,7 +18715,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawMultiIndexedEXT(VkCommandBuffer commandBuffe
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateMicromapEXT(VkDevice                                           device, const VkMicromapCreateInfoEXT*        pCreateInfo, const VkAllocationCallbacks*       pAllocator, VkMicromapEXT*                        pMicromap)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateMicromapEXT", "device, pCreateInfo, pAllocator, pMicromap");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateMicromapEXT(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pMicromap);
@@ -18746,7 +18746,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateMicromapEXT(VkDevice                     
 VKAPI_ATTR void VKAPI_CALL vkDestroyMicromapEXT(VkDevice device, VkMicromapEXT micromap, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyMicromapEXT", "device, micromap, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyMicromapEXT(ApiDumpInstance::current(), device, micromap, pAllocator);
@@ -18776,7 +18776,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyMicromapEXT(VkDevice device, VkMicromapEXT m
 VKAPI_ATTR void VKAPI_CALL vkCmdBuildMicromapsEXT(VkCommandBuffer                                    commandBuffer, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBuildMicromapsEXT", "commandBuffer, infoCount, pInfos");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBuildMicromapsEXT(ApiDumpInstance::current(), commandBuffer, infoCount, pInfos);
@@ -18806,7 +18806,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBuildMicromapsEXT(VkCommandBuffer               
 VKAPI_ATTR VkResult VKAPI_CALL vkBuildMicromapsEXT(VkDevice                                           device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkMicromapBuildInfoEXT* pInfos)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkBuildMicromapsEXT", "device, deferredOperation, infoCount, pInfos");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkBuildMicromapsEXT(ApiDumpInstance::current(), device, deferredOperation, infoCount, pInfos);
@@ -18837,7 +18837,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkBuildMicromapsEXT(VkDevice                     
 VKAPI_ATTR VkResult VKAPI_CALL vkCopyMicromapEXT(VkDevice device, VkDeferredOperationKHR deferredOperation, const VkCopyMicromapInfoEXT* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCopyMicromapEXT", "device, deferredOperation, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCopyMicromapEXT(ApiDumpInstance::current(), device, deferredOperation, pInfo);
@@ -18868,7 +18868,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCopyMicromapEXT(VkDevice device, VkDeferredOper
 VKAPI_ATTR VkResult VKAPI_CALL vkCopyMicromapToMemoryEXT(VkDevice device, VkDeferredOperationKHR deferredOperation, const VkCopyMicromapToMemoryInfoEXT* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCopyMicromapToMemoryEXT", "device, deferredOperation, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCopyMicromapToMemoryEXT(ApiDumpInstance::current(), device, deferredOperation, pInfo);
@@ -18899,7 +18899,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCopyMicromapToMemoryEXT(VkDevice device, VkDefe
 VKAPI_ATTR VkResult VKAPI_CALL vkCopyMemoryToMicromapEXT(VkDevice device, VkDeferredOperationKHR deferredOperation, const VkCopyMemoryToMicromapInfoEXT* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCopyMemoryToMicromapEXT", "device, deferredOperation, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCopyMemoryToMicromapEXT(ApiDumpInstance::current(), device, deferredOperation, pInfo);
@@ -18930,7 +18930,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCopyMemoryToMicromapEXT(VkDevice device, VkDefe
 VKAPI_ATTR VkResult VKAPI_CALL vkWriteMicromapsPropertiesEXT(VkDevice device, uint32_t micromapCount, const VkMicromapEXT* pMicromaps, VkQueryType  queryType, size_t       dataSize, void* pData, size_t stride)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkWriteMicromapsPropertiesEXT", "device, micromapCount, pMicromaps, queryType, dataSize, pData, stride");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkWriteMicromapsPropertiesEXT(ApiDumpInstance::current(), device, micromapCount, pMicromaps, queryType, dataSize, pData, stride);
@@ -18961,7 +18961,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkWriteMicromapsPropertiesEXT(VkDevice device, ui
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyMicromapEXT(VkCommandBuffer commandBuffer, const VkCopyMicromapInfoEXT* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyMicromapEXT", "commandBuffer, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyMicromapEXT(ApiDumpInstance::current(), commandBuffer, pInfo);
@@ -18991,7 +18991,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyMicromapEXT(VkCommandBuffer commandBuffer, c
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyMicromapToMemoryEXT(VkCommandBuffer commandBuffer, const VkCopyMicromapToMemoryInfoEXT* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyMicromapToMemoryEXT", "commandBuffer, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyMicromapToMemoryEXT(ApiDumpInstance::current(), commandBuffer, pInfo);
@@ -19021,7 +19021,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyMicromapToMemoryEXT(VkCommandBuffer commandB
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyMemoryToMicromapEXT(VkCommandBuffer commandBuffer, const VkCopyMemoryToMicromapInfoEXT* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyMemoryToMicromapEXT", "commandBuffer, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyMemoryToMicromapEXT(ApiDumpInstance::current(), commandBuffer, pInfo);
@@ -19051,7 +19051,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyMemoryToMicromapEXT(VkCommandBuffer commandB
 VKAPI_ATTR void VKAPI_CALL vkCmdWriteMicromapsPropertiesEXT(VkCommandBuffer commandBuffer, uint32_t micromapCount, const VkMicromapEXT* pMicromaps, VkQueryType queryType, VkQueryPool queryPool, uint32_t firstQuery)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdWriteMicromapsPropertiesEXT", "commandBuffer, micromapCount, pMicromaps, queryType, queryPool, firstQuery");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdWriteMicromapsPropertiesEXT(ApiDumpInstance::current(), commandBuffer, micromapCount, pMicromaps, queryType, queryPool, firstQuery);
@@ -19081,7 +19081,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdWriteMicromapsPropertiesEXT(VkCommandBuffer comm
 VKAPI_ATTR void VKAPI_CALL vkGetDeviceMicromapCompatibilityEXT(VkDevice device, const VkMicromapVersionInfoEXT* pVersionInfo, VkAccelerationStructureCompatibilityKHR* pCompatibility)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceMicromapCompatibilityEXT", "device, pVersionInfo, pCompatibility");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceMicromapCompatibilityEXT(ApiDumpInstance::current(), device, pVersionInfo, pCompatibility);
@@ -19111,7 +19111,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDeviceMicromapCompatibilityEXT(VkDevice device, 
 VKAPI_ATTR void VKAPI_CALL vkGetMicromapBuildSizesEXT(VkDevice                                            device, VkAccelerationStructureBuildTypeKHR                 buildType, const VkMicromapBuildInfoEXT*  pBuildInfo, VkMicromapBuildSizesInfoEXT*           pSizeInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetMicromapBuildSizesEXT", "device, buildType, pBuildInfo, pSizeInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetMicromapBuildSizesEXT(ApiDumpInstance::current(), device, buildType, pBuildInfo, pSizeInfo);
@@ -19141,7 +19141,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetMicromapBuildSizesEXT(VkDevice                  
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawClusterHUAWEI(VkCommandBuffer commandBuffer, uint32_t groupCountX, uint32_t groupCountY, uint32_t groupCountZ)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawClusterHUAWEI", "commandBuffer, groupCountX, groupCountY, groupCountZ");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawClusterHUAWEI(ApiDumpInstance::current(), commandBuffer, groupCountX, groupCountY, groupCountZ);
@@ -19171,7 +19171,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawClusterHUAWEI(VkCommandBuffer commandBuffer,
 VKAPI_ATTR void VKAPI_CALL vkCmdDrawClusterIndirectHUAWEI(VkCommandBuffer commandBuffer, VkBuffer buffer, VkDeviceSize offset)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDrawClusterIndirectHUAWEI", "commandBuffer, buffer, offset");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDrawClusterIndirectHUAWEI(ApiDumpInstance::current(), commandBuffer, buffer, offset);
@@ -19201,7 +19201,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDrawClusterIndirectHUAWEI(VkCommandBuffer comman
 VKAPI_ATTR void VKAPI_CALL vkSetDeviceMemoryPriorityEXT(VkDevice       device, VkDeviceMemory memory, float          priority)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkSetDeviceMemoryPriorityEXT", "device, memory, priority");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkSetDeviceMemoryPriorityEXT(ApiDumpInstance::current(), device, memory, priority);
@@ -19231,7 +19231,7 @@ VKAPI_ATTR void VKAPI_CALL vkSetDeviceMemoryPriorityEXT(VkDevice       device, V
 VKAPI_ATTR void VKAPI_CALL vkGetDeviceBufferMemoryRequirementsKHR(VkDevice device, const VkDeviceBufferMemoryRequirements* pInfo, VkMemoryRequirements2* pMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceBufferMemoryRequirementsKHR", "device, pInfo, pMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceBufferMemoryRequirementsKHR(ApiDumpInstance::current(), device, pInfo, pMemoryRequirements);
@@ -19261,7 +19261,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDeviceBufferMemoryRequirementsKHR(VkDevice devic
 VKAPI_ATTR void VKAPI_CALL vkGetDeviceImageMemoryRequirementsKHR(VkDevice device, const VkDeviceImageMemoryRequirements* pInfo, VkMemoryRequirements2* pMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceImageMemoryRequirementsKHR", "device, pInfo, pMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceImageMemoryRequirementsKHR(ApiDumpInstance::current(), device, pInfo, pMemoryRequirements);
@@ -19291,7 +19291,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDeviceImageMemoryRequirementsKHR(VkDevice device
 VKAPI_ATTR void VKAPI_CALL vkGetDeviceImageSparseMemoryRequirementsKHR(VkDevice device, const VkDeviceImageMemoryRequirements* pInfo, uint32_t* pSparseMemoryRequirementCount, VkSparseImageMemoryRequirements2* pSparseMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceImageSparseMemoryRequirementsKHR", "device, pInfo, pSparseMemoryRequirementCount, pSparseMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceImageSparseMemoryRequirementsKHR(ApiDumpInstance::current(), device, pInfo, pSparseMemoryRequirementCount, pSparseMemoryRequirements);
@@ -19321,7 +19321,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDeviceImageSparseMemoryRequirementsKHR(VkDevice 
 VKAPI_ATTR void VKAPI_CALL vkGetDescriptorSetLayoutHostMappingInfoVALVE(VkDevice device, const VkDescriptorSetBindingReferenceVALVE* pBindingReference, VkDescriptorSetLayoutHostMappingInfoVALVE* pHostMapping)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDescriptorSetLayoutHostMappingInfoVALVE", "device, pBindingReference, pHostMapping");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDescriptorSetLayoutHostMappingInfoVALVE(ApiDumpInstance::current(), device, pBindingReference, pHostMapping);
@@ -19351,7 +19351,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDescriptorSetLayoutHostMappingInfoVALVE(VkDevice
 VKAPI_ATTR void VKAPI_CALL vkGetDescriptorSetHostMappingVALVE(VkDevice device, VkDescriptorSet descriptorSet, void** ppData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDescriptorSetHostMappingVALVE", "device, descriptorSet, ppData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDescriptorSetHostMappingVALVE(ApiDumpInstance::current(), device, descriptorSet, ppData);
@@ -19381,7 +19381,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDescriptorSetHostMappingVALVE(VkDevice device, V
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyMemoryIndirectNV(VkCommandBuffer commandBuffer, VkDeviceAddress copyBufferAddress, uint32_t copyCount, uint32_t stride)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyMemoryIndirectNV", "commandBuffer, copyBufferAddress, copyCount, stride");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyMemoryIndirectNV(ApiDumpInstance::current(), commandBuffer, copyBufferAddress, copyCount, stride);
@@ -19411,7 +19411,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyMemoryIndirectNV(VkCommandBuffer commandBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdCopyMemoryToImageIndirectNV(VkCommandBuffer commandBuffer, VkDeviceAddress copyBufferAddress, uint32_t copyCount, uint32_t stride, VkImage dstImage, VkImageLayout dstImageLayout, const VkImageSubresourceLayers* pImageSubresources)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdCopyMemoryToImageIndirectNV", "commandBuffer, copyBufferAddress, copyCount, stride, dstImage, dstImageLayout, pImageSubresources");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdCopyMemoryToImageIndirectNV(ApiDumpInstance::current(), commandBuffer, copyBufferAddress, copyCount, stride, dstImage, dstImageLayout, pImageSubresources);
@@ -19441,7 +19441,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdCopyMemoryToImageIndirectNV(VkCommandBuffer comm
 VKAPI_ATTR void VKAPI_CALL vkCmdDecompressMemoryNV(VkCommandBuffer commandBuffer, uint32_t decompressRegionCount, const VkDecompressMemoryRegionNV* pDecompressMemoryRegions)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDecompressMemoryNV", "commandBuffer, decompressRegionCount, pDecompressMemoryRegions");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDecompressMemoryNV(ApiDumpInstance::current(), commandBuffer, decompressRegionCount, pDecompressMemoryRegions);
@@ -19471,7 +19471,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDecompressMemoryNV(VkCommandBuffer commandBuffer
 VKAPI_ATTR void VKAPI_CALL vkCmdDecompressMemoryIndirectCountNV(VkCommandBuffer commandBuffer, VkDeviceAddress indirectCommandsAddress, VkDeviceAddress indirectCommandsCountAddress, uint32_t stride)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdDecompressMemoryIndirectCountNV", "commandBuffer, indirectCommandsAddress, indirectCommandsCountAddress, stride");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdDecompressMemoryIndirectCountNV(ApiDumpInstance::current(), commandBuffer, indirectCommandsAddress, indirectCommandsCountAddress, stride);
@@ -19501,7 +19501,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdDecompressMemoryIndirectCountNV(VkCommandBuffer 
 VKAPI_ATTR void VKAPI_CALL vkGetPipelineIndirectMemoryRequirementsNV(VkDevice device, const VkComputePipelineCreateInfo* pCreateInfo, VkMemoryRequirements2* pMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetPipelineIndirectMemoryRequirementsNV", "device, pCreateInfo, pMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetPipelineIndirectMemoryRequirementsNV(ApiDumpInstance::current(), device, pCreateInfo, pMemoryRequirements);
@@ -19531,7 +19531,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetPipelineIndirectMemoryRequirementsNV(VkDevice de
 VKAPI_ATTR void VKAPI_CALL vkCmdUpdatePipelineIndirectBufferNV(VkCommandBuffer commandBuffer, VkPipelineBindPoint           pipelineBindPoint, VkPipeline                    pipeline)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdUpdatePipelineIndirectBufferNV", "commandBuffer, pipelineBindPoint, pipeline");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdUpdatePipelineIndirectBufferNV(ApiDumpInstance::current(), commandBuffer, pipelineBindPoint, pipeline);
@@ -19561,7 +19561,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdUpdatePipelineIndirectBufferNV(VkCommandBuffer c
 VKAPI_ATTR VkDeviceAddress VKAPI_CALL vkGetPipelineIndirectDeviceAddressNV(VkDevice device, const VkPipelineIndirectDeviceAddressInfoNV* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetPipelineIndirectDeviceAddressNV", "device, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetPipelineIndirectDeviceAddressNV(ApiDumpInstance::current(), device, pInfo);
@@ -19592,7 +19592,7 @@ VKAPI_ATTR VkDeviceAddress VKAPI_CALL vkGetPipelineIndirectDeviceAddressNV(VkDev
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthClampEnableEXT(VkCommandBuffer commandBuffer, VkBool32 depthClampEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDepthClampEnableEXT", "commandBuffer, depthClampEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDepthClampEnableEXT(ApiDumpInstance::current(), commandBuffer, depthClampEnable);
@@ -19622,7 +19622,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthClampEnableEXT(VkCommandBuffer commandBu
 VKAPI_ATTR void VKAPI_CALL vkCmdSetPolygonModeEXT(VkCommandBuffer commandBuffer, VkPolygonMode polygonMode)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetPolygonModeEXT", "commandBuffer, polygonMode");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetPolygonModeEXT(ApiDumpInstance::current(), commandBuffer, polygonMode);
@@ -19652,7 +19652,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetPolygonModeEXT(VkCommandBuffer commandBuffer,
 VKAPI_ATTR void VKAPI_CALL vkCmdSetRasterizationSamplesEXT(VkCommandBuffer commandBuffer, VkSampleCountFlagBits  rasterizationSamples)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetRasterizationSamplesEXT", "commandBuffer, rasterizationSamples");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetRasterizationSamplesEXT(ApiDumpInstance::current(), commandBuffer, rasterizationSamples);
@@ -19682,7 +19682,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetRasterizationSamplesEXT(VkCommandBuffer comma
 VKAPI_ATTR void VKAPI_CALL vkCmdSetSampleMaskEXT(VkCommandBuffer commandBuffer, VkSampleCountFlagBits  samples, const VkSampleMask*    pSampleMask)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetSampleMaskEXT", "commandBuffer, samples, pSampleMask");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetSampleMaskEXT(ApiDumpInstance::current(), commandBuffer, samples, pSampleMask);
@@ -19712,7 +19712,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetSampleMaskEXT(VkCommandBuffer commandBuffer, 
 VKAPI_ATTR void VKAPI_CALL vkCmdSetAlphaToCoverageEnableEXT(VkCommandBuffer commandBuffer, VkBool32 alphaToCoverageEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetAlphaToCoverageEnableEXT", "commandBuffer, alphaToCoverageEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetAlphaToCoverageEnableEXT(ApiDumpInstance::current(), commandBuffer, alphaToCoverageEnable);
@@ -19742,7 +19742,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetAlphaToCoverageEnableEXT(VkCommandBuffer comm
 VKAPI_ATTR void VKAPI_CALL vkCmdSetAlphaToOneEnableEXT(VkCommandBuffer commandBuffer, VkBool32 alphaToOneEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetAlphaToOneEnableEXT", "commandBuffer, alphaToOneEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetAlphaToOneEnableEXT(ApiDumpInstance::current(), commandBuffer, alphaToOneEnable);
@@ -19772,7 +19772,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetAlphaToOneEnableEXT(VkCommandBuffer commandBu
 VKAPI_ATTR void VKAPI_CALL vkCmdSetLogicOpEnableEXT(VkCommandBuffer commandBuffer, VkBool32 logicOpEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetLogicOpEnableEXT", "commandBuffer, logicOpEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetLogicOpEnableEXT(ApiDumpInstance::current(), commandBuffer, logicOpEnable);
@@ -19802,7 +19802,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetLogicOpEnableEXT(VkCommandBuffer commandBuffe
 VKAPI_ATTR void VKAPI_CALL vkCmdSetColorBlendEnableEXT(VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, const VkBool32* pColorBlendEnables)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetColorBlendEnableEXT", "commandBuffer, firstAttachment, attachmentCount, pColorBlendEnables");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetColorBlendEnableEXT(ApiDumpInstance::current(), commandBuffer, firstAttachment, attachmentCount, pColorBlendEnables);
@@ -19832,7 +19832,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetColorBlendEnableEXT(VkCommandBuffer commandBu
 VKAPI_ATTR void VKAPI_CALL vkCmdSetColorBlendEquationEXT(VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, const VkColorBlendEquationEXT* pColorBlendEquations)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetColorBlendEquationEXT", "commandBuffer, firstAttachment, attachmentCount, pColorBlendEquations");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetColorBlendEquationEXT(ApiDumpInstance::current(), commandBuffer, firstAttachment, attachmentCount, pColorBlendEquations);
@@ -19862,7 +19862,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetColorBlendEquationEXT(VkCommandBuffer command
 VKAPI_ATTR void VKAPI_CALL vkCmdSetColorWriteMaskEXT(VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, const VkColorComponentFlags* pColorWriteMasks)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetColorWriteMaskEXT", "commandBuffer, firstAttachment, attachmentCount, pColorWriteMasks");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetColorWriteMaskEXT(ApiDumpInstance::current(), commandBuffer, firstAttachment, attachmentCount, pColorWriteMasks);
@@ -19892,7 +19892,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetColorWriteMaskEXT(VkCommandBuffer commandBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdSetTessellationDomainOriginEXT(VkCommandBuffer commandBuffer, VkTessellationDomainOrigin domainOrigin)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetTessellationDomainOriginEXT", "commandBuffer, domainOrigin");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetTessellationDomainOriginEXT(ApiDumpInstance::current(), commandBuffer, domainOrigin);
@@ -19922,7 +19922,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetTessellationDomainOriginEXT(VkCommandBuffer c
 VKAPI_ATTR void VKAPI_CALL vkCmdSetRasterizationStreamEXT(VkCommandBuffer commandBuffer, uint32_t rasterizationStream)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetRasterizationStreamEXT", "commandBuffer, rasterizationStream");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetRasterizationStreamEXT(ApiDumpInstance::current(), commandBuffer, rasterizationStream);
@@ -19952,7 +19952,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetRasterizationStreamEXT(VkCommandBuffer comman
 VKAPI_ATTR void VKAPI_CALL vkCmdSetConservativeRasterizationModeEXT(VkCommandBuffer commandBuffer, VkConservativeRasterizationModeEXT conservativeRasterizationMode)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetConservativeRasterizationModeEXT", "commandBuffer, conservativeRasterizationMode");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetConservativeRasterizationModeEXT(ApiDumpInstance::current(), commandBuffer, conservativeRasterizationMode);
@@ -19982,7 +19982,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetConservativeRasterizationModeEXT(VkCommandBuf
 VKAPI_ATTR void VKAPI_CALL vkCmdSetExtraPrimitiveOverestimationSizeEXT(VkCommandBuffer commandBuffer, float extraPrimitiveOverestimationSize)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetExtraPrimitiveOverestimationSizeEXT", "commandBuffer, extraPrimitiveOverestimationSize");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetExtraPrimitiveOverestimationSizeEXT(ApiDumpInstance::current(), commandBuffer, extraPrimitiveOverestimationSize);
@@ -20012,7 +20012,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetExtraPrimitiveOverestimationSizeEXT(VkCommand
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthClipEnableEXT(VkCommandBuffer commandBuffer, VkBool32 depthClipEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDepthClipEnableEXT", "commandBuffer, depthClipEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDepthClipEnableEXT(ApiDumpInstance::current(), commandBuffer, depthClipEnable);
@@ -20042,7 +20042,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthClipEnableEXT(VkCommandBuffer commandBuf
 VKAPI_ATTR void VKAPI_CALL vkCmdSetSampleLocationsEnableEXT(VkCommandBuffer commandBuffer, VkBool32 sampleLocationsEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetSampleLocationsEnableEXT", "commandBuffer, sampleLocationsEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetSampleLocationsEnableEXT(ApiDumpInstance::current(), commandBuffer, sampleLocationsEnable);
@@ -20072,7 +20072,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetSampleLocationsEnableEXT(VkCommandBuffer comm
 VKAPI_ATTR void VKAPI_CALL vkCmdSetColorBlendAdvancedEXT(VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, const VkColorBlendAdvancedEXT* pColorBlendAdvanced)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetColorBlendAdvancedEXT", "commandBuffer, firstAttachment, attachmentCount, pColorBlendAdvanced");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetColorBlendAdvancedEXT(ApiDumpInstance::current(), commandBuffer, firstAttachment, attachmentCount, pColorBlendAdvanced);
@@ -20102,7 +20102,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetColorBlendAdvancedEXT(VkCommandBuffer command
 VKAPI_ATTR void VKAPI_CALL vkCmdSetProvokingVertexModeEXT(VkCommandBuffer commandBuffer, VkProvokingVertexModeEXT provokingVertexMode)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetProvokingVertexModeEXT", "commandBuffer, provokingVertexMode");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetProvokingVertexModeEXT(ApiDumpInstance::current(), commandBuffer, provokingVertexMode);
@@ -20132,7 +20132,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetProvokingVertexModeEXT(VkCommandBuffer comman
 VKAPI_ATTR void VKAPI_CALL vkCmdSetLineRasterizationModeEXT(VkCommandBuffer commandBuffer, VkLineRasterizationModeEXT lineRasterizationMode)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetLineRasterizationModeEXT", "commandBuffer, lineRasterizationMode");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetLineRasterizationModeEXT(ApiDumpInstance::current(), commandBuffer, lineRasterizationMode);
@@ -20162,7 +20162,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetLineRasterizationModeEXT(VkCommandBuffer comm
 VKAPI_ATTR void VKAPI_CALL vkCmdSetLineStippleEnableEXT(VkCommandBuffer commandBuffer, VkBool32 stippledLineEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetLineStippleEnableEXT", "commandBuffer, stippledLineEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetLineStippleEnableEXT(ApiDumpInstance::current(), commandBuffer, stippledLineEnable);
@@ -20192,7 +20192,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetLineStippleEnableEXT(VkCommandBuffer commandB
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthClipNegativeOneToOneEXT(VkCommandBuffer commandBuffer, VkBool32 negativeOneToOne)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDepthClipNegativeOneToOneEXT", "commandBuffer, negativeOneToOne");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDepthClipNegativeOneToOneEXT(ApiDumpInstance::current(), commandBuffer, negativeOneToOne);
@@ -20222,7 +20222,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthClipNegativeOneToOneEXT(VkCommandBuffer 
 VKAPI_ATTR void VKAPI_CALL vkCmdSetViewportWScalingEnableNV(VkCommandBuffer commandBuffer, VkBool32 viewportWScalingEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetViewportWScalingEnableNV", "commandBuffer, viewportWScalingEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetViewportWScalingEnableNV(ApiDumpInstance::current(), commandBuffer, viewportWScalingEnable);
@@ -20252,7 +20252,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetViewportWScalingEnableNV(VkCommandBuffer comm
 VKAPI_ATTR void VKAPI_CALL vkCmdSetViewportSwizzleNV(VkCommandBuffer commandBuffer, uint32_t firstViewport, uint32_t viewportCount, const VkViewportSwizzleNV* pViewportSwizzles)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetViewportSwizzleNV", "commandBuffer, firstViewport, viewportCount, pViewportSwizzles");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetViewportSwizzleNV(ApiDumpInstance::current(), commandBuffer, firstViewport, viewportCount, pViewportSwizzles);
@@ -20282,7 +20282,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetViewportSwizzleNV(VkCommandBuffer commandBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdSetCoverageToColorEnableNV(VkCommandBuffer commandBuffer, VkBool32 coverageToColorEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetCoverageToColorEnableNV", "commandBuffer, coverageToColorEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetCoverageToColorEnableNV(ApiDumpInstance::current(), commandBuffer, coverageToColorEnable);
@@ -20312,7 +20312,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetCoverageToColorEnableNV(VkCommandBuffer comma
 VKAPI_ATTR void VKAPI_CALL vkCmdSetCoverageToColorLocationNV(VkCommandBuffer commandBuffer, uint32_t coverageToColorLocation)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetCoverageToColorLocationNV", "commandBuffer, coverageToColorLocation");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetCoverageToColorLocationNV(ApiDumpInstance::current(), commandBuffer, coverageToColorLocation);
@@ -20342,7 +20342,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetCoverageToColorLocationNV(VkCommandBuffer com
 VKAPI_ATTR void VKAPI_CALL vkCmdSetCoverageModulationModeNV(VkCommandBuffer commandBuffer, VkCoverageModulationModeNV coverageModulationMode)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetCoverageModulationModeNV", "commandBuffer, coverageModulationMode");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetCoverageModulationModeNV(ApiDumpInstance::current(), commandBuffer, coverageModulationMode);
@@ -20372,7 +20372,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetCoverageModulationModeNV(VkCommandBuffer comm
 VKAPI_ATTR void VKAPI_CALL vkCmdSetCoverageModulationTableEnableNV(VkCommandBuffer commandBuffer, VkBool32 coverageModulationTableEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetCoverageModulationTableEnableNV", "commandBuffer, coverageModulationTableEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetCoverageModulationTableEnableNV(ApiDumpInstance::current(), commandBuffer, coverageModulationTableEnable);
@@ -20402,7 +20402,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetCoverageModulationTableEnableNV(VkCommandBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdSetCoverageModulationTableNV(VkCommandBuffer commandBuffer, uint32_t coverageModulationTableCount, const float* pCoverageModulationTable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetCoverageModulationTableNV", "commandBuffer, coverageModulationTableCount, pCoverageModulationTable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetCoverageModulationTableNV(ApiDumpInstance::current(), commandBuffer, coverageModulationTableCount, pCoverageModulationTable);
@@ -20432,7 +20432,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetCoverageModulationTableNV(VkCommandBuffer com
 VKAPI_ATTR void VKAPI_CALL vkCmdSetShadingRateImageEnableNV(VkCommandBuffer commandBuffer, VkBool32 shadingRateImageEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetShadingRateImageEnableNV", "commandBuffer, shadingRateImageEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetShadingRateImageEnableNV(ApiDumpInstance::current(), commandBuffer, shadingRateImageEnable);
@@ -20462,7 +20462,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetShadingRateImageEnableNV(VkCommandBuffer comm
 VKAPI_ATTR void VKAPI_CALL vkCmdSetRepresentativeFragmentTestEnableNV(VkCommandBuffer commandBuffer, VkBool32 representativeFragmentTestEnable)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetRepresentativeFragmentTestEnableNV", "commandBuffer, representativeFragmentTestEnable");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetRepresentativeFragmentTestEnableNV(ApiDumpInstance::current(), commandBuffer, representativeFragmentTestEnable);
@@ -20492,7 +20492,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetRepresentativeFragmentTestEnableNV(VkCommandB
 VKAPI_ATTR void VKAPI_CALL vkCmdSetCoverageReductionModeNV(VkCommandBuffer commandBuffer, VkCoverageReductionModeNV coverageReductionMode)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetCoverageReductionModeNV", "commandBuffer, coverageReductionMode");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetCoverageReductionModeNV(ApiDumpInstance::current(), commandBuffer, coverageReductionMode);
@@ -20522,7 +20522,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetCoverageReductionModeNV(VkCommandBuffer comma
 VKAPI_ATTR void VKAPI_CALL vkGetShaderModuleIdentifierEXT(VkDevice device, VkShaderModule shaderModule, VkShaderModuleIdentifierEXT* pIdentifier)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetShaderModuleIdentifierEXT", "device, shaderModule, pIdentifier");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetShaderModuleIdentifierEXT(ApiDumpInstance::current(), device, shaderModule, pIdentifier);
@@ -20552,7 +20552,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetShaderModuleIdentifierEXT(VkDevice device, VkSha
 VKAPI_ATTR void VKAPI_CALL vkGetShaderModuleCreateInfoIdentifierEXT(VkDevice device, const VkShaderModuleCreateInfo* pCreateInfo, VkShaderModuleIdentifierEXT* pIdentifier)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetShaderModuleCreateInfoIdentifierEXT", "device, pCreateInfo, pIdentifier");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetShaderModuleCreateInfoIdentifierEXT(ApiDumpInstance::current(), device, pCreateInfo, pIdentifier);
@@ -20582,7 +20582,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetShaderModuleCreateInfoIdentifierEXT(VkDevice dev
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateOpticalFlowSessionNV(VkDevice device, const VkOpticalFlowSessionCreateInfoNV* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkOpticalFlowSessionNV* pSession)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateOpticalFlowSessionNV", "device, pCreateInfo, pAllocator, pSession");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateOpticalFlowSessionNV(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pSession);
@@ -20613,7 +20613,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateOpticalFlowSessionNV(VkDevice device, con
 VKAPI_ATTR void VKAPI_CALL vkDestroyOpticalFlowSessionNV(VkDevice device, VkOpticalFlowSessionNV session, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyOpticalFlowSessionNV", "device, session, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyOpticalFlowSessionNV(ApiDumpInstance::current(), device, session, pAllocator);
@@ -20643,7 +20643,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyOpticalFlowSessionNV(VkDevice device, VkOpti
 VKAPI_ATTR VkResult VKAPI_CALL vkBindOpticalFlowSessionImageNV(VkDevice device, VkOpticalFlowSessionNV session, VkOpticalFlowSessionBindingPointNV bindingPoint, VkImageView view, VkImageLayout layout)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkBindOpticalFlowSessionImageNV", "device, session, bindingPoint, view, layout");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkBindOpticalFlowSessionImageNV(ApiDumpInstance::current(), device, session, bindingPoint, view, layout);
@@ -20674,7 +20674,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkBindOpticalFlowSessionImageNV(VkDevice device, 
 VKAPI_ATTR void VKAPI_CALL vkCmdOpticalFlowExecuteNV(VkCommandBuffer commandBuffer, VkOpticalFlowSessionNV session, const VkOpticalFlowExecuteInfoNV* pExecuteInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdOpticalFlowExecuteNV", "commandBuffer, session, pExecuteInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdOpticalFlowExecuteNV(ApiDumpInstance::current(), commandBuffer, session, pExecuteInfo);
@@ -20704,7 +20704,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdOpticalFlowExecuteNV(VkCommandBuffer commandBuff
 VKAPI_ATTR void VKAPI_CALL vkCmdBindIndexBuffer2KHR(VkCommandBuffer commandBuffer, VkBuffer buffer, VkDeviceSize offset, VkDeviceSize size, VkIndexType indexType)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindIndexBuffer2KHR", "commandBuffer, buffer, offset, size, indexType");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindIndexBuffer2KHR(ApiDumpInstance::current(), commandBuffer, buffer, offset, size, indexType);
@@ -20734,7 +20734,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindIndexBuffer2KHR(VkCommandBuffer commandBuffe
 VKAPI_ATTR void VKAPI_CALL vkGetRenderingAreaGranularityKHR(VkDevice device, const VkRenderingAreaInfo* pRenderingAreaInfo, VkExtent2D* pGranularity)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetRenderingAreaGranularityKHR", "device, pRenderingAreaInfo, pGranularity");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetRenderingAreaGranularityKHR(ApiDumpInstance::current(), device, pRenderingAreaInfo, pGranularity);
@@ -20764,7 +20764,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetRenderingAreaGranularityKHR(VkDevice device, con
 VKAPI_ATTR void VKAPI_CALL vkGetDeviceImageSubresourceLayoutKHR(VkDevice device, const VkDeviceImageSubresourceInfo* pInfo, VkSubresourceLayout2* pLayout)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDeviceImageSubresourceLayoutKHR", "device, pInfo, pLayout");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDeviceImageSubresourceLayoutKHR(ApiDumpInstance::current(), device, pInfo, pLayout);
@@ -20794,7 +20794,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetDeviceImageSubresourceLayoutKHR(VkDevice device,
 VKAPI_ATTR void VKAPI_CALL vkGetImageSubresourceLayout2KHR(VkDevice device, VkImage image, const VkImageSubresource2* pSubresource, VkSubresourceLayout2* pLayout)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetImageSubresourceLayout2KHR", "device, image, pSubresource, pLayout");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetImageSubresourceLayout2KHR(ApiDumpInstance::current(), device, image, pSubresource, pLayout);
@@ -20824,7 +20824,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetImageSubresourceLayout2KHR(VkDevice device, VkIm
 VKAPI_ATTR void VKAPI_CALL vkAntiLagUpdateAMD(VkDevice device, const VkAntiLagDataAMD* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkAntiLagUpdateAMD", "device, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkAntiLagUpdateAMD(ApiDumpInstance::current(), device, pData);
@@ -20854,7 +20854,7 @@ VKAPI_ATTR void VKAPI_CALL vkAntiLagUpdateAMD(VkDevice device, const VkAntiLagDa
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateShadersEXT(VkDevice device, uint32_t createInfoCount, const VkShaderCreateInfoEXT* pCreateInfos, const VkAllocationCallbacks* pAllocator, VkShaderEXT* pShaders)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateShadersEXT", "device, createInfoCount, pCreateInfos, pAllocator, pShaders");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateShadersEXT(ApiDumpInstance::current(), device, createInfoCount, pCreateInfos, pAllocator, pShaders);
@@ -20885,7 +20885,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateShadersEXT(VkDevice device, uint32_t crea
 VKAPI_ATTR void VKAPI_CALL vkDestroyShaderEXT(VkDevice device, VkShaderEXT shader, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyShaderEXT", "device, shader, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyShaderEXT(ApiDumpInstance::current(), device, shader, pAllocator);
@@ -20915,7 +20915,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyShaderEXT(VkDevice device, VkShaderEXT shade
 VKAPI_ATTR VkResult VKAPI_CALL vkGetShaderBinaryDataEXT(VkDevice device, VkShaderEXT shader, size_t* pDataSize, void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetShaderBinaryDataEXT", "device, shader, pDataSize, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetShaderBinaryDataEXT(ApiDumpInstance::current(), device, shader, pDataSize, pData);
@@ -20946,7 +20946,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetShaderBinaryDataEXT(VkDevice device, VkShade
 VKAPI_ATTR void VKAPI_CALL vkCmdBindShadersEXT(VkCommandBuffer commandBuffer, uint32_t stageCount, const VkShaderStageFlagBits* pStages, const VkShaderEXT* pShaders)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindShadersEXT", "commandBuffer, stageCount, pStages, pShaders");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindShadersEXT(ApiDumpInstance::current(), commandBuffer, stageCount, pStages, pShaders);
@@ -20976,7 +20976,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindShadersEXT(VkCommandBuffer commandBuffer, ui
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthClampRangeEXT(VkCommandBuffer commandBuffer, VkDepthClampModeEXT depthClampMode, const VkDepthClampRangeEXT* pDepthClampRange)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDepthClampRangeEXT", "commandBuffer, depthClampMode, pDepthClampRange");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDepthClampRangeEXT(ApiDumpInstance::current(), commandBuffer, depthClampMode, pDepthClampRange);
@@ -21006,7 +21006,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDepthClampRangeEXT(VkCommandBuffer commandBuf
 VKAPI_ATTR VkResult VKAPI_CALL vkCreatePipelineBinariesKHR(VkDevice device, const VkPipelineBinaryCreateInfoKHR* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkPipelineBinaryHandlesInfoKHR* pBinaries)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreatePipelineBinariesKHR", "device, pCreateInfo, pAllocator, pBinaries");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreatePipelineBinariesKHR(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pBinaries);
@@ -21037,7 +21037,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreatePipelineBinariesKHR(VkDevice device, cons
 VKAPI_ATTR void VKAPI_CALL vkDestroyPipelineBinaryKHR(VkDevice device, VkPipelineBinaryKHR pipelineBinary, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyPipelineBinaryKHR", "device, pipelineBinary, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyPipelineBinaryKHR(ApiDumpInstance::current(), device, pipelineBinary, pAllocator);
@@ -21067,7 +21067,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyPipelineBinaryKHR(VkDevice device, VkPipelin
 VKAPI_ATTR VkResult VKAPI_CALL vkGetPipelineKeyKHR(VkDevice device, const VkPipelineCreateInfoKHR* pPipelineCreateInfo, VkPipelineBinaryKeyKHR* pPipelineKey)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetPipelineKeyKHR", "device, pPipelineCreateInfo, pPipelineKey");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetPipelineKeyKHR(ApiDumpInstance::current(), device, pPipelineCreateInfo, pPipelineKey);
@@ -21098,7 +21098,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetPipelineKeyKHR(VkDevice device, const VkPipe
 VKAPI_ATTR VkResult VKAPI_CALL vkGetPipelineBinaryDataKHR(VkDevice device, const VkPipelineBinaryDataInfoKHR* pInfo, VkPipelineBinaryKeyKHR* pPipelineBinaryKey, size_t* pPipelineBinaryDataSize, void* pPipelineBinaryData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetPipelineBinaryDataKHR", "device, pInfo, pPipelineBinaryKey, pPipelineBinaryDataSize, pPipelineBinaryData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetPipelineBinaryDataKHR(ApiDumpInstance::current(), device, pInfo, pPipelineBinaryKey, pPipelineBinaryDataSize, pPipelineBinaryData);
@@ -21129,7 +21129,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetPipelineBinaryDataKHR(VkDevice device, const
 VKAPI_ATTR VkResult VKAPI_CALL vkReleaseCapturedPipelineDataKHR(VkDevice device, const VkReleaseCapturedPipelineDataInfoKHR* pInfo, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkReleaseCapturedPipelineDataKHR", "device, pInfo, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkReleaseCapturedPipelineDataKHR(ApiDumpInstance::current(), device, pInfo, pAllocator);
@@ -21160,7 +21160,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkReleaseCapturedPipelineDataKHR(VkDevice device,
 VKAPI_ATTR VkResult VKAPI_CALL vkGetFramebufferTilePropertiesQCOM(VkDevice device, VkFramebuffer framebuffer, uint32_t* pPropertiesCount, VkTilePropertiesQCOM* pProperties)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetFramebufferTilePropertiesQCOM", "device, framebuffer, pPropertiesCount, pProperties");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetFramebufferTilePropertiesQCOM(ApiDumpInstance::current(), device, framebuffer, pPropertiesCount, pProperties);
@@ -21191,7 +21191,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetFramebufferTilePropertiesQCOM(VkDevice devic
 VKAPI_ATTR VkResult VKAPI_CALL vkGetDynamicRenderingTilePropertiesQCOM(VkDevice device, const VkRenderingInfo* pRenderingInfo, VkTilePropertiesQCOM* pProperties)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetDynamicRenderingTilePropertiesQCOM", "device, pRenderingInfo, pProperties");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetDynamicRenderingTilePropertiesQCOM(ApiDumpInstance::current(), device, pRenderingInfo, pProperties);
@@ -21222,7 +21222,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetDynamicRenderingTilePropertiesQCOM(VkDevice 
 VKAPI_ATTR VkResult VKAPI_CALL vkConvertCooperativeVectorMatrixNV(VkDevice device, const VkConvertCooperativeVectorMatrixInfoNV* pInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkConvertCooperativeVectorMatrixNV", "device, pInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkConvertCooperativeVectorMatrixNV(ApiDumpInstance::current(), device, pInfo);
@@ -21253,7 +21253,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkConvertCooperativeVectorMatrixNV(VkDevice devic
 VKAPI_ATTR void VKAPI_CALL vkCmdConvertCooperativeVectorMatrixNV(VkCommandBuffer commandBuffer, uint32_t infoCount, const VkConvertCooperativeVectorMatrixInfoNV* pInfos)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdConvertCooperativeVectorMatrixNV", "commandBuffer, infoCount, pInfos");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdConvertCooperativeVectorMatrixNV(ApiDumpInstance::current(), commandBuffer, infoCount, pInfos);
@@ -21283,7 +21283,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdConvertCooperativeVectorMatrixNV(VkCommandBuffer
 VKAPI_ATTR VkResult VKAPI_CALL vkSetLatencySleepModeNV(VkDevice device, VkSwapchainKHR swapchain, const VkLatencySleepModeInfoNV* pSleepModeInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkSetLatencySleepModeNV", "device, swapchain, pSleepModeInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkSetLatencySleepModeNV(ApiDumpInstance::current(), device, swapchain, pSleepModeInfo);
@@ -21314,7 +21314,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkSetLatencySleepModeNV(VkDevice device, VkSwapch
 VKAPI_ATTR VkResult VKAPI_CALL vkLatencySleepNV(VkDevice device, VkSwapchainKHR swapchain, const VkLatencySleepInfoNV* pSleepInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkLatencySleepNV", "device, swapchain, pSleepInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkLatencySleepNV(ApiDumpInstance::current(), device, swapchain, pSleepInfo);
@@ -21345,7 +21345,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkLatencySleepNV(VkDevice device, VkSwapchainKHR 
 VKAPI_ATTR void VKAPI_CALL vkSetLatencyMarkerNV(VkDevice device, VkSwapchainKHR swapchain, const VkSetLatencyMarkerInfoNV* pLatencyMarkerInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkSetLatencyMarkerNV", "device, swapchain, pLatencyMarkerInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkSetLatencyMarkerNV(ApiDumpInstance::current(), device, swapchain, pLatencyMarkerInfo);
@@ -21375,7 +21375,7 @@ VKAPI_ATTR void VKAPI_CALL vkSetLatencyMarkerNV(VkDevice device, VkSwapchainKHR 
 VKAPI_ATTR void VKAPI_CALL vkGetLatencyTimingsNV(VkDevice device, VkSwapchainKHR swapchain, VkGetLatencyMarkerInfoNV* pLatencyMarkerInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetLatencyTimingsNV", "device, swapchain, pLatencyMarkerInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetLatencyTimingsNV(ApiDumpInstance::current(), device, swapchain, pLatencyMarkerInfo);
@@ -21405,7 +21405,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetLatencyTimingsNV(VkDevice device, VkSwapchainKHR
 VKAPI_ATTR void VKAPI_CALL vkQueueNotifyOutOfBandNV(VkQueue queue, const VkOutOfBandQueueTypeInfoNV* pQueueTypeInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkQueueNotifyOutOfBandNV", "queue, pQueueTypeInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkQueueNotifyOutOfBandNV(ApiDumpInstance::current(), queue, pQueueTypeInfo);
@@ -21435,7 +21435,7 @@ VKAPI_ATTR void VKAPI_CALL vkQueueNotifyOutOfBandNV(VkQueue queue, const VkOutOf
 VKAPI_ATTR void VKAPI_CALL vkCmdSetAttachmentFeedbackLoopEnableEXT(VkCommandBuffer commandBuffer, VkImageAspectFlags aspectMask)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetAttachmentFeedbackLoopEnableEXT", "commandBuffer, aspectMask");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetAttachmentFeedbackLoopEnableEXT(ApiDumpInstance::current(), commandBuffer, aspectMask);
@@ -21466,7 +21466,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetAttachmentFeedbackLoopEnableEXT(VkCommandBuff
 VKAPI_ATTR VkResult VKAPI_CALL vkGetScreenBufferPropertiesQNX(VkDevice device, const struct _screen_buffer* buffer, VkScreenBufferPropertiesQNX* pProperties)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetScreenBufferPropertiesQNX", "device, buffer, pProperties");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetScreenBufferPropertiesQNX(ApiDumpInstance::current(), device, buffer, pProperties);
@@ -21498,7 +21498,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetScreenBufferPropertiesQNX(VkDevice device, c
 VKAPI_ATTR void VKAPI_CALL vkCmdSetLineStippleKHR(VkCommandBuffer commandBuffer, uint32_t lineStippleFactor, uint16_t lineStipplePattern)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetLineStippleKHR", "commandBuffer, lineStippleFactor, lineStipplePattern");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetLineStippleKHR(ApiDumpInstance::current(), commandBuffer, lineStippleFactor, lineStipplePattern);
@@ -21528,7 +21528,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetLineStippleKHR(VkCommandBuffer commandBuffer,
 VKAPI_ATTR void VKAPI_CALL vkCmdBindDescriptorSets2KHR(VkCommandBuffer commandBuffer, const VkBindDescriptorSetsInfo*   pBindDescriptorSetsInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindDescriptorSets2KHR", "commandBuffer, pBindDescriptorSetsInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindDescriptorSets2KHR(ApiDumpInstance::current(), commandBuffer, pBindDescriptorSetsInfo);
@@ -21558,7 +21558,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindDescriptorSets2KHR(VkCommandBuffer commandBu
 VKAPI_ATTR void VKAPI_CALL vkCmdPushConstants2KHR(VkCommandBuffer commandBuffer, const VkPushConstantsInfo*        pPushConstantsInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdPushConstants2KHR", "commandBuffer, pPushConstantsInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdPushConstants2KHR(ApiDumpInstance::current(), commandBuffer, pPushConstantsInfo);
@@ -21588,7 +21588,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdPushConstants2KHR(VkCommandBuffer commandBuffer,
 VKAPI_ATTR void VKAPI_CALL vkCmdPushDescriptorSet2KHR(VkCommandBuffer commandBuffer, const VkPushDescriptorSetInfo*    pPushDescriptorSetInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdPushDescriptorSet2KHR", "commandBuffer, pPushDescriptorSetInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdPushDescriptorSet2KHR(ApiDumpInstance::current(), commandBuffer, pPushDescriptorSetInfo);
@@ -21618,7 +21618,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdPushDescriptorSet2KHR(VkCommandBuffer commandBuf
 VKAPI_ATTR void VKAPI_CALL vkCmdPushDescriptorSetWithTemplate2KHR(VkCommandBuffer commandBuffer, const VkPushDescriptorSetWithTemplateInfo* pPushDescriptorSetWithTemplateInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdPushDescriptorSetWithTemplate2KHR", "commandBuffer, pPushDescriptorSetWithTemplateInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdPushDescriptorSetWithTemplate2KHR(ApiDumpInstance::current(), commandBuffer, pPushDescriptorSetWithTemplateInfo);
@@ -21648,7 +21648,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdPushDescriptorSetWithTemplate2KHR(VkCommandBuffe
 VKAPI_ATTR void VKAPI_CALL vkCmdSetDescriptorBufferOffsets2EXT(VkCommandBuffer commandBuffer, const VkSetDescriptorBufferOffsetsInfoEXT* pSetDescriptorBufferOffsetsInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdSetDescriptorBufferOffsets2EXT", "commandBuffer, pSetDescriptorBufferOffsetsInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdSetDescriptorBufferOffsets2EXT(ApiDumpInstance::current(), commandBuffer, pSetDescriptorBufferOffsetsInfo);
@@ -21678,7 +21678,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetDescriptorBufferOffsets2EXT(VkCommandBuffer c
 VKAPI_ATTR void VKAPI_CALL vkCmdBindDescriptorBufferEmbeddedSamplers2EXT(VkCommandBuffer commandBuffer, const VkBindDescriptorBufferEmbeddedSamplersInfoEXT* pBindDescriptorBufferEmbeddedSamplersInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindDescriptorBufferEmbeddedSamplers2EXT", "commandBuffer, pBindDescriptorBufferEmbeddedSamplersInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindDescriptorBufferEmbeddedSamplers2EXT(ApiDumpInstance::current(), commandBuffer, pBindDescriptorBufferEmbeddedSamplersInfo);
@@ -21708,7 +21708,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindDescriptorBufferEmbeddedSamplers2EXT(VkComma
 VKAPI_ATTR void VKAPI_CALL vkCmdBindTileMemoryQCOM(VkCommandBuffer commandBuffer, const VkTileMemoryBindInfoQCOM* pTileMemoryBindInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBindTileMemoryQCOM", "commandBuffer, pTileMemoryBindInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBindTileMemoryQCOM(ApiDumpInstance::current(), commandBuffer, pTileMemoryBindInfo);
@@ -21738,7 +21738,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBindTileMemoryQCOM(VkCommandBuffer commandBuffer
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateExternalComputeQueueNV(VkDevice device, const VkExternalComputeQueueCreateInfoNV* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkExternalComputeQueueNV* pExternalQueue)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateExternalComputeQueueNV", "device, pCreateInfo, pAllocator, pExternalQueue");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateExternalComputeQueueNV(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pExternalQueue);
@@ -21769,7 +21769,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateExternalComputeQueueNV(VkDevice device, c
 VKAPI_ATTR void VKAPI_CALL vkDestroyExternalComputeQueueNV(VkDevice device, VkExternalComputeQueueNV externalQueue, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyExternalComputeQueueNV", "device, externalQueue, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyExternalComputeQueueNV(ApiDumpInstance::current(), device, externalQueue, pAllocator);
@@ -21799,7 +21799,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyExternalComputeQueueNV(VkDevice device, VkEx
 VKAPI_ATTR void VKAPI_CALL vkGetExternalComputeQueueDataNV(VkExternalComputeQueueNV externalQueue, VkExternalComputeQueueDataParamsNV* params, void* pData)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetExternalComputeQueueDataNV", "externalQueue, params, pData");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetExternalComputeQueueDataNV(ApiDumpInstance::current(), externalQueue, params, pData);
@@ -21829,7 +21829,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetExternalComputeQueueDataNV(VkExternalComputeQueu
 VKAPI_ATTR void VKAPI_CALL vkGetClusterAccelerationStructureBuildSizesNV(VkDevice device, const VkClusterAccelerationStructureInputInfoNV* pInfo, VkAccelerationStructureBuildSizesInfoKHR* pSizeInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetClusterAccelerationStructureBuildSizesNV", "device, pInfo, pSizeInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetClusterAccelerationStructureBuildSizesNV(ApiDumpInstance::current(), device, pInfo, pSizeInfo);
@@ -21859,7 +21859,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetClusterAccelerationStructureBuildSizesNV(VkDevic
 VKAPI_ATTR void VKAPI_CALL vkCmdBuildClusterAccelerationStructureIndirectNV(VkCommandBuffer                     commandBuffer, const VkClusterAccelerationStructureCommandsInfoNV*  pCommandInfos)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBuildClusterAccelerationStructureIndirectNV", "commandBuffer, pCommandInfos");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBuildClusterAccelerationStructureIndirectNV(ApiDumpInstance::current(), commandBuffer, pCommandInfos);
@@ -21889,7 +21889,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBuildClusterAccelerationStructureIndirectNV(VkCo
 VKAPI_ATTR void VKAPI_CALL vkGetPartitionedAccelerationStructuresBuildSizesNV(VkDevice device, const VkPartitionedAccelerationStructureInstancesInputNV* pInfo, VkAccelerationStructureBuildSizesInfoKHR*                  pSizeInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetPartitionedAccelerationStructuresBuildSizesNV", "device, pInfo, pSizeInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetPartitionedAccelerationStructuresBuildSizesNV(ApiDumpInstance::current(), device, pInfo, pSizeInfo);
@@ -21919,7 +21919,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetPartitionedAccelerationStructuresBuildSizesNV(Vk
 VKAPI_ATTR void VKAPI_CALL vkCmdBuildPartitionedAccelerationStructuresNV(VkCommandBuffer                     commandBuffer, const VkBuildPartitionedAccelerationStructureInfoNV*  pBuildInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdBuildPartitionedAccelerationStructuresNV", "commandBuffer, pBuildInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdBuildPartitionedAccelerationStructuresNV(ApiDumpInstance::current(), commandBuffer, pBuildInfo);
@@ -21949,7 +21949,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBuildPartitionedAccelerationStructuresNV(VkComma
 VKAPI_ATTR void VKAPI_CALL vkGetGeneratedCommandsMemoryRequirementsEXT(VkDevice device, const VkGeneratedCommandsMemoryRequirementsInfoEXT* pInfo, VkMemoryRequirements2* pMemoryRequirements)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetGeneratedCommandsMemoryRequirementsEXT", "device, pInfo, pMemoryRequirements");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetGeneratedCommandsMemoryRequirementsEXT(ApiDumpInstance::current(), device, pInfo, pMemoryRequirements);
@@ -21979,7 +21979,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetGeneratedCommandsMemoryRequirementsEXT(VkDevice 
 VKAPI_ATTR void VKAPI_CALL vkCmdPreprocessGeneratedCommandsEXT(VkCommandBuffer commandBuffer, const VkGeneratedCommandsInfoEXT* pGeneratedCommandsInfo, VkCommandBuffer stateCommandBuffer)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdPreprocessGeneratedCommandsEXT", "commandBuffer, pGeneratedCommandsInfo, stateCommandBuffer");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdPreprocessGeneratedCommandsEXT(ApiDumpInstance::current(), commandBuffer, pGeneratedCommandsInfo, stateCommandBuffer);
@@ -22009,7 +22009,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdPreprocessGeneratedCommandsEXT(VkCommandBuffer c
 VKAPI_ATTR void VKAPI_CALL vkCmdExecuteGeneratedCommandsEXT(VkCommandBuffer commandBuffer, VkBool32 isPreprocessed, const VkGeneratedCommandsInfoEXT* pGeneratedCommandsInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdExecuteGeneratedCommandsEXT", "commandBuffer, isPreprocessed, pGeneratedCommandsInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdExecuteGeneratedCommandsEXT(ApiDumpInstance::current(), commandBuffer, isPreprocessed, pGeneratedCommandsInfo);
@@ -22039,7 +22039,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdExecuteGeneratedCommandsEXT(VkCommandBuffer comm
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateIndirectCommandsLayoutEXT(VkDevice device, const VkIndirectCommandsLayoutCreateInfoEXT* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkIndirectCommandsLayoutEXT* pIndirectCommandsLayout)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateIndirectCommandsLayoutEXT", "device, pCreateInfo, pAllocator, pIndirectCommandsLayout");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateIndirectCommandsLayoutEXT(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pIndirectCommandsLayout);
@@ -22070,7 +22070,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateIndirectCommandsLayoutEXT(VkDevice device
 VKAPI_ATTR void VKAPI_CALL vkDestroyIndirectCommandsLayoutEXT(VkDevice device, VkIndirectCommandsLayoutEXT indirectCommandsLayout, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyIndirectCommandsLayoutEXT", "device, indirectCommandsLayout, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyIndirectCommandsLayoutEXT(ApiDumpInstance::current(), device, indirectCommandsLayout, pAllocator);
@@ -22100,7 +22100,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyIndirectCommandsLayoutEXT(VkDevice device, V
 VKAPI_ATTR VkResult VKAPI_CALL vkCreateIndirectExecutionSetEXT(VkDevice device, const VkIndirectExecutionSetCreateInfoEXT* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkIndirectExecutionSetEXT* pIndirectExecutionSet)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCreateIndirectExecutionSetEXT", "device, pCreateInfo, pAllocator, pIndirectExecutionSet");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCreateIndirectExecutionSetEXT(ApiDumpInstance::current(), device, pCreateInfo, pAllocator, pIndirectExecutionSet);
@@ -22131,7 +22131,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateIndirectExecutionSetEXT(VkDevice device, 
 VKAPI_ATTR void VKAPI_CALL vkDestroyIndirectExecutionSetEXT(VkDevice device, VkIndirectExecutionSetEXT indirectExecutionSet, const VkAllocationCallbacks* pAllocator)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkDestroyIndirectExecutionSetEXT", "device, indirectExecutionSet, pAllocator");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkDestroyIndirectExecutionSetEXT(ApiDumpInstance::current(), device, indirectExecutionSet, pAllocator);
@@ -22161,7 +22161,7 @@ VKAPI_ATTR void VKAPI_CALL vkDestroyIndirectExecutionSetEXT(VkDevice device, VkI
 VKAPI_ATTR void VKAPI_CALL vkUpdateIndirectExecutionSetPipelineEXT(VkDevice device, VkIndirectExecutionSetEXT indirectExecutionSet, uint32_t executionSetWriteCount, const VkWriteIndirectExecutionSetPipelineEXT* pExecutionSetWrites)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkUpdateIndirectExecutionSetPipelineEXT", "device, indirectExecutionSet, executionSetWriteCount, pExecutionSetWrites");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkUpdateIndirectExecutionSetPipelineEXT(ApiDumpInstance::current(), device, indirectExecutionSet, executionSetWriteCount, pExecutionSetWrites);
@@ -22191,7 +22191,7 @@ VKAPI_ATTR void VKAPI_CALL vkUpdateIndirectExecutionSetPipelineEXT(VkDevice devi
 VKAPI_ATTR void VKAPI_CALL vkUpdateIndirectExecutionSetShaderEXT(VkDevice device, VkIndirectExecutionSetEXT indirectExecutionSet, uint32_t executionSetWriteCount, const VkWriteIndirectExecutionSetShaderEXT* pExecutionSetWrites)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkUpdateIndirectExecutionSetShaderEXT", "device, indirectExecutionSet, executionSetWriteCount, pExecutionSetWrites");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkUpdateIndirectExecutionSetShaderEXT(ApiDumpInstance::current(), device, indirectExecutionSet, executionSetWriteCount, pExecutionSetWrites);
@@ -22222,7 +22222,7 @@ VKAPI_ATTR void VKAPI_CALL vkUpdateIndirectExecutionSetShaderEXT(VkDevice device
 VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryMetalHandleEXT(VkDevice device, const VkMemoryGetMetalHandleInfoEXT* pGetMetalHandleInfo, void** pHandle)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetMemoryMetalHandleEXT", "device, pGetMetalHandleInfo, pHandle");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetMemoryMetalHandleEXT(ApiDumpInstance::current(), device, pGetMetalHandleInfo, pHandle);
@@ -22255,7 +22255,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryMetalHandleEXT(VkDevice device, const 
 VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryMetalHandlePropertiesEXT(VkDevice device, VkExternalMemoryHandleTypeFlagBits handleType, const void* pHandle, VkMemoryMetalHandlePropertiesEXT* pMemoryMetalHandleProperties)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkGetMemoryMetalHandlePropertiesEXT", "device, handleType, pHandle, pMemoryMetalHandleProperties");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkGetMemoryMetalHandlePropertiesEXT(ApiDumpInstance::current(), device, handleType, pHandle, pMemoryMetalHandleProperties);
@@ -22287,7 +22287,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryMetalHandlePropertiesEXT(VkDevice devi
 VKAPI_ATTR void VKAPI_CALL vkCmdEndRendering2EXT(VkCommandBuffer                   commandBuffer, const VkRenderingEndInfoEXT*        pRenderingEndInfo)
 {
     std::lock_guard<std::mutex> lg(ApiDumpInstance::current().outputMutex());
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {
         dump_function_head(ApiDumpInstance::current(), "vkCmdEndRendering2EXT", "commandBuffer, pRenderingEndInfo");
         if (ApiDumpInstance::current().shouldDumpOutput()) {
             dump_text_params_vkCmdEndRendering2EXT(ApiDumpInstance::current(), commandBuffer, pRenderingEndInfo);
