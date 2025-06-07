@@ -152,7 +152,7 @@ VKAPI_ATTR VkResult VKAPI_CALL vkCreateDevice(VkPhysicalDevice physicalDevice, c
             dump_text_params_vkCreateDevice(ApiDumpInstance::current(), physicalDevice, pCreateInfo, pAllocator, pDevice);
         }}
         dump_return_preamble(ApiDumpInstance::current(), "VkResult");
-    }} else {{    
+    }} else {{
         dump_function_head(ApiDumpInstance::current(), "vkCreateDevice", "physicalDevice, pCreateInfo, pAllocator, pDevice", "VkResult");
     }}
 
@@ -238,7 +238,7 @@ VKAPI_ATTR {funcReturn} VKAPI_CALL {funcName}({funcTypedParams})
             dump_text_params_{funcName}(ApiDumpInstance::current(), {funcNamedParams});
         }}
         dump_return_preamble(ApiDumpInstance::current(), "{funcReturn}");
-        
+
     }} else {{
         dump_function_head(ApiDumpInstance::current(), "{funcName}", "{funcNamedParams}", "{funcReturn}");
     }}
@@ -338,13 +338,13 @@ VKAPI_ATTR {funcReturn} VKAPI_CALL {funcName}({funcTypedParams})
     @if('{funcName}' in ['vkDebugMarkerSetObjectNameEXT', 'vkSetDebugUtilsObjectNameEXT'])
     ApiDumpInstance::current().update_object_name_map(pNameInfo);
     @end if
-   if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {{
+    if(ApiDumpInstance::current().settings().shouldPreDump() && ApiDumpInstance::current().settings().format() == ApiDumpFormat::Text) {{
         dump_function_head(ApiDumpInstance::current(), "{funcName}", "{funcNamedParams}");
         if (ApiDumpInstance::current().shouldDumpOutput()) {{
             dump_text_params_{funcName}(ApiDumpInstance::current(), {funcNamedParams});
         }}
         dump_return_preamble(ApiDumpInstance::current(), "{funcReturn}");
-        
+
     }} else {{
         dump_function_head(ApiDumpInstance::current(), "{funcName}", "{funcNamedParams}", "{funcReturn}");
     }}
