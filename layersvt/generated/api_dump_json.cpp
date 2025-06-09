@@ -40053,9 +40053,7 @@ void dump_json_pNext_trampoline(const void* object, const ApiDumpSettings& setti
     }
 }
 
-//========================= Function Helpers ================================//
-
-// Display parameter values
+//========================== Function Helpers ===============================//
 
 void dump_json_params_vkCreateInstance(ApiDumpInstance& dump_inst, const VkInstanceCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkInstance* pInstance)
 {
