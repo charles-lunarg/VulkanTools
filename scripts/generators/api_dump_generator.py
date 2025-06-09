@@ -614,132 +614,10 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
     return device_dispatch_table(device)->GetDeviceProcAddr(device, pName);
 }''')
 
-    def generate_header(self, output_format, video=False):
+    def generate_header(self, output_format):
         self.write('#pragma once\n')
 
         self.write('#include "api_dump.h"\n')
-
-        for union in [ x for x in self.vk.structs.values() if x.union ]:
-            if union.protect:
-                self.write(f'#if defined({union.protect})')
-            self.write(f'void dump_{output_format}_{union.name}(const {union.name}& object, const ApiDumpSettings& settings, int indents);')
-            if union.protect:
-                self.write(f'#endif // {union.protect}')
-
-        self.write('\n//=========================== Type Implementations ==========================//\n')
-
-        for t in [x for x in self.vk.platformTypes.values() if x.requires in ['vk_platform', 'stdint']]:
-            if t.name in ['void'] or (not video and t.name in DUPLICATE_TYPES_IN_VIDEO_HEADER):
-                continue
-            self.write(f'void dump_{output_format}_{t.name}({t.name} object, const ApiDumpSettings& settings, int indents);')
-
-        self.write('\n//========================= Basetype Implementations ========================//\n')
-
-        for basetype in [x for x in self.vk.baseTypes.values() if x.name not in ['ANativeWindow', 'AHardwareBuffer', 'CAMetalLayer']]:
-            if basetype.protect:
-                self.write(f'#if defined({basetype.protect})')
-            self.write(f'void dump_{output_format}_{basetype.name}({basetype.name} object, const ApiDumpSettings& settings, int indents);')
-            if basetype.protect:
-                self.write(f'#endif // {basetype.protect}')
-        self.write('\n')
-        for basetype in [x for x in self.vk.baseTypes.values() if x.name in ['ANativeWindow', 'AHardwareBuffer']]:
-            self.write('#if defined(VK_USE_PLATFORM_ANDROID_KHR)')
-            self.write(f'void dump_{output_format}_{basetype.name}(const {basetype.name}* object, const ApiDumpSettings& settings, int indents);')
-            self.write('#endif // VK_USE_PLATFORM_ANDROID_KHR')
-        self.write('\n')
-        for basetype in [x for x in self.vk.baseTypes.values() if x.name in ['CAMetalLayer']]:
-            self.write('#if defined(VK_USE_PLATFORM_METAL_EXT)')
-            self.write(f'void dump_{output_format}_{basetype.name}({basetype.name} object, const ApiDumpSettings& settings, int indents);')
-            self.write('#endif // VK_USE_PLATFORM_METAL_EXT')
-
-        self.write('\n//======================= System Type Implementations =======================//\n')
-        sortedSystemTypes = dict(sorted(self.vk.platformTypes.items()))
-        for sys in sortedSystemTypes.values():
-            if sys.requires in EXCLUDED_INCLUDE_LIST or sys.name == 'int' or (video and sys.name in DUPLICATE_TYPES_IN_VIDEO_HEADER):
-                continue
-            if sys.protect:
-                self.write(f'#if defined({sys.protect})')
-            self.write(f'void dump_{output_format}_{sys.name}(const {sys.name}{"*" if sys.name in POINTER_TYPES else ""} object, const ApiDumpSettings& settings, int indents);')
-            if sys.protect:
-                self.write(f'#endif // {sys.protect}')
-
-        self.write('\n//========================== Handle Implementations =========================//\n')
-
-        for handle in self.vk.handles.values():
-            if handle.protect:
-                self.write(f'#if defined({handle.protect})')
-            self.write(f'void dump_{output_format}_{handle.name}(const {handle.name} object, const ApiDumpSettings& settings, int indents);')
-            if handle.protect:
-                self.write(f'#endif // {handle.protect}')
-
-        self.write('\n//=========================== Enum Implementations ==========================//\n')
-
-        for enum in self.vk.enums.values():
-            if enum.protect:
-                self.write(f'#if defined({enum.protect})')
-            self.write(f'void dump_{output_format}_{enum.name}({enum.name} object, const ApiDumpSettings& settings, int indents);')
-            if enum.protect:
-                self.write(f'#endif // {enum.protect}')
-
-        self.write('\n//========================= Bitmask Implementations =========================//\n')
-
-        for bitmask in self.vk.bitmasks.values():
-            if bitmask.protect:
-                self.write(f'#if defined({bitmask.protect})')
-            if output_format == 'text' and bitmask.bitWidth == 64:
-                self.write('// 64 bit bitmasks don\'t have an enum of bit values.')
-                self.write(f'typedef VkFlags64 {bitmask.name};')
-            self.write(f'void dump_{output_format}_{bitmask.name}({bitmask.name} object, const ApiDumpSettings& settings, int indents);')
-            if bitmask.protect:
-                self.write(f'#endif // {bitmask.protect}')
-
-        self.write('\n//=========================== Flag Implementations ==========================//\n')
-
-        for bitmask in self.vk.bitmasks.values():
-            if bitmask.protect:
-                self.write(f'#if defined({bitmask.protect})')
-            self.write(f'void dump_{output_format}_{bitmask.flagName}({bitmask.flagName} object, const ApiDumpSettings& settings, int indents);')
-            if bitmask.protect:
-                self.write(f'#endif // {bitmask.protect}')
-
-        self.write('\n')
-        for flag in self.vk.flags.values():
-            if flag.bitmaskName is not None:
-                continue
-            if flag.protect:
-                self.write(f'#if defined({flag.protect})')
-            self.write(f'void dump_{output_format}_{flag.name}({flag.name} object, const ApiDumpSettings& settings, int indents);')
-            if flag.protect:
-                self.write(f'#endif // {flag.protect}')
-
-        self.write('\n//======================= Func Pointer Implementations ======================//\n')
-
-        for funcpointer in self.vk.funcPointers.values():
-            self.write(f'void dump_{output_format}_{funcpointer.name}({funcpointer.name} object, const ApiDumpSettings& settings, int indents);')
-
-        self.write('\n//========================== Struct Implementations =========================//\n')
-
-        for struct in [ x for x in self.vk.structs.values() if not x.union ]:
-            if struct.protect:
-                self.write(f'#if defined({struct.protect})')
-            self.write(f'void dump_{output_format}_{struct.name}(const {struct.name}& object, const ApiDumpSettings& settings, int indents);')
-            if struct.protect:
-                self.write(f'#endif // {struct.protect}')
-
-        self.write('\n//========================== Union Implementations ==========================//\n')
-
-        for union in [ x for x in self.vk.structs.values() if x.union ]:
-            if union.protect:
-                self.write(f'#if defined({union.protect})')
-            self.write(f'void dump_{output_format}_{union.name}(const {union.name}& object, const ApiDumpSettings& settings, int indents);')
-            if union.protect:
-                self.write(f'#endif // {union.protect}')
-
-        self.write('\n//======================== pNext Chain Implementation =======================//\n')
-        if not video:
-            if output_format == 'text':
-                self.write(f'void dump_{output_format}_pNext_struct_name(const void* object, const ApiDumpSettings& settings, int indents, const char* pnext_type);\n')
-            self.write(f'void dump_{output_format}_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);')
 
         self.write('\n//========================= Function Helpers ================================//\n')
         for command in [x for x in self.vk.commands.values() if x.name not in FUNCTION_IMPLEMENTATION_IGNORE_LIST]:
@@ -930,6 +808,19 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
             self.write('    else')
             self.write('        settings.stream() << "address";')
             self.write('}')
+
+        if not video:
+            self.write('void dump_text_pNext_struct_name(const void* object, const ApiDumpSettings& settings, int indents, const char* pnext_type);\n')
+            self.write('void dump_text_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);')
+
+        self.write('\n//========================== Union Forward Declarations ==========================//\n')
+
+        for union in [ x for x in self.vk.structs.values() if x.union ]:
+            if union.protect:
+                self.write(f'#if defined({union.protect})')
+            self.write(f'void dump_text_{union.name}(const {union.name}& object, const ApiDumpSettings& settings, int indents);')
+            if union.protect:
+                self.write(f'#endif // {union.protect}')
 
         self.write('\n//========================== Struct Implementations =========================//\n')
         for struct in [ x for x in self.vk.structs.values() if not x.union ]:
@@ -1328,6 +1219,17 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
             self.write('    settings.stream() << "</div></summary>";')
             self.write('}')
 
+        if not video:
+            self.write('void dump_html_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);')
+
+        self.write('\n//========================== Union Forward Declarations ==========================//\n')
+
+        for union in [ x for x in self.vk.structs.values() if x.union ]:
+            if union.protect:
+                self.write(f'#if defined({union.protect})')
+            self.write(f'void dump_html_{union.name}(const {union.name}& object, const ApiDumpSettings& settings, int indents);')
+            if union.protect:
+                self.write(f'#endif // {union.protect}')
         self.write('\n//========================== Struct Implementations =========================//\n')
         for struct in [ x for x in self.vk.structs.values() if not x.union ]:
             if struct.protect:
@@ -1682,6 +1584,17 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
             self.write('        settings.stream() << "\\"address\\"";')
             self.write('}')
 
+        if not video:
+            self.write('void dump_json_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);')
+
+        self.write('\n//========================== Union Forward Declarations ==========================//\n')
+
+        for union in [ x for x in self.vk.structs.values() if x.union ]:
+            if union.protect:
+                self.write(f'#if defined({union.protect})')
+            self.write(f'void dump_json_{union.name}(const {union.name}& object, const ApiDumpSettings& settings, int indents);')
+            if union.protect:
+                self.write(f'#endif // {union.protect}')
         self.write('\n//========================== Struct Implementations =========================//\n')
         for struct in [ x for x in self.vk.structs.values() if not x.union ]:
             if struct.protect:

@@ -1330,6 +1330,9 @@ void dump_text_StdVideoVP9ColorSpace(StdVideoVP9ColorSpace object, const ApiDump
 //======================= Func Pointer Implementations ======================//
 
 
+//========================== Union Forward Declarations ==========================//
+
+
 //========================== Struct Implementations =========================//
 
 void dump_text_StdVideoH264SpsVuiFlags(const StdVideoH264SpsVuiFlags& object, const ApiDumpSettings& settings, int indents)
