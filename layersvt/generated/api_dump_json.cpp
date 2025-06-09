@@ -79,6 +79,24 @@ void dump_json_VkFlags64(VkFlags64 object, const ApiDumpSettings& settings, int 
 {
     settings.stream() << "\"" << object << "\"";
 }
+#if defined(VK_USE_PLATFORM_ANDROID_KHR)
+void dump_json_ANativeWindow(const ANativeWindow* object, const ApiDumpSettings& settings, int indents)
+{
+    settings.stream() << "\"" << object << "\"";
+}
+#endif // VK_USE_PLATFORM_ANDROID_KHR
+#if defined(VK_USE_PLATFORM_ANDROID_KHR)
+void dump_json_AHardwareBuffer(const AHardwareBuffer* object, const ApiDumpSettings& settings, int indents)
+{
+    settings.stream() << "\"" << object << "\"";
+}
+#endif // VK_USE_PLATFORM_ANDROID_KHR
+#if defined(VK_USE_PLATFORM_METAL_EXT)
+void dump_json_CAMetalLayer(CAMetalLayer object, const ApiDumpSettings& settings, int indents)
+{
+    settings.stream() << "\"" << object << "\"";
+}
+#endif // VK_USE_PLATFORM_METAL_EXT
 #if defined(VK_USE_PLATFORM_METAL_EXT)
 void dump_json_MTLDevice_id(MTLDevice_id object, const ApiDumpSettings& settings, int indents)
 {
@@ -119,28 +137,6 @@ void dump_json_VkRemoteAddressNV(VkRemoteAddressNV object, const ApiDumpSettings
 {
     settings.stream() << "\"" << object << "\"";
 }
-
-
-#if defined(VK_USE_PLATFORM_ANDROID_KHR)
-void dump_json_ANativeWindow(const ANativeWindow* object, const ApiDumpSettings& settings, int indents)
-{
-    settings.stream() << "\"" << object << "\"";
-}
-#endif // VK_USE_PLATFORM_ANDROID_KHR
-#if defined(VK_USE_PLATFORM_ANDROID_KHR)
-void dump_json_AHardwareBuffer(const AHardwareBuffer* object, const ApiDumpSettings& settings, int indents)
-{
-    settings.stream() << "\"" << object << "\"";
-}
-#endif // VK_USE_PLATFORM_ANDROID_KHR
-
-
-#if defined(VK_USE_PLATFORM_METAL_EXT)
-void dump_json_CAMetalLayer(CAMetalLayer object, const ApiDumpSettings& settings, int indents)
-{
-    settings.stream() << "\"" << object << "\"";
-}
-#endif // VK_USE_PLATFORM_METAL_EXT
 
 //======================= System Type Implementations =======================//
 
