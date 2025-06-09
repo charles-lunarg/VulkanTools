@@ -14631,9 +14631,6 @@ void dump_text_PFN_vkGetInstanceProcAddrLUNARG(PFN_vkGetInstanceProcAddrLUNARG o
     else
         settings.stream() << "address";
 }
-void dump_text_pNext_struct_name(const void* object, const ApiDumpSettings& settings, int indents, const char* pnext_type);
-
-void dump_text_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);
 
 //========================== Union Forward Declarations ==========================//
 
@@ -14653,6 +14650,9 @@ void dump_text_VkClusterAccelerationStructureOpInputNV(const VkClusterAccelerati
 void dump_text_VkIndirectExecutionSetInfoEXT(const VkIndirectExecutionSetInfoEXT& object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkIndirectCommandsTokenDataEXT(const VkIndirectCommandsTokenDataEXT& object, const ApiDumpSettings& settings, int indents);
 void dump_text_VkAccelerationStructureGeometryDataKHR(const VkAccelerationStructureGeometryDataKHR& object, const ApiDumpSettings& settings, int indents);
+void dump_text_pNext_struct_name(const void* object, const ApiDumpSettings& settings, int indents, const char* pnext_type);
+
+void dump_text_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);
 
 //========================== Struct Implementations =========================//
 

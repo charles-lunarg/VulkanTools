@@ -14314,7 +14314,6 @@ void dump_json_PFN_vkGetInstanceProcAddrLUNARG(PFN_vkGetInstanceProcAddrLUNARG o
     else
         settings.stream() << "\"address\"";
 }
-void dump_json_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);
 
 //========================== Union Forward Declarations ==========================//
 
@@ -14334,6 +14333,7 @@ void dump_json_VkClusterAccelerationStructureOpInputNV(const VkClusterAccelerati
 void dump_json_VkIndirectExecutionSetInfoEXT(const VkIndirectExecutionSetInfoEXT& object, const ApiDumpSettings& settings, int indents);
 void dump_json_VkIndirectCommandsTokenDataEXT(const VkIndirectCommandsTokenDataEXT& object, const ApiDumpSettings& settings, int indents);
 void dump_json_VkAccelerationStructureGeometryDataKHR(const VkAccelerationStructureGeometryDataKHR& object, const ApiDumpSettings& settings, int indents);
+void dump_json_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);
 
 //========================== Struct Implementations =========================//
 
@@ -40072,9 +40072,7 @@ void dump_json_pNext_trampoline(const void* object, const ApiDumpSettings& setti
     }
 }
 
-//========================= Function Helpers ================================//
-
-// Display parameter values
+//========================== Function Helpers ===============================//
 
 void dump_json_params_vkCreateInstance(ApiDumpInstance& dump_inst, const VkInstanceCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkInstance* pInstance)
 {

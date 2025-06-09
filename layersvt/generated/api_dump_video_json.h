@@ -23,9 +23,7 @@
 
 #pragma once
 
-
 #include "api_dump_json.h"
-
 
 //=========================== Type Implementations ==========================//
 
@@ -3487,9 +3485,7 @@ void dump_json_StdVideoDecodeVP9PictureInfo(const StdVideoDecodeVP9PictureInfo& 
 //======================== pNext Chain Implementation =======================//
 
 
-//========================= Function Helpers ================================//
-
-// Display parameter values
+//========================== Function Helpers ===============================//
 
 
 //========================= Function Implementations ========================//

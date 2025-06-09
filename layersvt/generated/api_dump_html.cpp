@@ -15236,7 +15236,6 @@ void dump_html_PFN_vkGetInstanceProcAddrLUNARG(PFN_vkGetInstanceProcAddrLUNARG o
         settings.stream() << "address";
     settings.stream() << "</div></summary>";
 }
-void dump_html_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);
 
 //========================== Union Forward Declarations ==========================//
 
@@ -15256,6 +15255,7 @@ void dump_html_VkClusterAccelerationStructureOpInputNV(const VkClusterAccelerati
 void dump_html_VkIndirectExecutionSetInfoEXT(const VkIndirectExecutionSetInfoEXT& object, const ApiDumpSettings& settings, int indents);
 void dump_html_VkIndirectCommandsTokenDataEXT(const VkIndirectCommandsTokenDataEXT& object, const ApiDumpSettings& settings, int indents);
 void dump_html_VkAccelerationStructureGeometryDataKHR(const VkAccelerationStructureGeometryDataKHR& object, const ApiDumpSettings& settings, int indents);
+void dump_html_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);
 
 //========================== Struct Implementations =========================//
 
@@ -40754,7 +40754,7 @@ void dump_html_pNext_trampoline(const void* object, const ApiDumpSettings& setti
     }
 }
 
-//========================= Function Helpers ================================//
+//========================== Function Helpers ===============================//
 
 void dump_html_params_vkCreateInstance(ApiDumpInstance& dump_inst, const VkInstanceCreateInfo* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkInstance* pInstance)
 {
