@@ -1147,6 +1147,9 @@ void dump_text_StdVideoAV1ChromaSamplePosition(StdVideoAV1ChromaSamplePosition o
 //======================= Func Pointer Implementations ======================//
 
 
+//========================== Union Forward Declarations ==========================//
+
+
 //========================== Struct Implementations =========================//
 
 void dump_text_StdVideoH264SpsVuiFlags(const StdVideoH264SpsVuiFlags& object, const ApiDumpSettings& settings, int indents)
