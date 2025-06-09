@@ -23,9 +23,7 @@
 
 #pragma once
 
-
 #include "api_dump_json.h"
-
 
 //=========================== Type Implementations ==========================//
 
@@ -3168,9 +3166,7 @@ void dump_json_StdVideoEncodeAV1ReferenceInfo(const StdVideoEncodeAV1ReferenceIn
 //======================== pNext Chain Implementation =======================//
 
 
-//========================= Function Helpers ================================//
-
-// Display parameter values
+//========================== Function Helpers ===============================//
 
 
 //========================= Function Implementations ========================//
