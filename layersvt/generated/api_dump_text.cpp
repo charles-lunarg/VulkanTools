@@ -28,54 +28,54 @@
 
 //=========================== Type Implementations ==========================//
 
-void dump_text_uint64_t(uint64_t object, const ApiDumpSettings& settings, int indents)
+void dump_text_uint64_t(const uint64_t &object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_size_t(size_t object, const ApiDumpSettings& settings, int indents)
+void dump_text_size_t(const size_t &object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_char(char object, const ApiDumpSettings& settings, int indents)
+void dump_text_char(const char &object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_float(float object, const ApiDumpSettings& settings, int indents)
+void dump_text_float(const float &object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_int64_t(int64_t object, const ApiDumpSettings& settings, int indents)
+void dump_text_int64_t(const int64_t &object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_double(double object, const ApiDumpSettings& settings, int indents)
+void dump_text_double(const double &object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 
 //========================= Basetype Implementations ========================//
 
-void dump_text_VkBool32(VkBool32 object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBool32(const VkBool32& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkDeviceAddress(VkDeviceAddress object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeviceAddress(const VkDeviceAddress& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkDeviceSize(VkDeviceSize object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeviceSize(const VkDeviceSize& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkFlags(VkFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFlags(const VkFlags& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkSampleMask(VkSampleMask object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSampleMask(const VkSampleMask& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkFlags64(VkFlags64 object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFlags64(const VkFlags64& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
@@ -92,53 +92,53 @@ void dump_text_AHardwareBuffer(const AHardwareBuffer* object, const ApiDumpSetti
 }
 #endif // VK_USE_PLATFORM_ANDROID_KHR
 #if defined(VK_USE_PLATFORM_METAL_EXT)
-void dump_text_CAMetalLayer(CAMetalLayer object, const ApiDumpSettings& settings, int indents)
+void dump_text_CAMetalLayer(const CAMetalLayer& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
 #if defined(VK_USE_PLATFORM_METAL_EXT)
-void dump_text_MTLDevice_id(MTLDevice_id object, const ApiDumpSettings& settings, int indents)
+void dump_text_MTLDevice_id(const MTLDevice_id& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
 #if defined(VK_USE_PLATFORM_METAL_EXT)
-void dump_text_MTLCommandQueue_id(MTLCommandQueue_id object, const ApiDumpSettings& settings, int indents)
+void dump_text_MTLCommandQueue_id(const MTLCommandQueue_id& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
 #if defined(VK_USE_PLATFORM_METAL_EXT)
-void dump_text_MTLBuffer_id(MTLBuffer_id object, const ApiDumpSettings& settings, int indents)
+void dump_text_MTLBuffer_id(const MTLBuffer_id& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
 #if defined(VK_USE_PLATFORM_METAL_EXT)
-void dump_text_MTLTexture_id(MTLTexture_id object, const ApiDumpSettings& settings, int indents)
+void dump_text_MTLTexture_id(const MTLTexture_id& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
 #if defined(VK_USE_PLATFORM_METAL_EXT)
-void dump_text_IOSurfaceRef(IOSurfaceRef object, const ApiDumpSettings& settings, int indents)
+void dump_text_IOSurfaceRef(const IOSurfaceRef& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
 #if defined(VK_USE_PLATFORM_METAL_EXT)
-void dump_text_MTLSharedEvent_id(MTLSharedEvent_id object, const ApiDumpSettings& settings, int indents)
+void dump_text_MTLSharedEvent_id(const MTLSharedEvent_id& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
-void dump_text_VkRemoteAddressNV(VkRemoteAddressNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkRemoteAddressNV(const VkRemoteAddressNV& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #if defined(VK_USE_PLATFORM_OHOS)
-void dump_text_OHNativeWindow(OHNativeWindow object, const ApiDumpSettings& settings, int indents)
+void dump_text_OHNativeWindow(const OHNativeWindow& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
@@ -147,7 +147,7 @@ void dump_text_OHNativeWindow(OHNativeWindow object, const ApiDumpSettings& sett
 //======================= System Type Implementations =======================//
 
 #if defined(VK_USE_PLATFORM_WIN32_KHR)
-void dump_text_DWORD(const DWORD object, const ApiDumpSettings& settings, int indents)
+void dump_text_DWORD(DWORD const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
@@ -156,7 +156,7 @@ void dump_text_DWORD(const DWORD object, const ApiDumpSettings& settings, int in
 }
 #endif // VK_USE_PLATFORM_WIN32_KHR
 #if defined(VK_USE_PLATFORM_XLIB_KHR)
-void dump_text_Display(const Display* object, const ApiDumpSettings& settings, int indents)
+void dump_text_Display(Display const * const & object, const ApiDumpSettings& settings, int indents)
 {
     if (object == NULL) {
         settings.stream() << "NULL";
@@ -166,7 +166,7 @@ void dump_text_Display(const Display* object, const ApiDumpSettings& settings, i
 }
 #endif // VK_USE_PLATFORM_XLIB_KHR
 #if defined(VK_USE_PLATFORM_GGP)
-void dump_text_GgpFrameToken(const GgpFrameToken object, const ApiDumpSettings& settings, int indents)
+void dump_text_GgpFrameToken(GgpFrameToken const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
@@ -175,7 +175,7 @@ void dump_text_GgpFrameToken(const GgpFrameToken object, const ApiDumpSettings& 
 }
 #endif // VK_USE_PLATFORM_GGP
 #if defined(VK_USE_PLATFORM_GGP)
-void dump_text_GgpStreamDescriptor(const GgpStreamDescriptor object, const ApiDumpSettings& settings, int indents)
+void dump_text_GgpStreamDescriptor(GgpStreamDescriptor const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
@@ -184,7 +184,7 @@ void dump_text_GgpStreamDescriptor(const GgpStreamDescriptor object, const ApiDu
 }
 #endif // VK_USE_PLATFORM_GGP
 #if defined(VK_USE_PLATFORM_WIN32_KHR)
-void dump_text_HANDLE(const HANDLE object, const ApiDumpSettings& settings, int indents)
+void dump_text_HANDLE(HANDLE const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
@@ -193,7 +193,7 @@ void dump_text_HANDLE(const HANDLE object, const ApiDumpSettings& settings, int 
 }
 #endif // VK_USE_PLATFORM_WIN32_KHR
 #if defined(VK_USE_PLATFORM_WIN32_KHR)
-void dump_text_HINSTANCE(const HINSTANCE object, const ApiDumpSettings& settings, int indents)
+void dump_text_HINSTANCE(HINSTANCE const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
@@ -202,7 +202,7 @@ void dump_text_HINSTANCE(const HINSTANCE object, const ApiDumpSettings& settings
 }
 #endif // VK_USE_PLATFORM_WIN32_KHR
 #if defined(VK_USE_PLATFORM_WIN32_KHR)
-void dump_text_HMONITOR(const HMONITOR object, const ApiDumpSettings& settings, int indents)
+void dump_text_HMONITOR(HMONITOR const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
@@ -211,7 +211,7 @@ void dump_text_HMONITOR(const HMONITOR object, const ApiDumpSettings& settings, 
 }
 #endif // VK_USE_PLATFORM_WIN32_KHR
 #if defined(VK_USE_PLATFORM_WIN32_KHR)
-void dump_text_HWND(const HWND object, const ApiDumpSettings& settings, int indents)
+void dump_text_HWND(HWND const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
@@ -220,7 +220,7 @@ void dump_text_HWND(const HWND object, const ApiDumpSettings& settings, int inde
 }
 #endif // VK_USE_PLATFORM_WIN32_KHR
 #if defined(VK_USE_PLATFORM_DIRECTFB_EXT)
-void dump_text_IDirectFB(const IDirectFB object, const ApiDumpSettings& settings, int indents)
+void dump_text_IDirectFB(IDirectFB const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
@@ -229,7 +229,7 @@ void dump_text_IDirectFB(const IDirectFB object, const ApiDumpSettings& settings
 }
 #endif // VK_USE_PLATFORM_DIRECTFB_EXT
 #if defined(VK_USE_PLATFORM_DIRECTFB_EXT)
-void dump_text_IDirectFBSurface(const IDirectFBSurface object, const ApiDumpSettings& settings, int indents)
+void dump_text_IDirectFBSurface(IDirectFBSurface const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
@@ -238,7 +238,7 @@ void dump_text_IDirectFBSurface(const IDirectFBSurface object, const ApiDumpSett
 }
 #endif // VK_USE_PLATFORM_DIRECTFB_EXT
 #if defined(VK_USE_PLATFORM_WIN32_KHR)
-void dump_text_LPCWSTR(const LPCWSTR object, const ApiDumpSettings& settings, int indents)
+void dump_text_LPCWSTR(LPCWSTR const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
@@ -247,7 +247,7 @@ void dump_text_LPCWSTR(const LPCWSTR object, const ApiDumpSettings& settings, in
 }
 #endif // VK_USE_PLATFORM_WIN32_KHR
 #if defined(VK_USE_PLATFORM_XLIB_XRANDR_EXT)
-void dump_text_RROutput(const RROutput object, const ApiDumpSettings& settings, int indents)
+void dump_text_RROutput(RROutput const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
@@ -256,7 +256,7 @@ void dump_text_RROutput(const RROutput object, const ApiDumpSettings& settings, 
 }
 #endif // VK_USE_PLATFORM_XLIB_XRANDR_EXT
 #if defined(VK_USE_PLATFORM_WIN32_KHR)
-void dump_text_SECURITY_ATTRIBUTES(const SECURITY_ATTRIBUTES* object, const ApiDumpSettings& settings, int indents)
+void dump_text_SECURITY_ATTRIBUTES(SECURITY_ATTRIBUTES const * const & object, const ApiDumpSettings& settings, int indents)
 {
     if (object == NULL) {
         settings.stream() << "NULL";
@@ -265,21 +265,21 @@ void dump_text_SECURITY_ATTRIBUTES(const SECURITY_ATTRIBUTES* object, const ApiD
     OutputAddress(settings, object);
 }
 #endif // VK_USE_PLATFORM_WIN32_KHR
-void dump_text_StdVideoDecodeVP9PictureInfo(const StdVideoDecodeVP9PictureInfo object, const ApiDumpSettings& settings, int indents)
+void dump_text_StdVideoDecodeVP9PictureInfo(StdVideoDecodeVP9PictureInfo const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
     else
         settings.stream() << "address";
 }
-void dump_text_StdVideoVP9Level(const StdVideoVP9Level object, const ApiDumpSettings& settings, int indents)
+void dump_text_StdVideoVP9Level(StdVideoVP9Level const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
     else
         settings.stream() << "address";
 }
-void dump_text_StdVideoVP9Profile(const StdVideoVP9Profile object, const ApiDumpSettings& settings, int indents)
+void dump_text_StdVideoVP9Profile(StdVideoVP9Profile const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
@@ -287,7 +287,7 @@ void dump_text_StdVideoVP9Profile(const StdVideoVP9Profile object, const ApiDump
         settings.stream() << "address";
 }
 #if defined(VK_USE_PLATFORM_XLIB_KHR)
-void dump_text_VisualID(const VisualID object, const ApiDumpSettings& settings, int indents)
+void dump_text_VisualID(VisualID const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
@@ -296,7 +296,7 @@ void dump_text_VisualID(const VisualID object, const ApiDumpSettings& settings, 
 }
 #endif // VK_USE_PLATFORM_XLIB_KHR
 #if defined(VK_USE_PLATFORM_XLIB_KHR)
-void dump_text_Window(const Window object, const ApiDumpSettings& settings, int indents)
+void dump_text_Window(Window const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
@@ -305,7 +305,7 @@ void dump_text_Window(const Window object, const ApiDumpSettings& settings, int 
 }
 #endif // VK_USE_PLATFORM_XLIB_KHR
 #if defined(VK_USE_PLATFORM_SCREEN_QNX)
-void dump_text__screen_buffer(const _screen_buffer* object, const ApiDumpSettings& settings, int indents)
+void dump_text__screen_buffer(_screen_buffer const * const & object, const ApiDumpSettings& settings, int indents)
 {
     if (object == NULL) {
         settings.stream() << "NULL";
@@ -315,7 +315,7 @@ void dump_text__screen_buffer(const _screen_buffer* object, const ApiDumpSetting
 }
 #endif // VK_USE_PLATFORM_SCREEN_QNX
 #if defined(VK_USE_PLATFORM_SCREEN_QNX)
-void dump_text__screen_context(const _screen_context* object, const ApiDumpSettings& settings, int indents)
+void dump_text__screen_context(_screen_context const * const & object, const ApiDumpSettings& settings, int indents)
 {
     if (object == NULL) {
         settings.stream() << "NULL";
@@ -325,7 +325,7 @@ void dump_text__screen_context(const _screen_context* object, const ApiDumpSetti
 }
 #endif // VK_USE_PLATFORM_SCREEN_QNX
 #if defined(VK_USE_PLATFORM_SCREEN_QNX)
-void dump_text__screen_window(const _screen_window* object, const ApiDumpSettings& settings, int indents)
+void dump_text__screen_window(_screen_window const * const & object, const ApiDumpSettings& settings, int indents)
 {
     if (object == NULL) {
         settings.stream() << "NULL";
@@ -335,7 +335,7 @@ void dump_text__screen_window(const _screen_window* object, const ApiDumpSetting
 }
 #endif // VK_USE_PLATFORM_SCREEN_QNX
 #if defined(VK_USE_PLATFORM_WAYLAND_KHR)
-void dump_text_wl_display(const wl_display* object, const ApiDumpSettings& settings, int indents)
+void dump_text_wl_display(wl_display const * const & object, const ApiDumpSettings& settings, int indents)
 {
     if (object == NULL) {
         settings.stream() << "NULL";
@@ -345,7 +345,7 @@ void dump_text_wl_display(const wl_display* object, const ApiDumpSettings& setti
 }
 #endif // VK_USE_PLATFORM_WAYLAND_KHR
 #if defined(VK_USE_PLATFORM_WAYLAND_KHR)
-void dump_text_wl_surface(const wl_surface* object, const ApiDumpSettings& settings, int indents)
+void dump_text_wl_surface(wl_surface const * const & object, const ApiDumpSettings& settings, int indents)
 {
     if (object == NULL) {
         settings.stream() << "NULL";
@@ -355,7 +355,7 @@ void dump_text_wl_surface(const wl_surface* object, const ApiDumpSettings& setti
 }
 #endif // VK_USE_PLATFORM_WAYLAND_KHR
 #if defined(VK_USE_PLATFORM_XCB_KHR)
-void dump_text_xcb_connection_t(const xcb_connection_t* object, const ApiDumpSettings& settings, int indents)
+void dump_text_xcb_connection_t(xcb_connection_t const * const & object, const ApiDumpSettings& settings, int indents)
 {
     if (object == NULL) {
         settings.stream() << "NULL";
@@ -365,7 +365,7 @@ void dump_text_xcb_connection_t(const xcb_connection_t* object, const ApiDumpSet
 }
 #endif // VK_USE_PLATFORM_XCB_KHR
 #if defined(VK_USE_PLATFORM_XCB_KHR)
-void dump_text_xcb_visualid_t(const xcb_visualid_t object, const ApiDumpSettings& settings, int indents)
+void dump_text_xcb_visualid_t(xcb_visualid_t const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
@@ -374,7 +374,7 @@ void dump_text_xcb_visualid_t(const xcb_visualid_t object, const ApiDumpSettings
 }
 #endif // VK_USE_PLATFORM_XCB_KHR
 #if defined(VK_USE_PLATFORM_XCB_KHR)
-void dump_text_xcb_window_t(const xcb_window_t object, const ApiDumpSettings& settings, int indents)
+void dump_text_xcb_window_t(xcb_window_t const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
@@ -383,7 +383,7 @@ void dump_text_xcb_window_t(const xcb_window_t object, const ApiDumpSettings& se
 }
 #endif // VK_USE_PLATFORM_XCB_KHR
 #if defined(VK_USE_PLATFORM_FUCHSIA)
-void dump_text_zx_handle_t(const zx_handle_t object, const ApiDumpSettings& settings, int indents)
+void dump_text_zx_handle_t(zx_handle_t const & object, const ApiDumpSettings& settings, int indents)
 {
     if (settings.showAddress())
         settings.stream() << object;
@@ -394,7 +394,7 @@ void dump_text_zx_handle_t(const zx_handle_t object, const ApiDumpSettings& sett
 
 //========================== Handle Implementations =========================//
 
-void dump_text_VkBuffer(const VkBuffer object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBuffer(const VkBuffer& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -407,7 +407,7 @@ void dump_text_VkBuffer(const VkBuffer object, const ApiDumpSettings& settings, 
         settings.stream() << "address";
     }
 }
-void dump_text_VkImage(const VkImage object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImage(const VkImage& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -420,7 +420,7 @@ void dump_text_VkImage(const VkImage object, const ApiDumpSettings& settings, in
         settings.stream() << "address";
     }
 }
-void dump_text_VkInstance(const VkInstance object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkInstance(const VkInstance& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -433,7 +433,7 @@ void dump_text_VkInstance(const VkInstance object, const ApiDumpSettings& settin
         settings.stream() << "address";
     }
 }
-void dump_text_VkPhysicalDevice(const VkPhysicalDevice object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPhysicalDevice(const VkPhysicalDevice& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -446,7 +446,7 @@ void dump_text_VkPhysicalDevice(const VkPhysicalDevice object, const ApiDumpSett
         settings.stream() << "address";
     }
 }
-void dump_text_VkDevice(const VkDevice object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDevice(const VkDevice& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -459,7 +459,7 @@ void dump_text_VkDevice(const VkDevice object, const ApiDumpSettings& settings, 
         settings.stream() << "address";
     }
 }
-void dump_text_VkQueue(const VkQueue object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkQueue(const VkQueue& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -472,7 +472,7 @@ void dump_text_VkQueue(const VkQueue object, const ApiDumpSettings& settings, in
         settings.stream() << "address";
     }
 }
-void dump_text_VkSemaphore(const VkSemaphore object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSemaphore(const VkSemaphore& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -485,7 +485,7 @@ void dump_text_VkSemaphore(const VkSemaphore object, const ApiDumpSettings& sett
         settings.stream() << "address";
     }
 }
-void dump_text_VkCommandBuffer(const VkCommandBuffer object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCommandBuffer(const VkCommandBuffer& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -498,7 +498,7 @@ void dump_text_VkCommandBuffer(const VkCommandBuffer object, const ApiDumpSettin
         settings.stream() << "address";
     }
 }
-void dump_text_VkFence(const VkFence object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFence(const VkFence& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -511,7 +511,7 @@ void dump_text_VkFence(const VkFence object, const ApiDumpSettings& settings, in
         settings.stream() << "address";
     }
 }
-void dump_text_VkDeviceMemory(const VkDeviceMemory object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeviceMemory(const VkDeviceMemory& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -524,7 +524,7 @@ void dump_text_VkDeviceMemory(const VkDeviceMemory object, const ApiDumpSettings
         settings.stream() << "address";
     }
 }
-void dump_text_VkEvent(const VkEvent object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkEvent(const VkEvent& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -537,7 +537,7 @@ void dump_text_VkEvent(const VkEvent object, const ApiDumpSettings& settings, in
         settings.stream() << "address";
     }
 }
-void dump_text_VkQueryPool(const VkQueryPool object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkQueryPool(const VkQueryPool& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -550,7 +550,7 @@ void dump_text_VkQueryPool(const VkQueryPool object, const ApiDumpSettings& sett
         settings.stream() << "address";
     }
 }
-void dump_text_VkBufferView(const VkBufferView object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBufferView(const VkBufferView& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -563,7 +563,7 @@ void dump_text_VkBufferView(const VkBufferView object, const ApiDumpSettings& se
         settings.stream() << "address";
     }
 }
-void dump_text_VkImageView(const VkImageView object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageView(const VkImageView& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -576,7 +576,7 @@ void dump_text_VkImageView(const VkImageView object, const ApiDumpSettings& sett
         settings.stream() << "address";
     }
 }
-void dump_text_VkShaderModule(const VkShaderModule object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkShaderModule(const VkShaderModule& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -589,7 +589,7 @@ void dump_text_VkShaderModule(const VkShaderModule object, const ApiDumpSettings
         settings.stream() << "address";
     }
 }
-void dump_text_VkPipelineCache(const VkPipelineCache object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineCache(const VkPipelineCache& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -602,7 +602,7 @@ void dump_text_VkPipelineCache(const VkPipelineCache object, const ApiDumpSettin
         settings.stream() << "address";
     }
 }
-void dump_text_VkPipelineLayout(const VkPipelineLayout object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineLayout(const VkPipelineLayout& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -615,7 +615,7 @@ void dump_text_VkPipelineLayout(const VkPipelineLayout object, const ApiDumpSett
         settings.stream() << "address";
     }
 }
-void dump_text_VkPipeline(const VkPipeline object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipeline(const VkPipeline& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -628,7 +628,7 @@ void dump_text_VkPipeline(const VkPipeline object, const ApiDumpSettings& settin
         settings.stream() << "address";
     }
 }
-void dump_text_VkRenderPass(const VkRenderPass object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkRenderPass(const VkRenderPass& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -641,7 +641,7 @@ void dump_text_VkRenderPass(const VkRenderPass object, const ApiDumpSettings& se
         settings.stream() << "address";
     }
 }
-void dump_text_VkDescriptorSetLayout(const VkDescriptorSetLayout object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDescriptorSetLayout(const VkDescriptorSetLayout& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -654,7 +654,7 @@ void dump_text_VkDescriptorSetLayout(const VkDescriptorSetLayout object, const A
         settings.stream() << "address";
     }
 }
-void dump_text_VkSampler(const VkSampler object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSampler(const VkSampler& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -667,7 +667,7 @@ void dump_text_VkSampler(const VkSampler object, const ApiDumpSettings& settings
         settings.stream() << "address";
     }
 }
-void dump_text_VkDescriptorSet(const VkDescriptorSet object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDescriptorSet(const VkDescriptorSet& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -680,7 +680,7 @@ void dump_text_VkDescriptorSet(const VkDescriptorSet object, const ApiDumpSettin
         settings.stream() << "address";
     }
 }
-void dump_text_VkDescriptorPool(const VkDescriptorPool object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDescriptorPool(const VkDescriptorPool& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -693,7 +693,7 @@ void dump_text_VkDescriptorPool(const VkDescriptorPool object, const ApiDumpSett
         settings.stream() << "address";
     }
 }
-void dump_text_VkFramebuffer(const VkFramebuffer object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFramebuffer(const VkFramebuffer& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -706,7 +706,7 @@ void dump_text_VkFramebuffer(const VkFramebuffer object, const ApiDumpSettings& 
         settings.stream() << "address";
     }
 }
-void dump_text_VkCommandPool(const VkCommandPool object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCommandPool(const VkCommandPool& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -719,7 +719,7 @@ void dump_text_VkCommandPool(const VkCommandPool object, const ApiDumpSettings& 
         settings.stream() << "address";
     }
 }
-void dump_text_VkSamplerYcbcrConversion(const VkSamplerYcbcrConversion object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSamplerYcbcrConversion(const VkSamplerYcbcrConversion& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -732,7 +732,7 @@ void dump_text_VkSamplerYcbcrConversion(const VkSamplerYcbcrConversion object, c
         settings.stream() << "address";
     }
 }
-void dump_text_VkDescriptorUpdateTemplate(const VkDescriptorUpdateTemplate object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDescriptorUpdateTemplate(const VkDescriptorUpdateTemplate& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -745,7 +745,7 @@ void dump_text_VkDescriptorUpdateTemplate(const VkDescriptorUpdateTemplate objec
         settings.stream() << "address";
     }
 }
-void dump_text_VkPrivateDataSlot(const VkPrivateDataSlot object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPrivateDataSlot(const VkPrivateDataSlot& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -758,7 +758,7 @@ void dump_text_VkPrivateDataSlot(const VkPrivateDataSlot object, const ApiDumpSe
         settings.stream() << "address";
     }
 }
-void dump_text_VkSurfaceKHR(const VkSurfaceKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSurfaceKHR(const VkSurfaceKHR& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -771,7 +771,7 @@ void dump_text_VkSurfaceKHR(const VkSurfaceKHR object, const ApiDumpSettings& se
         settings.stream() << "address";
     }
 }
-void dump_text_VkSwapchainKHR(const VkSwapchainKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSwapchainKHR(const VkSwapchainKHR& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -784,7 +784,7 @@ void dump_text_VkSwapchainKHR(const VkSwapchainKHR object, const ApiDumpSettings
         settings.stream() << "address";
     }
 }
-void dump_text_VkDisplayKHR(const VkDisplayKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDisplayKHR(const VkDisplayKHR& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -797,7 +797,7 @@ void dump_text_VkDisplayKHR(const VkDisplayKHR object, const ApiDumpSettings& se
         settings.stream() << "address";
     }
 }
-void dump_text_VkDisplayModeKHR(const VkDisplayModeKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDisplayModeKHR(const VkDisplayModeKHR& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -810,7 +810,7 @@ void dump_text_VkDisplayModeKHR(const VkDisplayModeKHR object, const ApiDumpSett
         settings.stream() << "address";
     }
 }
-void dump_text_VkVideoSessionKHR(const VkVideoSessionKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoSessionKHR(const VkVideoSessionKHR& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -823,7 +823,7 @@ void dump_text_VkVideoSessionKHR(const VkVideoSessionKHR object, const ApiDumpSe
         settings.stream() << "address";
     }
 }
-void dump_text_VkVideoSessionParametersKHR(const VkVideoSessionParametersKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoSessionParametersKHR(const VkVideoSessionParametersKHR& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -836,7 +836,7 @@ void dump_text_VkVideoSessionParametersKHR(const VkVideoSessionParametersKHR obj
         settings.stream() << "address";
     }
 }
-void dump_text_VkDeferredOperationKHR(const VkDeferredOperationKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeferredOperationKHR(const VkDeferredOperationKHR& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -849,7 +849,7 @@ void dump_text_VkDeferredOperationKHR(const VkDeferredOperationKHR object, const
         settings.stream() << "address";
     }
 }
-void dump_text_VkPipelineBinaryKHR(const VkPipelineBinaryKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineBinaryKHR(const VkPipelineBinaryKHR& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -862,7 +862,7 @@ void dump_text_VkPipelineBinaryKHR(const VkPipelineBinaryKHR object, const ApiDu
         settings.stream() << "address";
     }
 }
-void dump_text_VkDebugReportCallbackEXT(const VkDebugReportCallbackEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDebugReportCallbackEXT(const VkDebugReportCallbackEXT& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -875,7 +875,7 @@ void dump_text_VkDebugReportCallbackEXT(const VkDebugReportCallbackEXT object, c
         settings.stream() << "address";
     }
 }
-void dump_text_VkCuModuleNVX(const VkCuModuleNVX object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCuModuleNVX(const VkCuModuleNVX& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -888,7 +888,7 @@ void dump_text_VkCuModuleNVX(const VkCuModuleNVX object, const ApiDumpSettings& 
         settings.stream() << "address";
     }
 }
-void dump_text_VkCuFunctionNVX(const VkCuFunctionNVX object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCuFunctionNVX(const VkCuFunctionNVX& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -901,7 +901,7 @@ void dump_text_VkCuFunctionNVX(const VkCuFunctionNVX object, const ApiDumpSettin
         settings.stream() << "address";
     }
 }
-void dump_text_VkDebugUtilsMessengerEXT(const VkDebugUtilsMessengerEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDebugUtilsMessengerEXT(const VkDebugUtilsMessengerEXT& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -914,7 +914,7 @@ void dump_text_VkDebugUtilsMessengerEXT(const VkDebugUtilsMessengerEXT object, c
         settings.stream() << "address";
     }
 }
-void dump_text_VkValidationCacheEXT(const VkValidationCacheEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkValidationCacheEXT(const VkValidationCacheEXT& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -927,7 +927,7 @@ void dump_text_VkValidationCacheEXT(const VkValidationCacheEXT object, const Api
         settings.stream() << "address";
     }
 }
-void dump_text_VkAccelerationStructureNV(const VkAccelerationStructureNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAccelerationStructureNV(const VkAccelerationStructureNV& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -940,7 +940,7 @@ void dump_text_VkAccelerationStructureNV(const VkAccelerationStructureNV object,
         settings.stream() << "address";
     }
 }
-void dump_text_VkPerformanceConfigurationINTEL(const VkPerformanceConfigurationINTEL object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPerformanceConfigurationINTEL(const VkPerformanceConfigurationINTEL& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -953,7 +953,7 @@ void dump_text_VkPerformanceConfigurationINTEL(const VkPerformanceConfigurationI
         settings.stream() << "address";
     }
 }
-void dump_text_VkIndirectCommandsLayoutNV(const VkIndirectCommandsLayoutNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkIndirectCommandsLayoutNV(const VkIndirectCommandsLayoutNV& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -967,7 +967,7 @@ void dump_text_VkIndirectCommandsLayoutNV(const VkIndirectCommandsLayoutNV objec
     }
 }
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_text_VkCudaModuleNV(const VkCudaModuleNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCudaModuleNV(const VkCudaModuleNV& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -982,7 +982,7 @@ void dump_text_VkCudaModuleNV(const VkCudaModuleNV object, const ApiDumpSettings
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_text_VkCudaFunctionNV(const VkCudaFunctionNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCudaFunctionNV(const VkCudaFunctionNV& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -996,7 +996,7 @@ void dump_text_VkCudaFunctionNV(const VkCudaFunctionNV object, const ApiDumpSett
     }
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
-void dump_text_VkAccelerationStructureKHR(const VkAccelerationStructureKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAccelerationStructureKHR(const VkAccelerationStructureKHR& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -1010,7 +1010,7 @@ void dump_text_VkAccelerationStructureKHR(const VkAccelerationStructureKHR objec
     }
 }
 #if defined(VK_USE_PLATFORM_FUCHSIA)
-void dump_text_VkBufferCollectionFUCHSIA(const VkBufferCollectionFUCHSIA object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBufferCollectionFUCHSIA(const VkBufferCollectionFUCHSIA& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -1024,7 +1024,7 @@ void dump_text_VkBufferCollectionFUCHSIA(const VkBufferCollectionFUCHSIA object,
     }
 }
 #endif // VK_USE_PLATFORM_FUCHSIA
-void dump_text_VkMicromapEXT(const VkMicromapEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMicromapEXT(const VkMicromapEXT& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -1037,7 +1037,7 @@ void dump_text_VkMicromapEXT(const VkMicromapEXT object, const ApiDumpSettings& 
         settings.stream() << "address";
     }
 }
-void dump_text_VkTensorARM(const VkTensorARM object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkTensorARM(const VkTensorARM& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -1050,7 +1050,7 @@ void dump_text_VkTensorARM(const VkTensorARM object, const ApiDumpSettings& sett
         settings.stream() << "address";
     }
 }
-void dump_text_VkTensorViewARM(const VkTensorViewARM object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkTensorViewARM(const VkTensorViewARM& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -1063,7 +1063,7 @@ void dump_text_VkTensorViewARM(const VkTensorViewARM object, const ApiDumpSettin
         settings.stream() << "address";
     }
 }
-void dump_text_VkOpticalFlowSessionNV(const VkOpticalFlowSessionNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkOpticalFlowSessionNV(const VkOpticalFlowSessionNV& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -1076,7 +1076,7 @@ void dump_text_VkOpticalFlowSessionNV(const VkOpticalFlowSessionNV object, const
         settings.stream() << "address";
     }
 }
-void dump_text_VkShaderEXT(const VkShaderEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkShaderEXT(const VkShaderEXT& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -1089,7 +1089,7 @@ void dump_text_VkShaderEXT(const VkShaderEXT object, const ApiDumpSettings& sett
         settings.stream() << "address";
     }
 }
-void dump_text_VkExternalComputeQueueNV(const VkExternalComputeQueueNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExternalComputeQueueNV(const VkExternalComputeQueueNV& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -1102,7 +1102,7 @@ void dump_text_VkExternalComputeQueueNV(const VkExternalComputeQueueNV object, c
         settings.stream() << "address";
     }
 }
-void dump_text_VkIndirectExecutionSetEXT(const VkIndirectExecutionSetEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkIndirectExecutionSetEXT(const VkIndirectExecutionSetEXT& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -1115,7 +1115,7 @@ void dump_text_VkIndirectExecutionSetEXT(const VkIndirectExecutionSetEXT object,
         settings.stream() << "address";
     }
 }
-void dump_text_VkIndirectCommandsLayoutEXT(const VkIndirectCommandsLayoutEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkIndirectCommandsLayoutEXT(const VkIndirectCommandsLayoutEXT& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -1131,7 +1131,7 @@ void dump_text_VkIndirectCommandsLayoutEXT(const VkIndirectCommandsLayoutEXT obj
 
 //=========================== Enum Implementations ==========================//
 
-void dump_text_VkResult(VkResult object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkResult(const VkResult& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -1287,7 +1287,7 @@ void dump_text_VkResult(VkResult object, const ApiDumpSettings& settings, int in
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkStructureType(VkStructureType object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkStructureType(const VkStructureType& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -4560,7 +4560,7 @@ void dump_text_VkStructureType(VkStructureType object, const ApiDumpSettings& se
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPipelineCacheHeaderVersion(VkPipelineCacheHeaderVersion object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineCacheHeaderVersion(const VkPipelineCacheHeaderVersion& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -4572,7 +4572,7 @@ void dump_text_VkPipelineCacheHeaderVersion(VkPipelineCacheHeaderVersion object,
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkImageLayout(VkImageLayout object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageLayout(const VkImageLayout& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -4677,7 +4677,7 @@ void dump_text_VkImageLayout(VkImageLayout object, const ApiDumpSettings& settin
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkObjectType(VkObjectType object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkObjectType(const VkObjectType& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -4860,7 +4860,7 @@ void dump_text_VkObjectType(VkObjectType object, const ApiDumpSettings& settings
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkVendorId(VkVendorId object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVendorId(const VkVendorId& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -4893,7 +4893,7 @@ void dump_text_VkVendorId(VkVendorId object, const ApiDumpSettings& settings, in
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkSystemAllocationScope(VkSystemAllocationScope object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSystemAllocationScope(const VkSystemAllocationScope& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -4917,7 +4917,7 @@ void dump_text_VkSystemAllocationScope(VkSystemAllocationScope object, const Api
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkInternalAllocationType(VkInternalAllocationType object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkInternalAllocationType(const VkInternalAllocationType& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -4929,7 +4929,7 @@ void dump_text_VkInternalAllocationType(VkInternalAllocationType object, const A
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkFormat(VkFormat object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFormat(const VkFormat& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -5823,7 +5823,7 @@ void dump_text_VkFormat(VkFormat object, const ApiDumpSettings& settings, int in
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkImageTiling(VkImageTiling object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageTiling(const VkImageTiling& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -5841,7 +5841,7 @@ void dump_text_VkImageTiling(VkImageTiling object, const ApiDumpSettings& settin
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkImageType(VkImageType object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageType(const VkImageType& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -5859,7 +5859,7 @@ void dump_text_VkImageType(VkImageType object, const ApiDumpSettings& settings, 
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPhysicalDeviceType(VkPhysicalDeviceType object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPhysicalDeviceType(const VkPhysicalDeviceType& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -5883,7 +5883,7 @@ void dump_text_VkPhysicalDeviceType(VkPhysicalDeviceType object, const ApiDumpSe
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkQueryType(VkQueryType object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkQueryType(const VkQueryType& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -5943,7 +5943,7 @@ void dump_text_VkQueryType(VkQueryType object, const ApiDumpSettings& settings, 
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkSharingMode(VkSharingMode object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSharingMode(const VkSharingMode& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -5958,7 +5958,7 @@ void dump_text_VkSharingMode(VkSharingMode object, const ApiDumpSettings& settin
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkComponentSwizzle(VkComponentSwizzle object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkComponentSwizzle(const VkComponentSwizzle& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -5988,7 +5988,7 @@ void dump_text_VkComponentSwizzle(VkComponentSwizzle object, const ApiDumpSettin
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkImageViewType(VkImageViewType object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageViewType(const VkImageViewType& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6018,7 +6018,7 @@ void dump_text_VkImageViewType(VkImageViewType object, const ApiDumpSettings& se
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkBlendFactor(VkBlendFactor object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBlendFactor(const VkBlendFactor& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6084,7 +6084,7 @@ void dump_text_VkBlendFactor(VkBlendFactor object, const ApiDumpSettings& settin
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkBlendOp(VkBlendOp object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBlendOp(const VkBlendOp& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6246,7 +6246,7 @@ void dump_text_VkBlendOp(VkBlendOp object, const ApiDumpSettings& settings, int 
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkCompareOp(VkCompareOp object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCompareOp(const VkCompareOp& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6279,7 +6279,7 @@ void dump_text_VkCompareOp(VkCompareOp object, const ApiDumpSettings& settings, 
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkDynamicState(VkDynamicState object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDynamicState(const VkDynamicState& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6507,7 +6507,7 @@ void dump_text_VkDynamicState(VkDynamicState object, const ApiDumpSettings& sett
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkFrontFace(VkFrontFace object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFrontFace(const VkFrontFace& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6522,7 +6522,7 @@ void dump_text_VkFrontFace(VkFrontFace object, const ApiDumpSettings& settings, 
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkVertexInputRate(VkVertexInputRate object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVertexInputRate(const VkVertexInputRate& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6537,7 +6537,7 @@ void dump_text_VkVertexInputRate(VkVertexInputRate object, const ApiDumpSettings
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPrimitiveTopology(VkPrimitiveTopology object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPrimitiveTopology(const VkPrimitiveTopology& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6579,7 +6579,7 @@ void dump_text_VkPrimitiveTopology(VkPrimitiveTopology object, const ApiDumpSett
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPolygonMode(VkPolygonMode object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPolygonMode(const VkPolygonMode& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6600,7 +6600,7 @@ void dump_text_VkPolygonMode(VkPolygonMode object, const ApiDumpSettings& settin
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkStencilOp(VkStencilOp object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkStencilOp(const VkStencilOp& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6633,7 +6633,7 @@ void dump_text_VkStencilOp(VkStencilOp object, const ApiDumpSettings& settings, 
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkLogicOp(VkLogicOp object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkLogicOp(const VkLogicOp& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6690,7 +6690,7 @@ void dump_text_VkLogicOp(VkLogicOp object, const ApiDumpSettings& settings, int 
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkBorderColor(VkBorderColor object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBorderColor(const VkBorderColor& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6723,7 +6723,7 @@ void dump_text_VkBorderColor(VkBorderColor object, const ApiDumpSettings& settin
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkFilter(VkFilter object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFilter(const VkFilter& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6741,7 +6741,7 @@ void dump_text_VkFilter(VkFilter object, const ApiDumpSettings& settings, int in
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkSamplerAddressMode(VkSamplerAddressMode object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSamplerAddressMode(const VkSamplerAddressMode& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6765,7 +6765,7 @@ void dump_text_VkSamplerAddressMode(VkSamplerAddressMode object, const ApiDumpSe
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkSamplerMipmapMode(VkSamplerMipmapMode object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSamplerMipmapMode(const VkSamplerMipmapMode& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6780,7 +6780,7 @@ void dump_text_VkSamplerMipmapMode(VkSamplerMipmapMode object, const ApiDumpSett
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkDescriptorType(VkDescriptorType object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDescriptorType(const VkDescriptorType& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6846,7 +6846,7 @@ void dump_text_VkDescriptorType(VkDescriptorType object, const ApiDumpSettings& 
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkAttachmentLoadOp(VkAttachmentLoadOp object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAttachmentLoadOp(const VkAttachmentLoadOp& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6867,7 +6867,7 @@ void dump_text_VkAttachmentLoadOp(VkAttachmentLoadOp object, const ApiDumpSettin
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkAttachmentStoreOp(VkAttachmentStoreOp object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAttachmentStoreOp(const VkAttachmentStoreOp& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6885,7 +6885,7 @@ void dump_text_VkAttachmentStoreOp(VkAttachmentStoreOp object, const ApiDumpSett
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPipelineBindPoint(VkPipelineBindPoint object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineBindPoint(const VkPipelineBindPoint& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6909,7 +6909,7 @@ void dump_text_VkPipelineBindPoint(VkPipelineBindPoint object, const ApiDumpSett
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkCommandBufferLevel(VkCommandBufferLevel object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCommandBufferLevel(const VkCommandBufferLevel& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6924,7 +6924,7 @@ void dump_text_VkCommandBufferLevel(VkCommandBufferLevel object, const ApiDumpSe
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkIndexType(VkIndexType object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkIndexType(const VkIndexType& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6945,7 +6945,7 @@ void dump_text_VkIndexType(VkIndexType object, const ApiDumpSettings& settings, 
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkSubpassContents(VkSubpassContents object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSubpassContents(const VkSubpassContents& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6963,7 +6963,7 @@ void dump_text_VkSubpassContents(VkSubpassContents object, const ApiDumpSettings
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPointClippingBehavior(VkPointClippingBehavior object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPointClippingBehavior(const VkPointClippingBehavior& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6978,7 +6978,7 @@ void dump_text_VkPointClippingBehavior(VkPointClippingBehavior object, const Api
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkTessellationDomainOrigin(VkTessellationDomainOrigin object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkTessellationDomainOrigin(const VkTessellationDomainOrigin& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -6993,7 +6993,7 @@ void dump_text_VkTessellationDomainOrigin(VkTessellationDomainOrigin object, con
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkSamplerYcbcrModelConversion(VkSamplerYcbcrModelConversion object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSamplerYcbcrModelConversion(const VkSamplerYcbcrModelConversion& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7017,7 +7017,7 @@ void dump_text_VkSamplerYcbcrModelConversion(VkSamplerYcbcrModelConversion objec
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkSamplerYcbcrRange(VkSamplerYcbcrRange object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSamplerYcbcrRange(const VkSamplerYcbcrRange& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7032,7 +7032,7 @@ void dump_text_VkSamplerYcbcrRange(VkSamplerYcbcrRange object, const ApiDumpSett
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkChromaLocation(VkChromaLocation object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkChromaLocation(const VkChromaLocation& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7047,7 +7047,7 @@ void dump_text_VkChromaLocation(VkChromaLocation object, const ApiDumpSettings& 
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkDescriptorUpdateTemplateType(VkDescriptorUpdateTemplateType object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDescriptorUpdateTemplateType(const VkDescriptorUpdateTemplateType& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7062,7 +7062,7 @@ void dump_text_VkDescriptorUpdateTemplateType(VkDescriptorUpdateTemplateType obj
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkDriverId(VkDriverId object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDriverId(const VkDriverId& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7152,7 +7152,7 @@ void dump_text_VkDriverId(VkDriverId object, const ApiDumpSettings& settings, in
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkShaderFloatControlsIndependence(VkShaderFloatControlsIndependence object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkShaderFloatControlsIndependence(const VkShaderFloatControlsIndependence& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7170,7 +7170,7 @@ void dump_text_VkShaderFloatControlsIndependence(VkShaderFloatControlsIndependen
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkSamplerReductionMode(VkSamplerReductionMode object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSamplerReductionMode(const VkSamplerReductionMode& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7191,7 +7191,7 @@ void dump_text_VkSamplerReductionMode(VkSamplerReductionMode object, const ApiDu
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkSemaphoreType(VkSemaphoreType object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSemaphoreType(const VkSemaphoreType& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7206,7 +7206,7 @@ void dump_text_VkSemaphoreType(VkSemaphoreType object, const ApiDumpSettings& se
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPipelineRobustnessBufferBehavior(VkPipelineRobustnessBufferBehavior object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineRobustnessBufferBehavior(const VkPipelineRobustnessBufferBehavior& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7227,7 +7227,7 @@ void dump_text_VkPipelineRobustnessBufferBehavior(VkPipelineRobustnessBufferBeha
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPipelineRobustnessImageBehavior(VkPipelineRobustnessImageBehavior object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineRobustnessImageBehavior(const VkPipelineRobustnessImageBehavior& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7248,7 +7248,7 @@ void dump_text_VkPipelineRobustnessImageBehavior(VkPipelineRobustnessImageBehavi
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkQueueGlobalPriority(VkQueueGlobalPriority object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkQueueGlobalPriority(const VkQueueGlobalPriority& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7269,7 +7269,7 @@ void dump_text_VkQueueGlobalPriority(VkQueueGlobalPriority object, const ApiDump
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkLineRasterizationMode(VkLineRasterizationMode object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkLineRasterizationMode(const VkLineRasterizationMode& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7290,7 +7290,7 @@ void dump_text_VkLineRasterizationMode(VkLineRasterizationMode object, const Api
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPresentModeKHR(VkPresentModeKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPresentModeKHR(const VkPresentModeKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7320,7 +7320,7 @@ void dump_text_VkPresentModeKHR(VkPresentModeKHR object, const ApiDumpSettings& 
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkColorSpaceKHR(VkColorSpaceKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkColorSpaceKHR(const VkColorSpaceKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7377,7 +7377,7 @@ void dump_text_VkColorSpaceKHR(VkColorSpaceKHR object, const ApiDumpSettings& se
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkQueryResultStatusKHR(VkQueryResultStatusKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkQueryResultStatusKHR(const VkQueryResultStatusKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7398,7 +7398,7 @@ void dump_text_VkQueryResultStatusKHR(VkQueryResultStatusKHR object, const ApiDu
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPerformanceCounterUnitKHR(VkPerformanceCounterUnitKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPerformanceCounterUnitKHR(const VkPerformanceCounterUnitKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7440,7 +7440,7 @@ void dump_text_VkPerformanceCounterUnitKHR(VkPerformanceCounterUnitKHR object, c
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPerformanceCounterScopeKHR(VkPerformanceCounterScopeKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPerformanceCounterScopeKHR(const VkPerformanceCounterScopeKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7458,7 +7458,7 @@ void dump_text_VkPerformanceCounterScopeKHR(VkPerformanceCounterScopeKHR object,
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPerformanceCounterStorageKHR(VkPerformanceCounterStorageKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPerformanceCounterStorageKHR(const VkPerformanceCounterStorageKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7485,7 +7485,7 @@ void dump_text_VkPerformanceCounterStorageKHR(VkPerformanceCounterStorageKHR obj
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkFragmentShadingRateCombinerOpKHR(VkFragmentShadingRateCombinerOpKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFragmentShadingRateCombinerOpKHR(const VkFragmentShadingRateCombinerOpKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7509,7 +7509,7 @@ void dump_text_VkFragmentShadingRateCombinerOpKHR(VkFragmentShadingRateCombinerO
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPipelineExecutableStatisticFormatKHR(VkPipelineExecutableStatisticFormatKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineExecutableStatisticFormatKHR(const VkPipelineExecutableStatisticFormatKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7530,7 +7530,7 @@ void dump_text_VkPipelineExecutableStatisticFormatKHR(VkPipelineExecutableStatis
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkVideoEncodeTuningModeKHR(VkVideoEncodeTuningModeKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeTuningModeKHR(const VkVideoEncodeTuningModeKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7554,7 +7554,7 @@ void dump_text_VkVideoEncodeTuningModeKHR(VkVideoEncodeTuningModeKHR object, con
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkComponentTypeKHR(VkComponentTypeKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkComponentTypeKHR(const VkComponentTypeKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7611,7 +7611,7 @@ void dump_text_VkComponentTypeKHR(VkComponentTypeKHR object, const ApiDumpSettin
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkScopeKHR(VkScopeKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkScopeKHR(const VkScopeKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7632,7 +7632,7 @@ void dump_text_VkScopeKHR(VkScopeKHR object, const ApiDumpSettings& settings, in
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkVideoEncodeAV1PredictionModeKHR(VkVideoEncodeAV1PredictionModeKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeAV1PredictionModeKHR(const VkVideoEncodeAV1PredictionModeKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7653,7 +7653,7 @@ void dump_text_VkVideoEncodeAV1PredictionModeKHR(VkVideoEncodeAV1PredictionModeK
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkVideoEncodeAV1RateControlGroupKHR(VkVideoEncodeAV1RateControlGroupKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeAV1RateControlGroupKHR(const VkVideoEncodeAV1RateControlGroupKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7671,7 +7671,7 @@ void dump_text_VkVideoEncodeAV1RateControlGroupKHR(VkVideoEncodeAV1RateControlGr
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkTimeDomainKHR(VkTimeDomainKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkTimeDomainKHR(const VkTimeDomainKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7692,7 +7692,7 @@ void dump_text_VkTimeDomainKHR(VkTimeDomainKHR object, const ApiDumpSettings& se
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPhysicalDeviceLayeredApiKHR(VkPhysicalDeviceLayeredApiKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPhysicalDeviceLayeredApiKHR(const VkPhysicalDeviceLayeredApiKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7716,7 +7716,7 @@ void dump_text_VkPhysicalDeviceLayeredApiKHR(VkPhysicalDeviceLayeredApiKHR objec
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkDefaultVertexAttributeValueKHR(VkDefaultVertexAttributeValueKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDefaultVertexAttributeValueKHR(const VkDefaultVertexAttributeValueKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7731,7 +7731,7 @@ void dump_text_VkDefaultVertexAttributeValueKHR(VkDefaultVertexAttributeValueKHR
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkDebugReportObjectTypeEXT(VkDebugReportObjectTypeEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDebugReportObjectTypeEXT(const VkDebugReportObjectTypeEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7863,7 +7863,7 @@ void dump_text_VkDebugReportObjectTypeEXT(VkDebugReportObjectTypeEXT object, con
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkRasterizationOrderAMD(VkRasterizationOrderAMD object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkRasterizationOrderAMD(const VkRasterizationOrderAMD& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7878,7 +7878,7 @@ void dump_text_VkRasterizationOrderAMD(VkRasterizationOrderAMD object, const Api
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkShaderInfoTypeAMD(VkShaderInfoTypeAMD object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkShaderInfoTypeAMD(const VkShaderInfoTypeAMD& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7896,7 +7896,7 @@ void dump_text_VkShaderInfoTypeAMD(VkShaderInfoTypeAMD object, const ApiDumpSett
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkValidationCheckEXT(VkValidationCheckEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkValidationCheckEXT(const VkValidationCheckEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7911,7 +7911,7 @@ void dump_text_VkValidationCheckEXT(VkValidationCheckEXT object, const ApiDumpSe
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkDisplayPowerStateEXT(VkDisplayPowerStateEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDisplayPowerStateEXT(const VkDisplayPowerStateEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7929,7 +7929,7 @@ void dump_text_VkDisplayPowerStateEXT(VkDisplayPowerStateEXT object, const ApiDu
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkDeviceEventTypeEXT(VkDeviceEventTypeEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeviceEventTypeEXT(const VkDeviceEventTypeEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7941,7 +7941,7 @@ void dump_text_VkDeviceEventTypeEXT(VkDeviceEventTypeEXT object, const ApiDumpSe
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkDisplayEventTypeEXT(VkDisplayEventTypeEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDisplayEventTypeEXT(const VkDisplayEventTypeEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7953,7 +7953,7 @@ void dump_text_VkDisplayEventTypeEXT(VkDisplayEventTypeEXT object, const ApiDump
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkViewportCoordinateSwizzleNV(VkViewportCoordinateSwizzleNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkViewportCoordinateSwizzleNV(const VkViewportCoordinateSwizzleNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -7986,7 +7986,7 @@ void dump_text_VkViewportCoordinateSwizzleNV(VkViewportCoordinateSwizzleNV objec
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkDiscardRectangleModeEXT(VkDiscardRectangleModeEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDiscardRectangleModeEXT(const VkDiscardRectangleModeEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8001,7 +8001,7 @@ void dump_text_VkDiscardRectangleModeEXT(VkDiscardRectangleModeEXT object, const
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkConservativeRasterizationModeEXT(VkConservativeRasterizationModeEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkConservativeRasterizationModeEXT(const VkConservativeRasterizationModeEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8019,7 +8019,7 @@ void dump_text_VkConservativeRasterizationModeEXT(VkConservativeRasterizationMod
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkBlendOverlapEXT(VkBlendOverlapEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBlendOverlapEXT(const VkBlendOverlapEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8037,7 +8037,7 @@ void dump_text_VkBlendOverlapEXT(VkBlendOverlapEXT object, const ApiDumpSettings
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkCoverageModulationModeNV(VkCoverageModulationModeNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCoverageModulationModeNV(const VkCoverageModulationModeNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8058,7 +8058,7 @@ void dump_text_VkCoverageModulationModeNV(VkCoverageModulationModeNV object, con
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkValidationCacheHeaderVersionEXT(VkValidationCacheHeaderVersionEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkValidationCacheHeaderVersionEXT(const VkValidationCacheHeaderVersionEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8070,7 +8070,7 @@ void dump_text_VkValidationCacheHeaderVersionEXT(VkValidationCacheHeaderVersionE
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkShadingRatePaletteEntryNV(VkShadingRatePaletteEntryNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkShadingRatePaletteEntryNV(const VkShadingRatePaletteEntryNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8115,7 +8115,7 @@ void dump_text_VkShadingRatePaletteEntryNV(VkShadingRatePaletteEntryNV object, c
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkCoarseSampleOrderTypeNV(VkCoarseSampleOrderTypeNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCoarseSampleOrderTypeNV(const VkCoarseSampleOrderTypeNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8136,7 +8136,7 @@ void dump_text_VkCoarseSampleOrderTypeNV(VkCoarseSampleOrderTypeNV object, const
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkRayTracingShaderGroupTypeKHR(VkRayTracingShaderGroupTypeKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkRayTracingShaderGroupTypeKHR(const VkRayTracingShaderGroupTypeKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8154,7 +8154,7 @@ void dump_text_VkRayTracingShaderGroupTypeKHR(VkRayTracingShaderGroupTypeKHR obj
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkGeometryTypeKHR(VkGeometryTypeKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkGeometryTypeKHR(const VkGeometryTypeKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8178,7 +8178,7 @@ void dump_text_VkGeometryTypeKHR(VkGeometryTypeKHR object, const ApiDumpSettings
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkAccelerationStructureTypeKHR(VkAccelerationStructureTypeKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAccelerationStructureTypeKHR(const VkAccelerationStructureTypeKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8196,7 +8196,7 @@ void dump_text_VkAccelerationStructureTypeKHR(VkAccelerationStructureTypeKHR obj
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkCopyAccelerationStructureModeKHR(VkCopyAccelerationStructureModeKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCopyAccelerationStructureModeKHR(const VkCopyAccelerationStructureModeKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8217,7 +8217,7 @@ void dump_text_VkCopyAccelerationStructureModeKHR(VkCopyAccelerationStructureMod
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkAccelerationStructureMemoryRequirementsTypeNV(VkAccelerationStructureMemoryRequirementsTypeNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAccelerationStructureMemoryRequirementsTypeNV(const VkAccelerationStructureMemoryRequirementsTypeNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8235,7 +8235,7 @@ void dump_text_VkAccelerationStructureMemoryRequirementsTypeNV(VkAccelerationStr
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkMemoryOverallocationBehaviorAMD(VkMemoryOverallocationBehaviorAMD object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMemoryOverallocationBehaviorAMD(const VkMemoryOverallocationBehaviorAMD& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8253,7 +8253,7 @@ void dump_text_VkMemoryOverallocationBehaviorAMD(VkMemoryOverallocationBehaviorA
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPerformanceConfigurationTypeINTEL(VkPerformanceConfigurationTypeINTEL object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPerformanceConfigurationTypeINTEL(const VkPerformanceConfigurationTypeINTEL& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8265,7 +8265,7 @@ void dump_text_VkPerformanceConfigurationTypeINTEL(VkPerformanceConfigurationTyp
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkQueryPoolSamplingModeINTEL(VkQueryPoolSamplingModeINTEL object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkQueryPoolSamplingModeINTEL(const VkQueryPoolSamplingModeINTEL& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8277,7 +8277,7 @@ void dump_text_VkQueryPoolSamplingModeINTEL(VkQueryPoolSamplingModeINTEL object,
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPerformanceOverrideTypeINTEL(VkPerformanceOverrideTypeINTEL object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPerformanceOverrideTypeINTEL(const VkPerformanceOverrideTypeINTEL& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8292,7 +8292,7 @@ void dump_text_VkPerformanceOverrideTypeINTEL(VkPerformanceOverrideTypeINTEL obj
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPerformanceParameterTypeINTEL(VkPerformanceParameterTypeINTEL object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPerformanceParameterTypeINTEL(const VkPerformanceParameterTypeINTEL& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8307,7 +8307,7 @@ void dump_text_VkPerformanceParameterTypeINTEL(VkPerformanceParameterTypeINTEL o
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPerformanceValueTypeINTEL(VkPerformanceValueTypeINTEL object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPerformanceValueTypeINTEL(const VkPerformanceValueTypeINTEL& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8331,7 +8331,7 @@ void dump_text_VkPerformanceValueTypeINTEL(VkPerformanceValueTypeINTEL object, c
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkValidationFeatureEnableEXT(VkValidationFeatureEnableEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkValidationFeatureEnableEXT(const VkValidationFeatureEnableEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8355,7 +8355,7 @@ void dump_text_VkValidationFeatureEnableEXT(VkValidationFeatureEnableEXT object,
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkValidationFeatureDisableEXT(VkValidationFeatureDisableEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkValidationFeatureDisableEXT(const VkValidationFeatureDisableEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8388,7 +8388,7 @@ void dump_text_VkValidationFeatureDisableEXT(VkValidationFeatureDisableEXT objec
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkCoverageReductionModeNV(VkCoverageReductionModeNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCoverageReductionModeNV(const VkCoverageReductionModeNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8403,7 +8403,7 @@ void dump_text_VkCoverageReductionModeNV(VkCoverageReductionModeNV object, const
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkProvokingVertexModeEXT(VkProvokingVertexModeEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkProvokingVertexModeEXT(const VkProvokingVertexModeEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8419,7 +8419,7 @@ void dump_text_VkProvokingVertexModeEXT(VkProvokingVertexModeEXT object, const A
     settings.stream() << object << ")";
 }
 #if defined(VK_USE_PLATFORM_WIN32_KHR)
-void dump_text_VkFullScreenExclusiveEXT(VkFullScreenExclusiveEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFullScreenExclusiveEXT(const VkFullScreenExclusiveEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8441,7 +8441,7 @@ void dump_text_VkFullScreenExclusiveEXT(VkFullScreenExclusiveEXT object, const A
     settings.stream() << object << ")";
 }
 #endif // VK_USE_PLATFORM_WIN32_KHR
-void dump_text_VkIndirectCommandsTokenTypeNV(VkIndirectCommandsTokenTypeNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkIndirectCommandsTokenTypeNV(const VkIndirectCommandsTokenTypeNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8483,7 +8483,7 @@ void dump_text_VkIndirectCommandsTokenTypeNV(VkIndirectCommandsTokenTypeNV objec
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkDepthBiasRepresentationEXT(VkDepthBiasRepresentationEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDepthBiasRepresentationEXT(const VkDepthBiasRepresentationEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8501,7 +8501,7 @@ void dump_text_VkDepthBiasRepresentationEXT(VkDepthBiasRepresentationEXT object,
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkDeviceMemoryReportEventTypeEXT(VkDeviceMemoryReportEventTypeEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeviceMemoryReportEventTypeEXT(const VkDeviceMemoryReportEventTypeEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8525,7 +8525,7 @@ void dump_text_VkDeviceMemoryReportEventTypeEXT(VkDeviceMemoryReportEventTypeEXT
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkFragmentShadingRateTypeNV(VkFragmentShadingRateTypeNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFragmentShadingRateTypeNV(const VkFragmentShadingRateTypeNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8540,7 +8540,7 @@ void dump_text_VkFragmentShadingRateTypeNV(VkFragmentShadingRateTypeNV object, c
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkFragmentShadingRateNV(VkFragmentShadingRateNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFragmentShadingRateNV(const VkFragmentShadingRateNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8585,7 +8585,7 @@ void dump_text_VkFragmentShadingRateNV(VkFragmentShadingRateNV object, const Api
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkAccelerationStructureMotionInstanceTypeNV(VkAccelerationStructureMotionInstanceTypeNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAccelerationStructureMotionInstanceTypeNV(const VkAccelerationStructureMotionInstanceTypeNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8603,7 +8603,7 @@ void dump_text_VkAccelerationStructureMotionInstanceTypeNV(VkAccelerationStructu
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkDeviceFaultAddressTypeEXT(VkDeviceFaultAddressTypeEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeviceFaultAddressTypeEXT(const VkDeviceFaultAddressTypeEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8633,7 +8633,7 @@ void dump_text_VkDeviceFaultAddressTypeEXT(VkDeviceFaultAddressTypeEXT object, c
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkDeviceFaultVendorBinaryHeaderVersionEXT(VkDeviceFaultVendorBinaryHeaderVersionEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeviceFaultVendorBinaryHeaderVersionEXT(const VkDeviceFaultVendorBinaryHeaderVersionEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8645,7 +8645,7 @@ void dump_text_VkDeviceFaultVendorBinaryHeaderVersionEXT(VkDeviceFaultVendorBina
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkDeviceAddressBindingTypeEXT(VkDeviceAddressBindingTypeEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeviceAddressBindingTypeEXT(const VkDeviceAddressBindingTypeEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8660,7 +8660,7 @@ void dump_text_VkDeviceAddressBindingTypeEXT(VkDeviceAddressBindingTypeEXT objec
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkMicromapTypeEXT(VkMicromapTypeEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMicromapTypeEXT(const VkMicromapTypeEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8675,7 +8675,7 @@ void dump_text_VkMicromapTypeEXT(VkMicromapTypeEXT object, const ApiDumpSettings
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkBuildMicromapModeEXT(VkBuildMicromapModeEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBuildMicromapModeEXT(const VkBuildMicromapModeEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8687,7 +8687,7 @@ void dump_text_VkBuildMicromapModeEXT(VkBuildMicromapModeEXT object, const ApiDu
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkCopyMicromapModeEXT(VkCopyMicromapModeEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCopyMicromapModeEXT(const VkCopyMicromapModeEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8708,7 +8708,7 @@ void dump_text_VkCopyMicromapModeEXT(VkCopyMicromapModeEXT object, const ApiDump
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkOpacityMicromapFormatEXT(VkOpacityMicromapFormatEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkOpacityMicromapFormatEXT(const VkOpacityMicromapFormatEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8723,7 +8723,7 @@ void dump_text_VkOpacityMicromapFormatEXT(VkOpacityMicromapFormatEXT object, con
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkOpacityMicromapSpecialIndexEXT(VkOpacityMicromapSpecialIndexEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkOpacityMicromapSpecialIndexEXT(const VkOpacityMicromapSpecialIndexEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8747,7 +8747,7 @@ void dump_text_VkOpacityMicromapSpecialIndexEXT(VkOpacityMicromapSpecialIndexEXT
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkAccelerationStructureCompatibilityKHR(VkAccelerationStructureCompatibilityKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAccelerationStructureCompatibilityKHR(const VkAccelerationStructureCompatibilityKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8762,7 +8762,7 @@ void dump_text_VkAccelerationStructureCompatibilityKHR(VkAccelerationStructureCo
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkAccelerationStructureBuildTypeKHR(VkAccelerationStructureBuildTypeKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAccelerationStructureBuildTypeKHR(const VkAccelerationStructureBuildTypeKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8781,7 +8781,7 @@ void dump_text_VkAccelerationStructureBuildTypeKHR(VkAccelerationStructureBuildT
     settings.stream() << object << ")";
 }
 #if defined(VK_ENABLE_BETA_EXTENSIONS)
-void dump_text_VkDisplacementMicromapFormatNV(VkDisplacementMicromapFormatNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDisplacementMicromapFormatNV(const VkDisplacementMicromapFormatNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8800,7 +8800,7 @@ void dump_text_VkDisplacementMicromapFormatNV(VkDisplacementMicromapFormatNV obj
     settings.stream() << object << ")";
 }
 #endif // VK_ENABLE_BETA_EXTENSIONS
-void dump_text_VkRayTracingLssIndexingModeNV(VkRayTracingLssIndexingModeNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkRayTracingLssIndexingModeNV(const VkRayTracingLssIndexingModeNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8815,7 +8815,7 @@ void dump_text_VkRayTracingLssIndexingModeNV(VkRayTracingLssIndexingModeNV objec
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkRayTracingLssPrimitiveEndCapsModeNV(VkRayTracingLssPrimitiveEndCapsModeNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkRayTracingLssPrimitiveEndCapsModeNV(const VkRayTracingLssPrimitiveEndCapsModeNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8830,7 +8830,7 @@ void dump_text_VkRayTracingLssPrimitiveEndCapsModeNV(VkRayTracingLssPrimitiveEnd
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkSubpassMergeStatusEXT(VkSubpassMergeStatusEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSubpassMergeStatusEXT(const VkSubpassMergeStatusEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8881,7 +8881,7 @@ void dump_text_VkSubpassMergeStatusEXT(VkSubpassMergeStatusEXT object, const Api
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkDirectDriverLoadingModeLUNARG(VkDirectDriverLoadingModeLUNARG object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDirectDriverLoadingModeLUNARG(const VkDirectDriverLoadingModeLUNARG& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8896,7 +8896,7 @@ void dump_text_VkDirectDriverLoadingModeLUNARG(VkDirectDriverLoadingModeLUNARG o
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkTensorTilingARM(VkTensorTilingARM object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkTensorTilingARM(const VkTensorTilingARM& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8911,7 +8911,7 @@ void dump_text_VkTensorTilingARM(VkTensorTilingARM object, const ApiDumpSettings
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkOpticalFlowPerformanceLevelNV(VkOpticalFlowPerformanceLevelNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkOpticalFlowPerformanceLevelNV(const VkOpticalFlowPerformanceLevelNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8932,7 +8932,7 @@ void dump_text_VkOpticalFlowPerformanceLevelNV(VkOpticalFlowPerformanceLevelNV o
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkOpticalFlowSessionBindingPointNV(VkOpticalFlowSessionBindingPointNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkOpticalFlowSessionBindingPointNV(const VkOpticalFlowSessionBindingPointNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8968,7 +8968,7 @@ void dump_text_VkOpticalFlowSessionBindingPointNV(VkOpticalFlowSessionBindingPoi
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkAntiLagModeAMD(VkAntiLagModeAMD object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAntiLagModeAMD(const VkAntiLagModeAMD& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -8986,7 +8986,7 @@ void dump_text_VkAntiLagModeAMD(VkAntiLagModeAMD object, const ApiDumpSettings& 
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkAntiLagStageAMD(VkAntiLagStageAMD object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAntiLagStageAMD(const VkAntiLagStageAMD& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9001,7 +9001,7 @@ void dump_text_VkAntiLagStageAMD(VkAntiLagStageAMD object, const ApiDumpSettings
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkShaderCodeTypeEXT(VkShaderCodeTypeEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkShaderCodeTypeEXT(const VkShaderCodeTypeEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9016,7 +9016,7 @@ void dump_text_VkShaderCodeTypeEXT(VkShaderCodeTypeEXT object, const ApiDumpSett
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkDepthClampModeEXT(VkDepthClampModeEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDepthClampModeEXT(const VkDepthClampModeEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9031,7 +9031,7 @@ void dump_text_VkDepthClampModeEXT(VkDepthClampModeEXT object, const ApiDumpSett
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkRayTracingInvocationReorderModeNV(VkRayTracingInvocationReorderModeNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkRayTracingInvocationReorderModeNV(const VkRayTracingInvocationReorderModeNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9046,7 +9046,7 @@ void dump_text_VkRayTracingInvocationReorderModeNV(VkRayTracingInvocationReorder
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkCooperativeVectorMatrixLayoutNV(VkCooperativeVectorMatrixLayoutNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCooperativeVectorMatrixLayoutNV(const VkCooperativeVectorMatrixLayoutNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9067,7 +9067,7 @@ void dump_text_VkCooperativeVectorMatrixLayoutNV(VkCooperativeVectorMatrixLayout
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkLayerSettingTypeEXT(VkLayerSettingTypeEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkLayerSettingTypeEXT(const VkLayerSettingTypeEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9100,7 +9100,7 @@ void dump_text_VkLayerSettingTypeEXT(VkLayerSettingTypeEXT object, const ApiDump
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkLatencyMarkerNV(VkLatencyMarkerNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkLatencyMarkerNV(const VkLatencyMarkerNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9145,7 +9145,7 @@ void dump_text_VkLatencyMarkerNV(VkLatencyMarkerNV object, const ApiDumpSettings
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkOutOfBandQueueTypeNV(VkOutOfBandQueueTypeNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkOutOfBandQueueTypeNV(const VkOutOfBandQueueTypeNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9160,7 +9160,7 @@ void dump_text_VkOutOfBandQueueTypeNV(VkOutOfBandQueueTypeNV object, const ApiDu
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkBlockMatchWindowCompareModeQCOM(VkBlockMatchWindowCompareModeQCOM object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBlockMatchWindowCompareModeQCOM(const VkBlockMatchWindowCompareModeQCOM& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9175,7 +9175,7 @@ void dump_text_VkBlockMatchWindowCompareModeQCOM(VkBlockMatchWindowCompareModeQC
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkCubicFilterWeightsQCOM(VkCubicFilterWeightsQCOM object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCubicFilterWeightsQCOM(const VkCubicFilterWeightsQCOM& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9196,7 +9196,7 @@ void dump_text_VkCubicFilterWeightsQCOM(VkCubicFilterWeightsQCOM object, const A
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkLayeredDriverUnderlyingApiMSFT(VkLayeredDriverUnderlyingApiMSFT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkLayeredDriverUnderlyingApiMSFT(const VkLayeredDriverUnderlyingApiMSFT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9211,7 +9211,7 @@ void dump_text_VkLayeredDriverUnderlyingApiMSFT(VkLayeredDriverUnderlyingApiMSFT
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkDisplaySurfaceStereoTypeNV(VkDisplaySurfaceStereoTypeNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDisplaySurfaceStereoTypeNV(const VkDisplaySurfaceStereoTypeNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9232,7 +9232,7 @@ void dump_text_VkDisplaySurfaceStereoTypeNV(VkDisplaySurfaceStereoTypeNV object,
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkClusterAccelerationStructureTypeNV(VkClusterAccelerationStructureTypeNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkClusterAccelerationStructureTypeNV(const VkClusterAccelerationStructureTypeNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9250,7 +9250,7 @@ void dump_text_VkClusterAccelerationStructureTypeNV(VkClusterAccelerationStructu
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkClusterAccelerationStructureOpTypeNV(VkClusterAccelerationStructureOpTypeNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkClusterAccelerationStructureOpTypeNV(const VkClusterAccelerationStructureOpTypeNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9274,7 +9274,7 @@ void dump_text_VkClusterAccelerationStructureOpTypeNV(VkClusterAccelerationStruc
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkClusterAccelerationStructureOpModeNV(VkClusterAccelerationStructureOpModeNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkClusterAccelerationStructureOpModeNV(const VkClusterAccelerationStructureOpModeNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9292,7 +9292,7 @@ void dump_text_VkClusterAccelerationStructureOpModeNV(VkClusterAccelerationStruc
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkPartitionedAccelerationStructureOpTypeNV(VkPartitionedAccelerationStructureOpTypeNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPartitionedAccelerationStructureOpTypeNV(const VkPartitionedAccelerationStructureOpTypeNV& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9310,7 +9310,7 @@ void dump_text_VkPartitionedAccelerationStructureOpTypeNV(VkPartitionedAccelerat
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkIndirectExecutionSetInfoTypeEXT(VkIndirectExecutionSetInfoTypeEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkIndirectExecutionSetInfoTypeEXT(const VkIndirectExecutionSetInfoTypeEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9325,7 +9325,7 @@ void dump_text_VkIndirectExecutionSetInfoTypeEXT(VkIndirectExecutionSetInfoTypeE
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkIndirectCommandsTokenTypeEXT(VkIndirectCommandsTokenTypeEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkIndirectCommandsTokenTypeEXT(const VkIndirectCommandsTokenTypeEXT& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9379,7 +9379,7 @@ void dump_text_VkIndirectCommandsTokenTypeEXT(VkIndirectCommandsTokenTypeEXT obj
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkBuildAccelerationStructureModeKHR(VkBuildAccelerationStructureModeKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBuildAccelerationStructureModeKHR(const VkBuildAccelerationStructureModeKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9394,7 +9394,7 @@ void dump_text_VkBuildAccelerationStructureModeKHR(VkBuildAccelerationStructureM
     }
     settings.stream() << object << ")";
 }
-void dump_text_VkShaderGroupShaderKHR(VkShaderGroupShaderKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkShaderGroupShaderKHR(const VkShaderGroupShaderKHR& object, const ApiDumpSettings& settings, int indents)
 {
     switch((int64_t) object)
     {
@@ -9418,7 +9418,7 @@ void dump_text_VkShaderGroupShaderKHR(VkShaderGroupShaderKHR object, const ApiDu
 
 //========================= Bitmask Implementations =========================//
 
-void dump_text_VkAccessFlagBits(VkAccessFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAccessFlagBits(const VkAccessFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -9512,7 +9512,7 @@ void dump_text_VkAccessFlagBits(VkAccessFlagBits object, const ApiDumpSettings& 
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkImageAspectFlagBits(VkImageAspectFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageAspectFlagBits(const VkImageAspectFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -9555,7 +9555,7 @@ void dump_text_VkImageAspectFlagBits(VkImageAspectFlagBits object, const ApiDump
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkFormatFeatureFlagBits(VkFormatFeatureFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFormatFeatureFlagBits(const VkFormatFeatureFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -9655,7 +9655,7 @@ void dump_text_VkFormatFeatureFlagBits(VkFormatFeatureFlagBits object, const Api
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkImageCreateFlagBits(VkImageCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageCreateFlagBits(const VkImageCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -9725,7 +9725,7 @@ void dump_text_VkImageCreateFlagBits(VkImageCreateFlagBits object, const ApiDump
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkSampleCountFlagBits(VkSampleCountFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSampleCountFlagBits(const VkSampleCountFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -9753,7 +9753,7 @@ void dump_text_VkSampleCountFlagBits(VkSampleCountFlagBits object, const ApiDump
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkImageUsageFlagBits(VkImageUsageFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageUsageFlagBits(const VkImageUsageFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -9838,7 +9838,7 @@ void dump_text_VkImageUsageFlagBits(VkImageUsageFlagBits object, const ApiDumpSe
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkInstanceCreateFlagBits(VkInstanceCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkInstanceCreateFlagBits(const VkInstanceCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -9848,7 +9848,7 @@ void dump_text_VkInstanceCreateFlagBits(VkInstanceCreateFlagBits object, const A
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkMemoryHeapFlagBits(VkMemoryHeapFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMemoryHeapFlagBits(const VkMemoryHeapFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -9864,7 +9864,7 @@ void dump_text_VkMemoryHeapFlagBits(VkMemoryHeapFlagBits object, const ApiDumpSe
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkMemoryPropertyFlagBits(VkMemoryPropertyFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMemoryPropertyFlagBits(const VkMemoryPropertyFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -9898,7 +9898,7 @@ void dump_text_VkMemoryPropertyFlagBits(VkMemoryPropertyFlagBits object, const A
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkQueueFlagBits(VkQueueFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkQueueFlagBits(const VkQueueFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -9941,7 +9941,7 @@ void dump_text_VkQueueFlagBits(VkQueueFlagBits object, const ApiDumpSettings& se
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkDeviceQueueCreateFlagBits(VkDeviceQueueCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeviceQueueCreateFlagBits(const VkDeviceQueueCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -9957,7 +9957,7 @@ void dump_text_VkDeviceQueueCreateFlagBits(VkDeviceQueueCreateFlagBits object, c
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkPipelineStageFlagBits(VkPipelineStageFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineStageFlagBits(const VkPipelineStageFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10045,7 +10045,7 @@ void dump_text_VkPipelineStageFlagBits(VkPipelineStageFlagBits object, const Api
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkMemoryMapFlagBits(VkMemoryMapFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMemoryMapFlagBits(const VkMemoryMapFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10055,7 +10055,7 @@ void dump_text_VkMemoryMapFlagBits(VkMemoryMapFlagBits object, const ApiDumpSett
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkSparseMemoryBindFlagBits(VkSparseMemoryBindFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSparseMemoryBindFlagBits(const VkSparseMemoryBindFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10065,7 +10065,7 @@ void dump_text_VkSparseMemoryBindFlagBits(VkSparseMemoryBindFlagBits object, con
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkSparseImageFormatFlagBits(VkSparseImageFormatFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSparseImageFormatFlagBits(const VkSparseImageFormatFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10081,7 +10081,7 @@ void dump_text_VkSparseImageFormatFlagBits(VkSparseImageFormatFlagBits object, c
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkFenceCreateFlagBits(VkFenceCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFenceCreateFlagBits(const VkFenceCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10091,7 +10091,7 @@ void dump_text_VkFenceCreateFlagBits(VkFenceCreateFlagBits object, const ApiDump
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkEventCreateFlagBits(VkEventCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkEventCreateFlagBits(const VkEventCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10101,7 +10101,7 @@ void dump_text_VkEventCreateFlagBits(VkEventCreateFlagBits object, const ApiDump
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkQueryPipelineStatisticFlagBits(VkQueryPipelineStatisticFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkQueryPipelineStatisticFlagBits(const VkQueryPipelineStatisticFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10150,7 +10150,7 @@ void dump_text_VkQueryPipelineStatisticFlagBits(VkQueryPipelineStatisticFlagBits
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkQueryPoolCreateFlagBits(VkQueryPoolCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkQueryPoolCreateFlagBits(const VkQueryPoolCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10160,7 +10160,7 @@ void dump_text_VkQueryPoolCreateFlagBits(VkQueryPoolCreateFlagBits object, const
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkQueryResultFlagBits(VkQueryResultFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkQueryResultFlagBits(const VkQueryResultFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10182,7 +10182,7 @@ void dump_text_VkQueryResultFlagBits(VkQueryResultFlagBits object, const ApiDump
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkBufferCreateFlagBits(VkBufferCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBufferCreateFlagBits(const VkBufferCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10210,7 +10210,7 @@ void dump_text_VkBufferCreateFlagBits(VkBufferCreateFlagBits object, const ApiDu
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkBufferUsageFlagBits(VkBufferUsageFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBufferUsageFlagBits(const VkBufferUsageFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10301,7 +10301,7 @@ void dump_text_VkBufferUsageFlagBits(VkBufferUsageFlagBits object, const ApiDump
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkImageViewCreateFlagBits(VkImageViewCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageViewCreateFlagBits(const VkImageViewCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10317,7 +10317,7 @@ void dump_text_VkImageViewCreateFlagBits(VkImageViewCreateFlagBits object, const
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkPipelineCacheCreateFlagBits(VkPipelineCacheCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineCacheCreateFlagBits(const VkPipelineCacheCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10330,7 +10330,7 @@ void dump_text_VkPipelineCacheCreateFlagBits(VkPipelineCacheCreateFlagBits objec
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkColorComponentFlagBits(VkColorComponentFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkColorComponentFlagBits(const VkColorComponentFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10349,7 +10349,7 @@ void dump_text_VkColorComponentFlagBits(VkColorComponentFlagBits object, const A
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkPipelineCreateFlagBits(VkPipelineCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineCreateFlagBits(const VkPipelineCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10449,7 +10449,7 @@ void dump_text_VkPipelineCreateFlagBits(VkPipelineCreateFlagBits object, const A
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkPipelineShaderStageCreateFlagBits(VkPipelineShaderStageCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineShaderStageCreateFlagBits(const VkPipelineShaderStageCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10465,7 +10465,7 @@ void dump_text_VkPipelineShaderStageCreateFlagBits(VkPipelineShaderStageCreateFl
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkShaderStageFlagBits(VkShaderStageFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkShaderStageFlagBits(const VkShaderStageFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10529,7 +10529,7 @@ void dump_text_VkShaderStageFlagBits(VkShaderStageFlagBits object, const ApiDump
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkCullModeFlagBits(VkCullModeFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCullModeFlagBits(const VkCullModeFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10548,7 +10548,7 @@ void dump_text_VkCullModeFlagBits(VkCullModeFlagBits object, const ApiDumpSettin
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkPipelineDepthStencilStateCreateFlagBits(VkPipelineDepthStencilStateCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineDepthStencilStateCreateFlagBits(const VkPipelineDepthStencilStateCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10561,7 +10561,7 @@ void dump_text_VkPipelineDepthStencilStateCreateFlagBits(VkPipelineDepthStencilS
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkPipelineColorBlendStateCreateFlagBits(VkPipelineColorBlendStateCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineColorBlendStateCreateFlagBits(const VkPipelineColorBlendStateCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10571,7 +10571,7 @@ void dump_text_VkPipelineColorBlendStateCreateFlagBits(VkPipelineColorBlendState
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkPipelineLayoutCreateFlagBits(VkPipelineLayoutCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineLayoutCreateFlagBits(const VkPipelineLayoutCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10584,7 +10584,7 @@ void dump_text_VkPipelineLayoutCreateFlagBits(VkPipelineLayoutCreateFlagBits obj
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkSamplerCreateFlagBits(VkSamplerCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSamplerCreateFlagBits(const VkSamplerCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10606,7 +10606,7 @@ void dump_text_VkSamplerCreateFlagBits(VkSamplerCreateFlagBits object, const Api
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkDescriptorPoolCreateFlagBits(VkDescriptorPoolCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDescriptorPoolCreateFlagBits(const VkDescriptorPoolCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10628,7 +10628,7 @@ void dump_text_VkDescriptorPoolCreateFlagBits(VkDescriptorPoolCreateFlagBits obj
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkDescriptorSetLayoutCreateFlagBits(VkDescriptorSetLayoutCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDescriptorSetLayoutCreateFlagBits(const VkDescriptorSetLayoutCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10659,7 +10659,7 @@ void dump_text_VkDescriptorSetLayoutCreateFlagBits(VkDescriptorSetLayoutCreateFl
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkAttachmentDescriptionFlagBits(VkAttachmentDescriptionFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAttachmentDescriptionFlagBits(const VkAttachmentDescriptionFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10675,7 +10675,7 @@ void dump_text_VkAttachmentDescriptionFlagBits(VkAttachmentDescriptionFlagBits o
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkDependencyFlagBits(VkDependencyFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDependencyFlagBits(const VkDependencyFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10703,7 +10703,7 @@ void dump_text_VkDependencyFlagBits(VkDependencyFlagBits object, const ApiDumpSe
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkFramebufferCreateFlagBits(VkFramebufferCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFramebufferCreateFlagBits(const VkFramebufferCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10713,7 +10713,7 @@ void dump_text_VkFramebufferCreateFlagBits(VkFramebufferCreateFlagBits object, c
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkRenderPassCreateFlagBits(VkRenderPassCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkRenderPassCreateFlagBits(const VkRenderPassCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10729,7 +10729,7 @@ void dump_text_VkRenderPassCreateFlagBits(VkRenderPassCreateFlagBits object, con
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkSubpassDescriptionFlagBits(VkSubpassDescriptionFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSubpassDescriptionFlagBits(const VkSubpassDescriptionFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10763,7 +10763,7 @@ void dump_text_VkSubpassDescriptionFlagBits(VkSubpassDescriptionFlagBits object,
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkCommandPoolCreateFlagBits(VkCommandPoolCreateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCommandPoolCreateFlagBits(const VkCommandPoolCreateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10779,7 +10779,7 @@ void dump_text_VkCommandPoolCreateFlagBits(VkCommandPoolCreateFlagBits object, c
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkCommandPoolResetFlagBits(VkCommandPoolResetFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCommandPoolResetFlagBits(const VkCommandPoolResetFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10792,7 +10792,7 @@ void dump_text_VkCommandPoolResetFlagBits(VkCommandPoolResetFlagBits object, con
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkCommandBufferUsageFlagBits(VkCommandBufferUsageFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCommandBufferUsageFlagBits(const VkCommandBufferUsageFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10808,7 +10808,7 @@ void dump_text_VkCommandBufferUsageFlagBits(VkCommandBufferUsageFlagBits object,
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkQueryControlFlagBits(VkQueryControlFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkQueryControlFlagBits(const VkQueryControlFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10818,7 +10818,7 @@ void dump_text_VkQueryControlFlagBits(VkQueryControlFlagBits object, const ApiDu
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkCommandBufferResetFlagBits(VkCommandBufferResetFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCommandBufferResetFlagBits(const VkCommandBufferResetFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10828,7 +10828,7 @@ void dump_text_VkCommandBufferResetFlagBits(VkCommandBufferResetFlagBits object,
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkStencilFaceFlagBits(VkStencilFaceFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkStencilFaceFlagBits(const VkStencilFaceFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10844,7 +10844,7 @@ void dump_text_VkStencilFaceFlagBits(VkStencilFaceFlagBits object, const ApiDump
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkSubgroupFeatureFlagBits(VkSubgroupFeatureFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSubgroupFeatureFlagBits(const VkSubgroupFeatureFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10884,7 +10884,7 @@ void dump_text_VkSubgroupFeatureFlagBits(VkSubgroupFeatureFlagBits object, const
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkPeerMemoryFeatureFlagBits(VkPeerMemoryFeatureFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPeerMemoryFeatureFlagBits(const VkPeerMemoryFeatureFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10903,7 +10903,7 @@ void dump_text_VkPeerMemoryFeatureFlagBits(VkPeerMemoryFeatureFlagBits object, c
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkMemoryAllocateFlagBits(VkMemoryAllocateFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMemoryAllocateFlagBits(const VkMemoryAllocateFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10922,7 +10922,7 @@ void dump_text_VkMemoryAllocateFlagBits(VkMemoryAllocateFlagBits object, const A
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkExternalMemoryHandleTypeFlagBits(VkExternalMemoryHandleTypeFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExternalMemoryHandleTypeFlagBits(const VkExternalMemoryHandleTypeFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -10986,7 +10986,7 @@ void dump_text_VkExternalMemoryHandleTypeFlagBits(VkExternalMemoryHandleTypeFlag
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkExternalMemoryFeatureFlagBits(VkExternalMemoryFeatureFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExternalMemoryFeatureFlagBits(const VkExternalMemoryFeatureFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11002,7 +11002,7 @@ void dump_text_VkExternalMemoryFeatureFlagBits(VkExternalMemoryFeatureFlagBits o
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkExternalFenceHandleTypeFlagBits(VkExternalFenceHandleTypeFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExternalFenceHandleTypeFlagBits(const VkExternalFenceHandleTypeFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11027,7 +11027,7 @@ void dump_text_VkExternalFenceHandleTypeFlagBits(VkExternalFenceHandleTypeFlagBi
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkExternalFenceFeatureFlagBits(VkExternalFenceFeatureFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExternalFenceFeatureFlagBits(const VkExternalFenceFeatureFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11040,7 +11040,7 @@ void dump_text_VkExternalFenceFeatureFlagBits(VkExternalFenceFeatureFlagBits obj
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkFenceImportFlagBits(VkFenceImportFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFenceImportFlagBits(const VkFenceImportFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11050,7 +11050,7 @@ void dump_text_VkFenceImportFlagBits(VkFenceImportFlagBits object, const ApiDump
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkSemaphoreImportFlagBits(VkSemaphoreImportFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSemaphoreImportFlagBits(const VkSemaphoreImportFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11060,7 +11060,7 @@ void dump_text_VkSemaphoreImportFlagBits(VkSemaphoreImportFlagBits object, const
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkExternalSemaphoreHandleTypeFlagBits(VkExternalSemaphoreHandleTypeFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExternalSemaphoreHandleTypeFlagBits(const VkExternalSemaphoreHandleTypeFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11088,7 +11088,7 @@ void dump_text_VkExternalSemaphoreHandleTypeFlagBits(VkExternalSemaphoreHandleTy
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkExternalSemaphoreFeatureFlagBits(VkExternalSemaphoreFeatureFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExternalSemaphoreFeatureFlagBits(const VkExternalSemaphoreFeatureFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11101,7 +11101,7 @@ void dump_text_VkExternalSemaphoreFeatureFlagBits(VkExternalSemaphoreFeatureFlag
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkResolveModeFlagBits(VkResolveModeFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkResolveModeFlagBits(const VkResolveModeFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11129,7 +11129,7 @@ void dump_text_VkResolveModeFlagBits(VkResolveModeFlagBits object, const ApiDump
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkDescriptorBindingFlagBits(VkDescriptorBindingFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDescriptorBindingFlagBits(const VkDescriptorBindingFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11151,7 +11151,7 @@ void dump_text_VkDescriptorBindingFlagBits(VkDescriptorBindingFlagBits object, c
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkSemaphoreWaitFlagBits(VkSemaphoreWaitFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSemaphoreWaitFlagBits(const VkSemaphoreWaitFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11161,7 +11161,7 @@ void dump_text_VkSemaphoreWaitFlagBits(VkSemaphoreWaitFlagBits object, const Api
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkPipelineCreationFeedbackFlagBits(VkPipelineCreationFeedbackFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineCreationFeedbackFlagBits(const VkPipelineCreationFeedbackFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11177,7 +11177,7 @@ void dump_text_VkPipelineCreationFeedbackFlagBits(VkPipelineCreationFeedbackFlag
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkToolPurposeFlagBits(VkToolPurposeFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkToolPurposeFlagBits(const VkToolPurposeFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11207,7 +11207,7 @@ void dump_text_VkToolPurposeFlagBits(VkToolPurposeFlagBits object, const ApiDump
 }
 // 64 bit bitmasks don't have an enum of bit values.
 typedef VkFlags64 VkPipelineStageFlagBits2;
-void dump_text_VkPipelineStageFlagBits2(VkPipelineStageFlagBits2 object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineStageFlagBits2(const VkPipelineStageFlagBits2& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11357,7 +11357,7 @@ void dump_text_VkPipelineStageFlagBits2(VkPipelineStageFlagBits2 object, const A
 }
 // 64 bit bitmasks don't have an enum of bit values.
 typedef VkFlags64 VkAccessFlagBits2;
-void dump_text_VkAccessFlagBits2(VkAccessFlagBits2 object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAccessFlagBits2(const VkAccessFlagBits2& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11529,7 +11529,7 @@ void dump_text_VkAccessFlagBits2(VkAccessFlagBits2 object, const ApiDumpSettings
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkSubmitFlagBits(VkSubmitFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSubmitFlagBits(const VkSubmitFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11539,7 +11539,7 @@ void dump_text_VkSubmitFlagBits(VkSubmitFlagBits object, const ApiDumpSettings& 
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkRenderingFlagBits(VkRenderingFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkRenderingFlagBits(const VkRenderingFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11575,7 +11575,7 @@ void dump_text_VkRenderingFlagBits(VkRenderingFlagBits object, const ApiDumpSett
 }
 // 64 bit bitmasks don't have an enum of bit values.
 typedef VkFlags64 VkFormatFeatureFlagBits2;
-void dump_text_VkFormatFeatureFlagBits2(VkFormatFeatureFlagBits2 object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFormatFeatureFlagBits2(const VkFormatFeatureFlagBits2& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11759,7 +11759,7 @@ void dump_text_VkFormatFeatureFlagBits2(VkFormatFeatureFlagBits2 object, const A
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkMemoryUnmapFlagBits(VkMemoryUnmapFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMemoryUnmapFlagBits(const VkMemoryUnmapFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11771,7 +11771,7 @@ void dump_text_VkMemoryUnmapFlagBits(VkMemoryUnmapFlagBits object, const ApiDump
 }
 // 64 bit bitmasks don't have an enum of bit values.
 typedef VkFlags64 VkPipelineCreateFlagBits2;
-void dump_text_VkPipelineCreateFlagBits2(VkPipelineCreateFlagBits2 object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineCreateFlagBits2(const VkPipelineCreateFlagBits2& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -11912,7 +11912,7 @@ void dump_text_VkPipelineCreateFlagBits2(VkPipelineCreateFlagBits2 object, const
 }
 // 64 bit bitmasks don't have an enum of bit values.
 typedef VkFlags64 VkBufferUsageFlagBits2;
-void dump_text_VkBufferUsageFlagBits2(VkBufferUsageFlagBits2 object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBufferUsageFlagBits2(const VkBufferUsageFlagBits2& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12015,7 +12015,7 @@ void dump_text_VkBufferUsageFlagBits2(VkBufferUsageFlagBits2 object, const ApiDu
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkHostImageCopyFlagBits(VkHostImageCopyFlagBits object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkHostImageCopyFlagBits(const VkHostImageCopyFlagBits& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12025,7 +12025,7 @@ void dump_text_VkHostImageCopyFlagBits(VkHostImageCopyFlagBits object, const Api
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkSurfaceTransformFlagBitsKHR(VkSurfaceTransformFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSurfaceTransformFlagBitsKHR(const VkSurfaceTransformFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12059,7 +12059,7 @@ void dump_text_VkSurfaceTransformFlagBitsKHR(VkSurfaceTransformFlagBitsKHR objec
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkCompositeAlphaFlagBitsKHR(VkCompositeAlphaFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCompositeAlphaFlagBitsKHR(const VkCompositeAlphaFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12078,7 +12078,7 @@ void dump_text_VkCompositeAlphaFlagBitsKHR(VkCompositeAlphaFlagBitsKHR object, c
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkSwapchainCreateFlagBitsKHR(VkSwapchainCreateFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSwapchainCreateFlagBitsKHR(const VkSwapchainCreateFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12109,7 +12109,7 @@ void dump_text_VkSwapchainCreateFlagBitsKHR(VkSwapchainCreateFlagBitsKHR object,
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkDeviceGroupPresentModeFlagBitsKHR(VkDeviceGroupPresentModeFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeviceGroupPresentModeFlagBitsKHR(const VkDeviceGroupPresentModeFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12128,7 +12128,7 @@ void dump_text_VkDeviceGroupPresentModeFlagBitsKHR(VkDeviceGroupPresentModeFlagB
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkDisplayPlaneAlphaFlagBitsKHR(VkDisplayPlaneAlphaFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDisplayPlaneAlphaFlagBitsKHR(const VkDisplayPlaneAlphaFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12147,7 +12147,7 @@ void dump_text_VkDisplayPlaneAlphaFlagBitsKHR(VkDisplayPlaneAlphaFlagBitsKHR obj
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoCodecOperationFlagBitsKHR(VkVideoCodecOperationFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoCodecOperationFlagBitsKHR(const VkVideoCodecOperationFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12178,7 +12178,7 @@ void dump_text_VkVideoCodecOperationFlagBitsKHR(VkVideoCodecOperationFlagBitsKHR
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoChromaSubsamplingFlagBitsKHR(VkVideoChromaSubsamplingFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoChromaSubsamplingFlagBitsKHR(const VkVideoChromaSubsamplingFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12200,7 +12200,7 @@ void dump_text_VkVideoChromaSubsamplingFlagBitsKHR(VkVideoChromaSubsamplingFlagB
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoComponentBitDepthFlagBitsKHR(VkVideoComponentBitDepthFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoComponentBitDepthFlagBitsKHR(const VkVideoComponentBitDepthFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12219,7 +12219,7 @@ void dump_text_VkVideoComponentBitDepthFlagBitsKHR(VkVideoComponentBitDepthFlagB
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoCapabilityFlagBitsKHR(VkVideoCapabilityFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoCapabilityFlagBitsKHR(const VkVideoCapabilityFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12232,7 +12232,7 @@ void dump_text_VkVideoCapabilityFlagBitsKHR(VkVideoCapabilityFlagBitsKHR object,
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoSessionCreateFlagBitsKHR(VkVideoSessionCreateFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoSessionCreateFlagBitsKHR(const VkVideoSessionCreateFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12257,7 +12257,7 @@ void dump_text_VkVideoSessionCreateFlagBitsKHR(VkVideoSessionCreateFlagBitsKHR o
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoSessionParametersCreateFlagBitsKHR(VkVideoSessionParametersCreateFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoSessionParametersCreateFlagBitsKHR(const VkVideoSessionParametersCreateFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12267,7 +12267,7 @@ void dump_text_VkVideoSessionParametersCreateFlagBitsKHR(VkVideoSessionParameter
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoCodingControlFlagBitsKHR(VkVideoCodingControlFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoCodingControlFlagBitsKHR(const VkVideoCodingControlFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12283,7 +12283,7 @@ void dump_text_VkVideoCodingControlFlagBitsKHR(VkVideoCodingControlFlagBitsKHR o
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoDecodeCapabilityFlagBitsKHR(VkVideoDecodeCapabilityFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoDecodeCapabilityFlagBitsKHR(const VkVideoDecodeCapabilityFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12296,7 +12296,7 @@ void dump_text_VkVideoDecodeCapabilityFlagBitsKHR(VkVideoDecodeCapabilityFlagBit
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoDecodeUsageFlagBitsKHR(VkVideoDecodeUsageFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoDecodeUsageFlagBitsKHR(const VkVideoDecodeUsageFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12315,7 +12315,7 @@ void dump_text_VkVideoDecodeUsageFlagBitsKHR(VkVideoDecodeUsageFlagBitsKHR objec
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoEncodeH264CapabilityFlagBitsKHR(VkVideoEncodeH264CapabilityFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeH264CapabilityFlagBitsKHR(const VkVideoEncodeH264CapabilityFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12355,7 +12355,7 @@ void dump_text_VkVideoEncodeH264CapabilityFlagBitsKHR(VkVideoEncodeH264Capabilit
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoEncodeH264StdFlagBitsKHR(VkVideoEncodeH264StdFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeH264StdFlagBitsKHR(const VkVideoEncodeH264StdFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12422,7 +12422,7 @@ void dump_text_VkVideoEncodeH264StdFlagBitsKHR(VkVideoEncodeH264StdFlagBitsKHR o
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoEncodeH264RateControlFlagBitsKHR(VkVideoEncodeH264RateControlFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeH264RateControlFlagBitsKHR(const VkVideoEncodeH264RateControlFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12444,7 +12444,7 @@ void dump_text_VkVideoEncodeH264RateControlFlagBitsKHR(VkVideoEncodeH264RateCont
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoEncodeH265CapabilityFlagBitsKHR(VkVideoEncodeH265CapabilityFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeH265CapabilityFlagBitsKHR(const VkVideoEncodeH265CapabilityFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12487,7 +12487,7 @@ void dump_text_VkVideoEncodeH265CapabilityFlagBitsKHR(VkVideoEncodeH265Capabilit
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoEncodeH265StdFlagBitsKHR(VkVideoEncodeH265StdFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeH265StdFlagBitsKHR(const VkVideoEncodeH265StdFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12557,7 +12557,7 @@ void dump_text_VkVideoEncodeH265StdFlagBitsKHR(VkVideoEncodeH265StdFlagBitsKHR o
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoEncodeH265CtbSizeFlagBitsKHR(VkVideoEncodeH265CtbSizeFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeH265CtbSizeFlagBitsKHR(const VkVideoEncodeH265CtbSizeFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12573,7 +12573,7 @@ void dump_text_VkVideoEncodeH265CtbSizeFlagBitsKHR(VkVideoEncodeH265CtbSizeFlagB
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoEncodeH265TransformBlockSizeFlagBitsKHR(VkVideoEncodeH265TransformBlockSizeFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeH265TransformBlockSizeFlagBitsKHR(const VkVideoEncodeH265TransformBlockSizeFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12592,7 +12592,7 @@ void dump_text_VkVideoEncodeH265TransformBlockSizeFlagBitsKHR(VkVideoEncodeH265T
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoEncodeH265RateControlFlagBitsKHR(VkVideoEncodeH265RateControlFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeH265RateControlFlagBitsKHR(const VkVideoEncodeH265RateControlFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12614,7 +12614,7 @@ void dump_text_VkVideoEncodeH265RateControlFlagBitsKHR(VkVideoEncodeH265RateCont
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoDecodeH264PictureLayoutFlagBitsKHR(VkVideoDecodeH264PictureLayoutFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoDecodeH264PictureLayoutFlagBitsKHR(const VkVideoDecodeH264PictureLayoutFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12630,7 +12630,7 @@ void dump_text_VkVideoDecodeH264PictureLayoutFlagBitsKHR(VkVideoDecodeH264Pictur
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkPerformanceCounterDescriptionFlagBitsKHR(VkPerformanceCounterDescriptionFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPerformanceCounterDescriptionFlagBitsKHR(const VkPerformanceCounterDescriptionFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12643,14 +12643,14 @@ void dump_text_VkPerformanceCounterDescriptionFlagBitsKHR(VkPerformanceCounterDe
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkAcquireProfilingLockFlagBitsKHR(VkAcquireProfilingLockFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAcquireProfilingLockFlagBitsKHR(const VkAcquireProfilingLockFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoEncodeFlagBitsKHR(VkVideoEncodeFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeFlagBitsKHR(const VkVideoEncodeFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12666,7 +12666,7 @@ void dump_text_VkVideoEncodeFlagBitsKHR(VkVideoEncodeFlagBitsKHR object, const A
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoEncodeCapabilityFlagBitsKHR(VkVideoEncodeCapabilityFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeCapabilityFlagBitsKHR(const VkVideoEncodeCapabilityFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12685,7 +12685,7 @@ void dump_text_VkVideoEncodeCapabilityFlagBitsKHR(VkVideoEncodeCapabilityFlagBit
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoEncodeRateControlModeFlagBitsKHR(VkVideoEncodeRateControlModeFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeRateControlModeFlagBitsKHR(const VkVideoEncodeRateControlModeFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12704,7 +12704,7 @@ void dump_text_VkVideoEncodeRateControlModeFlagBitsKHR(VkVideoEncodeRateControlM
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoEncodeFeedbackFlagBitsKHR(VkVideoEncodeFeedbackFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeFeedbackFlagBitsKHR(const VkVideoEncodeFeedbackFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12720,7 +12720,7 @@ void dump_text_VkVideoEncodeFeedbackFlagBitsKHR(VkVideoEncodeFeedbackFlagBitsKHR
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoEncodeUsageFlagBitsKHR(VkVideoEncodeUsageFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeUsageFlagBitsKHR(const VkVideoEncodeUsageFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12742,7 +12742,7 @@ void dump_text_VkVideoEncodeUsageFlagBitsKHR(VkVideoEncodeUsageFlagBitsKHR objec
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoEncodeContentFlagBitsKHR(VkVideoEncodeContentFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeContentFlagBitsKHR(const VkVideoEncodeContentFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12761,7 +12761,7 @@ void dump_text_VkVideoEncodeContentFlagBitsKHR(VkVideoEncodeContentFlagBitsKHR o
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoEncodeAV1CapabilityFlagBitsKHR(VkVideoEncodeAV1CapabilityFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeAV1CapabilityFlagBitsKHR(const VkVideoEncodeAV1CapabilityFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12786,7 +12786,7 @@ void dump_text_VkVideoEncodeAV1CapabilityFlagBitsKHR(VkVideoEncodeAV1CapabilityF
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoEncodeAV1StdFlagBitsKHR(VkVideoEncodeAV1StdFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeAV1StdFlagBitsKHR(const VkVideoEncodeAV1StdFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12805,7 +12805,7 @@ void dump_text_VkVideoEncodeAV1StdFlagBitsKHR(VkVideoEncodeAV1StdFlagBitsKHR obj
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoEncodeAV1SuperblockSizeFlagBitsKHR(VkVideoEncodeAV1SuperblockSizeFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeAV1SuperblockSizeFlagBitsKHR(const VkVideoEncodeAV1SuperblockSizeFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12818,7 +12818,7 @@ void dump_text_VkVideoEncodeAV1SuperblockSizeFlagBitsKHR(VkVideoEncodeAV1Superbl
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkVideoEncodeAV1RateControlFlagBitsKHR(VkVideoEncodeAV1RateControlFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeAV1RateControlFlagBitsKHR(const VkVideoEncodeAV1RateControlFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12839,7 +12839,7 @@ void dump_text_VkVideoEncodeAV1RateControlFlagBitsKHR(VkVideoEncodeAV1RateContro
 }
 // 64 bit bitmasks don't have an enum of bit values.
 typedef VkFlags64 VkAccessFlagBits3KHR;
-void dump_text_VkAccessFlagBits3KHR(VkAccessFlagBits3KHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAccessFlagBits3KHR(const VkAccessFlagBits3KHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12849,7 +12849,7 @@ void dump_text_VkAccessFlagBits3KHR(VkAccessFlagBits3KHR object, const ApiDumpSe
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkDebugReportFlagBitsEXT(VkDebugReportFlagBitsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDebugReportFlagBitsEXT(const VkDebugReportFlagBitsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12871,7 +12871,7 @@ void dump_text_VkDebugReportFlagBitsEXT(VkDebugReportFlagBitsEXT object, const A
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkExternalMemoryHandleTypeFlagBitsNV(VkExternalMemoryHandleTypeFlagBitsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExternalMemoryHandleTypeFlagBitsNV(const VkExternalMemoryHandleTypeFlagBitsNV& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12890,7 +12890,7 @@ void dump_text_VkExternalMemoryHandleTypeFlagBitsNV(VkExternalMemoryHandleTypeFl
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkExternalMemoryFeatureFlagBitsNV(VkExternalMemoryFeatureFlagBitsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExternalMemoryFeatureFlagBitsNV(const VkExternalMemoryFeatureFlagBitsNV& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12906,7 +12906,7 @@ void dump_text_VkExternalMemoryFeatureFlagBitsNV(VkExternalMemoryFeatureFlagBits
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkConditionalRenderingFlagBitsEXT(VkConditionalRenderingFlagBitsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkConditionalRenderingFlagBitsEXT(const VkConditionalRenderingFlagBitsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12916,7 +12916,7 @@ void dump_text_VkConditionalRenderingFlagBitsEXT(VkConditionalRenderingFlagBitsE
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkSurfaceCounterFlagBitsEXT(VkSurfaceCounterFlagBitsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSurfaceCounterFlagBitsEXT(const VkSurfaceCounterFlagBitsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12926,7 +12926,7 @@ void dump_text_VkSurfaceCounterFlagBitsEXT(VkSurfaceCounterFlagBitsEXT object, c
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkDebugUtilsMessageSeverityFlagBitsEXT(VkDebugUtilsMessageSeverityFlagBitsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDebugUtilsMessageSeverityFlagBitsEXT(const VkDebugUtilsMessageSeverityFlagBitsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12945,7 +12945,7 @@ void dump_text_VkDebugUtilsMessageSeverityFlagBitsEXT(VkDebugUtilsMessageSeverit
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkDebugUtilsMessageTypeFlagBitsEXT(VkDebugUtilsMessageTypeFlagBitsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDebugUtilsMessageTypeFlagBitsEXT(const VkDebugUtilsMessageTypeFlagBitsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12964,7 +12964,7 @@ void dump_text_VkDebugUtilsMessageTypeFlagBitsEXT(VkDebugUtilsMessageTypeFlagBit
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkGeometryFlagBitsKHR(VkGeometryFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkGeometryFlagBitsKHR(const VkGeometryFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -12977,7 +12977,7 @@ void dump_text_VkGeometryFlagBitsKHR(VkGeometryFlagBitsKHR object, const ApiDump
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkGeometryInstanceFlagBitsKHR(VkGeometryInstanceFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkGeometryInstanceFlagBitsKHR(const VkGeometryInstanceFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13002,7 +13002,7 @@ void dump_text_VkGeometryInstanceFlagBitsKHR(VkGeometryInstanceFlagBitsKHR objec
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkBuildAccelerationStructureFlagBitsKHR(VkBuildAccelerationStructureFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBuildAccelerationStructureFlagBitsKHR(const VkBuildAccelerationStructureFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13042,21 +13042,21 @@ void dump_text_VkBuildAccelerationStructureFlagBitsKHR(VkBuildAccelerationStruct
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkPipelineCompilerControlFlagBitsAMD(VkPipelineCompilerControlFlagBitsAMD object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineCompilerControlFlagBitsAMD(const VkPipelineCompilerControlFlagBitsAMD& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkShaderCorePropertiesFlagBitsAMD(VkShaderCorePropertiesFlagBitsAMD object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkShaderCorePropertiesFlagBitsAMD(const VkShaderCorePropertiesFlagBitsAMD& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkPresentScalingFlagBitsEXT(VkPresentScalingFlagBitsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPresentScalingFlagBitsEXT(const VkPresentScalingFlagBitsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13072,7 +13072,7 @@ void dump_text_VkPresentScalingFlagBitsEXT(VkPresentScalingFlagBitsEXT object, c
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkPresentGravityFlagBitsEXT(VkPresentGravityFlagBitsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPresentGravityFlagBitsEXT(const VkPresentGravityFlagBitsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13088,7 +13088,7 @@ void dump_text_VkPresentGravityFlagBitsEXT(VkPresentGravityFlagBitsEXT object, c
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkIndirectStateFlagBitsNV(VkIndirectStateFlagBitsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkIndirectStateFlagBitsNV(const VkIndirectStateFlagBitsNV& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13098,7 +13098,7 @@ void dump_text_VkIndirectStateFlagBitsNV(VkIndirectStateFlagBitsNV object, const
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkIndirectCommandsLayoutUsageFlagBitsNV(VkIndirectCommandsLayoutUsageFlagBitsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkIndirectCommandsLayoutUsageFlagBitsNV(const VkIndirectCommandsLayoutUsageFlagBitsNV& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13114,7 +13114,7 @@ void dump_text_VkIndirectCommandsLayoutUsageFlagBitsNV(VkIndirectCommandsLayoutU
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkDeviceDiagnosticsConfigFlagBitsNV(VkDeviceDiagnosticsConfigFlagBitsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeviceDiagnosticsConfigFlagBitsNV(const VkDeviceDiagnosticsConfigFlagBitsNV& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13133,7 +13133,7 @@ void dump_text_VkDeviceDiagnosticsConfigFlagBitsNV(VkDeviceDiagnosticsConfigFlag
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkTileShadingRenderPassFlagBitsQCOM(VkTileShadingRenderPassFlagBitsQCOM object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkTileShadingRenderPassFlagBitsQCOM(const VkTileShadingRenderPassFlagBitsQCOM& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13147,7 +13147,7 @@ void dump_text_VkTileShadingRenderPassFlagBitsQCOM(VkTileShadingRenderPassFlagBi
         settings.stream() << ")";
 }
 #if defined(VK_USE_PLATFORM_METAL_EXT)
-void dump_text_VkExportMetalObjectTypeFlagBitsEXT(VkExportMetalObjectTypeFlagBitsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExportMetalObjectTypeFlagBitsEXT(const VkExportMetalObjectTypeFlagBitsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13173,7 +13173,7 @@ void dump_text_VkExportMetalObjectTypeFlagBitsEXT(VkExportMetalObjectTypeFlagBit
         settings.stream() << ")";
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
-void dump_text_VkGraphicsPipelineLibraryFlagBitsEXT(VkGraphicsPipelineLibraryFlagBitsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkGraphicsPipelineLibraryFlagBitsEXT(const VkGraphicsPipelineLibraryFlagBitsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13192,7 +13192,7 @@ void dump_text_VkGraphicsPipelineLibraryFlagBitsEXT(VkGraphicsPipelineLibraryFla
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkImageCompressionFlagBitsEXT(VkImageCompressionFlagBitsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageCompressionFlagBitsEXT(const VkImageCompressionFlagBitsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13211,7 +13211,7 @@ void dump_text_VkImageCompressionFlagBitsEXT(VkImageCompressionFlagBitsEXT objec
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkImageCompressionFixedRateFlagBitsEXT(VkImageCompressionFixedRateFlagBitsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageCompressionFixedRateFlagBitsEXT(const VkImageCompressionFixedRateFlagBitsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13293,7 +13293,7 @@ void dump_text_VkImageCompressionFixedRateFlagBitsEXT(VkImageCompressionFixedRat
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkDeviceAddressBindingFlagBitsEXT(VkDeviceAddressBindingFlagBitsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeviceAddressBindingFlagBitsEXT(const VkDeviceAddressBindingFlagBitsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13304,7 +13304,7 @@ void dump_text_VkDeviceAddressBindingFlagBitsEXT(VkDeviceAddressBindingFlagBitsE
         settings.stream() << ")";
 }
 #if defined(VK_USE_PLATFORM_FUCHSIA)
-void dump_text_VkImageConstraintsInfoFlagBitsFUCHSIA(VkImageConstraintsInfoFlagBitsFUCHSIA object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageConstraintsInfoFlagBitsFUCHSIA(const VkImageConstraintsInfoFlagBitsFUCHSIA& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13327,7 +13327,7 @@ void dump_text_VkImageConstraintsInfoFlagBitsFUCHSIA(VkImageConstraintsInfoFlagB
         settings.stream() << ")";
 }
 #endif // VK_USE_PLATFORM_FUCHSIA
-void dump_text_VkFrameBoundaryFlagBitsEXT(VkFrameBoundaryFlagBitsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFrameBoundaryFlagBitsEXT(const VkFrameBoundaryFlagBitsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13337,7 +13337,7 @@ void dump_text_VkFrameBoundaryFlagBitsEXT(VkFrameBoundaryFlagBitsEXT object, con
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkBuildMicromapFlagBitsEXT(VkBuildMicromapFlagBitsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBuildMicromapFlagBitsEXT(const VkBuildMicromapFlagBitsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13353,7 +13353,7 @@ void dump_text_VkBuildMicromapFlagBitsEXT(VkBuildMicromapFlagBitsEXT object, con
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkMicromapCreateFlagBitsEXT(VkMicromapCreateFlagBitsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMicromapCreateFlagBitsEXT(const VkMicromapCreateFlagBitsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13365,7 +13365,7 @@ void dump_text_VkMicromapCreateFlagBitsEXT(VkMicromapCreateFlagBitsEXT object, c
 }
 // 64 bit bitmasks don't have an enum of bit values.
 typedef VkFlags64 VkPhysicalDeviceSchedulingControlsFlagBitsARM;
-void dump_text_VkPhysicalDeviceSchedulingControlsFlagBitsARM(VkPhysicalDeviceSchedulingControlsFlagBitsARM object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPhysicalDeviceSchedulingControlsFlagBitsARM(const VkPhysicalDeviceSchedulingControlsFlagBitsARM& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13377,7 +13377,7 @@ void dump_text_VkPhysicalDeviceSchedulingControlsFlagBitsARM(VkPhysicalDeviceSch
 }
 // 64 bit bitmasks don't have an enum of bit values.
 typedef VkFlags64 VkMemoryDecompressionMethodFlagBitsNV;
-void dump_text_VkMemoryDecompressionMethodFlagBitsNV(VkMemoryDecompressionMethodFlagBitsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMemoryDecompressionMethodFlagBitsNV(const VkMemoryDecompressionMethodFlagBitsNV& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13389,7 +13389,7 @@ void dump_text_VkMemoryDecompressionMethodFlagBitsNV(VkMemoryDecompressionMethod
 }
 // 64 bit bitmasks don't have an enum of bit values.
 typedef VkFlags64 VkTensorCreateFlagBitsARM;
-void dump_text_VkTensorCreateFlagBitsARM(VkTensorCreateFlagBitsARM object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkTensorCreateFlagBitsARM(const VkTensorCreateFlagBitsARM& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13407,7 +13407,7 @@ void dump_text_VkTensorCreateFlagBitsARM(VkTensorCreateFlagBitsARM object, const
 }
 // 64 bit bitmasks don't have an enum of bit values.
 typedef VkFlags64 VkTensorViewCreateFlagBitsARM;
-void dump_text_VkTensorViewCreateFlagBitsARM(VkTensorViewCreateFlagBitsARM object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkTensorViewCreateFlagBitsARM(const VkTensorViewCreateFlagBitsARM& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13419,7 +13419,7 @@ void dump_text_VkTensorViewCreateFlagBitsARM(VkTensorViewCreateFlagBitsARM objec
 }
 // 64 bit bitmasks don't have an enum of bit values.
 typedef VkFlags64 VkTensorUsageFlagBitsARM;
-void dump_text_VkTensorUsageFlagBitsARM(VkTensorUsageFlagBitsARM object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkTensorUsageFlagBitsARM(const VkTensorUsageFlagBitsARM& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13438,7 +13438,7 @@ void dump_text_VkTensorUsageFlagBitsARM(VkTensorUsageFlagBitsARM object, const A
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkOpticalFlowGridSizeFlagBitsNV(VkOpticalFlowGridSizeFlagBitsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkOpticalFlowGridSizeFlagBitsNV(const VkOpticalFlowGridSizeFlagBitsNV& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13460,7 +13460,7 @@ void dump_text_VkOpticalFlowGridSizeFlagBitsNV(VkOpticalFlowGridSizeFlagBitsNV o
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkOpticalFlowUsageFlagBitsNV(VkOpticalFlowUsageFlagBitsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkOpticalFlowUsageFlagBitsNV(const VkOpticalFlowUsageFlagBitsNV& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13485,7 +13485,7 @@ void dump_text_VkOpticalFlowUsageFlagBitsNV(VkOpticalFlowUsageFlagBitsNV object,
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkOpticalFlowSessionCreateFlagBitsNV(VkOpticalFlowSessionCreateFlagBitsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkOpticalFlowSessionCreateFlagBitsNV(const VkOpticalFlowSessionCreateFlagBitsNV& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13507,7 +13507,7 @@ void dump_text_VkOpticalFlowSessionCreateFlagBitsNV(VkOpticalFlowSessionCreateFl
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkOpticalFlowExecuteFlagBitsNV(VkOpticalFlowExecuteFlagBitsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkOpticalFlowExecuteFlagBitsNV(const VkOpticalFlowExecuteFlagBitsNV& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13517,7 +13517,7 @@ void dump_text_VkOpticalFlowExecuteFlagBitsNV(VkOpticalFlowExecuteFlagBitsNV obj
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkShaderCreateFlagBitsEXT(VkShaderCreateFlagBitsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkShaderCreateFlagBitsEXT(const VkShaderCreateFlagBitsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13572,7 +13572,7 @@ void dump_text_VkShaderCreateFlagBitsEXT(VkShaderCreateFlagBitsEXT object, const
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkClusterAccelerationStructureAddressResolutionFlagBitsNV(VkClusterAccelerationStructureAddressResolutionFlagBitsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkClusterAccelerationStructureAddressResolutionFlagBitsNV(const VkClusterAccelerationStructureAddressResolutionFlagBitsNV& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13597,7 +13597,7 @@ void dump_text_VkClusterAccelerationStructureAddressResolutionFlagBitsNV(VkClust
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkClusterAccelerationStructureClusterFlagBitsNV(VkClusterAccelerationStructureClusterFlagBitsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkClusterAccelerationStructureClusterFlagBitsNV(const VkClusterAccelerationStructureClusterFlagBitsNV& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13607,7 +13607,7 @@ void dump_text_VkClusterAccelerationStructureClusterFlagBitsNV(VkClusterAccelera
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkClusterAccelerationStructureGeometryFlagBitsNV(VkClusterAccelerationStructureGeometryFlagBitsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkClusterAccelerationStructureGeometryFlagBitsNV(const VkClusterAccelerationStructureGeometryFlagBitsNV& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13623,7 +13623,7 @@ void dump_text_VkClusterAccelerationStructureGeometryFlagBitsNV(VkClusterAcceler
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkClusterAccelerationStructureIndexFormatFlagBitsNV(VkClusterAccelerationStructureIndexFormatFlagBitsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkClusterAccelerationStructureIndexFormatFlagBitsNV(const VkClusterAccelerationStructureIndexFormatFlagBitsNV& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13639,7 +13639,7 @@ void dump_text_VkClusterAccelerationStructureIndexFormatFlagBitsNV(VkClusterAcce
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkPartitionedAccelerationStructureInstanceFlagBitsNV(VkPartitionedAccelerationStructureInstanceFlagBitsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPartitionedAccelerationStructureInstanceFlagBitsNV(const VkPartitionedAccelerationStructureInstanceFlagBitsNV& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13661,7 +13661,7 @@ void dump_text_VkPartitionedAccelerationStructureInstanceFlagBitsNV(VkPartitione
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkIndirectCommandsInputModeFlagBitsEXT(VkIndirectCommandsInputModeFlagBitsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkIndirectCommandsInputModeFlagBitsEXT(const VkIndirectCommandsInputModeFlagBitsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13674,7 +13674,7 @@ void dump_text_VkIndirectCommandsInputModeFlagBitsEXT(VkIndirectCommandsInputMod
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkIndirectCommandsLayoutUsageFlagBitsEXT(VkIndirectCommandsLayoutUsageFlagBitsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkIndirectCommandsLayoutUsageFlagBitsEXT(const VkIndirectCommandsLayoutUsageFlagBitsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13687,7 +13687,7 @@ void dump_text_VkIndirectCommandsLayoutUsageFlagBitsEXT(VkIndirectCommandsLayout
     if(!is_first)
         settings.stream() << ")";
 }
-void dump_text_VkAccelerationStructureCreateFlagBitsKHR(VkAccelerationStructureCreateFlagBitsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAccelerationStructureCreateFlagBitsKHR(const VkAccelerationStructureCreateFlagBitsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     bool is_first = true;
     settings.stream() << object;
@@ -13706,854 +13706,854 @@ void dump_text_VkAccelerationStructureCreateFlagBitsKHR(VkAccelerationStructureC
 
 //=========================== Flag Implementations ==========================//
 
-void dump_text_VkAccessFlags(VkAccessFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAccessFlags(const VkAccessFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkAccessFlagBits((VkAccessFlagBits) object, settings, indents);
 }
-void dump_text_VkImageAspectFlags(VkImageAspectFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageAspectFlags(const VkImageAspectFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkImageAspectFlagBits((VkImageAspectFlagBits) object, settings, indents);
 }
-void dump_text_VkFormatFeatureFlags(VkFormatFeatureFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFormatFeatureFlags(const VkFormatFeatureFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkFormatFeatureFlagBits((VkFormatFeatureFlagBits) object, settings, indents);
 }
-void dump_text_VkImageCreateFlags(VkImageCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageCreateFlags(const VkImageCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkImageCreateFlagBits((VkImageCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkSampleCountFlags(VkSampleCountFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSampleCountFlags(const VkSampleCountFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkSampleCountFlagBits((VkSampleCountFlagBits) object, settings, indents);
 }
-void dump_text_VkImageUsageFlags(VkImageUsageFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageUsageFlags(const VkImageUsageFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkImageUsageFlagBits((VkImageUsageFlagBits) object, settings, indents);
 }
-void dump_text_VkInstanceCreateFlags(VkInstanceCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkInstanceCreateFlags(const VkInstanceCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkInstanceCreateFlagBits((VkInstanceCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkMemoryHeapFlags(VkMemoryHeapFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMemoryHeapFlags(const VkMemoryHeapFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkMemoryHeapFlagBits((VkMemoryHeapFlagBits) object, settings, indents);
 }
-void dump_text_VkMemoryPropertyFlags(VkMemoryPropertyFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMemoryPropertyFlags(const VkMemoryPropertyFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkMemoryPropertyFlagBits((VkMemoryPropertyFlagBits) object, settings, indents);
 }
-void dump_text_VkQueueFlags(VkQueueFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkQueueFlags(const VkQueueFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkQueueFlagBits((VkQueueFlagBits) object, settings, indents);
 }
-void dump_text_VkDeviceQueueCreateFlags(VkDeviceQueueCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeviceQueueCreateFlags(const VkDeviceQueueCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkDeviceQueueCreateFlagBits((VkDeviceQueueCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkPipelineStageFlags(VkPipelineStageFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineStageFlags(const VkPipelineStageFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkPipelineStageFlagBits((VkPipelineStageFlagBits) object, settings, indents);
 }
-void dump_text_VkMemoryMapFlags(VkMemoryMapFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMemoryMapFlags(const VkMemoryMapFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkMemoryMapFlagBits((VkMemoryMapFlagBits) object, settings, indents);
 }
-void dump_text_VkSparseMemoryBindFlags(VkSparseMemoryBindFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSparseMemoryBindFlags(const VkSparseMemoryBindFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkSparseMemoryBindFlagBits((VkSparseMemoryBindFlagBits) object, settings, indents);
 }
-void dump_text_VkSparseImageFormatFlags(VkSparseImageFormatFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSparseImageFormatFlags(const VkSparseImageFormatFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkSparseImageFormatFlagBits((VkSparseImageFormatFlagBits) object, settings, indents);
 }
-void dump_text_VkFenceCreateFlags(VkFenceCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFenceCreateFlags(const VkFenceCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkFenceCreateFlagBits((VkFenceCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkEventCreateFlags(VkEventCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkEventCreateFlags(const VkEventCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkEventCreateFlagBits((VkEventCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkQueryPipelineStatisticFlags(VkQueryPipelineStatisticFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkQueryPipelineStatisticFlags(const VkQueryPipelineStatisticFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkQueryPipelineStatisticFlagBits((VkQueryPipelineStatisticFlagBits) object, settings, indents);
 }
-void dump_text_VkQueryPoolCreateFlags(VkQueryPoolCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkQueryPoolCreateFlags(const VkQueryPoolCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkQueryPoolCreateFlagBits((VkQueryPoolCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkQueryResultFlags(VkQueryResultFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkQueryResultFlags(const VkQueryResultFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkQueryResultFlagBits((VkQueryResultFlagBits) object, settings, indents);
 }
-void dump_text_VkBufferCreateFlags(VkBufferCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBufferCreateFlags(const VkBufferCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkBufferCreateFlagBits((VkBufferCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkBufferUsageFlags(VkBufferUsageFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBufferUsageFlags(const VkBufferUsageFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkBufferUsageFlagBits((VkBufferUsageFlagBits) object, settings, indents);
 }
-void dump_text_VkImageViewCreateFlags(VkImageViewCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageViewCreateFlags(const VkImageViewCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkImageViewCreateFlagBits((VkImageViewCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkPipelineCacheCreateFlags(VkPipelineCacheCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineCacheCreateFlags(const VkPipelineCacheCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkPipelineCacheCreateFlagBits((VkPipelineCacheCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkColorComponentFlags(VkColorComponentFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkColorComponentFlags(const VkColorComponentFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkColorComponentFlagBits((VkColorComponentFlagBits) object, settings, indents);
 }
-void dump_text_VkPipelineCreateFlags(VkPipelineCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineCreateFlags(const VkPipelineCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkPipelineCreateFlagBits((VkPipelineCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkPipelineShaderStageCreateFlags(VkPipelineShaderStageCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineShaderStageCreateFlags(const VkPipelineShaderStageCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkPipelineShaderStageCreateFlagBits((VkPipelineShaderStageCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkShaderStageFlags(VkShaderStageFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkShaderStageFlags(const VkShaderStageFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkShaderStageFlagBits((VkShaderStageFlagBits) object, settings, indents);
 }
-void dump_text_VkCullModeFlags(VkCullModeFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCullModeFlags(const VkCullModeFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkCullModeFlagBits((VkCullModeFlagBits) object, settings, indents);
 }
-void dump_text_VkPipelineDepthStencilStateCreateFlags(VkPipelineDepthStencilStateCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineDepthStencilStateCreateFlags(const VkPipelineDepthStencilStateCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkPipelineDepthStencilStateCreateFlagBits((VkPipelineDepthStencilStateCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkPipelineColorBlendStateCreateFlags(VkPipelineColorBlendStateCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineColorBlendStateCreateFlags(const VkPipelineColorBlendStateCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkPipelineColorBlendStateCreateFlagBits((VkPipelineColorBlendStateCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkPipelineLayoutCreateFlags(VkPipelineLayoutCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineLayoutCreateFlags(const VkPipelineLayoutCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkPipelineLayoutCreateFlagBits((VkPipelineLayoutCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkSamplerCreateFlags(VkSamplerCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSamplerCreateFlags(const VkSamplerCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkSamplerCreateFlagBits((VkSamplerCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkDescriptorPoolCreateFlags(VkDescriptorPoolCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDescriptorPoolCreateFlags(const VkDescriptorPoolCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkDescriptorPoolCreateFlagBits((VkDescriptorPoolCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkDescriptorSetLayoutCreateFlags(VkDescriptorSetLayoutCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDescriptorSetLayoutCreateFlags(const VkDescriptorSetLayoutCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkDescriptorSetLayoutCreateFlagBits((VkDescriptorSetLayoutCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkAttachmentDescriptionFlags(VkAttachmentDescriptionFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAttachmentDescriptionFlags(const VkAttachmentDescriptionFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkAttachmentDescriptionFlagBits((VkAttachmentDescriptionFlagBits) object, settings, indents);
 }
-void dump_text_VkDependencyFlags(VkDependencyFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDependencyFlags(const VkDependencyFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkDependencyFlagBits((VkDependencyFlagBits) object, settings, indents);
 }
-void dump_text_VkFramebufferCreateFlags(VkFramebufferCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFramebufferCreateFlags(const VkFramebufferCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkFramebufferCreateFlagBits((VkFramebufferCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkRenderPassCreateFlags(VkRenderPassCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkRenderPassCreateFlags(const VkRenderPassCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkRenderPassCreateFlagBits((VkRenderPassCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkSubpassDescriptionFlags(VkSubpassDescriptionFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSubpassDescriptionFlags(const VkSubpassDescriptionFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkSubpassDescriptionFlagBits((VkSubpassDescriptionFlagBits) object, settings, indents);
 }
-void dump_text_VkCommandPoolCreateFlags(VkCommandPoolCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCommandPoolCreateFlags(const VkCommandPoolCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkCommandPoolCreateFlagBits((VkCommandPoolCreateFlagBits) object, settings, indents);
 }
-void dump_text_VkCommandPoolResetFlags(VkCommandPoolResetFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCommandPoolResetFlags(const VkCommandPoolResetFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkCommandPoolResetFlagBits((VkCommandPoolResetFlagBits) object, settings, indents);
 }
-void dump_text_VkCommandBufferUsageFlags(VkCommandBufferUsageFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCommandBufferUsageFlags(const VkCommandBufferUsageFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkCommandBufferUsageFlagBits((VkCommandBufferUsageFlagBits) object, settings, indents);
 }
-void dump_text_VkQueryControlFlags(VkQueryControlFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkQueryControlFlags(const VkQueryControlFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkQueryControlFlagBits((VkQueryControlFlagBits) object, settings, indents);
 }
-void dump_text_VkCommandBufferResetFlags(VkCommandBufferResetFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCommandBufferResetFlags(const VkCommandBufferResetFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkCommandBufferResetFlagBits((VkCommandBufferResetFlagBits) object, settings, indents);
 }
-void dump_text_VkStencilFaceFlags(VkStencilFaceFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkStencilFaceFlags(const VkStencilFaceFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkStencilFaceFlagBits((VkStencilFaceFlagBits) object, settings, indents);
 }
-void dump_text_VkSubgroupFeatureFlags(VkSubgroupFeatureFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSubgroupFeatureFlags(const VkSubgroupFeatureFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkSubgroupFeatureFlagBits((VkSubgroupFeatureFlagBits) object, settings, indents);
 }
-void dump_text_VkPeerMemoryFeatureFlags(VkPeerMemoryFeatureFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPeerMemoryFeatureFlags(const VkPeerMemoryFeatureFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkPeerMemoryFeatureFlagBits((VkPeerMemoryFeatureFlagBits) object, settings, indents);
 }
-void dump_text_VkMemoryAllocateFlags(VkMemoryAllocateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMemoryAllocateFlags(const VkMemoryAllocateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkMemoryAllocateFlagBits((VkMemoryAllocateFlagBits) object, settings, indents);
 }
-void dump_text_VkExternalMemoryHandleTypeFlags(VkExternalMemoryHandleTypeFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExternalMemoryHandleTypeFlags(const VkExternalMemoryHandleTypeFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkExternalMemoryHandleTypeFlagBits((VkExternalMemoryHandleTypeFlagBits) object, settings, indents);
 }
-void dump_text_VkExternalMemoryFeatureFlags(VkExternalMemoryFeatureFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExternalMemoryFeatureFlags(const VkExternalMemoryFeatureFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkExternalMemoryFeatureFlagBits((VkExternalMemoryFeatureFlagBits) object, settings, indents);
 }
-void dump_text_VkExternalFenceHandleTypeFlags(VkExternalFenceHandleTypeFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExternalFenceHandleTypeFlags(const VkExternalFenceHandleTypeFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkExternalFenceHandleTypeFlagBits((VkExternalFenceHandleTypeFlagBits) object, settings, indents);
 }
-void dump_text_VkExternalFenceFeatureFlags(VkExternalFenceFeatureFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExternalFenceFeatureFlags(const VkExternalFenceFeatureFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkExternalFenceFeatureFlagBits((VkExternalFenceFeatureFlagBits) object, settings, indents);
 }
-void dump_text_VkFenceImportFlags(VkFenceImportFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFenceImportFlags(const VkFenceImportFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkFenceImportFlagBits((VkFenceImportFlagBits) object, settings, indents);
 }
-void dump_text_VkSemaphoreImportFlags(VkSemaphoreImportFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSemaphoreImportFlags(const VkSemaphoreImportFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkSemaphoreImportFlagBits((VkSemaphoreImportFlagBits) object, settings, indents);
 }
-void dump_text_VkExternalSemaphoreHandleTypeFlags(VkExternalSemaphoreHandleTypeFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExternalSemaphoreHandleTypeFlags(const VkExternalSemaphoreHandleTypeFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkExternalSemaphoreHandleTypeFlagBits((VkExternalSemaphoreHandleTypeFlagBits) object, settings, indents);
 }
-void dump_text_VkExternalSemaphoreFeatureFlags(VkExternalSemaphoreFeatureFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExternalSemaphoreFeatureFlags(const VkExternalSemaphoreFeatureFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkExternalSemaphoreFeatureFlagBits((VkExternalSemaphoreFeatureFlagBits) object, settings, indents);
 }
-void dump_text_VkResolveModeFlags(VkResolveModeFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkResolveModeFlags(const VkResolveModeFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkResolveModeFlagBits((VkResolveModeFlagBits) object, settings, indents);
 }
-void dump_text_VkDescriptorBindingFlags(VkDescriptorBindingFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDescriptorBindingFlags(const VkDescriptorBindingFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkDescriptorBindingFlagBits((VkDescriptorBindingFlagBits) object, settings, indents);
 }
-void dump_text_VkSemaphoreWaitFlags(VkSemaphoreWaitFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSemaphoreWaitFlags(const VkSemaphoreWaitFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkSemaphoreWaitFlagBits((VkSemaphoreWaitFlagBits) object, settings, indents);
 }
-void dump_text_VkPipelineCreationFeedbackFlags(VkPipelineCreationFeedbackFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineCreationFeedbackFlags(const VkPipelineCreationFeedbackFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkPipelineCreationFeedbackFlagBits((VkPipelineCreationFeedbackFlagBits) object, settings, indents);
 }
-void dump_text_VkToolPurposeFlags(VkToolPurposeFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkToolPurposeFlags(const VkToolPurposeFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkToolPurposeFlagBits((VkToolPurposeFlagBits) object, settings, indents);
 }
-void dump_text_VkPipelineStageFlags2(VkPipelineStageFlags2 object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineStageFlags2(const VkPipelineStageFlags2& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkPipelineStageFlagBits2((VkPipelineStageFlagBits2) object, settings, indents);
 }
-void dump_text_VkAccessFlags2(VkAccessFlags2 object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAccessFlags2(const VkAccessFlags2& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkAccessFlagBits2((VkAccessFlagBits2) object, settings, indents);
 }
-void dump_text_VkSubmitFlags(VkSubmitFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSubmitFlags(const VkSubmitFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkSubmitFlagBits((VkSubmitFlagBits) object, settings, indents);
 }
-void dump_text_VkRenderingFlags(VkRenderingFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkRenderingFlags(const VkRenderingFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkRenderingFlagBits((VkRenderingFlagBits) object, settings, indents);
 }
-void dump_text_VkFormatFeatureFlags2(VkFormatFeatureFlags2 object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFormatFeatureFlags2(const VkFormatFeatureFlags2& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkFormatFeatureFlagBits2((VkFormatFeatureFlagBits2) object, settings, indents);
 }
-void dump_text_VkMemoryUnmapFlags(VkMemoryUnmapFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMemoryUnmapFlags(const VkMemoryUnmapFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkMemoryUnmapFlagBits((VkMemoryUnmapFlagBits) object, settings, indents);
 }
-void dump_text_VkPipelineCreateFlags2(VkPipelineCreateFlags2 object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineCreateFlags2(const VkPipelineCreateFlags2& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkPipelineCreateFlagBits2((VkPipelineCreateFlagBits2) object, settings, indents);
 }
-void dump_text_VkBufferUsageFlags2(VkBufferUsageFlags2 object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBufferUsageFlags2(const VkBufferUsageFlags2& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkBufferUsageFlagBits2((VkBufferUsageFlagBits2) object, settings, indents);
 }
-void dump_text_VkHostImageCopyFlags(VkHostImageCopyFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkHostImageCopyFlags(const VkHostImageCopyFlags& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkHostImageCopyFlagBits((VkHostImageCopyFlagBits) object, settings, indents);
 }
-void dump_text_VkSurfaceTransformFlagsKHR(VkSurfaceTransformFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSurfaceTransformFlagsKHR(const VkSurfaceTransformFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkSurfaceTransformFlagBitsKHR((VkSurfaceTransformFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkCompositeAlphaFlagsKHR(VkCompositeAlphaFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCompositeAlphaFlagsKHR(const VkCompositeAlphaFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkCompositeAlphaFlagBitsKHR((VkCompositeAlphaFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkSwapchainCreateFlagsKHR(VkSwapchainCreateFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSwapchainCreateFlagsKHR(const VkSwapchainCreateFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkSwapchainCreateFlagBitsKHR((VkSwapchainCreateFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkDeviceGroupPresentModeFlagsKHR(VkDeviceGroupPresentModeFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeviceGroupPresentModeFlagsKHR(const VkDeviceGroupPresentModeFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkDeviceGroupPresentModeFlagBitsKHR((VkDeviceGroupPresentModeFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkDisplayPlaneAlphaFlagsKHR(VkDisplayPlaneAlphaFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDisplayPlaneAlphaFlagsKHR(const VkDisplayPlaneAlphaFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkDisplayPlaneAlphaFlagBitsKHR((VkDisplayPlaneAlphaFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoCodecOperationFlagsKHR(VkVideoCodecOperationFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoCodecOperationFlagsKHR(const VkVideoCodecOperationFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoCodecOperationFlagBitsKHR((VkVideoCodecOperationFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoChromaSubsamplingFlagsKHR(VkVideoChromaSubsamplingFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoChromaSubsamplingFlagsKHR(const VkVideoChromaSubsamplingFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoChromaSubsamplingFlagBitsKHR((VkVideoChromaSubsamplingFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoComponentBitDepthFlagsKHR(VkVideoComponentBitDepthFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoComponentBitDepthFlagsKHR(const VkVideoComponentBitDepthFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoComponentBitDepthFlagBitsKHR((VkVideoComponentBitDepthFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoCapabilityFlagsKHR(VkVideoCapabilityFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoCapabilityFlagsKHR(const VkVideoCapabilityFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoCapabilityFlagBitsKHR((VkVideoCapabilityFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoSessionCreateFlagsKHR(VkVideoSessionCreateFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoSessionCreateFlagsKHR(const VkVideoSessionCreateFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoSessionCreateFlagBitsKHR((VkVideoSessionCreateFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoSessionParametersCreateFlagsKHR(VkVideoSessionParametersCreateFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoSessionParametersCreateFlagsKHR(const VkVideoSessionParametersCreateFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoSessionParametersCreateFlagBitsKHR((VkVideoSessionParametersCreateFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoCodingControlFlagsKHR(VkVideoCodingControlFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoCodingControlFlagsKHR(const VkVideoCodingControlFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoCodingControlFlagBitsKHR((VkVideoCodingControlFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoDecodeCapabilityFlagsKHR(VkVideoDecodeCapabilityFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoDecodeCapabilityFlagsKHR(const VkVideoDecodeCapabilityFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoDecodeCapabilityFlagBitsKHR((VkVideoDecodeCapabilityFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoDecodeUsageFlagsKHR(VkVideoDecodeUsageFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoDecodeUsageFlagsKHR(const VkVideoDecodeUsageFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoDecodeUsageFlagBitsKHR((VkVideoDecodeUsageFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoEncodeH264CapabilityFlagsKHR(VkVideoEncodeH264CapabilityFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeH264CapabilityFlagsKHR(const VkVideoEncodeH264CapabilityFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoEncodeH264CapabilityFlagBitsKHR((VkVideoEncodeH264CapabilityFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoEncodeH264StdFlagsKHR(VkVideoEncodeH264StdFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeH264StdFlagsKHR(const VkVideoEncodeH264StdFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoEncodeH264StdFlagBitsKHR((VkVideoEncodeH264StdFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoEncodeH264RateControlFlagsKHR(VkVideoEncodeH264RateControlFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeH264RateControlFlagsKHR(const VkVideoEncodeH264RateControlFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoEncodeH264RateControlFlagBitsKHR((VkVideoEncodeH264RateControlFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoEncodeH265CapabilityFlagsKHR(VkVideoEncodeH265CapabilityFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeH265CapabilityFlagsKHR(const VkVideoEncodeH265CapabilityFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoEncodeH265CapabilityFlagBitsKHR((VkVideoEncodeH265CapabilityFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoEncodeH265StdFlagsKHR(VkVideoEncodeH265StdFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeH265StdFlagsKHR(const VkVideoEncodeH265StdFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoEncodeH265StdFlagBitsKHR((VkVideoEncodeH265StdFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoEncodeH265CtbSizeFlagsKHR(VkVideoEncodeH265CtbSizeFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeH265CtbSizeFlagsKHR(const VkVideoEncodeH265CtbSizeFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoEncodeH265CtbSizeFlagBitsKHR((VkVideoEncodeH265CtbSizeFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoEncodeH265TransformBlockSizeFlagsKHR(VkVideoEncodeH265TransformBlockSizeFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeH265TransformBlockSizeFlagsKHR(const VkVideoEncodeH265TransformBlockSizeFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoEncodeH265TransformBlockSizeFlagBitsKHR((VkVideoEncodeH265TransformBlockSizeFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoEncodeH265RateControlFlagsKHR(VkVideoEncodeH265RateControlFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeH265RateControlFlagsKHR(const VkVideoEncodeH265RateControlFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoEncodeH265RateControlFlagBitsKHR((VkVideoEncodeH265RateControlFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoDecodeH264PictureLayoutFlagsKHR(VkVideoDecodeH264PictureLayoutFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoDecodeH264PictureLayoutFlagsKHR(const VkVideoDecodeH264PictureLayoutFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoDecodeH264PictureLayoutFlagBitsKHR((VkVideoDecodeH264PictureLayoutFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkPerformanceCounterDescriptionFlagsKHR(VkPerformanceCounterDescriptionFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPerformanceCounterDescriptionFlagsKHR(const VkPerformanceCounterDescriptionFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkPerformanceCounterDescriptionFlagBitsKHR((VkPerformanceCounterDescriptionFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkAcquireProfilingLockFlagsKHR(VkAcquireProfilingLockFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAcquireProfilingLockFlagsKHR(const VkAcquireProfilingLockFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkAcquireProfilingLockFlagBitsKHR((VkAcquireProfilingLockFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoEncodeFlagsKHR(VkVideoEncodeFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeFlagsKHR(const VkVideoEncodeFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoEncodeFlagBitsKHR((VkVideoEncodeFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoEncodeCapabilityFlagsKHR(VkVideoEncodeCapabilityFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeCapabilityFlagsKHR(const VkVideoEncodeCapabilityFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoEncodeCapabilityFlagBitsKHR((VkVideoEncodeCapabilityFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoEncodeRateControlModeFlagsKHR(VkVideoEncodeRateControlModeFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeRateControlModeFlagsKHR(const VkVideoEncodeRateControlModeFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoEncodeRateControlModeFlagBitsKHR((VkVideoEncodeRateControlModeFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoEncodeFeedbackFlagsKHR(VkVideoEncodeFeedbackFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeFeedbackFlagsKHR(const VkVideoEncodeFeedbackFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoEncodeFeedbackFlagBitsKHR((VkVideoEncodeFeedbackFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoEncodeUsageFlagsKHR(VkVideoEncodeUsageFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeUsageFlagsKHR(const VkVideoEncodeUsageFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoEncodeUsageFlagBitsKHR((VkVideoEncodeUsageFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoEncodeContentFlagsKHR(VkVideoEncodeContentFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeContentFlagsKHR(const VkVideoEncodeContentFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoEncodeContentFlagBitsKHR((VkVideoEncodeContentFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoEncodeAV1CapabilityFlagsKHR(VkVideoEncodeAV1CapabilityFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeAV1CapabilityFlagsKHR(const VkVideoEncodeAV1CapabilityFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoEncodeAV1CapabilityFlagBitsKHR((VkVideoEncodeAV1CapabilityFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoEncodeAV1StdFlagsKHR(VkVideoEncodeAV1StdFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeAV1StdFlagsKHR(const VkVideoEncodeAV1StdFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoEncodeAV1StdFlagBitsKHR((VkVideoEncodeAV1StdFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoEncodeAV1SuperblockSizeFlagsKHR(VkVideoEncodeAV1SuperblockSizeFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeAV1SuperblockSizeFlagsKHR(const VkVideoEncodeAV1SuperblockSizeFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoEncodeAV1SuperblockSizeFlagBitsKHR((VkVideoEncodeAV1SuperblockSizeFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkVideoEncodeAV1RateControlFlagsKHR(VkVideoEncodeAV1RateControlFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeAV1RateControlFlagsKHR(const VkVideoEncodeAV1RateControlFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkVideoEncodeAV1RateControlFlagBitsKHR((VkVideoEncodeAV1RateControlFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkAccessFlags3KHR(VkAccessFlags3KHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAccessFlags3KHR(const VkAccessFlags3KHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkAccessFlagBits3KHR((VkAccessFlagBits3KHR) object, settings, indents);
 }
-void dump_text_VkDebugReportFlagsEXT(VkDebugReportFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDebugReportFlagsEXT(const VkDebugReportFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkDebugReportFlagBitsEXT((VkDebugReportFlagBitsEXT) object, settings, indents);
 }
-void dump_text_VkExternalMemoryHandleTypeFlagsNV(VkExternalMemoryHandleTypeFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExternalMemoryHandleTypeFlagsNV(const VkExternalMemoryHandleTypeFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkExternalMemoryHandleTypeFlagBitsNV((VkExternalMemoryHandleTypeFlagBitsNV) object, settings, indents);
 }
-void dump_text_VkExternalMemoryFeatureFlagsNV(VkExternalMemoryFeatureFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExternalMemoryFeatureFlagsNV(const VkExternalMemoryFeatureFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkExternalMemoryFeatureFlagBitsNV((VkExternalMemoryFeatureFlagBitsNV) object, settings, indents);
 }
-void dump_text_VkConditionalRenderingFlagsEXT(VkConditionalRenderingFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkConditionalRenderingFlagsEXT(const VkConditionalRenderingFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkConditionalRenderingFlagBitsEXT((VkConditionalRenderingFlagBitsEXT) object, settings, indents);
 }
-void dump_text_VkSurfaceCounterFlagsEXT(VkSurfaceCounterFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSurfaceCounterFlagsEXT(const VkSurfaceCounterFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkSurfaceCounterFlagBitsEXT((VkSurfaceCounterFlagBitsEXT) object, settings, indents);
 }
-void dump_text_VkDebugUtilsMessageSeverityFlagsEXT(VkDebugUtilsMessageSeverityFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDebugUtilsMessageSeverityFlagsEXT(const VkDebugUtilsMessageSeverityFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkDebugUtilsMessageSeverityFlagBitsEXT((VkDebugUtilsMessageSeverityFlagBitsEXT) object, settings, indents);
 }
-void dump_text_VkDebugUtilsMessageTypeFlagsEXT(VkDebugUtilsMessageTypeFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDebugUtilsMessageTypeFlagsEXT(const VkDebugUtilsMessageTypeFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkDebugUtilsMessageTypeFlagBitsEXT((VkDebugUtilsMessageTypeFlagBitsEXT) object, settings, indents);
 }
-void dump_text_VkGeometryFlagsKHR(VkGeometryFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkGeometryFlagsKHR(const VkGeometryFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkGeometryFlagBitsKHR((VkGeometryFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkGeometryInstanceFlagsKHR(VkGeometryInstanceFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkGeometryInstanceFlagsKHR(const VkGeometryInstanceFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkGeometryInstanceFlagBitsKHR((VkGeometryInstanceFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkBuildAccelerationStructureFlagsKHR(VkBuildAccelerationStructureFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBuildAccelerationStructureFlagsKHR(const VkBuildAccelerationStructureFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkBuildAccelerationStructureFlagBitsKHR((VkBuildAccelerationStructureFlagBitsKHR) object, settings, indents);
 }
-void dump_text_VkPipelineCompilerControlFlagsAMD(VkPipelineCompilerControlFlagsAMD object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineCompilerControlFlagsAMD(const VkPipelineCompilerControlFlagsAMD& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkPipelineCompilerControlFlagBitsAMD((VkPipelineCompilerControlFlagBitsAMD) object, settings, indents);
 }
-void dump_text_VkShaderCorePropertiesFlagsAMD(VkShaderCorePropertiesFlagsAMD object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkShaderCorePropertiesFlagsAMD(const VkShaderCorePropertiesFlagsAMD& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkShaderCorePropertiesFlagBitsAMD((VkShaderCorePropertiesFlagBitsAMD) object, settings, indents);
 }
-void dump_text_VkPresentScalingFlagsEXT(VkPresentScalingFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPresentScalingFlagsEXT(const VkPresentScalingFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkPresentScalingFlagBitsEXT((VkPresentScalingFlagBitsEXT) object, settings, indents);
 }
-void dump_text_VkPresentGravityFlagsEXT(VkPresentGravityFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPresentGravityFlagsEXT(const VkPresentGravityFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkPresentGravityFlagBitsEXT((VkPresentGravityFlagBitsEXT) object, settings, indents);
 }
-void dump_text_VkIndirectStateFlagsNV(VkIndirectStateFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkIndirectStateFlagsNV(const VkIndirectStateFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkIndirectStateFlagBitsNV((VkIndirectStateFlagBitsNV) object, settings, indents);
 }
-void dump_text_VkIndirectCommandsLayoutUsageFlagsNV(VkIndirectCommandsLayoutUsageFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkIndirectCommandsLayoutUsageFlagsNV(const VkIndirectCommandsLayoutUsageFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkIndirectCommandsLayoutUsageFlagBitsNV((VkIndirectCommandsLayoutUsageFlagBitsNV) object, settings, indents);
 }
-void dump_text_VkDeviceDiagnosticsConfigFlagsNV(VkDeviceDiagnosticsConfigFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeviceDiagnosticsConfigFlagsNV(const VkDeviceDiagnosticsConfigFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkDeviceDiagnosticsConfigFlagBitsNV((VkDeviceDiagnosticsConfigFlagBitsNV) object, settings, indents);
 }
-void dump_text_VkTileShadingRenderPassFlagsQCOM(VkTileShadingRenderPassFlagsQCOM object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkTileShadingRenderPassFlagsQCOM(const VkTileShadingRenderPassFlagsQCOM& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkTileShadingRenderPassFlagBitsQCOM((VkTileShadingRenderPassFlagBitsQCOM) object, settings, indents);
 }
 #if defined(VK_USE_PLATFORM_METAL_EXT)
-void dump_text_VkExportMetalObjectTypeFlagsEXT(VkExportMetalObjectTypeFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkExportMetalObjectTypeFlagsEXT(const VkExportMetalObjectTypeFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkExportMetalObjectTypeFlagBitsEXT((VkExportMetalObjectTypeFlagBitsEXT) object, settings, indents);
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
-void dump_text_VkGraphicsPipelineLibraryFlagsEXT(VkGraphicsPipelineLibraryFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkGraphicsPipelineLibraryFlagsEXT(const VkGraphicsPipelineLibraryFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkGraphicsPipelineLibraryFlagBitsEXT((VkGraphicsPipelineLibraryFlagBitsEXT) object, settings, indents);
 }
-void dump_text_VkImageCompressionFlagsEXT(VkImageCompressionFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageCompressionFlagsEXT(const VkImageCompressionFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkImageCompressionFlagBitsEXT((VkImageCompressionFlagBitsEXT) object, settings, indents);
 }
-void dump_text_VkImageCompressionFixedRateFlagsEXT(VkImageCompressionFixedRateFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageCompressionFixedRateFlagsEXT(const VkImageCompressionFixedRateFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkImageCompressionFixedRateFlagBitsEXT((VkImageCompressionFixedRateFlagBitsEXT) object, settings, indents);
 }
-void dump_text_VkDeviceAddressBindingFlagsEXT(VkDeviceAddressBindingFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeviceAddressBindingFlagsEXT(const VkDeviceAddressBindingFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkDeviceAddressBindingFlagBitsEXT((VkDeviceAddressBindingFlagBitsEXT) object, settings, indents);
 }
 #if defined(VK_USE_PLATFORM_FUCHSIA)
-void dump_text_VkImageConstraintsInfoFlagsFUCHSIA(VkImageConstraintsInfoFlagsFUCHSIA object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageConstraintsInfoFlagsFUCHSIA(const VkImageConstraintsInfoFlagsFUCHSIA& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkImageConstraintsInfoFlagBitsFUCHSIA((VkImageConstraintsInfoFlagBitsFUCHSIA) object, settings, indents);
 }
 #endif // VK_USE_PLATFORM_FUCHSIA
-void dump_text_VkFrameBoundaryFlagsEXT(VkFrameBoundaryFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkFrameBoundaryFlagsEXT(const VkFrameBoundaryFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkFrameBoundaryFlagBitsEXT((VkFrameBoundaryFlagBitsEXT) object, settings, indents);
 }
-void dump_text_VkBuildMicromapFlagsEXT(VkBuildMicromapFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBuildMicromapFlagsEXT(const VkBuildMicromapFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkBuildMicromapFlagBitsEXT((VkBuildMicromapFlagBitsEXT) object, settings, indents);
 }
-void dump_text_VkMicromapCreateFlagsEXT(VkMicromapCreateFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMicromapCreateFlagsEXT(const VkMicromapCreateFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkMicromapCreateFlagBitsEXT((VkMicromapCreateFlagBitsEXT) object, settings, indents);
 }
-void dump_text_VkPhysicalDeviceSchedulingControlsFlagsARM(VkPhysicalDeviceSchedulingControlsFlagsARM object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPhysicalDeviceSchedulingControlsFlagsARM(const VkPhysicalDeviceSchedulingControlsFlagsARM& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkPhysicalDeviceSchedulingControlsFlagBitsARM((VkPhysicalDeviceSchedulingControlsFlagBitsARM) object, settings, indents);
 }
-void dump_text_VkMemoryDecompressionMethodFlagsNV(VkMemoryDecompressionMethodFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMemoryDecompressionMethodFlagsNV(const VkMemoryDecompressionMethodFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkMemoryDecompressionMethodFlagBitsNV((VkMemoryDecompressionMethodFlagBitsNV) object, settings, indents);
 }
-void dump_text_VkTensorCreateFlagsARM(VkTensorCreateFlagsARM object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkTensorCreateFlagsARM(const VkTensorCreateFlagsARM& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkTensorCreateFlagBitsARM((VkTensorCreateFlagBitsARM) object, settings, indents);
 }
-void dump_text_VkTensorViewCreateFlagsARM(VkTensorViewCreateFlagsARM object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkTensorViewCreateFlagsARM(const VkTensorViewCreateFlagsARM& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkTensorViewCreateFlagBitsARM((VkTensorViewCreateFlagBitsARM) object, settings, indents);
 }
-void dump_text_VkTensorUsageFlagsARM(VkTensorUsageFlagsARM object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkTensorUsageFlagsARM(const VkTensorUsageFlagsARM& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkTensorUsageFlagBitsARM((VkTensorUsageFlagBitsARM) object, settings, indents);
 }
-void dump_text_VkOpticalFlowGridSizeFlagsNV(VkOpticalFlowGridSizeFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkOpticalFlowGridSizeFlagsNV(const VkOpticalFlowGridSizeFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkOpticalFlowGridSizeFlagBitsNV((VkOpticalFlowGridSizeFlagBitsNV) object, settings, indents);
 }
-void dump_text_VkOpticalFlowUsageFlagsNV(VkOpticalFlowUsageFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkOpticalFlowUsageFlagsNV(const VkOpticalFlowUsageFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkOpticalFlowUsageFlagBitsNV((VkOpticalFlowUsageFlagBitsNV) object, settings, indents);
 }
-void dump_text_VkOpticalFlowSessionCreateFlagsNV(VkOpticalFlowSessionCreateFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkOpticalFlowSessionCreateFlagsNV(const VkOpticalFlowSessionCreateFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkOpticalFlowSessionCreateFlagBitsNV((VkOpticalFlowSessionCreateFlagBitsNV) object, settings, indents);
 }
-void dump_text_VkOpticalFlowExecuteFlagsNV(VkOpticalFlowExecuteFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkOpticalFlowExecuteFlagsNV(const VkOpticalFlowExecuteFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkOpticalFlowExecuteFlagBitsNV((VkOpticalFlowExecuteFlagBitsNV) object, settings, indents);
 }
-void dump_text_VkShaderCreateFlagsEXT(VkShaderCreateFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkShaderCreateFlagsEXT(const VkShaderCreateFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkShaderCreateFlagBitsEXT((VkShaderCreateFlagBitsEXT) object, settings, indents);
 }
-void dump_text_VkClusterAccelerationStructureAddressResolutionFlagsNV(VkClusterAccelerationStructureAddressResolutionFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkClusterAccelerationStructureAddressResolutionFlagsNV(const VkClusterAccelerationStructureAddressResolutionFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkClusterAccelerationStructureAddressResolutionFlagBitsNV((VkClusterAccelerationStructureAddressResolutionFlagBitsNV) object, settings, indents);
 }
-void dump_text_VkClusterAccelerationStructureClusterFlagsNV(VkClusterAccelerationStructureClusterFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkClusterAccelerationStructureClusterFlagsNV(const VkClusterAccelerationStructureClusterFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkClusterAccelerationStructureClusterFlagBitsNV((VkClusterAccelerationStructureClusterFlagBitsNV) object, settings, indents);
 }
-void dump_text_VkClusterAccelerationStructureGeometryFlagsNV(VkClusterAccelerationStructureGeometryFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkClusterAccelerationStructureGeometryFlagsNV(const VkClusterAccelerationStructureGeometryFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkClusterAccelerationStructureGeometryFlagBitsNV((VkClusterAccelerationStructureGeometryFlagBitsNV) object, settings, indents);
 }
-void dump_text_VkClusterAccelerationStructureIndexFormatFlagsNV(VkClusterAccelerationStructureIndexFormatFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkClusterAccelerationStructureIndexFormatFlagsNV(const VkClusterAccelerationStructureIndexFormatFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkClusterAccelerationStructureIndexFormatFlagBitsNV((VkClusterAccelerationStructureIndexFormatFlagBitsNV) object, settings, indents);
 }
-void dump_text_VkPartitionedAccelerationStructureInstanceFlagsNV(VkPartitionedAccelerationStructureInstanceFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPartitionedAccelerationStructureInstanceFlagsNV(const VkPartitionedAccelerationStructureInstanceFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkPartitionedAccelerationStructureInstanceFlagBitsNV((VkPartitionedAccelerationStructureInstanceFlagBitsNV) object, settings, indents);
 }
-void dump_text_VkIndirectCommandsInputModeFlagsEXT(VkIndirectCommandsInputModeFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkIndirectCommandsInputModeFlagsEXT(const VkIndirectCommandsInputModeFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkIndirectCommandsInputModeFlagBitsEXT((VkIndirectCommandsInputModeFlagBitsEXT) object, settings, indents);
 }
-void dump_text_VkIndirectCommandsLayoutUsageFlagsEXT(VkIndirectCommandsLayoutUsageFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkIndirectCommandsLayoutUsageFlagsEXT(const VkIndirectCommandsLayoutUsageFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkIndirectCommandsLayoutUsageFlagBitsEXT((VkIndirectCommandsLayoutUsageFlagBitsEXT) object, settings, indents);
 }
-void dump_text_VkAccelerationStructureCreateFlagsKHR(VkAccelerationStructureCreateFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAccelerationStructureCreateFlagsKHR(const VkAccelerationStructureCreateFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     dump_text_VkAccelerationStructureCreateFlagBitsKHR((VkAccelerationStructureCreateFlagBitsKHR) object, settings, indents);
 }
 
 
-void dump_text_VkDeviceCreateFlags(VkDeviceCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeviceCreateFlags(const VkDeviceCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkSemaphoreCreateFlags(VkSemaphoreCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSemaphoreCreateFlags(const VkSemaphoreCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkBufferViewCreateFlags(VkBufferViewCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkBufferViewCreateFlags(const VkBufferViewCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkShaderModuleCreateFlags(VkShaderModuleCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkShaderModuleCreateFlags(const VkShaderModuleCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkPipelineVertexInputStateCreateFlags(VkPipelineVertexInputStateCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineVertexInputStateCreateFlags(const VkPipelineVertexInputStateCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkPipelineInputAssemblyStateCreateFlags(VkPipelineInputAssemblyStateCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineInputAssemblyStateCreateFlags(const VkPipelineInputAssemblyStateCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkPipelineTessellationStateCreateFlags(VkPipelineTessellationStateCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineTessellationStateCreateFlags(const VkPipelineTessellationStateCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkPipelineViewportStateCreateFlags(VkPipelineViewportStateCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineViewportStateCreateFlags(const VkPipelineViewportStateCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkPipelineRasterizationStateCreateFlags(VkPipelineRasterizationStateCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineRasterizationStateCreateFlags(const VkPipelineRasterizationStateCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkPipelineMultisampleStateCreateFlags(VkPipelineMultisampleStateCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineMultisampleStateCreateFlags(const VkPipelineMultisampleStateCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkPipelineDynamicStateCreateFlags(VkPipelineDynamicStateCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineDynamicStateCreateFlags(const VkPipelineDynamicStateCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkDescriptorPoolResetFlags(VkDescriptorPoolResetFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDescriptorPoolResetFlags(const VkDescriptorPoolResetFlags& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkCommandPoolTrimFlags(VkCommandPoolTrimFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkCommandPoolTrimFlags(const VkCommandPoolTrimFlags& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkDescriptorUpdateTemplateCreateFlags(VkDescriptorUpdateTemplateCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDescriptorUpdateTemplateCreateFlags(const VkDescriptorUpdateTemplateCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkPrivateDataSlotCreateFlags(VkPrivateDataSlotCreateFlags object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPrivateDataSlotCreateFlags(const VkPrivateDataSlotCreateFlags& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkDisplayModeCreateFlagsKHR(VkDisplayModeCreateFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDisplayModeCreateFlagsKHR(const VkDisplayModeCreateFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkDisplaySurfaceCreateFlagsKHR(VkDisplaySurfaceCreateFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDisplaySurfaceCreateFlagsKHR(const VkDisplaySurfaceCreateFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #if defined(VK_USE_PLATFORM_XLIB_KHR)
-void dump_text_VkXlibSurfaceCreateFlagsKHR(VkXlibSurfaceCreateFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkXlibSurfaceCreateFlagsKHR(const VkXlibSurfaceCreateFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_XLIB_KHR
 #if defined(VK_USE_PLATFORM_XCB_KHR)
-void dump_text_VkXcbSurfaceCreateFlagsKHR(VkXcbSurfaceCreateFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkXcbSurfaceCreateFlagsKHR(const VkXcbSurfaceCreateFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_XCB_KHR
 #if defined(VK_USE_PLATFORM_WAYLAND_KHR)
-void dump_text_VkWaylandSurfaceCreateFlagsKHR(VkWaylandSurfaceCreateFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkWaylandSurfaceCreateFlagsKHR(const VkWaylandSurfaceCreateFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_WAYLAND_KHR
 #if defined(VK_USE_PLATFORM_ANDROID_KHR)
-void dump_text_VkAndroidSurfaceCreateFlagsKHR(VkAndroidSurfaceCreateFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAndroidSurfaceCreateFlagsKHR(const VkAndroidSurfaceCreateFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_ANDROID_KHR
 #if defined(VK_USE_PLATFORM_WIN32_KHR)
-void dump_text_VkWin32SurfaceCreateFlagsKHR(VkWin32SurfaceCreateFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkWin32SurfaceCreateFlagsKHR(const VkWin32SurfaceCreateFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_WIN32_KHR
-void dump_text_VkVideoBeginCodingFlagsKHR(VkVideoBeginCodingFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoBeginCodingFlagsKHR(const VkVideoBeginCodingFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkVideoEndCodingFlagsKHR(VkVideoEndCodingFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEndCodingFlagsKHR(const VkVideoEndCodingFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkVideoDecodeFlagsKHR(VkVideoDecodeFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoDecodeFlagsKHR(const VkVideoDecodeFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkVideoEncodeRateControlFlagsKHR(VkVideoEncodeRateControlFlagsKHR object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkVideoEncodeRateControlFlagsKHR(const VkVideoEncodeRateControlFlagsKHR& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkPipelineRasterizationStateStreamCreateFlagsEXT(VkPipelineRasterizationStateStreamCreateFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineRasterizationStateStreamCreateFlagsEXT(const VkPipelineRasterizationStateStreamCreateFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #if defined(VK_USE_PLATFORM_GGP)
-void dump_text_VkStreamDescriptorSurfaceCreateFlagsGGP(VkStreamDescriptorSurfaceCreateFlagsGGP object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkStreamDescriptorSurfaceCreateFlagsGGP(const VkStreamDescriptorSurfaceCreateFlagsGGP& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_GGP
 #if defined(VK_USE_PLATFORM_VI_NN)
-void dump_text_VkViSurfaceCreateFlagsNN(VkViSurfaceCreateFlagsNN object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkViSurfaceCreateFlagsNN(const VkViSurfaceCreateFlagsNN& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_VI_NN
-void dump_text_VkPipelineViewportSwizzleStateCreateFlagsNV(VkPipelineViewportSwizzleStateCreateFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineViewportSwizzleStateCreateFlagsNV(const VkPipelineViewportSwizzleStateCreateFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkPipelineDiscardRectangleStateCreateFlagsEXT(VkPipelineDiscardRectangleStateCreateFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineDiscardRectangleStateCreateFlagsEXT(const VkPipelineDiscardRectangleStateCreateFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkPipelineRasterizationConservativeStateCreateFlagsEXT(VkPipelineRasterizationConservativeStateCreateFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineRasterizationConservativeStateCreateFlagsEXT(const VkPipelineRasterizationConservativeStateCreateFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkPipelineRasterizationDepthClipStateCreateFlagsEXT(VkPipelineRasterizationDepthClipStateCreateFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineRasterizationDepthClipStateCreateFlagsEXT(const VkPipelineRasterizationDepthClipStateCreateFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #if defined(VK_USE_PLATFORM_IOS_MVK)
-void dump_text_VkIOSSurfaceCreateFlagsMVK(VkIOSSurfaceCreateFlagsMVK object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkIOSSurfaceCreateFlagsMVK(const VkIOSSurfaceCreateFlagsMVK& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_IOS_MVK
 #if defined(VK_USE_PLATFORM_MACOS_MVK)
-void dump_text_VkMacOSSurfaceCreateFlagsMVK(VkMacOSSurfaceCreateFlagsMVK object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMacOSSurfaceCreateFlagsMVK(const VkMacOSSurfaceCreateFlagsMVK& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_MACOS_MVK
-void dump_text_VkDebugUtilsMessengerCallbackDataFlagsEXT(VkDebugUtilsMessengerCallbackDataFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDebugUtilsMessengerCallbackDataFlagsEXT(const VkDebugUtilsMessengerCallbackDataFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkDebugUtilsMessengerCreateFlagsEXT(VkDebugUtilsMessengerCreateFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDebugUtilsMessengerCreateFlagsEXT(const VkDebugUtilsMessengerCreateFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkPipelineCoverageToColorStateCreateFlagsNV(VkPipelineCoverageToColorStateCreateFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineCoverageToColorStateCreateFlagsNV(const VkPipelineCoverageToColorStateCreateFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkPipelineCoverageModulationStateCreateFlagsNV(VkPipelineCoverageModulationStateCreateFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineCoverageModulationStateCreateFlagsNV(const VkPipelineCoverageModulationStateCreateFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkValidationCacheCreateFlagsEXT(VkValidationCacheCreateFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkValidationCacheCreateFlagsEXT(const VkValidationCacheCreateFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #if defined(VK_USE_PLATFORM_FUCHSIA)
-void dump_text_VkImagePipeSurfaceCreateFlagsFUCHSIA(VkImagePipeSurfaceCreateFlagsFUCHSIA object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImagePipeSurfaceCreateFlagsFUCHSIA(const VkImagePipeSurfaceCreateFlagsFUCHSIA& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_FUCHSIA
 #if defined(VK_USE_PLATFORM_METAL_EXT)
-void dump_text_VkMetalSurfaceCreateFlagsEXT(VkMetalSurfaceCreateFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkMetalSurfaceCreateFlagsEXT(const VkMetalSurfaceCreateFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_METAL_EXT
-void dump_text_VkPipelineCoverageReductionStateCreateFlagsNV(VkPipelineCoverageReductionStateCreateFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkPipelineCoverageReductionStateCreateFlagsNV(const VkPipelineCoverageReductionStateCreateFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkHeadlessSurfaceCreateFlagsEXT(VkHeadlessSurfaceCreateFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkHeadlessSurfaceCreateFlagsEXT(const VkHeadlessSurfaceCreateFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkDeviceMemoryReportFlagsEXT(VkDeviceMemoryReportFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDeviceMemoryReportFlagsEXT(const VkDeviceMemoryReportFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkAccelerationStructureMotionInfoFlagsNV(VkAccelerationStructureMotionInfoFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAccelerationStructureMotionInfoFlagsNV(const VkAccelerationStructureMotionInfoFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
-void dump_text_VkAccelerationStructureMotionInstanceFlagsNV(VkAccelerationStructureMotionInstanceFlagsNV object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkAccelerationStructureMotionInstanceFlagsNV(const VkAccelerationStructureMotionInstanceFlagsNV& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #if defined(VK_USE_PLATFORM_DIRECTFB_EXT)
-void dump_text_VkDirectFBSurfaceCreateFlagsEXT(VkDirectFBSurfaceCreateFlagsEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDirectFBSurfaceCreateFlagsEXT(const VkDirectFBSurfaceCreateFlagsEXT& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_DIRECTFB_EXT
 #if defined(VK_USE_PLATFORM_FUCHSIA)
-void dump_text_VkImageFormatConstraintsFlagsFUCHSIA(VkImageFormatConstraintsFlagsFUCHSIA object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkImageFormatConstraintsFlagsFUCHSIA(const VkImageFormatConstraintsFlagsFUCHSIA& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_FUCHSIA
 #if defined(VK_USE_PLATFORM_SCREEN_QNX)
-void dump_text_VkScreenSurfaceCreateFlagsQNX(VkScreenSurfaceCreateFlagsQNX object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkScreenSurfaceCreateFlagsQNX(const VkScreenSurfaceCreateFlagsQNX& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #endif // VK_USE_PLATFORM_SCREEN_QNX
-void dump_text_VkDirectDriverLoadingFlagsLUNARG(VkDirectDriverLoadingFlagsLUNARG object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkDirectDriverLoadingFlagsLUNARG(const VkDirectDriverLoadingFlagsLUNARG& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
 #if defined(VK_USE_PLATFORM_OHOS)
-void dump_text_VkSurfaceCreateFlagsOHOS(VkSurfaceCreateFlagsOHOS object, const ApiDumpSettings& settings, int indents)
+void dump_text_VkSurfaceCreateFlagsOHOS(const VkSurfaceCreateFlagsOHOS& object, const ApiDumpSettings& settings, int indents)
 {
     settings.stream() << object;
 }
@@ -14561,70 +14561,70 @@ void dump_text_VkSurfaceCreateFlagsOHOS(VkSurfaceCreateFlagsOHOS object, const A
 
 //======================= Func Pointer Implementations ======================//
 
-void dump_text_PFN_vkAllocationFunction(PFN_vkAllocationFunction object, const ApiDumpSettings& settings, int indents)
+void dump_text_PFN_vkAllocationFunction(const PFN_vkAllocationFunction& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress())
         settings.stream() << object;
     else
         settings.stream() << "address";
 }
-void dump_text_PFN_vkFreeFunction(PFN_vkFreeFunction object, const ApiDumpSettings& settings, int indents)
+void dump_text_PFN_vkFreeFunction(const PFN_vkFreeFunction& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress())
         settings.stream() << object;
     else
         settings.stream() << "address";
 }
-void dump_text_PFN_vkInternalAllocationNotification(PFN_vkInternalAllocationNotification object, const ApiDumpSettings& settings, int indents)
+void dump_text_PFN_vkInternalAllocationNotification(const PFN_vkInternalAllocationNotification& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress())
         settings.stream() << object;
     else
         settings.stream() << "address";
 }
-void dump_text_PFN_vkInternalFreeNotification(PFN_vkInternalFreeNotification object, const ApiDumpSettings& settings, int indents)
+void dump_text_PFN_vkInternalFreeNotification(const PFN_vkInternalFreeNotification& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress())
         settings.stream() << object;
     else
         settings.stream() << "address";
 }
-void dump_text_PFN_vkReallocationFunction(PFN_vkReallocationFunction object, const ApiDumpSettings& settings, int indents)
+void dump_text_PFN_vkReallocationFunction(const PFN_vkReallocationFunction& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress())
         settings.stream() << object;
     else
         settings.stream() << "address";
 }
-void dump_text_PFN_vkVoidFunction(PFN_vkVoidFunction object, const ApiDumpSettings& settings, int indents)
+void dump_text_PFN_vkVoidFunction(const PFN_vkVoidFunction& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress())
         settings.stream() << object;
     else
         settings.stream() << "address";
 }
-void dump_text_PFN_vkDebugReportCallbackEXT(PFN_vkDebugReportCallbackEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_PFN_vkDebugReportCallbackEXT(const PFN_vkDebugReportCallbackEXT& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress())
         settings.stream() << object;
     else
         settings.stream() << "address";
 }
-void dump_text_PFN_vkDebugUtilsMessengerCallbackEXT(PFN_vkDebugUtilsMessengerCallbackEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_PFN_vkDebugUtilsMessengerCallbackEXT(const PFN_vkDebugUtilsMessengerCallbackEXT& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress())
         settings.stream() << object;
     else
         settings.stream() << "address";
 }
-void dump_text_PFN_vkDeviceMemoryReportCallbackEXT(PFN_vkDeviceMemoryReportCallbackEXT object, const ApiDumpSettings& settings, int indents)
+void dump_text_PFN_vkDeviceMemoryReportCallbackEXT(const PFN_vkDeviceMemoryReportCallbackEXT& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress())
         settings.stream() << object;
     else
         settings.stream() << "address";
 }
-void dump_text_PFN_vkGetInstanceProcAddrLUNARG(PFN_vkGetInstanceProcAddrLUNARG object, const ApiDumpSettings& settings, int indents)
+void dump_text_PFN_vkGetInstanceProcAddrLUNARG(const PFN_vkGetInstanceProcAddrLUNARG& object, const ApiDumpSettings& settings, int indents)
 {
     if(settings.showAddress())
         settings.stream() << object;
