@@ -21,7 +21,7 @@ import re
 from base_generator import BaseGenerator
 from vulkan_object import Struct, Command, Param, Member
 
-POINTER_TYPES = ['void', 'xcb_connection_t', 'Display', 'SECURITY_ATTRIBUTES', 'ANativeWindow', 'AHardwareBuffer', 'wl_display', 'wl_surface', '_screen_context', '_screen_window', '_screen_buffer']
+POINTER_TYPES = ['xcb_connection_t', 'Display', 'SECURITY_ATTRIBUTES', 'ANativeWindow', 'AHardwareBuffer', 'wl_display', 'wl_surface', '_screen_context', '_screen_window', '_screen_buffer']
 
 TRACKED_STATE = {
     'vkAllocateCommandBuffers':
@@ -187,21 +187,106 @@ def commandParameterDeclarationText(command):
 def commandParameterUsageText(command):
     return ', '.join(p.name for p in command.params)
 
+def get_fulltype(var):
+    custom_fullType = var.fullType
+    if ':' in var.cDeclaration:
+        custom_fullType += var.cDeclaration[var.cDeclaration.find(":"):]
+    elif var.fixedSizeArray:
+        custom_fullType += '[' + ']['.join(var.fixedSizeArray) + ']'
+    return custom_fullType
 
-class VariableTypeInfo:
-    def __init__(self):
-        self.type: str
-        self.templateType: str
-        self.childType : str
-        self.id : str
-        self.pointerLevels : int
-        self.arrayLength : None | str = None
-        self.lengthIsMember : bool = False
-        self.maxArrayLength : None | str = None
-        self.isStruct: str = "false"
-        self.isUnion : str = "false"
-        self.parameter_state: None | str = None
-        self.validity_check: None | str = None
+def get_type(var):
+    custom_type = var.type
+    if var.const:
+        if var.cDeclaration.count('*') >1:
+            custom_type = 'const ' + custom_type + '*'
+        else:
+            custom_type = 'const ' + custom_type
+    return custom_type
+
+# Not everything that is functionally a pointer should be printed as such
+def get_is_value_type(var):
+    # Things which we define as 'pointer types' means we want to print as values
+    # Must exclude double pointers here since void is in the POINTER_TYPES list
+    if var.type in POINTER_TYPES and var.fullType.count('*') < 2:
+        return True
+    # If the type is a pointer or can be considered a fixed sized array, it isn't a value
+    if not var.pointer and len(var.fixedSizeArray) == 0:
+        return True
+    # Special case string types or fixed length strings as values so we print them with string processing
+    if var.fullType == 'const char*' or (len(var.fixedSizeArray) > 0 and var.type == 'char'):
+        return True
+    # Function poitners are considered poitners, but we want to print them as values
+    if 'PFN_' in var.type:
+        return True
+    return False
+
+def get_is_array(var):
+    if var.length is None:
+        return False
+    # Things which we define as 'pointer types' means we want to print as values
+    # Must exclude double pointers here since void is in the POINTER_TYPES list
+    if (var.type == 'void' or var.type in POINTER_TYPES) and var.fullType.count('*') < 2:
+        return False
+
+    # If the type is a pointer or can be considered a fixed sized array, it isn't a value
+    if not var.pointer and len(var.fixedSizeArray) == 0:
+        return False
+
+    # Special case string types or fixed length strings as values so we print them with string processing
+    if var.fullType == 'const char*' or (len(var.fixedSizeArray) > 0 and var.type == 'char'):
+        return False
+
+    # Function poitners are considered poitners, but we want to print them as values
+    if 'PFN_' in var.type:
+        return False
+
+    return True
+
+def get_array_length(var, parent):
+    lengthIsMember = False
+    lengthIsPointer = False
+    first_length = var.length.split(',')[0]
+    for local in [x for x in (parent.params if isinstance(parent, Command) else parent.members)]:
+        if local.name == first_length:
+            lengthIsMember = True
+            if local.pointer:
+                lengthIsPointer = True
+            break
+
+    # Special case due to the length being non-constant non-local
+    if parent.name == 'VkPhysicalDeviceMemoryBudgetPropertiesEXT' and var.name in ['heapBudget', 'heapUsage']:
+        return 'ApiDumpInstance::current().getMemoryHeapCount()'
+
+    # If the length is a number or an API Constant, just return it
+    if not lengthIsMember:
+        return '*'.join(var.length.split(','))
+
+    # While the array might have a fixed size in memory, we want to use the 'real' length. But, if that length hasn't been initialized, we need to cap it to the fixed size length
+    if len(var.fixedSizeArray) > 0:
+        return f'std::min(object.{var.length}, {"*".join(var.fixedSizeArray)})'
+
+    # If the length is a pointer, we need to dereference it
+    deref = '*' if lengthIsPointer else ''
+
+    # If the variable is from a struct, we need to use `object.` to access it.
+    if isinstance(parent, Struct):
+        return deref + 'object.' + '*'.join(var.length.split(','))
+    else:
+        return deref + '*'.join(var.length.split(','))
+
+def get_fixed_array_length(fixed_length, var, parent):
+    lengthIsMember = False
+    for local in [x for x in (parent.params if isinstance(parent, Command) else parent.members)]:
+        if local.name == var.length:
+            lengthIsMember = True
+            break
+
+    if lengthIsMember:
+        object_access = 'object.' if isinstance(parent, Struct) else ''
+        return f'std::min({object_access}{var.length}, {fixed_length})'
+    else:
+        return fixed_length
 
 class ApiDumpGenerator(BaseGenerator):
     def __init__(self):
@@ -667,7 +752,7 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
             if output_format == 'html':
                 self.write('    settings.stream() << "<div class=\'val\'>";')
                 self.write(f'    settings.stream() << {cast}object;')
-                self.write('    settings.stream() << "</div></summary>";')
+                self.write('    settings.stream() << "</div>";')
 
             if output_format == 'json':
                 self.write('')
@@ -688,7 +773,7 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
             if output_format == 'text':
                 self.write('    settings.stream() << object;')
             if output_format == 'html':
-                self.write('    settings.stream() << "<div class=\'val\'>" << object << "</div></summary>";')
+                self.write('    settings.stream() << "<div class=\'val\'>" << object << "</div>";')
             if output_format == 'json':
                 self.write('    settings.stream() << "\\"" << object << "\\"";')
             self.write('}')
@@ -696,9 +781,10 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
                 self.write(f'#endif // {basetype.protect}')
 
         self.write('\n//======================= System Type Implementations =======================//\n')
+
         sortedSystemTypes = dict(sorted(self.vk.platformTypes.items()))
         for sys in sortedSystemTypes.values():
-            if sys.requires in EXCLUDED_INCLUDE_LIST or sys.name == 'int' or (video and sys.name in DUPLICATE_TYPES_IN_VIDEO_HEADER):
+            if sys.requires in EXCLUDED_INCLUDE_LIST or (video and sys.name in DUPLICATE_TYPES_IN_VIDEO_HEADER):
                 continue
             if sys.protect:
                 self.write(f'#if defined({sys.protect})')
@@ -724,9 +810,9 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
                     self.write('    settings.stream() << "</div>";')
                 else:
                     self.write('    if (settings.showAddress())')
-                    self.write('        settings.stream() << "<div class=\'val\'>" << object << "</div></summary>";')
+                    self.write('        settings.stream() << "<div class=\'val\'>" << object << "</div>";')
                     self.write('    else')
-                    self.write('        settings.stream() << "<div class=\'val\'>address</div></summary>";')
+                    self.write('        settings.stream() << "<div class=\'val\'>address</div>";')
 
             if output_format == 'json':
                 if sys.name in POINTER_TYPES:
@@ -741,14 +827,15 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
             if sys.protect:
                 self.write(f'#endif // {sys.protect}')
 
-        self.write('\n//========================== Handle Implementations =========================//\n')
-        for handle in self.vk.handles.values():
-            if handle.protect:
-                self.write(f'#if defined({handle.protect})')
-            self.write(f'void dump_{output_format}_{handle.name}(const {handle.name}& object, const ApiDumpSettings& settings, int indents)')
+        if not video:
+            self.write('\n//========================== Handle Implementations =========================//\n')
+            for handle in self.vk.handles.values():
+                if handle.protect:
+                    self.write(f'#if defined({handle.protect})')
+                self.write(f'void dump_{output_format}_{handle.name}(const {handle.name}& object, const ApiDumpSettings& settings, int indents)')
 
-            if output_format == 'text':
-                self.write('''{
+                if output_format == 'text':
+                    self.write('''{
     if(settings.showAddress()) {
         settings.stream() << object;
 
@@ -761,8 +848,8 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
     }
 }''')
 
-            if output_format == 'html':
-                self.write('''{
+                if output_format == 'html':
+                    self.write('''{
     settings.stream() << "<div class=\'val\'>";
     if(settings.showAddress()) {
         settings.stream() << object;
@@ -774,25 +861,25 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
     } else {
         settings.stream() << "address";
     }
-    settings.stream() << "</div></summary>";
+    settings.stream() << "</div>";
 }''')
 
-            if output_format == 'json':
-                self.write('''{
+                if output_format == 'json':
+                    self.write('''{
     if(settings.showAddress()) {
         settings.stream() << "\\"" << object << "\\"";
     } else {
         settings.stream() << "\\"address\\"";
     }
 }''')
-            if handle.protect:
-                self.write(f'#endif // {handle.protect}')
+                if handle.protect:
+                    self.write(f'#endif // {handle.protect}')
 
         self.write('\n//=========================== Enum Implementations ==========================//\n')
         for enum in self.vk.enums.values():
             if enum.protect:
                 self.write(f'#if defined({enum.protect})')
-            self.write(f'void dump_{output_format}_{enum.name}(const {enum.name}& object, const ApiDumpSettings& settings, int indents)')
+            self.write(f'void dump_{output_format}_{enum.name}(const {enum.name} object, const ApiDumpSettings& settings, int indents)')
             self.write('{')
             if output_format == 'html':
                 self.write('    settings.stream() << "<div class=\'val\'>";')
@@ -815,7 +902,7 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
             if output_format == 'text':
                 self.write('    settings.stream() << object << ")";')
             if output_format == 'html':
-                self.write('    settings.stream() << object << ")</div></summary>";')
+                self.write('    settings.stream() << object << ")</div>";')
             self.write('}')
             if enum.protect:
                 self.write(f'#endif // {enum.protect}')
@@ -828,7 +915,7 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
                 if bitmask.bitWidth == 64:
                     self.write('// 64 bit bitmasks don\'t have an enum of bit values.')
                     self.write(f'typedef VkFlags64 {bitmask.name};')
-            self.write(f'void dump_{output_format}_{bitmask.name}(const {bitmask.name}& object, const ApiDumpSettings& settings, int indents)')
+            self.write(f'void dump_{output_format}_{bitmask.name}(const {bitmask.name} object, const ApiDumpSettings& settings, int indents)')
             self.write('{')
             if output_format == 'html':
                 self.write('    settings.stream() << "<div class=\'val\'>";')
@@ -847,7 +934,7 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
             if output_format == 'json':
                 self.write('        settings.stream() << \')\';')
             if output_format == 'html':
-                self.write('    settings.stream() << "</div></summary>";')
+                self.write('    settings.stream() << "</div>";')
             if output_format == 'json':
                 self.write('    settings.stream() << "\\"";')
             self.write('}')
@@ -855,31 +942,20 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
                 self.write(f'#endif // {bitmask.protect}')
 
         self.write('\n//=========================== Flag Implementations ==========================//\n')
-        for bitmask in self.vk.bitmasks.values():
-            if bitmask.protect:
-                self.write(f'#if defined({bitmask.protect})')
-            self.write(f'void dump_{output_format}_{bitmask.flagName}(const {bitmask.flagName}& object, const ApiDumpSettings& settings, int indents)')
-            self.write('{')
-            self.write(f'    dump_{output_format}_{bitmask.name}(({bitmask.name}) object, settings, indents);')
-            self.write('}')
-            if bitmask.protect:
-                self.write(f'#endif // {bitmask.protect}')
 
-        self.write('\n')
         for flag in self.vk.flags.values():
-            if flag.bitmaskName is not None:
-                continue
             if flag.protect:
                 self.write(f'#if defined({flag.protect})')
-            self.write(f'void dump_{output_format}_{flag.name}(const {flag.name}& object, const ApiDumpSettings& settings, int indents)')
-            self.write('{')
-            if output_format == 'text':
-                self.write('    settings.stream() << object;')
-            if output_format == 'html':
-                self.write('    settings.stream() << "<div class=\'val\'>"')
-                self.write('                             << object << "</div></summary>";')
-            if output_format == 'json':
-                self.write('    settings.stream() << \'"\' << object << "\\"";')
+            self.write(f'void dump_{output_format}_{flag.name}(const {flag.name} object, const ApiDumpSettings& settings, int indents){{')
+            if flag.bitmaskName is not None:
+                self.write(f'    dump_{output_format}_{flag.bitmaskName}(static_cast<{flag.bitmaskName}>(object), settings, indents);')
+            else:
+                if output_format == 'text':
+                    self.write('    settings.stream() << std::to_string(object).c_str();')
+                if output_format == 'html':
+                    self.write('    settings.stream() << "<div class=\'val\'>" << std::to_string(object).c_str() << "</div>";')
+                if output_format == 'json':
+                    self.write('    settings.stream() << "\\"" << std::to_string(object).c_str() << "\\"";')
             self.write('}')
             if flag.protect:
                 self.write(f'#endif // {flag.protect}')
@@ -897,7 +973,7 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
                 self.write('    else')
                 self.write('        settings.stream() << "address";')
             if output_format == 'html':
-                self.write('    settings.stream() << "</div></summary>";')
+                self.write('    settings.stream() << "</div>";')
 
             if output_format == 'json':
                 self.write('    if(settings.showAddress())')
@@ -906,7 +982,7 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
                 self.write('        settings.stream() << "\\"address\\"";')
             self.write('}')
 
-        self.write('\n//========================== Union Forward Declarations ==========================//\n')
+        # forward declare unions since they are used in structs
         for union in [ x for x in self.vk.structs.values() if x.union ]:
             if union.protect:
                 self.write(f'#if defined({union.protect})')
@@ -920,117 +996,59 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
             self.write(f'void dump_{output_format}_pNext_trampoline(const void* object, const ApiDumpSettings& settings, int indents);')
 
         self.write('\n//========================== Struct Implementations =========================//\n')
+
         for struct in [ x for x in self.vk.structs.values() if not x.union ]:
             if struct.protect:
                 self.write(f'#if defined({struct.protect})')
             self.write(f'void dump_{output_format}_{struct.name}(const {struct.name}& object, const ApiDumpSettings& settings, int indents)')
             self.write('{')
-            if output_format == 'text':
-                self.write('    if(settings.showAddress())')
-                self.write('        settings.stream() << &object << ":\\n";')
-                self.write('    else')
-                self.write('        settings.stream() << "address:\\n";')
-            if output_format == 'html':
-                self.write('    settings.stream() << "<div class=\'val\'>";')
-                self.write('    if(settings.showAddress())')
-                self.write('        settings.stream() << &object << "\\n";')
-                self.write('    else')
-                self.write('        settings.stream() << "address\\n";')
-                self.write('    settings.stream() << "</div></summary>";')
+            if output_format in ['text', 'html']:
+                self.write(f'    dump_{output_format}_struct_summary(settings, static_cast<const void*>(&object));')
             if output_format == 'json':
-                self.write('    settings.stream() << settings.indentation(indents) << "[\\n";')
-                self.write('')
+                self.write('    settings.stream() << settings.indentation(indents + 1) << "[\\n";')
 
             for member in struct.members:
-                typeInfo = self.fillin_variable_typeinfo(member, struct)
-                if typeInfo.parameter_state:
-                    if typeInfo.validity_check:
-                        self.write(f'    if ({typeInfo.validity_check})')
-                        self.write('        ' + typeInfo.parameter_state)
+                validity_check = self.get_validity_check(member, struct)
+                parameter_state = self.get_parameter_state(member, struct)
+                if parameter_state is not None:
+                    if validity_check is not None:
+                        self.write(f'    if ({validity_check})')
+                        self.write('        ' + parameter_state)
                     else:
-                        self.write('    ' + typeInfo.parameter_state)
+                        self.write('    ' + parameter_state)
 
             self.write('')
+            json_indent = '2' if output_format == 'json' else '1'
             for member in struct.members:
-                typeInfo = self.fillin_variable_typeinfo(member, struct)
-
+                custom_fullType = get_fulltype(member)
+                validity_check = self.get_validity_check(member, struct)
                 if output_format == 'json':
                     if member != struct.members[0]:
                         self.write('    settings.stream() << ",\\n";')
 
-                if typeInfo.validity_check is not None:
-                    self.write(f'    if({typeInfo.validity_check})')
+                if validity_check is not None:
+                    self.write(f'    if({validity_check}) {{')
 
-                json_params = f' {typeInfo.isStruct}, {typeInfo.isUnion},' if output_format == 'json' else ''
-
-                if typeInfo.pointerLevels == 0:
-                    if member.name != 'pNext':
-                        if member.name == 'apiVersion':
-                            self.write(f'    dump_{output_format}_value<const {typeInfo.templateType}>(object.{member.name}, {"NULL, " if output_format == "json" else ""}settings, "{typeInfo.type}", "{member.name}",{json_params} indents + 1, OutputApiVersion{output_format.upper()});')
-                        else:
-                            self.write(f'    dump_{output_format}_value<const {typeInfo.templateType}>(object.{member.name}, {"NULL, " if output_format == "json" else ""}settings, "{typeInfo.type}", "{member.name}",{json_params} indents + 1, dump_{output_format}_{typeInfo.id});')
-                    else:
-                        if output_format == 'text':
-                            self.write(f'    dump_{output_format}_pNext_struct_name(object.{member.name}, settings, indents + 1, "{typeInfo.type}");')
-                        if output_format == 'html':
-                            self.write('    if(object.pNext != nullptr){')
-                            self.write(f'        dump_{output_format}_pNext_trampoline(object.{member.name}, settings, indents + 1);')
-                            self.write('    } else {')
-                            self.write(f'        dump_{output_format}_value<const {typeInfo.templateType}>(object.{member.name}, settings, "{typeInfo.type}", "{member.name}", indents + 1, dump_html_{typeInfo.id});')
-                            self.write('    }')
-                        if output_format == 'json':
-                            self.write('    if(object.pNext != nullptr){')
-                            self.write(f'        dump_json_pNext_trampoline(object.{member.name}, settings, indents + 1);')
-                            self.write('    } else {')
-                            self.write(f'        dump_json_value<const {typeInfo.templateType}>(object.{member.name}, object.{member.name}, settings, "{typeInfo.type}", "{member.name}", {typeInfo.isStruct}, {typeInfo.isUnion}, indents + 1, dump_json_{typeInfo.id});')
-                            self.write('    }')
-
-                elif typeInfo.pointerLevels > 0:
-                    if typeInfo.arrayLength is None:
-                        self.write(f'    dump_{output_format}_pointer<const {typeInfo.templateType}>(object.{member.name}, settings, "{typeInfo.type}", "{member.name}",{json_params} indents + 1, dump_{output_format}_{typeInfo.id});')
-
-                    else:
-                        if not typeInfo.lengthIsMember:
-                            self.write(f'    dump_{output_format}_array<const {typeInfo.templateType}>(object.{member.name}, {typeInfo.arrayLength}, settings, "{typeInfo.type}", "{typeInfo.childType}", "{member.name}",{json_params} indents + 1, dump_{output_format}_{typeInfo.id});')
-
-                        elif typeInfo.lengthIsMember and member.name != 'pCode':
-                            if typeInfo.arrayLength[0].isdigit() or typeInfo.arrayLength[0].isupper():
-                                self.write(f'    dump_{output_format}_array<const {typeInfo.templateType}>(object.{member.name}, {typeInfo.arrayLength}, settings, "{typeInfo.type}", "{typeInfo.childType}", "{member.name}",{json_params} indents + 1, dump_{output_format}_{typeInfo.id});')
-
-                            elif not typeInfo.arrayLength[0].isdigit() or typeInfo.arrayLength[0].isupper():
-                                if typeInfo.arrayLength == 'rasterizationSamples':
-                                    self.write(f'    dump_{output_format}_array<const {typeInfo.templateType}>(object.{member.name}, (object.{typeInfo.arrayLength} + 31) / 32, settings, "{typeInfo.type}", "{typeInfo.childType}", "{member.name}",{json_params} indents + 1, dump_{output_format}_{typeInfo.id});')
-                                else:
-                                    if typeInfo.maxArrayLength is not None:
-                                        self.write(f'    dump_{output_format}_array<const {typeInfo.templateType}>(object.{member.name}, std::min(object.{typeInfo.arrayLength}, {typeInfo.maxArrayLength}), settings, "{typeInfo.type}", "{typeInfo.childType}", "{member.name}",{json_params} indents + 1, dump_{output_format}_{typeInfo.id});')
-                                    else:
-                                        self.write(f'    dump_{output_format}_array<const {typeInfo.templateType}>(object.{member.name}, object.{typeInfo.arrayLength}, settings, "{typeInfo.type}", "{typeInfo.childType}", "{member.name}",{json_params} indents + 1, dump_{output_format}_{typeInfo.id});')
+                self.write_value(output_format, member, struct)
 
                 self.write('')
-                if struct.name == 'VkShaderModuleCreateInfo':
-                    if member.name == 'pCode':
-                        self.write('    if(settings.showShader())')
-                        self.write(f'        dump_{output_format}_array<const {member.type}>(object.{member.name}, object.{typeInfo.arrayLength}, settings, "{typeInfo.type}", "{typeInfo.childType}", "{member.name}",{json_params} indents + 1, dump_{output_format}_{typeInfo.id});')
-                        self.write('    else')
-                        self.write(f'        dump_{output_format}_special("SHADER DATA", settings, "{typeInfo.type}", "{member.name}", indents + 1);')
-                self.write('')
-                if typeInfo.validity_check is not None:
-                    self.write('    else')
+                if validity_check is not None:
+                    self.write('    } else {')
                     if output_format in ['text', 'html']:
-                        self.write(f'        dump_{output_format}_special("UNUSED", settings, "{typeInfo.type}", "{member.name}", indents + 1);')
+                        self.write(f'        dump_{output_format}_special("UNUSED", settings, "{custom_fullType}", "{member.name}", indents + {json_indent});')
                     if output_format == 'json':
-                        self.write(f'        dump_{output_format}_UNUSED(settings, "{typeInfo.type}", "{member.name}", indents + 1);')
-
+                        self.write(f'        dump_{output_format}_UNUSED(settings, "{custom_fullType}", "{member.name}", indents + {json_indent});')
+                    self.write('    }')
 
             self.write('')
             if output_format == 'text':
                 for member in struct.members:
                     if member.pointer and member.name == 'pNext' and struct.name not in ['VkBaseInStructure', 'VkBaseOutStructure']:
-                        self.write('    if(object.pNext != nullptr){')
-                        self.write('        dump_text_pNext_trampoline(object.pNext, settings, indents < 2 ? indents + 1 : indents);')
+                        self.write('    if(object.pNext != nullptr) {')
+                        self.write(f'        dump_text_pNext_trampoline(object.pNext, settings, indents < 2 ? indents + {json_indent} : indents);')
                         self.write('    }')
             if output_format == 'json':
-                self.write('    settings.stream() << "\\n" << settings.indentation(indents) << "]";')
+                self.write('    settings.stream() << "\\n" << settings.indentation(indents + 1) << "]";')
             self.write('}')
             if struct.protect:
                 self.write(f'#endif // {struct.protect}')
@@ -1043,45 +1061,27 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
             self.write(f'void dump_{output_format}_{union.name}(const {union.name}& object, const ApiDumpSettings& settings, int indents)')
             self.write('{')
 
-            if output_format == 'text':
-                self.write('''    if(settings.showAddress())
-        settings.stream() << &object << " (Union):\\n";
-    else
-        settings.stream() << "address (Union):\\n";''')
-            if output_format == 'html':
-                self.write('''    settings.stream() << "<div class='val'>";
-    if(settings.showAddress())
-        settings.stream() << &object << " (Union):\\n";
-    else
-        settings.stream() << "address (Union):\\n";
-    settings.stream() << "</div></summary>";''')
+            if output_format in ['text', 'html']:
+                self.write(f'    dump_{output_format}_union_summary(settings, static_cast<const void*>(&object));')
             if output_format == 'json':
-                self.write('    settings.stream() << settings.indentation(indents) << "[\\n";')
+                self.write('    settings.stream() << settings.indentation(indents + 1) << "[\\n";')
 
             for member in union.members:
-                typeInfo = self.fillin_variable_typeinfo(member, union)
-
+                validity_check = self.get_validity_check(member, union)
                 if output_format == 'json':
-                    if member != union.members[0] and typeInfo.validity_check is None:
+                    if member != union.members[0] and validity_check is None:
                         self.write('    settings.stream() << ",\\n"; // Only need commas when more than one field is printed')
 
-                if typeInfo.validity_check is not None:
-                    self.write(f'    if({typeInfo.validity_check})')
+                if validity_check is not None:
+                    self.write(f'    if({validity_check}) {{')
 
-                json_params = f' {typeInfo.isStruct}, {typeInfo.isUnion},' if output_format == 'json' else ''
-                json_indent = '2' if output_format == 'json' else '1'
+                self.write_value(output_format, member, union)
 
-                if typeInfo.pointerLevels == 0:
-                    self.write(f'    dump_{output_format}_value<const {typeInfo.templateType}>(object.{member.name}, {"NULL, " if output_format == "json" else ""}settings, "{typeInfo.type}", "{member.name}",{json_params} indents + {json_indent}, dump_{output_format}_{typeInfo.id});')
-
-                elif typeInfo.pointerLevels == 1 and typeInfo.arrayLength is None:
-                    self.write(f'    dump_{output_format}_pointer<const {typeInfo.templateType}>(object.{member.name}, settings, "{typeInfo.type}", "{member.name}",{json_params} indents + {json_indent}, dump_{output_format}_{typeInfo.id});')
-
-                elif typeInfo.pointerLevels == 1 and typeInfo.arrayLength is not None:
-                    self.write(f'    dump_{output_format}_array<const {typeInfo.templateType}>(object.{member.name}, {typeInfo.arrayLength}, settings, "{typeInfo.type}", "{typeInfo.childType}", "{member.name}",{json_params} indents + {json_indent}, dump_{output_format}_{typeInfo.id});')
+                if validity_check is not None:
+                    self.write('    }')
 
             if output_format == 'json':
-                self.write('    settings.stream() << "\\n" << settings.indentation(indents) << "]";')
+                self.write('    settings.stream() << "\\n" << settings.indentation(indents + 1) << "]";')
 
             self.write('}')
             if union.protect:
@@ -1093,7 +1093,7 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
                 self.write('void dump_text_pNext_struct_name(const void* object, const ApiDumpSettings& settings, int indents, const char* pnext_type)')
                 self.write('{')
                 self.write('    if (object == nullptr) {')
-                self.write('        dump_text_value<const void*>(object, settings, pnext_type, "pNext", indents, dump_text_void);')
+                self.write('        dump_text_nullptr(settings, pnext_type, "pNext", indents);')
                 self.write('        return;')
                 self.write('    }\n')
 
@@ -1126,7 +1126,8 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
                     self.write(f'#if defined({struct.protect})')
                 if struct.sType is not None:
                     self.write(f'    case {struct.sType}:')
-                    self.write(f'        dump_{output_format}_pNext<const {struct.name}>(reinterpret_cast<const {struct.name}*>(object), settings, "{struct.name}", indents, dump_{output_format}_{struct.name});')
+                    self.write(f'        if (base_struct.pNext == NULL) {{ dump_text_nullptr(settings, "pNext", "{struct.name}", indents); }}')
+                    self.write(f'        else {{ dump_{output_format}_{struct.name}(*reinterpret_cast<const {struct.name}*>(object), settings, indents); }}')
                     self.write('        break;')
                 if struct.protect:
                     self.write(f'#endif // {struct.protect}')
@@ -1180,35 +1181,22 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
                 self.write(f'#if defined({command.protect})')
             self.write(f'void dump_{output_format}_params_{command.name}(ApiDumpInstance& dump_inst, {commandParameterDeclarationText(command)})')
             self.write('{')
-            self.write(f'    const ApiDumpSettings& settings(dump_inst.settings());{"\n" if output_format != "text" else ""}')
+            self.write('    const ApiDumpSettings& settings(dump_inst.settings());')
             self.write('    if(settings.showParams())')
             self.write('    {')
-            if output_format == 'text':
-                self.write('        settings.stream() << "\\n";')
             if output_format == 'json':
                 self.write('        settings.stream() << settings.indentation(3) << "\\\"args\\\" :\\n";')
                 self.write('        settings.stream() << settings.indentation(3) << "[\\n";')
             for param in command.params:
-                typeInfo = self.fillin_variable_typeinfo(param, command)
-
                 if output_format == 'json':
                     if param != command.params[0]:
                         self.write('        settings.stream() << ",\\n";')
 
-                if typeInfo.parameter_state is not None:
-                    self.write('        ' + typeInfo.parameter_state)
+                parameter_state = self.get_parameter_state(param, command)
+                if parameter_state is not None:
+                    self.write('        ' + parameter_state)
 
-                indent_level = 4 if output_format == 'json' else 1
-                json_params = f' {typeInfo.isStruct}, {typeInfo.isUnion},' if output_format == 'json' else ''
-
-                if typeInfo.pointerLevels == 0:
-                    self.write(f'        dump_{output_format}_value<const {typeInfo.templateType}>({param.name}, {"NULL, " if output_format == "json" else ""}settings, "{typeInfo.type}", "{param.name}",{json_params} {indent_level}, dump_{output_format}_{typeInfo.id});')
-
-                elif typeInfo.pointerLevels == 1 and typeInfo.arrayLength is None:
-                    self.write(f'        dump_{output_format}_pointer<const {typeInfo.templateType}>({param.name}, settings, "{typeInfo.type}", "{param.name}",{json_params} {indent_level}, dump_{output_format}_{typeInfo.id});')
-
-                elif typeInfo.pointerLevels == 1 and typeInfo.arrayLength is not None:
-                    self.write(f'        dump_{output_format}_array<const {typeInfo.templateType}>({param.name}, {typeInfo.arrayLength}, settings, "{typeInfo.type}", "{typeInfo.childType}", "{param.name}",{json_params} {indent_level}, dump_{output_format}_{typeInfo.id});')
+                self.write_value(output_format, param, command)
 
             if output_format == 'text':
                 self.write('        if (settings.shouldFlush()) settings.stream().flush();')
@@ -1234,16 +1222,20 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
             self.write('    const ApiDumpSettings& settings(dump_inst.settings());')
 
             if command.returnType != 'void':
+                call_type = self.get_unaliased_type(command.returnType)
                 if output_format in ['text']:
                     self.write('    settings.stream() << " ";')
-                if output_format in ['text', 'html']:
-                    self.write(f'    dump_{output_format}_{command.returnType}(result, settings, 0);')
                 if output_format == 'json':
                     self.write('    settings.stream() << settings.indentation(3) << "\\\"returnValue\\\" : ";')
-                    self.write(f'    dump_json_{command.returnType}(result, settings, 0);')
+                self.write(f'    dump_{output_format}_{call_type}(result, settings, 0);')
+                if output_format == 'json':
                     self.write('    if(settings.showParams())')
                     self.write('        settings.stream() << ",";')
                     self.write('    settings.stream() << "\\n";')
+            if output_format == 'text':
+                self.write('    settings.stream() << ":\\n";')
+            if output_format == 'html':
+                self.write('    settings.stream() << "</summary>";')
 
             self.write(f'    dump_{output_format}_params_{command.name}(dump_inst, {commandParameterUsageText(command)});')
             if output_format == 'text':
@@ -1285,89 +1277,144 @@ EXPORT_FUNCTION VKAPI_ATTR PFN_vkVoidFunction VKAPI_CALL vkGetDeviceProcAddr(VkD
             for alias in flag.aliases:
                 self.aliases[alias] = flag.name
 
+    def get_unaliased_type(self, type_to_check):
+        if type_to_check in self.aliases and self.aliases[type_to_check] is not None:
+            return self.aliases[type_to_check]
+        return type_to_check
 
+    def get_parameter_state(self, var, parent):
+        typeID = self.get_unaliased_type(var.type)
+        if typeID in PARAMETER_STATE and parent.name in PARAMETER_STATE[typeID]:
+            return PARAMETER_STATE[typeID][parent.name]
+        return None
 
-    def fillin_variable_typeinfo(self, variable : Param | Member, parent : Struct | Command):
-        typeInfo = VariableTypeInfo()
-        typeInfo.id = variable.type
-        if typeInfo.id in self.aliases:
-            typeInfo.id = self.aliases[typeInfo.id]
-        typeInfo.templateType = typeInfo.id
+    def get_validity_check(self, var, parent):
+        if parent.name in VALIDITY_CHECKS and var.name in VALIDITY_CHECKS[parent.name]:
+            if var.noAutoValidity or (isinstance(parent, Struct) and parent.union):
+                return VALIDITY_CHECKS[parent.name][var.name]
+        return None
 
-        text = variable.cDeclaration
-        text_list = text.replace('[', ' [ ').replace(']', ' ] ').split()
-        if variable.name in text_list:
-            text_list = text_list[0:text_list.index(variable.name)] # remove all elements after the name
-        typeInfo.type = ' '.join(text_list)
-        bracketMatches = re.findall('(?<=\\[)[ a-zA-Z0-9_]+(?=\\])', text)
-        for bracketMatch in bracketMatches:
-            typeInfo.childType = typeInfo.type
-            typeInfo.type += '[' + bracketMatch + ']'
-            if typeInfo.arrayLength is None:
-                typeInfo.arrayLength = bracketMatch
+    def get_kind_of_value(self,var):
+        if var.type in self.vk.structs:
+            return 'union' if self.vk.structs[var.type].union else 'struct'
+        return 'value'
+
+    def write_value(self, output_format, var, parent):
+        custom_fullType = get_fulltype(var)
+        custom_type = get_type(var)
+        value_kind = self.get_kind_of_value(var)
+        object_access = 'object.' if isinstance(parent, Struct) else ''
+        call_type = self.get_unaliased_type(var.type)
+        indent_plus = '2' if output_format == 'json' else '1'
+        treat_as_pointer = not get_is_value_type(var)
+        pi = ''
+        object_deref = object_access
+        if treat_as_pointer and var.type != 'void':
+            object_deref = f'*{object_access}'
+        if isinstance(parent, Command):
+            indent = 4 if output_format == 'json' else 1
+        else:
+            indent = f'indents + {"2" if output_format == "json" else "1"}'
+
+        pass_address = ''
+        if output_format == 'json' and treat_as_pointer:
+            pass_address = f', static_cast<const void*>(&{object_deref}{var.name})'
+
+        if var.name == 'apiVersion':
+            call_type = 'api_version'
+
+        if get_is_array(var):
+            array_len = get_array_length(var, parent)
+            array_ptr = f'{object_access}{var.name}'
+            if parent.name == 'VkPipelineMultisampleStateCreateInfo' and var.length == '(rasterizationSamples + 31) / 32':
+                array_len = '(object.rasterizationSamples + 31) / 32'
+
+            if parent.name == 'VkShaderModuleCreateInfo' and var.name == 'pCode':
+                array_len = f'{object_access}{var.length}'
+                self.write('    if(settings.showShader()) {')
+                pi = '    '
+
+            not_null_check = f'{object_access}{var.name} != NULL' if var.pointer else 'true'
+            if var.pointer:
+                self.write(pi + f'    if ({array_len} > 0 && {not_null_check}) {{')
+                pi = '    ' + pi
+
+            self.write(pi + f'    dump_{output_format}_array_start({array_ptr}, {array_len}, settings, "{custom_fullType}", "{custom_type}", "{var.name}", {indent});')
+
+            if len(var.fixedSizeArray) == 2:
+                self.write(pi + f'    for (size_t i = 0; i < {var.fixedSizeArray[0]}; ++i) {{')
+                self.write(pi + f'      for (size_t j = 0; j < {var.fixedSizeArray[1]}; ++j) {{')
+                self.write(pi + '        std::stringstream stream;')
+                self.write(pi + f'       stream << "{var.name if output_format != "json" else ""}" << "[" << i << "][" << j << "]";')
+                self.write(pi + '        std::string indexName = stream.str();')
+                self.write(pi + f'        dump_{output_format}_{value_kind}_start(settings, "{custom_type}", indexName.c_str(), {indent});')
+                self.write(pi + f'        dump_{output_format}_{call_type}({object_access}{var.name}[i][j], settings, {indent}+ {indent_plus});')
+                self.write(pi + f'        dump_{output_format}_{value_kind}_end(settings, {indent} + {indent_plus});')
+                if output_format == 'json':
+                    self.write(pi + f'        if (i < {var.fixedSizeArray[1]} - 1 && j < {var.fixedSizeArray[0]} - 1) settings.stream() << \',\';')
+                    self.write(pi + '    settings.stream() << "\\n";')
+                self.write(pi + '      }')
+                self.write(pi + '    }')
+            elif len(var.fixedSizeArray) == 1:
+                fixed_array_len = get_fixed_array_length(var.fixedSizeArray[0], var, parent)
+                self.write(pi + f'    for (size_t i = 0; i < {fixed_array_len}; ++i) {{')
+                self.write(pi + '        std::stringstream stream;')
+                self.write(pi + f'        stream << "{var.name if output_format != "json" else ""}" <<"[" << i << "]";')
+                self.write(pi + '        std::string indexName = stream.str();')
+                self.write(pi + f'        dump_{output_format}_{value_kind}_start(settings, "{custom_type}", indexName.c_str(), {indent} + {indent_plus});')
+                self.write(pi + f'        dump_{output_format}_{call_type}({object_access}{var.name}[i], settings, {indent} + {indent_plus});')
+                self.write(pi + f'        dump_{output_format}_{value_kind}_end(settings, {indent} + {indent_plus});')
+                if output_format == 'json':
+                    self.write(pi + f'          if (i < {fixed_array_len} - 1) settings.stream() << \',\';')
+                    self.write(pi + '    settings.stream() << "\\n";')
+                self.write(pi + '    }')
             else:
-                typeInfo.arrayLength = typeInfo.arrayLength + '*' + bracketMatch
+                elem = f'{object_access}{var.name}[i]'
+                if var.fullType.count('*') > 1 and var.type != 'void' and var.type != 'char':
+                    elem = f'*{object_access}{var.name}[i]'
 
-        lengthString = variable.length
-        if lengthString is not None and lengthString == '(rasterizationSamples + 31) / 32':
-            lengthString = 'rasterizationSamples'
+                self.write(pi + f'    for (size_t i = 0; i < {array_len}; ++i) {{')
+                self.write(pi + '        std::stringstream stream;')
+                self.write(pi + f'        stream << "{var.name if output_format != "json" else ""}" << "[" << i << "]";')
+                self.write(pi + '        std::string indexName = stream.str();')
+                self.write(pi + f'        dump_{output_format}_{value_kind}_start(settings, "{custom_type}", indexName.c_str(), {indent} + {indent_plus});')
+                self.write(pi + f'        dump_{output_format}_{call_type}({elem}, settings, {indent} + {indent_plus});')
+                self.write(pi + f'        dump_{output_format}_{value_kind}_end(settings, {indent} + {indent_plus});')
+                if output_format == 'json':
+                    self.write(pi + f'        if (i < {array_len} - 1) settings.stream() << \',\';')
+                    self.write(pi + '        settings.stream() << "\\n";')
+                self.write(pi + '    }')
 
-        lengths = []
-        if lengthString is not None:
-            lengths = re.split(',', lengthString)
-            lengths = list(filter(('null-terminated').__ne__, lengths))
-        if typeInfo.arrayLength is None and len(lengths) > 0:
-            typeInfo.childType = '*'.join(typeInfo.type.split('*')[0:-1])
-            typeInfo.arrayLength = lengths[0]
-            typeInfo.lengthIsMember = True
+            self.write(pi + f'    dump_{output_format}_array_end({array_ptr}, {array_len}, settings, {indent});')
+            if var.pointer:
+                pi = pi[4:]
+                self.write(pi + '    } else {')
+                self.write(pi + f'        dump_{output_format}_nullptr(settings, "{custom_fullType}", "{var.name}", {indent});')
+                self.write(pi + '    }')
+            if parent.name == 'VkShaderModuleCreateInfo' and var.name == 'pCode':
+                self.write('    } else {')
+                self.write(f'        dump_{output_format}_special("SHADER DATA", settings, "{var.fullType}", "{var.name}", {indent});')
+                self.write('    }')
+        else:
+            if var.name == 'pNext' and var.fullType in ['void*', 'const void*']:
+                if output_format == 'text':
+                    self.write(f'    dump_{output_format}_pNext_struct_name(object.{var.name}, settings, {indent}, "{var.fullType}");')
+                elif output_format in ['html', 'json']:
+                    self.write('    if(object.pNext != nullptr){')
+                    self.write(f'        dump_{output_format}_pNext_trampoline(object.{var.name}, settings, {indent});')
+                    self.write('    } else {')
+                    self.write(f'        dump_{output_format}_nullptr(settings, "{var.fullType}", "{var.name}", {indent});')
+                    self.write('    }')
 
-        # Dereference if necessary and handle members of variables
-        if typeInfo.arrayLength is not None:
-            typeInfo.arrayLength = re.sub('::', '->', typeInfo.arrayLength)
-            sections = typeInfo.arrayLength.split('->')
-            if sections[-1][0] == 'p' and sections[0][1].isupper():
-                typeInfo.arrayLength = '*' + typeInfo.arrayLength
+            else:
+                if treat_as_pointer:
+                    self.write(f'    if ({object_access}{var.name} == NULL) {{')
+                    self.write(f'        dump_{output_format}_nullptr(settings, "{custom_fullType}", "{var.name}", {indent});')
+                    self.write('    } else {')
+                    pi = '    '
+                self.write(pi + f'    dump_{output_format}_{value_kind}_start(settings, "{custom_fullType}", "{var.name}", {indent}{pass_address});')
+                self.write(pi + f'    dump_{output_format}_{call_type}({object_deref}{var.name}, settings, {indent});')
+                self.write(pi + f'    dump_{output_format}_{value_kind}_end(settings, {indent});')
 
-        typeInfo.pointerLevels = len(re.findall('\\*|\\[', text))
-        if typeInfo.id == 'char' and typeInfo.pointerLevels > 0:
-            typeInfo.templateType += '*'
-            typeInfo.pointerLevels -= 1
-            typeInfo.id = 'cstring'
-        elif typeInfo.id in POINTER_TYPES:
-            typeInfo.templateType += '*'
-            typeInfo.pointerLevels -= 1
-        assert(typeInfo.pointerLevels >= 0)
-
-        if typeInfo.id in PARAMETER_STATE and parent.name in PARAMETER_STATE[typeInfo.id]:
-            typeInfo.parameter_state = PARAMETER_STATE[typeInfo.id][parent.name]
-
-        if parent.name in VALIDITY_CHECKS and variable.name in VALIDITY_CHECKS[parent.name]:
-            if variable.noAutoValidity or (isinstance(parent, Struct) and parent.union):
-                typeInfo.validity_check = VALIDITY_CHECKS[parent.name][variable.name]
-
-        typeInfo.isStruct = "true" if variable.type in self.vk.structs and not self.vk.structs[variable.type].union else "false"
-        typeInfo.isUnion = "true" if variable.type in self.vk.structs and self.vk.structs[variable.type].union else "false"
-
-        if parent.name in ['VkPhysicalDeviceMemoryProperties','VkPhysicalDeviceGroupProperties', 'VkPhysicalDeviceMemoryBudgetPropertiesEXT', 'VkQueueFamilyGlobalPriorityPropertiesKHR']:
-            if variable.name == 'memoryTypes':
-                typeInfo.lengthIsMember = True
-                typeInfo.arrayLength = 'memoryTypeCount'
-                typeInfo.maxArrayLength = 'VK_MAX_MEMORY_TYPES'
-            if variable.name == 'memoryHeaps':
-                typeInfo.lengthIsMember = True
-                typeInfo.arrayLength = 'memoryHeapCount'
-                typeInfo.maxArrayLength = 'VK_MAX_MEMORY_HEAPS'
-            if variable.name == 'physicalDevices':
-                typeInfo.lengthIsMember = True
-                typeInfo.arrayLength = 'physicalDeviceCount'
-            if variable.name == 'heapBudget':
-                typeInfo.lengthIsMember = True
-                typeInfo.arrayLength = 'ApiDumpInstance::current().getMemoryHeapCount()'
-            if variable.name == 'heapUsage':
-                typeInfo.lengthIsMember = True
-                typeInfo.arrayLength = 'ApiDumpInstance::current().getMemoryHeapCount()'
-            if variable.name == 'priorities':
-                typeInfo.lengthIsMember = True
-                typeInfo.arrayLength = 'priorityCount'
-
-        return typeInfo
+                if treat_as_pointer:
+                    self.write('    }')
